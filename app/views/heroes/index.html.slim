@@ -1,0 +1,16 @@
+h1 Listing heroes
+
+- @heroes.each do |hero|
+  table
+    tbody
+      tr
+        td = image_tag hero.avatar.url
+        td = hero.name
+        td &bull;
+        td = link_to 'Show', hero
+        td = link_to 'Edit', edit_hero_path(hero)
+        td = link_to 'Destroy', hero, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Hero', new_hero_path

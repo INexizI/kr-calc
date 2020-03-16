@@ -1,0 +1,26 @@
+= form_for @perk do |f|
+  - if @perk.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@perk.errors.count, "error")} prohibited this perk from being saved:"
+      ul
+        - @perk.errors.full_messages.each do |message|
+          li = message
+
+  .form
+    = f.label :name
+    = f.text_field :name
+
+  .form
+    = f.label :description
+    = f.text_field :description
+
+  .form
+    = f.label :image
+    = f.file_field :image
+
+  .form
+    = f.label :tier
+    = f.text_field :tier
+
+  br
+  .actions = f.submit

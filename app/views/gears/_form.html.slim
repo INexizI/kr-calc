@@ -1,0 +1,9 @@
+= form_for @gear do |f|
+  - if @gear.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@gear.errors.count, "error")} prohibited this gear from being saved:"
+      ul
+        - @gear.errors.full_messages.each do |message|
+          li = message
+
+  .actions = f.submit

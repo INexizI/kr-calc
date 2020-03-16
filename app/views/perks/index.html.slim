@@ -1,0 +1,18 @@
+h1 Listing perks
+
+- @perks.each do |perk|
+  table
+    tbody
+      tr
+        td = image_tag perk.image.url
+        td = perk.name
+        td = perk.description
+        td = perk.tier
+        td &bull;
+        td = link_to 'Show', perk
+        td = link_to 'Edit', edit_perk_path(perk)
+        td = link_to 'Destroy', perk, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Perk', new_perk_path

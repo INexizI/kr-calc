@@ -1,0 +1,15 @@
+=> link_to 'Back', perks_path
+'&bull;
+=< link_to 'Edit', edit_perk_path(@perk)
+
+hr
+
+.hero
+  .p-title
+    = @perk.name
+  .p-description
+    = @perk.description
+  .p-avatar
+    = image_tag (@perk.image.url)
+  .p-tier
+    = @perk.tier

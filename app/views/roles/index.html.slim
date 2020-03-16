@@ -1,0 +1,16 @@
+h1 Listing roles
+
+- @roles.each do |role|
+  table
+    tbody
+      tr
+        td = image_tag role.image.url
+        td = role.name
+        td &bull;
+        td = link_to 'Show', role
+        td = link_to 'Edit', edit_role_path(role)
+        td = link_to 'Destroy', role, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Role', new_role_path

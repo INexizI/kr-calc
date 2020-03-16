@@ -1,0 +1,11 @@
+=> link_to 'Back', roles_path
+'&bull;
+=< link_to 'Edit', edit_role_path(@role)
+
+hr
+
+.role
+  .r-title
+    = @role.name
+  .r-icon
+    = image_tag (@role.image.url)

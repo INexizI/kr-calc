@@ -1,0 +1,15 @@
+development: &defaults
+  adapter: postgresql
+  encoding: utf8
+  database: <%= Rails.application.secrets.DB_DATABASE %>
+  username: <%= Rails.application.secrets.DB_USERNAME %>
+  password: <%= Rails.application.secrets.DB_PASSWORD %>
+  host: <%= Rails.application.secrets.DB_HOST %>
+  pool: 5
+  timeout: 5000
+
+production:
+  url:
+
+test:
+  <<: *defaults
