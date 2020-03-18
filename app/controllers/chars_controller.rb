@@ -55,6 +55,6 @@ class CharsController < ApplicationController
     end
 
     def char_params
-      params.require(:char).permit(:name, :description, :avatar, :background, :type_dmg, :icon)
+      params.require(:char).permit(:name, :description, :avatar, :background, :type_dmg, :icon, :role)
     end
 end

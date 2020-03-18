@@ -1,20 +1,115 @@
 h1 Hero
 
-- @chars.each do |char|
-  table
-    tbody
-      tr
-        td = image_tag char.avatar.url
-        td = char.name
-        td &bull;
-        - if char.icon?
-          td = image_tag char.icon.url
-        td = char.type_dmg
-        td &bull;
-        td = link_to 'Show', char
-        td = link_to 'Edit', edit_char_path(char)
-        td = link_to 'Destroy', char, data: { confirm: 'Are you sure?' }, method: :delete
+.main
+  h3 Knight
+  .h-main
+    - @chars.where(role: 1).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
 
-br
+.main
+  h3 Warrior
+  .h-main
+    - @chars.where(role: 2).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
 
+.main
+  h3 Assassin
+  .h-main
+    - @chars.where(role: 3).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
+
+.main
+  h3 Archer
+  .h-main
+    - @chars.where(role: 4).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
+
+.main
+  h3 Mechanic
+  .h-main
+    - @chars.where(role: 5).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
+
+.main
+  h3 Wizard
+  .h-main
+    - @chars.where(role: 6).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+hr
+
+.main
+  h3 Priest
+  .h-main
+    - @chars.where(role: 7).each do |char|
+      .h-char
+        .h-avatar
+          = link_to char, title: char.name do
+            = image_tag char.avatar.url
+        .h-sub
+          .h-name
+            = char.name
+          .h-type
+            - if char.icon?
+              = image_tag char.icon.url, title: char.type_dmg
+
+hr
 = link_to 'New Hero', new_char_path

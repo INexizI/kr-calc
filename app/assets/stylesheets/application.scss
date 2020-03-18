@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+.h-main {
+  display: flex;
+  flex-wrap: wrap;
+
+  .h-char {
+    margin: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    .h-avatar {
+      width: 124px;
+      height: 124px;
+
+      a {
+        display: block;
+      }
+    }
+
+    .h-sub {
+      display: flex;
+
+      .h-name {
+        margin: auto;
+      }
+      .h-type {
+        padding: 5px;
+
+        img {
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+
+.p-main {
+  display: flex;
+  flex-wrap: wrap;
+
+  .p-perk {
+    margin: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+    .p-image {
+      width: 122px;
+      height: 122px;
+
+      a {
+        display: block;
+      }
+    }
+  }
+}

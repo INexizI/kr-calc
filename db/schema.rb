@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_130452) do
+ActiveRecord::Schema.define(version: 2020_03_18_165426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_03_18_130452) do
     t.string "slug"
     t.string "type_dmg"
     t.string "icon"
+    t.bigint "role_id"
+    t.index ["role_id"], name: "index_chars_on_role_id"
     t.index ["slug"], name: "index_chars_on_slug", unique: true
   end
 
@@ -110,5 +112,6 @@ ActiveRecord::Schema.define(version: 2020_03_18_130452) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "chars", "roles"
   add_foreign_key "taggings", "tags"
 end
