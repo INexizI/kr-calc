@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_193731) do
+ActiveRecord::Schema.define(version: 2020_03_18_130452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chars", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "avatar"
+    t.string "background"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.string "type_dmg"
+    t.string "icon"
+    t.index ["slug"], name: "index_chars_on_slug", unique: true
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -36,20 +49,6 @@ ActiveRecord::Schema.define(version: 2020_03_16_193731) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "heroes", id: :bigint, default: -> { "nextval('heroes_id_seq'::regclass)" }, force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "avatar"
-    t.string "background"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "home", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "perks", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -64,6 +63,8 @@ ActiveRecord::Schema.define(version: 2020_03_16_193731) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_roles_on_slug", unique: true
   end
 
   create_table "skills", force: :cascade do |t|

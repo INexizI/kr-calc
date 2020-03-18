@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  # root to: 'heroes#index'
   root to: 'home#index'
 
-  resources :heroes
+  resources :chars
   resources :roles
   resources :perks
   resources :stats

@@ -1,0 +1,36 @@
+= form_for @char do |f|
+  - if @char.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@char.errors.count, "error")} prohibited this char from being saved:"
+      ul
+        - @char.errors.full_messages.each do |message|
+          li = message
+
+  .form
+    = f.label :name
+    br
+    = f.text_field :name
+  .form
+    = f.label :type_dmg
+    br
+    = f.text_field :type_dmg
+  .form
+    = f.label :icon
+    br
+    = f.file_field :icon
+  .form
+    = f.label :description
+    br
+    = f.text_field :description
+  .form
+    = f.label :avatar
+    br
+    = f.file_field :avatar
+  .form
+    = f.label :background
+    br
+    = f.file_field :background
+
+  br
+  .actions = f.submit
+br

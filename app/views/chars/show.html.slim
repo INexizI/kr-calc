@@ -1,0 +1,13 @@
+=> link_to 'Back', chars_path
+'&bull;
+=< link_to 'Edit', edit_char_path(@char)
+
+hr
+
+.char
+  .c-title
+    = @char.name
+  .c-avatar
+    = image_tag (@char.avatar.url)
+  .c-background
+    = image_tag (@char.background.url)

@@ -1,0 +1,20 @@
+h1 Hero
+
+- @chars.each do |char|
+  table
+    tbody
+      tr
+        td = image_tag char.avatar.url
+        td = char.name
+        td &bull;
+        - if char.icon?
+          td = image_tag char.icon.url
+        td = char.type_dmg
+        td &bull;
+        td = link_to 'Show', char
+        td = link_to 'Edit', edit_char_path(char)
+        td = link_to 'Destroy', char, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Hero', new_char_path
