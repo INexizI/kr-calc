@@ -1,7 +1,9 @@
 h1 Hero
 
 .main
-  h3 Knight
+  .h-title
+    = image_tag '/images/media/classes/knight.png'
+    span Knight
   .h-main
     - @chars.where(role: 1).each do |char|
       .h-char
@@ -17,7 +19,9 @@ h1 Hero
 hr
 
 .main
-  h3 Warrior
+  .h-title
+    = image_tag '/images/media/classes/warrior.png'
+    span Warrior
   .h-main
     - @chars.where(role: 2).each do |char|
       .h-char
@@ -33,7 +37,9 @@ hr
 hr
 
 .main
-  h3 Assassin
+  .h-title
+    = image_tag '/images/media/classes/assassin.png'
+    span Assassin
   .h-main
     - @chars.where(role: 3).each do |char|
       .h-char
@@ -49,7 +55,9 @@ hr
 hr
 
 .main
-  h3 Archer
+  .h-title
+    = image_tag '/images/media/classes/archer.png'
+    span Archer
   .h-main
     - @chars.where(role: 4).each do |char|
       .h-char
@@ -65,7 +73,9 @@ hr
 hr
 
 .main
-  h3 Mechanic
+  .h-title
+    = image_tag '/images/media/classes/mechanic.png'
+    span Mechanic
   .h-main
     - @chars.where(role: 5).each do |char|
       .h-char
@@ -81,7 +91,9 @@ hr
 hr
 
 .main
-  h3 Wizard
+  .h-title
+    = image_tag '/images/media/classes/wizard.png'
+    span Wizard
   .h-main
     - @chars.where(role: 6).each do |char|
       .h-char
@@ -97,7 +109,9 @@ hr
 hr
 
 .main
-  h3 Priest
+  .h-title
+    = image_tag '/images/media/classes/priest.png'
+    span Priest
   .h-main
     - @chars.where(role: 7).each do |char|
       .h-char

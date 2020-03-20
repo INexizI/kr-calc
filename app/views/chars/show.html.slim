@@ -5,9 +5,34 @@
 hr
 
 .char
-  .c-title
-    = @char.name
-  .c-avatar
-    = image_tag (@char.avatar.url)
+  .c-main
+    .c-sub
+      = image_tag (@char.avatar.url)
+      .c-title
+        p = image_tag @char.role.image.url, title: @char.role.name
+        p = @char.name
+
+    .c-sub
+      .c-description
+        p Description
+
+    .c-sub
+      .c-tr
+        h3 T1
+        - @perks.where(tier: 'Generic').each do |perk|
+          .c-perk-img
+            = image_tag perk.image.url, title: perk.name
+      .c-tr
+        h3 T2
+        - @perks.where(tier: @char.role.name).each do |perk|
+          .c-perk-img
+            = image_tag perk.image.url, title: perk.name
+      .c-tr
+        h3 T3-4
+        .c-perk-img
+      .c-tr
+        h3 T5
+        .c-perk-img
+hr
   .c-background
     = image_tag (@char.background.url)

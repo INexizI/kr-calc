@@ -6,6 +6,7 @@ class CharsController < ApplicationController
   end
 
   def show
+    @perks = Perk.all
   end
 
   def new
