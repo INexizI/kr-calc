@@ -18,21 +18,21 @@ hr
 
     .c-sub
       .c-tr
-        h3 T1
         - @perks.where(tier: 'Generic').each do |perk|
           .c-perk-img
             = image_tag perk.image.url, title: perk.name
       .c-tr
-        h3 T2
         - @perks.where(tier: @char.role.name).each do |perk|
           .c-perk-img
             = image_tag perk.image.url, title: perk.name
       .c-tr
-        h3 T3-4
-        .c-perk-img
-      .c-tr
-        h3 T5
-        .c-perk-img
+        .c-pepe
+          - @perks.where(tier: @char.name).each do |perk|
+            .c-perk-img
+              = image_tag perk.image.url, title: perk.description 
+      /.c-tr
+      /  h3 T5
+      /  .c-perk-img
 hr
   .c-background
     = image_tag (@char.background.url)
