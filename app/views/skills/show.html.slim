@@ -1,6 +1,27 @@
-p#notice = notice
-
-
 => link_to 'Edit', edit_skill_path(@skill)
-'|
+'&bull;
 =< link_to 'Back', skills_path
+
+hr
+
+.hero
+  .p-title
+    = @skill.name
+  .p-description
+    = @skill.description
+  .p-avatar
+    = image_tag (@skill.image.url)
+  .p-mana
+    p
+      | Mana cost: 
+      - if @skill.mana.blank?
+        | passive
+      - else
+        - @skill.mana.times do
+          = image_tag '/images/media/manaOrb.png'
+  .p-cooldown
+    p
+      | Cooldown: 
+      = @skill.cooldown
+  .p-title
+    = @skill.char.name

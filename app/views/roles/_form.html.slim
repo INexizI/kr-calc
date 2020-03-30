@@ -1,4 +1,4 @@
-= form_for @role do |f|
+= simple_form_for @role do |f|
   - if @role.errors.any?
     #error_explanation
       h2 = "#{pluralize(@role.errors.count, "error")} prohibited this role from being saved:"
@@ -13,6 +13,9 @@
   .form
     = f.label :image
     = f.file_field :image
+
+  .form
+    = f.association :stats, multiple: true
 
   br
   .actions = f.submit

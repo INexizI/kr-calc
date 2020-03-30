@@ -6,6 +6,7 @@ class RolesController < ApplicationController
   end
 
   def show
+    @stats = Stat.all
   end
 
   def new
@@ -55,6 +56,6 @@ class RolesController < ApplicationController
     end
 
     def role_params
-      params.require(:role).permit(:name, :image)
+      params.require(:role).permit(:name, :image, :stat)
     end
 end

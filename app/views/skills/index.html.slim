@@ -1,19 +1,14 @@
-h1 Listing skills
+h1 Skills
 
-table
-  thead
-    tr
-      th
-      th
-      th
-
-  tbody
-    - @skills.each do |skill|
-      tr
-        td = link_to 'Show', skill
-        td = link_to 'Edit', edit_skill_path(skill)
-        td = link_to 'Destroy', skill, data: { confirm: 'Are you sure?' }, method: :delete
+.main
+  .s-main
+    - @chars.order('name ASC').each do |c|
+      = c.name
+      .s-skills
+        - @skills.where(char_id: c.id).order('skill_number ASC').each do |skill|
+          .s-image
+            = link_to skill, title: skill.name do
+              = image_tag skill.image.url
 
 br
-
 = link_to 'New Skill', new_skill_path

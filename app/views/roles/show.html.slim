@@ -9,3 +9,8 @@ hr
     = @role.name
   .r-icon
     = image_tag (@role.image.url)
+  .r-stats
+    - @stats.where(role_id: @role).each do |s|
+      .r-stat
+        p = s.name
+        p = s.value

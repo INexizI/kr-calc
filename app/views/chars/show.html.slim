@@ -13,8 +13,16 @@ hr
         p = @char.name
 
     .c-sub
-      .c-description
-        p Description
+      - @stats.where(role_id: @char.role).each do |stat|
+        .r-stat
+          p = stat.name
+          p = stat.value
+
+    .c-sub
+      .c-tr
+        - @skills.where(char: @char).order('skill_number ASC').each do |skill|
+          .c-perk-img
+            = image_tag skill.image.url, title: skill.name
 
     .c-sub
       .c-tr

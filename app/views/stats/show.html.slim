@@ -1,6 +1,14 @@
-p#notice = notice
-
-
 => link_to 'Edit', edit_stat_path(@stat)
-'|
+'&bull;
 =< link_to 'Back', stats_path
+
+hr
+
+.hero
+  .p-title
+    = @stat.name
+  .p-title
+    = @stat.value
+  .p-title
+    - if !@stat.role.blank?
+      = @stat.role.name

@@ -7,6 +7,8 @@ class CharsController < ApplicationController
 
   def show
     @perks = Perk.all
+    @skills = Skill.all
+    @stats = Stat.all
   end
 
   def new
