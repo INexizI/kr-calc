@@ -122,6 +122,10 @@
   }
 }
 
+#c-skill {
+  margin: 5% auto;
+}
+
 input {
   width: -webkit-fill-available;
 }
@@ -143,7 +147,7 @@ input {
   text-align: center;
   display: grid;
   grid-template: "item1 item2";
-  
+
   p {
     width: 150px;
   }

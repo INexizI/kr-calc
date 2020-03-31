@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_30_113116) do
+ActiveRecord::Schema.define(version: 2020_03_31_104613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,7 +78,8 @@ ActiveRecord::Schema.define(version: 2020_03_30_113116) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "char_id"
     t.integer "cooldown"
-    t.integer "skill_number"
+    t.float "skill_number"
+    t.integer "parent_id"
     t.index ["char_id"], name: "index_skills_on_char_id"
   end
 
