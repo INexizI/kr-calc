@@ -11,6 +11,10 @@
   }
 }
 
+#centr {
+  text-align: center;
+}
+
 .h-main {
   display: flex;
   flex-wrap: wrap;
@@ -85,6 +89,7 @@
 
   .c-title {
     display: flex;
+    width: 150px;
     img {
       width: 20px;
       height: 20px;
@@ -105,16 +110,16 @@
 
     .c-perk-img {
       margin: 3px;
-      width: 61px;
-      height: 61px;
+      width: 62px;
+      height: 62px;
 
-      img {
-        width: inherit;
+      img:not(#manaOrb) {
+        width: 60px;
+        height: 60px;
       }
     }
     .c-pepe {
       display: grid;
-      // grid-gap: 5px;
       grid-template:
           "item1 item2 item3 item4"
           "item5 item6 item7 item8";
@@ -122,8 +127,57 @@
   }
 }
 
+.skill-description {
+  width: 400px;
+  border: 1px solid;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  position: absolute;
+  margin: -35px 65px;
+  padding: 0px 10px;
+  font-family: sans-serif;
+  font-size: 1em;
+
+  p {
+    padding: 3px;
+  }
+}
+.c-perk-img:hover .skill-description {
+  display: grid;
+  gap: 1px 1px;
+  grid-template-areas: "p1 p1" "p2 p3" "p4 p4";
+
+  .p1 {
+    grid-area: p1;
+    padding: 10px 5px 5px 5px;
+  }
+  .p2 {
+    grid-area: p2;
+    height: 20px;
+    padding: 5px;
+    margin: auto;
+    margin-left: 0;
+  }
+  .p3 {
+    grid-area: p3;
+    height: 20px;
+    margin: auto;
+    margin-right: 0px;
+   }
+  .p4 {
+    grid-area: p4;
+    padding: 10px 5px;
+  }
+}
+
+#manaOrb {
+  width: 16px;
+  margin: -2px 0px;
+}
+
 #c-skill {
-  margin: 5% auto;
+  margin: auto;
 }
 
 input {
@@ -143,12 +197,13 @@ input {
 */
 
 .r-stat {
-  width: 300px;
+  width: 250px;
   text-align: center;
   display: grid;
   grid-template: "item1 item2";
 
   p {
     width: 150px;
+    margin: 5px;
   }
 }

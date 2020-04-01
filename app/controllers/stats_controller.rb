@@ -55,6 +55,6 @@ class StatsController < ApplicationController
     end
 
     def stat_params
-      params.require(:stat).permit(:name, :value, :role_id)
+      params.require(:stat).permit(:name, :value, :stat_type, :role_id)
     end
 end

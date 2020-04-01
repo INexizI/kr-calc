@@ -6,28 +6,28 @@ hr
 
 .char
   .c-main
-    .c-sub
-      = image_tag (@char.avatar.url)
+    .c-sub#centr
+      = image_tag @char.avatar.url
       .c-title
         p = image_tag @char.role.image.url, title: @char.role.name
         p = image_tag @char.icon.url, title: @char.type_dmg
         p = @char.name
 
     .c-sub
-      - @stats.where(role_id: @char.role).each do |stat|
+      p Base stats
+      - @stats.where(role_id: @char.role, stat_type: 'base').each do |stat|
+        .r-stat
+          p = stat.name
+          p = stat.value
+      p Class stats
+      - @stats.where(role_id: @char.role, stat_type: 'class').each do |stat|
         .r-stat
           p = stat.name
           p = stat.value
 
     .c-sub#c-skill
       .c-tr
-        - @skills.where(char: @char).order('skill_number ASC').each do |skill|
-          - if skill.parent_id.blank?
-            .c-perk-img
-              = image_tag skill.image.url, title: skill.name
-              - @skills.where(parent_id: skill.id).each do |skill|
-                - if !skill.parent_id.blank?
-                  = image_tag skill.image.url, title: skill.name
+        = render 'skill'
 
     .c-sub
       .c-tr
