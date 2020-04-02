@@ -1,0 +1,37 @@
+.c-tr
+  - @perks.where(tier: 'Generic').each do |perk|
+    .c-perk-img
+      = image_tag perk.image.url
+      .perk-description
+        .p1
+          = perk.name
+        .p2
+          = perk.description
+.c-tr
+  - @perks.where(tier: @char.role.name).each do |perk|
+    .c-perk-img
+      = image_tag perk.image.url
+      .perk-description
+        .p1
+          = perk.name
+        .p2
+          = perk.description
+.c-tr
+  .c-pepe
+    - @perks.where(tier: @char.name).where.not(name: ['light', 'dark']).each do |perk|
+      .c-perk-img
+        = image_tag perk.image.url
+        .perk-description
+          .p1
+            = perk.name
+          .p2
+            = perk.description
+.c-tr
+  - @perks.where(tier: @char.name, name: ['light', 'dark']).each do |perk|
+    .c-perk-img
+      = image_tag perk.image.url
+      .perk-description
+        .p1
+          = @char.name + ' ' + '[' + perk.name.capitalize + ']'
+        .p2
+          = perk.description

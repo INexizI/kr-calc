@@ -26,27 +26,10 @@ hr
           p = stat.value
 
     .c-sub#c-skill
-      .c-tr
-        = render 'skill'
+      = render 'skill'
 
     .c-sub
-      .c-tr
-        - @perks.where(tier: 'Generic').each do |perk|
-          .c-perk-img
-            = image_tag perk.image.url, title: perk.name
-      .c-tr
-        - @perks.where(tier: @char.role.name).each do |perk|
-          .c-perk-img
-            = image_tag perk.image.url, title: perk.name
-      .c-tr
-        .c-pepe
-          - @perks.where(tier: @char.name).where.not(name: ['light', 'dark']).each do |perk|
-            .c-perk-img
-              = image_tag perk.image.url, title: perk.description
-      .c-tr
-        - @perks.where(tier: @char.name, name: ['light', 'dark']).each do |perk|
-          .c-perk-img
-            = image_tag perk.image.url, title: perk.description
+      = render 'perk'
 
 hr
   .c-background

@@ -1,46 +1,45 @@
-- @skills.where(char: @char).order('skill_number ASC').each do |skill|
-  - if skill.parent_id.blank?
-    div
-      .c-perk-img
-        = image_tag skill.image.url
-        .skill-description
-          .p1
-            b
+.c-tr
+  - @skills.where(char: @char).order('skill_number ASC').each do |skill|
+    - if skill.parent_id.blank?
+      div
+        .c-perk-img
+          = image_tag skill.image.url
+          .skill-description
+            .p1
               = skill.name
-          .p2
-            - if skill.mana.blank?
-              | Passive
-            - else
-              | Mana cost:
-              - skill.mana.times do
-                = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
-          - if !skill.cooldown.blank?
-            .p3
-              | Cooldown: 
-              = skill.cooldown
-          .p4
-            = skill.description
-      - @skills.where(parent_id: skill.id).each do |skill|
-        - if !skill.parent_id.blank?
-          .c-perk-img
-            = image_tag skill.image.url
-            .skill-description
-              .p1
-                b
+            .p2
+              - if skill.mana.blank?
+                | Passive
+              - else
+                | Mana cost:
+                - skill.mana.times do
+                  = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
+            - if !skill.cooldown.blank?
+              .p3
+                | Cooldown: 
+                = skill.cooldown
+            .p4
+              = skill.description
+        - @skills.where(parent_id: skill.id).each do |skill|
+          - if !skill.parent_id.blank?
+            .c-perk-img
+              = image_tag skill.image.url
+              .skill-description
+                .p1
                   = skill.name
-              .p2
-                - if skill.mana.blank?
-                  | Passive
-                - else
-                  | Mana cost: 
-                  - if skill.mana == 0
-                    | 0
+                .p2
+                  - if skill.mana.blank?
+                    | Passive
                   - else
-                    - skill.mana.times do
-                      = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
-              - if !skill.cooldown.blank?
-                .p3
-                  | Cooldown: 
-                  = skill.cooldown
-              .p4
-                = skill.description
+                    | Mana cost: 
+                    - if skill.mana == 0
+                      | 0
+                    - else
+                      - skill.mana.times do
+                        = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
+                - if !skill.cooldown.blank?
+                  .p3
+                    | Cooldown: 
+                    = skill.cooldown
+                .p4
+                  = skill.description
