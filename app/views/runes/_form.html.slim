@@ -1,4 +1,4 @@
-= simple_form_for @stat do |f|
+= simple_form_for(@rune) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
@@ -8,19 +8,11 @@
     = f.text_field :name
   br
   .form-inputs
-    = f.label :value
-    br
-    = f.text_field :value
+    = f.input :type_gear, collection: ['armor', 'weapon', 'secondary', 'all']
   br
   .form-inputs
-    = f.label :stat_type
-    br
-    = f.text_field :stat_type
+    = f.input :tier, collection: ['common', 'uncommon', 'rare', 'heroic', 'ancient']
   br
-  .form-inputs
-    br
-    = f.association :role
 
-  br
   .form-actions
     = f.button :submit

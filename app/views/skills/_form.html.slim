@@ -6,29 +6,30 @@
         - @skill.errors.full_messages.each do |message|
           li = message
 
-  .form
+  .form-inputs
     = f.label :name
     br
     = f.text_field :name
   br
-  .form
+  .form-inputs
     = f.label :description
     br
     = f.text_field :description
   br
-  .form
+  .form-inputs
     = f.label :image
     br
     = f.file_field :image
   br
-  .form
+  .form-inputs
     = f.label :mana
     br
     = f.text_field :mana
   br
-  .form
+  .form-inputs
     br
     = f.association :char, collection: Char.order(:name)
 
   br
-  .actions = f.submit
+  .form-actions
+    = f.button :submit

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_130248) do
+ActiveRecord::Schema.define(version: 2020_04_02_174613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2020_04_01_130248) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["slug"], name: "index_roles_on_slug", unique: true
+  end
+
+  create_table "runes", force: :cascade do |t|
+    t.string "name"
+    t.string "value", default: [], array: true
+    t.string "type_gear"
+    t.string "tier"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "skills", force: :cascade do |t|

@@ -1,0 +1,17 @@
+h1 Listing runes
+
+#centr
+  - @runes.each do |rune|
+    = rune.name
+    br
+    - rune.value.each do |val|
+      = val
+      |  
+    br
+    = rune.tier
+    br
+    = rune.type_gear
+    hr
+
+
+= link_to 'New Rune', new_rune_path
