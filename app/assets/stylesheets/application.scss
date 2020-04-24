@@ -4,6 +4,9 @@
 
 .h-title {
   display: flex;
+  cursor: pointer;
+  justify-content: center;
+
   img {
     width: 20px;
     height: 20px;
@@ -20,8 +23,7 @@
 }
 
 .h-main {
-  display: flex;
-  flex-wrap: wrap;
+  display: none;
 
   .h-char {
     margin: 10px;
