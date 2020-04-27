@@ -1,4 +1,4 @@
-= form_for @perk do |f|
+= simple_form_for @perk do |f|
   - if @perk.errors.any?
     #error_explanation
       h2 = "#{pluralize(@perk.errors.count, "error")} prohibited this perk from being saved:"

@@ -23,5 +23,8 @@ hr
     p
       | Cooldown: 
       = @skill.cooldown
+    p
+      | Skill: 
+      = @skill.skill_number.to_i
   .p-title
     = @skill.char.name

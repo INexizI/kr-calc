@@ -1,5 +1,8 @@
 h1 Skills
 
+= link_to 'New Skill', new_skill_path
+hr
+
 .main
   .s-main
     - @chars.order('name ASC').each do |c|
@@ -9,6 +12,3 @@ h1 Skills
           .s-image
             = link_to skill, title: skill.name do
               = image_tag skill.image.url
-
-br
-= link_to 'New Skill', new_skill_path

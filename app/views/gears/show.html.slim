@@ -1,6 +1,18 @@
-p#notice = notice
-
-
 => link_to 'Edit', edit_gear_path(@gear)
-'|
+'&bull;
 =< link_to 'Back', gears_path
+
+hr
+
+div
+  p
+    = @gear.set
+  p
+    = @gear.tier
+  p
+    = @gear.name
+  p
+    = @gear.description
+  p
+    - if @gear.image?
+      = image_tag @gear.image.url

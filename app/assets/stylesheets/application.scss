@@ -239,3 +239,22 @@ input {
     margin: 5px;
   }
 }
+
+/*
+  Rune
+*/
+
+.r {
+  display: flex;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  span {
+    font-size: 1.8em;
+    font-weight: bold;
+    padding: 0 5px;
+  }
+}

@@ -1,7 +1,7 @@
 h1 Perks
 
 .main
-  h3. T1 Generic
+  h3 T1 Generic
   .p-main
     - @perks.where(tier: 'Generic').each do |perk|
       .p-perk
@@ -9,7 +9,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Knight
+  h3 T2 Knight
   .p-main
     - @perks.where(tier: 'Knight').each do |perk|
       .p-perk
@@ -17,7 +17,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Warrior
+  h3 T2 Warrior
   .p-main
     - @perks.where(tier: 'Warrior').each do |perk|
       .p-perk
@@ -25,7 +25,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Assassin
+  h3 T2 Assassin
   .p-main
     - @perks.where(tier: 'Assassin').each do |perk|
       .p-perk
@@ -33,7 +33,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Archer
+  h3 T2 Archer
   .p-main
     - @perks.where(tier: 'Archer').each do |perk|
       .p-perk
@@ -41,7 +41,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Mechanic
+  h3 T2 Mechanic
   .p-main
     - @perks.where(tier: 'Mechanic').each do |perk|
       .p-perk
@@ -49,7 +49,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Wizard
+  h3 T2 Wizard
   .p-main
     - @perks.where(tier: 'Wizard').each do |perk|
       .p-perk
@@ -57,7 +57,7 @@ h1 Perks
           = link_to perk, title: perk.name do
             = image_tag perk.image.url
 
-  h3. T2 Priest
+  h3 T2 Priest
   .p-main
     - @perks.where(tier: 'Priest').each do |perk|
       .p-perk

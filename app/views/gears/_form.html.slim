@@ -1,4 +1,4 @@
-= form_for @gear do |f|
+= simple_form_for @gear do |f|
   - if @gear.errors.any?
     #error_explanation
       h2 = "#{pluralize(@gear.errors.count, "error")} prohibited this gear from being saved:"
@@ -6,4 +6,26 @@
         - @gear.errors.full_messages.each do |message|
           li = message
 
+  .form
+    = f.label :name
+    br
+    = f.text_field :name
+
+  .form
+    = f.label :description
+    br
+    = f.text_field :description
+
+  .form
+    = f.label :image
+    br
+    = f.file_field :image
+  br
+  .form
+    = f.input :set, collection: ['T6', 'T7', 'T8']
+
+  .form
+    = f.input :set, collection: ['Beast of Chaos', 'Dark Legion', 'Hero Protection', 'Hero Suppression', 'Legendary', 'Lava', 'Swift Darkness', 'Unrelenting Poison', 'Gritty Frost', 'Opportune Fire']
+
+  br
   .actions = f.submit

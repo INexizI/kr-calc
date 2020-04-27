@@ -10,22 +10,26 @@
     = f.label :name
     br
     = f.text_field :name
-  br
   .form-inputs
     = f.label :description
     br
     = f.text_field :description
-  br
   .form-inputs
     = f.label :image
     br
     = f.file_field :image
-  br
   .form-inputs
     = f.label :mana
     br
     = f.text_field :mana
-  br
+  .form-inputs
+    = f.label :cooldown
+    br
+    = f.text_field :cooldown
+  .form-inputs
+    = f.label :skill_number
+    br
+    = f.text_field :skill_number
   .form-inputs
     br
     = f.association :char, collection: Char.order(:name)
