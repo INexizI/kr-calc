@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_02_174613) do
+ActiveRecord::Schema.define(version: 2020_04_28_110957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,9 @@ ActiveRecord::Schema.define(version: 2020_04_02_174613) do
     t.string "set"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "gear_type"
+    t.bigint "char_id"
+    t.index ["char_id"], name: "index_gears_on_char_id"
   end
 
   create_table "perks", force: :cascade do |t|
@@ -130,6 +133,7 @@ ActiveRecord::Schema.define(version: 2020_04_02_174613) do
   end
 
   add_foreign_key "chars", "roles"
+  add_foreign_key "gears", "chars"
   add_foreign_key "skills", "chars"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"

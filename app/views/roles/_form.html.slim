@@ -6,15 +6,15 @@
         - @role.errors.full_messages.each do |message|
           li = message
 
-  .form
+  .form-inputs
     = f.label :name
     = f.text_field :name
 
-  .form
+  .form-inputs
     = f.label :image
     = f.file_field :image
 
-  .form
+  .form-inputs
     = f.association :stats, multiple: true
 
   br

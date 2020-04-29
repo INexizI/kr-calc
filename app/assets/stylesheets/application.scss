@@ -258,3 +258,22 @@ input {
     padding: 0 5px;
   }
 }
+
+/*
+  Gear
+*/
+
+.g-main {
+  .g-sub {
+    div {
+      display: flex;
+      a {
+        display: block;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+    }
+  }
+}
