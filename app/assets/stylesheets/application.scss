@@ -265,8 +265,19 @@ input {
 
 .g-main {
   .g-sub {
+    h3 {
+      text-align: center;
+    }
+    .h-title {
+      padding: 5px 0;
+    }
+    .h-main {
+      a {
+        margin: 0 auto;
+      }
+    }
     div {
-      display: flex;
+      // display: flex;
       a {
         display: block;
         img {
