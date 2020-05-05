@@ -272,14 +272,36 @@ input {
       padding: 5px 0;
     }
     .h-main {
-      a {
-        margin: 0 auto;
+      margin: 0 auto;
+
+      .h-gear {
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+          margin: 0 5px;
+        }
+      }
+      .g-ut {
+        width: -webkit-fill-available;
+        padding: 5px;
+
+        p {
+          margin: 0;
+          justify-content: center;
+          display: flex;
+
+          a {
+            margin: 0 5px;
+          }
+        }
       }
     }
     div {
-      // display: flex;
       a {
         display: block;
+
         img {
           width: 90px;
           height: 90px;
