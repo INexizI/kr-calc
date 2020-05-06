@@ -166,10 +166,21 @@ h1 Gears
     .h-title 'Unique Treasure'
     .h-main
       - @chars.order(name: 'ASC').each do |c|
-        .g-ut
+        .g-un
           p
             = c.name
           p
-            - @gears.where(char: c).order(id: 'ASC').each do |gear|
+            - @gears.where(char: c, gear_type: '9-UT').order(id: 'ASC').each do |gear|
+              = link_to gear do
+                = image_tag gear.image.url, title: gear.name
+
+    .h-title 'Unique Weapon'
+    .h-main
+      - @chars.order(name: 'ASC').each do |c|
+        .g-un
+          p
+            = c.name
+          p
+            - @gears.where(char: c, gear_type: '10-UW').order(id: 'ASC').each do |gear|
               = link_to gear do
                 = image_tag gear.image.url, title: gear.name
