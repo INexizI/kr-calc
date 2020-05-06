@@ -13,13 +13,15 @@
     = f.text_field :value
   br
   .form-inputs
-    = f.label :stat_type
-    br
-    = f.text_field :stat_type
+    = f.input :stat_type, collection: ['class', 'base', 'rune', 'gear']
   br
   .form-inputs
     br
     = f.association :role
+  br
+  .form-inputs
+    br
+    = f.association :gear, collection: Gear.order(gear_type: 'ASC', id: 'ASC').where(tier: 'T10'), label_method: :name
 
   br
   .form-actions

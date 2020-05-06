@@ -7,6 +7,7 @@ class GearsController < ApplicationController
   end
 
   def show
+    @stats = Stat.all
   end
 
   def new
