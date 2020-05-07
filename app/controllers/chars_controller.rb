@@ -9,6 +9,7 @@ class CharsController < ApplicationController
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all
+    @gears = Gear.all
   end
 
   def new

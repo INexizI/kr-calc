@@ -268,19 +268,22 @@ input {
     h3 {
       text-align: center;
     }
-    .h-title {
+    .g-title {
+      width: fit-content;
       padding: 5px 0;
+      margin: auto;
     }
-    .h-main {
-      margin: 0 auto;
+    .g-main {
+      display: none;
 
-      .h-gear {
+      .g-gear {
         margin: auto;
         display: flex;
         flex-wrap: wrap;
 
         a {
-          margin: 0 5px;
+          padding: 0 3px;
+          margin: 0 auto;
         }
       }
       .g-un{
@@ -291,10 +294,6 @@ input {
           margin: 0;
           justify-content: center;
           display: flex;
-
-          a {
-            margin: 0 5px;
-          }
         }
       }
     }
@@ -309,4 +308,46 @@ input {
       }
     }
   }
+}
+
+.c-gear {
+  padding-top: 10px;
+
+  .c-g {
+    display: flex;
+
+    .c-gear-img {
+      margin: 3px;
+      width: 62px;
+      height: 62px;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  h4 {
+    margin: 0;
+  }
+}
+
+.gear-description {
+  width: 400px;
+  border: 1px solid;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  position: absolute;
+  margin: -35px 65px;
+  padding: 0px 5px;
+  font-family: sans-serif;
+  font-size: 1em;
+
+  p {
+    padding: 3px;
+  }
+}
+
+.c-gear-img:hover .gear-description {
+  display: block;
 }

@@ -21,7 +21,7 @@
   br
   .form-inputs
     br
-    = f.association :gear, collection: Gear.order(gear_type: 'ASC', id: 'ASC').where(tier: 'T10'), label_method: :name
+    = f.association :gear, collection: Gear.order(id: 'ASC'), label_method: :name
 
   br
   .form-actions
