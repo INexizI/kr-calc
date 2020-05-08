@@ -4,7 +4,7 @@
 
 hr
 
-div
+.g-description
   p
     = @gear.set
   p
@@ -16,12 +16,39 @@ div
   p
     = @gear.description
   p
+    - if @gear.char_id?
+      = @gear.char.role.name
+
+.g-star-button
+  .g-img
     - if @gear.image?
       = image_tag @gear.image.url
-  p
+  .g-button
+    button.bt0
+      | 0★
+    button.bt1
+      | 1★
+    button.bt2
+      | 2★
+    button.bt3
+      | 3★
+    button.bt4
+      | 4★
+    button.bt5
+      | 5★
+
+  .g-stat
     - @stats.where(gear_id: @gear.id).each do |s|
       = s.name
-      br
-      = s.value
-  p
-    = @gear.char.role.name
+      p#bt0
+        = s.value
+      p#bt1
+        = s.star_1
+      p#bt2
+        = s.star_2
+      p#bt3
+        = s.star_3
+      p#bt4
+        = s.star_4
+      p#bt5
+        = s.star_5

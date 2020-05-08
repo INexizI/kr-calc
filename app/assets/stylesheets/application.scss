@@ -272,6 +272,7 @@ input {
       width: fit-content;
       padding: 5px 0;
       margin: auto;
+      cursor: pointer;
     }
     .g-main {
       display: none;
@@ -350,4 +351,26 @@ input {
 
 .c-gear-img:hover .gear-description {
   display: block;
+}
+
+.g-star-button {
+  .g-button {
+    button {
+      // width: 30px;
+      // height: 30px;
+      border: 1px solid;
+      // border-radius: 20px;
+      margin: 3px;
+      outline: none;
+      background: #f0f0f0;
+    }
+    .b-act {
+      background: #808080;
+    }
+  }
+}
+.g-stat {
+  p {
+    display: none;
+  }
 }
