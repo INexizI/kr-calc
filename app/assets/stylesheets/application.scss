@@ -264,6 +264,8 @@ input {
 */
 
 .g-main {
+  justify-content: center;
+
   .g-sub {
     h3 {
       text-align: center;
@@ -278,7 +280,7 @@ input {
       display: none;
 
       .g-gear {
-        margin: auto;
+        // margin: auto;
         display: flex;
         flex-wrap: wrap;
 
@@ -297,6 +299,9 @@ input {
           display: flex;
         }
       }
+    }
+    #cl {
+      margin: 0 5px;
     }
     div {
       a {

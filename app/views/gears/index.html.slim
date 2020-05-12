@@ -184,3 +184,14 @@ h1 Gears
             - @gears.where(char: c, gear_type: '10-UW').order(id: 'ASC').each do |gear|
               = link_to gear do
                 = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Class Unique Weapon'
+    .g-main.cl
+      - @roles.order(id: 'ASC').each do |r|
+        .g-un#cl
+          p
+            = r.name
+          p
+          - @gears.where(role: r, gear_type: '10-UW').order(id: 'ASC').each do |gear|
+            = link_to gear do
+              = image_tag gear.image.url, title: gear.name

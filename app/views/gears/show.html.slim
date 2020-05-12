@@ -24,8 +24,6 @@ hr
     - if @gear.image?
       = image_tag @gear.image.url
   .g-button
-    button.bt0
-      | 0★
     button.bt1
       | 1★
     button.bt2
@@ -37,18 +35,20 @@ hr
     button.bt5
       | 5★
 
+  br
   .g-stat
     - @stats.where(gear_id: @gear.id).each do |s|
       = s.name
-      p#bt0
-        = s.value
-      p#bt1
+      div Base stat - #{s.value}
+      hr
+
+      p.bt#bt1
         = s.star_1
-      p#bt2
+      p.bt#bt2
         = s.star_2
-      p#bt3
+      p.bt#bt3
         = s.star_3
-      p#bt4
+      p.bt#bt4
         = s.star_4
-      p#bt5
+      p.bt#bt5
         = s.star_5
