@@ -7,12 +7,34 @@
         .gear-description
           p
             = gear.name
-          p
-            - @stats.where(gear_id: gear.id).each do |stat|
-              = stat.name
-              br
-              = stat.value
-
+          .g-star-button
+            - @stats.where(gear_id: gear.id).each do |s|
+              p#p0 = s.name
+              .g-stat
+                .g-stat-name
+                  p Base stat - #{s.value}
+                hr
+              .g-button
+                button.bt1 1★
+                .btn#bt1
+                  p.bt
+                    = s.star_1
+                button.bt2 2★
+                .btn#bt2
+                  p.bt
+                    = s.star_2
+                button.bt3 3★
+                .btn#bt3
+                  p.bt
+                    = s.star_3
+                button.bt4 4★
+                .btn#bt4
+                  p.bt
+                    = s.star_4
+                button.bt5 5★
+                .btn#bt5
+                  p.bt
+                    = s.star_5
 
 .c-gear
   h4 Unique Treasures
@@ -23,8 +45,31 @@
         .gear-description
           p
             = gear.name
-          p
-            - @stats.where(gear_id: gear.id).each do |stat|
-              = stat.name
-              br
-              = stat.value
+          .g-star-button
+            - @stats.where(gear_id: gear.id).each do |s|
+              p#p0 = s.name
+              .g-stat
+                .g-stat-name
+                  p Base stat - #{s.value}
+                hr
+              .g-button
+                button.bt1 1★
+                .btn#bt1
+                  p.bt
+                    = s.star_1
+                button.bt2 2★
+                .btn#bt2
+                  p.bt
+                    = s.star_2
+                button.bt3 3★
+                .btn#bt3
+                  p.bt
+                    = s.star_3
+                button.bt4 4★
+                .btn#bt4
+                  p.bt
+                    = s.star_4
+                button.bt5 5★
+                .btn#bt5
+                  p.bt
+                    = s.star_5
