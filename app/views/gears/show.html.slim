@@ -23,32 +23,23 @@ hr
   .g-img
     - if @gear.image?
       = image_tag @gear.image.url
-  .g-button
-    button.bt1
-      | 1★
-    button.bt2
-      | 2★
-    button.bt3
-      | 3★
-    button.bt4
-      | 4★
-    button.bt5
-      | 5★
 
-  br
-  .g-stat
-    - @stats.where(gear_id: @gear.id).each do |s|
-      = s.name
-      div Base stat - #{s.value}
-      hr
+  - @stats.where(gear_id: @gear.id).each do |s|
+      span = s.name
+      .g-stat
+        .g-stat-name
+          span Base stat - #{s.value}
 
-      p.bt#bt1
-        = s.star_1
-      p.bt#bt2
-        = s.star_2
-      p.bt#bt3
-        = s.star_3
-      p.bt#bt4
-        = s.star_4
-      p.bt#bt5
-        = s.star_5
+      .g-button
+        .g-btn
+          button.bt1 1★
+          button.bt2 2★
+          button.bt3 3★
+          button.bt4 4★
+          button.bt5 5★
+        .g-val
+          p#bt1.btn = s.star_1
+          p#bt2.btn = s.star_2
+          p#bt3.btn = s.star_3
+          p#bt4.btn = s.star_4
+          p#bt5.btn = s.star_5
