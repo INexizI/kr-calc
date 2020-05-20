@@ -5,5 +5,6 @@ require("channels")
 require("jquery-ui")
 require("packs/char")
 require("packs/gear")
+require("packs/calc")
 
 console.log('Webpacker loaded')

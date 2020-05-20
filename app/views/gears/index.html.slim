@@ -1,6 +1,6 @@
 = link_to root_path do
   = image_tag '/images/home.svg'
-  
+
 h1 Gears
 
 .g-main
@@ -173,7 +173,7 @@ h1 Gears
           p
             = c.name
           p
-            - @gears.where(char: c, gear_type: '9-UT').order(id: 'ASC').each do |gear|
+            - @gears.where(char: c, gear_type: '9-UT').each do |gear|
               = link_to gear do
                 = image_tag gear.image.url, title: gear.name
 
@@ -184,7 +184,7 @@ h1 Gears
           p
             = c.name
           p
-            - @gears.where(char: c, gear_type: '10-UW').order(id: 'ASC').each do |gear|
+            - @gears.where(char: c, gear_type: '10-UW').each do |gear|
               = link_to gear do
                 = image_tag gear.image.url, title: gear.name
 
@@ -195,6 +195,6 @@ h1 Gears
           p
             = r.name
           p
-          - @gears.where(role: r, gear_type: '10-UW').order(id: 'ASC').each do |gear|
+          - @gears.where(role: r, gear_type: '10-UW').each do |gear|
             = link_to gear do
               = image_tag gear.image.url, title: gear.name

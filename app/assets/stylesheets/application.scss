@@ -80,6 +80,7 @@
 
 .c-main {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .c-background {
@@ -129,6 +130,14 @@
       grid-template:
           "item1 item2 item3 item4"
           "item5 item6 item7 item8";
+    }
+  }
+  .c-stat {
+    p {
+      margin: 3px;
+    }
+    #c-stat {
+      text-align: center;
     }
   }
 }
@@ -257,7 +266,7 @@ input {
 */
 
 .r-stat {
-  width: 250px;
+  // width: 160px;
   text-align: center;
   display: grid;
   grid-template: "item1 item2";

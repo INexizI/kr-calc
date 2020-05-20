@@ -1,0 +1,20 @@
+h1 Calculator
+
+div
+  div
+    = simple_form_for :char do |f|
+      = f.input :name, collection: Char.order('name ASC'), label: 'Select Hero'
+
+      .calc-stat
+    br
+  div
+    = simple_form_for :calc, url: { action: :new }, method: :get do |f|
+      = number_field_tag :a, params[:a]
+      = select_tag :operation, options_for_select([['+', :sum], ['-', :subtr], ['*', :multiple], ['/', :divide]], params[:operation])
+      = number_field_tag :b, params[:b]
+      hr
+      = f.submit 'Calculate!'
+
+    div
+      - unless @result.nil?
+        p = @result

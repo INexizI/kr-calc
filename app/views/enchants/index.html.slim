@@ -1,0 +1,19 @@
+h1 Listing enchants
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @enchants.each do |enchant|
+      tr
+        td = link_to 'Show', enchant
+        td = link_to 'Edit', edit_enchant_path(enchant)
+        td = link_to 'Destroy', enchant, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Enchant', new_enchant_path
