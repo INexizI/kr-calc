@@ -1,11 +1,20 @@
 h1 Calculator
 
 div
-  div
-    = simple_form_for :char do |f|
-      = f.input :name, collection: Char.order('name ASC'), label: 'Select Hero'
+  .from-calc
+    = simple_form_for :calc do |f|
+      div
+        /= f.input :name, collection: Char.order('name ASC'), label: 'Select Hero'
+        span Select Role
+        = f.collection_select :role_id, Role.order('id ASC'), :id, :name, include_blank: true
+      br
+      div
+        /= f.input :name, collection: Role.order('id ASC'), label: 'Select Class'
+        span Select Hero
+        = f.grouped_collection_select :char_id, Role.order('id ASC'), :chars, :name, :id, :name, include_blank: true
 
-      .calc-stat
+    .char-id
+    .role-id
     br
   div
     = simple_form_for :calc, url: { action: :new }, method: :get do |f|
