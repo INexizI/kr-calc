@@ -3,27 +3,30 @@ h1 Calculator
 div
   .from-calc
     = simple_form_for :calc do |f|
-      div
-        /= f.input :name, collection: Char.order('name ASC'), label: 'Select Hero'
+      .form-input
         span Select Role
         = f.collection_select :role_id, Role.order('id ASC'), :id, :name, include_blank: true
       br
-      div
-        /= f.input :name, collection: Role.order('id ASC'), label: 'Select Class'
+      .form-input
         span Select Hero
         = f.grouped_collection_select :char_id, Role.order('id ASC'), :chars, :name, :id, :name, include_blank: true
+      br
+      .class-stats
+        - @roles.each do |r|
+          . class='role#{r.id}'
+            - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').each do |s|
+              .r-stat
+                p = s.name
+                p = s.value
 
-    .char-id
-    .role-id
-    br
-  div
-    = simple_form_for :calc, url: { action: :new }, method: :get do |f|
-      = number_field_tag :a, params[:a]
-      = select_tag :operation, options_for_select([['+', :sum], ['-', :subtr], ['*', :multiple], ['/', :divide]], params[:operation])
-      = number_field_tag :b, params[:b]
-      hr
-      = f.submit 'Calculate!'
-
-    div
-      - unless @result.nil?
-        p = @result
+  /div
+  /  = simple_form_for :calc, url: { action: :new }, method: :get do |f|
+  /    = number_field_tag :a, params[:a]
+  /    = select_tag :operation, options_for_select([['+', :sum], ['-', :subtr], ['*', :multiple], ['/', :divide]], params[:operation])
+  /    = number_field_tag :b, params[:b]
+  /    hr
+  /    = f.submit 'Calculate!'
+  /
+  /  div
+  /    - unless @result.nil?
+  /      p = @result

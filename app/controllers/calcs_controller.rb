@@ -1,6 +1,7 @@
 class CalcsController < ApplicationController
   def index
     @chars = Char.order('name ASC')
+    @roles = Role.all
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all
@@ -9,6 +10,7 @@ class CalcsController < ApplicationController
 
   def new
     @chars = Char.order('name ASC')
+    @roles = Role.all
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all
