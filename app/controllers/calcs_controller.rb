@@ -1,7 +1,7 @@
 class CalcsController < ApplicationController
   def index
     @chars = Char.order('name ASC')
-    @roles = Role.all
+    @roles = Role.order('id ASC')
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all
@@ -9,14 +9,10 @@ class CalcsController < ApplicationController
   end
 
   def new
-    @chars = Char.order('name ASC')
-    @roles = Role.all
-    @perks = Perk.all
-    @skills = Skill.all
-    @stats = Stat.all
-    @gears = Gear.all
+    # @result = Calc.send(params[:operation], *[params[:a], params[:b]])
+    # render :index
+  end
 
-    @result = Calc.send(params[:operation], *[params[:a], params[:b]])
-    render :index
+  def create
   end
 end
