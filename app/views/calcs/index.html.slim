@@ -32,14 +32,16 @@ h1 Calculator
       . class='role#{r.id}'
         - @gears.where(role_id: r.id, gear_type: '10-UW').order('id ASC').find_each do |g|
           div
-            p = g.name
-            p = image_tag g.image.url
+            .gear-img
+              p = image_tag g.image.url
+              p = g.name
             .g-star-button
               - @stats.where(gear_id: g.id).each do |s|
-                p#p0 = s.name
-                .g-stat
-                  .g-stat-name
-                    p Base stat - #{s.value}
+                .g-stat-name
+                  p#p0 = s.name
+                  .g-stat
+                    p
+                      | (Base stat - #{s.value})
                 .g-button
                   .g-btn
                     button.bt1 1★
@@ -58,14 +60,16 @@ h1 Calculator
       . class='char#{c.id}'
         - @gears.where(char_id: c.id, gear_type: '10-UW').order('id ASC').find_each do |g|
           div
-            p = g.name
-            p = image_tag g.image.url
+            .gear-img
+              p = image_tag g.image.url
+              p = g.name
             .g-star-button
               - @stats.where(gear_id: g.id).each do |s|
-                p#p0 = s.name
-                .g-stat
-                  .g-stat-name
-                    p Base stat - #{s.value}
+                .g-stat-name
+                  p#p0 = s.name
+                  .g-stat
+                    p
+                      | (Base stat - #{s.value})
                 .g-button
                   .g-btn
                     button.bt1 1★
@@ -79,17 +83,19 @@ h1 Calculator
                     p#bt3.btn = s.star_3
                     p#bt4.btn = s.star_4
                     p#bt5.btn = s.star_5
-      hr
+
       - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').find_each do |g|
         div
-          p = g.name
-          p = image_tag g.image.url
+          .gear-img
+            p = image_tag g.image.url
+            p = g.name
           .g-star-button
             - @stats.where(gear_id: g.id).each do |s|
-              p#p0 = s.name
-              .g-stat
-                .g-stat-name
-                  p Base stat - #{s.value}
+              .g-stat-name
+                p#p0 = s.name
+                .g-stat
+                  p
+                    | (Base stat - #{s.value})
               .g-button
                 .g-btn
                   button.bt1 1★

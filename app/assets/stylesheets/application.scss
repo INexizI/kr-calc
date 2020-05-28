@@ -471,25 +471,66 @@ h4 {
   text-align: center;
   justify-content: center;
   width: 100%;
+  height: 150px;
   margin: auto;
 
   #calc {
     margin: auto 50px;
+    min-width: 350px;
   }
   .from-calc {
     width: 200px;
     height: 150px;
   }
-  .class-stats {
+  .class-stats > div:nth-child(n) {
     display: none;
   }
-  .hero-gear {
+  .hero-gear > div:nth-child(n) {
     display: none;
-    width: 300px;
-    height: 300px;
 
-    .g-button {
-      display: block;
+    p {
+      margin: 0;
+    }
+    .gear-img {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+      p:first-child {
+        padding: 0;
+      }
+      p:last-child {
+        padding: 18px 5px;
+      }
+    }
+    .g-star-button {
+      .g-button {
+        display: flex;
+        width: 250px;
+        margin: 0 auto;
+
+        .g-val {
+          p {
+            padding: 11px 3px;
+          }
+        }
+      }
+      .g-stat-name {
+        display: flex;
+        justify-content: center;
+
+        p {
+          padding: 0 5px;
+        }
+        .g-stat {
+          p {
+            display: block;
+          }
+        }
+      }
     }
   }
 }

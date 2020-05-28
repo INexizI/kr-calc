@@ -18,26 +18,26 @@
     $('#calc_role_id').change(function() {
       // Hero stuff
       $('#calc_char_id').parent().hide();
-      $('.class-stats').hide();
+      $('.class-stats').children().hide();
       // Gear stuff
       $('#calc_gear_weapon').parent().hide();
-      $('.hero-gear').hide();
+      $('.hero-gear').children().hide();
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
       $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
       if ($options) {
         $('#calc_char_id').html($options);
-        $('.class-stats').show();
+        $('.class-stats').children().show();
         return $('#calc_char_id').parent().show();
       } else {
         $('#calc_char_id').empty();
         return $('#calc_char_id').parent().hide();
       }
     });
-    
+
     // Hero -> Weapon
     $('#calc_char_id').change(function() {
-      $('.hero-gear').show();
+      $('.hero-gear').children().show();
       $('#calc_gear_weapon').parent().show();
       $('#calc_gear_weapon').val([]);
       $('.hero-gear').children().hide();
