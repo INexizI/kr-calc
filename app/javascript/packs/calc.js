@@ -47,8 +47,12 @@
       $('.hero-gear').children().show();
       $('#calc_gear_weapon').parent().show();
       $('#calc_gear_treasure').parent().show();
+      $('#calc_gear_armor').parent().show();
+      $('#calc_gear_secondary').parent().show();
       $('#calc_gear_weapon').val([]);
       $('#calc_gear_treasure').val([]);
+      $('#calc_gear_armor').val([]);
+      $('#calc_gear_secondary').val([]);
       $('.hero-gear').children().hide();
     });
 
@@ -119,6 +123,93 @@
           $qwe = $('.char' + $cVal).toggle();
           $($qwe).find('.ut').hide();
           $($qwe).find('.mana').hide();
+        }
+      }
+    }).change();
+
+    // Armor
+    $('select#calc_gear_armor').change(function() {
+      $('.g-armor').children().hide();
+      $rVal = $('.role').text();
+      $arVal = $('#calc_gear_armor').children('option:selected').val();
+      if ($arVal == 'T6') {
+        $('.g-armor .g-ar-t6').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-ar-t6 #g-ar-l').hide();
+          $('.g-ar-t6 #g-ar-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-ar-t6 #g-ar-h').hide();
+          $('.g-ar-t6 #g-ar-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-ar-t6 #g-ar-h').hide();
+          $('.g-ar-t6 #g-ar-l').hide();
+        }
+      } else if ($arVal == 'T7') {
+        $('.g-armor .g-ar-t7').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-ar-t7 #g-ar-l').hide();
+          $('.g-ar-t7 #g-ar-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-ar-t7 #g-ar-h').hide();
+          $('.g-ar-t7 #g-ar-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-ar-t7 #g-ar-h').hide();
+          $('.g-ar-t7 #g-ar-l').hide();
+        }
+      } else if ($arVal == 'T8') {
+        $('.g-armor .g-ar-t8').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-ar-t8 #g-ar-l').hide();
+          $('.g-ar-t8 #g-ar-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-ar-t8 #g-ar-h').hide();
+          $('.g-ar-t8 #g-ar-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-ar-t8 #g-ar-h').hide();
+          $('.g-ar-t8 #g-ar-l').hide();
+        }
+      }
+    }).change();
+    // Secondary
+    $('select#calc_gear_secondary').change(function() {
+      $('.g-secondary').children().hide();
+      $rVal = $('.role').text();
+      $arVal = $('#calc_gear_secondary').children('option:selected').val();
+      if ($arVal == 'T6') {
+        $('.g-secondary .g-sg-t6').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-sg-t6 #g-sg-l').hide();
+          $('.g-sg-t6 #g-sg-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-sg-t6 #g-sg-h').hide();
+          $('.g-sg-t6 #g-sg-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-sg-t6 #g-sg-h').hide();
+          $('.g-sg-t6 #g-sg-l').hide();
+        }
+      } else if ($arVal == 'T7') {
+        $('.g-secondary .g-sg-t7').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-sg-t7 #g-sg-l').hide();
+          $('.g-sg-t7 #g-sg-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-sg-t7 #g-sg-h').hide();
+          $('.g-sg-t7 #g-sg-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-sg-t7 #g-sg-h').hide();
+          $('.g-sg-t7 #g-sg-l').hide();
+        }
+      } else if ($arVal == 'T8') {
+        $('.g-secondary .g-sg-t8').toggle();
+        if ($rVal == 1 || 2) {
+          $('.g-sg-t8 #g-sg-l').hide();
+          $('.g-sg-t8 #g-sg-i').hide();
+        } else if ($rVal == 3 || 4 || 5) {
+          $('.g-sg-t8 #g-sg-h').hide();
+          $('.g-sg-t8 #g-sg-i').hide();
+        } else if ($rVal == 6 || 7) {
+          $('.g-sg-t8 #g-sg-h').hide();
+          $('.g-sg-t8 #g-sg-l').hide();
         }
       }
     }).change();
