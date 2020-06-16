@@ -1,0 +1,59 @@
+.c-gear
+  h4 Unique Weapon
+  .c-g
+    - @gears.where(char: @char).where(gear_type: '10-UW').each do |gear|
+      .c-gear-img
+        = image_tag gear.image.url
+        .gear-description
+          p
+            = gear.name
+          .g-star-button
+            - @stats.where(gear_id: gear.id).each do |s|
+              p#p0 = s.name
+              .g-stat
+                .g-stat-name
+                  p Base stat - #{s.value}
+
+              .g-button
+                .g-btn
+                  button.bt1 1★
+                  button.bt2 2★
+                  button.bt3 3★
+                  button.bt4 4★
+                  button.bt5 5★
+                .g-val
+                  p#bt1.btn = s.star_1
+                  p#bt2.btn = s.star_2
+                  p#bt3.btn = s.star_3
+                  p#bt4.btn = s.star_4
+                  p#bt5.btn = s.star_5
+
+.c-gear
+  h4 Unique Treasures
+  .c-g
+    - @gears.where(char: @char).where(gear_type: '9-UT').each do |gear|
+      .c-gear-img
+        = image_tag gear.image.url
+        .gear-description
+          p
+            = gear.name
+          .g-star-button
+            - @stats.where(gear_id: gear.id).each do |s|
+              p#p0 = s.name
+              .g-stat
+                .g-stat-name
+                  p Base stat - #{s.value}
+
+              .g-button
+                .g-btn
+                  button.bt1 1★
+                  button.bt2 2★
+                  button.bt3 3★
+                  button.bt4 4★
+                  button.bt5 5★
+                .g-val
+                  p#bt1.btn = s.star_1
+                  p#bt2.btn = s.star_2
+                  p#bt3.btn = s.star_3
+                  p#bt4.btn = s.star_4
+                  p#bt5.btn = s.star_5

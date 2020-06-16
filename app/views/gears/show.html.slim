@@ -1,10 +1,10 @@
-=> link_to 'Edit', edit_gear_path(@gear)
+=> link_to 'Back', gears_path
 '&bull;
-=< link_to 'Back', gears_path
+=< link_to 'Edit', edit_gear_path(@gear)
 
 hr
 
-div
+.g-description
   p
     = @gear.set
   p
@@ -16,5 +16,30 @@ div
   p
     = @gear.description
   p
+    - if @gear.char_id?
+      = @gear.char.role.name
+
+.g-star-button
+  .g-img
     - if @gear.image?
       = image_tag @gear.image.url
+
+  - @stats.where(gear_id: @gear.id).each do |s|
+      span = s.name
+      .g-stat
+        .g-stat-name
+          span Base stat - #{s.value}
+
+      .g-button
+        .g-btn
+          button.bt1 1★
+          button.bt2 2★
+          button.bt3 3★
+          button.bt4 4★
+          button.bt5 5★
+        .g-val
+          p#bt1.btn = s.star_1
+          p#bt2.btn = s.star_2
+          p#bt3.btn = s.star_3
+          p#bt4.btn = s.star_4
+          p#bt5.btn = s.star_5

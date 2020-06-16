@@ -1,3 +1,6 @@
+= link_to root_path do
+  = image_tag '/images/home.svg'
+
 h1 Hero
 
 .main
@@ -15,8 +18,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -33,8 +38,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -51,8 +58,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -69,8 +78,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -87,8 +98,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -105,8 +118,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 hr
 
 .main
@@ -123,8 +138,10 @@ hr
           .h-name
             = char.name
           .h-type
-            - if char.icon?
-              = image_tag char.icon.url, title: char.type_dmg
+            - if char.type_dmg == 'Physical'
+              = image_tag '/images/media/physical.png', title: char.type_dmg
+            - else
+              = image_tag '/images/media/magical.png', title: char.type_dmg
 
 hr
 = link_to 'New Hero', new_char_path

@@ -1,0 +1,2 @@
+module EnchantsHelper
+end

@@ -1,6 +1,10 @@
+= link_to root_path do
+  = image_tag '/images/home.svg'
+
 .r
   = image_tag '/images/media/rune.png'
   span Runes
+br
 
 #centr
   - @runes.each do |rune|

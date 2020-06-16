@@ -1,0 +1,21 @@
+= simple_form_for(@enchant) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :name, collection: ['Flame Enchant Scroll', 'Frost Enchant Scroll', 'Poison Enchant Scroll', 'Darkness Enchant Scroll']
+  br
+  .form-inputs
+    = f.label :value
+    br
+    = f.text_field :value
+  br
+  .form-inputs
+    = f.input :tier, collection: ['rare', 'heroic', 'ancient', 'legendary']
+  br
+  .form-inputs
+    = f.input :set, collection: ['fire', 'frost', 'poison', 'darkness']
+  br
+
+  .form-actions
+    = f.button :submit

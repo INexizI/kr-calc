@@ -10,23 +10,19 @@ hr
       = image_tag @char.avatar.url
       .c-title
         p = image_tag @char.role.image.url, title: @char.role.name
-        p = image_tag @char.icon.url, title: @char.type_dmg
+        / p = image_tag @char.icon.url, title: @char.type_dmg
+        - if @char.type_dmg == 'Physical'
+          p = image_tag '/images/media/physical.png', title: @char.type_dmg
+        - else
+          p = image_tag '/images/media/magical.png', title: @char.type_dmg
         p = @char.name
 
     .c-sub
-      p Base stats
-      - @stats.where(role_id: @char.role, stat_type: 'base').each do |stat|
-        .r-stat
-          p = stat.name
-          p = stat.value
-      p Class stats
-      - @stats.where(role_id: @char.role, stat_type: 'class').each do |stat|
-        .r-stat
-          p = stat.name
-          p = stat.value
+      = render 'stat'
 
     .c-sub#c-skill
       = render 'skill'
+      = render 'gear'
 
     .c-sub
       = render 'perk'

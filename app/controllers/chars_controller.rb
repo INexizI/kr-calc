@@ -9,6 +9,7 @@ class CharsController < ApplicationController
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all
+    @gears = Gear.all
   end
 
   def new
@@ -58,6 +59,6 @@ class CharsController < ApplicationController
     end
 
     def char_params
-      params.require(:char).permit(:name, :description, :avatar, :background, :type_dmg, :icon, :role)
+      params.require(:char).permit(:name, :description, :avatar, :background, :type_dmg, :icon, :role_id)
     end
 end

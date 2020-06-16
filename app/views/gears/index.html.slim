@@ -1,175 +1,200 @@
+= link_to root_path do
+  = image_tag '/images/home.svg'
+
 h1 Gears
 
 .g-main
   .g-sub
     h3 T6
-    .h-title 'Beast of Chaos'
-    .h-main
-      .h-gear
-        - @gears.where(tier: 'T6', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
-          = link_to gear do
-            = image_tag gear.image.url, title: gear.name
-
-    .h-title 'Opportune Fire'
-    .h-main
-      .h-gear
+    .g-title 'Opportune Fire'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T6', set: 'Opportune Fire').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Gritty Frost'
-    .h-main
-      .h-gear
+    .g-title 'Gritty Frost'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T6', set: 'Gritty Frost').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Unrelenting Poison'
-    .h-main
-      .h-gear
+    .g-title 'Unrelenting Poison'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T6', set: 'Unrelenting Poison').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Swift Darkness'
-    .h-main
-      .h-gear
+    .g-title 'Swift Darkness'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T6', set: 'Swift Darkness').order(gear_type: 'ASC', id: 'ASC').each do |gear|
+          = link_to gear do
+            = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Beast of Chaos'
+    .g-main
+      .g-gear
+        - @gears.where(tier: 'T6', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
   .g-sub
     h3 T7
-    .h-title 'Beast of Chaos'
-    .h-main
-      .h-gear
-        - @gears.where(tier: 'T7', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
-          = link_to gear do
-            = image_tag gear.image.url, title: gear.name
-
-    .h-title 'Opportune Fire'
-    .h-main
-      .h-gear
+    .g-title 'Opportune Fire'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T7', set: 'Opportune Fire').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Gritty Frost'
-    .h-main
-      .h-gear
+    .g-title 'Gritty Frost'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T7', set: 'Gritty Frost').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Unrelenting Poison'
-    .h-main
-      .h-gear
+    .g-title 'Unrelenting Poison'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T7', set: 'Unrelenting Poison').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Swift Darkness'
-    .h-main
-      .h-gear
+    .g-title 'Swift Darkness'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T7', set: 'Swift Darkness').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Treasure'
-    .h-main
-      .h-gear
+    .g-title 'Beast of Chaos'
+    .g-main
+      .g-gear
+        - @gears.where(tier: 'T7', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
+          = link_to gear do
+            = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Treasure'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T7', gear_type: '9-UT').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
   .g-sub
     h3 T8
-    .h-title 'Beast of Chaos'
-    .h-main
-      .h-gear
-        - @gears.where(tier: 'T8', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
-          = link_to gear do
-            = image_tag gear.image.url, title: gear.name
-
-    .h-title 'Opportune Fire'
-    .h-main
-      .h-gear
+    .g-title 'Opportune Fire'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Opportune Fire').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Gritty Frost'
-    .h-main
-      .h-gear
+    .g-title 'Gritty Frost'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Gritty Frost').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Unrelenting Poison'
-    .h-main
-      .h-gear
+    .g-title 'Unrelenting Poison'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Unrelenting Poison').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Swift Darkness'
-    .h-main
-      .h-gear
+    .g-title 'Swift Darkness'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Swift Darkness').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Lava'
-    .h-main
-      .h-gear
+    .g-title 'Lava'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Lava').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Legendary'
-    .h-main
-      .h-gear
+    .g-title 'Legendary'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Legendary').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Hero Suppression'
-    .h-main
-      .h-gear
+    .g-title 'Hero Suppression'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Hero Suppression').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Hero Protection'
-    .h-main
-      .h-gear
+    .g-title 'Hero Protection'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Hero Protection').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Dark Legion'
-    .h-main
-      .h-gear
+    .g-title 'Dark Legion'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', set: 'Dark Legion').order(gear_type: 'ASC', id: 'ASC').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
-    .h-title 'Treasure'
-    .h-main
-      .h-gear
+    .g-title 'Beast of Chaos'
+    .g-main
+      .g-gear
+        - @gears.where(tier: 'T8', set: 'Beast of Chaos').order(gear_type: 'ASC', id: 'ASC').each do |gear|
+          = link_to gear do
+            = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Treasure'
+    .g-main
+      .g-gear
         - @gears.where(tier: 'T8', gear_type: '9-UT').each do |gear|
           = link_to gear do
             = image_tag gear.image.url, title: gear.name
 
   .g-sub
     h3 T10
-    .h-title 'Unique Treasure'
-    .h-main
+    .g-title 'Unique Treasure'
+    .g-main
       - @chars.order(name: 'ASC').each do |c|
-        .g-ut
+        .g-un
           p
             = c.name
           p
-            - @gears.where(char: c).order(id: 'ASC').each do |gear|
+            - @gears.where(char: c, gear_type: '9-UT').each do |gear|
               = link_to gear do
                 = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Unique Weapon'
+    .g-main
+      - @chars.order(name: 'ASC').each do |c|
+        .g-un
+          p
+            = c.name
+          p
+            - @gears.where(char: c, gear_type: '10-UW').each do |gear|
+              = link_to gear do
+                = image_tag gear.image.url, title: gear.name
+
+    .g-title 'Class Unique Weapon'
+    .g-main.cl
+      - @roles.order(id: 'ASC').each do |r|
+        .g-un#cl
+          p
+            = r.name
+          p
+          - @gears.where(role: r, gear_type: '10-UW').each do |gear|
+            = link_to gear do
+              = image_tag gear.image.url, title: gear.name

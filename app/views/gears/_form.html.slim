@@ -7,35 +7,70 @@
           li = message
 
   .form-inputs
-    = f.label :name
-    br
-    = f.text_field :name
-
+    = f.input :name
+    / = f.input :name, collection: ['Plate Armor',
+                                'Eternal Flame Armor',
+                                'Scale Armor',
+                                'Hell Leather Armor',
+                                'Leather Armor',
+                                'Robe',
+                                "Flame Rose's Protection",
+                                'Shield',
+                                "Evil Spirit's Helmet",
+                                'Leather Cape',
+                                'Cape',
+                                'Valiant Claw',
+                                'Leather Armguard',
+                                'Hat',
+                                'Shoes',
+                                'Flame Hood',
+                                'Ring',
+                                "Hell's Eyes",
+                                'Earrings',
+                                "Fire Dragon's Blessing",
+                                'Necklace',
+                                'Price of Arrogance',
+                                'Bracelet',
+                                'Fire Circle',
+                                'Orb',
+                                "Volcano's Heart",
+                                'Mana Stone']
   .form-inputs
-    = f.label :description
     br
-    = f.text_field :description
-
+    = f.input :description
+    / = f.input :description, collection: ['2Set:(Crit +100) 4Set:(Crit +130)',
+                                        '2Set:(Max HP +10%) 4Set:(Max HP +13%)',
+                                        '2Set:(Crit Resistance +100) 4Set:(Crit Resistance +130)',
+                                        '2Set:(MP Recovery/Attack +200) 4Set:(MP Recovery/Attack +260)',
+                                        '2Set:(Crit DMG +20%) 4Set:(Crit DMG +26%)',
+                                        '2Set:(Debuff ACC +100) 4Set:(Debuff ACC +130)',
+                                        '2Set:(Increases DMG to Heroes by 7%) 4Set:(Increases DMG to Heroes by 13%)',
+                                        '2Set:(Reduces DMG recieved from Heroes by 6%) 4Set:(Reduces DMG recieved from Heroes by 11%)',
+                                        '2Set:(Increases Crit DMG of all allies by 5%) 4Set:(Increases Crit DMG of all allies by 8%)',
+                                        '2Set:(Hero deals 12% more DMG and takes 12% less DMG from bosses) 4Set:(Hero deals 15% more DMG and takes 15% less DMG from bosses)']
   .form-inputs
-    = f.label :image
     br
-    = f.file_field :image
-
+    = f.input :image
   .form-inputs
     br
     = f.input :tier, collection: ['T6', 'T7', 'T8', 'T10']
-
   .form-inputs
     br
-    = f.input :set, collection: ['Beast of Chaos', 'Dark Legion', 'Hero Protection', 'Hero Suppression', 'Legendary', 'Lava', 'Swift Darkness', 'Unrelenting Poison', 'Gritty Frost', 'Opportune Fire']
-
+    = f.input :set, collection: ['Opportune Fire',
+                                'Gritty Frost',
+                                'Unrelenting Poison',
+                                'Swift Darkness',
+                                'Lava',
+                                'Legendary',
+                                'Hero Suppression',
+                                'Hero Protection',
+                                'Dark Legion',
+                                'Beast of Chaos']
   .form-inputs
     br
     = f.input :gear_type, collection: ['1-1H', '2-2H', '3-1L', '4-2L', '5-1I', '6-2I', '7-J', '8-O', '9-UT', '10-UW']
-
   .form-inputs
     br
     = f.association :char, collection: Char.order(:name)
-
   br
   .actions = f.submit
