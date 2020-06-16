@@ -24,7 +24,6 @@
 /config/master.key
 /config/secrets.yml
 
-/public/uploads
 /public/packs
 /public/packs-test
 /node_modules
