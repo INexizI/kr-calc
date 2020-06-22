@@ -2,7 +2,8 @@ class GearsController < ApplicationController
   before_action :set_gear, only: [:show, :edit, :update, :destroy]
 
   def index
-    @gears = Gear.all
+    # @gears = Gear.all
+    @gears = Gear.order('gear_type,id ASC')
     @chars = Char.all
     @roles = Role.all
   end

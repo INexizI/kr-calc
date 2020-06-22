@@ -1,11 +1,11 @@
 .c-stat
   h4 Stats
-  p#c-stat Base stats
+  p#c-stat
   - @stats.where(role_id: @char.role, stat_type: 'base').each do |stat|
     .r-stat
       p = stat.name
       p = stat.value
-  p#c-stat Class stats
+  p#c-stat - - - - - - - - - - - - - - - - - - - - - - 
   - @stats.where(role_id: @char.role, stat_type: 'class').each do |stat|
     .r-stat
       p = stat.name

@@ -22,9 +22,11 @@
     = f.file_field :image
 
   .form
-    = f.label :tier
+    / = f.label :tier
+    / br
+    / = f.text_field :tier
     br
-    = f.text_field :tier
+    = f.input :tier, collection: Char.order('name ASC'), value_method: :name
 
   br
   .actions = f.submit

@@ -6,7 +6,8 @@ class CharsController < ApplicationController
   end
 
   def show
-    @perks = Perk.all
+    # @perks = Perk.all
+    @perks = Perk.order('id ASC')
     @skills = Skill.all
     @stats = Stat.all
     @gears = Gear.all
