@@ -9,9 +9,8 @@ hr
 .main
   .s-main
     - @chars.order('name ASC').each do |c|
-      = c.name
+      p = c.name
       .s-skills
         - @skills.where(char_id: c.id).order('skill_number ASC').each do |skill|
           .s-image
-            = link_to skill, title: skill.name do
-              = image_tag skill.image.url
+            = link_to skill.name, skill

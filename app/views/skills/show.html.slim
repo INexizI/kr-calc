@@ -10,7 +10,7 @@ hr
   .p-description
     = @skill.description
   .p-avatar
-    = image_tag (@skill.image.url)
+    . class="s#{@skill.skill_number}"
   .p-mana
     p
       | Mana cost: 
@@ -26,5 +26,5 @@ hr
     p
       | Skill: 
       = @skill.skill_number.to_i
-  .p-title
+  .p-hero
     = @skill.char.name

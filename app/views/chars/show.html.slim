@@ -7,15 +7,14 @@ hr
 .char
   .c-main
     .c-sub#centr
-      = image_tag @char.avatar.url
+      .c-avatar
       .c-title
-        p = image_tag @char.role.image.url, title: @char.role.name
-        / p = image_tag @char.icon.url, title: @char.type_dmg
+        p#c-class = @char.role.name
         - if @char.type_dmg == 'Physical'
           p = image_tag '/images/media/physical.png', title: @char.type_dmg
         - else
           p = image_tag '/images/media/magical.png', title: @char.type_dmg
-        p = @char.name
+        p#c-name = @char.name
 
     .c-sub
       = render 'stat'
