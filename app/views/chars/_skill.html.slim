@@ -5,7 +5,7 @@
       - if skill.parent_id.blank?
         div
           .c-perk-img
-            #sk-img class="s#{skill.skill_number}"
+            img src="/images/media/heroes/#{@char.name}/s#{skill.skill_number}.png"
             .skill-description
               .p1
                 = skill.name
@@ -25,7 +25,7 @@
           - @skills.where(parent_id: skill.id).each do |skill|
             - if !skill.parent_id.blank?
               .c-perk-img
-                #sk-img class="s#{skill.skill_number}"
+                img src="/images/media/heroes/#{@char.name}/s#{skill.skill_number}.png"
                 .skill-description
                   .p1
                     = skill.name

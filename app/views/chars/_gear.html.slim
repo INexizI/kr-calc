@@ -3,7 +3,7 @@
   .c-g
     - @gears.where(char: @char).where(gear_type: '10-UW').each do |gear|
       .c-gear-img
-        = image_tag gear.image.url
+        img src="/images/media/heroes/#{@char.name}/uw.png"
         .gear-description
           p
             = gear.name
@@ -33,7 +33,7 @@
   .c-g
     - @gears.where(char: @char).where(gear_type: '9-UT').each do |gear|
       .c-gear-img
-        = image_tag gear.image.url
+        img src="/images/media/heroes/#{@char.name}/ut#{gear.skill}.png"
         .gear-description
           p
             = gear.name

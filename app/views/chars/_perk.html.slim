@@ -4,7 +4,7 @@
     h4 1
     - @perks.where(tier: 'Generic').each do |perk|
       .c-perk-img
-        = image_tag perk.image.url
+        img src="/images/media/genericPerks/#{perk.name}.png"
         .perk-description
           .p1
             = perk.name
@@ -14,7 +14,7 @@
     h4 2
     - @perks.where(tier: @char.role.name).each do |perk|
       .c-perk-img
-        = image_tag perk.image.url
+        img src="/images/media/genericPerks/#{perk.name}.png"
         .perk-description
           .p1
             = perk.name
@@ -25,7 +25,7 @@
     .c-pepe
       - @perks.where(tier: @char.name).where.not(name: ['light', 'dark']).each do |perk|
         .c-perk-img
-          = image_tag perk.image.url
+          img src="/images/media/heroes/#{@char.name}/#{perk.sequence}.png"
           .perk-description
             .p1
               = perk.name
@@ -35,7 +35,7 @@
     h4 5
     - @perks.where(tier: @char.name, name: ['light', 'dark']).each do |perk|
       .c-perk-img
-        = image_tag perk.image.url
+        img src="/images/media/heroes/#{@char.name}/#{perk.sequence}.png"
         .perk-description
           .p1
             = @char.name + ' ' + '[' + perk.name.capitalize + ']'
