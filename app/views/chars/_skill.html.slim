@@ -13,9 +13,12 @@
                 - if skill.mana.blank?
                   | Passive
                 - else
-                  | Mana cost:
-                  - skill.mana.times do
-                    = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
+                  | Mana cost: 
+                  - if skill.mana == 0
+                    | 0
+                  - else
+                    - skill.mana.times do
+                      = image_tag '/images/media/manaOrb.png', id: 'manaOrb'
               - if !skill.cooldown.blank?
                 .p3
                   | Cooldown: 

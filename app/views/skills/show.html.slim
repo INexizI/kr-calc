@@ -16,13 +16,16 @@ hr
       | Mana cost: 
       - if @skill.mana.blank?
         | passive
+      - elsif @skill.mana == 0
+        | 0
       - else
         - @skill.mana.times do
           = image_tag '/images/media/manaOrb.png'
   .p-cooldown
     p
-      | Cooldown: 
-      = @skill.cooldown
+      - if !@skill.mana.blank?
+        | Cooldown: 
+        = @skill.cooldown
     p
       | Skill: 
       = @skill.skill_number.to_i
