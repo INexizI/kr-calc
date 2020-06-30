@@ -2,10 +2,10 @@
   h4 Unique Weapon
   .c-g
     - @gears.where(char: @char).where(gear_type: '10-UW').each do |gear|
-      .c-gear-img
+      .c-perk-img
         img src="/images/media/heroes/#{@char.name}/uw.png"
-        .gear-description
-          p
+        .s-description
+          .p1
             = gear.name
           .g-star-button
             - @stats.where(gear_id: gear.id).each do |s|
@@ -32,10 +32,10 @@
   h4 Unique Treasures
   .c-g
     - @gears.where(char: @char).where(gear_type: '9-UT').each do |gear|
-      .c-gear-img
+      .c-perk-img
         img src="/images/media/heroes/#{@char.name}/ut#{gear.skill}.png"
-        .gear-description
-          p
+        .s-description
+          .p1
             = gear.name
           .g-star-button
             - @stats.where(gear_id: gear.id).each do |s|
