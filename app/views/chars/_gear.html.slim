@@ -33,7 +33,7 @@
   .c-g
     - @gears.where(char: @char).where(gear_type: '9-UT').each do |gear|
       .c-perk-img
-        img src="/images/media/heroes/#{@char.name}/ut#{gear.skill}.png"
+        img src="/images/media/heroes/#{@char.name}/ut#{gear.gear_skill}.png"
         .s-description
           .p1
             = gear.name
