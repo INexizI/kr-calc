@@ -8,6 +8,7 @@ hr
   .c-main
     .c-sub#centr
       .c-avatar
+        / img src='/images/media/heroes/#{@char.name}/portrait.png'
       .c-title
         p#c-class = @char.role.name
         - if @char.type_dmg == 'Physical'
