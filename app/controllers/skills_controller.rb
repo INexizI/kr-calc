@@ -56,6 +56,6 @@ class SkillsController < ApplicationController
     end
 
     def skill_params
-      params.require(:skill).permit(:name, :description, :image, :mana, :char_id, :cooldown, :skill_number)
+      params.require(:skill).permit(:name, :description, :mana, :char_id, :cooldown, :skill_number)
     end
 end

@@ -10,6 +10,6 @@ hr
   .p-description
     = @perk.description
   .p-avatar
-    = image_tag @perk.image.url
+    img src='/images/media/genericPerks/#{@perk.name}.png'
   .p-tier
     = @perk.tier

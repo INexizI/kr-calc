@@ -13,4 +13,5 @@ hr
       .s-skills
         - @skills.where(char_id: c.id).order('skill_number ASC').each do |skill|
           .s-image
-            = link_to skill.name, skill
+            = link_to skill do
+              img src='/images/media/heroes/#{c.name}/s#{skill.skill_number}.png' title=skill.name

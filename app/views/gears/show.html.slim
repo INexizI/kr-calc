@@ -20,10 +20,6 @@ hr
       = @gear.char.role.name
 
 .g-star-button
-  .g-img
-    - if @gear.image?
-      = image_tag @gear.image.url
-
   - @stats.where(gear_id: @gear.id).each do |s|
     span = s.name
     .g-stat
