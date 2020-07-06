@@ -1,3 +1,5 @@
+title = @char.name
+
 => link_to 'Back', chars_path
 '&bull;
 =< link_to 'Edit', edit_char_path(@char)
@@ -29,4 +31,4 @@ hr
 
 hr
   .c-background
-    = image_tag (@char.background.url)
+    img src='/images/media/heroes/#{@char.name}/Loading Screen.png'

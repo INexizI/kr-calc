@@ -1,0 +1,21 @@
+-- This script only contains the table creation statements and does not fully represent the table in database. It's still missing: indices, triggers. Do not use it as backup.
+
+-- Squences
+CREATE SEQUENCE IF NOT EXISTS chars_id_seq
+
+-- Table Definition
+CREATE TABLE "public"."chars" (
+    "id" int8 NOT NULL DEFAULT nextval('chars_id_seq'::regclass),
+    "name" varchar,
+    "description" varchar,
+    "avatar" varchar,
+    "background" varchar,
+    "created_at" timestamp NOT NULL,
+    "updated_at" timestamp NOT NULL,
+    "slug" varchar,
+    "type_dmg" varchar,
+    "icon" varchar,
+    "role_id" int8,
+    CONSTRAINT "fk_rails_98e2d0de8c" FOREIGN KEY ("role_id") REFERENCES "public"."roles"("id"),
+    PRIMARY KEY ("id")
+);

@@ -1,3 +1,9 @@
+title
+  - if @stat.gear_id.blank?
+    = @stat.role.name + ' / ' + @stat.name
+  - elsif @stat.role_id.blank?
+    = @stat.gear.name + ' / ' + @stat.name
+
 => link_to 'Back', stats_path
 '&bull;
 =< link_to 'Edit', edit_stat_path(@stat)

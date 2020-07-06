@@ -1,13 +1,13 @@
+title Class
 = link_to root_path do
   = image_tag '/images/home.svg'
-
-h1 Class
 
 - @roles.each do |role|
   table
     tbody
       tr
-        td = image_tag role.image.url
+        td
+          img src='/images/media/classes/#{role.name.downcase}.png'
         td = role.name
         td &bull;
         td = link_to 'Show', role

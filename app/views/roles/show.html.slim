@@ -1,3 +1,5 @@
+title = 'Class' + ' / ' + @role.name
+
 => link_to 'Back', roles_path
 '&bull;
 =< link_to 'Edit', edit_role_path(@role)
@@ -8,7 +10,7 @@ hr
   .r-title
     = @role.name
   .r-icon
-    = image_tag (@role.image.url)
+    img src='/images/media/classes/#{@role.name.downcase}.png'
   .r-stats
     - @stats.where(role_id: @role).each do |s|
       .r-stat

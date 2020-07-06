@@ -1,0 +1,72 @@
+- if !@gear.char_id.blank? && @gear.gear_type == '10-UW'
+  img src='/images/media/heroes/#{@gear.char.name}/uw.png'
+- elsif @gear.char_id.blank? && @gear.gear_type == '10-UW'
+  img src='/images/media/heroes/#{@gear.role.name.downcase}.png'
+- elsif !@gear.char_id.blank? && @gear.gear_type == '9-UT'
+  img src='/images/media/heroes/#{@gear.char.name}/ut#{@gear.gear_skill}.png'
+- elsif @gear.char_id.blank? && @gear.gear_type == '9-UT'
+  img src='/images/media/gears/#{@gear.gear_type}/mana stone.png'
+- elsif @gear.set == 'Opportune Fire'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/fire.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/fire.png'
+- elsif @gear.set == 'Gritty Frost'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/frost.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/frost.png'
+- elsif @gear.set == 'Unrelenting Poison'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/poison.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/poison.png'
+- elsif @gear.set == 'Swift Darkness'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/darkness.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/darkness.png'
+- elsif @gear.set == 'Beast of Chaos'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/manti.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/manti.png'
+- elsif @gear.set == 'Lava'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/lava.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/lava.png'
+- elsif @gear.set == 'Legendary'
+  - if @gear.name == "Hell's Eyes"
+    img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png'
+  - elsif @gear.name == "Fire Dragon's Blessing"
+    img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png'
+  - elsif @gear.name == 'Price of Arrogance'
+    img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png'
+  - elsif @gear.name == 'Fire Circle'
+    img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/legendary.png'
+- elsif @gear.set == 'Hero Suppression'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/suppression.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/suppression.png'
+- elsif @gear.set == 'Hero Protection'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/protection.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/protection.png'
+- elsif @gear.set == 'Dark Legion'
+  - if @gear.gear_type == '7-J'
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/dark legion.png'
+  - else
+    img src='/images/media/gears/#{@gear.gear_type}/dark legion.png'
+- elsif @gear.name == "Hell's Eyes"
+  img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png'
+- elsif @gear.name == "Fire Dragon's Blessing"
+  img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png'
+- elsif @gear.name == 'Price of Arrogance'
+  img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png'
+- elsif @gear.name == 'Fire Circle'
+  img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png'

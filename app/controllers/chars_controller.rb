@@ -10,7 +10,7 @@ class CharsController < ApplicationController
     @perks = Perk.order('id ASC')
     @skills = Skill.all
     @stats = Stat.all
-    @gears = Gear.all
+    @gears = Gear.order('id ASC')
   end
 
   def new

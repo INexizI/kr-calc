@@ -1,8 +1,0 @@
-id,name,image,created_at,updated_at,slug
-1,Knight,knight.png,2020-06-07 10:32:40.592689,2020-06-16 08:44:12.564801,knight
-2,Warrior,warrior.png,2020-06-07 10:33:17.749024,2020-06-16 08:44:21.838184,warrior
-3,Assassin,assassin.png,2020-06-07 10:33:30.85648,2020-06-16 08:44:29.540416,assassin
-4,Archer,archer.png,2020-06-07 10:33:37.704517,2020-06-16 08:44:36.898192,archer
-5,Mechanic,mechanic.png,2020-06-07 10:33:47.573203,2020-06-16 08:44:44.063914,mechanic
-6,Wizard,wizard.png,2020-06-07 10:33:57.293938,2020-06-16 08:44:51.41999,wizard
-7,Priest,priest.png,2020-06-07 10:34:08.169082,2020-06-16 08:44:59.467646,priest

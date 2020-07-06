@@ -1,3 +1,5 @@
+title = @gear.set + ' ' + @gear.name
+
 => link_to 'Back', gears_path
 '&bull;
 =< link_to 'Edit', edit_gear_path(@gear)
@@ -20,6 +22,9 @@ hr
       = @gear.char.role.name
 
 .g-star-button
+  .g-img
+    = render 'show'
+
   - @stats.where(gear_id: @gear.id).each do |s|
     span = s.name
     .g-stat

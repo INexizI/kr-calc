@@ -1,0 +1,20 @@
+-- This script only contains the table creation statements and does not fully represent the table in database. It's still missing: indices, triggers. Do not use it as backup.
+
+-- Squences
+CREATE SEQUENCE IF NOT EXISTS skills_id_seq
+
+-- Table Definition
+CREATE TABLE "public"."skills" (
+    "id" int8 NOT NULL DEFAULT nextval('skills_id_seq'::regclass),
+    "name" varchar,
+    "description" varchar,
+    "mana" int8,
+    "created_at" timestamp,
+    "updated_at" timestamp,
+    "char_id" int8,
+    "cooldown" varchar,
+    "skill_number" varchar,
+    "parent_id" int8,
+    CONSTRAINT "skills_char_id_fkey" FOREIGN KEY ("char_id") REFERENCES "public"."chars"("id"),
+    PRIMARY KEY ("id")
+);

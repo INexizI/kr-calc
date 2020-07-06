@@ -1,7 +1,6 @@
+title Hero
 = link_to root_path do
   = image_tag '/images/home.svg'
-
-h1 Hero
 
 .main
 hr
@@ -13,7 +12,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -33,7 +32,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -53,7 +52,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -73,7 +72,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -93,7 +92,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -113,7 +112,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
@@ -133,7 +132,7 @@ hr
       .h-char
         .h-avatar
           = link_to char, title: char.name do
-            = image_tag char.avatar.url
+            img src='/images/media/heroes/#{char.name}/portrait.png'
         .h-sub
           .h-name
             = char.name
