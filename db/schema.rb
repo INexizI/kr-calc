@@ -10,24 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_111336) do
+ActiveRecord::Schema.define(version: 2020_07_07_103614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "calcs", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "chars", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "avatar"
-    t.string "background"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.string "type_dmg"
-    t.string "icon"
     t.bigint "role_id"
     t.index ["role_id"], name: "index_chars_on_role_id"
     t.index ["slug"], name: "index_chars_on_slug", unique: true
+  end
+
+  create_table "enchants", force: :cascade do |t|
+    t.string "name"
+    t.string "value"
+    t.string "tier"
+    t.string "set"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -44,7 +55,6 @@ ActiveRecord::Schema.define(version: 2020_05_06_111336) do
   create_table "gears", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "image"
     t.string "tier"
     t.string "set"
     t.datetime "created_at", precision: 6, null: false
@@ -52,22 +62,26 @@ ActiveRecord::Schema.define(version: 2020_05_06_111336) do
     t.string "gear_type"
     t.bigint "char_id"
     t.bigint "stat_id"
+    t.bigint "role_id"
+    t.bigint "rune_id"
+    t.string "gear_skill"
     t.index ["char_id"], name: "index_gears_on_char_id"
+    t.index ["role_id"], name: "index_gears_on_role_id"
+    t.index ["rune_id"], name: "index_gears_on_rune_id"
     t.index ["stat_id"], name: "index_gears_on_stat_id"
   end
 
   create_table "perks", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "image"
     t.string "tier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "sequence"
   end
 
   create_table "roles", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
@@ -86,13 +100,12 @@ ActiveRecord::Schema.define(version: 2020_05_06_111336) do
   create_table "skills", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "image"
     t.integer "mana"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "char_id"
     t.integer "cooldown"
-    t.float "skill_number"
+    t.integer "skill_number"
     t.integer "parent_id"
     t.index ["char_id"], name: "index_skills_on_char_id"
   end
@@ -104,6 +117,8 @@ ActiveRecord::Schema.define(version: 2020_05_06_111336) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
     t.string "stat_type"
+    t.bigint "gear_id"
+    t.index ["gear_id"], name: "index_stats_on_gear_id"
     t.index ["role_id"], name: "index_stats_on_role_id"
   end
 
@@ -136,8 +151,11 @@ ActiveRecord::Schema.define(version: 2020_05_06_111336) do
 
   add_foreign_key "chars", "roles"
   add_foreign_key "gears", "chars"
+  add_foreign_key "gears", "roles"
+  add_foreign_key "gears", "runes"
   add_foreign_key "gears", "stats"
   add_foreign_key "skills", "chars"
+  add_foreign_key "stats", "gears"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end
