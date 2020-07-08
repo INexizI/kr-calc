@@ -8,21 +8,13 @@
 
   .form
     = f.input :name
-    br
   .form
-    = f.input :type_dmg, collection: ['Physical', 'Magic'], label: 'Type DMG'
-    br
+    label for='type_dmg' Type DMG
+    = f.input :type_dmg, collection: ['Physical', 'Magic'], label: false
   .form
     = f.input :description
-  / .form
-  /   = f.input :icon
   .form
-    = f.input :avatar
-  .formr
-    = f.input :background
-  .form
-    br
-    = f.association :role
+    label for='role' Class
+    = f.association :role, label: false
   br
   .actions = f.submit
-br
