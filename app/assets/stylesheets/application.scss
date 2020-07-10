@@ -2,6 +2,23 @@
   display: none;
 }
 
+.home {
+  display: flex;
+  .home-a {
+    a {
+      display: block;
+      margin: 5px;
+      outline: none;
+      text-decoration: none;
+      color: black;
+    }
+    img {
+      width: 124px;
+      height: 124px;
+    }
+  }
+}
+
 .h-title {
   display: flex;
   cursor: pointer;
@@ -26,12 +43,12 @@
   display: none;
 
   .h-char {
-    margin: 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 5px;
 
     .h-avatar {
       width: 124px;
       height: 124px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
       a {
         display: block;
@@ -45,10 +62,10 @@
         margin: auto;
       }
       .h-type {
-        padding: 5px;
+        padding: 3px;
 
         img {
-          width: 10px;
+          width: 14px;
         }
       }
     }

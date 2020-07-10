@@ -1,17 +1,21 @@
 title KrCalc
 h1 King's Raid
 hr
-  p
-    = link_to 'Hero', chars_path
-  p
-    = link_to 'Gear', gears_path
-  p
-    = link_to 'Perk', perks_path
-  p
-    = link_to 'Class', roles_path
-  p
-    = link_to 'Rune', runes_path
-  p
-    = link_to 'Skill', skills_path
-  p
-    = link_to 'Stat', stats_path
+  .home
+    .home-a
+      = link_to chars_path do
+        img src='/images/media/heroes/#{@char.name}/portrait.png' title='Hero'
+    .home-a
+      = link_to gears_path do
+        = render '/gears/show'
+    .home-a
+      = link_to perks_path do
+        = render '/perks/show'
+    .home-a
+      = link_to 'Class', roles_path
+    .home-a
+      = link_to 'Rune', runes_path
+    .home-a
+      = link_to 'Skill', skills_path
+    .home-a
+      = link_to 'Stat', stats_path
