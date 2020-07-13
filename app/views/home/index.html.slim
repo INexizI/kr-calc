@@ -3,19 +3,31 @@ h1 King's Raid
 hr
   .home
     .home-a
+      p Hero
       = link_to chars_path do
-        img src='/images/media/heroes/#{@char.name}/portrait.png' title='Hero'
+        img src='/images/media/heroes/#{@char.name}/portrait.png' title=@char.name
     .home-a
+      p Gear
       = link_to gears_path do
         = render '/gears/show'
     .home-a
+      p Perk
       = link_to perks_path do
         = render '/perks/show'
     .home-a
-      = link_to 'Class', roles_path
+      p Class
+      = link_to roles_path do
+        img src='/images/media/heroes/#{@role.name.downcase}.png' title=@role.name
     .home-a
-      = link_to 'Rune', runes_path
+      p Rune
+      = link_to runes_path do
+        img src='/images/media/rune.png' title='Rune'
     .home-a
-      = link_to 'Skill', skills_path
+      p Skill
+      = link_to skills_path do
+        img src='/images/media/heroes/#{@skill.char.name}/s#{@skill.skill_number}.png' title=@skill.name
     .home-a
-      = link_to 'Stat', stats_path
+      // (DEL FOR PROD)
+      p Stat
+      = link_to stats_path do
+        p Stat

@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_103614) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "char_id"
     t.integer "cooldown"
-    t.integer "skill_number"
+    t.string "skill_number"
     t.integer "parent_id"
     t.index ["char_id"], name: "index_skills_on_char_id"
   end

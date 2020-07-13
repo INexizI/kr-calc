@@ -1,19 +1,4 @@
-- if @perk.tier == 'Generic'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Knight'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Warrior'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Assassin'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Archer'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Mechanic'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Wizard'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-- elsif @perk.tier == 'Priest'
-  img src='/images/media/genericPerks/#{@perk.name}.png'
-  //  WTF???
+- if @perk.perk_type == 'hero'
+  img src='/images/media/heroes/#{@perk.tier}/#{@perk.sequence}.png' title=@perk.name
 - else
-  img src='/images/media/heroes/#{@chars.offset(rand(Char.count)).first.name}/#{@perk.sequence}.png'
+  img src='/images/media/genericPerks/#{@perk.name}.png' title=@perk.name
