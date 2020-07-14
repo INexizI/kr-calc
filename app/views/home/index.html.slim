@@ -1,33 +1,32 @@
 title KrCalc
-h1 King's Raid
-hr
-  .home
-    .home-a
-      p Hero
-      = link_to chars_path do
-        img src='/images/media/heroes/#{@char.name}/portrait.png' title=@char.name
-    .home-a
-      p Gear
-      = link_to gears_path do
-        = render '/gears/show'
-    .home-a
-      p Perk
-      = link_to perks_path do
-        = render '/perks/show'
-    .home-a
-      p Class
-      = link_to roles_path do
-        img src='/images/media/heroes/#{@role.name.downcase}.png' title=@role.name
-    .home-a
-      p Rune
-      = link_to runes_path do
-        img src='/images/media/rune.png' title='Rune'
-    .home-a
-      p Skill
-      = link_to skills_path do
-        img src='/images/media/heroes/#{@skill.char.name}/s#{@skill.skill_number}.png' title=@skill.name
-    .home-a
-      // (DEL FOR PROD)
+
+.home
+  .home-a
+    p Hero
+    = link_to chars_path do
+      img src='/images/media/heroes/#{@char.name}/portrait.png' title=@char.name
+  .home-a
+    p Gear
+    = link_to gears_path do
+      = render '/gears/show'
+  .home-a
+    p Perk
+    = link_to perks_path do
+      = render '/perks/show'
+  .home-a
+    p Class
+    = link_to roles_path do
+      img src='/images/media/heroes/#{@role.name.downcase}.png' title=@role.name
+  .home-a
+    p Rune
+    = link_to runes_path do
+      img src='/images/media/rune.png' title='Rune'
+  .home-a
+    p Skill
+    = link_to skills_path do
+      img src='/images/media/heroes/#{@skill.char.name}/s#{@skill.skill_number}.png' title=@skill.name
+  .home-a
+    // (DEL FOR PROD)
+    p Stat
+    = link_to stats_path do
       p Stat
-      = link_to stats_path do
-        p Stat

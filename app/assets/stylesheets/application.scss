@@ -4,13 +4,29 @@
 
 .home {
   display: flex;
+  width: 1000px;
+  height: 160px;
+  margin: 20px auto 0 auto;
+  font-variant: petite-caps;
+  background: #757575;
+  padding: 10px;
 
   .home-a {
     text-align: center;
+    margin: 0 auto;
 
+    p {
+      width: 124px;
+      height: 18px;
+      margin: 0;
+      padding: 3px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgb(80, 80, 80);
+      color: white;
+    }
     a {
-      display: block;
-      margin: 5px;
+      display: none;
+      margin: 5px 0;
       outline: none;
       text-decoration: none;
       color: black;
@@ -18,8 +34,13 @@
     img {
       width: 124px;
       height: 124px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     }
   }
+}
+
+.home-a:hover a {
+  display: block;
 }
 
 .h-title {
