@@ -1,10 +1,10 @@
 title = @char.name
 
-=> link_to 'Back', chars_path
-'&bull;
-=< link_to 'Edit', edit_char_path(@char)
-
-hr
+= link_to root_path do
+  = image_tag '/images/home.svg'
+br
+= link_to :back do
+  = image_tag '/images/left.svg'
 
 .char
   .c-main
@@ -29,6 +29,5 @@ hr
     .c-sub
       = render 'perk'
 
-hr
   .c-background
     img src='/images/media/heroes/#{@char.name}/Loading Screen.png'

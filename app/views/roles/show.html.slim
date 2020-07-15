@@ -1,18 +1,18 @@
 title = 'Class' + ' / ' + @role.name
 
-=> link_to 'Back', roles_path
-'&bull;
-=< link_to 'Edit', edit_role_path(@role)
+= link_to root_path do
+  = image_tag '/images/home.svg'
+br
+= link_to :back do
+  = image_tag '/images/left.svg'
 
-hr
-
-.role
-  .r-title
-    = @role.name
-  .r-icon
-    img src='/images/media/classes/#{@role.name.downcase}.png'
-  .r-stats
+.r-stats
+  .class
+    p
+      img src='/images/media/classes/#{@role.name.downcase}.png'
+    p
+      = @role.name
+  .r-stat
     - @stats.where(role_id: @role).each do |s|
-      .r-stat
-        p = s.name
-        p = s.value
+      p = s.name
+      p = s.value

@@ -1,11 +1,12 @@
 title Gear
+
 = link_to root_path do
   = image_tag '/images/home.svg'
 
 .g-main
   .g-sub
     h3 T6
-    .g-title 'Opportune Fire'
+    .g-title Opportune Fire
     .g-main
       .g-gear
         - @gears.where(tier: 'T6', set: 'Opportune Fire').each do |gear|
@@ -15,7 +16,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/fire.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Gritty Frost'
+    .g-title Gritty Frost
     .g-main
       .g-gear
         - @gears.where(tier: 'T6', set: 'Gritty Frost').each do |gear|
@@ -25,7 +26,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/frost.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Unrelenting Poison'
+    .g-title Unrelenting Poison
     .g-main
       .g-gear
         - @gears.where(tier: 'T6', set: 'Unrelenting Poison').each do |gear|
@@ -35,7 +36,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/poison.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Swift Darkness'
+    .g-title Swift Darkness
     .g-main
       .g-gear
         - @gears.where(tier: 'T6', set: 'Swift Darkness').each do |gear|
@@ -45,7 +46,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/darkness.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Beast of Chaos'
+    .g-title Beast of Chaos
     .g-main
       .g-gear
         - @gears.where(tier: 'T6', set: 'Beast of Chaos').each do |gear|
@@ -57,7 +58,7 @@ title Gear
 
   .g-sub
     h3 T7
-    .g-title 'Opportune Fire'
+    .g-title Opportune Fire
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', set: 'Opportune Fire').each do |gear|
@@ -67,7 +68,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/fire.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Gritty Frost'
+    .g-title Gritty Frost
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', set: 'Gritty Frost').each do |gear|
@@ -77,7 +78,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/frost.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Unrelenting Poison'
+    .g-title Unrelenting Poison
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', set: 'Unrelenting Poison').each do |gear|
@@ -87,7 +88,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/poison.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Swift Darkness'
+    .g-title Swift Darkness
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', set: 'Swift Darkness').each do |gear|
@@ -97,7 +98,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/darkness.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Beast of Chaos'
+    .g-title Beast of Chaos
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', set: 'Beast of Chaos').each do |gear|
@@ -107,7 +108,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/manti.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Treasure'
+    .g-title Treasure
     .g-main
       .g-gear
         - @gears.where(tier: 'T7', gear_type: '9-UT').each do |gear|
@@ -116,7 +117,7 @@ title Gear
 
   .g-sub
     h3 T8
-    .g-title 'Opportune Fire'
+    .g-title Opportune Fire
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Opportune Fire').each do |gear|
@@ -126,7 +127,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/fire.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Gritty Frost'
+    .g-title Gritty Frost
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Gritty Frost').each do |gear|
@@ -136,7 +137,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/frost.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Unrelenting Poison'
+    .g-title Unrelenting Poison
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Unrelenting Poison').each do |gear|
@@ -146,7 +147,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/poison.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Swift Darkness'
+    .g-title Swift Darkness
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Swift Darkness').each do |gear|
@@ -156,7 +157,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/darkness.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Lava'
+    .g-title Lava
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Lava').each do |gear|
@@ -166,7 +167,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/lava.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Legendary'
+    .g-title Legendary
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Legendary').each do |gear|
@@ -182,7 +183,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/legendary.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Hero Suppression'
+    .g-title Hero Suppression
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Hero Suppression').each do |gear|
@@ -192,7 +193,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/suppression.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Hero Protection'
+    .g-title Hero Protection
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Hero Protection').each do |gear|
@@ -202,7 +203,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/protection.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Dark Legion'
+    .g-title Dark Legion
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Dark Legion').each do |gear|
@@ -212,7 +213,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/dark legion.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Beast of Chaos'
+    .g-title Beast of Chaos
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', set: 'Beast of Chaos').each do |gear|
@@ -222,7 +223,7 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/manti.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Treasure'
+    .g-title Treasure
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', gear_type: '9-UT').each do |gear|
@@ -231,7 +232,7 @@ title Gear
 
   .g-sub
     h3 T10
-    .g-title 'Unique Treasure'
+    .g-title Unique Treasure
     .g-main
       - @chars.order(name: 'ASC').each do |c|
         .g-un
@@ -242,7 +243,7 @@ title Gear
               = link_to gear do
                 img src='/images/media/heroes/#{c.name}/ut#{gear.gear_skill}.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Unique Weapon'
+    .g-title Unique Weapon
     .g-main
       - @chars.order(name: 'ASC').each do |c|
         .g-un
@@ -253,7 +254,7 @@ title Gear
               = link_to gear do
                 img src='/images/media/heroes/#{c.name}/uw.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title 'Class Unique Weapon'
+    .g-title Class Unique Weapon
     .g-main.cl
       - @roles.order(id: 'ASC').each do |r|
         .g-un#cl

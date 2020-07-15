@@ -1,72 +1,72 @@
 - if !@gear.char_id.blank? && @gear.gear_type == '10-UW'
-  img src='/images/media/heroes/#{@gear.char.name}/uw.png' title=@gear.name
+  img src='/images/media/heroes/#{@gear.char.name}/uw.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.char_id.blank? && @gear.gear_type == '10-UW'
-  img src='/images/media/heroes/#{@gear.role.name.downcase}.png' title=@gear.name
+  img src='/images/media/heroes/#{@gear.role.name.downcase}.png' title=(@gear.set + ' ' + @gear.name)
 - elsif !@gear.char_id.blank? && @gear.gear_type == '9-UT'
-  img src='/images/media/heroes/#{@gear.char.name}/ut#{@gear.gear_skill}.png' title=@gear.name
+  img src='/images/media/heroes/#{@gear.char.name}/ut#{@gear.gear_skill}.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.char_id.blank? && @gear.gear_type == '9-UT'
-  img src='/images/media/gears/#{@gear.gear_type}/mana stone.png' title=@gear.name
+  img src='/images/media/gears/#{@gear.gear_type}/mana stone.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Opportune Fire'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/fire.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/fire.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/fire.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/fire.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Gritty Frost'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/frost.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/frost.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/frost.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/frost.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Unrelenting Poison'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/poison.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/poison.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/poison.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/poison.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Swift Darkness'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/darkness.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/darkness.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/darkness.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/darkness.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Beast of Chaos'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/manti.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/manti.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/manti.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/manti.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Lava'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/lava.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/lava.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/lava.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/lava.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Legendary'
   - if @gear.name == "Hell's Eyes"
-    img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png' title=(@gear.set + ' ' + @gear.name)
   - elsif @gear.name == "Fire Dragon's Blessing"
-    img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png' title=(@gear.set + ' ' + @gear.name)
   - elsif @gear.name == 'Price of Arrogance'
-    img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png' title=(@gear.set + ' ' + @gear.name)
   - elsif @gear.name == 'Fire Circle'
-    img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/legendary.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/legendary.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Hero Suppression'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/suppression.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/suppression.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/suppression.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/suppression.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Hero Protection'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/protection.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/protection.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/protection.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/protection.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.set == 'Dark Legion'
   - if @gear.gear_type == '7-J'
-    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/dark legion.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/#{@gear.name}/dark legion.png' title=(@gear.set + ' ' + @gear.name)
   - else
-    img src='/images/media/gears/#{@gear.gear_type}/dark legion.png' title=@gear.name
+    img src='/images/media/gears/#{@gear.gear_type}/dark legion.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.name == "Hell's Eyes"
-  img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png' title=@gear.name
+  img src='/images/media/gears/#{@gear.gear_type}/Ring/legendary.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.name == "Fire Dragon's Blessing"
-  img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png' title=@gear.name
+  img src='/images/media/gears/#{@gear.gear_type}/Earrings/legendary.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.name == 'Price of Arrogance'
-  img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png' title=@gear.name
+  img src='/images/media/gears/#{@gear.gear_type}/Necklace/legendary.png' title=(@gear.set + ' ' + @gear.name)
 - elsif @gear.name == 'Fire Circle'
-  img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png' title=@gear.name
+  img src='/images/media/gears/#{@gear.gear_type}/Bracelet/legendary.png' title=(@gear.set + ' ' + @gear.name)

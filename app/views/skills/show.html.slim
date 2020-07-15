@@ -1,18 +1,18 @@
 title = @skill.char.name + ' / ' + 'S' + @skill.skill_number.to_s
 
-=> link_to 'Back', skills_path
-'&bull;
-=< link_to 'Edit', edit_skill_path(@skill)
+= link_to root_path do
+  = image_tag '/images/home.svg'
+br
+= link_to :back do
+  = image_tag '/images/left.svg'
 
-hr
-
-.hero
+.skill
   .p-title
     = @skill.name
   .p-description
     = @skill.description
-  .p-avatar
-    . class="s#{@skill.skill_number}"
+  .p-img
+    img src='/images/media/heroes/#{@skill.char.name}/s#{@skill.skill_number}.png'
   .p-mana
     p
       | Mana cost: 

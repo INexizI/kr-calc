@@ -1,17 +1,12 @@
 title = @perk.name
 
-=> link_to 'Back', perks_path
-'&bull;
-=< link_to 'Edit', edit_perk_path(@perk)
+= link_to root_path do
+  = image_tag '/images/home.svg'
+br
+= link_to :back do
+  = image_tag '/images/left.svg'
 
-hr
-
-.hero
-  .p-title
-    = @perk.name
-  .p-description
-    = @perk.description
-  .p-avatar
-    img src='/images/media/genericPerks/#{@perk.name}.png'
-  .p-tier
-    = @perk.tier
+div
+  p = @perk.name
+  img src='/images/media/genericPerks/#{@perk.name}.png'
+  p = @perk.description

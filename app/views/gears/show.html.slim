@@ -1,25 +1,25 @@
 title = @gear.set + ' ' + @gear.name
 
-=> link_to 'Back', gears_path
-'&bull;
-=< link_to 'Edit', edit_gear_path(@gear)
-
-hr
+= link_to root_path do
+  = image_tag '/images/home.svg'
+br
+= link_to :back do
+  = image_tag '/images/left.svg'
 
 .g-description
+  p
+    = @gear.tier
   p
     = @gear.set
   p
     = @gear.name
   p
-    = @gear.gear_type
-  p
-    = @gear.tier
-  p
     = @gear.description
   p
-    - if @gear.char_id?
-      = @gear.char.role.name
+  - if !@gear.char_id.blank?
+    = @gear.char.name
+  - elsif !@gear.role_id.blank?
+    = @gear.role.name
 
 .g-star-button
   .g-img

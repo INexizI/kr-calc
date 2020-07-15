@@ -2,18 +2,10 @@ title Class
 = link_to root_path do
   = image_tag '/images/home.svg'
 
-- @roles.each do |role|
-  table
-    tbody
-      tr
-        td
-          img src='/images/media/classes/#{role.name.downcase}.png'
-        td = role.name
-        td &bull;
-        td = link_to 'Show', role
-        td = link_to 'Edit', edit_role_path(role)
-        td = link_to 'Destroy', role, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Role', new_role_path
+.r-stats
+  - @roles.each do |role|
+    .class
+      p
+        img src='/images/media/classes/#{role.name.downcase}.png'
+      p
+        = link_to role.name, role

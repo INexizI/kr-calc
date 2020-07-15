@@ -8,64 +8,53 @@ title Perk
     - @perks.where(tier: 'Generic').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Knight
   .p-main
     - @perks.where(tier: 'Knight').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Warrior
   .p-main
     - @perks.where(tier: 'Warrior').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Assassin
   .p-main
     - @perks.where(tier: 'Assassin').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Archer
   .p-main
     - @perks.where(tier: 'Archer').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Mechanic
   .p-main
     - @perks.where(tier: 'Mechanic').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Wizard
   .p-main
     - @perks.where(tier: 'Wizard').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
 
   h3 T2 Priest
   .p-main
     - @perks.where(tier: 'Priest').each do |perk|
       .p-perk
         .p-image
-          = link_to perk, title: perk.name do
-            img src='/images/media/genericPerks/#{perk.name}.png'
-
-br
-= link_to 'New Perk', new_perk_path
+          img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
