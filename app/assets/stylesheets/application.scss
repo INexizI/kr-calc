@@ -66,7 +66,9 @@ body {
   img {
     width: 20px;
     height: 20px;
-    padding: 0 10px;
+    margin: 2px 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -139,6 +141,10 @@ body {
     p {
       margin: auto;
       // font-size: 1.5em;
+    }
+    #c-class img {
+      border-radius: 50%;
+      box-shadow: 0 0 3px 1px black;
     }
   }
   .c-sk, .c-tr, .c-p, .c-g {
@@ -292,11 +298,11 @@ input {
     display: flex;
 
     p {
-      font-size: 1.3em;
-      margin: 0 5px;
+      margin: 5px;
 
       img {
-        margin: 5px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px 1px black;
       }
       a {
         display: block;
