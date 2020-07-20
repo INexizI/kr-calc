@@ -3,16 +3,17 @@ title = @char.name
 = link_to root_path do
   = image_tag '/images/home.svg'
 br
-= link_to :back do
+= link_to 'javascript:history.back()' do
   = image_tag '/images/left.svg'
 
 .char
   .c-main
     .c-sub#centr
       .c-avatar
-        / img src='/images/media/heroes/#{@char.name}/portrait.png'
+        img src='/images/media/heroes/#{@char.name}/portrait.png'
       .c-title
-        p#c-class = @char.role.name
+        p#c-class
+          img src='/images/media/classes/#{@char.role.name}.png'
         - if @char.type_dmg == 'Physical'
           p = image_tag '/images/media/physical.png', title: @char.type_dmg
         - else
