@@ -3,26 +3,23 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.label :name
-    br
+    label for='name_id' Name
     = f.text_field :name
-  br
   .form-inputs
-    = f.label :value
-    br
+    label for='value_id' Value
     = f.text_field :value
-  br
   .form-inputs
-    = f.input :stat_type, collection: ['class', 'base', 'rune', 'gear']
-  br
+    label for='stat_type' Stat Type
+    = f.input :stat_type, collection: ['class', 'base', 'rune', 'gear'], label: false
   .form-inputs
-    br
-    = f.association :role
-  br
+    label for='role_id' Class
+    = f.association :role, label: false
+  / .form-inputs
+  /   label for='gear_id' Gear
+  /   = f.association :gear, collection: Gear.order(id: 'ASC'), label_method: :name
   .form-inputs
-    br
-    = f.association :gear, collection: Gear.order(id: 'ASC'), label_method: :name
-
+    label for='notice_id' Notice
+    = f.text_field :notice
   br
   .form-actions
     = f.button :submit

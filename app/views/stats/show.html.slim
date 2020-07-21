@@ -1,8 +1,10 @@
 title
-  - if @stat.gear_id.blank?
-    = @stat.role.name + ' / ' + @stat.name
+  - if @stat.role_id.blank? && @stat.gear_id.blank?
+    = @stat.name + ' ' + @stat.notice
   - elsif @stat.role_id.blank?
     = @stat.gear.name + ' / ' + @stat.name
+  - elsif @stat.gear_id.blank?
+    = @stat.role.name + ' / ' + @stat.name
 
 => link_to 'Back', stats_path
 '&bull;

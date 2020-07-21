@@ -8,11 +8,14 @@
           .p1
             = gear.name
           .g-star-button
-            - @stats.where(gear_id: gear.id).each do |s|
-              p#p0 = s.name
+            / - @stats.where(gear_id: gear.id).each do |s|
+            div
+              / p#p0 = s.name
+              p#p0 = gear.stat.name
               .g-stat
                 .g-stat-name
-                  p Base stat - #{s.value}
+                  / p Base stat - #{s.value}
+                  p Base stat - #{gear.stat.value}
 
               .g-button
                 .g-btn
@@ -21,12 +24,18 @@
                   button.bt3 3★
                   button.bt4 4★
                   button.bt5 5★
-                .g-val
+                / .g-val
                   p#bt1.btn = s.star_1
                   p#bt2.btn = s.star_2
                   p#bt3.btn = s.star_3
                   p#bt4.btn = s.star_4
                   p#bt5.btn = s.star_5
+                .g-val
+                  p#bt1.btn = gear.stat.star_1
+                  p#bt2.btn = gear.stat.star_2
+                  p#bt3.btn = gear.stat.star_3
+                  p#bt4.btn = gear.stat.star_4
+                  p#bt5.btn = gear.stat.star_5
 
 .c-gear
   h4 Unique Treasures
@@ -38,11 +47,14 @@
           .p1
             = gear.name
           .g-star-button
-            - @stats.where(gear_id: gear.id).each do |s|
-              p#p0 = s.name
+            / - @stats.where(gear_id: gear.id).each do |s|
+            div
+              / p#p0 = s.name
+              p#p0 = gear.stat.name
               .g-stat
                 .g-stat-name
-                  p Base stat - #{s.value}
+                  / p Base stat - #{s.value}
+                  p Base stat - #{gear.stat.value}
 
               .g-button
                 .g-btn
@@ -51,9 +63,15 @@
                   button.bt3 3★
                   button.bt4 4★
                   button.bt5 5★
-                .g-val
+                / .g-val
                   p#bt1.btn = s.star_1
                   p#bt2.btn = s.star_2
                   p#bt3.btn = s.star_3
                   p#bt4.btn = s.star_4
                   p#bt5.btn = s.star_5
+                .g-val
+                  p#bt1.btn = gear.stat.star_1
+                  p#bt2.btn = gear.stat.star_2
+                  p#bt3.btn = gear.stat.star_3
+                  p#bt4.btn = gear.stat.star_4
+                  p#bt5.btn = gear.stat.star_5

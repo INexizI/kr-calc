@@ -1,6 +1,7 @@
 class Stat < ApplicationRecord
   belongs_to :role, optional: true
-  belongs_to :gear, optional: true
+  # belongs_to :gear, optional: true
+  has_many :gears
 
   def star_1
     @x = self.value.to_f

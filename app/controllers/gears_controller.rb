@@ -59,6 +59,6 @@ class GearsController < ApplicationController
     end
 
     def gear_params
-      params.require(:gear).permit(:name, :tier, :star, :stat, :enchant, :set_bonus, :rune, :rune_socket, :set, :description, :image, :gear_type, :char_id, :role_id)
+      params.require(:gear).permit(:name, :tier, :star, :stat_id, :enchant, :set_bonus, :rune, :rune_socket, :set, :description, :gear_type, :char_id, :role_id)
     end
 end

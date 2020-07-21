@@ -25,11 +25,14 @@ br
   .g-img
     = render 'show'
 
-  - @stats.where(gear_id: @gear.id).each do |s|
-    span = s.name
+  / - @stats.where(gear_id: @gear.id).each do |s|
+  div
+    / span = s.name
+    span = @gear.stat.name
     .g-stat
       .g-stat-name
-        span Base stat - #{s.value}
+        / span Base stat - #{s.value}
+        span Base stat - #{@gear.stat.value}
 
     .g-button
       .g-btn
@@ -38,9 +41,15 @@ br
         button.bt3 3★
         button.bt4 4★
         button.bt5 5★
-      .g-val
+      / .g-val
         p#bt1.btn = s.star_1
         p#bt2.btn = s.star_2
         p#bt3.btn = s.star_3
         p#bt4.btn = s.star_4
         p#bt5.btn = s.star_5
+      .g-val
+        p#bt1.btn = @gear.stat.star_1
+        p#bt2.btn = @gear.stat.star_2
+        p#bt3.btn = @gear.stat.star_3
+        p#bt4.btn = @gear.stat.star_4
+        p#bt5.btn = @gear.stat.star_5
