@@ -228,9 +228,9 @@
         $btnFind = $($cBtn).find('#' + $btnId);
       }
       $classAtk = parseInt($('.role' + $rVal).find('p:contains("ATK")').next('p').text());
-      $gearAtk = parseInt($($btnFind).text());
-      $sumAtk = $classAtk + $gearAtk;
-      $('#heroAtk').text('ATK - ' + $sumAtk);
+      // $gearAtk = parseInt($($btnFind).text());
+      // $sumAtk = $classAtk + $gearAtk;
+      // $('#heroAtk').text('ATK - ' + $sumAtk);
     }).change();
   });
 }).call(this);

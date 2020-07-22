@@ -8,28 +8,26 @@
           .p1
             = gear.name
           .g-star-button
-            / - @stats.where(gear_id: gear.id).each do |s|
             div
-              / p#p0 = s.name
               p#p0 = gear.stat.name
               .g-stat
                 .g-stat-name
-                  / p Base stat - #{s.value}
                   p Base stat - #{gear.stat.value}
 
               .g-button
                 .g-btn
-                  button.bt1 1★
-                  button.bt2 2★
-                  button.bt3 3★
-                  button.bt4 4★
-                  button.bt5 5★
-                / .g-val
-                  p#bt1.btn = s.star_1
-                  p#bt2.btn = s.star_2
-                  p#bt3.btn = s.star_3
-                  p#bt4.btn = s.star_4
-                  p#bt5.btn = s.star_5
+                  form
+                    .rating
+                      label.bt5 ☆
+                      input name="starValue" type="radio" value="5"
+                      label.bt4 ☆
+                      input name="starValue" type="radio" value="4"
+                      label.bt3 ☆
+                      input name="starValue" type="radio" value="3"
+                      label.bt2 ☆
+                      input name="starValue" type="radio" value="2"
+                      label.bt1 ☆
+                      input name="starValue" type="radio" value="1"
                 .g-val
                   p#bt1.btn = gear.stat.star_1
                   p#bt2.btn = gear.stat.star_2
@@ -47,28 +45,26 @@
           .p1
             = gear.name
           .g-star-button
-            / - @stats.where(gear_id: gear.id).each do |s|
             div
-              / p#p0 = s.name
               p#p0 = gear.stat.name
               .g-stat
                 .g-stat-name
-                  / p Base stat - #{s.value}
                   p Base stat - #{gear.stat.value}
 
               .g-button
                 .g-btn
-                  button.bt1 1★
-                  button.bt2 2★
-                  button.bt3 3★
-                  button.bt4 4★
-                  button.bt5 5★
-                / .g-val
-                  p#bt1.btn = s.star_1
-                  p#bt2.btn = s.star_2
-                  p#bt3.btn = s.star_3
-                  p#bt4.btn = s.star_4
-                  p#bt5.btn = s.star_5
+                  form
+                    .rating
+                      label.bt5 ☆
+                      input name="starValue" type="radio" value="5"
+                      label.bt4 ☆
+                      input name="starValue" type="radio" value="4"
+                      label.bt3 ☆
+                      input name="starValue" type="radio" value="3"
+                      label.bt2 ☆
+                      input name="starValue" type="radio" value="2"
+                      label.bt1 ☆
+                      input name="starValue" type="radio" value="1"
                 .g-val
                   p#bt1.btn = gear.stat.star_1
                   p#bt2.btn = gear.stat.star_2

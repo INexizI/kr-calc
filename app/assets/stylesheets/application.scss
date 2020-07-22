@@ -419,7 +419,7 @@ h4 {
 .g-stat {
   display: flex;
   width: 230px;
-  margin: 5px;
+  // margin: 5px;
 
   .g-stat-name {
     p:first-of-type {
@@ -455,10 +455,12 @@ h4 {
     }
     .btn {
       display: none;
+      margin: 0 10px;
+      padding: 6px 0;
     }
   }
   #p0 {
-    padding: 0;
+    padding: 0 5px;
   }
 }
 .g-stat {
@@ -571,4 +573,28 @@ h4 {
   .t-atk {
     display: flex;
   }
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  float: left;
+  margin-bottom: 10px;
+  padding: 1px 0;
+}
+.rating > label {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+  font-size: 20px;
+}
+.rating > label.active:before,
+.rating > label.active ~ label:before,
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+  content: "\2605";
+  position: absolute;
+}
+input {
+  display: none;
 }
