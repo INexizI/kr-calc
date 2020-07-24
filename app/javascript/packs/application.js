@@ -6,5 +6,7 @@ require("jquery-ui")
 require("packs/char")
 require("packs/gear")
 require("packs/calc")
+require("packs/search")
+require("packs/jquery.easy-autocomplete.js")
 
 console.log('Webpacker loaded')

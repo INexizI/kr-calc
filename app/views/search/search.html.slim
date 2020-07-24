@@ -1,0 +1,116 @@
+title Search
+
+.search-main
+  h1 Hero
+  .search-sub
+    - @chars.each do |char|
+      .search-block
+        p
+          = link_to char, title: char.name do
+            img src='/images/media/heroes/#{char.name}/portrait.png'
+        p = char.name
+  / h1 Class
+  / .search-sub
+  /   - @roles.each do |role|
+  /     .search-block
+  /       p
+  /         = link_to role, title: role.name do
+  /           img src='/images/media/classes/#{role.name.downcase}.png'
+  /       p = role.name
+  h1 Skill
+  .search-sub
+    - @skills.each do |skill|
+      .search-block
+        p
+          = link_to skill, title: skill.name do
+            img src="/images/media/heroes/#{skill.char.name}/s#{skill.skill_number}.png"
+        p = skill.name
+  h1 Pers
+  .search-sub
+    - @perks.each do |perk|
+      .search-block
+        p
+          - if perk.perk_type == 'generic'
+            img src='/images/media/genericPerks/#{perk.name}.png' title=perk.description
+          - else
+            img src='/images/media/heroes/#{perk.tier}/#{perk.sequence}.png' title=perk.description
+        p = perk.name
+  h1 Gear
+  .search-sub
+    - @gears.each do |gear|
+      .search-block
+        p
+          = link_to gear, title: gear.name do
+            - if !gear.char_id.blank? && gear.gear_type == '10-UW'
+              img src='/images/media/heroes/#{gear.char.name}/uw.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.char_id.blank? && gear.gear_type == '10-UW'
+              img src='/images/media/heroes/#{gear.role.name.downcase}.png' title=(gear.set + ' ' + gear.name)
+            - elsif !gear.char_id.blank? && gear.gear_type == '9-UT'
+              img src='/images/media/heroes/#{gear.char.name}/ut#{gear.gear_skill}.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.char_id.blank? && gear.gear_type == '9-UT'
+              img src='/images/media/gears/#{gear.gear_type}/mana stone.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Opportune Fire'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/fire.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/fire.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Gritty Frost'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/frost.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/frost.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Unrelenting Poison'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/poison.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/poison.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Swift Darkness'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/darkness.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/darkness.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Beast of Chaos'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/manti.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/manti.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Lava'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/lava.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/lava.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Legendary'
+              - if gear.name == "Hell's Eyes"
+                img src='/images/media/gears/#{gear.gear_type}/Ring/legendary.png' title=(gear.set + ' ' + gear.name)
+              - elsif gear.name == "Fire Dragon's Blessing"
+                img src='/images/media/gears/#{gear.gear_type}/Earrings/legendary.png' title=(gear.set + ' ' + gear.name)
+              - elsif gear.name == 'Price of Arrogance'
+                img src='/images/media/gears/#{gear.gear_type}/Necklace/legendary.png' title=(gear.set + ' ' + gear.name)
+              - elsif gear.name == 'Fire Circle'
+                img src='/images/media/gears/#{gear.gear_type}/Bracelet/legendary.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/legendary.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Hero Suppression'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/suppression.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/suppression.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Hero Protection'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/protection.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/protection.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.set == 'Dark Legion'
+              - if gear.gear_type == '7-J'
+                img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/dark legion.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/dark legion.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.name == "Hell's Eyes"
+              img src='/images/media/gears/#{gear.gear_type}/Ring/legendary.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.name == "Fire Dragon's Blessing"
+              img src='/images/media/gears/#{gear.gear_type}/Earrings/legendary.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.name == 'Price of Arrogance'
+              img src='/images/media/gears/#{gear.gear_type}/Necklace/legendary.png' title=(gear.set + ' ' + gear.name)
+            - elsif gear.name == 'Fire Circle'
+              img src='/images/media/gears/#{gear.gear_type}/Bracelet/legendary.png' title=(gear.set + ' ' + gear.name)
+        p = gear.name

@@ -8,5 +8,8 @@ br
 
 div
   p = @perk.name
-  img src='/images/media/genericPerks/#{@perk.name}.png'
+  - if @perk.perk_type == 'generic'
+    img src='/images/media/genericPerks/#{@perk.name}.png'
+  - else
+    img src='/images/media/heroes/#{@perk.tier}/#{@perk.sequence}.png'
   p = @perk.description

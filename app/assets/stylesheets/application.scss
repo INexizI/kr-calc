@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 10px;
 
   .home-a {
     text-align: center;
@@ -597,4 +598,159 @@ h4 {
 }
 input {
   display: none;
+}
+
+
+/*
+  Search bar
+*/
+
+.easy-autocomplete {
+  width: 100% !important;
+  position: relative;
+}
+
+.easy-autocomplete input {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+  border: 1px solid rgb(204, 204, 204);
+  color: rgb(85, 85, 85);
+  float: none;
+}
+
+.easy-autocomplete input:hover, .easy-autocomplete input:focus {
+  box-shadow: none;
+}
+
+.easy-autocomplete a {
+  display: block;
+}
+
+.easy-autocomplete-container {
+  color: rgb(185, 185, 185);
+  background: rgb(75, 75, 75);
+  border: 0.1px solid rgb(70, 70, 70);
+  border-bottom: none;
+  border-top: none;
+  position: relative;
+  // left: 3px;
+  // bottom: -7px;
+  // width: 100%;
+  // z-index: 2;
+}
+
+.easy-autocomplete-container ul {
+  display: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  position: relative;
+}
+
+.easy-autocomplete-container ul li, .easy-autocomplete-container ul .eac-category {
+  display: block;
+  font-size: 15px;
+  font-weight: normal;
+  padding: 2px 25px;
+}
+
+.easy-autocomplete-container ul li:last-child {
+}
+
+.easy-autocomplete-container ul li.selected {
+  background: none repeat scroll 0 0 rgb(200, 200, 200);
+  border: 0.1px solid rgb(70, 70, 70);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.easy-autocomplete-container ul li.selected div {
+  font-weight: normal;
+}
+
+.easy-autocomplete-container ul li div {
+  display: block;
+  font-weight: normal;
+  word-break: break-all;
+}
+
+.easy-autocomplete-container ul li b {
+  font-weight: bold;
+}
+
+.easy-autocomplete-container ul .eac-category {
+  padding: 3px 10px;
+  font-size: 1em;
+  font-style: italic;
+  font-variant: petite-caps;
+}
+
+.eac-icon {
+  display: table;
+  margin: 0 auto;
+  padding: 5px 0px;
+  min-width: 50px;
+  max-width: 100px;
+  min-height: 50px;
+  max-height: 100px;
+}
+
+// .search-main {
+//   width: 100%;
+//   display: flex;
+//   margin-top: 20px;
+//   text-align: center;
+//
+//   .search-sub {
+//     margin: 0 auto;
+//     overflow: hidden;
+//
+//     .search-block {
+//       padding: 0 5px;
+//       font-size: 1.5em;
+//       text-align: center;
+//       margin-bottom: 5px;
+//       border-radius: 10px;
+//       font-family: monospace;
+//       background: rgb(75, 75, 75);
+//       box-shadow: 0px 0px 5px 0px;
+//       color: rgb(185, 185, 185);
+//     }
+//     a {
+//       display: block;
+//       margin-bottom: 5px;
+//
+//       img {
+//         width: 150px;
+//       }
+//     }
+//   }
+// }
+
+.input_search {
+  width: 100%;
+
+  input {
+    display: block;
+    outline-width: 0;
+    // margin: 5px 0 20px 0;
+    padding: 5px;
+  }
+}
+
+.search-main {
+  .search-sub {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+
+    .search-block {
+      width: 124px;
+      margin: 0 5px;
+
+      img {
+        width: 124px;
+        height: 124px;
+      }
+    }
+  }
 }

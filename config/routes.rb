@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :skills
   resources :gears
   resources :enchants
+
+  get :search, controller: :search
 end
