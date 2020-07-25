@@ -1,53 +1,51 @@
 title = @gear.set + ' ' + @gear.name
 
-= link_to root_path do
-  = image_tag '/images/home.svg'
-br
 = link_to 'javascript:history.back()' do
   = image_tag '/images/left.svg'
 
-.g-description
-  p
-    = @gear.tier
-  p
-    = @gear.set
-  p
-    = @gear.name
-  p
-    = @gear.description
-  p
-  - if !@gear.char_id.blank?
-    = @gear.char.name
-  - elsif !@gear.role_id.blank?
-    = @gear.role.name
+.gear
+  .g-description
+    p
+      = @gear.tier
+    p
+      = @gear.set
+    p
+      = @gear.name
+    p
+      = @gear.description
+    p
+    - if !@gear.char_id.blank?
+      = @gear.char.name
+    - elsif !@gear.role_id.blank?
+      = @gear.role.name
 
-.g-star-button
-  .g-img
-    = render 'show'
+  .g-star-button
+    .g-img
+      = render 'show'
 
-  div
-    span = @gear.stat.name
-    .g-stat
-      .g-stat-name
-        span Base stat - #{@gear.stat.value}
+    div
+      span = @gear.stat.name
+      .g-stat
+        .g-stat-name
+          span Base stat - #{@gear.stat.value}
 
-    .g-button
-      .g-btn
-        form
-          .rating
-            label.bt5 ☆
-            input name="starValue" type="radio" value="5"
-            label.bt4 ☆
-            input name="starValue" type="radio" value="4"
-            label.bt3 ☆
-            input name="starValue" type="radio" value="3"
-            label.bt2 ☆
-            input name="starValue" type="radio" value="2"
-            label.bt1 ☆
-            input name="starValue" type="radio" value="1"
-      .g-val
-        p#bt1.btn = @gear.stat.star_1
-        p#bt2.btn = @gear.stat.star_2
-        p#bt3.btn = @gear.stat.star_3
-        p#bt4.btn = @gear.stat.star_4
-        p#bt5.btn = @gear.stat.star_5
+      .g-button
+        .g-btn
+          form
+            .rating
+              label.bt5 ☆
+              input name="starValue" type="radio" value="5"
+              label.bt4 ☆
+              input name="starValue" type="radio" value="4"
+              label.bt3 ☆
+              input name="starValue" type="radio" value="3"
+              label.bt2 ☆
+              input name="starValue" type="radio" value="2"
+              label.bt1 ☆
+              input name="starValue" type="radio" value="1"
+        .g-val
+          p#bt1.btn = @gear.stat.star_1
+          p#bt2.btn = @gear.stat.star_2
+          p#bt3.btn = @gear.stat.star_3
+          p#bt4.btn = @gear.stat.star_4
+          p#bt5.btn = @gear.stat.star_5

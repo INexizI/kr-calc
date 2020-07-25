@@ -9,14 +9,6 @@ title Search
           = link_to char, title: char.name do
             img src='/images/media/heroes/#{char.name}/portrait.png'
         p = char.name
-  / h1 Class
-  / .search-sub
-  /   - @roles.each do |role|
-  /     .search-block
-  /       p
-  /         = link_to role, title: role.name do
-  /           img src='/images/media/classes/#{role.name.downcase}.png'
-  /       p = role.name
   h1 Skill
   .search-sub
     - @skills.each do |skill|
