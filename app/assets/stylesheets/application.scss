@@ -487,6 +487,48 @@ h4 {
   }
 }
 
+.g-description {
+  width: 400px;
+  border: 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  background: rgba(210, 210, 210, 1);
+  display: none;
+  position: relative;
+  margin: -45px 30px;
+  padding: 0px 5px;
+  font-size: medium;
+
+  p {
+    padding: 3px;
+  }
+}
+.c-perk-img:hover .g-description {
+  display: grid;
+  gap: 1px 1px;
+  grid-template-areas: "p1 p1" "p2 p3" "p4 p4";
+
+  .p1 {
+    grid-area: p1;
+    font-weight: bold;
+    padding: 10px 5px 3px 5px;
+    text-align: center;
+  }
+  .p2 {
+    grid-area: p2;
+    padding: 0 5px;
+    margin-left: 0;
+  }
+  .p3 {
+    grid-area: p3;
+    margin-right: 0px;
+    padding: 0 5px;
+   }
+  .p4 {
+    grid-area: p4;
+    padding: 3px 5px 10px 5px;
+  }
+}
+
 .g-star-button {
   .g-img {
     img {
@@ -512,7 +554,38 @@ h4 {
     .btn {
       display: none;
       margin: 0 10px;
-      padding: 6px 0;
+      padding: 2px 3px;
+    }
+    #bt0 {
+      display: block;
+    }
+    .rating {
+      unicode-bidi: bidi-override;
+      direction: rtl;
+      float: left;
+      margin-top: -3px;
+
+      .bt0 {
+        width: 15px;
+        font-size: 12px;
+        vertical-align: 2px;
+      }
+    }
+    .rating > label {
+      display: inline-block;
+      position: relative;
+      width: 1.1em;
+      font-size: 20px;
+    }
+    .rating > #bt-star.active:before,
+    .rating > #bt-star.active ~ #bt-star:before,
+    .rating > #bt-star:hover:before,
+    .rating > #bt-star:hover ~ #bt-star:before {
+      content: "\2605";
+      position: absolute;
+    }
+    input {
+      display: none;
     }
   }
   #p0 {
@@ -630,31 +703,6 @@ h4 {
     display: flex;
   }
 }
-
-.rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
-  float: left;
-  margin-bottom: 10px;
-  padding: 1px 0;
-}
-.rating > label {
-  display: inline-block;
-  position: relative;
-  width: 1.1em;
-  font-size: 20px;
-}
-.rating > label.active:before,
-.rating > label.active ~ label:before,
-.rating > label:hover:before,
-.rating > label:hover ~ label:before {
-  content: "\2605";
-  position: absolute;
-}
-input {
-  display: none;
-}
-
 
 /*
   Search bar

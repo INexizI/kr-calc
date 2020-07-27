@@ -4,7 +4,7 @@ title = @gear.set + ' ' + @gear.name
   = image_tag '/images/left.svg'
 
 .gear
-  .g-description
+  .gear-description
     p
       = @gear.tier
     p
@@ -23,27 +23,26 @@ title = @gear.set + ' ' + @gear.name
     .g-img
       = render 'show'
 
-    div
-      span = @gear.stat.name
-      .g-stat
-        .g-stat-name
-          span Base stat - #{@gear.stat.value}
-
+    span = @gear.stat.name
+    .g-stat
       .g-button
         .g-btn
           form
             .rating
-              label.bt5 ☆
+              label#bt-star.bt5 ☆
               input name="starValue" type="radio" value="5"
-              label.bt4 ☆
+              label#bt-star.bt4 ☆
               input name="starValue" type="radio" value="4"
-              label.bt3 ☆
+              label#bt-star.bt3 ☆
               input name="starValue" type="radio" value="3"
-              label.bt2 ☆
+              label#bt-star.bt2 ☆
               input name="starValue" type="radio" value="2"
-              label.bt1 ☆
+              label#bt-star.bt1 ☆
               input name="starValue" type="radio" value="1"
+              label.bt0 ◯
+              input name="starValue" type="radio" value="0"
         .g-val
+          p#bt0.btn = @gear.stat.star_0
           p#bt1.btn = @gear.stat.star_1
           p#bt2.btn = @gear.stat.star_2
           p#bt3.btn = @gear.stat.star_3
