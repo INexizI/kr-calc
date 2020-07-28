@@ -10,7 +10,7 @@ title = @char.name
         img src='/images/media/heroes/#{@char.name}/portrait.png'
       .c-title
         p#c-class
-          img src='/images/media/classes/#{@char.role.name}.png'
+          img src='/images/media/classes/#{@char.role.name}.png' title=@char.role.name
         - if @char.type_dmg == 'Physical'
           p = image_tag '/images/media/physical.png', title: @char.type_dmg
         - else

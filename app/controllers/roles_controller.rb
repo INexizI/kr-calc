@@ -3,10 +3,11 @@ class RolesController < ApplicationController
 
   def index
     @roles = Role.all
+    @stats = Stat.all
   end
 
   def show
-    @stats = Stat.all
+    # @stats = Stat.all
   end
 
   def new

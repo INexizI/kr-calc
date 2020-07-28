@@ -1,9 +1,71 @@
 title Class
 
 .r-stats
-  - @roles.each do |role|
-    .class
-      p
-        img src='/images/media/classes/#{role.name.downcase}.png'
-      p
-        = link_to role.name, role
+  .h-title
+    = image_tag '/images/media/classes/knight.png'
+    span Knight
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 1).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/warrior.png'
+    span Warrior
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 2).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/assassin.png'
+    span Assassin
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 3).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/archer.png'
+    span Archer
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 4).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/mechanic.png'
+    span Mechanic
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 5).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/wizard.png'
+    span Wizard
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 6).each do |s|
+        p = s.name
+        p = s.value
+
+.r-stats
+  .h-title
+    = image_tag '/images/media/classes/priest.png'
+    span Priest
+  .h-main
+    .r-stat
+      - @stats.where(role_id: 7).each do |s|
+        p = s.name
+        p = s.value
