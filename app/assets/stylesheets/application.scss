@@ -6,14 +6,15 @@
   text-decoration: none;
 }
 
-header {
-  width: 1200px;
-  position: absolute;
-  top: 0;
+html, body {
+  width: 100%;
+  height: 100%;
+  background: black;
 }
 
 body {
-  width: 100%;
+  min-height: 100%;
+  height: auto;
   max-width: 1200px;
   margin: auto;
   background: #757575;
@@ -22,25 +23,34 @@ body {
   font-weight: bold;
 }
 
+header {
+  width: 1200px;
+  position: absolute;
+}
+
+input {
+  outline: 0;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 
 .inner {
-  display: flex;
-
   .inner_links {
-    margin: 2px 10px 2px 0;
+    float: left;
+    padding: 3px 5px;
   }
 
   .input_search {
-    width: 100%;
+    float: right;
+    width: calc(100% - 50px);
 
     input {
       display: block;
       outline-width: 0;
-      // margin: 5px 0 20px 0;
       padding: 5px;
+      height: 15px;
     }
   }
 
@@ -64,11 +74,15 @@ body {
 }
 
 .outer {
-  margin-top: 2em;
+  padding-top: 2em;
 }
 
 .back {
   position: absolute;
+}
+
+#a {
+  padding: 0 5px;
 }
 
 .home {
@@ -135,16 +149,23 @@ body {
   justify-content: center;
 
   .h-char {
-    width: 124px;
+    // width: 124px;
+    width: 100px;
     margin: 5px;
 
     .h-avatar {
-      width: 124px;
-      height: 124px;
+      // width: 124px;
+      // height: 124px;
+      width: 100px;
+      height: 100px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
       a {
         display: block;
+      }
+      img {
+        width: 100px;
+        height: 100px;
       }
     }
 
@@ -315,16 +336,16 @@ input {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
 
     .p-image {
-      width: 100px;
-      height: 100px;
+      width: 75px;
+      height: 75px;
       cursor: pointer;
 
       a {
         display: block;
       }
       img {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
       }
     }
   }
@@ -333,6 +354,11 @@ input {
 /*
   Skill
 */
+
+.skill-main {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .skill {
   .p-img {
@@ -345,7 +371,13 @@ input {
 }
 
 .s-main {
-  text-align: center;
+  width: 600px;
+  margin: 5px auto;
+
+  .s-title {
+    display: flex;
+    justify-content: center;
+  }
 
   .s-skills {
     display: flex;
@@ -353,8 +385,18 @@ input {
 
     .s-image {
       margin: 5px;
+
+      img {
+        width: 75px;
+        height: 75px;
+      }
     }
   }
+}
+
+#char-icon {
+  width: 24px;
+  border-radius: 50%;
 }
 
 /*
@@ -420,6 +462,16 @@ input {
   Gear
 */
 
+.gear {
+  padding: 10px;
+
+  .gear-description {
+    p {
+      padding: 5px 0;
+    }
+  }
+}
+
 .g-main {
   justify-content: center;
 
@@ -473,8 +525,8 @@ input {
         padding: 0 5px;
 
         img {
-          width: 80px;
-          height: 80px;
+          width: 75px;
+          height: 75px;
         }
       }
     }
@@ -555,8 +607,8 @@ h4 {
 .g-star-button {
   .g-img {
     img {
-      width: 124px;
-      height: 124px;
+      width: 100px;
+      height: 100px;
       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     }
   }

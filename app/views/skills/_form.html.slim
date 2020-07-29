@@ -1,39 +1,24 @@
 = simple_form_for @skill do |f|
-  - if @skill.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@skill.errors.count, "error")} prohibited this skill from being saved:"
-      ul
-        - @skill.errors.full_messages.each do |message|
-          li = message
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.label :name
-    br
+    label for='name' Name
     = f.text_field :name
   .form-inputs
-    = f.label :description
-    br
+    label for='description' Description
     = f.text_field :description
-  / .form-inputs
-    = f.label :image
-    br
-    = f.file_field :image
   .form-inputs
-    = f.label :mana
-    br
+    label for='mana' Mana
     = f.text_field :mana
   .form-inputs
-    = f.label :cooldown
-    br
+    label for='cooldown' Cooldown
     = f.text_field :cooldown
   .form-inputs
-    = f.label :skill_number
-    br
+    label for='skill_number' Skill
     = f.text_field :skill_number
   .form-inputs
-    br
-    = f.association :char, collection: Char.order(:name)
-
+    label for='char' Hero
+    = f.association :char, collection: Char.order(:name), label: false
   br
-  .form-actions
-    = f.button :submit
+  .actions = f.submit

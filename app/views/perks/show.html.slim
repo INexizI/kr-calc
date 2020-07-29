@@ -1,9 +1,6 @@
 title = @perk.name
 
-= link_to root_path do
-  = image_tag '/images/home.svg'
-br
-= link_to :back do
+= link_to 'javascript:history.back()', id: 'a' do
   = image_tag '/images/left.svg'
 
 div

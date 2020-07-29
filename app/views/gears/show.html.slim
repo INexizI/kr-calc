@@ -1,6 +1,6 @@
 title = @gear.set + ' ' + @gear.name
 
-= link_to 'javascript:history.back()' do
+= link_to 'javascript:history.back()', id: 'a' do
   = image_tag '/images/left.svg'
 
 .gear
@@ -12,12 +12,13 @@ title = @gear.set + ' ' + @gear.name
     p
       = @gear.name
     p
-      = @gear.description
+      - if !@gear.char_id.blank?
+        img src='/images/media/heroes/#{@gear.char.name}/portrait.png' id='char-icon'
+        = @gear.char.name
+      - elsif !@gear.role_id.blank?
+        = @gear.role.name
     p
-    - if !@gear.char_id.blank?
-      = @gear.char.name
-    - elsif !@gear.role_id.blank?
-      = @gear.role.name
+      = @gear.description
 
   .g-star-button
     .g-img

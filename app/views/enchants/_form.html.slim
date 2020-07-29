@@ -3,19 +3,16 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.input :name, collection: ['Flame Enchant Scroll', 'Frost Enchant Scroll', 'Poison Enchant Scroll', 'Darkness Enchant Scroll']
-  br
+    label for='name' Name
+    = f.input :name, collection: ['Flame Enchant Scroll', 'Frost Enchant Scroll', 'Poison Enchant Scroll', 'Darkness Enchant Scroll'], label: false
   .form-inputs
-    = f.label :value
-    br
+    label for='value' Value
     = f.text_field :value
-  br
   .form-inputs
-    = f.input :tier, collection: ['rare', 'heroic', 'ancient', 'legendary']
-  br
+    label for='tier' Tier
+    = f.input :tier, collection: ['rare', 'heroic', 'ancient', 'legendary'], label: false
   .form-inputs
-    = f.input :set, collection: ['fire', 'frost', 'poison', 'darkness']
+    label for='set' Set
+    = f.input :set, collection: ['fire', 'frost', 'poison', 'darkness'], label: false
   br
-
-  .form-actions
-    = f.button :submit
+  .actions = f.submit

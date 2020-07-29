@@ -3,16 +3,13 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.label :name
-    br
+    label for='name' Name
     = f.text_field :name
-  br
   .form-inputs
-    = f.input :type_gear, collection: ['armor', 'weapon', 'secondary', 'all']
-  br
+    label for='type_gear' Gear Type
+    = f.input :type_gear, collection: ['armor', 'weapon', 'secondary', 'all'], label: false
   .form-inputs
-    = f.input :tier, collection: ['common', 'uncommon', 'rare', 'heroic', 'ancient']
+    label for='tier' Tier
+    = f.input :tier, collection: ['common', 'uncommon', 'rare', 'heroic', 'ancient'], label: false
   br
-
-  .form-actions
-    = f.button :submit
+  .actions = f.submit

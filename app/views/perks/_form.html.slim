@@ -1,32 +1,21 @@
 = simple_form_for @perk do |f|
-  - if @perk.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@perk.errors.count, "error")} prohibited this perk from being saved:"
-      ul
-        - @perk.errors.full_messages.each do |message|
-          li = message
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form
-    = f.label :name
-    br
+  .form-inputs
+    label for='name' Name
     = f.text_field :name
-
-  .form
-    = f.label :description
-    br
+  .form-inputs
+    label for='description' Description
     = f.text_field :description
-
-  .form
-    = f.label :image
-    br
-    = f.file_field :image
-
-  .form
-    / = f.label :tier
-    / br
-    / = f.text_field :tier
-    br
-    = f.input :tier, collection: Char.order('name ASC'), value_method: :name
-
+  .form-inputs
+    label for='tier' Tier
+    = f.input :tier, collection: Char.order('name ASC'), value_method: :name, label: false
+  .form-inputs
+    label for='sequence' Perk Sequence
+    = f.input :sequence, collection: ['s1l', 's1d', 's2l', 's2d', 's3l', 's3d', 's4l', 's4d'], label: false
+  .form-inputs
+    label for='perk_type' Perk Type
+    = f.input :perk_type, collection: ['hero', 'generic'], label: false
   br
   .actions = f.submit

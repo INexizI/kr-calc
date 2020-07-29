@@ -1,19 +1,17 @@
 = simple_form_for @char do |f|
-  - if @char.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@char.errors.count, "error")} prohibited this char from being saved:"
-      ul
-        - @char.errors.full_messages.each do |message|
-          li = message
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form
-    = f.input :name
-  .form
+  .form-inputs
+    label for='name' Name
+    = f.text_field :name
+  .form-inputs
+    label for='description' Description
+    = f.text_field :description
+  .form-inputs
     label for='type_dmg' Type DMG
     = f.input :type_dmg, collection: ['Physical', 'Magic'], label: false
-  .form
-    = f.input :description
-  .form
+  .form-inputs
     label for='role' Class
     = f.association :role, label: false
   br

@@ -14,12 +14,8 @@
   .form-inputs
     label for='role_id' Class
     = f.association :role, label: false
-  / .form-inputs
-  /   label for='gear_id' Gear
-  /   = f.association :gear, collection: Gear.order(id: 'ASC'), label_method: :name
   .form-inputs
     label for='notice_id' Notice
     = f.text_field :notice
   br
-  .form-actions
-    = f.button :submit
+  .actions = f.submit
