@@ -58,10 +58,10 @@
 
     // Hero stats
     $('select#calc_role_id').change(function() {
-      $('.class-stats').children().hide();
+      $('.r-stats').children().hide();
       $stat = $(this).children('option:selected').val();
-      $statVal = $('.class-stats').children().attr('class');
-      $('.class-stats').find('.role' + $stat).toggle();
+      $statVal = $('.r-stats').children().attr('class');
+      $('.r-stats').find('.role' + $stat).toggle();
     }).change();
 
     // Class / Unique Weapon
@@ -215,22 +215,62 @@
     }).change();
 
     // Weapon ATK
-    $('button').click(function() {
+    $('#uw label').click(function() {
       $cVal = $('.char').text();
       $rVal = $('.role').text();
       $wVal = $('.weapon').text();
-      $btnId = $(this).attr('class');
+      $tVal = $('.treasure').text();
+      $btnId = $(this).attr('class').split(' ')[0];
+
       if ($wVal == 'Class') {
         $rBtn = $('.hero-gear').find('.role' + $rVal);
         $btnFind = $($rBtn).find('#' + $btnId);
+        $p0 = $($rBtn).find('#p0').text();
       } else if ($wVal == 'Unique') {
         $cBtn = $('.char' + $cVal).find('.uw');
         $btnFind = $($cBtn).find('#' + $btnId);
+        $p0 = $($cBtn).find('#p0').text();
       }
-      $classAtk = parseInt($('.role' + $rVal).find('p:contains("ATK")').next('p').text());
-      // $gearAtk = parseInt($($btnFind).text());
-      // $sumAtk = $classAtk + $gearAtk;
-      // $('#heroAtk').text('ATK - ' + $sumAtk);
+      $classStat = parseInt($('.role' + $rVal).find('p:contains("ATK")').next('p').text());
+      $gearStat = parseInt($($btnFind).text());
+      $sumStat = $classStat + $gearStat;
+      $('#heroATK').text($p0 + ' - ' + $sumStat);
+      // alert('btnId = ' + $btnId);
+      console.log('W btnId = ' + $btnId);
+      // alert('p0 = ' + $p0);
+      console.log('W p0 = ' + $p0);
+      // alert('btnFind = ' + $btnFind);
+      console.log('W btnFind = ' + $btnFind);
+      // alert('classStat = ' + $classStat);
+      console.log('W classStat = ' + $classStat);
+      // alert('gearStat = ' + $gearStat);
+      console.log('W gearStat = ' + $gearStat);
+    }).change();
+
+    $('#ut label').click(function() {
+      if ($tVal == 'Mana Stone') {
+        $cBtn = $('.char' + $cVal).find('.mana');
+        $btnFind = $($cBtn).find('#' + $btnId);
+        $p1 = $($cBtn).find('#p1').first().text();
+      } else if ($tVal == 'Unique') {
+        $cBtn = $('.char' + $cVal).find('.ut');
+        $btnFind = $($cBtn).find('#' + $btnId);
+        $p1 = $($cBtn).find('#p1').first().text();
+      }
+      $classStat = parseInt($('.role' + $rVal).find('p:contains("MAX HP")').next('p').text());
+      $gearStat = parseInt($($btnFind).text());
+      $sumStat = $classStat + $gearStat;
+      $('#heroHP').text($p1 + ' - ' + $sumStat);
+      // alert('btnId = ' + $btnId);
+      console.log('T btnId = ' + $btnId);
+      // alert('p1 = ' + $p1);
+      console.log('T p1 = ' + $p1);
+      // alert('btnFind = ' + $btnFind);
+      console.log('T btnFind = ' + $btnFind);
+      // alert('classStat = ' + $classStat);
+      console.log('T classStat = ' + $classStat);
+      // alert('gearStat =' + $gearStat);
+      console.log('T gearStat = ' + $gearStat);
     }).change();
   });
 }).call(this);

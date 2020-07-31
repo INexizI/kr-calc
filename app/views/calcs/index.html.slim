@@ -96,7 +96,7 @@ title Calculator
         .weapon
         .treasure
 
-  .class-stats#calc
+  .r-stats#calc
     - @roles.each do |r|
       . class='role#{r.id}'
         - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').find_each do |s|
@@ -111,7 +111,9 @@ title Calculator
 
   .totalStat#calc
     .t-atk
-      p#heroAtk
+      p#heroATK
+      hr
+      p#heroHP
 
   .hero-gear#calc
     - @roles.each do |r|
@@ -123,36 +125,34 @@ title Calculator
                 img src='/images/media/heroes/#{r.name.downcase}.png'
               p = g.name
             .g-star-button
-              / - @stats.where(gear_id: g.id).each do |s|
               div
                 .g-stat-name
-                  / p#p0 = s.name
+                  p Stat
                   p#p0 = g.stat.name
                   .g-stat
-                    p
-                      / | (Base stat - #{s.value})
-                      | (Base stat - #{g.stat.value})
-                .g-button
-                  .g-btn
-                    button.bt0 0★
-                    button.bt1 1★
-                    button.bt2 2★
-                    button.bt3 3★
-                    button.bt4 4★
-                    button.bt5 5★
-                  / .g-val
-                    p#bt0.btn = s.value
-                    p#bt1.btn = s.star_1
-                    p#bt2.btn = s.star_2
-                    p#bt3.btn = s.star_3
-                    p#bt4.btn = s.star_4
-                    p#bt5.btn = s.star_5
-                  .g-val
-                    p#bt1.btn = g.stat.star_1
-                    p#bt2.btn = g.stat.star_2
-                    p#bt3.btn = g.stat.star_3
-                    p#bt4.btn = g.stat.star_4
-                    p#bt5.btn = g.stat.star_5
+                    .g-button
+                      .g-btn
+                        form
+                          .rating#uw
+                            label#bt-star.bt5 ☆
+                            input name="starValue" type="radio" value="5"
+                            label#bt-star.bt4 ☆
+                            input name="starValue" type="radio" value="4"
+                            label#bt-star.bt3 ☆
+                            input name="starValue" type="radio" value="3"
+                            label#bt-star.bt2 ☆
+                            input name="starValue" type="radio" value="2"
+                            label#bt-star.bt1 ☆
+                            input name="starValue" type="radio" value="1"
+                            label.bt0 ◯
+                            input name="starValue" type="radio" value="0"
+                      .g-val
+                        p#bt0.btn = g.stat.star_0
+                        p#bt1.btn = g.stat.star_1
+                        p#bt2.btn = g.stat.star_2
+                        p#bt3.btn = g.stat.star_3
+                        p#bt4.btn = g.stat.star_4
+                        p#bt5.btn = g.stat.star_5
 
     - @chars.each do |c|
       . class='char#{c.id}'
@@ -165,25 +165,32 @@ title Calculator
             .g-star-button
               div
                 .g-stat-name
+                  p Stat
                   p#p0 = g.stat.name
                   .g-stat
-                    p
-                      | (Base stat - #{g.stat.value})
-                .g-button
-                  .g-btn
-                    button.bt0 0★
-                    button.bt1 1★
-                    button.bt2 2★
-                    button.bt3 3★
-                    button.bt4 4★
-                    button.bt5 5★
-                  .g-val
-                    p#bt0.btn = g.stat.value
-                    p#bt1.btn = g.stat.star_1
-                    p#bt2.btn = g.stat.star_2
-                    p#bt3.btn = g.stat.star_3
-                    p#bt4.btn = g.stat.star_4
-                    p#bt5.btn = g.stat.star_5
+                    .g-button
+                      .g-btn
+                        form
+                          .rating#uw
+                            label#bt-star.bt5 ☆
+                            input name="starValue" type="radio" value="5"
+                            label#bt-star.bt4 ☆
+                            input name="starValue" type="radio" value="4"
+                            label#bt-star.bt3 ☆
+                            input name="starValue" type="radio" value="3"
+                            label#bt-star.bt2 ☆
+                            input name="starValue" type="radio" value="2"
+                            label#bt-star.bt1 ☆
+                            input name="starValue" type="radio" value="1"
+                            label.bt0 ◯
+                            input name="starValue" type="radio" value="0"
+                      .g-val
+                        p#bt0.btn = g.stat.star_0
+                        p#bt1.btn = g.stat.star_1
+                        p#bt2.btn = g.stat.star_2
+                        p#bt3.btn = g.stat.star_3
+                        p#bt4.btn = g.stat.star_4
+                        p#bt5.btn = g.stat.star_5
 
         - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').find_each do |g|
           .ut
@@ -194,25 +201,32 @@ title Calculator
             .g-star-button
               div
                 .g-stat-name
-                  p#p0 = g.stat.name
+                  p Stat
+                  p#p1 = g.stat.name
                   .g-stat
-                    p
-                      | (Base stat - #{g.stat.value})
-                .g-button
-                  .g-btn
-                    button.bt0 0★
-                    button.bt1 1★
-                    button.bt2 2★
-                    button.bt3 3★
-                    button.bt4 4★
-                    button.bt5 5★
-                  .g-val
-                    p#bt0.btn = g.stat.value
-                    p#bt1.btn = g.stat.star_1
-                    p#bt2.btn = g.stat.star_2
-                    p#bt3.btn = g.stat.star_3
-                    p#bt4.btn = g.stat.star_4
-                    p#bt5.btn = g.stat.star_5
+                    .g-button
+                      .g-btn
+                        form
+                          .rating#ut
+                            label#bt-star.bt5 ☆
+                            input name="starValue" type="radio" value="5"
+                            label#bt-star.bt4 ☆
+                            input name="starValue" type="radio" value="4"
+                            label#bt-star.bt3 ☆
+                            input name="starValue" type="radio" value="3"
+                            label#bt-star.bt2 ☆
+                            input name="starValue" type="radio" value="2"
+                            label#bt-star.bt1 ☆
+                            input name="starValue" type="radio" value="1"
+                            label.bt0 ◯
+                            input name="starValue" type="radio" value="0"
+                      .g-val
+                        p#bt0.btn = g.stat.star_0
+                        p#bt1.btn = g.stat.star_1
+                        p#bt2.btn = g.stat.star_2
+                        p#bt3.btn = g.stat.star_3
+                        p#bt4.btn = g.stat.star_4
+                        p#bt5.btn = g.stat.star_5
 
         - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').find_each do |g|
           .mana
@@ -223,25 +237,31 @@ title Calculator
             .g-star-button
               div
                 .g-stat-name
-                  p#p0 = g.stat.name
+                  p#p1 = g.stat.name
                   .g-stat
-                    p
-                      | (Base stat - #{g.stat.value})
-                .g-button
-                  .g-btn
-                    button.bt0 0★
-                    button.bt1 1★
-                    button.bt2 2★
-                    button.bt3 3★
-                    button.bt4 4★
-                    button.bt5 5★
-                  .g-val
-                    p#bt0.btn = g.stat.value
-                    p#bt1.btn = g.stat.star_1
-                    p#bt2.btn = g.stat.star_2
-                    p#bt3.btn = g.stat.star_3
-                    p#bt4.btn = g.stat.star_4
-                    p#bt5.btn = g.stat.star_5
+                    .g-button
+                      .g-btn
+                        form
+                          .rating#ut
+                            label#bt-star.bt5 ☆
+                            input name="starValue" type="radio" value="5"
+                            label#bt-star.bt4 ☆
+                            input name="starValue" type="radio" value="4"
+                            label#bt-star.bt3 ☆
+                            input name="starValue" type="radio" value="3"
+                            label#bt-star.bt2 ☆
+                            input name="starValue" type="radio" value="2"
+                            label#bt-star.bt1 ☆
+                            input name="starValue" type="radio" value="1"
+                            label.bt0 ◯
+                            input name="starValue" type="radio" value="0"
+                      .g-val
+                        p#bt0.btn = g.stat.star_0
+                        p#bt1.btn = g.stat.star_1
+                        p#bt2.btn = g.stat.star_2
+                        p#bt3.btn = g.stat.star_3
+                        p#bt4.btn = g.stat.star_4
+                        p#bt5.btn = g.stat.star_5
 
 /.gear-section
 /  .form-input
