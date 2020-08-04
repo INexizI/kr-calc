@@ -35,7 +35,7 @@
     h4 5
     - @perks.where(tier: @char.name, name: ['light', 'dark']).each do |perk|
       .c-perk-img
-        img src="/images/media/heroes/#{@char.name}/#{perk.sequence}.png"
+        img src="/images/media/heroes/#{@char.name}/#{perk.name}.png"
         .s-description
           .p1
             = @char.name + ' ' + '[' + perk.name.capitalize + ']'

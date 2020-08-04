@@ -22,8 +22,10 @@
         'display': 'grid'
       }
       $('.s-description', this).css($cs);
+      $('.g-description', this).css($cs);
     }).mouseleave(function() {
       $('.s-description').hide();
+      $('.g-description').hide();
     });
   });
 }).call(this);

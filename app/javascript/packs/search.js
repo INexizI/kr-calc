@@ -15,10 +15,10 @@
         //   listLocation: "roles",
         //   header: "<strong>Class</strong>",
         // },
-        // {
-        //   listLocation: "perks",
-        //   header: "<strong>Perk</strong>"
-        // },
+        {
+          listLocation: "perks",
+          header: "<strong>Perk</strong>"
+        },
         {
           listLocation: "gears",
           header: "<strong>Gear</strong>",

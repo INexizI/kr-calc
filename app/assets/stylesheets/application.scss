@@ -326,6 +326,10 @@ input {
   Perk
 */
 
+.perk {
+  padding: 10px;
+}
+
 .p-main {
   display: flex;
   flex-wrap: wrap;
@@ -361,6 +365,8 @@ input {
 }
 
 .skill {
+  padding: 10px;
+
   .p-img {
     padding: 5px;
 

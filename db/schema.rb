@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_103614) do
+ActiveRecord::Schema.define(version: 2020_07_21_151422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_103614) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sequence"
+    t.string "perk_type"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -117,8 +118,7 @@ ActiveRecord::Schema.define(version: 2020_07_07_103614) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
     t.string "stat_type"
-    t.bigint "gear_id"
-    t.index ["gear_id"], name: "index_stats_on_gear_id"
+    t.string "notice"
     t.index ["role_id"], name: "index_stats_on_role_id"
   end
 
@@ -155,7 +155,6 @@ ActiveRecord::Schema.define(version: 2020_07_07_103614) do
   add_foreign_key "gears", "runes"
   add_foreign_key "gears", "stats"
   add_foreign_key "skills", "chars"
-  add_foreign_key "stats", "gears"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end
