@@ -90,11 +90,6 @@ title Calculator
       /  /= f.input :gear_armor, as: :select, collection: @g_armor, required: false, label: 'Armor'
       /  label for='gear_armor' Armor
       /  = f.collection_select :gear_armor, @g_armor, :id, :name
-      .v
-        .role
-        .char
-        .weapon
-        .treasure
 
   .r-stats#calc
     - @roles.each do |r|
@@ -193,7 +188,7 @@ title Calculator
                         p#bt5.btn = g.stat.star_5
 
         - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').find_each do |g|
-          .ut
+          .ut id='#{g.id}'
             .gear-img
               p
                 img src='/images/media/heroes/#{c.name}/ut#{g.gear_skill}.png'
@@ -220,7 +215,7 @@ title Calculator
                             input name="starValue" type="radio" value="1"
                             label.bt0 ◯
                             input name="starValue" type="radio" value="0"
-                      .g-val
+                      .g-val id='#{g.id}'
                         p#bt0.btn = g.stat.star_0
                         p#bt1.btn = g.stat.star_1
                         p#bt2.btn = g.stat.star_2
@@ -229,11 +224,11 @@ title Calculator
                         p#bt5.btn = g.stat.star_5
 
         - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').find_each do |g|
-          .mana
+          .mana id='#{g.id}'
             .gear-img
               p
                 img src='/images/media/gears/9-UT/mana stone.png'
-              p = g.name
+              p = g.name + ' ' + g.tier
             .g-star-button
               div
                 .g-stat-name
@@ -255,7 +250,7 @@ title Calculator
                             input name="starValue" type="radio" value="1"
                             label.bt0 ◯
                             input name="starValue" type="radio" value="0"
-                      .g-val
+                      .g-val id='#{g.id}'
                         p#bt0.btn = g.stat.star_0
                         p#bt1.btn = g.stat.star_1
                         p#bt2.btn = g.stat.star_2
