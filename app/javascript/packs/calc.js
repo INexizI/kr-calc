@@ -277,8 +277,9 @@
     // Armor DEF
     $('#ar label').click(function() {
       $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearId = $('select#calc_gear_armor_id').children('option:selected').val();
+      // $gearId = $('select#calc_gear_armor_id').children('option:selected').val();
       $btnId = $(this).attr('class').split(' ')[0];
+      $gearId = $(this).parent().parent().parent().parent().parent().parent().parent().parent().parent().attr('id');
 
       $cBtn = $('.gear' + $gearId).find('.armor');
       $btnFind = $('#' + $gearId).find('#' + $btnId);
