@@ -10,14 +10,23 @@
       // Gear stuff
       $('#calc_gear_weapon').parent().hide();
       $('#calc_gear_treasure').parent().hide();
+      $('#calc_gear_armor').parent().hide();
+      $('#calc_gear_secondary').parent().hide();
       $('.hero-gear').children().hide();
+      // Options
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
       $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
       if ($options) {
         $('#calc_char_id').html($options);
         $('.class-stats').children().show();
-        return $('#calc_char_id').parent().show();
+        return [
+          $('#calc_char_id').parent().show(),
+          $('#calc_gear_weapon').parent().show(),
+          $('#calc_gear_treasure').parent().show(),
+          $('#calc_gear_armor').parent().show(),
+          $('#calc_gear_secondary').parent().show()
+        ];
       } else {
         $('#calc_char_id').empty();
         return $('#calc_char_id').parent().hide();
@@ -50,7 +59,6 @@
     // Class / Unique Weapon
     $gearWeaponSlot = null;
     $('select#calc_gear_weapon').change(function() {
-      $('#heroAtk').empty();
       $('.hero-gear').children().hide();
       $('#calc_gear_treasure').val([]);
       $gearWeaponType = $(this).children('option:selected').val();
@@ -64,11 +72,12 @@
       $('.hero-gear').find('.uw').show();
       $('.hero-gear').find('.ut').hide();
       $('.hero-gear').find('.mana').hide();
+      $('.hero-gear').find('.armor').hide();
+      // $('.hero-gear').find('.secondary').hide();
     }).change();
 
     // Treasure
     $('select#calc_gear_treasure').change(function() {
-      $('#heroAtk').empty();
       $('.hero-gear').children().hide();
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $gearTreasureType = $(this).children('option:selected').val();
@@ -114,92 +123,98 @@
       };
     }).change();
 
-    // Armor
+    // Armor Tier
     $('select#calc_gear_armor').change(function() {
       $('.g-armor').children().hide();
+      $('.armor').parent().hide();
+      $('#calc_gear_armor_id').prop('selectedIndex', 0);
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+      $gearTier = $(this).children('option:selected').val();
+      $gearBlockClass = $('.g-armor').children('.g-ar-' + $gearTier.toLowerCase()).attr('class');
+      if ($gearTier == 'T6') {
+        $('.' + $gearBlockClass).toggle();
+      } else if ($gearTier == 'T7') {
+        $('.' + $gearBlockClass).toggle();
+      } else if ($gearTier == 'T8') {
+        $('.' + $gearBlockClass).toggle();
+      } else {
+        $('#calc_gear_armor_id').prop('selectedIndex', 0);
+      }
+      if ($gearClass == 1 || 2) {
+        $('.' + $gearBlockClass).find('#g-ar-h').show();
+        $('.' + $gearBlockClass).find('#g-ar-l').hide();
+        $('.' + $gearBlockClass).find('#g-ar-i').hide();
+      } else if ($gearClass == 3 || 4 || 5) {
+        $('.' + $gearBlockClass).find('#g-ar-h').hide();
+        $('.' + $gearBlockClass).find('#g-ar-l').show();
+        $('.' + $gearBlockClass).find('#g-ar-i').hide();
+      } else if ($gearClass == 6 || 7) {
+        $('.' + $gearBlockClass).find('#g-ar-h').hide();
+        $('.' + $gearBlockClass).find('#g-ar-l').hide();
+        $('.' + $gearBlockClass).find('#g-ar-i').show();
+      }
+    }).change();
+
+    // Armor Set
+    $('select#calc_gear_armor_id').change(function() {
+      $('.armor').parent().hide();
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_armor').children('option:selected').val();
-      if ($gearTier == 'T6') {
-        $('.g-armor .g-ar-t6').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-ar-t6 #g-ar-l').hide();
-          $('.g-ar-t6 #g-ar-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-ar-t6 #g-ar-h').hide();
-          $('.g-ar-t6 #g-ar-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-ar-t6 #g-ar-h').hide();
-          $('.g-ar-t6 #g-ar-l').hide();
-        }
-      } else if ($gearTier == 'T7') {
-        $('.g-armor .g-ar-t7').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-ar-t7 #g-ar-l').hide();
-          $('.g-ar-t7 #g-ar-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-ar-t7 #g-ar-h').hide();
-          $('.g-ar-t7 #g-ar-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-ar-t7 #g-ar-h').hide();
-          $('.g-ar-t7 #g-ar-l').hide();
-        }
-      } else if ($gearTier == 'T8') {
-        $('.g-armor .g-ar-t8').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-ar-t8 #g-ar-l').hide();
-          $('.g-ar-t8 #g-ar-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-ar-t8 #g-ar-h').hide();
-          $('.g-ar-t8 #g-ar-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-ar-t8 #g-ar-h').hide();
-          $('.g-ar-t8 #g-ar-l').hide();
-        }
+      $gearSetId = $(this).children('option:selected').val();
+      if ($gearClass == 1 || 2) {
+        $sh = $('.gear' + $gearSetId).toggle();
+        $($sh).find('.armor').show();
+      } else if ($gearClass == 'T7') {
+        $sh = $('.gear' + $gearSetId).toggle();
+        $($sh).find('.armor').show();
+      } else if ($gearClass == 'T8') {
+        $sh = $('.gear' + $gearSetId).toggle();
+        $($sh).find('.armor').show();
       }
     }).change();
 
     // Secondary
     $('select#calc_gear_secondary').change(function() {
       $('.g-secondary').children().hide();
-      $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearTier = $('#calc_gear_secondary').children('option:selected').val();
-      if ($gearTier == 'T6') {
-        $('.g-secondary .g-sg-t6').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-sg-t6 #g-sg-l').hide();
-          $('.g-sg-t6 #g-sg-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-sg-t6 #g-sg-h').hide();
-          $('.g-sg-t6 #g-sg-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-sg-t6 #g-sg-h').hide();
-          $('.g-sg-t6 #g-sg-l').hide();
-        }
-      } else if ($gearTier == 'T7') {
-        $('.g-secondary .g-sg-t7').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-sg-t7 #g-sg-l').hide();
-          $('.g-sg-t7 #g-sg-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-sg-t7 #g-sg-h').hide();
-          $('.g-sg-t7 #g-sg-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-sg-t7 #g-sg-h').hide();
-          $('.g-sg-t7 #g-sg-l').hide();
-        }
-      } else if ($gearTier == 'T8') {
-        $('.g-secondary .g-sg-t8').toggle();
-        if ($gearClass == 1 || 2) {
-          $('.g-sg-t8 #g-sg-l').hide();
-          $('.g-sg-t8 #g-sg-i').hide();
-        } else if ($gearClass == 3 || 4 || 5) {
-          $('.g-sg-t8 #g-sg-h').hide();
-          $('.g-sg-t8 #g-sg-i').hide();
-        } else if ($gearClass == 6 || 7) {
-          $('.g-sg-t8 #g-sg-h').hide();
-          $('.g-sg-t8 #g-sg-l').hide();
-        }
-      }
+    //   $gearClass = $('#calc_role_id').children('option:selected').val();
+    //   $gearTier = $('#calc_gear_secondary').children('option:selected').val();
+    //   if ($gearTier == 'T6') {
+    //     $('.g-secondary .g-sg-t6').toggle();
+    //     if ($gearClass == 1 || 2) {
+    //       $('.g-sg-t6 #g-sg-l').hide();
+    //       $('.g-sg-t6 #g-sg-i').hide();
+    //     } else if ($gearClass == 3 || 4 || 5) {
+    //       $('.g-sg-t6 #g-sg-h').hide();
+    //       $('.g-sg-t6 #g-sg-i').hide();
+    //     } else if ($gearClass == 6 || 7) {
+    //       $('.g-sg-t6 #g-sg-h').hide();
+    //       $('.g-sg-t6 #g-sg-l').hide();
+    //     }
+    //   } else if ($gearTier == 'T7') {
+    //     $('.g-secondary .g-sg-t7').toggle();
+    //     if ($gearClass == 1 || 2) {
+    //       $('.g-sg-t7 #g-sg-l').hide();
+    //       $('.g-sg-t7 #g-sg-i').hide();
+    //     } else if ($gearClass == 3 || 4 || 5) {
+    //       $('.g-sg-t7 #g-sg-h').hide();
+    //       $('.g-sg-t7 #g-sg-i').hide();
+    //     } else if ($gearClass == 6 || 7) {
+    //       $('.g-sg-t7 #g-sg-h').hide();
+    //       $('.g-sg-t7 #g-sg-l').hide();
+    //     }
+    //   } else if ($gearTier == 'T8') {
+    //     $('.g-secondary .g-sg-t8').toggle();
+    //     if ($gearClass == 1 || 2) {
+    //       $('.g-sg-t8 #g-sg-l').hide();
+    //       $('.g-sg-t8 #g-sg-i').hide();
+    //     } else if ($gearClass == 3 || 4 || 5) {
+    //       $('.g-sg-t8 #g-sg-h').hide();
+    //       $('.g-sg-t8 #g-sg-i').hide();
+    //     } else if ($gearClass == 6 || 7) {
+    //       $('.g-sg-t8 #g-sg-h').hide();
+    //       $('.g-sg-t8 #g-sg-l').hide();
+    //     }
+    //   }
     }).change();
 
     // Weapon ATK
@@ -210,7 +225,7 @@
       $btnId = $(this).attr('class').split(' ')[0];
 
       if ($gearWeaponType == 'Class') {
-        $rBtn = $('.hero-gear').find('.role' + $gearClass);
+        $rBtn = $('.role' + $gearClass).find('.uw');
         $btnFind = $($rBtn).find('#' + $btnId);
         $p0 = $($rBtn).find('#p0').text();
       } else if ($gearWeaponType == 'Unique') {
@@ -220,20 +235,17 @@
       }
       $classStat = parseInt($('.role' + $gearClass).find('p:contains("ATK")').next('p').text());
       $gearStat = parseInt($($btnFind).text());
-      $sumStat = $classStat + $gearStat;
+      $sumStat = ($classStat + $gearStat).toLocaleString();
       $('#heroATK').text($p0 + ' - ' + $sumStat);
-      // alert('btnId = ' + $btnId);
+
       console.log('W btnId = ' + $btnId);
-      // alert('p0 = ' + $p0);
       console.log('W p0 = ' + $p0);
-      // alert('btnFind = ' + $btnFind);
       console.log('W btnFind = ' + $btnFind);
-      // alert('classStat = ' + $classStat);
       console.log('W classStat = ' + $classStat);
-      // alert('gearStat = ' + $gearStat);
       console.log('W gearStat = ' + $gearStat);
     }).change();
 
+    // Treasure HP
     $('#ut label').click(function() {
       $gearHero = $('#calc_char_id').children('option:selected').val();
       $gearClass = $('#calc_role_id').children('option:selected').val();
@@ -252,18 +264,36 @@
       }
       $classStat = parseInt($('.role' + $gearClass).find('p:contains("MAX HP")').next('p').text());
       $gearStat = parseInt($($btnFind).text());
-      $sumStat = $classStat + $gearStat;
+      $sumStat = ($classStat + $gearStat).toLocaleString();
       $('#heroHP').text($p1 + ' - ' + $sumStat);
-      // alert('btnId = ' + $btnId);
+
       console.log('T btnId = ' + $btnId);
-      // alert('p1 = ' + $p1);
       console.log('T p1 = ' + $p1);
-      // alert('btnFind = ' + $btnFind);
       console.log('T btnFind = ' + $btnFind);
-      // alert('classStat = ' + $classStat);
       console.log('T classStat = ' + $classStat);
-      // alert('gearStat =' + $gearStat);
       console.log('T gearStat = ' + $gearStat);
+    }).change();
+
+    // Armor DEF
+    $('#ar label').click(function() {
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+      $gearId = $('select#calc_gear_armor_id').children('option:selected').val();
+      $btnId = $(this).attr('class').split(' ')[0];
+
+      $cBtn = $('.gear' + $gearId).find('.armor');
+      $btnFind = $('#' + $gearId).find('#' + $btnId);
+      $p2 = $($cBtn).find('#p2').first().text();
+
+      $classStat = parseInt($('.role' + $gearClass).find('p:contains("P.Def")').next('p').text());
+      $gearStat = parseInt($($btnFind).text());
+      $sumStat = ($classStat + $gearStat).toLocaleString();
+      $('#heroPDEF').text($p2 + ' - ' + $sumStat);
+
+      console.log('A btnId = ' + $btnId);
+      console.log('A p2 = ' + $p2);
+      console.log('A btnFind = ' + $btnFind);
+      console.log('A classStat = ' + $classStat);
+      console.log('A gearStat = ' + $gearStat);
     }).change();
   });
 }).call(this);

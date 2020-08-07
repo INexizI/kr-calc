@@ -20,70 +20,70 @@ title Calculator
       .form-input
         = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor'
 
-        .g-armor
-          .g-ar-t6
-            .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t6, :id, :set
+      .g-armor
+        .g-ar-t6
+          .form-input#g-ar-h
+            = f.collection_select :gear_armor_id, @g_1h_t6, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t6, :id, :set
+          .form-input#g-ar-l
+            = f.collection_select :gear_armor_id, @g_1l_t6, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t6, :id, :set
+          .form-input#g-ar-i
+            = f.collection_select :gear_armor_id, @g_1i_t6, :id, :set, prompt: '----------'
 
-          .g-ar-t7
-            .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t7, :id, :set
+        .g-ar-t7
+          .form-input#g-ar-h
+            = f.collection_select :gear_armor_id, @g_1h_t7, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t7, :id, :set
+          .form-input#g-ar-l
+            = f.collection_select :gear_armor_id, @g_1l_t7, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t7, :id, :set
+          .form-input#g-ar-i
+            = f.collection_select :gear_armor_id, @g_1i_t7, :id, :set, prompt: '----------'
 
-          .g-ar-t8
-            .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t8, :id, :set
+        .g-ar-t8
+          .form-input#g-ar-h
+            = f.collection_select :gear_armor_id, @g_1h_t8, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t8, :id, :set
+          .form-input#g-ar-l
+            = f.collection_select :gear_armor_id, @g_1l_t8, :id, :set, prompt: '----------'
 
-            .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t8, :id, :set
+          .form-input#g-ar-i
+            = f.collection_select :gear_armor_id, @g_1i_t8, :id, :set, prompt: '----------'
 
-      .form-input
+      / .form-input
         = f.input :gear_secondary, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Secondary Gear'
 
         .g-secondary
           .g-sg-t6
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t6, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2h_t6, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t6, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2l_t6, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t6, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2i_t6, :id, :set, include_blank: '----------'
 
           .g-sg-t7
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t7, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2h_t7, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t7, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2l_t7, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t7, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2i_t7, :id, :set, include_blank: '----------'
 
           .g-sg-t8
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t8, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2h_t8, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t8, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2l_t8, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t8, :id, :set
+              = f.collection_select :gear_secondary_id, @g_2i_t8, :id, :set, include_blank: '----------'
 
       /.form-input
       /  /= f.input :gear_armor, as: :select, collection: Gear.where(gear_type: ['1-1H', '3-1L', '5-1I']), required: false, label: 'Armor'
@@ -107,14 +107,18 @@ title Calculator
   .totalStat#calc
     .t-atk
       p#heroATK
-      hr
+    .t-hp
       p#heroHP
+    .t-pdef
+      p#heroPDEF
+    .t-mdef
+      p#heroMDEF
 
   .hero-gear#calc
     - @roles.each do |r|
       . class='role#{r.id}'
         - @gears.where(role_id: r.id, gear_type: '10-UW').order('id ASC').find_each do |g|
-          div
+          .uw
             .gear-img
               p
                 img src='/images/media/heroes/#{r.name.downcase}.png'
@@ -257,6 +261,42 @@ title Calculator
                         p#bt3.btn = g.stat.star_3
                         p#bt4.btn = g.stat.star_4
                         p#bt5.btn = g.stat.star_5
+
+    - @gearsAS.each do |g|
+      . class='gear#{g.id}'
+        . class='#{g.gear_type}' id='#{g.id}' class='armor'
+          .gear-img
+            p
+              img src='/images/media/gears/#{g.gear_type}/#{g.set}.png'
+            p =g.set + ' ' + g.name
+          .g-star-button
+            div
+              .g-stat-name
+                p#p2 = g.stat.name
+                .g-stat
+                  .g-button
+                    .g-btn
+                      form
+                        .rating#ar
+                          label#bt-star.bt5 ☆
+                          input name="starValue" type="radio" value="5"
+                          label#bt-star.bt4 ☆
+                          input name="starValue" type="radio" value="4"
+                          label#bt-star.bt3 ☆
+                          input name="starValue" type="radio" value="3"
+                          label#bt-star.bt2 ☆
+                          input name="starValue" type="radio" value="2"
+                          label#bt-star.bt1 ☆
+                          input name="starValue" type="radio" value="1"
+                          label.bt0 ◯
+                          input name="starValue" type="radio" value="0"
+                    .g-val id='#{g.id}'
+                      p#bt0.btn = g.stat.star_0
+                      p#bt1.btn = g.stat.star_1
+                      p#bt2.btn = g.stat.star_2
+                      p#bt3.btn = g.stat.star_3
+                      p#bt4.btn = g.stat.star_4
+                      p#bt5.btn = g.stat.star_5
 
 /.gear-section
 /  .form-input
