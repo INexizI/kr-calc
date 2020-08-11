@@ -85,11 +85,42 @@ title Calculator
             .form-input#g-sg-i
               = f.collection_select :gear_secondary_id, @g_2i_t8, :id, :set, include_blank: '----------'
 
-      /.form-input
-      /  /= f.input :gear_armor, as: :select, collection: Gear.where(gear_type: ['1-1H', '3-1L', '5-1I']), required: false, label: 'Armor'
-      /  /= f.input :gear_armor, as: :select, collection: @g_armor, required: false, label: 'Armor'
-      /  label for='gear_armor' Armor
-      /  = f.collection_select :gear_armor, @g_armor, :id, :name
+      .form-input
+        = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Jewelry'
+
+        .g-jewelry-type
+          = f.input :gear_jewelry_type, as: :select, collection: ['Ring', 'Earrings', 'Necklace', 'Bracelet'], required: false, label: 'Jewelry Type'
+
+          .g-jewelry
+            .g-j-t6
+              .form-input#g-j-r
+                = f.collection_select :gear_jewelry_id, @g_j_r_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-e
+                = f.collection_select :gear_jewelry_id, @g_j_e_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-n
+                = f.collection_select :gear_jewelry_id, @g_j_n_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-b
+                = f.collection_select :gear_jewelry_id, @g_j_b_t6, :id, :set, include_blank: '----------'
+
+            .g-j-t7
+              .form-input#g-j-r
+                = f.collection_select :gear_jewelry_id, @g_j_r_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-e
+                = f.collection_select :gear_jewelry_id, @g_j_e_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-n
+                = f.collection_select :gear_jewelry_id, @g_j_n_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-b
+                = f.collection_select :gear_jewelry_id, @g_j_b_t7, :id, :set, include_blank: '----------'
+
+            .g-j-t8
+              .form-input#g-j-r
+                = f.collection_select :gear_jewelry_id, @g_j_r_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-e
+                = f.collection_select :gear_jewelry_id, @g_j_e_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-n
+                = f.collection_select :gear_jewelry_id, @g_j_n_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-b
+                = f.collection_select :gear_jewelry_id, @g_j_b_t8, :id, :set, include_blank: '----------'
 
   .r-stats#calc
     - @roles.each do |r|
@@ -314,6 +345,51 @@ title Calculator
                     .g-btn
                       form
                         .rating#sg
+                          label#bt-star.bt5 ☆
+                          input name="starValue" type="radio" value="5"
+                          label#bt-star.bt4 ☆
+                          input name="starValue" type="radio" value="4"
+                          label#bt-star.bt3 ☆
+                          input name="starValue" type="radio" value="3"
+                          label#bt-star.bt2 ☆
+                          input name="starValue" type="radio" value="2"
+                          label#bt-star.bt1 ☆
+                          input name="starValue" type="radio" value="1"
+                          label.bt0 ◯
+                          input name="starValue" type="radio" value="0"
+                    .g-val id='#{g.id}'
+                      p#bt0.btn = g.stat.star_0
+                      p#bt1.btn = g.stat.star_1
+                      p#bt2.btn = g.stat.star_2
+                      p#bt3.btn = g.stat.star_3
+                      p#bt4.btn = g.stat.star_4
+                      p#bt5.btn = g.stat.star_5
+
+    - @gearsAJ.each do |g|
+      . class='gear#{g.id}'
+        . class='#{g.gear_type}' id='#{g.id}' class='jewelry'
+          .gear-img
+            p
+              - if g.name == "Hell's Eyes"
+                img src='/images/media/gears/#{g.gear_type}/Ring/#{g.set}.png'
+              - elsif g.name == "Fire Dragon's Blessing"
+                img src='/images/media/gears/#{g.gear_type}/Earrings/#{g.set}.png'
+              - elsif g.name == 'Price of Arrogance'
+                img src='/images/media/gears/#{g.gear_type}/Necklace/#{g.set}.png'
+              - elsif g.name == 'Fire Circle'
+                img src='/images/media/gears/#{g.gear_type}/Bracelet/#{g.set}.png'
+              - else
+                img src='/images/media/gears/#{g.gear_type}/#{g.name}/#{g.set}.png'
+            p =g.set + ' ' + g.name
+          .g-star-button
+            div
+              .g-stat-name
+                p#p3 = g.stat.name
+                .g-stat
+                  .g-button
+                    .g-btn
+                      form
+                        .rating#j
                           label#bt-star.bt5 ☆
                           input name="starValue" type="radio" value="5"
                           label#bt-star.bt4 ☆

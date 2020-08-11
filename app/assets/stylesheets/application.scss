@@ -332,6 +332,13 @@ input {
 
 .perk {
   padding: 10px;
+
+  .p-hero {
+     display: flex;
+     p {
+       padding: 0 5px;
+     }
+  }
 }
 
 .p-main {

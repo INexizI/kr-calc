@@ -1,12 +1,22 @@
-title = @perk.name
+- if @perk.name == ('dark' || 'light')
+  title = @perk.tier + ' T5 ' + @perk.name.capitalize
+- else
+  title = @perk.name
 
 = link_to 'javascript:history.back()', id: 'a' do
   = image_tag '/images/left.svg'
 
 .perk
-  p = @perk.name
   - if @perk.perk_type == 'generic'
+    p = @perk.name
     img src='/images/media/genericPerks/#{@perk.name}.png'
   - else
+    - if @perk.name == ('dark' || 'light')
+      .p-hero
+        img src='/images/media/heroes/#{@perk.tier}/portrait.png' id='char-icon'
+        p = @perk.tier
+      p = 'T5 ' + @perk.name.capitalize
+    - else
+      p = @perk.name
     img src='/images/media/heroes/#{@perk.tier}/#{@perk.sequence}.png'
   p = @perk.description
