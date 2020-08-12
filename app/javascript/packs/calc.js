@@ -32,31 +32,31 @@
           $('#calc_gear_jewelry').parent().show(),
           $('.g-armor').children().hide(),
           $('.g-armor').children().children().show(),
+          $('.g-secondary').children().hide(),
+          $('.g-secondary').children().children().show(),
           $('.g-jewelry').children().hide(),
           $('.g-jewelry').children().children().show(),
           $('select').not(this).prop('selectedIndex', 0)
         ];
       } else {
         $('#calc_char_id').empty();
-        return $('#calc_char_id').parent().hide();
+        return [
+          $('.g-armor').children().hide(),
+          $('.g-armor').children().children().show(),
+          $('.g-secondary').children().hide(),
+          $('.g-secondary').children().children().show(),
+          $('.g-jewelry').children().hide(),
+          $('.g-jewelry').children().children().show(),
+          $('#calc_char_id').parent().hide()
+        ]
       }
     });
 
     // Hero -> Weapon
     $('#calc_char_id').change(function() {
-      // $('.hero-gear').children().show();
-    //   $('#calc_gear_weapon').parent().show();
-    //   $('#calc_gear_treasure').parent().show();
-    //   $('#calc_gear_armor').parent().show();
-    //   $('#calc_gear_secondary').parent().show();
-    //   $('#calc_gear_jewelry').parent().show();
-    //   $('#calc_gear_weapon').val([]);
-    //   $('#calc_gear_treasure').val([]);
-    //   $('#calc_gear_armor').val([]);
-    //   $('#calc_gear_secondary').val([]);
-    //   $('#calc_gear_jewelry').val([]);
       $('.hero-gear').children().hide();
       $('.g-armor').children().hide();
+      $('.g-secondary').children().hide();
       $('.g-jewelry').children().hide();
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
     });
@@ -96,38 +96,32 @@
       $gearHero = $('#calc_char_id').children('option:selected').val();
       $gearClass = $('#calc_role_id').children('option:selected').val();
       if ($gearWeaponType == 'Class') {
+        $('.hero-gear').find('.role' + $gearClass).toggle();
+        $sh = $('.char' + $gearHero).toggle();
         if ($gearTreasureType == 'Mana Stone') {
-          $('.hero-gear').find('.role' + $gearClass).toggle();
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').hide();
           $($sh).find('.ut').hide();
           $($sh).find('.mana').show();
         } else if ($gearTreasureType == 'Unique') {
-          $('.hero-gear').find('.role' + $gearClass).toggle();
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').hide();
           $($sh).find('.ut').show();
           $($sh).find('.mana').hide();
         } else if ($gearTreasureType == '') {
-          $('.hero-gear').find('.role' + $gearClass).toggle();
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').hide();
           $($sh).find('.ut').hide();
           $($sh).find('.mana').hide();
         }
       } else if ($gearWeaponType == 'Unique') {
+        $sh = $('.char' + $gearHero).toggle();
         if ($gearTreasureType == 'Mana Stone') {
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').show();
           $($sh).find('.mana').show();
           $($sh).find('.ut').hide();
         } else if ($gearTreasureType == 'Unique') {
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').show();
           $($sh).find('.ut').show();
           $($sh).find('.mana').hide();
         } else if ($gearTreasureType == '') {
-          $sh = $('.char' + $gearHero).toggle();
           $($sh).find('.uw').show();
           $($sh).find('.ut').hide();
           $($sh).find('.mana').hide();
@@ -145,35 +139,7 @@
       $gearBlockClass = $('.g-armor').children('.g-ar-' + $gearTier.toLowerCase()).attr('class');
       console.log('$gearClass = ' + $gearClass);
       console.log('$gearTier = ' + $gearTier);
-      if ($gearTier == 'T6') {
-        if (($gearClass == 1) || ($gearClass == 2)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-h').show();
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-l').show();
-        } else if (($gearClass == 6) || ($gearClass == 7)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-i').show();
-        }
-      } else if ($gearTier == 'T7') {
-        if (($gearClass == 1) || ($gearClass == 2)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-h').show();
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-l').show();
-        } else if (($gearClass == 6) || ($gearClass == 7)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-ar-i').show();
-        }
-      } else if ($gearTier == 'T8') {
+      if ($gearTier !== '') {
         if (($gearClass == 1) || ($gearClass == 2)) {
           $sh = $('.' + $gearBlockClass).toggle();
           $($sh).children().toggle();
@@ -197,13 +163,7 @@
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_armor').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
-      if (($gearClass == 1) || ($gearClass == 2)) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.armor').show();
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.armor').show();
-      } else if (($gearClass == 6) || ($gearClass == 7)) {
+      if ($gearClass !== '') {
         $sh = $('.gear' + $gearSetId).toggle();
         $($sh).find('.armor').show();
       }
@@ -217,35 +177,7 @@
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $(this).children('option:selected').val();
       $gearBlockClass = $('.g-secondary').children('.g-sg-' + $gearTier.toLowerCase()).attr('class');
-      if ($gearTier == 'T6') {
-        if (($gearClass == 1) || ($gearClass == 2)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-h').show();
-        } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-l').show();
-        } else if (($gearClass == 6) || ($gearClass == 7)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-i').show();
-        }
-      } else if ($gearTier == 'T7') {
-        if (($gearClass == 1) || ($gearClass == 2)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-h').show();
-        } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-l').show();
-        } else if (($gearClass == 6) || ($gearClass == 7)) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-sg-i').show();
-        }
-      } else if ($gearTier == 'T8') {
+      if ($gearTier !== '') {
         if (($gearClass == 1) || ($gearClass == 2)) {
           $sh = $('.' + $gearBlockClass).toggle();
           $($sh).children().toggle();
@@ -270,13 +202,7 @@
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_secondary').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
-      if (($gearClass == 1) || ($gearClass == 2)) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.secondary').show();
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.secondary').show();
-      } else if (($gearClass == 6) || ($gearClass == 7)) {
+      if ($gearClass !== '') {
         $sh = $('.gear' + $gearSetId).toggle();
         $($sh).find('.secondary').show();
       }
@@ -284,96 +210,45 @@
 
     // Jewelry Type
     $('select#calc_gear_jewelry').change(function() {
-      $('#calc_gear_jewelry_type').show();
+      $('.jewelry').parent().hide();
+      $('.g-jewelry-type').hide();
+      $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
+      if ($gearTier === '') {
+        $('.calc_gear_jewelry_type').hide();
+        $('.g-jewelry').children().children().hide();
+      } else {
+        $('.g-jewelry-type').show();
+        $('.calc_gear_jewelry_type').show();
+      }
       $('#calc_gear_jewelry_type').prop('selectedIndex', 0);
     }).change();
 
     // Jewelry Tier
     $('select#calc_gear_jewelry_type').change(function() {
-      $('.g-jewelry').children().hide();
       $('.jewelry').parent().hide();
+      $('.g-jewelry').children().hide();
+      $('.g-jewelry').children().children().show();
       $('#calc_gear_jewelry_id').prop('selectedIndex', 0);
-      $gearType = $('#calc_gear_jewelry_type').children('option:selected').val();
-      $gearTier = $(this).children('option:selected').val();
+      $gearType = $(this).children('option:selected').val();
+      $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
       $gearBlockClass = $('.g-jewelry').children('.g-j-' + $gearTier.toLowerCase()).attr('class');
-      if ($gearTier == 'T6') {
-        $('#calc_gear_jewelry_type').parent().show();
-        if ($gearType == 'Ring') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-r').show();
-        } else if ($gearType == 'Earrings') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-e').show();
-        } else if ($gearType == 'Necklace') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-n').show();
-        } else if ($gearType == 'Bracelet') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-b').show();
-        }
-      } else if ($gearTier == 'T7') {
-        $('#calc_gear_jewelry_type').parent().show();
-        if ($gearType == 'Ring') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-r').show();
-        } else if ($gearType == 'Earrings') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-e').show();
-        } else if ($gearType == 'Necklace') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-n').show();
-        } else if ($gearType == 'Bracelet') {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-b').show();
-        }
-      } else if ($gearTier == 'T8') {
-        $('#calc_gear_jewelry_type').parent().show();
-        if (($gearType == 'Ring') || ($gearType == "Hell's Eyes")) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-r').show();
-        } else if (($gearType == 'Earrings') || ($gearType == "Fire Dragon's Blessing")) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-e').show();
-        } else if (($gearType == 'Necklace') || ($gearType == 'Price of Arrogance')) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-n').show();
-        } else if (($gearType == 'Bracelet') || ($gearType == 'Fire Circle')) {
-          $sh = $('.' + $gearBlockClass).toggle();
-          $($sh).children().toggle();
-          $($sh).find('#g-j-b').show();
-        }
+      if ($gearTier !== '') {
+        $sh = $('.' + $gearBlockClass).toggle();
+        $($sh).children().toggle();
+        $($sh).find('#g-j-' + $gearType.toLowerCase()).show();
       } else {
-        $('#calc_gear_jewelry_type').parent().hide();
+        $('.g-jewelry').children().children().hide();
         $('#calc_gear_jewelry_id').prop('selectedIndex', 0);
       }
     }).change();
 
     // Jewelry Set
     $('select#calc_gear_jewelry_id').change(function() {
+      $('.jewelry').parent().hide();
       $gearType = $('#calc_gear_jewelry_type').children('option:selected').val();
       $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
-      if (($gearType == 'Ring') || ($gearType == "Hell's Eyes")) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.jewelry').show();
-      } else if (($gearType == 'Earrings') || ($gearType == "Fire Dragon's Blessing")) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.jewelry').show();
-      } else if (($gearType == 'Necklace') || ($gearType == 'Price of Arrogance')) {
-        $sh = $('.gear' + $gearSetId).toggle();
-        $($sh).find('.jewelry').show();
-      } else if (($gearType == 'Bracelet') || ($gearType == 'Fire Circle')) {
+      if ($gearType !== '') {
         $sh = $('.gear' + $gearSetId).toggle();
         $($sh).find('.jewelry').show();
       }
