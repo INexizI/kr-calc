@@ -7,7 +7,7 @@ title Calculator
         label for='role_id' Class
         = f.collection_select :role_id, @roles, :id, :name, prompt: '----------'
 
-      .form-input
+      .form-input#char
         label for='char_id' Hero
         = f.grouped_collection_select :char_id, @roles, :chars, :name, :id, :name
 
@@ -20,7 +20,7 @@ title Calculator
       .form-input
         = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor'
 
-        .g-armor
+        .g-armor#sel
           .g-ar-t6
             .form-input#g-ar-h
               = f.collection_select :gear_armor_id, @g_1h_t6, :id, :set, prompt: '----------'
@@ -54,7 +54,7 @@ title Calculator
       .form-input
         = f.input :gear_secondary, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Secondary Gear'
 
-        .g-secondary
+        .g-secondary#sel
           .g-sg-t6
             .form-input#g-sg-h
               = f.collection_select :gear_secondary_id, @g_2h_t6, :id, :set, include_blank: '----------'
@@ -88,7 +88,7 @@ title Calculator
       .form-input
         = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Jewelry'
 
-        .g-jewelry-type
+        .g-jewelry-type#sel
           = f.input :gear_jewelry_type, as: :select, collection: ['Ring', 'Earrings', 'Necklace', 'Bracelet'], required: false, label: 'Jewelry Type'
 
           .g-jewelry
@@ -122,7 +122,18 @@ title Calculator
               .form-input#g-j-bracelet
                 = f.collection_select :gear_jewelry_id, @g_j_b_t8, :id, :set, include_blank: '----------'
 
-  .r-stats#calc
+      .form-input
+        = f.input :gear_orb, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Orb'
+        .g-orb#sel
+          .g-o-t6
+            = f.collection_select :gear_orb_id, @g_o_t6, :id, :set, include_blank: '----------'
+          .g-o-t7
+            = f.collection_select :gear_orb_id, @g_o_t7, :id, :set, include_blank: '----------'
+          .g-o-t8
+            = f.collection_select :gear_orb_id, @g_o_t8, :id, :set, include_blank: '----------'
+
+
+  .r-stats.class-stats#calc
     - @roles.each do |r|
       . class='role#{r.id}'
         - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').find_each do |s|
@@ -144,6 +155,12 @@ title Calculator
       p#heroPDEF
     .t-mdef
       p#heroMDEF
+    .t-jewelry
+      p Jewelry Stat
+      p#heroJ
+    .t-orb
+      p Orb Stat
+      p#heroO
 
   .hero-gear#calc
     - @roles.each do |r|
@@ -384,12 +401,48 @@ title Calculator
           .g-star-button
             div
               .g-stat-name
-                p#p3 = g.stat.name
+                p#p4 = g.stat.name
                 .g-stat
                   .g-button
                     .g-btn
                       form
                         .rating#j
+                          label#bt-star.bt5 ☆
+                          input name="starValue" type="radio" value="5"
+                          label#bt-star.bt4 ☆
+                          input name="starValue" type="radio" value="4"
+                          label#bt-star.bt3 ☆
+                          input name="starValue" type="radio" value="3"
+                          label#bt-star.bt2 ☆
+                          input name="starValue" type="radio" value="2"
+                          label#bt-star.bt1 ☆
+                          input name="starValue" type="radio" value="1"
+                          label.bt0 ◯
+                          input name="starValue" type="radio" value="0"
+                    .g-val id='#{g.id}'
+                      p#bt0.btn = g.stat.star_0
+                      p#bt1.btn = g.stat.star_1
+                      p#bt2.btn = g.stat.star_2
+                      p#bt3.btn = g.stat.star_3
+                      p#bt4.btn = g.stat.star_4
+                      p#bt5.btn = g.stat.star_5
+
+    - @gearsAO.each do |g|
+      . class='gear#{g.id}'
+        . class='#{g.gear_type}' id='#{g.id}' class='orb'
+          .gear-img
+            p
+              img src='/images/media/gears/#{g.gear_type}/#{g.set}.png'
+            p =g.set + ' ' + g.name
+          .g-star-button
+            div
+              .g-stat-name
+                p#p5 = g.stat.name
+                .g-stat
+                  .g-button
+                    .g-btn
+                      form
+                        .rating#o
                           label#bt-star.bt5 ☆
                           input name="starValue" type="radio" value="5"
                           label#bt-star.bt4 ☆

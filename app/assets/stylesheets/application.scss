@@ -778,6 +778,10 @@ h4 {
 
 .simple_form {
   display: block;
+
+  .form-input > #sel > div {
+    display: none;
+  }
 }
 
 .form-input {
@@ -790,11 +794,15 @@ h4 {
 
 .totalStat {
   width: 300px;
-  height: 100px;
+  height: fit-content;
   border: 1px solid;
   .t-atk {
     // display: flex;
   }
+}
+
+#char, .hero-gear > div, .r-stats > div, .form-input > div:nth-child(1) {
+  display: none;
 }
 
 /*
