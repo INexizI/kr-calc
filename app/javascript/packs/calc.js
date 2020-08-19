@@ -12,6 +12,7 @@
       $('#calc_gear_jewelry_type').parent().hide(),
       $('#calc_gear_orb').parent().hide(),
       $('.hero-gear').children().hide();
+      $('.t-st p').empty();
 
       // Options
       $role = $('#calc_role_id :selected').text();
@@ -54,6 +55,7 @@
     // Hero -> Weapon
     $('#calc_char_id').change(function() {
       $('.hero-gear').children().hide();
+      $('.t-st p').empty();
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
       return [
         $('.g-armor').children().hide(),
@@ -305,21 +307,8 @@
         $p0 = $($cBtn).find('#p0').text();
       }
 
-      if ($('#heroATK').is(':empty')) {
-        $atk = $('.role' + $gearClass).find('p:contains("ATK")').next('p').text();
-      } else {
-        $atk = $('#heroATK').text();
-      }
-
       $wpnSt = parseInt($($btnFind).text());
-      $sumStat = (parseInt($atk) + $wpnSt);
-      $('#heroATK').text($sumStat);
-
-      console.log('W btnId = ' + $btnId);
-      console.log('W p0 = ' + $p0);
-      console.log('W btnFind = ' + $btnFind);
-      console.log('W classStat = ' + $atk);
-      console.log('W gearStat = ' + $wpnSt);
+      $('#heroATK').text($wpnSt);
     }).change();
 
     // Treasure HP
@@ -341,21 +330,8 @@
         $p1 = $($cBtn).find('#p1').first().text();
       }
 
-      if ($('#heroHP').is(':empty')) {
-        $hp = $('.role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
-      } else {
-        $hp = $('#heroHP').text();
-      }
-
       $trsSt = parseInt($($btnFind).text());
-      $sumStat = (parseInt($hp) + $trsSt);
-      $('#heroHP').text($sumStat);
-
-      console.log('T btnId = ' + $btnId);
-      console.log('T p1 = ' + $p1);
-      console.log('T btnFind = ' + $btnFind);
-      console.log('T classStat = ' + $trsSt);
-      console.log('T gearStat = ' + $hp);
+      $('#heroHP').text($trsSt);
     }).change();
 
     // Armor Stat
@@ -369,21 +345,8 @@
       $btnFind = $('#' + $gearId).find('#' + $btnId);
       $p2 = $($cBtn).find('#p2').first().text();
 
-      if ($('#heroPDEF').is(':empty')) {
-        $pdef = $('.role' + $gearClass).find('p:contains("P.Def")').next('p').text();
-      } else {
-        $pdef = $('#heroPDEF').text();
-      }
-
       $arSt = parseInt($($btnFind).text());
-      $sumStat = (parseInt($pdef) + $arSt);
-      $('#heroPDEF').text($sumStat);
-
-      console.log('AM btnId = ' + $btnId);
-      console.log('AM p2 = ' + $p2);
-      console.log('AM btnFind = ' + $btnFind);
-      console.log('AM classStat = ' + $pdef);
-      console.log('AM gearStat = ' + $arSt);
+      $('#heroPDEF').text($arSt);
     }).change();
 
     // Secondary Stat
@@ -397,21 +360,8 @@
       $btnFind = $('#' + $gearId).find('#' + $btnId);
       $p3 = $($cBtn).find('#p3').first().text();
 
-      if ($('#heroMDEF').is(':empty')) {
-        $mdef = $('.role' + $gearClass).find('p:contains("M.Def")').next('p').text();
-      } else {
-        $mdef = $('#heroPDEF').text();
-      }
-
       $scndSt = parseInt($($btnFind).text());
-      $sumStat = (parseInt($mdef) + $scndSt);
-      $('#heroMDEF').text($sumStat);
-
-      console.log('AS btnId = ' + $btnId);
-      console.log('AS p3 = ' + $p3);
-      console.log('AS btnFind = ' + $btnFind);
-      console.log('AS classStat = ' + $mdef);
-      console.log('AS gearStat = ' + $scndSt);
+      $('#heroMDEF').text($scndSt);
     }).change();
 
     // Jewelry Stat
@@ -426,49 +376,8 @@
       $btnFind = $('#' + $gearId).find('#' + $btnId);
       $p4 = $($cBtn).find('#p4').first().text();
 
-      if ($gearType == 'Ring') {
-        if ($('#heroHP').is(':empty')) {
-          $jewel = $('.role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
-        } else {
-          $jewel = $('#heroHP').text();
-        }
-        $jwlSt = parseInt($($btnFind).text());
-        $sumStat = (parseInt($jewel) + $jwlSt);
-        $('#heroHP').text($sumStat);
-      } else if ($gearType == 'Earrings') {
-        if ($('#heroATK').is(':empty')) {
-          $jewel = $('.role' + $gearClass).find('p:contains("ATK")').next('p').text();
-        } else {
-          $jewel = $('#heroATK').text();
-        }
-        $jwlSt = parseInt($($btnFind).text());
-        $sumStat = (parseInt($jewel) + $jwlSt);
-        $('#heroATK').text($sumStat);
-      } else if ($gearType == 'Necklace') {
-        if ($('#heroMDEF').is(':empty')) {
-          $jewel = $('.role' + $gearClass).find('p:contains("M.Def")').next('p').text();
-        } else {
-          $jewel = $('#heroMDEF').text();
-        }
-        $jwlSt = parseInt($($btnFind).text());
-        $sumStat = (parseInt($jewel) + $jwlSt);
-        $('#heroMDEF').text($sumStat);
-      } else if ($gearType == 'Bracelet') {
-        if ($('#heroPDEF').is(':empty')) {
-          $jewel = $('.role' + $gearClass).find('p:contains("P.Def")').next('p').text();
-        } else {
-          $jewel = $('#heroPDEF').text();
-        }
-        $jwlSt = parseInt($($btnFind).text());
-        $sumStat = (parseInt($jewel) + $jwlSt);
-        $('#heroPDEF').text($sumStat);
-      }
-
-      console.log('AJ btnId = ' + $btnId);
-      console.log('AJ p4 = ' + $p4);
-      console.log('AJ btnFind = ' + $btnFind);
-      console.log('AJ classStat = ' + $jewel);
-      console.log('AJ gearStat = ' + $jwlSt);
+      $jwlSt = parseInt($($btnFind).text());
+      $('#heroJ').text($jwlSt);
     }).change();
 
     // Orb Stat
@@ -482,21 +391,16 @@
       $btnFind = $('#' + $gearId).find('#' + $btnId);
       $p5 = $($cBtn).find('#p5').first().text();
 
-      if ($('#heroHP').is(':empty')) {
-        $hp = $('.role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
-      } else {
-        $hp = $('#heroHP').text();
-      }
-
       $orbSt = parseInt($($btnFind).text());
-      $sumStat = (parseInt($hp) + $orbSt);
-      $('#heroHP').text($sumStat);
-
-      console.log('AO btnId = ' + $btnId);
-      console.log('AO p5 = ' + $p5);
-      console.log('AO btnFind = ' + $btnFind);
-      console.log('AO classStat = ' + $hp);
-      console.log('AO gearStat = ' + $orbSt);
+      $('#heroO').text($orbSt);
     }).change();
+
+    // Sum Stat
+    // $().change(function() {
+    //   $classATK = $('.role' + $gearClass).find('p:contains("ATK")').next('p').text();
+    //   $classHP = $('.role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
+    //   $classPDEF = $('.role' + $gearClass).find('p:contains("P.Def")').next('p').text();
+    //   $classMDEF = $('.role' + $gearClass).find('p:contains("M.Def")').next('p').text();
+    // });
   });
 }).call(this);

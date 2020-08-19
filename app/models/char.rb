@@ -5,4 +5,6 @@ class Char < ApplicationRecord
   belongs_to :role
   has_many :gears
   has_many :skills
+
+  default_scope {order('name ASC')}
 end
