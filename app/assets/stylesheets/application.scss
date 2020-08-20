@@ -793,11 +793,11 @@ h4 {
 }
 
 .totalStat {
-  width: 300px;
+  // width: 300px;
   height: fit-content;
-  border: 1px solid;
-  .t-atk {
-    // display: flex;
+  
+  .t-st {
+    display: none;
   }
 }
 
