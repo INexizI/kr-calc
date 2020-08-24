@@ -133,7 +133,7 @@ title Calculator
             = f.collection_select :gear_orb_id, @g_o_t8, :id, :set, include_blank: '----------'
 
 
-  .r-stats.class-stats#calc
+  .r-stats.class-stats
     - @roles.each do |r|
       . class='role#{r.id}'
         - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').find_each do |s|
