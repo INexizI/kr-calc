@@ -238,7 +238,7 @@ title Gear
           p
             - @gears.where(char: c, gear_type: '9-UT').each do |gear|
               = link_to gear do
-                img src='/images/media/heroes/#{c.name}/ut#{gear.gear_skill}.png' title=(gear.set + ' ' + gear.name)
+                img src='/images/media/heroes/#{c.name}/ut#{gear.gear_skill}.png' title=(gear.name)
 
     .g-title Unique Weapon
     .g-main
@@ -249,7 +249,7 @@ title Gear
           p
             - @gears.where(char: c, gear_type: '10-UW').each do |gear|
               = link_to gear do
-                img src='/images/media/heroes/#{c.name}/uw.png' title=(gear.set + ' ' + gear.name)
+                img src='/images/media/heroes/#{c.name}/uw.png' title=(gear.name)
 
     .g-title Class Unique Weapon
     .g-main.cl
@@ -260,4 +260,4 @@ title Gear
           p
           - @gears.where(role: r, gear_type: '10-UW').each do |gear|
             = link_to gear do
-              img src='/images/media/heroes/#{r.name.downcase}.png' title=(gear.set + ' ' + gear.name)
+              img src='/images/media/heroes/#{r.name.downcase}.png' title=(gear.name)

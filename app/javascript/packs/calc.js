@@ -204,7 +204,7 @@
           $($sh).find('#g-sg-l').show();
         } else if (($gearClass == 6) || ($gearClass == 7)) {
           $sh = $('.' + $gearBlockClass).show();
-          $($sh).children().toggle();toggle
+          $($sh).children().toggle();
           $($sh).find('#g-sg-i').show();
         }
       } else {
@@ -249,7 +249,6 @@
       $('#heroJ').empty();
       $('.g-jewelry').children().hide();
       $('.g-jewelry').children().children().show();
-      $('#calc_gear_jewelry_id').prop('selectedIndex', 0);
       $gearType = $(this).children('option:selected').val();
       $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
       $gearBlockClass = $('.g-jewelry').children('.g-j-' + $gearTier.toLowerCase()).attr('class');
@@ -259,9 +258,9 @@
         $($sh).children().toggle();
         $($sh).find('#g-j-' + $gearType.toLowerCase()).show();
       } else {
-        $('.jewelry').parent().hide();
         $('.g-jewelry').children().children().hide();
       }
+      $('.jewelry').parent().hide();
       $('#calc_gear_jewelry_id').prop('selectedIndex', 0);
     }).change();
 
@@ -419,6 +418,7 @@
 
     // Sum Stat
     $('.rating label').click(function() {
+    // $('#uw label').click(function() {
       $classATK = $('.class-stats .role' + $gearClass).find('p:contains("ATK")').next('p').text();
       $classHP = $('.class-stats .role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
       $classPDEF = $('.class-stats .role' + $gearClass).find('p:contains("P.Def")').next('p').text();
@@ -431,75 +431,118 @@
       $gearJ = $('#heroJ').text();
       $gearO = $('#heroO').text();
 
+      $weapon = $('select#calc_gear_weapon').val();
+      $treasure = $('select#calc_gear_treasure').val();
+      $armor = $('select#calc_gear_armor').val();
+      $secondary = $('select#calc_gear_secondary').val();
+      $jewel = $('select#calc_gear_jewelry_type').val();
+      $orb = $('select#calc_gear_orb').val();
+
       // atk
-      $totalA = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
-      $sumA = parseInt($gearA) + parseInt($classATK);
-      if ($gearA === '') {
-        $repA = $totalA.text($classATK);
-      } else {
-        $repA = $totalA.text($sumA + ' (' + $classATK + '+' + $gearA + ')');
+      if ($weapon !== '') {
+        $atkSplt = 0;
+        $totalA = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
+        if ($totalA.find(':contains("+")')) {
+          $totalA.text().slice(0, -1).split('+')[1];
+        }
+        $atkSum = parseInt($atkSplt) + parseInt($gearA);
+        $sumA = parseInt($classATK) + parseInt($atkSum);
+        if ($gearA == '') {
+          $totalA.text($classATK);
+        } else {
+          $totalA.text($sumA + ' (' + $classATK + '+' + $atkSum + ')');
+        }
       }
       // hp
-      $totalH = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
-      $sumH = parseInt($gearH) + parseInt($classHP);
-      if ($gearH === '') {
-        $repH = $totalH.text($classHP);
+      if ($treasure == null) {
+        $totalH = $classHP;
       } else {
-        $repH = $totalH.text($sumH + ' (' + $classHP + '+' + $gearH + ')');
+        $hpSplt = 0;
+        $totalH = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+        if ($totalH.find(':contains("+")')) {
+          $totalH.text().slice(0, -1).split('+')[1];
+        }
+        $hpSum = parseInt($hpSplt) + parseInt($gearH);
+        $sumH = parseInt($classHP) + parseInt($hpSum);
+        if ($gearH == '') {
+          $totalH.text($classHP);
+        } else {
+          $totalH.text($sumH + ' (' + $classHP + '+' + $hpSum + ')');
+        }
       }
       // p def
-      $totalP = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
-      $sumP = parseInt($gearP) + parseInt($classPDEF);
-      if ($gearP === '') {
-        $repP = $totalP.text($classPDEF);
-      } else {
-        $repP = $totalP.text($sumP + ' (' + $classPDEF + '+' + $gearP + ')');
+      if ($armor !== '') {
+        $pdefSplt = 0;
+        $totalP = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
+        if ($totalP.find(':contains("+")')) {
+          $totalP.text().slice(0, -1).split('+')[1];
+        }
+        $pdefSum = parseInt($pdefSplt) + parseInt($gearP);
+        $sumP = parseInt($classPDEF) + parseInt($pdefSum);
+        if ($gearP == '') {
+          $totalP.text($classPDEF);
+        } else {
+          $totalP.text($sumP + ' (' + $classPDEF + '+' + $pdefSum + ')');
+        }
       }
       // m def
-      $totalM = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
-      $sumM = parseInt($gearM) + parseInt($classMDEF);
-      if ($gearM === '') {
-        $repM = $totalM.text($classMDEF);
-      } else {
-        $repM = $totalM.text($sumM + ' (' + $classMDEF + '+' + $gearM + ')');
+      if ($secondary !== '') {
+        $mdefSplt = 0;
+        $totalM = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
+        if ($totalM.find(':contains("+")')) {
+          $totalM.text().slice(0, -1).split('+')[1];
+        }
+        $mdefSum = parseInt($mdefSplt) + parseInt($gearM);
+        $sumM = parseInt($classMDEF) + parseInt($mdefSum);
+        if ($gearM == '') {
+          $totalM.text($classMDEF);
+        } else {
+          $totalM.text($sumM + ' (' + $classMDEF + '+' + $mdefSum + ')');
+        }
       }
       // jewel
-      $totalJ = 0;
-      $jwlType = $('select#calc_gear_jewelry_type').val();
-      if ($jwlType == 'Earrings') {
-        $totalJ = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
-        $classStat = $classATK;
-      } else if ($jwlType == 'Ring') {
-        $totalJ = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
-        $classStat = $classHP;
-      } else if ($jwlType == 'Necklace') {
-        $totalJ = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
-        $classStat = $classMDEF;
-      } else if ($jwlType == 'Bracelet') {
-        $totalJ = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
-        $classStat = $classPDEF;
-      }
-      if ($jwlType !== '') {
-        $jewelSplt = $totalJ.text().slice(0, -1).split('+')[1];
-      } else {
-        $jewelSplt = $totalJ.text();
-      }
-      $jwlSum = parseInt($jewelSplt) + parseInt($gearJ);
-      $sumJ = parseInt($classStat) + parseInt($jwlSum);
-      if ($gearJ !== '') {
-        $repJ = $totalJ.text($sumJ + ' (' + $classStat + '+' + $jwlSum + ')');
-      } else {
-        $repJ = $repH;
+      if ($jewel !== '') {
+        $totalJ = 0;
+        $jewelSplt = 0;
+        if ($jewel == 'Earrings') {
+          $totalJ = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
+          $classStat = $classATK;
+        } else if ($jewel == 'Ring') {
+          $totalJ = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+          $classStat = $classHP;
+        } else if ($jewel == 'Necklace') {
+          $totalJ = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
+          $classStat = $classMDEF;
+        } else if ($jewel == 'Bracelet') {
+          $totalJ = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
+          $classStat = $classPDEF;
+        }
+        if ($totalJ.find(':contains("+")')) {
+          $jewelSplt = $totalJ.text().slice(0, -1).split('+')[1];
+        }
+        $jwlSum = parseInt($jewelSplt) + parseInt($gearJ);
+        $sumJ = parseInt($classStat) + parseInt($jwlSum);
+        if ((($jewel == 'Earrings') && ($gearA == '')) || (($jewel == 'Ring') && ($gearH == '')) || (($jewel == 'Necklace') && ($gearM == '')) || (($jewel == 'Bracelet') && ($gearP == ''))) {
+          $totalJ.text((parseInt($classStat) + parseInt($gearJ)) + ' (' + $classStat + '+' + $gearJ + ')');
+        } else {
+          $totalJ.text($sumJ + ' (' + $classStat + '+' + $jwlSum + ')');
+        }
       }
       // orb
-      $totalO = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
-      $orbSplt = $totalO.text().slice(0, -1).split('+')[1];
-      $orbSum = parseInt($orbSplt) + parseInt($gearO);
-      $sumO = parseInt($orbSum) + parseInt($classHP);
-      if ($gearO !== '') {
-        $repO = $totalO.text($sumO + ' (' + $classHP + '+' + $orbSum + ')');
-      } else {
-        $repO = $repH;
+      if ($orb !== '') {
+        $orbSplt = 0;
+        $totalO = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+        if ($totalO.find(':contains("+")')) {
+          $orbSplt = $totalO.text().slice(0, -1).split('+')[1];
+        }
+        $orbSum = parseInt($orbSplt) + parseInt($gearO);
+        $sumO = parseInt($classHP) + parseInt($orbSum);
+        // FIX THIS
+        if ($gearH == '') {
+          $totalO.text((parseInt($classHP) + parseInt($gearO)) + ' (' + $classHP + '+' + $gearO + ')');
+        } else {
+          $totalO.text($sumO + ' (' + $classHP + '+' + $orbSum + ')');
+        }
       }
     });
   });
