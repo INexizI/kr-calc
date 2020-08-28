@@ -40,6 +40,7 @@
       } else {
         $('#calc_char_id').empty();
         return [
+          $('.g-mana-stone').hide(),
           $('.g-armor').children().hide(),
           $('.g-armor').children().children().show(),
           $('.g-secondary').children().hide(),
@@ -103,43 +104,43 @@
     // Treasure
     $('select#calc_gear_treasure').change(function() {
       $('#heroHP').empty();
-      $('.hero-gear').children().hide();
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $gearTreasureType = $(this).children('option:selected').val();
       $gearHero = $('#calc_char_id').children('option:selected').val();
       $gearClass = $('#calc_role_id').children('option:selected').val();
+      $sc = $('.hero-gear .role' + $gearClass).show();
+      $sh = $('.char' + $gearHero).show();
+      $($sc).find('.uw').hide();
+      $($sh).find('.uw, .ut, .mana').hide();
       if ($gearWeaponType == 'Class') {
-        $('.hero-gear .role' + $gearClass).show();
-        $sh = $('.char' + $gearHero).show();
+        $($sc).find('.uw').show();
         if ($gearTreasureType == 'Mana Stone') {
-          $($sh).find('.uw').hide();
-          $($sh).find('.ut').hide();
-          $($sh).find('.mana').show();
+          $('.g-mana-stone').show().children().show();
         } else if ($gearTreasureType == 'Unique') {
-          $($sh).find('.uw').hide();
+          $('.g-mana-stone').hide().children().hide();
           $($sh).find('.ut').show();
-          $($sh).find('.mana').hide();
-        } else if ($gearTreasureType == '') {
-          $($sh).find('.uw').hide();
-          $($sh).find('.ut').hide();
-          $($sh).find('.mana').hide();
         }
       } else if ($gearWeaponType == 'Unique') {
-        $sh = $('.char' + $gearHero).show();
+        $($sh).find('.uw').show();
         if ($gearTreasureType == 'Mana Stone') {
-          $($sh).find('.uw').show();
-          $($sh).find('.mana').show();
-          $($sh).find('.ut').hide();
+          $('.g-mana-stone').show().children().show();
         } else if ($gearTreasureType == 'Unique') {
-          $($sh).find('.uw').show();
+          $('.g-mana-stone').hide().children().hide();
           $($sh).find('.ut').show();
-          $($sh).find('.mana').hide();
-        } else if ($gearTreasureType == '') {
-          $($sh).find('.uw').show();
-          $($sh).find('.ut').hide();
-          $($sh).find('.mana').hide();
         }
       };
+    }).change();
+
+    // Treasure (Mana Stone Tier)
+    $('select#calc_gear_treasure_tier').change(function() {
+      $('#heroHP').empty();
+      $gearTier = $('select#calc_gear_treasure_tier').children('option:selected').val();
+      $gearHero = $('#calc_char_id').children('option:selected').val();
+      $sh = $('.char' + $gearHero).show();
+      $($sh).find('.mana').hide();
+      if ($gearTier !== '') {
+        $($sh).find('.' + $gearTier).show();
+      }
     }).change();
 
     // Armor Tier
@@ -507,22 +508,28 @@
         if ($jewel == 'Earrings') {
           $totalJ = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
           $classStat = $classATK;
+          $jwlCh = $gearA;
         } else if ($jewel == 'Ring') {
           $totalJ = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
           $classStat = $classHP;
+          $jwlCh = $gearH;
         } else if ($jewel == 'Necklace') {
           $totalJ = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
           $classStat = $classMDEF;
+          $jwlCh = $gearM;
         } else if ($jewel == 'Bracelet') {
           $totalJ = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
           $classStat = $classPDEF;
+          $jwlCh = $gearP;
         }
         if ($totalJ.find(':contains("+")')) {
           $jewelSplt = $totalJ.text().slice(0, -1).split('+')[1];
         }
         $jwlSum = parseInt($jewelSplt) + parseInt($gearJ);
         $sumJ = parseInt($classStat) + parseInt($jwlSum);
-        if ((($jewel == 'Earrings') && ($gearA == '')) || (($jewel == 'Ring') && ($gearH == '')) || (($jewel == 'Necklace') && ($gearM == '')) || (($jewel == 'Bracelet') && ($gearP == ''))) {
+        if ($gearJ == '') {
+          $totalJ.text($classStat);
+        } else if (($gearJ !== '') && ($jwlCh == '')) {
           $totalJ.text((parseInt($classStat) + parseInt($gearJ)) + ' (' + $classStat + '+' + $gearJ + ')');
         } else {
           $totalJ.text($sumJ + ' (' + $classStat + '+' + $jwlSum + ')');
@@ -537,8 +544,9 @@
         }
         $orbSum = parseInt($orbSplt) + parseInt($gearO);
         $sumO = parseInt($classHP) + parseInt($orbSum);
-        // FIX THIS
-        if ($gearH == '') {
+        if (($gearO == '') && ($gearH == '')) {
+          $totalO.text($classHP);
+        } else if (($gearO !== '') && ($gearH == '')) {
           $totalO.text((parseInt($classHP) + parseInt($gearO)) + ' (' + $classHP + '+' + $gearO + ')');
         } else {
           $totalO.text($sumO + ' (' + $classHP + '+' + $orbSum + ')');

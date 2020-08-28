@@ -17,6 +17,9 @@ title Calculator
       .form-input
         = f.input :gear_treasure, as: :select, collection: ['Mana Stone', 'Unique'], required: false, label: 'Treasure'
 
+        .g-mana-stone#sel
+          = f.input :gear_treasure_tier, as: :select, collection: ['T7', 'T8'], required: false, label: false
+
       .form-input
         = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor'
 
@@ -210,7 +213,7 @@ title Calculator
     - @chars.each do |c|
       . class='char#{c.id}'
         - @gears.where(char_id: c.id, gear_type: '10-UW').order('id ASC').find_each do |g|
-          .uw
+          .uw id='#{g.id}'
             .gear-img
               p
                 img src='/images/media/heroes/#{c.name}/uw.png'
@@ -282,7 +285,7 @@ title Calculator
                         p#bt5.btn = g.stat.star_5
 
         - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').find_each do |g|
-          .mana id='#{g.id}'
+          .mana id='#{g.id}' class='#{g.tier}'
             .gear-img
               p
                 img src='/images/media/gears/9-UT/mana stone.png'

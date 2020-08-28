@@ -21,10 +21,10 @@
       $btn = $(this).attr('class');
       $btnVal = $(this).parent().parent().parent().next('.g-val').find('#' + $btn);
       $($btnVal).show();
-      $('.btn').not($btnVal).hide();
+      $(this).parent().parent().parent().parent().find('.btn').not('#' + $btn).hide();
     });
     $('label').click(function() {
-      $('label').removeClass('active');
+      $(this).parent().find('label').removeClass('active');
       $(this).addClass('active');
     });
   });
