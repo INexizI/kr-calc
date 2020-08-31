@@ -42,10 +42,27 @@ title = @gear.set + ' ' + @gear.name
               input name="starValue" type="radio" value="1"
               label.bt0 ◯
               input name="starValue" type="radio" value="0"
-        .g-val
-          p#bt0.btn = @gear.stat.star_0
-          p#bt1.btn = @gear.stat.star_1
-          p#bt2.btn = @gear.stat.star_2
-          p#bt3.btn = @gear.stat.star_3
-          p#bt4.btn = @gear.stat.star_4
-          p#bt5.btn = @gear.stat.star_5
+        - if @gear.gear_type === '9-UT'
+          .g-val
+            p#bt0.btn = @gear.stat.ut_0
+            p#bt1.btn = @gear.stat.ut_1
+            p#bt2.btn = @gear.stat.ut_2
+            p#bt3.btn = @gear.stat.ut_3
+            p#bt4.btn = @gear.stat.ut_4
+            p#bt5.btn = @gear.stat.ut_5
+        - elsif (@gear.gear_type === '10-UW') && (@gear.char_id != nil)
+          .g-val
+            p#bt0.btn = @gear.stat.uw_0
+            p#bt1.btn = @gear.stat.uw_1
+            p#bt2.btn = @gear.stat.uw_2
+            p#bt3.btn = @gear.stat.uw_3
+            p#bt4.btn = @gear.stat.uw_4
+            p#bt5.btn = @gear.stat.uw_5
+        - else
+          .g-val
+            p#bt0.btn = @gear.stat.star_0
+            p#bt1.btn = @gear.stat.star_1
+            p#bt2.btn = @gear.stat.star_2
+            p#bt3.btn = @gear.stat.star_3
+            p#bt4.btn = @gear.stat.star_4
+            p#bt5.btn = @gear.stat.star_5

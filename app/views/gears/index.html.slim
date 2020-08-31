@@ -220,6 +220,19 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
 
+    .g-title Technomagic
+    .g-main
+      .g-gear
+        - @gears.where(tier: 'T8', set: 'Technomagic').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              - if gear.name == 'Ring of Amplification'
+                img src='/images/media/gears/#{gear.gear_type}/Ring/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
+              - else
+                img src='/images/media/gears/#{gear.gear_type}/Earrings/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
+
     .g-title Treasure
     .g-main
       .g-gear

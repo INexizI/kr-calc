@@ -37,8 +37,8 @@ class CalcsController < ApplicationController
     @g_2l_t8 = Gear.where(tier: 'T8', gear_type: '4-2L').order('id ASC').each
     @g_1i_t8 = Gear.where(tier: 'T8', gear_type: '5-1I').order('id ASC').each
     @g_2i_t8 = Gear.where(tier: 'T8', gear_type: '6-2I').order('id ASC').each
-    @g_j_r_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Ring', "Hell's Eyes"]).order('id ASC').each
-    @g_j_e_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Earrings', "Fire Dragon's Blessing"]).order('id ASC').each
+    @g_j_r_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Ring', "Hell's Eyes", 'Ring of Amplification']).order('id ASC').each
+    @g_j_e_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Earrings', "Fire Dragon's Blessing", 'Earrings of Amplification']).order('id ASC').each
     @g_j_n_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Necklace', 'Price of Arrogance']).order('id ASC').each
     @g_j_b_t8 = Gear.where(tier: 'T8', gear_type: '7-J', name: ['Bracelet', 'Fire Circle']).order('id ASC').each
     @g_o_t8 = Gear.where(tier: 'T8', gear_type: '8-O').order('id ASC').each
