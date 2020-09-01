@@ -89,10 +89,10 @@ title Calculator
               = f.collection_select :gear_secondary_id, @g_2i_t8, :id, :set, include_blank: '----------'
 
       .form-input
-        = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Jewelry'
+        = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Accessory'
 
         .g-jewelry-type#sel
-          = f.input :gear_jewelry_type, as: :select, collection: ['Ring', 'Earrings', 'Necklace', 'Bracelet'], required: false, label: 'Jewelry Type'
+          = f.input :gear_jewelry_type, as: :select, collection: ['Ring', 'Earrings', 'Necklace', 'Bracelet'], required: false, label: 'Accessory Type'
 
           .g-jewelry
             .g-j-t6

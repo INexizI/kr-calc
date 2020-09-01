@@ -83,57 +83,49 @@
 
     // Class / Unique Weapon
     $gearWeaponSlot = null;
+    $uw = null;
     $('select#calc_gear_weapon').change(function() {
       $('#heroATK').empty();
-      $('.hero-gear').children().hide();
-      $('#calc_gear_treasure').val([]);
+      $('.hero-gear').find('.uw').hide();
       $gearWeaponType = $(this).children('option:selected').val();
       if ($gearWeaponType == 'Class') {
         $gearWeaponSlot = $('#calc_role_id').children('option:selected').val();
-        $('.hero-gear .role' + $gearWeaponSlot).show();
+        $uw = $('.hero-gear .role' + $gearWeaponSlot).show();
+        $($uw).find('.uw').show();
       } else if ($gearWeaponType == 'Unique') {
         $gearWeaponSlot = $('#calc_char_id').children('option:selected').val();
-        $('.char' + $gearWeaponSlot).show();
+        $uw = $('.hero-gear .char' + $gearWeaponSlot).show();
+        $($uw).find('.uw').show();
+      } else {
+        $('.hero-gear').find('.uw').hide();
       }
-      $('.hero-gear').find('.uw').show();
-      $('.hero-gear').find('.ut').hide();
-      $('.hero-gear').find('.mana').hide();
-      $('.hero-gear').find('.armor').hide();
     }).change();
 
     // Treasure
     $('select#calc_gear_treasure').change(function() {
       $('#heroHP').empty();
+      $('.hero-gear').find('.ut, .mana').hide();
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $gearTreasureType = $(this).children('option:selected').val();
       $gearHero = $('#calc_char_id').children('option:selected').val();
       $gearClass = $('#calc_role_id').children('option:selected').val();
-      $sc = $('.hero-gear .role' + $gearClass).show();
-      $sh = $('.char' + $gearHero).show();
-      $($sc).find('.uw').hide();
-      $($sh).find('.uw, .ut, .mana').hide();
-      if ($gearWeaponType == 'Class') {
-        $($sc).find('.uw').show();
-        if ($gearTreasureType == 'Mana Stone') {
-          $('.g-mana-stone').show().children().show();
-        } else if ($gearTreasureType == 'Unique') {
-          $('.g-mana-stone').hide().children().hide();
-          $($sh).find('.ut').show();
-        }
-      } else if ($gearWeaponType == 'Unique') {
-        $($sh).find('.uw').show();
-        if ($gearTreasureType == 'Mana Stone') {
-          $('.g-mana-stone').show().children().show();
-        } else if ($gearTreasureType == 'Unique') {
-          $('.g-mana-stone').hide().children().hide();
-          $($sh).find('.ut').show();
-        }
-      };
+      if ($gearTreasureType == 'Mana Stone') {
+        $('.g-mana-stone').show().children().show();
+      } else if ($gearTreasureType == 'Unique') {
+        $('.g-mana-stone').hide().children().hide();
+        $sh = $('.char' + $gearHero).show();
+        $($sh).find('.ut').show();
+      }
+      if ($gearTreasureType === '') {
+        $('.g-mana-stone').hide().children().hide();
+      }
+      $('#calc_gear_treasure_tier').prop('selectedIndex', 0);
     }).change();
 
     // Treasure (Mana Stone Tier)
     $('select#calc_gear_treasure_tier').change(function() {
       $('#heroHP').empty();
+      $('.hero-gear').find('.ut, .mana').hide();
       $gearTier = $('select#calc_gear_treasure_tier').children('option:selected').val();
       $gearHero = $('#calc_char_id').children('option:selected').val();
       $sh = $('.char' + $gearHero).show();
