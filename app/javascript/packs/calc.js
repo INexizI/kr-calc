@@ -119,7 +119,6 @@
       if ($gearTreasureType === '') {
         $('.g-mana-stone').hide().children().hide();
       }
-      $('#calc_gear_treasure_tier').prop('selectedIndex', 0);
     }).change();
 
     // Treasure (Mana Stone Tier)
@@ -138,6 +137,7 @@
     // Armor Tier
     $('select#calc_gear_armor').change(function() {
       $('#heroPDEF').empty();
+      $('.armor').parent().hide();
       $('.g-armor').children().hide();
       $('.g-armor').children().children().show();
       $gearClass = $('#calc_role_id').children('option:selected').val();
@@ -160,12 +160,13 @@
       } else {
         $('.armor').parent().hide();
       }
-      $('#calc_gear_armor_id').prop('selectedIndex', 0);
     }).change();
 
     // Armor Set
     $('select#calc_gear_armor_id').change(function() {
       $('#heroPDEF').empty();
+      $('.armor').parent().hide();
+      $('#setAr').text($(this).children('option:selected').text());
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_armor').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
@@ -181,10 +182,10 @@
     // Secondary Tier
     $('select#calc_gear_secondary').change(function() {
       $('#heroMDEF').empty();
+      $('.secondary').parent().hide();
       $('.g-secondary').children().hide();
-      $('#calc_gear_secondary_id').prop('selectedIndex', 0);
-      $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $(this).children('option:selected').val();
+      $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearBlockClass = $('.g-secondary').children('.g-sg-' + $gearTier.toLowerCase()).attr('class');
       if ($gearTier !== '') {
         if (($gearClass == 1) || ($gearClass == 2)) {
@@ -203,12 +204,13 @@
       } else {
         $('.secondary').parent().hide();
       }
-      $('#calc_gear_secondary_id').prop('selectedIndex', 0);
     }).change();
 
     // Secondary Set
     $('select#calc_gear_secondary_id').change(function() {
       $('#heroMDEF').empty();
+      $('.secondary').parent().hide();
+      $('#setScnd').text($(this).children('option:selected').text());
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_secondary').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
@@ -225,6 +227,7 @@
     $('select#calc_gear_jewelry').change(function() {
       $('#heroJ').empty();
       $('.g-jewelry-type').hide();
+      $('.jewelry').parent().hide();
       $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
       if ($gearTier === '') {
         $('.calc_gear_jewelry_type').hide();
@@ -234,12 +237,12 @@
         $('.g-jewelry-type').show();
         $('.calc_gear_jewelry_type').show();
       }
-      $('#calc_gear_jewelry_type').prop('selectedIndex', 0);
     }).change();
 
     // Jewelry Tier
     $('select#calc_gear_jewelry_type').change(function() {
       $('#heroJ').empty();
+      $('.jewelry').parent().hide();
       $('.g-jewelry').children().hide();
       $('.g-jewelry').children().children().show();
       $gearType = $(this).children('option:selected').val();
@@ -251,15 +254,16 @@
         $($sh).children().toggle();
         $($sh).find('#g-j-' + $gearType.toLowerCase()).show();
       } else {
+        $('.jewelry').parent().hide();
         $('.g-jewelry').children().children().hide();
       }
-      $('.jewelry').parent().hide();
-      $('#calc_gear_jewelry_id').prop('selectedIndex', 0);
     }).change();
 
     // Jewelry Set
     $('select#calc_gear_jewelry_id').change(function() {
       $('#heroJ').empty();
+      $('.jewelry').parent().hide();
+      $('#setAcs').text($(this).children('option:selected').text());
       $gearType = $('#calc_gear_jewelry_type').children('option:selected').val();
       $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
@@ -275,8 +279,8 @@
     // Orb Tier
     $('select#calc_gear_orb').change(function() {
       $('#heroO').empty();
+      $('.orb').parent().hide();
       $('.g-orb').children().hide();
-      $('#calc_gear_orb_id').prop('selectedIndex', 0);
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $(this).children('option:selected').val();
       $gearBlockClass = $('.g-orb').children('.g-o-' + $gearTier.toLowerCase()).attr('class');
@@ -285,12 +289,13 @@
       } else {
         $('.orb').parent().hide();
       }
-      $('#calc_gear_orb_id').prop('selectedIndex', 0);
     }).change();
 
     // Orb Set
     $('select#calc_gear_orb_id').change(function() {
       $('#heroO').empty();
+      $('.orb').parent().hide();
+      $('#setOrb').text($(this).children('option:selected').text());
       $gearClass = $('#calc_role_id').children('option:selected').val();
       $gearTier = $('#calc_gear_orb').children('option:selected').val();
       $gearSetId = $(this).children('option:selected').val();
@@ -411,7 +416,6 @@
 
     // Sum Stat
     $('.rating label').click(function() {
-    // $('#uw label').click(function() {
       $classATK = $('.class-stats .role' + $gearClass).find('p:contains("ATK")').next('p').text();
       $classHP = $('.class-stats .role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
       $classPDEF = $('.class-stats .role' + $gearClass).find('p:contains("P.Def")').next('p').text();
@@ -543,6 +547,25 @@
         } else {
           $totalO.text($sumO + ' (' + $classHP + '+' + $orbSum + ')');
         }
+      }
+    });
+    // Set Bonus
+    $('.form-input select').change(function() {
+      $setBonus = 0;
+      $a = $('#setAr').text();
+      $s = $('#setScnd').text();
+      $j = $('#setAcs').text();
+      $o = $('#setOrb').text();
+      if ($o == $j) {
+        $setBonus = 2;
+        // TEMP
+        console.log($setBonus);
+      // } else if () {
+      //   $setBonus = 4;
+      //   // TEMP
+      //   console.log($setBonus);
+      } else {
+        console.log('meh');
       }
     });
   });
