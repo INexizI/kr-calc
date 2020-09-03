@@ -549,24 +549,105 @@
         }
       }
     });
+
     // Set Bonus
     $('.form-input select').change(function() {
-      $setBonus = 0;
-      $a = $('#setAr').text();
-      $s = $('#setScnd').text();
-      $j = $('#setAcs').text();
-      $o = $('#setOrb').text();
-      if ($o == $j) {
-        $setBonus = 2;
-        // TEMP
-        console.log($setBonus);
-      // } else if () {
-      //   $setBonus = 4;
-      //   // TEMP
-      //   console.log($setBonus);
-      } else {
-        console.log('meh');
-      }
+      $f = 0;
+      $fr = 0;
+      $p = 0;
+      $d = 0;
+      $la = 0;
+      $le = 0;
+      $ch = 0;
+      $s = 0;
+      $pr = 0;
+      $dl = 0;
+      $t = 0;
+      $sq = $('.set').find('p').each(function() {
+        $gearClass = $('#calc_role_id').children('option:selected').val();
+        $statCrit = $('.class-stats .role' + $gearClass).find('p:contains("Crit")').next('p');
+        $stat = $('.t-total .r-stats').find('p:contains("Crit")').next('p');
+        if ($(this).is(':contains("Fire")')) {
+          $f++;
+          if (($f > 1) && ($f < 4)) {
+            $stat.text(parseInt($statCrit.text()) + 100 + ' (' + parseInt($statCrit.text()) + '+' + 100 + ')');
+          } else if ($f == 4) {
+            $stat.text(parseInt($statCrit.text()) + 230 + ' (' + parseInt($statCrit.text()) + '+' + 230 + ')');
+          } else {
+            $($stat).text($statCrit.text());
+          }
+        } else if ($(this).is(':contains("Frost")')) {
+          $fr++;
+          if (($fr > 1) && ($fr < 4)) {
+
+          } else if ($fr == 4) {
+
+          }
+        } else if ($(this).is(':contains("Poison")')) {
+          $p++;
+          if (($p > 1) && ($p < 4)) {
+
+          } else if ($p == 4) {
+
+          }
+        } else if ($(this).is(':contains("Darkness")')) {
+          $d++;
+          if (($d > 1) && ($d < 4)) {
+
+          } else if ($d == 4) {
+
+          }
+        } else if ($(this).is(':contains("Lava")')) {
+          $la++;
+          if (($la > 1) && ($la < 4)) {
+
+          } else if ($la == 4) {
+
+          }
+        } else if ($(this).is(':contains("Legendary")')) {
+          $le++;
+          if (($le > 1) && ($le < 4)) {
+
+          } else if ($le == 4) {
+
+          }
+        } else if ($(this).is(':contains("Suppression")')) {
+          $s++;
+          if (($s > 1) && ($s < 4)) {
+
+          } else if ($s == 4) {
+
+          }
+        } else if ($(this).is(':contains("Protection")')) {
+          $pr++;
+          if (($pr > 1) && ($pr < 4)) {
+
+          } else if ($pr == 4) {
+
+          }
+        } else if ($(this).is(':contains("Legion")')) {
+          $dl++;
+          if (($dl > 1) && ($dl < 4)) {
+
+          } else if ($dl == 4) {
+
+          }
+        } else if ($(this).is(':contains("Chaos")')) {
+          $ch++;
+          if (($ch > 1) && ($ch < 4)) {
+
+          } else if ($ch == 4) {
+
+          }
+        } else if ($(this).is(':contains("Technomagic")')) {
+          $t++;
+          if (($t > 1) && ($t < 4)) {
+
+          } else if ($t == 4) {
+
+          }
+        }
+      });
     });
   });
 }).call(this);
