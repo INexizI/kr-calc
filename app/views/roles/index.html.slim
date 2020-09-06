@@ -6,7 +6,11 @@ title Class
     span Knight
   .h-main
     .r-stat
-      - @stats.where(role_id: 1, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 1, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 1, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -16,7 +20,11 @@ title Class
     span Warrior
   .h-main
     .r-stat
-      - @stats.where(role_id: 2, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 2, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 2, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -26,7 +34,11 @@ title Class
     span Assassin
   .h-main
     .r-stat
-      - @stats.where(role_id: 3, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 3, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 3, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -36,7 +48,11 @@ title Class
     span Archer
   .h-main
     .r-stat
-      - @stats.where(role_id: 4, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 4, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 4, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -46,7 +62,11 @@ title Class
     span Mechanic
   .h-main
     .r-stat
-      - @stats.where(role_id: 5, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 5, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 5, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -56,7 +76,11 @@ title Class
     span Wizard
   .h-main
     .r-stat
-      - @stats.where(role_id: 6, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 6, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 6, stat_type: 'class').each do |s|
         p = s.name
         p = s.value
 
@@ -66,6 +90,10 @@ title Class
     span Priest
   .h-main
     .r-stat
-      - @stats.where(role_id: 7, stat_type: ['class', 'base']).each do |s|
+      - @stats.where(role_id: 7, stat_type: 'base').each do |s|
+        p = s.name
+        p = s.value
+    .r-stat
+      - @stats.order('notice ASC').where(role_id: 7, stat_type: 'class').each do |s|
         p = s.name
         p = s.value

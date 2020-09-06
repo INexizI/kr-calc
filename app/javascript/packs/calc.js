@@ -563,11 +563,13 @@
       $pr = 0;
       $dl = 0;
       $t = 0;
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+      $statCrit = $('.class-stats .role' + $gearClass).find('p:contains("Crit")').next('p');
+      $statCritResP = $('.class-stats .role' + $gearClass).find('p:contains("M.Crit Resistance")').next('p');
+      $statCritResM = $('.class-stats .role' + $gearClass).find('p:contains("M.Crit Resistance")').next('p');
       $sq = $('.set').find('p').each(function() {
-        $gearClass = $('#calc_role_id').children('option:selected').val();
-        $statCrit = $('.class-stats .role' + $gearClass).find('p:contains("Crit")').next('p');
-        $stat = $('.t-total .r-stats').find('p:contains("Crit")').next('p');
         if ($(this).is(':contains("Fire")')) {
+          $stat = $('.t-total .r-stats').find('p:contains("Crit")').next('p');
           $f++;
           if (($f > 1) && ($f < 4)) {
             $stat.text(parseInt($statCrit.text()) + 100 + ' (' + parseInt($statCrit.text()) + '+' + 100 + ')');
@@ -584,11 +586,15 @@
 
           }
         } else if ($(this).is(':contains("Poison")')) {
+          $statP = $('.t-total .r-stats').find('p:contains("P.Crit Resistance")').next('p');
+          $statM = $('.t-total .r-stats').find('p:contains("M.Crit Resistance")').next('p');
           $p++;
           if (($p > 1) && ($p < 4)) {
-
+            $statP.text(parseInt($statCritResP.text()) + 100 + ' (' + parseInt($statCritResP.text()) + '+' + 100 + ')');
+            $statM.text(parseInt($statCritResM.text()) + 100 + ' (' + parseInt($statCritResM.text()) + '+' + 100 + ')');
           } else if ($p == 4) {
-
+            $statP.text(parseInt($statCritResP.text()) + 230 + ' (' + parseInt($statCritResP.text()) + '+' + 230 + ')');
+            $statM.text(parseInt($statCritResM.text()) + 230 + ' (' + parseInt($statCritResM.text()) + '+' + 230 + ')');
           }
         } else if ($(this).is(':contains("Darkness")')) {
           $d++;
