@@ -416,10 +416,18 @@
 
     // Sum Stat
     $('.rating label').click(function() {
-      $classATK = $('.class-stats .role' + $gearClass).find('p:contains("ATK")').next('p').text();
-      $classHP = $('.class-stats .role' + $gearClass).find('p:contains("MAX HP")').next('p').text();
-      $classPDEF = $('.class-stats .role' + $gearClass).find('p:contains("P.Def")').next('p').text();
-      $classMDEF = $('.class-stats .role' + $gearClass).find('p:contains("M.Def")').next('p').text();
+      $classATK = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'ATK'
+      }).next('p').text();
+      $classHP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p').text();
+      $classPDEF = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.Def'
+      }).next('p').text();
+      $classMDEF = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.Def'
+      }).next('p').text();
 
       $gearA = $('#heroATK').text();
       $gearH = $('#heroHP').text();
@@ -438,7 +446,9 @@
       // atk
       if ($weapon !== '') {
         $atkSplt = 0;
-        $totalA = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
+        $totalA = $('.t-total .r-stats').find('p').filter(function() {
+          return $(this).text() === 'ATK'
+        }).next('p');
         if ($totalA.find(':contains("+")')) {
           $totalA.text().slice(0, -1).split('+')[1];
         }
@@ -455,7 +465,9 @@
         $totalH = $classHP;
       } else {
         $hpSplt = 0;
-        $totalH = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+        $totalH = $('.t-total .r-stats').find('p').filter(function() {
+          return $(this).text() === 'MAX HP'
+        }).next('p');
         if ($totalH.find(':contains("+")')) {
           $totalH.text().slice(0, -1).split('+')[1];
         }
@@ -470,7 +482,9 @@
       // p def
       if ($armor !== '') {
         $pdefSplt = 0;
-        $totalP = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
+        $totalP = $('.t-total .r-stats').find('p').filter(function() {
+          return $(this).text() === 'P.Def'
+        }).next('p');
         if ($totalP.find(':contains("+")')) {
           $totalP.text().slice(0, -1).split('+')[1];
         }
@@ -485,7 +499,9 @@
       // m def
       if ($secondary !== '') {
         $mdefSplt = 0;
-        $totalM = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
+        $totalM = $('.t-total .r-stats').find('p').filter(function() {
+          return $(this).text() === 'M.Def'
+        }).next('p');
         if ($totalM.find(':contains("+")')) {
           $totalM.text().slice(0, -1).split('+')[1];
         }
@@ -502,19 +518,27 @@
         $totalJ = 0;
         $jewelSplt = 0;
         if ($jewel == 'Earrings') {
-          $totalJ = $('.t-total .r-stats').find('p:contains("ATK")').next('p');
+          $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'ATK'
+          }).next('p');
           $classStat = $classATK;
           $jwlCh = $gearA;
         } else if ($jewel == 'Ring') {
-          $totalJ = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+          $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'MAX HP'
+          }).next('p');
           $classStat = $classHP;
           $jwlCh = $gearH;
         } else if ($jewel == 'Necklace') {
-          $totalJ = $('.t-total .r-stats').find('p:contains("M.Def")').next('p');
+          $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'M.Def'
+          }).next('p');
           $classStat = $classMDEF;
           $jwlCh = $gearM;
         } else if ($jewel == 'Bracelet') {
-          $totalJ = $('.t-total .r-stats').find('p:contains("P.Def")').next('p');
+          $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'P.Def'
+          }).next('p');
           $classStat = $classPDEF;
           $jwlCh = $gearP;
         }
@@ -534,7 +558,9 @@
       // orb
       if ($orb !== '') {
         $orbSplt = 0;
-        $totalO = $('.t-total .r-stats').find('p:contains("MAX HP")').next('p');
+        $totalO = $('.t-total .r-stats').find('p').filter(function() {
+          return $(this).text() === 'MAX HP'
+        }).next('p');
         if ($totalO.find(':contains("+")')) {
           $orbSplt = $totalO.text().slice(0, -1).split('+')[1];
         }
@@ -564,12 +590,20 @@
       $dl = 0;
       $t = 0;
       $gearClass = $('#calc_role_id').children('option:selected').val();
-      $statCrit = $('.class-stats .role' + $gearClass).find('p:contains("Crit")').next('p');
-      $statCritResP = $('.class-stats .role' + $gearClass).find('p:contains("M.Crit Resistance")').next('p');
-      $statCritResM = $('.class-stats .role' + $gearClass).find('p:contains("M.Crit Resistance")').next('p');
+      $statCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Crit'
+      }).next('p');
+      $statCritResP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.Crit Resistance'
+      }).next('p');
+      $statCritResM = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.Crit Resistance'
+      }).next('p');
       $sq = $('.set').find('p').each(function() {
         if ($(this).is(':contains("Fire")')) {
-          $stat = $('.t-total .r-stats').find('p:contains("Crit")').next('p');
+          $stat = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'Crit'
+          }).next('p');
           $f++;
           if (($f > 1) && ($f < 4)) {
             $stat.text(parseInt($statCrit.text()) + 100 + ' (' + parseInt($statCrit.text()) + '+' + 100 + ')');
@@ -586,8 +620,12 @@
 
           }
         } else if ($(this).is(':contains("Poison")')) {
-          $statP = $('.t-total .r-stats').find('p:contains("P.Crit Resistance")').next('p');
-          $statM = $('.t-total .r-stats').find('p:contains("M.Crit Resistance")').next('p');
+          $statP = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'P.Crit Resistance'
+          }).next('p');
+          $statM = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'M.Crit Resistance'
+          }).next('p');
           $p++;
           if (($p > 1) && ($p < 4)) {
             $statP.text(parseInt($statCritResP.text()) + 100 + ' (' + parseInt($statCritResP.text()) + '+' + 100 + ')');
@@ -595,6 +633,9 @@
           } else if ($p == 4) {
             $statP.text(parseInt($statCritResP.text()) + 230 + ' (' + parseInt($statCritResP.text()) + '+' + 230 + ')');
             $statM.text(parseInt($statCritResM.text()) + 230 + ' (' + parseInt($statCritResM.text()) + '+' + 230 + ')');
+          } else {
+            $($statP).text($statCritResP.text());
+            $($statM).text($statCritResM.text());
           }
         } else if ($(this).is(':contains("Darkness")')) {
           $d++;

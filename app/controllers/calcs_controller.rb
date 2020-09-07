@@ -1,7 +1,7 @@
 class CalcsController < ApplicationController
   def index
-    @chars = Char.order('name ASC')
-    @roles = Role.order('id ASC')
+    @chars = Char.all
+    @roles = Role.all
     @perks = Perk.all
     @skills = Skill.all
     @stats = Stat.all

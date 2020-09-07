@@ -6,6 +6,7 @@ require("jquery-ui")
 require("packs/char")
 require("packs/gear")
 require("packs/calc")
+require("packs/stat")
 require("packs/search")
 require("packs/jquery.easy-autocomplete.js")
 

@@ -139,12 +139,12 @@ title Calculator
   .r-stats.class-stats
     - @roles.each do |r|
       . class='role#{r.id}'
-        - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').find_each do |s|
+        - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').each do |s|
           .r-stat
             p = s.name
             p = s.value
         hr
-        - @stats.where(role_id: r.id, stat_type: 'class').order('id ASC').find_each do |s|
+        - @stats.where(role_id: r.id, stat_type: 'class').order('notice ASC').each do |s|
           .r-stat
             p = s.name
             p = s.value
@@ -174,7 +174,7 @@ title Calculator
   .hero-gear#calc
     - @roles.each do |r|
       . class='role#{r.id}'
-        - @gears.where(role_id: r.id, gear_type: '10-UW').order('id ASC').find_each do |g|
+        - @gears.where(role_id: r.id, gear_type: '10-UW').order('id ASC').each do |g|
           .uw
             .gear-img
               p
@@ -212,7 +212,7 @@ title Calculator
 
     - @chars.each do |c|
       . class='char#{c.id}'
-        - @gears.where(char_id: c.id, gear_type: '10-UW').order('id ASC').find_each do |g|
+        - @gears.where(char_id: c.id, gear_type: '10-UW').order('id ASC').each do |g|
           .uw id='#{g.id}'
             .gear-img
               p
@@ -248,7 +248,7 @@ title Calculator
                         p#bt4.btn = g.stat.uw_4
                         p#bt5.btn = g.stat.uw_5
 
-        - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').find_each do |g|
+        - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').each do |g|
           .ut id='#{g.id}'
             .gear-img
               p
@@ -284,7 +284,7 @@ title Calculator
                         p#bt4.btn = g.stat.ut_4
                         p#bt5.btn = g.stat.ut_5
 
-        - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').find_each do |g|
+        - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').each do |g|
           .mana id='#{g.id}' class='#{g.tier}'
             .gear-img
               p

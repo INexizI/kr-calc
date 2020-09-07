@@ -10,7 +10,7 @@ title Class
         p = s.name
         p = s.value
     .r-stat
-      - @stats.order('notice ASC').where(role_id: 1, stat_type: 'class').each do |s|
+      - @stats.where(role_id: 1, stat_type: 'class').order('notice ASC').each do |s|
         p = s.name
         p = s.value
 
