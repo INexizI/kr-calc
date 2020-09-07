@@ -599,6 +599,9 @@
       $statCritResM = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'M.Crit Resistance'
       }).next('p');
+      $statMP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Attack'
+      }).next('p');
       $sq = $('.set').find('p').each(function() {
         if ($(this).is(':contains("Fire")')) {
           $stat = $('.t-total .r-stats').find('p').filter(function() {
@@ -638,11 +641,16 @@
             $($statM).text($statCritResM.text());
           }
         } else if ($(this).is(':contains("Darkness")')) {
+          $stat = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'MP Recovery/Attack'
+          }).next('p');
           $d++;
           if (($d > 1) && ($d < 4)) {
-
+            $stat.text(parseInt($statMP.text()) + 200 + ' (' + parseInt($statMP.text()) + '+' + 200 + ')');
           } else if ($d == 4) {
-
+            $stat.text(parseInt($statMP.text()) + 460 + ' (' + parseInt($statMP.text()) + '+' + 460 + ')');
+          } else {
+            $($stat).text($statMP.text());
           }
         } else if ($(this).is(':contains("Lava")')) {
           $la++;

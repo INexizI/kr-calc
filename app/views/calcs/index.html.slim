@@ -277,12 +277,12 @@ title Calculator
                             label.bt0 ◯
                             input name="starValue" type="radio" value="0"
                       .g-val id='#{g.id}'
-                        p#bt0.btn = g.stat.ut_0
-                        p#bt1.btn = g.stat.ut_1
-                        p#bt2.btn = g.stat.ut_2
-                        p#bt3.btn = g.stat.ut_3
-                        p#bt4.btn = g.stat.ut_4
-                        p#bt5.btn = g.stat.ut_5
+                        p#bt0.btn = g.stat.uw_0
+                        p#bt1.btn = g.stat.uw_1
+                        p#bt2.btn = g.stat.uw_2
+                        p#bt3.btn = g.stat.uw_3
+                        p#bt4.btn = g.stat.uw_4
+                        p#bt5.btn = g.stat.uw_5
 
         - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').each do |g|
           .mana id='#{g.id}' class='#{g.tier}'
