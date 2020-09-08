@@ -350,7 +350,7 @@
       }
 
       $trsSt = parseInt($($btnFind).text());
-      $('#heroHP').text($trsSt);
+      $('#heroTR').text($trsSt);
     }).change();
 
     // Armor Stat
@@ -415,7 +415,10 @@
     }).change();
 
     // Sum Stat
-    $('.rating label').click(function() {
+    function gearStat() {
+    // $('.rating label').click(function() {
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+
       $classATK = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'ATK'
       }).next('p').text();
@@ -430,11 +433,13 @@
       }).next('p').text();
 
       $gearA = $('#heroATK').text();
-      $gearH = $('#heroHP').text();
+      $gearTr = $('#heroTR').text();
       $gearP = $('#heroPDEF').text();
       $gearM = $('#heroMDEF').text();
       $gearJ = $('#heroJ').text();
       $gearO = $('#heroO').text();
+      $totalGearHP = $('#heroHP').text();
+      $totalGearHPs = $('#heroHPs').text().split(' ')[0];
 
       $weapon = $('select#calc_gear_weapon').val();
       $treasure = $('select#calc_gear_treasure').val();
@@ -471,9 +476,9 @@
         if ($totalH.find(':contains("+")')) {
           $totalH.text().slice(0, -1).split('+')[1];
         }
-        $hpSum = parseInt($hpSplt) + parseInt($gearH);
+        $hpSum = parseInt($hpSplt) + parseInt($gearTr);
         $sumH = parseInt($classHP) + parseInt($hpSum);
-        if ($gearH == '') {
+        if ($gearTr == '') {
           $totalH.text($classHP);
         } else {
           $totalH.text($sumH + ' (' + $classHP + '+' + $hpSum + ')');
@@ -528,7 +533,7 @@
             return $(this).text() === 'MAX HP'
           }).next('p');
           $classStat = $classHP;
-          $jwlCh = $gearH;
+          // $jwlCh = $gearTr;
         } else if ($jewel == 'Necklace') {
           $totalJ = $('.t-total .r-stats').find('p').filter(function() {
             return $(this).text() === 'M.Def'
@@ -542,17 +547,22 @@
           $classStat = $classPDEF;
           $jwlCh = $gearP;
         }
-        if ($totalJ.find(':contains("+")')) {
-          $jewelSplt = $totalJ.text().slice(0, -1).split('+')[1];
-        }
+        // if ($totalJ.find(':contains("+")')) {
+        //   $jewelSplt = $totalJ.text().slice(0, -1).split('+')[1];
+        // }
         $jwlSum = parseInt($jewelSplt) + parseInt($gearJ);
         $sumJ = parseInt($classStat) + parseInt($jwlSum);
         if ($gearJ == '') {
           $totalJ.text($classStat);
-        } else if (($gearJ !== '') && ($jwlCh == '')) {
+        // } else if (($gearJ !== '') && ($jwlCh == '')) {
+        } else if (($gearJ !== '') && (($gearTr == '') && ($gearO == ''))) {
           $totalJ.text((parseInt($classStat) + parseInt($gearJ)) + ' (' + $classStat + '+' + $gearJ + ')');
         } else {
           $totalJ.text($sumJ + ' (' + $classStat + '+' + $jwlSum + ')');
+        }
+        if ($jewel == 'Ring') {
+          $('#heroHP').text($totalJ.text());
+          $('#heroHPs').text($totalJ.text().split(' ')[0]);
         }
       }
       // orb
@@ -566,18 +576,22 @@
         }
         $orbSum = parseInt($orbSplt) + parseInt($gearO);
         $sumO = parseInt($classHP) + parseInt($orbSum);
-        if (($gearO == '') && ($gearH == '')) {
+        if (($gearO == '') && ($gearTr == '')) {
           $totalO.text($classHP);
-        } else if (($gearO !== '') && ($gearH == '')) {
+        } else if (($gearO !== '') && (($gearTr == '') && ($gearJ == ''))) {
           $totalO.text((parseInt($classHP) + parseInt($gearO)) + ' (' + $classHP + '+' + $gearO + ')');
         } else {
           $totalO.text($sumO + ' (' + $classHP + '+' + $orbSum + ')');
         }
+        $('#heroHP').text($totalO.text());
+        $('#heroHPs').text($totalO.text().split(' ')[0]);
       }
-    });
+    // }); // $('.rating label').click(function() {
+    };
 
     // Set Bonus
-    $('.form-input select').change(function() {
+    function gearSet() {
+    // $('.form-input select').change(function gearSet() {
       $f = 0;
       $fr = 0;
       $p = 0;
@@ -593,6 +607,10 @@
       $statCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'Crit'
       }).next('p');
+      $statHP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p');
+      $statGrey = parseInt($('#heroHP').text());
       $statCritResP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'P.Crit Resistance'
       }).next('p');
@@ -616,11 +634,18 @@
             $($stat).text($statCrit.text());
           }
         } else if ($(this).is(':contains("Frost")')) {
+          $stat = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'MAX HP'
+          }).next('p');
           $fr++;
           if (($fr > 1) && ($fr < 4)) {
-
+            $qe = parseInt(Math.round($statGrey * 1.1));
+            $stat.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
           } else if ($fr == 4) {
-
+            $qe = parseInt(Math.round($statGrey * 1.23));
+            $stat.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
+          } else {
+            $stat.text($('#heroHP').text());
           }
         } else if ($(this).is(':contains("Poison")')) {
           $statP = $('.t-total .r-stats').find('p').filter(function() {
@@ -703,6 +728,14 @@
           }
         }
       });
-    });
+    // }); // $('.form-input select').change(function gearSet() {
+    };
+
+    $gearCalc = function() {
+      gearStat();
+      gearSet();
+    }
+    $('.form-input select').change($gearCalc);
+    $('.rating label').click($gearCalc);
   });
 }).call(this);
