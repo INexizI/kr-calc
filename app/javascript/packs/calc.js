@@ -627,6 +627,12 @@
       $statMP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'MP Recovery/Attack'
       }).next('p');
+      $statCritD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Crit DMG'
+      }).next('p');
+      $statDebuff = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Debuff ACC'
+      }).next('p');
       $sq = $('.set').find('p').each(function() {
         if ($(this).is(':contains("Fire")')) {
           $stat = $('.t-total .r-stats').find('p').filter(function() {
@@ -685,18 +691,28 @@
             $($stat).text($statMP.text());
           }
         } else if ($(this).is(':contains("Lava")')) {
+          $stat = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'Crit DMG'
+          }).next('p');
           $la++;
           if (($la > 1) && ($la < 4)) {
-
+            $stat.text(parseInt($statCritD.text()) + 20 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 20 + '%' + ')');
           } else if ($la == 4) {
-
+            $stat.text(parseInt($statCritD.text()) + 46 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 46 + '%' + ')');
+          } else {
+            $($stat).text($statCritD.text() + '%');
           }
         } else if ($(this).is(':contains("Legendary")')) {
+          $stat = $('.t-total .r-stats').find('p').filter(function() {
+            return $(this).text() === 'Debuff ACC'
+          }).next('p');
           $le++;
           if (($le > 1) && ($le < 4)) {
-
+            $stat.text(parseInt($statDebuff.text()) + 100 + ' (' + parseInt($statDebuff.text()) + '+' + 100 + ')');
           } else if ($le == 4) {
-
+            $stat.text(parseInt($statDebuff.text()) + 230 + ' (' + parseInt($statDebuff.text()) + '+' + 230 + ')');
+          } else {
+            $($stat).text($statDebuff.text());
           }
         } else if ($(this).is(':contains("Suppression")')) {
           $s++;
