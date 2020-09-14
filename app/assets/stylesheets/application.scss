@@ -801,6 +801,15 @@ h4 {
   }
 }
 
+.t-total {
+  .r-stat {
+    p {
+      width: 200px;
+    }
+  }
+}
+
+
 #char, .hero-gear > div, .class-stats > div, .form-input > div:nth-child(1) {
   display: none;
 }
