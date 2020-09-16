@@ -631,7 +631,7 @@
         return $(this).text() === 'Set Bonus'
       }).next('p');
       if (!$setBonus.length)
-        $setBonus = $('.t-total .r-stats .role' + $gearClass).append('<div class="r-stat"><p>Set Bonus</p><p>0</p></div>');
+        $setBonus = $('.t-total .r-stats .role' + $gearClass).append('<div class="r-stat"><p>Set Bonus</p><p>-</p></div>');
       $statCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'Crit'
       }).next('p');
@@ -705,138 +705,119 @@
 
       if (($f > 1) && ($f < 4)) {
         $statF.text(parseInt($statCrit.text()) + 100 + ' (' + parseInt($statCrit.text()) + '+' + 100 + ')');
-        if (($setBS == 0) || ($setBS == '2 Set: Crit +100'))
-          $setBonus.text('2 Set: Crit +100');
-        else
-          // $setBonus.text($setBS + $setBS.split('4')[0]);
-          $setBonus.text($setBS + '2 Set: Crit +100');
-          // $setBonus.text('2 Set: Crit +100' + $setBS.split('4')[0]);
+        $setBonus.text('2 Set: Crit +100');
       } else if ($f == 4) {
         $statF.text(parseInt($statCrit.text()) + 230 + ' (' + parseInt($statCrit.text()) + '+' + 230 + ')');
         $setBonus.html('2 Set: Crit +100' + '<br>' + '4 Set: Crit +130');
-      } else
+      } else if ($f == 1) {
         $($statF).text($statCrit.text());
+        if ($setBonus.text() !== '2 Set: Crit +100')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
+      }
 
       if (($fr > 1) && ($fr < 4)) {
         $qe = parseInt(Math.round($statGrey * 1.1));
         $statFr.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
-        if (($setBS == 0) || ($setBS == '2 Set: Max HP +10%'))
-          $setBonus.text('2 Set: Max HP +10%');
-        else
-          // $setBonus.text($setBS + $setBS.split('4')[0]);
-          $setBonus.text($setBS + '2 Set: Max HP +10%');
-          // $setBonus.text('2 Set: Max HP +10%' + $setBS.split('4')[0]);
+        $setBonus.text('2 Set: Max HP +10%');
       } else if ($fr == 4) {
         $qe = parseInt(Math.round($statGrey * 1.23));
         $statFr.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
         $setBonus.html('2 Set: Max HP +10%' + '<br>' + '4 Set: Max HP +13%');
-      } else
+      } else if ($fr == 1) {
         $statFr.text($('#heroHP').text());
+        if ($setBonus.text() !== '2 Set: Max HP +10%')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
+      }
 
       if (($p > 1) && ($p < 4)) {
         $statP.text(parseInt($statCritResP.text()) + 100 + ' (' + parseInt($statCritResP.text()) + '+' + 100 + ')');
         $statM.text(parseInt($statCritResM.text()) + 100 + ' (' + parseInt($statCritResM.text()) + '+' + 100 + ')');
         if ($setBS == 0)
-          $setBonus.text('2 Set: Crit Resistance +100.');
+          $setBonus.text('2 Set: Crit Resistance +100');
         else
-          $setBonus.text($setBS.split('4')[0]);
+          $setBonus.text($setBS.split('.')[0]);
       } else if ($p == 4) {
         $statP.text(parseInt($statCritResP.text()) + 230 + ' (' + parseInt($statCritResP.text()) + '+' + 230 + ')');
         $statM.text(parseInt($statCritResM.text()) + 230 + ' (' + parseInt($statCritResM.text()) + '+' + 230 + ')');
         $setBonus.html('2 Set: Crit Resistance +100' + '<br>' + '4 Set: Crit Resistance +130');
-      } else {
+      } else if ($p == 1) {
         $($statP).text($statCritResP.text());
         $($statM).text($statCritResM.text());
+        if ($setBonus.text() !== '2 Set: Crit Resistance +100')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
       }
 
       if (($d > 1) && ($d < 4)) {
         $statD.text(parseInt($statMP.text()) + 200 + ' (' + parseInt($statMP.text()) + '+' + 200 + ')');
-        if ($setBS == 0)
-          $setBonus.text('2 Set: MP Recovery/Attack +200.');
-        else
-          $setBonus.text($setBS.split('4')[0]);
+        $setBonus.text('2 Set: MP Recovery/Attack +200');
       } else if ($d == 4) {
         $statD.text(parseInt($statMP.text()) + 460 + ' (' + parseInt($statMP.text()) + '+' + 460 + ')');
         $setBonus.html('2 Set: MP Recovery/Attack +200' + '<br>' + '4 Set: MP Recovery/Attack +260');
-      } else
+      } else if ($d == 1) {
         $($statD).text($statMP.text());
+        if ($setBonus.text() !== '2 Set: MP Recovery/Attack +200')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
+      }
 
       if (($la > 1) && ($la < 4)) {
         $statLa.text(parseInt($statCritD.text()) + 20 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 20 + '%' + ')');
-        if ($setBS == 0)
-          $setBonus.text('2 Set: Crit DMG +20%.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Crit DMG +20%');
-        }
+        $setBonus.text('2 Set: Crit DMG +20%');
       } else if ($la == 4) {
         $statLa.text(parseInt($statCritD.text()) + 46 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 46 + '%' + ')');
         $setBonus.html('2 Set: Crit DMG +20%' + '<br>' + '4 Set: Crit DMG +26%');
-      } else
+      } else if ($la == 1) {
         $($statLa).text($statCritD.text() + '%');
+        if ($setBonus.text() !== '2 Set: Crit DMG +20%')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
+      }
 
       if (($le > 1) && ($le < 4)) {
         $statLe.text(parseInt($statDebuff.text()) + 100 + ' (' + parseInt($statDebuff.text()) + '+' + 100 + ')');
-        if ($setBS == 0)
-          $setBonus.text('2 Set: Debuff ACC +100.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Debuff ACC +100');
-        }
+        $setBonus.text('2 Set: Debuff ACC +100');
       } else if ($le == 4) {
         $statLe.text(parseInt($statDebuff.text()) + 230 + ' (' + parseInt($statDebuff.text()) + '+' + 230 + ')');
         $setBonus.html('2 Set: Debuff ACC +100' + '<br>' + '4 Set: Debuff ACC +130');
-      } else
+      } else if ($le == 1) {
         $($statLe).text($statDebuff.text());
+        if ($setBonus.text() !== '2 Set: Debuff ACC +100')
+          $setBonus.text($setBonus.text());
+        else
+          $setBonus.text('-');
+      }
 
-      if (($s > 1) && ($s < 4)) {
-        if ($setBS == 0)
-          $setBonus.text('2 Set: Increases DMG to Heroes by 7%.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Increases DMG to Heroes by 7%');
-        }
-      } else if ($s == 4)
+      if (($s > 1) && ($s < 4))
+        $setBonus.text('2 Set: Increases DMG to Heroes by 7%.');
+      else if ($s == 4)
         $setBonus.html('2 Set: Increases DMG to Heroes by 7%' + '<br>' + '4 Set: Increases DMG to Heroes by 13%');
 
-      if (($pr > 1) && ($pr < 4)) {
-        if ($setBS == 0)
-          $setBonus.text('2 Set: Reduces DMG recevied from Heroes by 6%.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Reduces DMG recevied from Heroes by 6%');
-        }
-      } else if ($pr == 4)
+      if (($pr > 1) && ($pr < 4))
+        $setBonus.text('2 Set: Reduces DMG recevied from Heroes by 6%.');
+      else if ($pr == 4)
         $setBonus.html('2 Set: Reduces DMG recevied from Heroes by 6%' + '<br>' + '4 Set: Reduces DMG recevied from Heroes by 11%');
 
-      if (($dl > 1) && ($dl < 4)) {
-        if ($setBS == 0)
-          $setBonus.html('2 Set: Increases Crit DMG of all allies by 5%.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Increases Crit DMG of all allies by 5%');
-        }
-      } else if ($dl == 4)
+      if (($dl > 1) && ($dl < 4))
+        $setBonus.html('2 Set: Increases Crit DMG of all allies by 5%.');
+      else if ($dl == 4)
         $setBonus.html('2 Set: Increases Crit DMG of all allies by 5%' + '<br>' + '4 Set: Increases Crit DMG of all allies by 8%');
 
-      if (($ch > 1) && ($ch < 4)) {
-        if ($setBS == 0)
-          $setBonus.html('2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses');
-        }
-      } else if ($ch == 4)
+      if (($ch > 1) && ($ch < 4))
+        $setBonus.html('2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses.');
+      else if ($ch == 4)
         $setBonus.html('2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses' + '<br>' + '4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses');
 
-      if (($t > 1) && ($t < 4)) {
-        if ($setBS == 0)
-          $setBonus.html('2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom.');
-        else {
-          $setBS = $setBonus.text().split('.')[1];
-          $setBonus.html($setBS + '<br>' + '2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom');
-        }
-      } else if ($t == 4)
+      if (($t > 1) && ($t < 4))
+        $setBonus.html('2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom.');
+      else if ($t == 4)
         $setBonus.html('2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom' + '<br>' + '4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom');
     // }); // $('.form-input select').change(function gearSet() {
     };
