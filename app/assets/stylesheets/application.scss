@@ -804,7 +804,13 @@ h4 {
 .t-total {
   .r-stat {
     p {
-      width: 200px;
+      width: 300px;
+    }
+    #sb {
+      display: grid;
+      span {
+        // display: none;
+      }
     }
   }
 }
