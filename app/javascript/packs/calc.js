@@ -783,6 +783,10 @@
         $zeroStat = $(this).text();
         ($zeroStat === '0') ? $(this).hide().prev('p').hide() : $(this).show().prev('p').show();
       });
+      $('.t-total .role' + $gearClass).find('p:contains(" (")').each(function() {
+        $statSplit = $(this);
+        $statSplit.html('<span id="plsSt">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '+' + '<span id="plsSt">' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+      });
     // }); // $('.form-input select').change(function gearSet() {
     };
 
