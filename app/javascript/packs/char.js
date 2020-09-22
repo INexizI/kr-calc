@@ -27,5 +27,10 @@
       $('.s-description').hide();
       $('.g-description').hide();
     });
+    $('.c-stat .r-stat').find('p').each(function() {
+      $zeroStat = $(this).text();
+      if ($zeroStat === '0')
+        $(this).hide().prev('p').hide();
+    });
   });
 }).call(this);
