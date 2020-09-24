@@ -714,6 +714,52 @@ h4 {
     width: 600px;
     height: fit-content;
 
+    .hero-img {
+      .hch {
+        width: 600px;
+        display: none;
+
+        .heroImg {
+          width: 300px;
+          margin: auto;
+          img {
+            width: 75px;
+            border-radius: 25%;
+          }
+          p {
+            img {
+              width: 20px;
+              height: 20px;
+              margin: 0 3px;
+            }
+            span {
+              margin: 0 3px;
+              vertical-align: 3px;
+            }
+          }
+        }
+        .heroPerk {
+          margin: auto;
+
+          .c-perk-img {
+            margin: 1px;
+            width: 42px;
+            height: 42px;
+
+            img {
+              width: 40px !important;
+              height: 40px !important;
+              filter: grayscale(1);
+            }
+            .s-description {
+              top: 15px !important;
+              left: -425px !important;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
     .t-st {
       display: none;
     }

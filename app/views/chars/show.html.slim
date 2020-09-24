@@ -11,10 +11,8 @@ title = @char.name
       .c-title
         p#c-class
           img src='/images/media/classes/#{@char.role.name}.png' title=@char.role.name
-        - if @char.type_dmg == 'Physical'
-          p = image_tag '/images/media/physical.png', title: @char.type_dmg
-        - else
-          p = image_tag '/images/media/magical.png', title: @char.type_dmg
+        p
+          img src='/images/media/#{@char.type_dmg}.png' title=@char.type_dmg
         p#c-name = @char.name
 
     .c-sub

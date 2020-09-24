@@ -150,6 +150,55 @@ title Calculator
             p = s.value
 
   .totalStat#calc
+    .hero-img
+      - @chars.each do |c|
+        .hch class='hero-#{c.id}'
+          .heroImg
+            img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
+            p
+              img src='/images/media/classes/#{c.role.name}.png' title=c.role.name
+              img src='/images/media/#{c.type_dmg}.png' title=c.type_dmg
+              span = c.name
+          .heroPerk
+            .c-sub
+              .c-perk
+                .c-p
+                  - @perks.where(tier: 'Generic').each do |perk|
+                    .c-perk-img
+                      img src="/images/media/genericPerks/#{perk.name}.png"
+                      .s-description
+                        .p1
+                          = perk.name
+                        .p4
+                          = perk.description
+                .c-p
+                  - @perks.where(tier: c.role.name).each do |perk|
+                    .c-perk-img
+                      img src="/images/media/genericPerks/#{perk.name}.png"
+                      .s-description
+                        .p1
+                          = perk.name
+                        .p4
+                          = perk.description
+                .c-p
+                  .c-pepe
+                    - @perks.where(tier: c.name).where.not(name: ['light', 'dark']).each do |perk|
+                      .c-perk-img
+                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png"
+                        .s-description
+                          .p1
+                            = perk.name
+                          .p4
+                            = perk.description
+                .c-p
+                  - @perks.where(tier: c.name, name: ['light', 'dark']).each do |perk|
+                    .c-perk-img
+                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png"
+                      .s-description
+                        .p1
+                          = c.name + ' ' + '[' + perk.name.capitalize + ']'
+                        .p4
+                          = perk.description
     .t-st
       p#heroATK
     .t-st

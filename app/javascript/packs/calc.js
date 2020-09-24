@@ -12,8 +12,8 @@
       $('#calc_gear_jewelry_type').parent().hide(),
       $('#calc_gear_orb').parent().hide(),
       $('.hero-gear').children().hide();
+      $('.hero-img').children().hide();
       $('.t-st p').empty();
-
       // Options
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
@@ -55,6 +55,7 @@
 
     // Hero -> Weapon
     $('#calc_char_id').change(function() {
+      $('.hero-img').children().hide();
       $('.hero-gear').children().hide();
       $('.t-st p').empty();
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
@@ -790,9 +791,16 @@
     // }); // $('.form-input select').change(function gearSet() {
     };
 
+    function heroImg() {
+      $('.hero-img').children().hide();
+      $heroImg = $('#calc_char_id').children('option:selected').val();
+      $('.hero-img').find('.hero-' + $heroImg).css('display', 'flex');
+    };
+
     $gearCalc = function() {
       gearStat();
       gearSet();
+      heroImg();
     }
     $('.form-input select').change($gearCalc);
     $('.rating label').click($gearCalc);
