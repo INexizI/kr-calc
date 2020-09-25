@@ -135,6 +135,12 @@ title Calculator
           .g-o-t8
             = f.collection_select :gear_orb_id, @g_o_t8, :id, :set, include_blank: '----------'
 
+      // Other
+      / .form-input
+        = f.input :class_buff
+
+      / .form-input
+        = f.input :guild_buff
 
   .r-stats.class-stats
     - @roles.each do |r|
@@ -162,38 +168,38 @@ title Calculator
           .heroPerk
             .c-sub
               .c-perk
-                .c-p
+                .c-p#perk-t1
                   - @perks.where(tier: 'Generic').each do |perk|
                     .c-perk-img
-                      img src="/images/media/genericPerks/#{perk.name}.png"
+                      img src="/images/media/genericPerks/#{perk.name}.png" id=perk.sequence
                       .s-description
                         .p1
                           = perk.name
                         .p4
                           = perk.description
-                .c-p
+                .c-p#perk-t2
                   - @perks.where(tier: c.role.name).each do |perk|
                     .c-perk-img
-                      img src="/images/media/genericPerks/#{perk.name}.png"
+                      img src="/images/media/genericPerks/#{perk.name}.png" id=perk.sequence
                       .s-description
                         .p1
                           = perk.name
                         .p4
                           = perk.description
-                .c-p
+                .c-p#perk-t3
                   .c-pepe
                     - @perks.where(tier: c.name).where.not(name: ['light', 'dark']).each do |perk|
                       .c-perk-img
-                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png"
+                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png" id=perk.sequence
                         .s-description
                           .p1
                             = perk.name
                           .p4
                             = perk.description
-                .c-p
+                .c-p#perk-t5
                   - @perks.where(tier: c.name, name: ['light', 'dark']).each do |perk|
                     .c-perk-img
-                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png"
+                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png" id=perk.sequence
                       .s-description
                         .p1
                           = c.name + ' ' + '[' + perk.name.capitalize + ']'

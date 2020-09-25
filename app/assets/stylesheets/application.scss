@@ -752,8 +752,8 @@ h4 {
               filter: grayscale(1);
             }
             .s-description {
-              top: 15px !important;
-              left: -425px !important;
+              top: 30px !important;
+              left: -435px !important;
               z-index: 1;
             }
           }
@@ -787,6 +787,10 @@ h4 {
       }
     }
   }
+}
+
+.pick {
+  filter: grayscale(0) !important;
 }
 
 .simple_form {
