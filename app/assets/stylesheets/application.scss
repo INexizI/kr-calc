@@ -741,6 +741,17 @@ h4 {
         .heroPerk {
           margin: auto;
 
+          .perk-tp {
+            display: flex;
+            margin-left: auto;
+            width: fit-content;
+
+            img {
+              width: 24px;
+              height: 24px;
+              margin: 0 5px;
+            }
+          }
           .c-perk-img {
             margin: 1px;
             width: 42px;
