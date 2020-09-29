@@ -145,15 +145,16 @@ title Calculator
   .r-stats.class-stats
     - @roles.each do |r|
       . class='role#{r.id}'
-        - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').each do |s|
-          .r-stat
-            p = s.name
-            p = s.value
-        hr
-        - @stats.where(role_id: r.id, stat_type: 'class').order('notice ASC').each do |s|
-          .r-stat
-            p = s.name
-            p = s.value
+        .statsBase
+          - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').each do |s|
+            .r-stat
+              p#s-name = s.name
+              p#s-val = s.value
+        .statsAdd
+          - @stats.where(role_id: r.id, stat_type: 'class').order('notice ASC').each do |s|
+            .r-stat
+              p#s-name = s.name
+              p#s-val = s.value
 
   .totalStat#calc
     .hero-img
@@ -167,7 +168,6 @@ title Calculator
               span = c.name
           .heroPerk
             .perk-tp
-              / span TP
               img src='/images/media/classes/TP.png'
               p 0
             .c-sub

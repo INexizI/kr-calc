@@ -711,16 +711,16 @@ h4 {
     width: 175px;
   }
   .totalStat {
-    width: 600px;
+    width: 450px;
     height: fit-content;
 
     .hero-img {
       .hch {
-        width: 600px;
+        width: 450px;
         display: none;
 
         .heroImg {
-          width: 300px;
+          // width: 300px;
           margin: auto;
           img {
             width: 75px;
@@ -775,15 +775,67 @@ h4 {
       display: none;
     }
     .t-total {
-      .r-stat {
-        p {
-          width: 300px;
-        }
-        #plsSt {
-          color: greenyellow;
-        }
-        #sb {
-          display: grid;
+      .statsBase::before {
+        content: '';
+        background: url('/images/media/classes/base head.png');
+        background-size: 450px;
+        height: 30px;
+        display: block;
+      }
+      .statsAdd::before {
+        content: '';
+        background: url('/images/media/classes/add head.png');
+        background-size: 450px;
+        height: 30px;
+        display: block;
+      }
+      .statSet::before {
+        content: '';
+        background: url('/images/media/classes/set head.png');
+        background-size: 450px;
+        height: 14px;
+        display: block;
+      }
+      .statsBase::after, .statsAdd::after, .statSet::after {
+        content: '';
+        background: url('/images/media/classes/stat foot.png');
+        background-size: 450px;
+        height: 14px;
+        display: block;
+      }
+      .r-stats {
+        .r-stat {
+          background-image: url('/images/media/classes/stat.png');
+          background-size: 450px 25px;
+          font-size: 16px;
+          line-height: 25px;
+          color: rgb(142, 128, 115);
+
+          p {
+            // width: 300px;
+            height: 25px;
+            margin: 0;
+          }
+          #s-name {
+            width: 130px;
+          padding: 0 20px;
+          text-align: left;
+          }
+          #s-val {
+            width: 240px;
+            padding: 0 20px;
+            text-align: left;
+          }
+          #plsSt1 {
+            color: darkturquoise;
+          }
+          #plsSt2 {
+            color: limegreen;
+          }
+          #sb {
+            display: grid;
+            height: auto;
+          }
         }
       }
     }
