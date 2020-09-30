@@ -807,7 +807,7 @@ h4 {
         .r-stat {
           background-image: url('/images/media/classes/stat.png');
           background-size: 450px 25px;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 25px;
           color: rgb(142, 128, 115);
 
@@ -817,13 +817,13 @@ h4 {
             margin: 0;
           }
           #s-name {
-            width: 130px;
-          padding: 0 20px;
-          text-align: left;
+            width: 150px;
+            padding-left: 15px;
+            text-align: left;
           }
           #s-val {
-            width: 240px;
-            padding: 0 20px;
+            width: 265px;
+            padding: 0 10px;
             text-align: left;
           }
           #plsSt1 {
@@ -832,9 +832,27 @@ h4 {
           #plsSt2 {
             color: limegreen;
           }
+        }
+        .r-set {
+          display: grid;
+          height: auto !important;
+          grid-template: "item1 item2";
+          background-image: url('/images/media/classes/stat.png');
+          background-size: 450px 25px;
+          font-size: 15px;
+          line-height: 25px;
+          color: #8e8073;
+          text-align: left;
+
+          #s-name {
+            width: 150px;
+            padding-left: 15px;
+          }
           #sb {
             display: grid;
+            width: 265px;
             height: auto;
+            padding: 0 10px;
           }
         }
       }
