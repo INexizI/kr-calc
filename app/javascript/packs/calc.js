@@ -794,7 +794,7 @@
     function heroImg() {
       $('.hero-img').children().hide();
       $heroImg = $('#calc_char_id').children('option:selected').val();
-      $('.hero-img').find('.hero-' + $heroImg).css('display', 'flex');
+      $('.hero-img').find('.hero-' + $heroImg).css('display', 'block');
     };
 
     function perkTP() {

@@ -160,17 +160,14 @@ title Calculator
     .hero-img
       - @chars.each do |c|
         .hch class='hero-#{c.id}'
-          .heroImg
-            img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
-            p
-              img src='/images/media/classes/#{c.role.name}.png' title=c.role.name
-              img src='/images/media/#{c.type_dmg}.png' title=c.type_dmg
-              span = c.name
           .heroPerk
-            .perk-tp
-              img src='/images/media/classes/TP.png'
-              p 0
+            .hero-avatar
+              img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
+              p = c.name
             .c-sub
+              .perk-tp
+                img src='/images/media/classes/TP.png'
+                p 0
               .c-perk
                 .c-p#perk-t1
                   - @perks.where(tier: 'Generic').each do |perk|
@@ -209,6 +206,19 @@ title Calculator
                           = c.name + ' ' + '[' + perk.name.capitalize + ']'
                         .p4
                           = perk.description
+          .heroImg
+            div
+              p#p1 Class
+              p#p2 = c.role.name
+            div
+              p#p1 ATK Type
+              p#p2
+                img src='/images/media/#{c.type_dmg}.png'
+                = c.type_dmg
+            div
+              p#p1 Position
+              p#p2 YEP
+
     .t-st
       p#heroATK
     .t-st

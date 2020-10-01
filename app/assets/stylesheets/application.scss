@@ -720,27 +720,62 @@ h4 {
         display: none;
 
         .heroImg {
-          // width: 300px;
           margin: auto;
-          img {
-            width: 75px;
-            border-radius: 25%;
+
+          div {
+            display: grid;
+            grid-template: "item1 item2";
+            background-image: url(/images/media/classes/stat.png);
+            background-size: 450px 25px;
+            font-size: 15px;
+            line-height: 25px;
+            color: #8e8073;
           }
           p {
             img {
               width: 20px;
               height: 20px;
-              margin: 0 3px;
-            }
-            span {
-              margin: 0 3px;
-              vertical-align: 3px;
+              margin-right: 5px;
+              vertical-align: -4px;
             }
           }
+          #p1 {
+            width: 150px;
+            padding-left: 15px;
+            text-align: left;
+          }
+          #p2 {
+            width: 265px;
+            padding: 0 10px;
+            text-align: left;
+          }
+        }
+        .heroImg::before {
+          content: '';
+          background: url('/images/media/classes/basic head.png');
+          background-size: 450px;
+          height: 35px;
+          display: block;
+        }
+        .heroImg::after {
+          content: '';
+          background: url('/images/media/classes/stat foot.png');
+          background-size: 450px;
+          height: 14px;
+          display: block;
         }
         .heroPerk {
           margin: auto;
+          display: flex;
 
+          .hero-avatar {
+            margin: auto;
+            
+            img {
+              width: 75px;
+              border-radius: 25%;
+            }
+          }
           .perk-tp {
             display: flex;
             margin-left: auto;
@@ -779,14 +814,14 @@ h4 {
         content: '';
         background: url('/images/media/classes/base head.png');
         background-size: 450px;
-        height: 30px;
+        height: 35px;
         display: block;
       }
       .statsAdd::before {
         content: '';
         background: url('/images/media/classes/add head.png');
         background-size: 450px;
-        height: 30px;
+        height: 35px;
         display: block;
       }
       .statSet::before {
