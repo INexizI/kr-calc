@@ -829,7 +829,7 @@
       });
     };
 
-    $('.heroPerk img').click(function() {
+    $('.heroPerk .c-sub img').click(function() {
       $perkId = $(this).attr('id');
       $perkCl = $(this);
       if ($perkCl.lenght == null) {
@@ -855,12 +855,63 @@
       $('.perk-tp p').text($tp);
     });
 
+    // function ImgW() {
+    //   $gearHero = $('#calc_char_id').children('option:selected').text();
+    //   $gearWeapon = $('#calc_gear_weapon').children('option:selected').val();
+    //   console.log($gearHero);
+    //   console.log($gearWeapon);
+    // };
+    $('.heroGear img').click(function() {
+      $gearHero = $('#calc_char_id').children('option:selected').text();
+      $gearClass = $('#calc_role_id').children('option:selected').text();
+      $gearArmorTier = $('#calc_gear_armor').children('option:selected').val().toLowerCase();
+      $gearSecondaryTier = $('#calc_gear_secondary').children('option:selected').val().toLowerCase();
+      $gearWeapon = $('#calc_gear_weapon').children('option:selected').val();
+      // weapon
+      if ($gearWeapon == 'Unique')
+        $('#wea').html('<img src="/images/media/heroes/' + $gearHero + '/uw.png">');
+      else if ($gearWeapon == 'Class')
+        $('#wea').html('<img src="/images/media/heroes/' + $gearClass + '.png">');
+      // treasure
+      // $('#tre').html('<img src="/images/media/heroes/' + $gearHero + '/ut.png">');
+      // armor
+      if (($gearClass == 'Knight') || ($gearClass == 'Warrior')) {
+        $gearArmor = $('.g-ar-' + $gearArmorTier).find('#g-ar-h').children().children('option:selected').val();
+        $('#arm').html('<img src="/images/media/gears/1-1H/' + $gearArmor + '.png">');
+      }
+      else if (($gearClass == 'Assassin') || ($gearClass == 'Archer') || ($gearClass == 'Mechanic')) {
+        $gearArmor = $('.g-ar-' + $gearArmorTier).find('#g-ar-l').children().children('option:selected').val();
+        $('#arm').html('<img src="/images/media/gears/3-1L/' + $gearArmor + '.png">');
+      }
+      else if (($gearClass == 'Wizard') || ($gearClass == 'Priest')) {
+        $gearArmor = $('.g-ar-' + $gearArmorTier).find('#g-ar-i').children().children('option:selected').val();
+        $('#arm').html('<img src="/images/media/gears/5-1I/' + $gearArmor + '.png">');
+      }
+      // secondary
+      if (($gearClass == 'Knight') || ($gearClass == 'Warrior')) {
+        $gearSecondary = $('.g-sg-' + $gearSecondaryTier).find('#g-sg-h').children().children('option:selected').val();
+        $('#sec').html('<img src="/images/media/gears/2-2H/' + $gearSecondary + '.png">');
+      }
+      else if (($gearClass == 'Assassin') || ($gearClass == 'Archer') || ($gearClass == 'Mechanic')) {
+        $gearSecondary = $('.g-sg-' + $gearSecondaryTier).find('#g-sg-l').children().children('option:selected').val();
+        $('#sec').html('<img src="/images/media/gears/4-2L/' + $gearSecondary + '.png">');
+      }
+      else if (($gearClass == 'Wizard') || ($gearClass == 'Priest')) {
+        $gearSecondary = $('.g-sg-' + $gearSecondaryTier).find('#g-sg-i').children().children('option:selected').val();
+        $('#sec').html('<img src="/images/media/gears/6-2I/' + $gearSecondary + '.png">');
+      }
+    });
+
     $gearCalc = function() {
       gearStat();
       gearSet();
       heroImg();
     }
+    // $gearImg = function() {
+    //   ImgW();
+    // }
     $('.form-input select').change($gearCalc);
     $('.rating label').click($gearCalc);
+    // $('.heroGear img').click($gearImg);
   });
 }).call(this);
