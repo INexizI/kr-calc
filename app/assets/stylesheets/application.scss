@@ -709,6 +709,15 @@ h4 {
   }
   .from-calc {
     width: 175px;
+
+    .form-input {
+      .w-in, .tr-in, #calc_gear_armor_id, #calc_gear_secondary_id, #calc_gear_jewelry_id, #calc_gear_orb_id {
+        background-size: 50px 50px;
+        width: 52px;
+        height: 52px;
+        // color: rgba(0, 0, 0, 0);
+      }
+    }
   }
   .totalStat {
     width: 450px;
@@ -769,6 +778,7 @@ h4 {
           display: flex;
 
           .hero-avatar {
+            width: 130px;
             margin: auto;
 
             img {
@@ -903,9 +913,10 @@ h4 {
       div {
         width: min-content;
 
-        img {
+        p, img {
           width: 50px;
           height: 50px;
+          margin: 5px 0;
         }
       }
     }
