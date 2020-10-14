@@ -20,6 +20,44 @@ title Calculator
         .g-mana-stone#sel
           = f.input :gear_treasure_tier, as: :select, collection: ['T7', 'T8'], required: false, label: false
 
+        .g-unique-treasure#sel
+          / = f.input :gear_treasure_ut, as: :select, collection: ['UT-1', 'UT-2', 'UT-3', 'UT-4'], required: false, label: false
+          div style='margin-top: 3px'
+            li class='tg-list-item'
+              p.ut-stat
+                input class='tgl tgl-light' id='sh' type='checkbox'
+                label class='tgl-btn' for='sh'
+                span UT Stats
+              .ut-check
+                p#ut-check
+                  span UT1
+                  input class='tgl tgl-light' id='cb1' type='checkbox'
+                  label class='tgl-btn' for='cb1'
+                #ut-stat
+                  = f.input :ut1_1, as: :select, collection: ['A', 'B'], required: false, label: false
+                  = f.input :ut1_2, as: :select, collection: ['A', 'B'], required: false, label: false
+                P#ut-check
+                  span UT2
+                  input class='tgl tgl-light' id='cb2' type='checkbox'
+                  label class='tgl-btn' for='cb2'
+                #ut-stat
+                  = f.input :ut2_1, as: :select, collection: ['A', 'B'], required: false, label: false
+                  = f.input :ut2_2, as: :select, collection: ['A', 'B'], required: false, label: false
+                P#ut-check
+                  span UT3
+                  input class='tgl tgl-light' id='cb3' type='checkbox'
+                  label class='tgl-btn' for='cb3'
+                #ut-stat
+                  = f.input :ut3_1, as: :select, collection: ['A', 'B'], required: false, label: false
+                  = f.input :ut3_2, as: :select, collection: ['A', 'B'], required: false, label: false
+                p#ut-check
+                  span UT4
+                  input class='tgl tgl-light' id='cb4' type='checkbox'
+                  label class='tgl-btn' for='cb4'
+                #ut-stat
+                  = f.input :ut4_1, as: :select, collection: ['A', 'B'], required: false, label: false
+                  = f.input :ut4_2, as: :select, collection: ['A', 'B'], required: false, label: false
+
       .form-input
         = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor'
 

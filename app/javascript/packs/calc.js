@@ -117,9 +117,11 @@
       $gClass = $('#calc_role_id').children('option:selected').text();
       if ($gearTreasureType == 'Mana Stone') {
         $('.g-mana-stone').show().children().show();
+        $('.g-unique-treasure').hide().children().hide();
         $(this).css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css('width', '52px');
       } else if ($gearTreasureType == 'Unique') {
         $('.g-mana-stone').hide().children().hide();
+        $('.g-unique-treasure').show().children().show();
         $sh = $('.char' + $gearHero).show();
         $($sh).find('.ut').show();
         $eTr1 = 'url(/images/media/heroes/' + $gHero + '/ut1.png)';
@@ -131,12 +133,14 @@
           'background-image': $eTr,
           'background-position': '0px, 50px, 100px, 150px',
           'background-repeat': 'no-repeat',
+          'background-size': '50px 50px',
           'width': '202px'
         }
         $(this).css($hTreasure);
       }
       if ($gearTreasureType === '') {
         $('.g-mana-stone').hide().children().hide();
+        $('.g-unique-treasure').hide().children().hide();
         $(this).css('background-image', 'url(/images/media/gears/bg-treasure.png)').css('width', '52px');
       }
     }).change();
@@ -937,6 +941,21 @@
     function hideOption() {
       $('option:contains("----------")').attr('disabled', 'disabled');
     };
+
+    $('#ut-check label').click(function() {
+      $(this).toggleClass('on');
+      if ($(this).attr('class').split(' ').pop() == 'on')
+        $(this).parent().next('div').slideDown('fast');
+      else
+        $(this).parent().next('div').slideUp('fast');
+    });
+    $('.ut-stat label').click(function() {
+      $(this).toggleClass('on');
+      if ($(this).attr('class').split(' ').pop() == 'on')
+        $(this).parent().next('div').fadeIn('fast');
+      else
+        $(this).parent().next('div').fadeOut('fast');
+    });
 
     $gearCalc = function() {
       gearStat();

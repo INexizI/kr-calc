@@ -23,9 +23,9 @@
       $($btnVal).show();
       $(this).parent().parent().parent().parent().find('.btn').not('#' + $btn).hide();
     });
-    // $('label').click(function() {
-    //   $(this).parent().find('label').removeClass('active');
-    //   $(this).addClass('active');
-    // });
+    $('label').click(function() {
+      $(this).parent().find('label').removeClass('active');
+      $(this).addClass('active');
+    });
   });
 }).call(this);
