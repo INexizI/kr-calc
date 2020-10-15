@@ -64,33 +64,33 @@ title Calculator
         .g-armor#sel
           .g-ar-t6
             .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t6, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1h_t6, :id, :set, prompt: '----------'
 
             .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t6, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1l_t6, :id, :set, prompt: '----------'
 
             .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t6, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1i_t6, :id, :set, prompt: '----------'
 
           .g-ar-t7
             .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t7, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1h_t7, :id, :set, prompt: '----------'
 
             .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t7, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1l_t7, :id, :set, prompt: '----------'
 
             .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t7, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1i_t7, :id, :set, prompt: '----------'
 
           .g-ar-t8
             .form-input#g-ar-h
-              = f.collection_select :gear_armor_id, @g_1h_t8, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1h_t8, :id, :set, prompt: '----------'
 
             .form-input#g-ar-l
-              = f.collection_select :gear_armor_id, @g_1l_t8, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1l_t8, :id, :set, prompt: '----------'
 
             .form-input#g-ar-i
-              = f.collection_select :gear_armor_id, @g_1i_t8, :set, :set, prompt: '----------'
+              = f.collection_select :gear_armor_id, @g_1i_t8, :id, :set, prompt: '----------'
 
       .form-input
         = f.input :gear_secondary, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Secondary Gear'
@@ -98,33 +98,33 @@ title Calculator
         .g-secondary#sel
           .g-sg-t6
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t6, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2h_t6, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t6, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2l_t6, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t6, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2i_t6, :id, :set, include_blank: '----------'
 
           .g-sg-t7
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t7, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2h_t7, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t7, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2l_t7, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t7, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2i_t7, :id, :set, include_blank: '----------'
 
           .g-sg-t8
             .form-input#g-sg-h
-              = f.collection_select :gear_secondary_id, @g_2h_t8, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2h_t8, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-l
-              = f.collection_select :gear_secondary_id, @g_2l_t8, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2l_t8, :id, :set, include_blank: '----------'
 
             .form-input#g-sg-i
-              = f.collection_select :gear_secondary_id, @g_2i_t8, :set, :set, include_blank: '----------'
+              = f.collection_select :gear_secondary_id, @g_2i_t8, :id, :set, include_blank: '----------'
 
       .form-input
         = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Accessory'
@@ -167,13 +167,13 @@ title Calculator
         = f.input :gear_orb, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Orb'
         .g-orb#sel
           .g-o-t6
-            .form-input
+            .form-input#g-o
               = f.collection_select :gear_orb_id, @g_o_t6, :id, :set, include_blank: '----------'
           .g-o-t7
-            .form-input
+            .form-input#g-o
               = f.collection_select :gear_orb_id, @g_o_t7, :id, :set, include_blank: '----------'
           .g-o-t8
-            .form-input
+            .form-input#g-o
               = f.collection_select :gear_orb_id, @g_o_t8, :id, :set, include_blank: '----------'
 
       // Other

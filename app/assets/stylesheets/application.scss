@@ -703,6 +703,14 @@ h4 {
 
   select {
     outline: 0;
+
+    option {
+      color: black;
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+  #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor_id, #calc_gear_secondary_id, #calc_gear_jewelry_id, #calc_gear_orb_id {
+    color: transparent;
   }
   #calc {
     margin: 0 auto;
