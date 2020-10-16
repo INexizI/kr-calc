@@ -28,6 +28,7 @@
           $('#calc_gear_secondary').parent().show(),
           $('#calc_gear_jewelry').parent().show(),
           $('#calc_gear_orb').parent().show(),
+          $('#calc_gear_artifact').parent().show(),
           $('.g-armor').children().hide(),
           $('.g-armor').children().children().show(),
           $('.g-secondary').children().hide(),
@@ -160,63 +161,70 @@
 
     // Armor Tier
     $('select#calc_gear_armor').change(function() {
+      $gType = null;
       $('#heroPDEF').empty();
       $('.armor').parent().hide();
       $('.g-armor').children().hide();
       $('.g-armor').children().children().show();
       $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearTier = $(this).children('option:selected').val();
-      $gearBlockClass = $('.g-armor').children('.g-ar-' + $gearTier.toLowerCase()).attr('class');
+      $gearTier = $(this).children('option:selected').val().toLowerCase();
+      $gearBlockClass = $('.g-armor').children('.g-ar-' + $gearTier).attr('class');
       if ($gearTier !== '') {
         if (($gearClass == 1) || ($gearClass == 2)) {
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-ar-h').show();
+          $gType = '1-1H';
       } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-ar-l').show();
+          $gType = '3-1L';
         } else if (($gearClass == 6) || ($gearClass == 7)) {
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-ar-i').show();
+          $gType = '5-1I';
         }
-      } else {
-        $('.armor').parent().hide();
-      }
-    }).change();
-
-    // Armor Set
-    $('select#calc_gear_armor_id').change(function() {
-      $gType = null;
-      $gearType = null;
-      $('#heroPDEF').empty();
-      $('.armor').parent().hide();
-      $('#setAr').text($(this).children('option:selected').text());
-      $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearTier = $('#calc_gear_armor').children('option:selected').val().toLowerCase();
-      $gearSetId = $(this).children('option:selected').val();
-      if (($gearClass == 1) || ($gearClass == 2)) {
-        $gearType = 'g-ar-h';
-        $gType = '1-1H';
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-        $gearType = 'g-ar-l';
-        $gType = '3-1L';
-      } else if (($gearClass == 6) || ($gearClass == 7)) {
-        $gearType = 'g-ar-i';
-        $gType = '5-1I';
-      }
-      $gearSet = $('.g-ar-' + $gearTier).find('#' + $gearType).children().children('option:selected').text();
-      if ($gearClass !== '') {
-        $('.armor').parent().hide();
-        $sh = $('.gear' + $gearSetId).show();
-        $($sh).find('.armor').show();
+        $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
       } else {
         $('.armor').parent().hide();
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
       }
     }).change();
+
+    // Armor Set
+    // $('select#calc_gear_armor_id').change(function() {
+    //   $gType = null;
+    //   $gearType = null;
+    //   $('#heroPDEF').empty();
+    //   $('.armor').parent().hide();
+    //   $('#setAr').text($(this).children('option:selected').text());
+    //   $gearClass = $('#calc_role_id').children('option:selected').val();
+    //   $gearTier = $('#calc_gear_armor').children('option:selected').val().toLowerCase();
+    //   $gearSetId = $(this).children('option:selected').val();
+    //   if (($gearClass == 1) || ($gearClass == 2)) {
+    //     $gearType = 'g-ar-h';
+    //     $gType = '1-1H';
+    //   } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
+    //     $gearType = 'g-ar-l';
+    //     $gType = '3-1L';
+    //   } else if (($gearClass == 6) || ($gearClass == 7)) {
+    //     $gearType = 'g-ar-i';
+    //     $gType = '5-1I';
+    //   }
+    //   $gearSet = $('.g-ar-' + $gearTier).find('#' + $gearType).children().children('option:selected').text();
+    //   if ($gearClass !== '') {
+    //     $('.armor').parent().hide();
+    //     $sh = $('.gear' + $gearSetId).show();
+    //     $($sh).find('.armor').show();
+    //     $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
+    //   } else {
+    //     $('.armor').parent().hide();
+    //     $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
+    //   }
+    // }).change();
 
     // Secondary Tier
     $('select#calc_gear_secondary').change(function() {
@@ -231,45 +239,19 @@
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-sg-h').show();
+          $gType = '2-2H';
         } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-sg-l').show();
+          $gType = '4-2L';
         } else if (($gearClass == 6) || ($gearClass == 7)) {
           $sh = $('.' + $gearBlockClass).show();
           $($sh).children().toggle();
           $($sh).find('#g-sg-i').show();
+          $gType = '6-2I';
         }
-      } else {
-        $('.secondary').parent().hide();
-      }
-    }).change();
-
-    // Secondary Set
-    $('select#calc_gear_secondary_id').change(function() {
-      $gType = null;
-      $gearType = null;
-      $('#heroMDEF').empty();
-      $('.secondary').parent().hide();
-      $('#setScnd').text($(this).children('option:selected').text());
-      $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearTier = $('#calc_gear_secondary').children('option:selected').val().toLowerCase();
-      $gearSetId = $(this).children('option:selected').val();
-      if (($gearClass == 1) || ($gearClass == 2)) {
-        $gearType = 'g-sg-h';
-        $gType = '2-2H';
-      } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
-        $gearType = 'g-sg-l';
-        $gType = '4-2L';
-      } else if (($gearClass == 6) || ($gearClass == 7)) {
-        $gearType = 'g-sg-i';
-        $gType = '6-2I';
-      }
-      $gearSet = $('.g-sg-' + $gearTier).find('#' + $gearType).children().children('option:selected').text();
-      if ($gearClass !== '') {
-        $('.secondary').parent().hide();
-        $sh = $('.gear' + $gearSetId).show();
-        $($sh).find('.secondary').show();
+        $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
       } else {
         $('.secondary').parent().hide();
@@ -277,62 +259,91 @@
       }
     }).change();
 
+    // Secondary Set
+    // $('select#calc_gear_secondary_id').change(function() {
+    //   $gType = null;
+    //   $gearType = null;
+    //   $('#heroMDEF').empty();
+    //   $('.secondary').parent().hide();
+    //   $('#setScnd').text($(this).children('option:selected').text());
+    //   $gearClass = $('#calc_role_id').children('option:selected').val();
+    //   $gearTier = $('#calc_gear_secondary').children('option:selected').val().toLowerCase();
+    //   $gearSetId = $(this).children('option:selected').val();
+    //   if (($gearClass == 1) || ($gearClass == 2)) {
+    //     $gearType = 'g-sg-h';
+    //     $gType = '2-2H';
+    //   } else if (($gearClass == 3) || ($gearClass == 4) || ($gearClass == 5)) {
+    //     $gearType = 'g-sg-l';
+    //     $gType = '4-2L';
+    //   } else if (($gearClass == 6) || ($gearClass == 7)) {
+    //     $gearType = 'g-sg-i';
+    //     $gType = '6-2I';
+    //   }
+    //   $gearSet = $('.g-sg-' + $gearTier).find('#' + $gearType).children().children('option:selected').text();
+    //   if ($gearClass !== '') {
+    //     $('.secondary').parent().hide();
+    //     $sh = $('.gear' + $gearSetId).show();
+    //     $($sh).find('.secondary').show();
+    //     $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
+    //   } else {
+    //     $('.secondary').parent().hide();
+    //     $(this).css('background-image', 'url(/images/media/gears/bg-secondary.png)');
+    //   }
+    // }).change();
+
     // Jewelry Type
     $('select#calc_gear_jewelry').change(function() {
       $('#heroJ').empty();
-      $('.g-jewelry-type').hide();
-      $('.jewelry').parent().hide();
-      $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
-      if ($gearTier === '') {
-        $('.calc_gear_jewelry_type').hide();
-        $('.g-jewelry').children().children().hide();
-        $('.jewelry').parent().hide();
+      $gearTier = $('#calc_gear_jewelry').children().children('option:selected').val();
+      $gearType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
+      if ($gearTier !== '----------') {
+        $gearSet = $(this).children().children('option:selected').val();
+        $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
       } else {
-        $('.g-jewelry-type').show();
-        $('.calc_gear_jewelry_type').show();
+        $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
       }
     }).change();
 
     // Jewelry Tier
-    $('select#calc_gear_jewelry_type').change(function() {
-      $('#heroJ').empty();
-      $('.jewelry').parent().hide();
-      $('.g-jewelry').children().hide();
-      $('.g-jewelry').children().children().show();
-      $gearType = $(this).children('option:selected').val().toLowerCase();
-      $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
-      $gearBlockClass = $('.g-jewelry').children('.g-j-' + $gearTier.toLowerCase()).attr('class');
-      if ($gearTier !== '') {
-        $('.g-jewelry').show();
-        $sh = $('.' + $gearBlockClass).show();
-        $($sh).children().toggle();
-        $($sh).find('#g-j-' + $gearType).show();
-      } else {
-        $('.jewelry').parent().hide();
-        $('.g-jewelry').children().children().hide();
-      }
-    }).change();
+    // $('select#calc_gear_jewelry_type').change(function() {
+    //   $('#heroJ').empty();
+    //   $('.jewelry').parent().hide();
+    //   $('.g-jewelry').children().hide();
+    //   $('.g-jewelry').children().children().show();
+    //   $gearType = $(this).children('option:selected').val().toLowerCase();
+    //   $gearTier = $('#calc_gear_jewelry').children('option:selected').val();
+    //   $gearBlockClass = $('.g-jewelry').children('.g-j-' + $gearTier.toLowerCase()).attr('class');
+    //   if ($gearTier !== '') {
+    //     $('.g-jewelry').show();
+    //     $sh = $('.' + $gearBlockClass).show();
+    //     $($sh).children().toggle();
+    //     $($sh).find('#g-j-' + $gearType).show();
+    //   } else {
+    //     $('.jewelry').parent().hide();
+    //     $('.g-jewelry').children().children().hide();
+    //   }
+    // }).change();
 
     // Jewelry Set
-    $('select#calc_gear_jewelry_id').change(function() {
-      $gearType = null;
-      $('#heroJ').empty();
-      $('.jewelry').parent().hide();
-      $('#setAcs').text($(this).children('option:selected').text());
-      $gearType = $('#calc_gear_jewelry_type').children('option:selected').val();
-      $gearTier = $('#calc_gear_jewelry').children('option:selected').val().toLowerCase();
-      $gearSetId = $(this).children('option:selected').val();
-      $gearSet = $('.g-j-' + $gearTier).find('#g-j-' + $gearType.toLowerCase()).children().children('option:selected').text();
-      if ($gearType !== '') {
-        $('.jewelry').parent().hide();
-        $sh = $('.gear' + $gearSetId).show();
-        $($sh).find('.jewelry').show();
-        $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
-      } else {
-        $('.jewelry').parent().hide();
-        $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
-      }
-    }).change();
+    // $('select#calc_gear_jewelry_id').change(function() {
+    //   $gearType = null;
+    //   $('#heroJ').empty();
+    //   $('.jewelry').parent().hide();
+    //   $('#setAcs').text($(this).children('option:selected').text());
+    //   $gearType = $('#calc_gear_jewelry_type').children('option:selected').val();
+    //   $gearTier = $('#calc_gear_jewelry').children('option:selected').val().toLowerCase();
+    //   $gearSetId = $(this).children('option:selected').val();
+    //   $gearSet = $('.g-j-' + $gearTier).find('#g-j-' + $gearType.toLowerCase()).children().children('option:selected').text();
+    //   if ($gearType !== '') {
+    //     $('.jewelry').parent().hide();
+    //     $sh = $('.gear' + $gearSetId).show();
+    //     $($sh).find('.jewelry').show();
+    //     $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
+    //   } else {
+    //     $('.jewelry').parent().hide();
+    //     $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
+    //   }
+    // }).change();
 
     // Orb Tier
     $('select#calc_gear_orb').change(function() {
@@ -344,29 +355,37 @@
       $gearBlockClass = $('.g-orb').children('.g-o-' + $gearTier).attr('class');
       if ($gearTier !== '') {
         $sh = $('.' + $gearBlockClass).show();
-      } else {
-        $('.orb').parent().hide();
-      }
-    }).change();
-
-    // Orb Set
-    $('select#calc_gear_orb_id').change(function() {
-      $('#heroO').empty();
-      $('.orb').parent().hide();
-      $('#setOrb').text($(this).children('option:selected').text());
-      $gearClass = $('#calc_role_id').children('option:selected').val();
-      $gearTier = $('#calc_gear_orb').children('option:selected').val().toLowerCase();
-      $gearSetId = $(this).children('option:selected').val();
-      $gearSet = $('.g-o-' + $gearTier).find('#g-o').children().children('option:selected').text();
-      if ($gearClass !== '') {
-        $('.orb').parent().hide();
-        $sh = $('.gear' + $gearSetId).show();
-        $($sh).find('.orb').show();
+        $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/8-O/' + $gearSet.split(' ').join('') + '.png)');
       } else {
         $('.orb').parent().hide();
         $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
       }
+    }).change();
+
+    // Orb Set
+    // $('select#calc_gear_orb_id').change(function() {
+    //   $('#heroO').empty();
+    //   $('.orb').parent().hide();
+    //   $('#setOrb').text($(this).children('option:selected').text());
+    //   $gearClass = $('#calc_role_id').children('option:selected').val();
+    //   $gearTier = $('#calc_gear_orb').children('option:selected').val().toLowerCase();
+    //   $gearSetId = $(this).children('option:selected').val();
+    //   $gearSet = $('.g-o-' + $gearTier).find('#g-o').children().children('option:selected').text();
+    //   if ($gearClass !== '') {
+    //     $('.orb').parent().hide();
+    //     $sh = $('.gear' + $gearSetId).show();
+    //     $($sh).find('.orb').show();
+    //     $(this).css('background-image', 'url(/images/media/gears/8-O/' + $gearSet.split(' ').join('') + '.png)');
+    //   } else {
+    //     $('.orb').parent().hide();
+    //     $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
+    //   }
+    // }).change();
+
+    // Artifact
+    $('select#calc_gear_artifact').change(function() {
+      $(this).css('background-image', 'url(/images/media/gears/bg-art.png)');
     }).change();
 
     // Weapon ATK

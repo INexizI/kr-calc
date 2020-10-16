@@ -704,14 +704,14 @@ h4 {
   select {
     outline: 0;
 
-    option {
+    option, optgroup {
       color: black;
       background: rgba(0, 0, 0, 0.4);
     }
   }
-  #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor_id, #calc_gear_secondary_id, #calc_gear_jewelry_id, #calc_gear_orb_id {
-    color: transparent;
-  }
+  // #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary_id, #calc_gear_jewelry_id, #calc_gear_orb_id {
+  //   color: transparent;
+  // }
   #calc {
     margin: 0 auto;
   }
@@ -719,11 +719,31 @@ h4 {
     width: 230px;
 
     .form-input {
-      .w-in, .tr-in, #calc_gear_armor_id, #calc_gear_secondary_id, #calc_gear_jewelry_id, #calc_gear_orb_id {
+      .w-in, .tr-in, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_gear_artifact {
         background-size: 50px 50px;
         width: 52px;
         height: 52px;
-        // color: rgba(0, 0, 0, 0);
+        color: transparent;
+      }
+      .input {
+        width: 52px;
+      }
+    }
+    .heroGear {
+      display: grid !important;
+      grid-template: "item1 item2";
+
+      #empty-block {
+        width: 52px;
+        height: 52px;
+      }
+      div {
+        width: 52px;
+
+        .form-input {
+          margin: 0;
+          min-height: 52px;
+        }
       }
     }
   }
