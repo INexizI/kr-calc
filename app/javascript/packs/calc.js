@@ -140,7 +140,7 @@
         }
         $(this).css($hTreasure);
       }
-      if ($gearTreasureType === '') {
+      if ($gearTreasureType === '- - - - - - - - - -') {
         $('.g-mana-stone').hide().children().hide();
         $('.g-unique-treasure').hide().children().hide();
         $(this).css('background-image', 'url(/images/media/gears/bg-treasure.png)').css('width', '52px');
@@ -990,6 +990,22 @@
       $('option:contains("----------")').attr('disabled', 'disabled');
     };
 
+    function hideGearImage() {
+      $trCss = {
+        'background-image': 'url(/images/media/gears/bg-treasure.png)',
+        'width': '52px'
+      }
+      return [
+        $('select#calc_gear_weapon').css('background-image', 'url(/images/media/gears/bg-weapon.png)'),
+        $('select#calc_gear_treasure').css($trCss),
+        $('select#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.png)'),
+        $('select#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.png)'),
+        $('select#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.png)'),
+        $('select#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.png)'),
+        $('select#calc_gear_artifact').css('background-image', 'url(/images/media/gears/bg-art.png)')
+      ]
+    }
+
     $('#ut-check label').click(function() {
       $(this).toggleClass('on');
       if ($(this).attr('class').split(' ').pop() == 'on')
@@ -1011,11 +1027,13 @@
       heroImg();
       hideOption();
     }
-    // $gearImg = function() {
-    //   ImgW();
-    // }
+    $gearImg = function() {
+      // ImgW();
+      hideGearImage();
+    }
     $('.form-input select').change($gearCalc);
     $('.rating label').click($gearCalc);
     // $('.heroGear img').click($gearImg);
+    $('#calc_role_id, #calc_char_id').change($gearImg);
   });
 }).call(this);

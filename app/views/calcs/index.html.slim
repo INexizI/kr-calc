@@ -16,7 +16,7 @@ title Calculator
           .form-input#empty-block
           .form-input
             / = f.input :gear_weapon, as: :select, collection: ['Class', 'Unique'], required: false, label: 'Weapon', input_html: {class: 'w-in'}
-            = f.input :gear_weapon, as: :select, collection: ['Class', 'Unique'], required: false, label: false, input_html: {class: 'w-in'}
+            = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in'}
 
           .form-input
             / = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor', include_blank: '----------', disabled: 1
@@ -91,7 +91,7 @@ title Calculator
         div
           .form-input
             / = f.input :gear_treasure, as: :select, collection: ['Mana Stone', 'Unique'], required: false, label: 'Treasure', input_html: {class: 'tr-in'}
-            = f.input :gear_treasure, as: :select, collection: ['Mana Stone', 'Unique'], required: false, label: false, input_html: {class: 'tr-in'}
+            = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in'}
 
             / .g-mana-stone#sel
               = f.input :gear_treasure_tier, as: :select, collection: ['T7', 'T8'], required: false, label: false
