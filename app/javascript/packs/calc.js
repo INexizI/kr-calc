@@ -74,6 +74,16 @@
       ]
     });
 
+    $('select#calc_char_id').change(function() {
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+      $classHP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p').text();
+      $('.t-total').find('.role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p').text($classHP);
+    }).change();
+
     // Hero stats
     $('select#calc_role_id').change(function() {
       $('.r-stats').children().hide();
@@ -120,7 +130,11 @@
       if ($gearTreasureType == 'Mana Stone') {
         $('.g-mana-stone').show().children().show();
         $('.g-unique-treasure').hide().children().hide();
-        $(this).css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css('width', '52px');
+        $eTr = {
+          'width': '52px',
+          'background-size': '50px 50px'
+        }
+        $(this).css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
       } else if ($gearTreasureType == 'Unique') {
         $('.g-mana-stone').hide().children().hide();
         $('.g-unique-treasure').show().children().show();
@@ -133,10 +147,10 @@
         $eTr = $eTr1 + ',' + $eTr2 + ',' + $eTr3 + ',' + $eTr4;
         $hTreasure = {
           'background-image': $eTr,
-          'background-position': '0px, 50px, 100px, 150px',
+          'background-position': '0px, 52px, 104px, 156px',
           'background-repeat': 'no-repeat',
-          'background-size': '50px 50px',
-          'width': '202px'
+          'background-size': '52px 52px',
+          'width': '210px'
         }
         $(this).css($hTreasure);
       }
