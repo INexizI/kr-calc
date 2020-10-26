@@ -621,74 +621,74 @@ h4 {
   }
 }
 
-.g-star-button {
-  .g-img {
-    img {
-      width: 100px;
-      height: 100px;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    }
-  }
-  .g-button {
-    display: flex;
-
-    button {
-      width: 32px;
-      height: 32px;
-      border: 1px solid;
-      margin: 3px;
-      outline: none;
-      background: #f0f0f0;
-    }
-    .b-act {
-      background: #808080;
-    }
-    .btn {
-      display: none;
-      margin: 0 10px;
-      padding: 2px 3px;
-    }
-    #bt0 {
-      display: block;
-    }
-    .rating {
-      unicode-bidi: bidi-override;
-      direction: rtl;
-      float: left;
-      margin-top: -3px;
-
-      .bt0 {
-        width: 15px;
-        font-size: 12px;
-        vertical-align: 2px;
-      }
-    }
-    .rating > label {
-      display: inline-block;
-      position: relative;
-      width: 1.1em;
-      font-size: 20px;
-    }
-    .rating > #bt-star.active:before,
-    .rating > #bt-star.active ~ #bt-star:before,
-    .rating > #bt-star:hover:before,
-    .rating > #bt-star:hover ~ #bt-star:before {
-      content: "\2605";
-      position: absolute;
-    }
-    input {
-      display: none;
-    }
-  }
-  #p0 {
-    padding: 0 5px;
-  }
-}
-.g-stat {
-  p {
-    display: none;
-  }
-}
+// .g-star-button {
+//   .g-img {
+//     img {
+//       width: 100px;
+//       height: 100px;
+//       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+//     }
+//   }
+//   .g-button {
+//     display: flex;
+//
+//     button {
+//       width: 32px;
+//       height: 32px;
+//       border: 1px solid;
+//       margin: 3px;
+//       outline: none;
+//       background: #f0f0f0;
+//     }
+//     .b-act {
+//       background: #808080;
+//     }
+//     .btn {
+//       display: none;
+//       margin: 0 10px;
+//       padding: 2px 3px;
+//     }
+//     #bt0 {
+//       display: block;
+//     }
+//     .rating {
+//       unicode-bidi: bidi-override;
+//       direction: rtl;
+//       float: left;
+//       margin-top: -3px;
+//
+//       .bt0 {
+//         width: 15px;
+//         font-size: 12px;
+//         vertical-align: 2px;
+//       }
+//     }
+//     .rating > label {
+//       display: inline-block;
+//       position: relative;
+//       width: 1.1em;
+//       font-size: 20px;
+//     }
+//     .rating > #bt-star.active:before,
+//     .rating > #bt-star.active ~ #bt-star:before,
+//     .rating > #bt-star:hover:before,
+//     .rating > #bt-star:hover ~ #bt-star:before {
+//       content: "\2605";
+//       position: absolute;
+//     }
+//     input {
+//       display: none;
+//     }
+//   }
+//   #p0 {
+//     padding: 0 5px;
+//   }
+// }
+// .g-stat {
+//   p {
+//     display: none;
+//   }
+// }
 
 /*
   Calc
@@ -726,9 +726,41 @@ h4 {
         width: 52px;
       }
       .gSt {
-        width: 75px;
-        height: 25px;
-        border: 1px solid;
+        width: 125px;
+        height: 45px;
+        // border: 1px solid;
+        .c {
+          display: flex;
+        }
+        .rating {
+          display: none;
+          unicode-bidi: bidi-override;
+          direction: rtl;
+          float: left;
+          margin-top: -3px;
+
+          .bt0 {
+            width: 15px;
+            font-size: 12px;
+            vertical-align: 2px;
+          }
+          input {
+            display: none;
+          }
+        }
+      }
+      .rating > label {
+        display: inline-block;
+        position: relative;
+        width: 1.1em;
+        font-size: 20px;
+      }
+      .rating > #bt-star.active:before,
+      .rating > #bt-star.active ~ #bt-star:before,
+      .rating > #bt-star:hover:before,
+      .rating > #bt-star:hover ~ #bt-star:before {
+        content: "\2605";
+        position: absolute;
       }
     }
     .heroGear {
@@ -737,14 +769,15 @@ h4 {
 
       #empty-block {
         width: 52px;
-        height: 52px;
+        height: 100px;
       }
       div {
-        width: 52px;
+        width: 125px;
         margin: auto;
 
         .form-input {
           margin: 5px 0;
+          height: 100px;
           min-height: 52px;
         }
       }
@@ -934,31 +967,6 @@ h4 {
       }
     }
   }
-  .hero-gear {
-    width: 200px;
-
-    .heroGear {
-      display: grid !important;
-      grid-template: "item1 item2";
-
-      div {
-        width: min-content;
-
-        p, img {
-          width: 50px;
-          height: 50px;
-          margin: 5px 0;
-        }
-      }
-    }
-
-    .gear-img {
-      img {
-        width: 50px;
-        height: 50px;
-      }
-    }
-  }
 }
 
 .pick {
@@ -967,10 +975,6 @@ h4 {
 
 .simple_form {
   display: block;
-
-  .form-input > #sel > div {
-    display: none;
-  }
 }
 
 .form-input {
@@ -981,7 +985,7 @@ h4 {
   }
 }
 
-#char, .hero-gear > div, .class-stats > div, .form-input > div:nth-child(1), .form-input > #calc_gear_jewelry {
+#char, .class-stats > div, .form-input > div > select, #calc_gear_artifact {
   display: none;
 }
 
