@@ -14,6 +14,9 @@
       $('.hero-img').children().hide();
       $('.form-input .gSt p').text('');
       $('.form-input .gSt .rating').hide();
+      $('.rating').find('label').removeClass('active');
+      $('.c-perk-img').find('img').removeClass('pick');
+      $('.perk-tp').find('p').text(0);
       $('.t-st p').empty();
       // Options
       $role = $('#calc_role_id :selected').text();
@@ -55,6 +58,9 @@
       $('.t-st p').empty();
       $('.form-input .gSt p').text('');
       $('.form-input .gSt .rating').hide();
+      $('.rating').find('label').removeClass('active');
+      $('.c-perk-img').find('img').removeClass('pick');
+      $('.perk-tp').find('p').text(0);
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
     }).change();
 
@@ -115,6 +121,8 @@
         $(this).css('background-image', 'url(/images/media/gears/bg-weapon.png)');
         $('#wea').text('').next('.rating').hide();
       }
+      $x = $('#wea').text();
+      $('#greyATK').text($x);
       $('#uw label').filter('.active').removeClass('active');
     }).change();
 
@@ -278,8 +286,74 @@
     //   $('#heroATK').text($wpnSt);
     // }).change();
     function weaponATK() {
-      $wpnSt = $('#wea').text();
-      $('#heroATK').text($wpnSt);
+      $uwStat = $('#greyATK').text();
+      $star = $('#uw').find('.active').next('input').val();
+      $gearClass = $('#calc_role_id').children('option:selected').val();
+      $gearWeaponType = $('select#calc_gear_weapon').children('option:selected').val();
+      if ($gearWeaponType == 'Unique') {
+        if ($star == 0)
+          $('#wea').text($uwStat);
+        else if ($star == 1) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+          if (($gearClass == 2) || ($gearClass == 4) || ($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
+        } else if ($star == 2) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3));
+          if ($gearClass == 5)
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3) + 1);
+        } else if ($star == 3) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6));
+          if (($gearClass == 2) || ($gearClass == 3) || ($gearClass == 4))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 1);
+          else if (($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 2);
+        } else if ($star == 4) {
+          $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995));
+          if (($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) - 1);
+          else if ($gearClass == 5)
+            $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + 1);
+        } else if ($star == 5) {
+          $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2));
+          if (($gearClass == 4) || ($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2) - 1);
+        }
+      } else if ($gearWeaponType == 'Class') {
+        if ($star == 0)
+          $('#wea').text($uwStat);
+        else if ($star == 1) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+          if (($gearClass == 5))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) + 1);
+          else if (($gearClass == 2) || ($gearClass == 3) || ($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
+        }
+        else if ($star == 2) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25));
+          if ($gearClass == 1)
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) + 1);
+          else if (($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) - 1);
+        } else if ($star == 3) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45));
+          if ($gearClass == 1)
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45) + 1);
+        } else if ($star == 4) {
+          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7));
+          if (($gearClass == 1) || ($gearClass == 3) || ($gearClass == 4))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 1);
+          else if (($gearClass == 2) || ($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 2);
+        } else if ($star == 5) {
+          $('#wea').text(2*parseInt($uwStat));
+          if (($gearClass == 2) || ($gearClass == 3) || ($gearClass == 6) || ($gearClass == 7))
+            $('#wea').text(2*parseInt($uwStat) - 2);
+          else if ($gearClass == 4)
+            $('#wea').text(2*parseInt($uwStat) - 1);
+          else if ($gearClass == 5)
+            $('#wea').text(2*parseInt($uwStat) + 1);
+        }
+      }
     }
 
     // Treasure HP
