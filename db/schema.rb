@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_151422) do
+ActiveRecord::Schema.define(version: 2020_10_05_095817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,18 +18,6 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
   create_table "calcs", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "chars", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
-    t.string "type_dmg"
-    t.bigint "role_id"
-    t.index ["role_id"], name: "index_chars_on_role_id"
-    t.index ["slug"], name: "index_chars_on_slug", unique: true
   end
 
   create_table "enchants", force: :cascade do |t|
@@ -118,7 +106,7 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
     t.string "stat_type"
-    t.string "notice"
+    t.integer "notice"
     t.index ["role_id"], name: "index_stats_on_role_id"
   end
 
@@ -149,12 +137,9 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
-  add_foreign_key "chars", "roles"
-  add_foreign_key "gears", "chars"
   add_foreign_key "gears", "roles"
   add_foreign_key "gears", "runes"
-  add_foreign_key "gears", "stats"
-  add_foreign_key "skills", "chars"
+  add_foreign_key "gears", "stats", name: "gears_stat_id_fkey"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end

@@ -11,174 +11,129 @@ title Calculator
         label for='char_id' Hero
         = f.grouped_collection_select :char_id, @roles, :chars, :name, :id, :name
 
-      .heroGear
-        div
-          .form-input#empty-block
-          .form-input
-            = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in'}
-            .gSt
-              p#wea
-              .rating#uw.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+      .form-input
+        = f.input :gear_weapon, as: :select, collection: ['Class', 'Unique'], required: false, label: 'Weapon'
 
-          .form-input
-            = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
-            .gSt
-              p#arm
-              .rating#ar.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+      .form-input
+        = f.input :gear_treasure, as: :select, collection: ['Mana Stone', 'Unique'], required: false, label: 'Treasure'
 
-          .form-input
-            = f.input :gear_secondary, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
-            .gSt
-              p#sec
-              .rating#sg.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+        .g-mana-stone#sel
+          = f.input :gear_treasure_tier, as: :select, collection: ['T7', 'T8'], required: false, label: false
 
-        div
-          .form-input
-            = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in'}
-            .gSt
-              p#tre
-              .rating#ut.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+      .form-input
+        = f.input :gear_armor, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Armor'
 
-            / div style='margin-top: 3px'
-              li class='tg-list-item'
-                p.ut-stat
-                  input class='tgl tgl-light' id='sh' type='checkbox'
-                  label class='tgl-btn' for='sh'
-                  span UT Stats
-                .ut-check
-                  p#ut-check
-                    span UT1
-                    input class='tgl tgl-light' id='cb1' type='checkbox'
-                    label class='tgl-btn' for='cb1'
-                  #ut-stat
-                    = f.input :ut1_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut1_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  P#ut-check
-                    span UT2
-                    input class='tgl tgl-light' id='cb2' type='checkbox'
-                    label class='tgl-btn' for='cb2'
-                  #ut-stat
-                    = f.input :ut2_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut2_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  P#ut-check
-                    span UT3
-                    input class='tgl tgl-light' id='cb3' type='checkbox'
-                    label class='tgl-btn' for='cb3'
-                  #ut-stat
-                    = f.input :ut3_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut3_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  p#ut-check
-                    span UT4
-                    input class='tgl tgl-light' id='cb4' type='checkbox'
-                    label class='tgl-btn' for='cb4'
-                  #ut-stat
-                    = f.input :ut4_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut4_2, as: :select, collection: ['A', 'B'], required: false, label: false
+        .g-armor#sel
+          .g-ar-t6
+            .form-input#g-ar-h
+              = f.collection_select :gear_armor_id, @g_1h_t6, :set, :set, prompt: '----------'
 
-          .form-input
-            div
-              - options = ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic']
-              - gear_type = [['Ring', options], ['Earrings', options], ['Bracelet', options], ['Necklace', options]]
-              = f.select :gear_jewelry, grouped_options_for_select(gear_type)
-            .gSt
-              p#acc
-              .rating#ac.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+            .form-input#g-ar-l
+              = f.collection_select :gear_armor_id, @g_1l_t6, :set, :set, prompt: '----------'
 
-          .form-input
-            = f.input :gear_orb, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
-            .gSt
-              p#orb
-              .rating#or.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+            .form-input#g-ar-i
+              = f.collection_select :gear_armor_id, @g_1i_t6, :set, :set, prompt: '----------'
 
-          .form-input
-            = f.input :gear_artifact, as: :select, collection: ['A', 'B', 'C'], required: false, label: false
-            .gSt
-              p#art
-              .rating#at.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
+          .g-ar-t7
+            .form-input#g-ar-h
+              = f.collection_select :gear_armor_id, @g_1h_t7, :set, :set, prompt: '----------'
+
+            .form-input#g-ar-l
+              = f.collection_select :gear_armor_id, @g_1l_t7, :set, :set, prompt: '----------'
+
+            .form-input#g-ar-i
+              = f.collection_select :gear_armor_id, @g_1i_t7, :set, :set, prompt: '----------'
+
+          .g-ar-t8
+            .form-input#g-ar-h
+              = f.collection_select :gear_armor_id, @g_1h_t8, :set, :set, prompt: '----------'
+
+            .form-input#g-ar-l
+              = f.collection_select :gear_armor_id, @g_1l_t8, :set, :set, prompt: '----------'
+
+            .form-input#g-ar-i
+              = f.collection_select :gear_armor_id, @g_1i_t8, :set, :set, prompt: '----------'
+
+      .form-input
+        = f.input :gear_secondary, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Secondary Gear'
+
+        .g-secondary#sel
+          .g-sg-t6
+            .form-input#g-sg-h
+              = f.collection_select :gear_secondary_id, @g_2h_t6, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-l
+              = f.collection_select :gear_secondary_id, @g_2l_t6, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-i
+              = f.collection_select :gear_secondary_id, @g_2i_t6, :set, :set, include_blank: '----------'
+
+          .g-sg-t7
+            .form-input#g-sg-h
+              = f.collection_select :gear_secondary_id, @g_2h_t7, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-l
+              = f.collection_select :gear_secondary_id, @g_2l_t7, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-i
+              = f.collection_select :gear_secondary_id, @g_2i_t7, :set, :set, include_blank: '----------'
+
+          .g-sg-t8
+            .form-input#g-sg-h
+              = f.collection_select :gear_secondary_id, @g_2h_t8, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-l
+              = f.collection_select :gear_secondary_id, @g_2l_t8, :set, :set, include_blank: '----------'
+
+            .form-input#g-sg-i
+              = f.collection_select :gear_secondary_id, @g_2i_t8, :set, :set, include_blank: '----------'
+
+      .form-input
+        = f.input :gear_jewelry, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Accessory'
+
+        .g-jewelry-type#sel
+          = f.input :gear_jewelry_type, as: :select, collection: ['Ring', 'Earrings', 'Necklace', 'Bracelet'], required: false, label: 'Accessory Type'
+
+          .g-jewelry
+            .g-j-t6
+              .form-input#g-j-ring
+                = f.collection_select :gear_jewelry_id, @g_j_r_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-earrings
+                = f.collection_select :gear_jewelry_id, @g_j_e_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-necklace
+                = f.collection_select :gear_jewelry_id, @g_j_n_t6, :id, :set, include_blank: '----------'
+              .form-input#g-j-bracelet
+                = f.collection_select :gear_jewelry_id, @g_j_b_t6, :id, :set, include_blank: '----------'
+
+            .g-j-t7
+              .form-input#g-j-ring
+                = f.collection_select :gear_jewelry_id, @g_j_r_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-earrings
+                = f.collection_select :gear_jewelry_id, @g_j_e_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-necklace
+                = f.collection_select :gear_jewelry_id, @g_j_n_t7, :id, :set, include_blank: '----------'
+              .form-input#g-j-bracelet
+                = f.collection_select :gear_jewelry_id, @g_j_b_t7, :id, :set, include_blank: '----------'
+
+            .g-j-t8
+              .form-input#g-j-ring
+                = f.collection_select :gear_jewelry_id, @g_j_r_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-earrings
+                = f.collection_select :gear_jewelry_id, @g_j_e_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-necklace
+                = f.collection_select :gear_jewelry_id, @g_j_n_t8, :id, :set, include_blank: '----------'
+              .form-input#g-j-bracelet
+                = f.collection_select :gear_jewelry_id, @g_j_b_t8, :id, :set, include_blank: '----------'
+
+      .form-input
+        = f.input :gear_orb, as: :select, collection: ['T6', 'T7', 'T8'], required: false, label: 'Orb'
+        .g-orb#sel
+          .g-o-t6
+            = f.collection_select :gear_orb_id, @g_o_t6, :id, :set, include_blank: '----------'
+          .g-o-t7
+            = f.collection_select :gear_orb_id, @g_o_t7, :id, :set, include_blank: '----------'
+          .g-o-t8
+            = f.collection_select :gear_orb_id, @g_o_t8, :id, :set, include_blank: '----------'
 
       // Other
       / .form-input
@@ -267,8 +222,6 @@ title Calculator
     .t-st
       p#heroATK
     .t-st
-      p#greyATK
-    .t-st
       p#heroTR
     .t-st
       p#heroPDEF
@@ -291,25 +244,31 @@ title Calculator
     .t-total
       .r-stats
 
-  / .hero-gear#calc
+  .hero-gear#calc
     .heroGear
       div
-        p#empty-block
+        / p Weapon
         p#wea
           img src='/images/media/gears/bg-weapon.png'
+        / p Armor
         p#arm
           img src='/images/media/gears/bg-armor.png'
+        / p Secondary
         p#sec
           img src='/images/media/gears/bg-secondary.png'
       div
+        / p Treasure
         p#tre
           img src='/images/media/gears/bg-treasure.png'
+        / p Accessory
         p#acc
           img src='/images/media/gears/bg-accessory.png'
+        / p Orb
         p#orb
           img src='/images/media/gears/bg-orb.png'
-        p#art
-          img src='/images/media/gears/bg-art.png'
+        / p Artifact
+        / p#art
+        / img src='/images.media/gears/bg-art.png'
 
     / - @roles.each do |r|
       . class='role#{r.id}'
@@ -385,7 +344,7 @@ title Calculator
                         p#bt4.btn = g.stat.uw_4
                         p#bt5.btn = g.stat.uw_5
 
-        / - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').each do |g|
+        - @gears.where(char_id: c.id, gear_type: '9-UT').order('id ASC').each do |g|
           .ut id='#{g.id}'
             .gear-img
               p
@@ -420,7 +379,7 @@ title Calculator
                         p#bt4.btn = g.stat.uw_4
                         p#bt5.btn = g.stat.uw_5
 
-        / - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').each do |g|
+        - @gears.where(char_id: nil, gear_type: '9-UT').order('id ASC').each do |g|
           .mana id='#{g.id}' class='#{g.tier}'
             .gear-img
               p
@@ -527,7 +486,7 @@ title Calculator
                       p#bt4.btn = g.stat.star_4
                       p#bt5.btn = g.stat.star_5
 
-    / - @gearsAJ.each do |g|
+    - @gearsAJ.each do |g|
       . class='gear#{g.id}'
         . class='#{g.gear_type}' id='#{g.id}' class='jewelry'
           .gear-img
@@ -581,7 +540,7 @@ title Calculator
                         p#bt4.btn = g.stat.star_4
                         p#bt5.btn = g.stat.star_5
 
-    / - @gearsAO.each do |g|
+    - @gearsAO.each do |g|
       . class='gear#{g.id}'
         . class='#{g.gear_type}' id='#{g.id}' class='orb'
           .gear-img
@@ -616,3 +575,40 @@ title Calculator
                       p#bt3.btn = g.stat.ut_3
                       p#bt4.btn = g.stat.ut_4
                       p#bt5.btn = g.stat.ut_5
+
+/.gear-section
+/  .form-input
+/    span Weapon
+/    = f.collection_select :gear_id, Gear.where(gear_type: '10-UW').order('id ASC'), :id, :name, include_blank: true
+/  br
+/  .form-input
+/    span Armor
+/    = f.collection_select :gear_id, Gear.where(gear_type: ['1-1H', '3-1L', '5-1I']), :id, :name, include_blank: true
+/  br
+/  .form-input
+/    span Secondary Gear
+/    = f.collection_select :gear_id, Gear.where(gear_type: ['2-2H', '4-2L', '6-2I']), :id, :name, include_blank: true
+/  br
+/  .form-input
+/    span Treasure
+/    = f.collection_select :gear_id, Gear.where(gear_type: '9-UT').order('name ASC'), :id, :name, include_blank: true
+/  br
+/  .form-input
+/    span Accessory
+/    = f.collection_select :gear_id, Gear.where(gear_type: '7-J'), :id, :name, include_blank: true
+/  br
+/  .form-input
+/    span Orb
+/    = f.collection_select :gear_id, Gear.where(gear_type: '8-O'), :id, :name, include_blank: true
+/  br
+  /div
+  /  = simple_form_for :calc, url: { action: :new }, method: :get do |f|
+  /    = number_field_tag :a, params[:a]
+  /    = select_tag :operation, options_for_select([['+', :sum], ['-', :subtr], ['*', :multiple], ['/', :divide]], params[:operation])
+  /    = number_field_tag :b, params[:b]
+  /    hr
+  /    = f.submit 'Calculate!'
+  /
+  /  div
+  /    - unless @result.nil?
+  /      p = @result
