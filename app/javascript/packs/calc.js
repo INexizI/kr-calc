@@ -560,13 +560,16 @@
         return $(this).text() === 'ATK'
       }).next('p');
       if ($weapon !== '- - - - - - - - - -') {
-        $sumAll = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ);
+        if ($jewel == 'Earrings')
+          $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ);
+        else
+          $sumAtk = parseInt($classATK) + parseInt($gearA);
         if ($gearA !== 0) {
-          if (($jewel == 'Earrings') && ($gearJ == 0)) {
-            $totalA.text((parseInt($classATK) + parseInt($gearA)) + ' (' + $classATK + '+' + $gearA + ')');
-          } else {
-            $totalA.text($sumAll + ' (' + $classATK + '+' + (parseInt($gearA) + parseInt($gearJ)) + ')');
-          }
+          if ($jewel == 'Earrings')
+            // $totalA.text((parseInt($classATK) + parseInt($gearA)) + ' (' + $classATK + '+' + $gearA + ')');
+            $totalA.text($sumAtk + ' (' + $classATK + '+' + (parseInt($gearA) + parseInt($gearJ)) + ')');
+          else
+            $totalA.text($sumAtk + ' (' + $classATK + '+' + parseInt($gearA) + ')');
         }
       } else {
         $totalA.text($classATK);
@@ -576,15 +579,15 @@
         return $(this).text() === 'MAX HP'
       }).next('p');
       if ($treasure !== '- - - - - - - - - -') {
-        $sumAll = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
+        $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
         if ($gearTr !== 0) {
           if (($gearJ == 0) && ($gearO == 0))
             $totalH.text((parseInt($classHP) + parseInt($gearTr)) + ' (' + $classHP + '+' + $gearTr + ')');
           else {
             if ($jewel == 'Ring')
-              $totalH.text($sumAll + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
+              $totalH.text($sumTre + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
             else
-              $totalH.text($sumAll + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearO)) + ')');
+              $totalH.text($sumTre + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearO)) + ')');
           }
         } else {
           $totalH.text($('#heroHP').text());
@@ -597,12 +600,13 @@
         return $(this).text() === 'P.Def'
       }).next('p');
       if ($armor !== '- - - - - - - - - -') {
+        $sumArm = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
         if ($gearP !== 0) {
           if ($jewel == 'Bracelet') {
             if ($gearJ == 0)
-              $totalP.text($sumAll + ' (' + $classPDEF + '+' + $gearP + ')');
+              $totalP.text($sumArm + ' (' + $classPDEF + '+' + $gearP + ')');
             else
-              $totalP.text($sumAll + ' (' + $classPDEF + '+' + (parseInt($gearP) + parseInt($gearJ)) + ')');
+              $totalP.text($sumArm + ' (' + $classPDEF + '+' + (parseInt($gearP) + parseInt($gearJ)) + ')');
           } else
             $totalP.text((parseInt($classPDEF) + parseInt($gearP)) + ' (' + $classPDEF + '+' + $gearP + ')');
         }
@@ -614,13 +618,13 @@
         return $(this).text() === 'M.Def'
       }).next('p');
       if ($secondary !== '- - - - - - - - - -') {
-        $sumAll = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
+        $sumSec = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
         if ($gearM !== 0) {
           if ($jewel == 'Necklace') {
             if ($gearJ == 0)
-              $totalM.text($sumAll + parseInt($gearM) + ' (' + $classMDEF + '+' + $gearM + ')');
+              $totalM.text($sumSec + parseInt($gearM) + ' (' + $classMDEF + '+' + $gearM + ')');
             else if ($gearJ !== 0)
-              $totalM.text($sumAll + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
+              $totalM.text($sumSec + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
           } else
             $totalM.text((parseInt($classMDEF) + parseInt($gearM)) + ' (' + $classMDEF + '+' + $gearM + ')');
         }
@@ -648,16 +652,16 @@
         }
 
         if ($jewel == 'Ring') {
-          $sumAll = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
+          $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
         }
         else if ($jewel == 'Earrings') {
-          $sumAll = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ);
+          $sumAcc = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ);
         }
         else if ($jewel == 'Necklace') {
-          $sumAll = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
+          $sumAcc = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
         }
         else if ($jewel == 'Bracelet') {
-          $sumAll = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
+          $sumAcc = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
         }
 
         if ($gearJ !== 0) {
@@ -665,24 +669,24 @@
             if (($gearTr == 0) && ($gearO == 0))
               $totalJ.text((parseInt($classHP) + parseInt($gearJ)) + ' (' + $classHP + '+' + $gearJ + ')');
             else
-              $totalJ.text($sumAll + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
+              $totalJ.text($sumAcc + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
             $('#heroHP').text($totalJ.text());
             $('#heroHPs').text($totalJ.text().split(' ')[0]);
           } else if ($jewel == 'Earrings') {
             if ($gearA == 0)
               $totalJ.text((parseInt($classATK) + parseInt($gearJ)) + ' (' + $classATK + '+' + $gearJ + ')');
             else
-              $totalJ.text($sumAll + ' (' + $classATK + '+' + (parseInt($gearA) + parseInt($gearJ)) + ')');
+              $totalJ.text($sumAcc + ' (' + $classATK + '+' + (parseInt($gearA) + parseInt($gearJ)) + ')');
           } else if ($jewel == 'Necklace') {
             if ($gearM == 0)
               $totalJ.text((parseInt($classMDEF) + parseInt($gearJ)) + ' (' + $classMDEF + '+' + $gearJ + ')');
             else
-              $totalJ.text($sumAll + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
+              $totalJ.text($sumAcc + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
           } else if ($jewel == 'Bracelet') {
             if ($gearP == 0)
               $totalJ.text((parseInt($classPDEF) + parseInt($gearJ)) + ' (' + $classPDEF + '+' + $gearJ + ')');
             else
-              $totalJ.text($sumAll + ' (' + $classPDEF + '+' + (parseInt($gearP) + parseInt($gearJ)) + ')');
+              $totalJ.text($sumAcc + ' (' + $classPDEF + '+' + (parseInt($gearP) + parseInt($gearJ)) + ')');
           }
         }
       }
@@ -694,18 +698,18 @@
         $orbSplt = 0;
 
         if ($jewel == 'Ring')
-          $sumAll = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
+          $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
         else
-          $sumAll = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
+          $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
 
         if ($gearO !== 0) {
           if (($gearTr == 0) && ($gearJ == 0)) {
             $totalO.text((parseInt($classHP) + parseInt($gearO)) + ' (' + $classHP + '+' + $gearO + ')');
           } else if (($gearTr == 0) || ($gearJ == 0)) {
             if ($jewel == 'Ring') {
-              $totalO.text($sumAll + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
+              $totalO.text($sumOrb + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO)) + ')');
             } else {
-              $totalO.text($sumAll + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearO)) + ')');
+              $totalO.text($sumOrb + ' (' + $classHP + '+' + (parseInt($gearTr) + parseInt($gearO)) + ')');
             }
           }
           $('#heroHP').text($totalO.text());
