@@ -2,7 +2,8 @@
   h4 Skills
   .c-sk
     - @skills.where(char: @char).order('skill_number ASC').each do |skill|
-      - if skill.parent_id.blank?
+      / - if skill.parent_id.blank?
+      - if skill.parent_id == 'NULL'
         div
           .c-perk-img
             img src="/images/media/heroes/#{@char.name}/s#{skill.skill_number}.png"

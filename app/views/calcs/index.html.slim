@@ -31,6 +31,19 @@ title Calculator
                 input name="starValue" type="radio" value="1"
                 label.bt0 ◯
                 input name="starValue" type="radio" value="0"
+            / .gOption
+              .rating
+                label
+                input name="starValue" type="radio"
+              .rating
+                label
+                input name="starValue" type="radio"
+              .rating
+                label
+                input name="starValue" type="radio"
+              .rating
+                label
+                input name="starValue" type="radio"
 
           .form-input
             = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
@@ -125,8 +138,10 @@ title Calculator
 
           .form-input
             div
-              - options = ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic']
-              - gear_type = [['Ring', options], ['Earrings', options], ['Bracelet', options], ['Necklace', options]]
+              - emp = ['- - - - - - - - - -']
+              - tm = ['Technomagic']
+              - options = ['Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion']
+              - gear_type = [['Ring', emp + options + tm], ['Earrings', options + tm], ['Bracelet', options], ['Necklace', options]]
               = f.select :gear_jewelry, grouped_options_for_select(gear_type)
             .gSt
               p#acc

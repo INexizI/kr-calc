@@ -20,6 +20,19 @@ ActiveRecord::Schema.define(version: 2020_10_05_095817) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "chars", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.string "type_dmg"
+    t.bigint "role_id"
+    t.string "position"
+    t.index ["role_id"], name: "index_chars_on_role_id"
+    t.index ["slug"], name: "index_chars_on_slug", unique: true
+  end
+
   create_table "enchants", force: :cascade do |t|
     t.string "name"
     t.string "value"
@@ -95,7 +108,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_095817) do
     t.bigint "char_id"
     t.integer "cooldown"
     t.string "skill_number"
-    t.integer "parent_id"
+    t.string "parent_id"
     t.index ["char_id"], name: "index_skills_on_char_id"
   end
 
@@ -106,7 +119,7 @@ ActiveRecord::Schema.define(version: 2020_10_05_095817) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
     t.string "stat_type"
-    t.integer "notice"
+    t.string "notice"
     t.index ["role_id"], name: "index_stats_on_role_id"
   end
 
@@ -137,9 +150,12 @@ ActiveRecord::Schema.define(version: 2020_10_05_095817) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
+  add_foreign_key "chars", "roles"
+  add_foreign_key "gears", "chars"
   add_foreign_key "gears", "roles"
   add_foreign_key "gears", "runes"
-  add_foreign_key "gears", "stats", name: "gears_stat_id_fkey"
+  add_foreign_key "gears", "stats"
+  add_foreign_key "skills", "chars"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end
