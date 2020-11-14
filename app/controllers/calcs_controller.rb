@@ -47,6 +47,9 @@ class CalcsController < ApplicationController
     @gearsAS = Gear.where(gear_type: ['2-2H', '4-2L', '6-2I']).each
     @gearsAJ = Gear.where(gear_type: '7-J').each
     @gearsAO = Gear.where(gear_type: '8-O').each
+    # gear options
+    @g_opt = Stat.where(stat_type: 'option')
+    @g_opt_tr = Stat.where(stat_type: ['option', 'options'])
   end
 
   def new

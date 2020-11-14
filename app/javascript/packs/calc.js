@@ -138,6 +138,8 @@
         }
         $(this).css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
         $('#tre').text($ms).next('.rating').show();
+
+        $('.calc_gear_treasure').next().next().show();
       } else if ($gearTreasureType == 'Unique') {
         $eTr1 = 'url(/images/media/heroes/' + $gHero + '/ut1.png)';
         $eTr2 = 'url(/images/media/heroes/' + $gHero + '/ut2.png)';
@@ -153,9 +155,13 @@
         }
         $(this).css($hTreasure);
         $('#tre').text($unTr).next('.rating').show();
+
+        $('.calc_gear_treasure').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-treasure.png)').css('width', '52px');
         $('#tre').text('').next('.rating').hide();
+
+        $('.calc_gear_treasure').next().next().hide();
       }
       $x = $('#tre').text();
       $('#greyTR').text($x);
@@ -183,9 +189,13 @@
         $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#arm').next('.rating').show();
+
+        $('.calc_gear_armor').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#arm').text('').next('.rating').hide();
+
+        $('.calc_gear_armor').next().next().hide();
       }
       $x = $('#arm').text();
       $('#greyPDEF').text($x);
@@ -212,9 +222,13 @@
         $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#sec').next('.rating').show();
+
+        $('.calc_gear_secondary').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-secondary.png)');
         $('#sec').text('').next('.rating').hide();
+
+        $('.calc_gear_secondary').next().next().hide();
       }
       $x = $('#sec').text();
       $('#greyMDEF').text($x);
@@ -239,9 +253,13 @@
         $gearSet = $(this).children().children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#acc').next('.rating').show();
+
+        $('.calc_gear_jewelry').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
         $('#acc').text('').next('.rating').hide();
+
+        $('.calc_gear_jewelry').next().next().hide();
       }
       $x = $('#acc').text();
       $('#greyJ').text($x);
@@ -258,9 +276,13 @@
         $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/8-O/' + $gearSet.split(' ').join('') + '.png)');
         $('#orb').text($or).next('.rating').show();
+
+        $('.calc_gear_orb').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
         $('#orb').text('').next('.rating').hide();
+
+        $('.calc_gear_orb').next().next().hide();
       }
       $x = $('#orb').text();
       $('#greyO').text($x);
