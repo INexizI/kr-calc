@@ -756,11 +756,22 @@ h4 {
 
         .opt {
           // direction: rtl;
-
+          .calc_st_armor {
+            height: 0;
+          }
+          .calc_st_armor_st {
+            width: 0;
+          }
+          .qq {
+            position: relative;
+            // top: -25px;
+            left: 65px;
+            // width: -webkit-fill-available;
+          }
           label {
             display: inline-block;
             position: relative;
-            margin-left: 5px;
+            // margin-left: 5px;
             font-size: 20px;
           }
         }
