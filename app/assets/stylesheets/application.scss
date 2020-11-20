@@ -751,55 +751,49 @@ h4 {
       }
       .gOption {
         display: none;
-        // border: 1px solid;
         position: relative;
 
         .opt {
-          // direction: rtl;
+          // display: inline-block;
+          height: 50px;
+
           .calc_st_armor {
-            height: 0;
+            // height: 0;
           }
           .calc_st_armor_st {
-            width: 0;
+            // width: 0;
           }
           .qq {
             position: relative;
-            // top: -25px;
-            left: 65px;
-            // width: -webkit-fill-available;
+            left: 92px;
+            bottom: 23px;
           }
-          label {
-            display: inline-block;
-            position: relative;
-            // margin-left: 5px;
-            font-size: 20px;
-          }
+        }
+        .opt:not(:first-of-type) {
+          margin: -25px 0;
         }
       }
       #g-left {
         right: 180px;
-        bottom: 105px;
-        // margin: 5px -10px;
+        bottom: 103px;
         input {
           position: relative;
-          left: 75px;
-          top: 2px;
+          left: 107px;
+          bottom: 21px;
         }
       }
       #g-right {
         left: 90px;
-        bottom: 105px;
-        // margin: 5px 0;
+        bottom: 103px;
         input {
           position: relative;
-          left: 75px;
+          left: 108px;
           top: 2px;
         }
       }
       .rating > label {
         display: inline-block;
         position: relative;
-        // width: 1.1em;
         font-size: 20px;
       }
       .rating > #bt-star.active:before,
@@ -809,6 +803,9 @@ h4 {
         content: "\2605";
         position: absolute;
       }
+    }
+    ::-webkit-scrollbar {
+      display: none;
     }
     .heroGear {
       display: grid !important;

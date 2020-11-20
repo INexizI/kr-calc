@@ -18,6 +18,7 @@
       $('.c-perk-img').find('img').removeClass('pick');
       $('.perk-tp').find('p').text(0);
       $('.t-st p').empty();
+      $('.gOption').hide();
       // Options
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
@@ -55,6 +56,7 @@
         return $(this).text() === 'MAX HP'
       }).next('p').text($classHP);
       //   $('.hero-img').children().hide();
+      $('.gOption').hide();
       $('.t-st p').empty();
       $('.form-input .gSt p').text('');
       $('.form-input .gSt .rating').hide();
@@ -190,17 +192,23 @@
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#arm').next('.rating').show();
 
-        $('.calc_gear_armor').next().next().show();
+        $('.calc_gear_armor').parent().find('.gOption').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#arm').text('').next('.rating').hide();
-
-        $('.calc_gear_armor').next().next().hide();
+        // $('.calc_gear_armor').next().next().hide();
+        $('.calc_gear_armor').parent().find('.gOption').hide();
       }
       $x = $('#arm').text();
       $('#greyPDEF').text($x);
       $('#ar label').filter('.active').removeClass('active');
     }).change();
+
+    $('select#calc_st_armor').change(function() {
+      armorOpt = $('#o1 #calc_st_armor').children('option:selected').text();
+      if (armorOpt !== '- - - - - - - - - -')
+        $(this).next('div').show();
+    });
 
     // Secondary Tier
     $('select#calc_gear_secondary').change(function() {
