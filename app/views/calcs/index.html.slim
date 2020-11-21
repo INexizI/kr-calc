@@ -16,7 +16,7 @@ title Calculator
         div
           .form-input#empty-block
           .form-input
-            = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in'}
+            = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in img'}
             .gSt
               p#wea
               .rating#uw.c
@@ -34,7 +34,7 @@ title Calculator
                 input name="starValue" type="radio" value="0"
 
           .form-input
-            = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
+            = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#arm
               .rating#ar.c
@@ -53,36 +53,29 @@ title Calculator
             .gOption#g-left
               - gear_stat = [['ATK'], ['ATK Spd'], ['Crit'], ['Crit DMG'], ['MP Recovery/Attack'], ['MP Recovery/Sec'], ['Penetration'], ['Lifesteal'], ['ACC'], ['Debuf ACC'], ['Max HP'], ['CC Resist'], ['Block'], ['P.Block'], ['M.Block'], ['Crit Resistance'], ['P.Crit Resistance'], ['M.Crit Resistance'], ['DEF'], ['P.DEF'], ['M.DEF'], ['Dodge'], ['P.Dodge'], ['M.Dodge']]
               / - additional = [['Tough'], ['P.Tough'], ['M.Tough'], ['Recovery'], ['Mana Recovery upon taking DMG'], ['DMG Reduction upon P.Block'], ['DMG Reduction upon M.Block'], ['DMG Reduction upon Block']]
-              - q1 = [7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12]
-              - q2 = [21, 22.5, 24, 25.5, 27, 28.5, 30, 31.5, 33, 34.5, 36]
-              - q3 = [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]
-              - q4 = [70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 120]
-              - q5 = [140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240]
-              - q6 = [60, 65, 70, 75, 80, 85, 90, 95, 100, 105, 110]
-              - q7 = [35, 37, 40, 42, 45, 47, 50, 52, 55, 57, 60]
-              .opt#o1
-                / label#bt-star
+              .opt
                 = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q1, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
-                / input name="gearOption" type="checkbox"
-              .opt#o2
-                / label#bt-star
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq', 'disabled': true}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
                 = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q2, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
-                / input name="gearOption" type="checkbox"
-              .opt#o3
-                / label#bt-star
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq', 'disabled': true}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
                 = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q3, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
-                / input name="gearOption" type="checkbox"
-              .opt#o4
-                / label#bt-star
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq', 'disabled': true}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
                 = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q4, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
-                / input name="gearOption" type="checkbox"
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq', 'disabled': true}
+                .op
+                  input name="gearOption" type="checkbox"
 
           .form-input
-            = f.input :gear_secondary, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
+            = f.input :gear_secondary, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#sec
               .rating#sg.c
@@ -101,28 +94,28 @@ title Calculator
             .gOption#g-left
               .opt
                 / label#bt-star
-                = f.input :st_armor, as: :select, collection: @g_opt, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q4, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
                 / input name="gearOption" type="checkbox"
               .opt
                 / label#bt-star
-                = f.input :st_armor, as: :select, collection: @g_opt, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q4, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
                 / input name="gearOption" type="checkbox"
               .opt
                 / label#bt-star
-                = f.input :st_armor, as: :select, collection: @g_opt, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q4, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
                 / input name="gearOption" type="checkbox"
               .opt
                 / label#bt-star
-                = f.input :st_armor, as: :select, collection: @g_opt, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                = f.input :st_armor_st, as: :select, collection: q4, required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
                 / input name="gearOption" type="checkbox"
 
         div
           .form-input
-            = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in'}
+            = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in img'}
             .gSt
               p#tre
               .rating#ut.c
@@ -190,7 +183,7 @@ title Calculator
               - tm = ['Technomagic']
               - options = ['Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion']
               - gear_type = [['Ring', emp + options + tm], ['Earrings', options + tm], ['Bracelet', options], ['Necklace', options]]
-              = f.select :gear_jewelry, grouped_options_for_select(gear_type)
+              = f.select :gear_jewelry, grouped_options_for_select(gear_type), input_html: {class: 'img'}
             .gSt
               p#acc
               .rating#ac.c
@@ -225,7 +218,7 @@ title Calculator
                 input name="gearOption" type="checkbox"
 
           .form-input
-            = f.input :gear_orb, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false
+            = f.input :gear_orb, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#orb
               .rating#or.c
@@ -260,7 +253,7 @@ title Calculator
                 input name="gearOption" type="checkbox"
 
           .form-input
-            = f.input :gear_artifact, as: :select, collection: ['A', 'B', 'C'], required: false, label: false
+            = f.input :gear_artifact, as: :select, collection: ['A', 'B', 'C'], required: false, label: false, input_html: {class: 'img'}
             .gSt
               p#art
               .rating#at.c

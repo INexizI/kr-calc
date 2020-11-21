@@ -191,12 +191,10 @@
         $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#arm').next('.rating').show();
-
         $('.calc_gear_armor').parent().find('.gOption').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#arm').text('').next('.rating').hide();
-        // $('.calc_gear_armor').next().next().hide();
         $('.calc_gear_armor').parent().find('.gOption').hide();
       }
       $x = $('#arm').text();
@@ -205,9 +203,8 @@
     }).change();
 
     $('select#calc_st_armor').change(function() {
-      armorOpt = $('#o1 #calc_st_armor').children('option:selected').text();
-      if (armorOpt !== '- - - - - - - - - -')
-        $(this).next('div').show();
+      if ($('#calc_st_armor').children('option:selected').text() !== '- - - - - - - - - -')
+        armorOption();
     });
 
     // Secondary Tier
@@ -527,7 +524,33 @@
         $('#orb').text(parseInt($orStat) + Math.trunc(parseInt($orStat)*0.5));
       }
     }
+    function armorOption() {
+      $q1 = '<option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option>'
+      $q2 = '<option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option>'
+      $q3 = '<option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option>'
+      $q4 = '<option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option>'
+      $q5 = '<option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option>'
+      $q6 = '<option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option>'
+      $q7 = '<option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option>'
 
+      $('.opt').find('#calc_st_armor').each(function() {
+        $st = $(this).children('option:selected').text();
+        if (($st == 'ATK') || ($st == 'Max HP') || ($st == 'DEF'))
+          return $(this).parent().next().children().removeAttr('disabled').html($q1)
+        else if ($st == 'MP Recovery/Sec')
+          return $(this).parent().next().children().removeAttr('disabled').html($q2)
+        else if (($st == 'Crit DMG') || ($st == 'P.DEF') || ($st == 'M.DEF'))
+          return $(this).parent().next().children().removeAttr('disabled').html($q3)
+        else if (($st == 'ATK Spd') || ($st == 'Crit') || ($st == 'Lifesteal') || ($st == 'ACC') || ($st == 'Debuff ACC') || ($st == 'CC Resist') || ($st == 'Block') || ($st == 'Crit Resistance') || ($st == 'P.Dodge') || ($st == 'M.Dodge'))
+          return $(this).parent().next().children().removeAttr('disabled').html($q4)
+        else if (($st == 'MP Recovery/Attack') || ($st == 'P.Block') || ($st == 'M.Block') || ($st == 'P.Crit Resistance') || ($st == 'M.Crit Resistance'))
+          return $(this).parent().next().children().removeAttr('disabled').html($q5)
+        else if ($st == 'Penetration')
+          return $(this).parent().next().children().removeAttr('disabled').html($q6)
+        else if ($st == 'Dodge')
+          return $(this).parent().next().children().removeAttr('disabled').html($q7)
+      });
+    }
     // Sum Stat
     function gearStat() {
       weaponATK();

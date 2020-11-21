@@ -722,13 +722,13 @@ h4 {
         height: 52px;
         color: transparent;
       }
-      .input {
+      .img {
         width: 52px;
       }
       .gSt {
         width: 125px;
-        height: 45px;
-        // border: 1px solid;
+        height: 50px;
+
         .c {
           display: flex;
         }
@@ -754,23 +754,22 @@ h4 {
         position: relative;
 
         .opt {
-          // display: inline-block;
-          height: 50px;
-
-          .calc_st_armor {
-            // height: 0;
+          .calc_st_armor, .op {
+            height: 0;
           }
           .calc_st_armor_st {
-            // width: 0;
+            width: 0;
           }
           .qq {
             position: relative;
-            left: 92px;
-            bottom: 23px;
+            left: 65px;
+            min-width: 53px;
           }
-        }
-        .opt:not(:first-of-type) {
-          margin: -25px 0;
+          select {
+            height: 20px;
+            border: 1px solid rgba(255, 255, 255, 0);
+            opacity: 1;
+          }
         }
       }
       #g-left {
