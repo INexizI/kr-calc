@@ -760,10 +760,13 @@ h4 {
           .calc_st_armor_st {
             width: 0;
           }
+          #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
+            display: none;
+          }
           .qq {
             position: relative;
             left: 65px;
-            min-width: 53px;
+            min-width: 65px;
           }
           select {
             height: 20px;
@@ -777,7 +780,7 @@ h4 {
         bottom: 103px;
         input {
           position: relative;
-          left: 107px;
+          left: 120px;
           bottom: 21px;
         }
       }
