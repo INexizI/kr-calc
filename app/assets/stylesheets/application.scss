@@ -754,10 +754,10 @@ h4 {
         position: relative;
 
         .opt {
-          .calc_st_armor, .op {
+          .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
             height: 0;
           }
-          .calc_st_armor_st {
+          .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
             width: 0;
           }
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
@@ -776,7 +776,7 @@ h4 {
         }
       }
       #g-left {
-        right: 180px;
+        right: 185px;
         bottom: 103px;
         input {
           position: relative;
@@ -785,12 +785,12 @@ h4 {
         }
       }
       #g-right {
-        left: 90px;
+        left: 120px;
         bottom: 103px;
         input {
           position: relative;
-          left: 108px;
-          top: 2px;
+          left: 120px;
+          bottom: 21px;
         }
       }
       .rating > label {
