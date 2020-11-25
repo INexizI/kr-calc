@@ -52,7 +52,7 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-left
               - gear_stat = [['ATK'], ['ATK Spd'], ['Crit'], ['Crit DMG'], ['MP Recovery/Attack'], ['MP Recovery/Sec'], ['Penetration'], ['Lifesteal'], ['ACC'], ['Debuf ACC'], ['Max HP'], ['CC Resist'], ['Block'], ['P.Block'], ['M.Block'], ['Crit Resistance'], ['P.Crit Resistance'], ['M.Crit Resistance'], ['DEF'], ['P.DEF'], ['M.DEF'], ['Dodge'], ['P.Dodge'], ['M.Dodge']]
-              / - additional = [['Tough'], ['P.Tough'], ['M.Tough'], ['Recovery'], ['Mana Recovery upon taking DMG'], ['DMG Reduction upon P.Block'], ['DMG Reduction upon M.Block'], ['DMG Reduction upon Block']]
+              - additional = [['Tough'], ['P.Tough'], ['M.Tough'], ['Recovery'], ['Mana Recovery upon taking DMG'], ['DMG Reduction upon P.Block'], ['DMG Reduction upon M.Block'], ['DMG Reduction upon Block']]
               .opt
                 = f.input :st_armor, as: :select, collection: gear_stat, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
@@ -133,49 +133,15 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-right
               .opt
-                label#bt-star
-                  = f.input :st_armor, as: :select, collection: @g_opt_tr, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                input name="gearOption" type="checkbox"
+                  = f.input :st_treasure, as: :select, collection: gear_stat+additional, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                  = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                  .op
+                    input name="gearOption" type="checkbox"
               .opt
-                label#bt-star
-                  = f.input :st_armor, as: :select, collection: @g_opt_tr, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
-                input name="gearOption" type="checkbox"
-
-            / div style='margin-top: 3px'
-              li class='tg-list-item'
-                p.ut-stat
-                  input class='tgl tgl-light' id='sh' type='checkbox'
-                  label class='tgl-btn' for='sh'
-                  span UT Stats
-                .ut-check
-                  p#ut-check
-                    span UT1
-                    input class='tgl tgl-light' id='cb1' type='checkbox'
-                    label class='tgl-btn' for='cb1'
-                  #ut-stat
-                    = f.input :ut1_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut1_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  P#ut-check
-                    span UT2
-                    input class='tgl tgl-light' id='cb2' type='checkbox'
-                    label class='tgl-btn' for='cb2'
-                  #ut-stat
-                    = f.input :ut2_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut2_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  P#ut-check
-                    span UT3
-                    input class='tgl tgl-light' id='cb3' type='checkbox'
-                    label class='tgl-btn' for='cb3'
-                  #ut-stat
-                    = f.input :ut3_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut3_2, as: :select, collection: ['A', 'B'], required: false, label: false
-                  p#ut-check
-                    span UT4
-                    input class='tgl tgl-light' id='cb4' type='checkbox'
-                    label class='tgl-btn' for='cb4'
-                  #ut-stat
-                    = f.input :ut4_1, as: :select, collection: ['A', 'B'], required: false, label: false
-                    = f.input :ut4_2, as: :select, collection: ['A', 'B'], required: false, label: false
+                  = f.input :st_treasure, as: :select, collection: gear_stat+additional, required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -'
+                  = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'qq'}
+                  .op
+                    input name="gearOption" type="checkbox"
 
           .form-input
             .calc_gear_jewelry

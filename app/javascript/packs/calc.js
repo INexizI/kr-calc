@@ -157,13 +157,12 @@
         }
         $(this).css($hTreasure);
         $('#tre').text($unTr).next('.rating').show();
-
-        $('.calc_gear_treasure').next().next().show();
+        $('.calc_gear_treasure').parent().find('.gOption').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-treasure.png)').css('width', '52px');
         $('#tre').text('').next('.rating').hide();
-
-        $('.calc_gear_treasure').next().next().hide();
+        $('.calc_gear_treasure').parent().find('.gOption').hide();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
       $x = $('#tre').text();
       $('#greyTR').text($x);
@@ -204,10 +203,11 @@
     }).change();
 
     $('select#calc_st_armor').change(function() {
+      $statName = $(this);
       $opt = $(this).parent().parent().find('.qq');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
-        armorOption();
+        statOption();
     });
 
     // Secondary Tier
@@ -230,7 +230,6 @@
         $gearSet = $(this).children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#sec').next('.rating').show();
-
         $('.calc_gear_secondary').next().next().show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-secondary.png)');
@@ -244,10 +243,11 @@
     }).change();
 
     $('select#calc_st_secondary').change(function() {
+      $statName = $(this);
       $opt = $(this).parent().parent().find('.qq');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
-        secondaryOption();
+        statOption();
     });
 
     // Jewelry Type
@@ -268,18 +268,25 @@
         $gearSet = $(this).children().children('option:selected').val();
         $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
         $('#acc').next('.rating').show();
-
-        $('.calc_gear_jewelry').next().next().show();
+        $('.calc_gear_jewelry').parent().find('.gOption').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
         $('#acc').text('').next('.rating').hide();
-
-        $('.calc_gear_jewelry').next().next().hide();
+        $('.calc_gear_jewelry').parent().find('.gOption').hide();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
       $x = $('#acc').text();
       $('#greyJ').text($x);
       $('#ac label').filter('.active').removeClass('active');
     }).change();
+
+    $('select#calc_st_jewerly').change(function() {
+      $statName = $(this);
+      $opt = $(this).parent().parent().find('.qq');
+      $opt.prop('selectedIndex', 0).find('optgroup').hide();
+      if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
+        statOption();
+    });
 
     // Orb Tier
     $('select#calc_gear_orb').change(function() {
@@ -292,17 +299,25 @@
         $(this).css('background-image', 'url(/images/media/gears/8-O/' + $gearSet.split(' ').join('') + '.png)');
         $('#orb').text($or).next('.rating').show();
 
-        $('.calc_gear_orb').next().next().show();
+        $('.calc_gear_orb').parent().find('.gOption').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
         $('#orb').text('').next('.rating').hide();
-
-        $('.calc_gear_orb').next().next().hide();
+        $('.calc_gear_orb').parent().find('.gOption').hide();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
       $x = $('#orb').text();
       $('#greyO').text($x);
       $('#or label').filter('.active').removeClass('active');
     }).change();
+
+    $('select#calc_st_orb').change(function() {
+      $statName = $(this);
+      $opt = $(this).parent().parent().find('.qq');
+      $opt.prop('selectedIndex', 0).find('optgroup').hide();
+      if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
+        statOption();
+    });
 
     // Artifact
     $('select#calc_gear_artifact').change(function() {
@@ -534,28 +549,8 @@
         $('#orb').text(parseInt($orStat) + Math.trunc(parseInt($orStat)*0.5));
       }
     }
-    function armorOption() {
-      $('.opt').find('#calc_st_armor').each(function() {
-        $(this).parent().next().children().find('optgroup').hide();
-        $st = $(this).children('option:selected').text();
-        if (($st == 'ATK') || ($st == 'Max HP') || ($st == 'DEF'))
-          $(this).parent().next().children().find('#q1').show();
-        else if ($st == 'MP Recovery/Sec')
-          $(this).parent().next().children().find('#q2').show();
-        else if (($st == 'Crit DMG') || ($st == 'P.DEF') || ($st == 'M.DEF'))
-          $(this).parent().next().children().find('#q3').show();
-        else if (($st == 'ATK Spd') || ($st == 'Crit') || ($st == 'Lifesteal') || ($st == 'ACC') || ($st == 'Debuf ACC') || ($st == 'CC Resist') || ($st == 'Block') || ($st == 'Crit Resistance') || ($st == 'P.Dodge') || ($st == 'M.Dodge'))
-          $(this).parent().next().children().find('#q4').show();
-        else if (($st == 'MP Recovery/Attack') || ($st == 'P.Block') || ($st == 'M.Block') || ($st == 'P.Crit Resistance') || ($st == 'M.Crit Resistance'))
-          $(this).parent().next().children().find('#q5').show();
-        else if ($st == 'Penetration')
-          $(this).parent().next().children().find('#q6').show();
-        else if ($st == 'Dodge')
-          $(this).parent().next().children().find('#q7').show();
-      });
-    }
-    function secondaryOption() {
-      $('.opt').find('#calc_st_secondary').each(function() {
+    function statOption() {
+      $('.opt').find($statName).each(function() {
         $(this).parent().next().children().find('optgroup').hide();
         $st = $(this).children('option:selected').text();
         if (($st == 'ATK') || ($st == 'Max HP') || ($st == 'DEF'))
