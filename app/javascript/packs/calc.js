@@ -204,7 +204,7 @@
 
     $('select#calc_st_armor').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.qq');
+      $opt = $(this).parent().parent().find('.ay');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statOption();
@@ -244,7 +244,7 @@
 
     $('select#calc_st_secondary').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.qq');
+      $opt = $(this).parent().parent().find('.ay');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statOption();
@@ -282,7 +282,7 @@
 
     $('select#calc_st_jewerly').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.qq');
+      $opt = $(this).parent().parent().find('.ay');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statOption();
@@ -313,7 +313,7 @@
 
     $('select#calc_st_orb').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.qq');
+      $opt = $(this).parent().parent().find('.ay');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statOption();
@@ -325,6 +325,10 @@
       $('#art').text('').next('.rating').hide();
       $('#art label').filter('.active').removeClass('active');
     }).change();
+
+    $('.ay').change(function() {
+      statQ();
+    });
 
     function weaponATK() {
       $uwStat = $('#greyATK').text();
@@ -570,9 +574,32 @@
       });
     }
     function statValue() {
-      $qq = '<optgroup id="q"><option value="">- - -</option></optgroup><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
-      $('.opt').find('.qq').each(function() {
-        $(this).html($qq);
+      $ax = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuf ACC">Debuf ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="Block">Block</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="Crit Resistance">Crit Resistance</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option>'
+      $ay = '<optgroup id="q"><option value=""></option></optgroup><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
+      $('.opt').find('.ax').each(function() {
+        $(this).html($ax);
+      });
+      $('.opt').find('.ay').each(function() {
+        $(this).html($ay);
+      });
+    }
+    function statQ() {
+      $c = 0;
+      $sumAtk = 0;$sumSpd = 0;
+      $('#atk-opt, #spd-opt').empty();
+      $x = $('.opt .ax').serializeArray()
+      $y = $('.opt .ay').serializeArray();
+      $.each($x, function(iX, n) {
+        if (n.value == 'ATK') {
+          $c = $('.opt .ay').serializeArray()[iX];
+          $sumAtk += Number(parseFloat($c.value));
+          $('#atk-opt').text($sumAtk);
+        }
+        else if (n.value == 'ATK Spd') {
+          $c = $('.opt .ay').serializeArray()[iX];
+          $sumSpd += Number(parseFloat($c.value));
+          $('#spd-opt').text($sumSpd);
+        }
       });
     }
     // Sum Stat
@@ -833,29 +860,28 @@
 
       $f = 0;$fr = 0;$p = 0;$d = 0;$la = 0;$le = 0;$ch = 0;$s = 0;$pr = 0;$dl = 0;$t = 0;
       $sq = $('.set').find('p').each(function() {
-        if ($(this).is(':contains("Fire")')) {
+        if ($(this).is(':contains("Fire")'))
           $f++;
-        } else if ($(this).is(':contains("Frost")')) {
+        else if ($(this).is(':contains("Frost")'))
           $fr++;
-        } else if ($(this).is(':contains("Poison")')) {
+        else if ($(this).is(':contains("Poison")'))
           $p++;
-        } else if ($(this).is(':contains("Darkness")')) {
+        else if ($(this).is(':contains("Darkness")'))
           $d++;
-        } else if ($(this).is(':contains("Lava")')) {
+        else if ($(this).is(':contains("Lava")'))
           $la++;
-        } else if ($(this).is(':contains("Legendary")')) {
+        else if ($(this).is(':contains("Legendary")'))
           $le++;
-        } else if ($(this).is(':contains("Suppression")')) {
+        else if ($(this).is(':contains("Suppression")'))
           $s++;
-        } else if ($(this).is(':contains("Protection")')) {
+        else if ($(this).is(':contains("Protection")'))
           $pr++;
-        } else if ($(this).is(':contains("Legion")')) {
+        else if ($(this).is(':contains("Legion")'))
           $dl++;
-        } else if ($(this).is(':contains("Chaos")')) {
+        else if ($(this).is(':contains("Chaos")'))
           $ch++;
-        } else if ($(this).is(':contains("Technomagic")')) {
+        else if ($(this).is(':contains("Technomagic")'))
           $t++;
-        }
       });
 
       $statF = $('.t-total .r-stats').find('p').filter(function() {
