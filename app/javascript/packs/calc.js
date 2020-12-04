@@ -327,17 +327,24 @@
     }).change();
 
     $('.ay').change(function() {
-      $stN = $(this).parent().prev().children().val();
-      $c = 0;
-      $sum = 0;
-      $('#atk-opt, #spd-opt').empty();
-      $x = $('.opt .ax').serializeArray()
+      $('.t-op p').empty();
+      $c = 0;$sAtk = 0;$sAspd = 0;$sCr = 0;$sCrD = 0;
+      $x = $('.opt .ax').serializeArray();
       $y = $('.opt .ay').serializeArray();
       $.each($x, function(iX, n) {
-        if (n.value == $stN) {
-          $c = $('.opt .ay').serializeArray()[iX];
-          $sum += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="' + $stN + '"]').text($sum);
+        $c = $('.opt .ay').serializeArray()[iX];
+        if (n.value == 'ATK') {
+          $sAtk += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ATK"]').text($sAtk);
+        } else if (n.value == 'ATK Spd') {
+          $sAspd += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+        } else if (n.value == 'Crit') {
+          $sCr += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit"]').text($sCr);
+        } else if (n.value == 'Crit DMG') {
+          $sCrD += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
         }
       });
       gearStat();
@@ -662,35 +669,17 @@
       $totalA = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'ATK'
       }).next('p');
-      if ($weapon !== '- - - - - - - - - -') {
-        if ($jewel == 'Earrings')
-          $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ);
-        else
-          $sumAtk = parseInt($classATK) + parseInt($gearA);
-        $optionA = $totalA.find('#plsSt1');
-        $opA = $('p[name="ATK"]').text();
-        if ($opA === '')
-          $opA = 1;
-        $totalA.text(parseInt($sumAtk * ($opA / 100 + 1)) + ' (' + $classATK + '+' + (parseInt($sumAtk * ($opA / 100 + 1)) - $classATK) + ')');
-      } else
-        $totalA.text($classATK);
+      ($jewel == 'Earrings') ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) : $sumAtk = parseInt($classATK) + parseInt($gearA);
+      $opA = $('p[name="ATK"]').text();
+      ($opA === '') ? $totalA.text(parseInt($sumAtk) + ' (' + $classATK + '+' + (parseInt($sumAtk) - $classATK) + ')') : $totalA.text(parseInt($sumAtk * ($opA / 100 + 1)) + ' (' + $classATK + '+' + (parseInt($sumAtk * ($opA / 100 + 1)) - $classATK) + ')');
 
       // hp
       $totalH = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
-      if ($treasure !== '- - - - - - - - - -') {
-        if ($jewel == 'Ring')
-          $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
-        else
-          $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
-        $optionH = $totalH.find('#plsSt1');
-        $opH = $('p[name="Max HP"]').text();
-        if ($opH === '')
-          $opH = 1;
-        $totalH.text(parseInt($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
-      } else
-        $totalH.text($('#heroHP').text());
+      ($jewel == 'Ring') ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
+      $opH = $('p[name="Max HP"]').text();
+      ($opH === '') ? $totalH.text(parseInt($sumTre) + ' (' + $classHP + '+' + (parseInt($sumTre) - $classHP) + ')') : $totalH.text(parseInt($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
       $('#heroHP').text($totalH.text());
       $('#heroHPs').text($totalH.text().split(' ')[0]);
 
@@ -765,29 +754,19 @@
 
         if ($gearJ !== 0) {
           if ($jewel == 'Ring') {
-            $optionJ = $totalJ.find('#plsSt1');
             $opJ = $('p[name="Max HP"]').text();
-            if ($opJ === '')
-              $opJ = 1;
-            $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
+            ($opJ === '') ? $totalJ.text(parseInt($sumAcc) + ' (' + $classHP + '+' + (parseInt($sumAcc) - $classHP) + ')') : $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
             $('#heroHP').text($totalJ.text());
             $('#heroHPs').text($totalJ.text().split(' ')[0]);
           } else if ($jewel == 'Earrings') {
-            $optionJ = $totalJ.find('#plsSt1');
             $opJ = $('p[name="ATK"]').text();
-            if ($opJ === '')
-              $opJ = 1;
-            $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classATK + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classATK) + ')');
+            ($opJ === '') ? $totalJ.text(parseInt($sumAcc) + ' (' + $classHP + '+' + (parseInt($sumAcc) - $classHP) + ')') : $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
           } else if ($jewel == 'Necklace') {
-            if ($gearM == 0)
-              $totalJ.text((parseInt($classMDEF) + parseInt($gearJ)) + ' (' + $classMDEF + '+' + $gearJ + ')');
-            else
-              $totalJ.text($sumAcc + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
+            $opJ = $('p[name="M.DEF"]').text();
+            ($opJ === '') ? $totalJ.text(parseInt($sumAcc) + ' (' + $classHP + '+' + (parseInt($sumAcc) - $classHP) + ')') : $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
           } else if ($jewel == 'Bracelet') {
-            if ($gearP == 0)
-              $totalJ.text((parseInt($classPDEF) + parseInt($gearJ)) + ' (' + $classPDEF + '+' + $gearJ + ')');
-            else
-              $totalJ.text($sumAcc + ' (' + $classPDEF + '+' + (parseInt($gearP) + parseInt($gearJ)) + ')');
+            $opJ = $('p[name="P.DEF"]').text();
+            ($opJ === '') ? $totalJ.text(parseInt($sumAcc) + ' (' + $classHP + '+' + (parseInt($sumAcc) - $classHP) + ')') : $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
           }
         }
       }
@@ -796,18 +775,9 @@
       $totalO = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
-      if ($orb !== '- - - - - - - - - -') {
-        if ($jewel == 'Ring')
-          $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO);
-        else
-          $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
-        $optionO = $totalO.find('#plsSt1');
-        $opO = $('p[name="Max HP"]').text();
-        if ($opO === '')
-          $opO = 1;
-        $totalO.text(parseInt($sumOrb * ($opO / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
-      } else
-        $totalO.text($('#heroHP').text());
+      ($jewel == 'Ring') ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
+      $opO = $('p[name="Max HP"]').text();
+      ($opO === '') ? $totalO.text(parseInt($sumOrb) + ' (' + $classHP + '+' + (parseInt($sumOrb) - $classHP) + ')') : $totalO.text(parseInt($sumOrb * ($opO / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
       $('#heroHP').text($totalO.text());
       $('#heroHPs').text($totalO.text().split(' ')[0]);
     };
