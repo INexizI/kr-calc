@@ -326,9 +326,11 @@
       $('#art label').filter('.active').removeClass('active');
     }).change();
 
+    // ???
     $('.ay').change(function() {
       $('.t-op p').empty();
-      $c = 0;$sAtk = 0;$sAspd = 0;$sCr = 0;$sCrD = 0;
+      $c=0;
+      $sAtk=0;$sAspd=0;$sCr=0;$sCrD=0;$sMPa=0;$sMPs=0;$sPen=0;$sLif=0;$sAcc=0;$sDAcc=0;$sHP=0;$sCC=0;$sBl=0;$sPBl=0;$sMBl=0;$sCR=0;$sPCR=0;$sMCR=0;$sDef=0;$sPDef=0;$sMDef=0;$sDod=0;$sPDod=0;$sMDod=0;$sTgh=0;$sPTgh=0;$sMTgh=0;$sRec=0;$sMRec=0;$sDRB=0;$sDRPB=0;$sDRMB=0;
       $x = $('.opt .ax').serializeArray();
       $y = $('.opt .ay').serializeArray();
       $.each($x, function(iX, n) {
@@ -345,6 +347,90 @@
         } else if (n.value == 'Crit DMG') {
           $sCrD += Number(parseFloat($c.value));
           $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+        } else if (n.value == 'MP Recovery/Attack') {
+          $sMPa += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+        } else if (n.value == 'MP Recovery/Sec') {
+          $sMPs += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
+        } else if (n.value == 'Penetration') {
+          $sPen += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Penetration"]').text($sPen);
+        } else if (n.value == 'Lifesteal') {
+          $sLif += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+        } else if (n.value == 'ACC') {
+          $sAcc += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ACC"]').text($sAcc);
+        } else if (n.value == 'Debuf ACC') {
+          $sDAcc += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Debuf ACC"]').text($sDAcc);
+        } else if (n.value == 'Max HP') {
+          $sHP += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        } else if (n.value == 'CC Resist') {
+          $sCC += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+        } else if (n.value == 'Block') {
+          $sBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Block"]').text($sBl);
+        } else if (n.value == 'P.Block') {
+          $sPBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
+        } else if (n.value == 'M.Block') {
+          $sMBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
+        } else if (n.value == 'Crit Resistance') {
+          $sCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
+        } else if (n.value == 'P.Crit Resistance') {
+          $sPCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
+        } else if (n.value == 'M.Crit Resistance') {
+          $sMCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
+        } else if (n.value == 'DEF') {
+          $sDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DEF"]').text($sDef);
+        } else if (n.value == 'P.DEF') {
+          $sPDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+        } else if (n.value == 'M.DEF') {
+          $sMDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+        } else if (n.value == 'Dodge') {
+          $sDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Dodge"]').text($sDod);
+        } else if (n.value == 'P.Dodge') {
+          $sPDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
+        } else if (n.value == 'M.Dodge') {
+          $sMDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
+        } else if (n.value == 'Tough') {
+          $sTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Tough"]').text($sTgh);
+        } else if (n.value == 'P.Tough') {
+          $sPTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+        } else if (n.value == 'M.Tough') {
+          $sMTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+        } else if (n.value == 'Recovery') {
+          $sRec += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Recovery"]').text($sRec);
+        } else if (n.value == 'Mana Recovery upon taking DMG') {
+          $sMRec += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
+        } else if (n.value == 'DMG Reduction upon Block') {
+          $sDRB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon Block"]').text($sDRB);
+        } else if (n.value == 'DMG Reduction upon P.Block') {
+          $sDRPB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon P.Block"]').text($sDRPB);
+        } else if (n.value == 'DMG Reduction upon M.Block') {
+          $sDRMB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon M.Block"]').text($sDRMB);
         }
       });
       gearStat();
