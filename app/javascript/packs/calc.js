@@ -326,116 +326,6 @@
       $('#art label').filter('.active').removeClass('active');
     }).change();
 
-    // ???
-    $('.ay').change(function() {
-      $('.t-op p').empty();
-      $c=0;
-      $sAtk=0;$sAspd=0;$sCr=0;$sCrD=0;$sMPa=0;$sMPs=0;$sPen=0;$sLif=0;$sAcc=0;$sDAcc=0;$sHP=0;$sCC=0;$sBl=0;$sPBl=0;$sMBl=0;$sCR=0;$sPCR=0;$sMCR=0;$sDef=0;$sPDef=0;$sMDef=0;$sDod=0;$sPDod=0;$sMDod=0;$sTgh=0;$sPTgh=0;$sMTgh=0;$sRec=0;$sMRec=0;$sDRB=0;$sDRPB=0;$sDRMB=0;
-      $x = $('.opt .ax').serializeArray();
-      $y = $('.opt .ay').serializeArray();
-      $.each($x, function(iX, n) {
-        $c = $('.opt .ay').serializeArray()[iX];
-        if (n.value == 'ATK') {
-          $sAtk += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="ATK"]').text($sAtk);
-        } else if (n.value == 'ATK Spd') {
-          $sAspd += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
-        } else if (n.value == 'Crit') {
-          $sCr += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Crit"]').text($sCr);
-        } else if (n.value == 'Crit DMG') {
-          $sCrD += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
-        } else if (n.value == 'MP Recovery/Attack') {
-          $sMPa += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
-        } else if (n.value == 'MP Recovery/Sec') {
-          $sMPs += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
-        } else if (n.value == 'Penetration') {
-          $sPen += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Penetration"]').text($sPen);
-        } else if (n.value == 'Lifesteal') {
-          $sLif += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
-        } else if (n.value == 'ACC') {
-          $sAcc += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="ACC"]').text($sAcc);
-        } else if (n.value == 'Debuf ACC') {
-          $sDAcc += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Debuf ACC"]').text($sDAcc);
-        } else if (n.value == 'Max HP') {
-          $sHP += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Max HP"]').text($sHP);
-        } else if (n.value == 'CC Resist') {
-          $sCC += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
-        } else if (n.value == 'Block') {
-          $sBl += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Block"]').text($sBl);
-        } else if (n.value == 'P.Block') {
-          $sPBl += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
-        } else if (n.value == 'M.Block') {
-          $sMBl += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
-        } else if (n.value == 'Crit Resistance') {
-          $sCR += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
-        } else if (n.value == 'P.Crit Resistance') {
-          $sPCR += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
-        } else if (n.value == 'M.Crit Resistance') {
-          $sMCR += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
-        } else if (n.value == 'DEF') {
-          $sDef += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="DEF"]').text($sDef);
-        } else if (n.value == 'P.DEF') {
-          $sPDef += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
-        } else if (n.value == 'M.DEF') {
-          $sMDef += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
-        } else if (n.value == 'Dodge') {
-          $sDod += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Dodge"]').text($sDod);
-        } else if (n.value == 'P.Dodge') {
-          $sPDod += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
-        } else if (n.value == 'M.Dodge') {
-          $sMDod += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
-        } else if (n.value == 'Tough') {
-          $sTgh += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Tough"]').text($sTgh);
-        } else if (n.value == 'P.Tough') {
-          $sPTgh += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-        } else if (n.value == 'M.Tough') {
-          $sMTgh += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-        } else if (n.value == 'Recovery') {
-          $sRec += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Recovery"]').text($sRec);
-        } else if (n.value == 'Mana Recovery upon taking DMG') {
-          $sMRec += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
-        } else if (n.value == 'DMG Reduction upon Block') {
-          $sDRB += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="DMG Reduction upon Block"]').text($sDRB);
-        } else if (n.value == 'DMG Reduction upon P.Block') {
-          $sDRPB += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="DMG Reduction upon P.Block"]').text($sDRPB);
-        } else if (n.value == 'DMG Reduction upon M.Block') {
-          $sDRMB += Number(parseFloat($c.value));
-          $('.totalStat').find('p[name="DMG Reduction upon M.Block"]').text($sDRMB);
-        }
-      });
-      gearStat();
-    });
-
     function weaponATK() {
       $uwStat = $('#greyATK').text();
       $star = $('#uw').find('.active').next('input').val();
@@ -682,7 +572,7 @@
     function statValue() {
       $ax = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuf ACC">Debuf ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="Block">Block</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="Crit Resistance">Crit Resistance</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="DEF">DEF</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option><option value="Dodge">Dodge</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option>'
       $aTr = '<option value="Tough">Tough</option><option value="P.Tough">P.Tough</option><option value="M.Tough">M.Tough</option><option value="Recovery">Recovery</option><option value="Mana Recovery upon taking DMG">Mana Recovery upon taking DMG</option><option value="DMG Reduction upon Block">DMG Reduction upon Block</option><option value="DMG Reduction upon P.Block">DMG Reduction upon P.Block</option><option value="DMG Reduction upon M.Block">DMG Reduction upon M.Block</option>'
-      $ay = '<optgroup id="q"><option value=""></option></optgroup><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
+      $ay = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"></option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
       $('.opt').find('.ax').each(function() {
         $(this).html($ax);
       });
@@ -722,6 +612,84 @@
       }).next('p').text();
       $classMDEF = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'M.Def'
+      }).next('p').text();
+      $classCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Crit'
+      }).next('p').text();
+      $classCritDMG = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Crit DMG'
+      }).next('p').text();
+      $classMPA = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Attack'
+      }).next('p').text();
+      $classMPS = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Sec'
+      }).next('p').text();
+      $classPenetration = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Penetration'
+      }).next('p').text();
+      $classLifesteal = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Lifesteal'
+      }).next('p').text();
+      $classACC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'ACC'
+      }).next('p').text();
+      $classDACC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Debuf ACC'
+      }).next('p').text();
+      $classCC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classPB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classMB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classCR = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classPCR = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classMCR = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classPD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classMD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classPT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classMT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classManaRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classRed = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classPRed = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === ''
+      }).next('p').text();
+      $classMRed = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'DMG Reduction upon M.Block'
       }).next('p').text();
 
       $gearA = $('#heroATK').text();
@@ -875,7 +843,7 @@
         return $(this).text() === 'Set Bonus'
       }).next('p');
       if (!$setBonus.length)
-        $setBonus = $('.t-total .r-stats .role' + $gearClass).append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span></p></div></div>');
+        $setBonus = $('.t-total .r-stats .role' + $gearClass).append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuf ACC +100</span><span id="le2">4 Set: Debuf ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span></p></div></div>');
       $setBonus.find('span').hide();
       $statCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'Crit'
@@ -896,8 +864,8 @@
       $statCritD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'Crit DMG'
       }).next('p');
-      $statDebuff = $('.class-stats .role' + $gearClass).find('p').filter(function() {
-        return $(this).text() === 'Debuff ACC'
+      $statDebuf = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Debuf ACC'
       }).next('p');
 
       $f = 0;$fr = 0;$p = 0;$d = 0;$la = 0;$le = 0;$ch = 0;$s = 0;$pr = 0;$dl = 0;$t = 0;
@@ -945,18 +913,22 @@
         return $(this).text() === 'Crit DMG'
       }).next('p');
       $statLe = $('.t-total .r-stats').find('p').filter(function() {
-        return $(this).text() === 'Debuff ACC'
+        return $(this).text() === 'Debuf ACC'
       }).next('p');
 
+      $stCrit = $('p[name="Crit"]').text();
+      if ($stCrit === '')
+        $stCrit = 0;
+      $sumCrit = parseInt($statF.text()) + parseInt($stCrit);
       if (($f > 1) && ($f < 4)) {
-        $statF.text(parseInt($statCrit.text()) + 100 + ' (' + parseInt($statCrit.text()) + '+' + 100 + ')');
+        $statF.text($statF.text() + 100 + ' (' + $statF.text() + '+' + (parseInt($stCrit) + 100) + ')');
         $setBonus.find('#f1').show();
       }
       else if ($f == 4) {
-        $statF.text(parseInt($statCrit.text()) + 230 + ' (' + parseInt($statCrit.text()) + '+' + 230 + ')');
+        $statF.text($statF.text() + 230 + ' (' + $statF.text() + '+' + (parseInt($stCrit) + 230) + ')');
         $setBonus.find('#f1, #f2').show();
       } else
-        $($statF).text($statCrit.text());
+        $statF.text($statF.text() + ' (' + $statF.text() + '+' + $stCrit + ')');
 
       if (($fr > 1) && ($fr < 4)) {
         $qe = parseInt(Math.round($statGrey * 1.1));
@@ -1002,13 +974,13 @@
         $($statLa).text($statCritD.text());
 
       if (($le > 1) && ($le < 4)) {
-        $statLe.text(parseInt($statDebuff.text()) + 100 + ' (' + parseInt($statDebuff.text()) + '+' + 100 + ')');
+        $statLe.text(parseInt($statDebuf.text()) + 100 + ' (' + parseInt($statDebuf.text()) + '+' + 100 + ')');
         $setBonus.find('#le1').show();
       } else if ($le == 4) {
-        $statLe.text(parseInt($statDebuff.text()) + 230 + ' (' + parseInt($statDebuff.text()) + '+' + 230 + ')');
+        $statLe.text(parseInt($statDebuf.text()) + 230 + ' (' + parseInt($statDebuf.text()) + '+' + 230 + ')');
         $setBonus.find('#le1, #le2').show();
       } else if ($le == 1)
-        $($statLe).text($statDebuff.text());
+        $($statLe).text($statDebuf.text());
 
       if (($s > 1) && ($s < 4))
         $setBonus.find('#s1').show();
@@ -1041,7 +1013,7 @@
       });
       $('.t-total .role' + $gearClass).find('p:contains(" (")').each(function() {
         $statSplit = $(this);
-        $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '+' + '<span id="plsSt2">' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+        ($statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0) ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
     };
 
@@ -1140,18 +1112,140 @@
         $(this).parent().next('div').fadeOut('fast');
     });
 
-    $gearCalc = function() {
-      gearStat();
-      gearSet();
-      heroImg();
-      hideOption();
-    }
     $gearImg = function() {
       hideGearImage();
     }
 
-    $('.form-input select').change($gearCalc);
-    $('.rating label').click($gearCalc);
+    // ???
+    function option() {
+      $c=0;
+      $sAtk=0;$sAspd=0;$sCr=0;$sCrD=0;$sMPa=0;$sMPs=0;$sPen=0;$sLif=0;$sAcc=0;$sDAcc=0;$sHP=0;$sCC=0;$sBl=0;$sPBl=0;$sMBl=0;$sCR=0;$sPCR=0;$sMCR=0;$sDef=0;$sPDef=0;$sMDef=0;$sDod=0;$sPDod=0;$sMDod=0;$sTgh=0;$sPTgh=0;$sMTgh=0;$sRec=0;$sMRec=0;$sDRB=0;$sDRPB=0;$sDRMB=0;
+      $('.t-op p').empty();
+      $x = $('.opt .ax').serializeArray();
+      $y = $('.opt .ay').serializeArray();
+      $.each($x, function(iX, n) {
+        $c = $('.opt .ay').serializeArray()[iX];
+        if (n.value == 'ATK') {
+          $sAtk += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ATK"]').text($sAtk);
+        } else if (n.value == 'ATK Spd') {
+          $sAspd += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+        } else if (n.value == 'Crit') {
+          $sCr += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit"]').text($sCr);
+        } else if (n.value == 'Crit DMG') {
+          $sCrD += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+        } else if (n.value == 'MP Recovery/Attack') {
+          $sMPa += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+        } else if (n.value == 'MP Recovery/Sec') {
+          $sMPs += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
+        } else if (n.value == 'Penetration') {
+          $sPen += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Penetration"]').text($sPen);
+        } else if (n.value == 'Lifesteal') {
+          $sLif += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+        } else if (n.value == 'ACC') {
+          $sAcc += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="ACC"]').text($sAcc);
+        } else if (n.value == 'Debuf ACC') {
+          $sDAcc += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Debuf ACC"]').text($sDAcc);
+        } else if (n.value == 'Max HP') {
+          $sHP += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        } else if (n.value == 'CC Resist') {
+          $sCC += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+        } else if (n.value == 'Block') {
+          $sBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Block"]').text($sBl);
+        } else if (n.value == 'P.Block') {
+          $sPBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
+        } else if (n.value == 'M.Block') {
+          $sMBl += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
+        } else if (n.value == 'Crit Resistance') {
+          $sCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
+        } else if (n.value == 'P.Crit Resistance') {
+          $sPCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
+        } else if (n.value == 'M.Crit Resistance') {
+          $sMCR += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
+        } else if (n.value == 'DEF') {
+          $sDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DEF"]').text($sDef);
+        } else if (n.value == 'P.DEF') {
+          $sPDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+        } else if (n.value == 'M.DEF') {
+          $sMDef += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+        } else if (n.value == 'Dodge') {
+          $sDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Dodge"]').text($sDod);
+        } else if (n.value == 'P.Dodge') {
+          $sPDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
+        } else if (n.value == 'M.Dodge') {
+          $sMDod += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
+        } else if (n.value == 'Tough') {
+          $sTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Tough"]').text($sTgh);
+        } else if (n.value == 'P.Tough') {
+          $sPTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+        } else if (n.value == 'M.Tough') {
+          $sMTgh += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+        } else if (n.value == 'Recovery') {
+          $sRec += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Recovery"]').text($sRec);
+        } else if (n.value == 'Mana Recovery upon taking DMG') {
+          $sMRec += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
+        } else if (n.value == 'DMG Reduction upon Block') {
+          $sDRB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon Block"]').text($sDRB);
+        } else if (n.value == 'DMG Reduction upon P.Block') {
+          $sDRPB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon P.Block"]').text($sDRPB);
+        } else if (n.value == 'DMG Reduction upon M.Block') {
+          $sDRMB += Number(parseFloat($c.value));
+          $('.totalStat').find('p[name="DMG Reduction upon M.Block"]').text($sDRMB);
+        }
+      });
+    }
+    $('.ax').change(function() {
+      $('.t-op p').empty();
+      option();
+    });
+    $('.ay').change(function() {
+      option();
+      gearStat();
+    });
+    $('.form-input select').change(function() {
+      gearStat();
+      gearSet();
+      heroImg();
+      hideOption();
+      $('.t-op p').empty();
+      option();
+    });
+    $('.rating label').click(function(){
+      gearStat();
+      gearSet();
+      heroImg();
+      hideOption();
+    });
     $('#calc_role_id, #calc_char_id').change($gearImg);
   });
 }).call(this);
