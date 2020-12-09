@@ -731,6 +731,8 @@
       $totalH = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
+      if ($treasure === '- - - - - - - - - -')
+        option();
       ($jewel == 'Ring') ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
       $opH = $('p[name="Max HP"]').text();
       ($opH === '') ? $totalH.text(parseInt($sumTre) + ' (' + $classHP + '+' + (parseInt($sumTre) - $classHP) + ')') : $totalH.text(parseInt($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
@@ -752,8 +754,10 @@
           } else
             $totalP.text((parseInt($classPDEF) + parseInt($gearP)) + ' (' + $classPDEF + '+' + $gearP + ')');
         }
-      } else
+      } else {
         $totalP.text($classPDEF);
+        option();
+      }
 
       // m def
       $totalM = $('.t-total .r-stats').find('p').filter(function() {
@@ -770,8 +774,10 @@
           } else
             $totalM.text((parseInt($classMDEF) + parseInt($gearM)) + ' (' + $classMDEF + '+' + $gearM + ')');
         }
-      } else
+      } else {
         $totalM.text($classMDEF);
+        option();
+      }
 
       // jewel
       if ($jewel !== '- - - - - - - - - -') {
@@ -823,12 +829,15 @@
             ($opJ === '') ? $totalJ.text(parseInt($sumAcc) + ' (' + $classHP + '+' + (parseInt($sumAcc) - $classHP) + ')') : $totalJ.text(parseInt($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
           }
         }
-      }
+      } else
+        option();
 
       // orb
       $totalO = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
+      if ($orb === '- - - - - - - - - -')
+        option();
       ($jewel == 'Ring') ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO);
       $opO = $('p[name="Max HP"]').text();
       ($opO === '') ? $totalO.text(parseInt($sumOrb) + ' (' + $classHP + '+' + (parseInt($sumOrb) - $classHP) + ')') : $totalO.text(parseInt($sumOrb * ($opO / 100 + 1)) + ' (' + $classHP + '+' + (parseInt($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
@@ -858,7 +867,7 @@
       $statCritResM = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'M.Crit Resistance'
       }).next('p');
-      $statMP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMPa = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'MP Recovery/Attack'
       }).next('p');
       $statCritD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
@@ -866,6 +875,60 @@
       }).next('p');
       $statDebuf = $('.class-stats .role' + $gearClass).find('p').filter(function() {
         return $(this).text() === 'Debuf ACC'
+      }).next('p');
+      $statASpd = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'ATK Spd'
+      }).next('p');
+      $statMPs = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Sec'
+      }).next('p');
+      $statPen = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Penetration'
+      }).next('p');
+      $statLife = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Lifesteal'
+      }).next('p');
+      $statACC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'ACC'
+      }).next('p');
+      $statCC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'CC Resist'
+      }).next('p');
+      $statPB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.Block'
+      }).next('p');
+      $statMB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.Block'
+      }).next('p');
+      $statPDef = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.DEF'
+      }).next('p');
+      $statMDef = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.DEF'
+      }).next('p');
+      $statPD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.Dodge'
+      }).next('p');
+      $statPD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.Dodge'
+      }).next('p');
+      $statPT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'P.Tough'
+      }).next('p');
+      $statMT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'M.Tough'
+      }).next('p');
+      $statRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Recovery'
+      }).next('p');
+      $statManaRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'Mana Recovery upon taking DMG'
+      }).next('p');
+      $statPRed = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'DMG Reduction upon P.Block'
+      }).next('p');
+      $statMRed = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+        return $(this).text() === 'DMG Reduction upon M.Block'
       }).next('p');
 
       $f = 0;$fr = 0;$p = 0;$d = 0;$la = 0;$le = 0;$ch = 0;$s = 0;$pr = 0;$dl = 0;$t = 0;
@@ -900,10 +963,10 @@
       $statFr = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
-      $statP = $('.t-total .r-stats').find('p').filter(function() {
+      $statPCr = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'P.Crit Resistance'
       }).next('p');
-      $statM = $('.t-total .r-stats').find('p').filter(function() {
+      $statMCr = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'M.Crit Resistance'
       }).next('p');
       $statD = $('.t-total .r-stats').find('p').filter(function() {
@@ -919,59 +982,83 @@
       $stCrit = $('p[name="Crit"]').text();
       if ($stCrit === '')
         $stCrit = 0;
-      $sumCrit = parseInt($statF.text()) + parseInt($stCrit);
+      $sumCrit = parseInt($statCrit.text()) + parseInt($stCrit);
       if (($f > 1) && ($f < 4)) {
-        $statF.text($statF.text() + 100 + ' (' + $statF.text() + '+' + (parseInt($stCrit) + 100) + ')');
+        $statF.text($sumCrit + 100 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 100) + ')');
         $setBonus.find('#f1').show();
       }
       else if ($f == 4) {
-        $statF.text($statF.text() + 230 + ' (' + $statF.text() + '+' + (parseInt($stCrit) + 230) + ')');
+        $statF.text($sumCrit.text() + 230 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 230) + ')');
         $setBonus.find('#f1, #f2').show();
       } else
-        $statF.text($statF.text() + ' (' + $statF.text() + '+' + $stCrit + ')');
+        $statF.text($sumCrit + ' (' + $statCrit.text() + '+' + ($sumCrit - $statCrit.text()) + ')');
 
+      $stHP = $('p[name="Max HP"]').text();
+      if ($stHP === '')
+        $stHP = 0;
+      $sumHP = parseInt($statHP.text()) + parseInt($stHP);
       if (($fr > 1) && ($fr < 4)) {
-        $qe = parseInt(Math.round($statGrey * 1.1));
+        $qe = parseInt(Math.round($statGrey * (1.1 + $stHP/100)));
         $statFr.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
         $setBonus.find('#fr1').show();
       } else if ($fr == 4) {
-        $qe = parseInt(Math.round($statGrey * 1.23));
+        $qe = parseInt(Math.round($statGrey * (1.23 + $stHP/100)));
         $statFr.text($qe + ' (' + parseInt($statHP.text()) + '+' + ($qe - parseInt($statHP.text())) + ')');
         $setBonus.find('#fr1, #fr2').show();
       } else if ($fr == 1) {
-        $statFr.text($('#heroHP').text());
+        $qe = parseInt(Math.round($statGrey * (1 + $stHP/100)));
+        $statFr.text($qe + ' (' + $statHP.text() + '+' + ($qe - parseInt($statHP.text())) + ')');
       }
 
+      $stCR = $('p[name="Crit Resistance"]').text();
+      if ($stCR === '')
+        $stCR = 0;
+      $stPCR = $('p[name="P.Crit Resistance"]').text();
+      if ($stPCR === '')
+        $stPCR = 0;
+      $sumPCR = parseInt($statCritResP.text()) + parseInt($stPCR) + parseInt($stCR);
+      $stMCR = $('p[name="M.Crit Resistance"]').text();
+      if ($stMCR === '')
+        $stMCR = 0;
+      $sumMCR = parseInt($statCritResM.text()) + parseInt($stMCR) + parseInt($stCR);
       if (($p > 1) && ($p < 4)) {
-        $statP.text(parseInt($statCritResP.text()) + 100 + ' (' + parseInt($statCritResP.text()) + '+' + 100 + ')');
-        $statM.text(parseInt($statCritResM.text()) + 100 + ' (' + parseInt($statCritResM.text()) + '+' + 100 + ')');
+        $statPCr.text($sumPCR + 100 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 100) + ')');
+        $statMCr.text($sumMCR + 100 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 100) + ')');
         $setBonus.find('#p1').show();
       } else if ($p == 4) {
-        $statP.text(parseInt($statCritResP.text()) + 230 + ' (' + parseInt($statCritResP.text()) + '+' + 230 + ')');
-        $statM.text(parseInt($statCritResM.text()) + 230 + ' (' + parseInt($statCritResM.text()) + '+' + 230 + ')');
+        $statPCr.text($sumPCR + 230 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 230) + ')');
+        $statMCr.text($sumMCR + 230 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 230) + ')');
         $setBonus.find('#p1, #p2').show();
       } else {
-        $($statP).text($statCritResP.text());
-        $($statM).text($statCritResM.text());
+        $statPCr.text($sumPCR + ' (' + $statCritResP.text() + '+' + ($sumPCR - $statCritResP.text()) + ')');
+        $statMCr.text($sumMCR + ' (' + $statCritResM.text() + '+' + ($sumMCR - $statCritResM.text()) + ')');
       }
 
+      $stMPa = $('p[name="MP Recovery/Attack"]').text();
+      if ($stMPa === '')
+        $stMPa = 0;
+      $sumMPa = parseInt($statMPa.text()) + parseInt($stMPa);
       if (($d > 1) && ($d < 4)) {
-        $statD.text(parseInt($statMP.text()) + 200 + ' (' + parseInt($statMP.text()) + '+' + 200 + ')');
+        $statD.text($sumMPa + 200 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 200) + ')');
         $setBonus.find('#d1').show();
       } else if ($d == 4) {
-        $statD.text(parseInt($statMP.text()) + 460 + ' (' + parseInt($statMP.text()) + '+' + 460 + ')');
+        $statD.text($sumMPa + 460 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 460) + ')');
         $setBonus.find('#d1, #d2').show();
       } else if ($d == 1)
-        $($statD).text($statMP.text());
+        $statD.text($sumMPa + ' (' + $statMPa.text() + '+' + ($sumMPa - $statMPa.text()) + ')');
 
+      $stCritD = $('p[name="Crit DMG"]').text();
+      if ($stCritD === '')
+        $stCritD = 0;
+      $sumCritD = parseInt($statCritD.text()) + parseInt($stCritD);
       if (($la > 1) && ($la < 4)) {
-        $statLa.text(parseInt($statCritD.text()) + 20 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 20 + '%' + ')');
+        $statLa.text($sumCritD + 20 + '% (' + $statCritD.text() + '+' + (parseInt($stCritD) + 20) + '%)');
         $setBonus.find('#la1').show();
       } else if ($la == 4) {
-        $statLa.text(parseInt($statCritD.text()) + 46 + '%' + ' (' + parseInt($statCritD.text()) + '+' + 46 + '%' + ')');
+        $statLa.text($sumCritD + 46 + '% (' + $statCritD.text() + '+' + (parseInt($stCritD) + 46) + '%)');
         $setBonus.find('#la1, #la2').show();
-      } else if ($la == 1)
-        $($statLa).text($statCritD.text());
+      } else
+        $statLa.text($sumCritD + '% (' + $statCritD.text() + '+' + ($sumCritD - $statCritD.text()) + '%)');
 
       if (($le > 1) && ($le < 4)) {
         $statLe.text(parseInt($statDebuf.text()) + 100 + ' (' + parseInt($statDebuf.text()) + '+' + 100 + ')');
@@ -1007,13 +1094,17 @@
       else if ($t == 4)
         $setBonus.find('#t1, #t2').show();
 
-      $('.t-total .r-stats .role' + $gearClass).find('p').each(function() {
-        $zeroStat = $(this).text();
-        ($zeroStat === '0') ? $(this).hide().prev('p').hide().parent().css('height', 0) : $(this).show().prev('p').show().parent().css('height', '25px');
-      });
       $('.t-total .role' + $gearClass).find('p:contains(" (")').each(function() {
         $statSplit = $(this);
         ($statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0) ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+      });
+      $('.t-total .role' + $gearClass).find('p:contains("% (")').each(function() {
+        $statSplit = $(this);
+        ($statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%') ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+      });
+      $('.t-total .r-stats .role' + $gearClass).find('p').each(function() {
+        $zeroStat = $(this).text();
+        ($zeroStat === '0') ? $(this).hide().prev('p').hide().parent().css('height', 0) : $(this).show().prev('p').show().parent().css('height', '25px');
       });
     };
 
