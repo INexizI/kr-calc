@@ -754,10 +754,10 @@ h4 {
         position: relative;
 
         .opt {
-          .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
+          .calc_st_treasure, .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
             height: 0;
           }
-          .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
+          .calc_st_treasure_st, .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
             width: 0;
           }
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
@@ -792,6 +792,26 @@ h4 {
           left: 120px;
           bottom: 21px;
         }
+      }
+      #g-treasure {
+        right: 300px;
+        bottom: 103px;
+        input {
+          position: relative;
+          left: 120px;
+          bottom: 21px;
+        }
+        .ay {
+          position: relative;
+          left: 145px;
+        }
+        .op {
+          position: relative;
+          left: 80px;
+        }
+      }
+      .scnd {
+        display: none;
       }
       .rating > label {
         display: inline-block;

@@ -112,7 +112,7 @@ title Calculator
                   input name="gearOption" type="checkbox"
 
         div
-          .form-input
+          .form-input#treasure
             = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in img'}
             .gSt
               p#tre
@@ -129,17 +129,53 @@ title Calculator
                 input name="starValue" type="radio" value="1"
                 label.bt0 ◯
                 input name="starValue" type="radio" value="0"
-            .gOption#g-right
+            .gOption#g-treasure
               .opt
-                  = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                  = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
-                  .op
-                    input name="gearOption" type="checkbox"
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
               .opt
-                  = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                  = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
-                  .op
-                    input name="gearOption" type="checkbox"
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+            .gOption#g-treasure.scnd
+              span 2 treasure
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+            .gOption#g-treasure.scnd
+              span 3 treasure
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+            .gOption#g-treasure.scnd
+              span 4 treasure
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
+              .opt
+                = f.input :st_treasure, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
+                = f.input :st_treasure_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                .op
+                  input name="gearOption" type="checkbox"
 
           .form-input
             .calc_gear_jewelry
@@ -372,12 +408,14 @@ title Calculator
       p name='Penetration'
       p name='Lifesteal'
       p name='ACC'
-      p name='Debuf ACC'
+      p name='Debuff ACC'
       p name='Max HP'
       p name='CC Resist'
       p name='Block'
       p name='P.Block'
       p name='M.Block'
+      p name='P.Block DEF'
+      p name='M.Block DEF'
       p name='Crit Resistance'
       p name='P.Crit Resistance'
       p name='M.Crit Resistance'
