@@ -752,6 +752,7 @@ h4 {
       .gOption {
         display: none;
         position: relative;
+        height: 50px;
 
         .opt {
           .calc_st_treasure, .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
@@ -794,8 +795,8 @@ h4 {
         }
       }
       #g-treasure {
-        right: 300px;
-        bottom: 103px;
+        left: 120px;
+        bottom: 210px;
         input {
           position: relative;
           left: 120px;
@@ -811,7 +812,7 @@ h4 {
         }
       }
       .scnd {
-        display: none;
+        margin: 3px 0;
       }
       .rating > label {
         display: inline-block;
