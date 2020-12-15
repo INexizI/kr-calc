@@ -179,7 +179,7 @@ title Calculator
               - emp = ['- - - - - - - - - -']
               - tm = ['Technomagic']
               - options = ['Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion']
-              - gear_type = [['Ring', emp + options + tm], ['Earrings', options + tm], ['Bracelet', options], ['Necklace', options]]
+              - gear_type = [['Unequip', emp], ['Ring', options + tm], ['Earrings', options + tm], ['Bracelet', options], ['Necklace', options]]
               = f.select :gear_jewelry, grouped_options_for_select(gear_type), input_html: {class: 'img'}
             .gSt
               p#acc
