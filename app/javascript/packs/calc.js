@@ -1215,15 +1215,16 @@
 
       $('.t-total .role' + $gearClass).find('p:contains(" (")').each(function() {
         $statSplit = $(this);
-        ($statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0) ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0 ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
       $('.t-total .role' + $gearClass).find('p:contains("% (")').each(function() {
         $statSplit = $(this);
-        ($statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%') ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
-      $('.t-total .r-stats .role' + $gearClass).find('p').each(function() {
+      $('.t-total .r-stats .role' + $gearClass).find('#s-val').each(function() {
         $zeroStat = $(this).text();
-        ($zeroStat === '0') ? $(this).hide().prev('p').hide().parent().css('height', 0) : $(this).show().prev('p').show().parent().css('height', '25px');
+        $zeroStat === '0' ? $(this).parent().css('height', 0).children().hide() : $(this).parent().css('height', '25px').children().show();
+        $(this).find('#plsSt1').text() === '' ? $(this).next('#s-per').text($zeroStat/10 + '%') : $(this).next('#s-per').text($(this).find('#plsSt1').text()/10 + '%');
       });
     };
 

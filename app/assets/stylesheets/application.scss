@@ -445,7 +445,7 @@ input {
   }
   .r-stat {
     display: grid;
-    grid-template: "item1 item2";
+    grid-template: "item1 item2 item3";
     text-align: center;
 
     p {
@@ -620,75 +620,6 @@ h4 {
     padding: 3px 5px 10px 5px;
   }
 }
-
-// .g-star-button {
-//   .g-img {
-//     img {
-//       width: 100px;
-//       height: 100px;
-//       box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-//     }
-//   }
-//   .g-button {
-//     display: flex;
-//
-//     button {
-//       width: 32px;
-//       height: 32px;
-//       border: 1px solid;
-//       margin: 3px;
-//       outline: none;
-//       background: #f0f0f0;
-//     }
-//     .b-act {
-//       background: #808080;
-//     }
-//     .btn {
-//       display: none;
-//       margin: 0 10px;
-//       padding: 2px 3px;
-//     }
-//     #bt0 {
-//       display: block;
-//     }
-//     .rating {
-//       unicode-bidi: bidi-override;
-//       direction: rtl;
-//       float: left;
-//       margin-top: -3px;
-//
-//       .bt0 {
-//         width: 15px;
-//         font-size: 12px;
-//         vertical-align: 2px;
-//       }
-//     }
-//     .rating > label {
-//       display: inline-block;
-//       position: relative;
-//       width: 1.1em;
-//       font-size: 20px;
-//     }
-//     .rating > #bt-star.active:before,
-//     .rating > #bt-star.active ~ #bt-star:before,
-//     .rating > #bt-star:hover:before,
-//     .rating > #bt-star:hover ~ #bt-star:before {
-//       content: "\2605";
-//       position: absolute;
-//     }
-//     input {
-//       display: none;
-//     }
-//   }
-//   #p0 {
-//     padding: 0 5px;
-//   }
-// }
-// .g-stat {
-//   p {
-//     display: none;
-//   }
-// }
 
 /*
   Calc
@@ -988,7 +919,6 @@ h4 {
           color: rgb(171, 142, 116);
 
           p {
-            // width: 300px;
             height: 25px;
             margin: 0;
           }
@@ -1002,12 +932,14 @@ h4 {
             padding: 0 10px;
             text-align: left;
           }
+          #s-per {
+            width: 50px;
+            margin-left: -60px;
+          }
           #plsSt1 {
-            // color: darkturquoise;
             color: rgb(50, 170, 180);
           }
           #plsSt2 {
-            // color: limegreen;
             color: rgb(0, 200, 50);
           }
         }
