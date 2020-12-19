@@ -1222,10 +1222,30 @@
         $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
       $('.t-total .r-stats .role' + $gearClass).find('#s-val').each(function() {
-        $zeroStat = $(this).text();
-        $zeroStat === '0' ? $(this).parent().css('height', 0).children().hide() : $(this).parent().css('height', '25px').children().show();
-        $(this).find('#plsSt1').text() === '' ? $(this).next('#s-per').text($zeroStat/10 + '%') : $(this).next('#s-per').text($(this).find('#plsSt1').text()/10 + '%');
+        $zeroStat = $(this);
+        $softcap = $($zeroStat).prev().text();
+        $zeroStat.text() === '0' ? $(this).parent().css('height', 0).children().hide() : $(this).parent().css('height', '25px').children().show();
+        $(this).find('#plsSt1').text() === '' ? $softn = $zeroStat.text() : $softn = $(this).find('#plsSt1').text();
+        if (($softcap == 'Crit') || ($softcap == 'ACC'))
+          $softn > 1500 ? $(this).next('#s-per').text((1500 + ($softn - 1500)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if (($softcap == 'P.Block') || ($softcap == 'M.Block') || ($softcap == 'P.Dodge') || ($softcap == 'M.Dodge') || ($softcap == 'Lifesteal') || ($softcap == 'P.Crit Resistance') || ($softcap == 'M.Crit Resistance'))
+          $softn > 500 ? $(this).next('#s-per').text((500 + ($softn - 500)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if ($softcap == 'CC Resist')
+          $softn > 1000 ? $(this).next('#s-per').text((1000 + ($softn - 1000)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if (($softcap == 'Penetration') || ($softcap == 'P.Tough') || ($softcap == 'M.Tough'))
+          $softn > 450 ? $(this).next('#s-per').text((450 + ($softn - 450)*0.4)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if ($softcap == 'ATK Spd')
+          $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if (($softcap == 'P.Block DEF') || ($softcap == 'M.Block DEF'))
+          $softn > 225 ? $(this).next('#s-per').text((225 + ($softn - 225)*0.2)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else if ($softcap == 'MP Recovery/Attack')
+          $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+        else
+          $(this).next('#s-per').text($softn/10 + '%')
       });
+      // $('.t-total .r-stats .role' + $gearClass).find('#s-name').each(function() {
+        // if ($(this).text() == 'Crit')
+      // });
     };
 
     function heroImg() {
