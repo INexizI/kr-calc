@@ -1162,16 +1162,18 @@
       $tPB.text($sumPB + ' (' + $statPB.text() + '+' + ($sumPB - $statPB.text()) + ')');
       $tMB.text($sumMB + ' (' + $statMB.text() + '+' + ($sumMB - $statMB.text()) + ')');
 
+      $stBD = $('p[name="Block DEF"]').text();
+      if ($stBD === '')
+        $stBD = 0;
       $stPBD = $('p[name="P.Block DEF"]').text();
       if ($stPBD === '')
         $stPBD = 0;
-      $sumPBD = parseInt($statPBD.text()) + parseInt($stPBD);
-      $tPBD.text($sumPBD + ' (' + $statPBD.text() + '+' + ($sumPBD - $statPBD.text()) + ')');
-
+      $sumPBD = parseInt($statPBD.text()) + parseInt($stPBD) + parseInt($stBD);
       $stMBD = $('p[name="M.Block DEF"]').text();
       if ($stMBD === '')
         $stMBD = 0;
-      $sumMBD = parseInt($statMBD.text()) + parseInt($stMBD);
+      $sumMBD = parseInt($statMBD.text()) + parseInt($stMBD) + parseInt($stBD);
+      $tPBD.text($sumPBD + ' (' + $statPBD.text() + '+' + ($sumPBD - $statPBD.text()) + ')');
       $tMBD.text($sumMBD + ' (' + $statMBD.text() + '+' + ($sumMBD - $statMBD.text()) + ')');
 
       $stT = $('p[name="Tough"]').text();
@@ -1233,7 +1235,7 @@
         else if ($softcap == 'CC Resist')
           $softn > 1000 ? $(this).next('#s-per').text((1000 + ($softn - 1000)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if (($softcap == 'Penetration') || ($softcap == 'P.Tough') || ($softcap == 'M.Tough'))
-          $softn > 450 ? $(this).next('#s-per').text((450 + ($softn - 450)*0.4)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
+          $softn > 450 ? $(this).next('#s-per').text(((450 + ($softn - 450)*0.409)/10).toFixed(1) + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if ($softcap == 'ATK Spd')
           $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if (($softcap == 'P.Block DEF') || ($softcap == 'M.Block DEF'))
@@ -1243,9 +1245,6 @@
         else
           $(this).next('#s-per').text($softn/10 + '%')
       });
-      // $('.t-total .r-stats .role' + $gearClass).find('#s-name').each(function() {
-        // if ($(this).text() == 'Crit')
-      // });
     };
 
     function heroImg() {
