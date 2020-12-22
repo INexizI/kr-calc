@@ -7,15 +7,10 @@
 }
 
 html, body {
-  width: 100%;
-  height: 100%;
-  background: black;
+
 }
 
 body {
-  min-height: 100%;
-  height: auto;
-  max-width: 1200px;
   margin: auto;
   background: #757575;
   font-family: 'Quicksand', sans-serif;
@@ -24,7 +19,7 @@ body {
 }
 
 header {
-  width: 1200px;
+  width: 100%;
   position: absolute;
 }
 
@@ -38,19 +33,29 @@ input {
 
 .inner {
   .inner_links {
-    float: left;
-    padding: 3px 5px;
+    position: fixed;
+    z-index: 1;
+    left: 5px;
+    top: 3px;
   }
 
   .input_search {
-    float: right;
-    width: calc(100% - 50px);
+    position: fixed;
+    width: 500px;
+    z-index: 1;
+    right: 0;
 
     input {
-      display: block;
-      outline-width: 0;
       padding: 5px;
-      height: 15px;
+      text-indent: 20px;
+      background-size: 15px;
+      background-position: 5px 5px;
+      background-repeat: no-repeat;
+      background-image: url('/images/search.svg');
+    }
+    input:focus {
+      text-indent: 0px;
+      background-image: none;
     }
   }
 
@@ -74,7 +79,7 @@ input {
 }
 
 .outer {
-  padding-top: 2em;
+  // padding-top: 27px;
 }
 
 .back {
@@ -82,7 +87,10 @@ input {
 }
 
 #a {
-  padding: 0 5px;
+  // padding: 0 5px;
+  z-index: 1;
+  top: 30px;
+  left: 5px;
 }
 
 .home {
@@ -146,6 +154,8 @@ input {
 
 .h-main {
   display: none;
+  width: 900px;
+  margin: 0 auto;
   justify-content: center;
 
   .h-char {
@@ -189,39 +199,70 @@ input {
 /*
   Hero Show
 */
+//
+.char {
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 100vh;
+}
 
 .c-main {
   display: flex;
+  margin: 0 auto;
+  padding: 15px;
   flex-wrap: wrap;
+  font-size: 15px;
+  height: -webkit-fill-available;
+  backdrop-filter: blur(2.5px) saturate(0.6) grayscale(0.3);
 }
 
 .c-background {
-  text-align: center;
+  // width: 780px;
+  margin: auto;
+  padding: 5px;
 
   img {
-    width: 750px;
-    padding: 5px;
+    // width: 780px;
+  }
+  p {
+    height: 0;
+    width: 875px;
+    bottom: 675px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    // color: rgba(0, 0, 0, 0);
   }
 }
-
-.c-description {
-  padding: 10px;
-}
+// .c-background:hover {
+//   img {
+//     // filter: grayscale(1) opacity(0.2) blur(2px);
+//     filter: opacity(0.2) blur(2px);
+//   }
+//   p {
+//     color: rgba(0, 0, 0, 1);
+//   }
+// }
 
 .c-sub {
   margin: auto;
-  padding: 10px 0;
+  padding: 5px;
 
+  .c-avatar {
+    img {
+      border-radius: 10%;
+    }
+  }
   .c-title {
     display: flex;
-    width: 150px;
+    justify-content: center;
+
     img {
       width: 20px;
       height: 20px;
     }
     p {
-      margin: auto;
-      // font-size: 1.5em;
+      margin: 0 3px;
     }
     #c-class img {
       border-radius: 50%;
@@ -233,12 +274,12 @@ input {
 
     .c-perk-img {
       margin: 3px;
-      width: 62px;
-      height: 62px;
+      width: 52px;
+      height: 52px;
 
       img:not(#manaOrb) {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
       }
     }
     .c-pepe {
@@ -246,6 +287,11 @@ input {
       grid-template:
           "item1 item2 item3 item4"
           "item5 item6 item7 item8";
+    }
+  }
+  .c-p {
+    h4 {
+      width: 15px;
     }
   }
   .c-stat {
@@ -845,7 +891,7 @@ h4 {
 
             img {
               width: 75px;
-              border-radius: 25%;
+              border-radius: 10%;
             }
           }
           .perk-tp {

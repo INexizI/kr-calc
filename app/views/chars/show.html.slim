@@ -3,7 +3,7 @@ title = @char.name
 = link_to 'javascript:history.back()', class: 'back', id: 'a' do
   = image_tag '/images/left.svg'
 
-.char
+.char style=("background-image: url('/images/media/heroes/#{@char.name}/Loading Screen.png')")
   .c-main
     .c-sub#centr
       .c-avatar
@@ -25,7 +25,6 @@ title = @char.name
     .c-sub
       = render 'perk'
 
-  .c-background
+  / .c-background
     img src='/images/media/heroes/#{@char.name}/Loading Screen.png'
-  .c-description
-    = @char.description
+    p = @char.description
