@@ -1,113 +1,114 @@
 title Hero
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/knight.png'
-    span Knight
-  .h-main
-    - @chars.where(role: 1).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+.cc
+  .main
+    .h-title
+      = image_tag '/images/media/classes/knight.png'
+      span Knight
+    .h-main
+      - @chars.where(role: 1).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/warrior.png'
-    span Warrior
-  .h-main
-    - @chars.where(role: 2).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/warrior.png'
+      span Warrior
+    .h-main
+      - @chars.where(role: 2).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/assassin.png'
-    span Assassin
-  .h-main
-    - @chars.where(role: 3).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/assassin.png'
+      span Assassin
+    .h-main
+      - @chars.where(role: 3).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/archer.png'
-    span Archer
-  .h-main
-    - @chars.where(role: 4).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/archer.png'
+      span Archer
+    .h-main
+      - @chars.where(role: 4).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/mechanic.png'
-    span Mechanic
-  .h-main
-    - @chars.where(role: 5).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/mechanic.png'
+      span Mechanic
+    .h-main
+      - @chars.where(role: 5).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/wizard.png'
-    span Wizard
-  .h-main
-    - @chars.where(role: 6).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/wizard.png'
+      span Wizard
+    .h-main
+      - @chars.where(role: 6).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
 
-.main
-  .h-title
-    = image_tag '/images/media/classes/priest.png'
-    span Priest
-  .h-main
-    - @chars.where(role: 7).each do |char|
-      .h-char
-        .h-avatar
-          = link_to char, title: char.name do
-            img src='/images/media/heroes/#{char.name}/portrait.png'
-        .h-sub
-          .h-name
-            = char.name
-          .h-type
-            img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg
+  .main
+    .h-title
+      = image_tag '/images/media/classes/priest.png'
+      span Priest
+    .h-main
+      - @chars.where(role: 7).each do |char|
+        .h-char
+          .h-avatar
+            = link_to char, title: char.name do
+              img src='/images/media/heroes/#{char.name}/portrait.png'
+          .h-sub
+            .h-name
+              = char.name
+            .h-type
+              img src='/images/media/#{char.type_dmg}.png' title=char.type_dmg

@@ -32,5 +32,6 @@
       if ($zeroStat === '0')
         $(this).hide().prev('p').hide();
     });
+    $('.char').css('background-image', 'url("/images/media/heroes/' + $('title').text() + '/Loading Screen.png")');
   });
 }).call(this);

@@ -285,6 +285,16 @@ title Calculator
         = f.input :guild_buff
 
   .r-stats.class-stats
+    / .statData
+      .statsBase
+        .r-stat
+          p#s-name
+          p#s-val
+      .statsAdd
+        .r-stat
+          p#s-name
+          p#s-val
+          p#s-per
     - @roles.each do |r|
       . class='role#{r.id}'
         .statsBase

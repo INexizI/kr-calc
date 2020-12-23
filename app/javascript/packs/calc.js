@@ -74,6 +74,256 @@
       $stats = $('.r-stats').find('.role' + $stat).clone();
       $($stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.role' + $stat).show();
+      
+      // Stat = {
+      //   S0: 'MAX HP',
+      //   S1: 'ATK',
+      //   S2: 'P.DEF',
+      //   S3: 'M.DEF',
+      //   S4: 'Crit',
+      //   S5: 'Crit DMG',
+      //   S6: 'Penetration',
+      //   S7: 'ACC',
+      //   S8: 'P.Dodge',
+      //   S9: 'M.Dodge',
+      //   S10: 'P.Block',
+      //   S11: 'M.Block',
+      //   S12: 'P.Block DEF',
+      //   S13: 'M.Block DEF',
+      //   S14: 'P.Tough',
+      //   S15: 'M.Tough',
+      //   S16: 'Recovery',
+      //   S17: 'CC Resist',
+      //   S18: 'Debuff ACC',
+      //   S19: 'Lifesteal',
+      //   S20: 'ATK Spd',
+      //   S21: 'MP Recovery/Attack',
+      //   S22: 'P.Crit Resistance',
+      //   S23: 'M.Crit Resistance'
+      // }
+      // Knight = {
+      //   B0: 1706672,
+      //   B1: 19792,
+      //   B2: 8792,
+      //   B3: 6840,
+      //   A0: 50,
+      //   A1: 0,
+      //   A2: 0,
+      //   A3: 0,
+      //   A4: 0,
+      //   A5: 0,
+      //   A6: 100,
+      //   A7: 100,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 250,
+      //   A11: 250,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Warrior = {
+      //   B0: 1449520,
+      //   B1: 22488,
+      //   B2: 7328,
+      //   B3: 8792,
+      //   A0: 150,
+      //   A1: 0,
+      //   A2: 150,
+      //   A3: 100,
+      //   A4: 100,
+      //   A5: 100,
+      //   A6: 0,
+      //   A7: 0,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 0,
+      //   A11: 0,
+      //   A12: 0,
+      //   A13: 150,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Assassin = {
+      //   B0: 1384992,
+      //   B1: 24688,
+      //   B2: 7816,
+      //   B3: 6840,
+      //   A0: 200,
+      //   A1: 30,
+      //   A2: 0,
+      //   A3: 100,
+      //   A4: 200,
+      //   A5: 200,
+      //   A6: 0,
+      //   A7: 0,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 0,
+      //   A11: 0,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Archer = {
+      //   B0: 1066728,
+      //   B1: 27864,
+      //   B2: 5376,
+      //   B3: 4392,
+      //   A0: 150,
+      //   A1: 0,
+      //   A2: 250,
+      //   A3: 100,
+      //   A4: 0,
+      //   A5: 0,
+      //   A6: 0,
+      //   A7: 0,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 0,
+      //   A11: 0,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Mechanic = {
+      //   B0: 1157176,
+      //   B1: 25416,
+      //   B2: 5376,
+      //   B3: 4392,
+      //   A0: 150,
+      //   A1: 50,
+      //   A2: 100,
+      //   A3: 200,
+      //   A4: 0,
+      //   A5: 0,
+      //   A6: 0,
+      //   A7: 0,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 0,
+      //   A11: 0,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Wizard = {
+      //   B0: 985328,
+      //   B1: 29328,
+      //   B2: 3904,
+      //   B3: 5864,
+      //   A0: 100,
+      //   A1: 0,
+      //   A2: 150,
+      //   A3: 100,
+      //   A4: 0,
+      //   A5: 200,
+      //   A6: 0,
+      //   A7: 250,
+      //   A8: 0,
+      //   A9: 0,
+      //   A10: 0,
+      //   A11: 0,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // Priest = {
+      //   B0: 1104864,
+      //   B1: 23216,
+      //   B2: 4888,
+      //   B3: 6104,
+      //   A0: 100,
+      //   A1: 0,
+      //   A2: 0,
+      //   A3: 100,
+      //   A4: 0,
+      //   A5: 0,
+      //   A6: 0,
+      //   A7: 500,
+      //   A8: 0,
+      //   A9: 250,
+      //   A10: 0,
+      //   A11: 150,
+      //   A12: 0,
+      //   A13: 0,
+      //   A14: 0,
+      //   A15: 0,
+      //   A16: 1000,
+      //   A17: 0,
+      //   A18: 0,
+      //   A19: 0
+      // };
+      // $('.statData .statsBase, .statData .statsAdd').empty();
+      // for (var i=0; i<=3; i++) {
+      //   if ($stat == 1)
+      //     var x = Knight['B' + i];
+      //   else if ($stat == 2)
+      //     var x = Warrior['B' + i];
+      //   else if ($stat == 3)
+      //     var x = Assassin['B' + i];
+      //   else if ($stat == 4)
+      //     var x = Archer['B' + i];
+      //   else if ($stat == 5)
+      //     var x = Mechanic['B' + i];
+      //   else if ($stat == 6)
+      //     var x = Wizard['B' + i];
+      //   else if ($stat == 7)
+      //     var x = Priest['B' + i];
+      //   $('.statData .statsBase').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p></div>');
+      //   $('.statData .statsBase').find('.r-stat:eq(' + i + ') #s-val').text(x);
+      // }
+      // for (var j=0; j<=19; j++) {
+      //   if ($stat == 1)
+      //     var y = Knight['A' + j];
+      //   else if ($stat == 2)
+      //     var y = Warrior['A' + j];
+      //   else if ($stat == 3)
+      //     var y = Assassin['A' + j];
+      //   else if ($stat == 4)
+      //     var y = Archer['A' + j];
+      //   else if ($stat == 5)
+      //     var y = Mechanic['A' + j];
+      //   else if ($stat == 6)
+      //     var y = Wizard['A' + j];
+      //   else if ($stat == 7)
+      //     var y = Priest['A' + j];
+      //   $('.statData .statsAdd').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p><p id="s-per"></div>');
+      //   $('.statData .statsAdd').find('.r-stat:eq(' + j + ') #s-val').text(y);
+      // }
+      // for (var k=0; k<=23; k++) {
+      //   var z = Stat['S' + k];
+      //   $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
+      // }
     }).change();
 
     // Class / Unique Weapon
