@@ -71,259 +71,260 @@
       $('.r-stats').children().hide();
       $('.t-total .r-stats').empty();
       $stat = $(this).children('option:selected').val();
-      $stats = $('.r-stats').find('.role' + $stat).clone();
+      $stats = $('.r-stats').find('.statData').clone();
       $($stats).prependTo('.t-total .r-stats');
-      $('.t-total').find('.role' + $stat).show();
-      
-      // Stat = {
-      //   S0: 'MAX HP',
-      //   S1: 'ATK',
-      //   S2: 'P.DEF',
-      //   S3: 'M.DEF',
-      //   S4: 'Crit',
-      //   S5: 'Crit DMG',
-      //   S6: 'Penetration',
-      //   S7: 'ACC',
-      //   S8: 'P.Dodge',
-      //   S9: 'M.Dodge',
-      //   S10: 'P.Block',
-      //   S11: 'M.Block',
-      //   S12: 'P.Block DEF',
-      //   S13: 'M.Block DEF',
-      //   S14: 'P.Tough',
-      //   S15: 'M.Tough',
-      //   S16: 'Recovery',
-      //   S17: 'CC Resist',
-      //   S18: 'Debuff ACC',
-      //   S19: 'Lifesteal',
-      //   S20: 'ATK Spd',
-      //   S21: 'MP Recovery/Attack',
-      //   S22: 'P.Crit Resistance',
-      //   S23: 'M.Crit Resistance'
-      // }
-      // Knight = {
-      //   B0: 1706672,
-      //   B1: 19792,
-      //   B2: 8792,
-      //   B3: 6840,
-      //   A0: 50,
-      //   A1: 0,
-      //   A2: 0,
-      //   A3: 0,
-      //   A4: 0,
-      //   A5: 0,
-      //   A6: 100,
-      //   A7: 100,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 250,
-      //   A11: 250,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Warrior = {
-      //   B0: 1449520,
-      //   B1: 22488,
-      //   B2: 7328,
-      //   B3: 8792,
-      //   A0: 150,
-      //   A1: 0,
-      //   A2: 150,
-      //   A3: 100,
-      //   A4: 100,
-      //   A5: 100,
-      //   A6: 0,
-      //   A7: 0,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 0,
-      //   A11: 0,
-      //   A12: 0,
-      //   A13: 150,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Assassin = {
-      //   B0: 1384992,
-      //   B1: 24688,
-      //   B2: 7816,
-      //   B3: 6840,
-      //   A0: 200,
-      //   A1: 30,
-      //   A2: 0,
-      //   A3: 100,
-      //   A4: 200,
-      //   A5: 200,
-      //   A6: 0,
-      //   A7: 0,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 0,
-      //   A11: 0,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Archer = {
-      //   B0: 1066728,
-      //   B1: 27864,
-      //   B2: 5376,
-      //   B3: 4392,
-      //   A0: 150,
-      //   A1: 0,
-      //   A2: 250,
-      //   A3: 100,
-      //   A4: 0,
-      //   A5: 0,
-      //   A6: 0,
-      //   A7: 0,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 0,
-      //   A11: 0,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Mechanic = {
-      //   B0: 1157176,
-      //   B1: 25416,
-      //   B2: 5376,
-      //   B3: 4392,
-      //   A0: 150,
-      //   A1: 50,
-      //   A2: 100,
-      //   A3: 200,
-      //   A4: 0,
-      //   A5: 0,
-      //   A6: 0,
-      //   A7: 0,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 0,
-      //   A11: 0,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Wizard = {
-      //   B0: 985328,
-      //   B1: 29328,
-      //   B2: 3904,
-      //   B3: 5864,
-      //   A0: 100,
-      //   A1: 0,
-      //   A2: 150,
-      //   A3: 100,
-      //   A4: 0,
-      //   A5: 200,
-      //   A6: 0,
-      //   A7: 250,
-      //   A8: 0,
-      //   A9: 0,
-      //   A10: 0,
-      //   A11: 0,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // Priest = {
-      //   B0: 1104864,
-      //   B1: 23216,
-      //   B2: 4888,
-      //   B3: 6104,
-      //   A0: 100,
-      //   A1: 0,
-      //   A2: 0,
-      //   A3: 100,
-      //   A4: 0,
-      //   A5: 0,
-      //   A6: 0,
-      //   A7: 500,
-      //   A8: 0,
-      //   A9: 250,
-      //   A10: 0,
-      //   A11: 150,
-      //   A12: 0,
-      //   A13: 0,
-      //   A14: 0,
-      //   A15: 0,
-      //   A16: 1000,
-      //   A17: 0,
-      //   A18: 0,
-      //   A19: 0
-      // };
-      // $('.statData .statsBase, .statData .statsAdd').empty();
-      // for (var i=0; i<=3; i++) {
-      //   if ($stat == 1)
-      //     var x = Knight['B' + i];
-      //   else if ($stat == 2)
-      //     var x = Warrior['B' + i];
-      //   else if ($stat == 3)
-      //     var x = Assassin['B' + i];
-      //   else if ($stat == 4)
-      //     var x = Archer['B' + i];
-      //   else if ($stat == 5)
-      //     var x = Mechanic['B' + i];
-      //   else if ($stat == 6)
-      //     var x = Wizard['B' + i];
-      //   else if ($stat == 7)
-      //     var x = Priest['B' + i];
-      //   $('.statData .statsBase').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p></div>');
-      //   $('.statData .statsBase').find('.r-stat:eq(' + i + ') #s-val').text(x);
-      // }
-      // for (var j=0; j<=19; j++) {
-      //   if ($stat == 1)
-      //     var y = Knight['A' + j];
-      //   else if ($stat == 2)
-      //     var y = Warrior['A' + j];
-      //   else if ($stat == 3)
-      //     var y = Assassin['A' + j];
-      //   else if ($stat == 4)
-      //     var y = Archer['A' + j];
-      //   else if ($stat == 5)
-      //     var y = Mechanic['A' + j];
-      //   else if ($stat == 6)
-      //     var y = Wizard['A' + j];
-      //   else if ($stat == 7)
-      //     var y = Priest['A' + j];
-      //   $('.statData .statsAdd').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p><p id="s-per"></div>');
-      //   $('.statData .statsAdd').find('.r-stat:eq(' + j + ') #s-val').text(y);
-      // }
-      // for (var k=0; k<=23; k++) {
-      //   var z = Stat['S' + k];
-      //   $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
-      // }
+      $('.t-total').find('.statData').show();
+      $stat !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
+
+      Stat = {
+        S0: 'MAX HP',
+        S1: 'ATK',
+        S2: 'P.DEF',
+        S3: 'M.DEF',
+        S4: 'Crit',
+        S5: 'Crit DMG',
+        S6: 'Penetration',
+        S7: 'ACC',
+        S8: 'P.Dodge',
+        S9: 'M.Dodge',
+        S10: 'P.Block',
+        S11: 'M.Block',
+        S12: 'P.Block DEF',
+        S13: 'M.Block DEF',
+        S14: 'P.Tough',
+        S15: 'M.Tough',
+        S16: 'Recovery',
+        S17: 'CC Resist',
+        S18: 'Debuff ACC',
+        S19: 'Lifesteal',
+        S20: 'ATK Spd',
+        S21: 'MP Recovery/Attack',
+        S22: 'P.Crit Resistance',
+        S23: 'M.Crit Resistance'
+      }
+      Knight = {
+        B0: 1706672,
+        B1: 19792,
+        B2: 8792,
+        B3: 6840,
+        A0: 50,
+        A1: 0,
+        A2: 0,
+        A3: 0,
+        A4: 0,
+        A5: 0,
+        A6: 100,
+        A7: 100,
+        A8: 0,
+        A9: 0,
+        A10: 250,
+        A11: 250,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Warrior = {
+        B0: 1449520,
+        B1: 22488,
+        B2: 7328,
+        B3: 8792,
+        A0: 150,
+        A1: 0,
+        A2: 150,
+        A3: 100,
+        A4: 100,
+        A5: 100,
+        A6: 0,
+        A7: 0,
+        A8: 0,
+        A9: 0,
+        A10: 0,
+        A11: 0,
+        A12: 0,
+        A13: 150,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Assassin = {
+        B0: 1384992,
+        B1: 24688,
+        B2: 7816,
+        B3: 6840,
+        A0: 200,
+        A1: 30,
+        A2: 0,
+        A3: 100,
+        A4: 200,
+        A5: 200,
+        A6: 0,
+        A7: 0,
+        A8: 0,
+        A9: 0,
+        A10: 0,
+        A11: 0,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Archer = {
+        B0: 1066728,
+        B1: 27864,
+        B2: 5376,
+        B3: 4392,
+        A0: 150,
+        A1: 0,
+        A2: 250,
+        A3: 100,
+        A4: 0,
+        A5: 0,
+        A6: 0,
+        A7: 0,
+        A8: 0,
+        A9: 0,
+        A10: 0,
+        A11: 0,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Mechanic = {
+        B0: 1157176,
+        B1: 25416,
+        B2: 5376,
+        B3: 4392,
+        A0: 150,
+        A1: 50,
+        A2: 100,
+        A3: 200,
+        A4: 0,
+        A5: 0,
+        A6: 0,
+        A7: 0,
+        A8: 0,
+        A9: 0,
+        A10: 0,
+        A11: 0,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Wizard = {
+        B0: 985328,
+        B1: 29328,
+        B2: 3904,
+        B3: 5864,
+        A0: 100,
+        A1: 0,
+        A2: 150,
+        A3: 100,
+        A4: 0,
+        A5: 200,
+        A6: 0,
+        A7: 250,
+        A8: 0,
+        A9: 0,
+        A10: 0,
+        A11: 0,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      Priest = {
+        B0: 1104864,
+        B1: 23216,
+        B2: 4888,
+        B3: 6104,
+        A0: 100,
+        A1: 0,
+        A2: 0,
+        A3: 100,
+        A4: 0,
+        A5: 0,
+        A6: 0,
+        A7: 500,
+        A8: 0,
+        A9: 250,
+        A10: 0,
+        A11: 150,
+        A12: 0,
+        A13: 0,
+        A14: 0,
+        A15: 0,
+        A16: 1000,
+        A17: 0,
+        A18: 0,
+        A19: 0
+      };
+      $('.statData .statsBase, .statData .statsAdd').empty();
+      for (var i=0; i<=3; i++) {
+        if ($stat == 1)
+          var x = Knight['B' + i];
+        else if ($stat == 2)
+          var x = Warrior['B' + i];
+        else if ($stat == 3)
+          var x = Assassin['B' + i];
+        else if ($stat == 4)
+          var x = Archer['B' + i];
+        else if ($stat == 5)
+          var x = Mechanic['B' + i];
+        else if ($stat == 6)
+          var x = Wizard['B' + i];
+        else if ($stat == 7)
+          var x = Priest['B' + i];
+        $('.statData .statsBase').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p></div>');
+        $('.statData .statsBase').find('.r-stat:eq(' + i + ') #s-val').text(x);
+      }
+      for (var j=0; j<=19; j++) {
+        if ($stat == 1)
+          var y = Knight['A' + j];
+        else if ($stat == 2)
+          var y = Warrior['A' + j];
+        else if ($stat == 3)
+          var y = Assassin['A' + j];
+        else if ($stat == 4)
+          var y = Archer['A' + j];
+        else if ($stat == 5)
+          var y = Mechanic['A' + j];
+        else if ($stat == 6)
+          var y = Wizard['A' + j];
+        else if ($stat == 7)
+          var y = Priest['A' + j];
+        $('.statData .statsAdd').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p><p id="s-per"></div>');
+        $('.statData .statsAdd').find('.r-stat:eq(' + j + ') #s-val').text(y);
+      }
+      for (var k=0; k<=23; k++) {
+        var z = Stat['S' + k];
+        $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
+      }
     }).change();
 
     // Class / Unique Weapon
@@ -871,16 +872,16 @@
       $('#heroO').text($('#orb').text());
       $gearClass = $('#calc_role_id').children('option:selected').val();
 
-      $classATK = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $classATK = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'ATK'
       }).next('p').text();
-      $classHP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $classHP = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p').text();
-      $classPDEF = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $classPDEF = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Def'
       }).next('p').text();
-      $classMDEF = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $classMDEF = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Def'
       }).next('p').text();
 
@@ -1036,86 +1037,86 @@
     // Set Bonus
     function gearSet() {
       $gearClass = $('#calc_role_id').children('option:selected').val();
-      $setBonus = $('.t-total .r-stats .role' + $gearClass).find('p').filter(function() {
+      $setBonus = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'Set Bonus'
       }).next('p');
       if (!$setBonus.length)
-        $setBonus = $('.t-total .r-stats .role' + $gearClass).append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span></p></div></div>');
+        $setBonus = $('.t-total .r-stats').append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span></p></div></div>');
       $setBonus.find('span').hide();
-      $statCrit = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statCrit = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Crit'
       }).next('p');
-      $statHP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statHP = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'MAX HP'
       }).next('p');
       $statGrey = parseInt($('#heroHP').text());
-      $statCritResP = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statCritResP = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Crit Resistance'
       }).next('p');
-      $statCritResM = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statCritResM = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Crit Resistance'
       }).next('p');
-      $statMPa = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMPa = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'MP Recovery/Attack'
       }).next('p');
-      $statCritD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statCritD = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Crit DMG'
       }).next('p');
-      $statDebuff = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statDebuff = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Debuff ACC'
       }).next('p');
-      $statASpd = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statASpd = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'ATK Spd'
       }).next('p');
-      $statMPs = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMPs = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'MP Recovery/Sec'
       }).next('p');
-      $statPen = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPen = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Penetration'
       }).next('p');
-      $statLife = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statLife = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Lifesteal'
       }).next('p');
-      $statACC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statACC = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'ACC'
       }).next('p');
-      $statCC = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statCC = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'CC Resist'
       }).next('p');
-      $statPB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPB = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Block'
       }).next('p');
-      $statMB = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMB = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Block'
       }).next('p');
-      $statPBD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPBD = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Block DEF'
       }).next('p');
-      $statMBD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMBD = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Block DEF'
       }).next('p');
-      $statPDef = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPDef = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.DEF'
       }).next('p');
-      $statMDef = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMDef = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.DEF'
       }).next('p');
-      $statPD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPD = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Dodge'
       }).next('p');
-      $statMD = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMD = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Dodge'
       }).next('p');
-      $statPT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statPT = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'P.Tough'
       }).next('p');
-      $statMT = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statMT = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'M.Tough'
       }).next('p');
-      $statRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statRec = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Recovery'
       }).next('p');
-      $statManaRec = $('.class-stats .role' + $gearClass).find('p').filter(function() {
+      $statManaRec = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Mana Recovery upon taking DMG'
       }).next('p');
 
@@ -1465,15 +1466,15 @@
       else if ($t == 4)
         $setBonus.find('#t1, #t2').show();
 
-      $('.t-total .role' + $gearClass).find('p:contains(" (")').each(function() {
+      $('.t-total').find('p:contains(" (")').each(function() {
         $statSplit = $(this);
         $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0 ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
-      $('.t-total .role' + $gearClass).find('p:contains("% (")').each(function() {
+      $('.t-total').find('p:contains("% (")').each(function() {
         $statSplit = $(this);
         $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
-      $('.t-total .r-stats .role' + $gearClass).find('#s-val').each(function() {
+      $('.t-total .r-stats').find('#s-val').each(function() {
         $zeroStat = $(this);
         $softcap = $($zeroStat).prev().text();
         $zeroStat.text() === '0' ? $(this).parent().css('height', 0).children().hide() : $(this).parent().css('height', '25px').children().show();

@@ -285,7 +285,7 @@ title Calculator
         = f.input :guild_buff
 
   .r-stats.class-stats
-    / .statData
+    .statData
       .statsBase
         .r-stat
           p#s-name
@@ -295,19 +295,6 @@ title Calculator
           p#s-name
           p#s-val
           p#s-per
-    - @roles.each do |r|
-      . class='role#{r.id}'
-        .statsBase
-          - @stats.where(role_id: r.id, stat_type: 'base').order('id ASC').each do |s|
-            .r-stat
-              p#s-name = s.name
-              p#s-val = s.value
-        .statsAdd
-          - @stats.where(role_id: r.id, stat_type: 'class').order('notice ASC').each do |s|
-            .r-stat
-              p#s-name = s.name
-              p#s-val = s.value
-              p#s-per
 
   .totalStat#calc
     .hero-img

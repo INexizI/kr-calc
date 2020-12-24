@@ -3,7 +3,6 @@ class CalcsController < ApplicationController
     @chars = Char.all
     @roles = Role.all
     @perks = Perk.all
-    @stats = Stat.all
   end
 
   def new
