@@ -404,6 +404,7 @@ input {
 
 .skill {
   padding: 10px;
+  margin-top: 30px;
 
   .p-img {
     padding: 5px;
@@ -1087,7 +1088,7 @@ h4 {
 .easy-autocomplete-container ul li div {
   display: block;
   font-weight: normal;
-  word-break: break-all;
+  // word-break: break-all;
 }
 
 .easy-autocomplete-container ul li b {
