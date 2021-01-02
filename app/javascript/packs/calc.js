@@ -1322,13 +1322,13 @@
         $stCritD = 0;
       $sumCritD = parseInt($statCritD.text()) + parseInt($stCritD);
       if (($la > 1) && ($la < 4)) {
-        $tCritDMG.text($sumCritD + 20 + '% (' + $statCritD.text() + '+' + (parseInt($stCritD) + 20) + '%)');
+        $tCritDMG.text($sumCritD + 20 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 20) + '%)');
         $setBonus.find('#la1').show();
       } else if ($la == 4) {
-        $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '+' + (parseInt($stCritD) + 46) + '%)');
+        $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 46) + '%)');
         $setBonus.find('#la1, #la2').show();
       } else
-        $tCritDMG.text($sumCritD + '% (' + $statCritD.text() + '+' + ($sumCritD - $statCritD.text()) + '%)');
+        $tCritDMG.text($sumCritD + '%' +' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
 
       $stDebuff = $('p[name="Debuff ACC"]').text();
       if ($stDebuff === '')
@@ -1472,7 +1472,7 @@
       });
       $('.t-total').find('p:contains("% (")').each(function() {
         $statSplit = $(this);
-        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
       $('.t-total .r-stats').find('#s-val').each(function() {
         $zeroStat = $(this);
@@ -1493,7 +1493,7 @@
           $softn > 225 ? $(this).next('#s-per').text((225 + ($softn - 225)*0.2)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if ($softcap == 'MP Recovery/Attack')
           $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
-        else
+        else if ($softcap !== 'Crit DMG')
           $(this).next('#s-per').text($softn/10 + '%')
       });
     };

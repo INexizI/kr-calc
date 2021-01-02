@@ -275,21 +275,48 @@ input {
     }
   }
   .c-stat {
-    p {
-      margin: 3px;
-    }
+    padding: 2px 0;
     #c-stat {
       text-align: center;
     }
   }
+  #statBase:before {
+    content: '';
+    background: url('/images/media/classes/base head.png');
+    background-size: 285px;
+    height: 20px;
+    display: block;
+  }
+  #statAdd:before {
+    content: '';
+    background: url('/images/media/classes/add head.png');
+    background-size: 285px;
+    height: 20px;
+    display: block;
+  }
+  #statBase:after, #statAdd:after {
+    content: '';
+    background: url('/images/media/classes/stat foot.png');
+    background-size: 285px;
+    height: 8px;
+    display: block;
+  }
   .r-stat {
     display: grid;
     grid-template: "item1 item2";
-    text-align: center;
+    background-image: url('/images/media/classes/stat.png');
+    background-size: 285px 25px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #ab8e74;
 
-    p {
-      width: 150px;
-      margin: 5px;
+    #s-name {
+      width: 90px;
+      padding-left: 15px;
+    }
+    #s-val {
+      width: 160px;
+      padding: 0 10px;
     }
   }
 }
