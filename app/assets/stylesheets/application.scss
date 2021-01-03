@@ -205,7 +205,8 @@ input {
   margin: 0 auto;
   padding: 15px;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 18px;
+  text-shadow: 0 0 10px white;
   min-height: calc(100vh - 30px);
   backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 }
@@ -280,6 +281,19 @@ input {
       text-align: center;
     }
   }
+  #statBase {
+    .r-stat {
+      grid-template: "item1 item2";
+    }
+  }
+  #statAdd {
+    .r-stat {
+      grid-template: "item1 item2 item3";
+    }
+    #s-per {
+      margin-left: -40px;
+    }
+  }
   #statBase:before {
     content: '';
     background: url('/images/media/classes/base head.png');
@@ -303,7 +317,6 @@ input {
   }
   .r-stat {
     display: grid;
-    grid-template: "item1 item2";
     background-image: url('/images/media/classes/stat.png');
     background-size: 285px 25px;
     font-size: 14px;
@@ -322,7 +335,7 @@ input {
 }
 
 .s-description {
-  width: 400px;
+  width: 415px;
   border: 1px solid;
   border-radius: 10px 10px 10px 10px;
   background: rgba(210, 210, 210, 1);
@@ -635,7 +648,7 @@ h4 {
 }
 
 .g-description {
-  width: 400px;
+  width: 415px;
   border: 1px solid;
   border-radius: 10px 10px 10px 10px;
   background: rgba(210, 210, 210, 1);

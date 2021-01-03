@@ -25,6 +25,7 @@
                   | Cooldown: 
                   = skill.cooldown
               .p4
+                hr
                 = skill.description
           - @skills.where(parent_id: skill.id).each do |skill|
             - if !skill.parent_id.blank?
@@ -48,4 +49,5 @@
                       | Cooldown: 
                       = skill.cooldown
                   .p4
+                    hr
                     = skill.description

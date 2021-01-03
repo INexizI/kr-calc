@@ -1466,13 +1466,13 @@
       else if ($t == 4)
         $setBonus.find('#t1, #t2').show();
 
-      $('.t-total').find('p:contains(" (")').each(function() {
+      $('.t-total').find('#s-val:contains(" (")').each(function() {
         $statSplit = $(this);
         $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == 0 ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
-      $('.t-total').find('p:contains("% (")').each(function() {
+      $('.t-total').find('#s-val:contains("%")').each(function() {
         $statSplit = $(this);
-        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() == '0%' ? $statSplit.html($statSplit.text().split(' ').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+        $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() === '0%' ? $statSplit.html($statSplit.text().split('%').shift()) : $statSplit.html('<span id="plsSt1">' + $statSplit.text().split(' ').shift() + '</span>' + ' (' + $statSplit.text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $statSplit.text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
       });
       $('.t-total .r-stats').find('#s-val').each(function() {
         $zeroStat = $(this);
@@ -1493,7 +1493,9 @@
           $softn > 225 ? $(this).next('#s-per').text((225 + ($softn - 225)*0.2)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if ($softcap == 'MP Recovery/Attack')
           $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
-        else if ($softcap !== 'Crit DMG')
+        else if (($softcap == 'Crit DMG') || ($softcap == 'Recovery'))
+          $(this).text($softn + '%')
+        else
           $(this).next('#s-per').text($softn/10 + '%')
       });
     };
