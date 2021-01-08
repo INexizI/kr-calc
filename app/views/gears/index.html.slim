@@ -2,118 +2,6 @@ title Gear
 
 .g-main
   .g-sub
-    h3 T6
-    .g-title Opportune Fire
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T6', set: 'Opportune Fire').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Gritty Frost
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T6', set: 'Gritty Frost').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Unrelenting Poison
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T6', set: 'Unrelenting Poison').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Swift Darkness
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T6', set: 'Swift Darkness').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Beast of Chaos
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T6', set: 'Beast of Chaos').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-  .g-sub
-    h3 T7
-    .g-title Opportune Fire
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', set: 'Opportune Fire').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Gritty Frost
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', set: 'Gritty Frost').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Unrelenting Poison
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', set: 'Unrelenting Poison').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Swift Darkness
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', set: 'Swift Darkness').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Beast of Chaos
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', set: 'Beast of Chaos').each do |gear|
-          = link_to gear do
-            - if gear.gear_type == '7-J'
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.name}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-            - else
-              img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
-
-    .g-title Treasure
-    .g-main
-      .g-gear
-        - @gears.where(tier: 'T7', gear_type: '9-UT').each do |gear|
-          = link_to gear do
-            img src='/images/media/gears/#{gear.gear_type}/mana stone.png' title=(gear.set + ' ' + gear.name)
-
-  .g-sub
-    h3 T8
     .g-title Opportune Fire
     .g-main
       .g-gear
@@ -233,15 +121,13 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
 
-    .g-title Treasure
+    .g-title Mana Stone
     .g-main
       .g-gear
         - @gears.where(tier: 'T8', gear_type: '9-UT').each do |gear|
           = link_to gear do
-            img src='/images/media/gears/#{gear.gear_type}/#{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            img src='/images/media/gears/#{gear.gear_type}/mana.png' title=(gear.set + ' ' + gear.name)
 
-  .g-sub
-    h3 T10
     .g-title Unique Treasure
     .g-main
       - @chars.order(name: 'ASC').each do |c|

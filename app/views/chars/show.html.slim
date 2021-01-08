@@ -15,12 +15,12 @@ title = @char.name
           img src='/images/media/#{@char.type_dmg}.png' title=@char.type_dmg
         p#c-name = @char.name
 
-    .c-sub
-      = render 'stat'
-
     .c-sub#c-skill
       = render 'skill'
       = render 'gear'
+
+    .c-sub
+      = render 'stat'
 
     .c-sub
       = render 'perk'

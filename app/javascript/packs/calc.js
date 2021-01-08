@@ -63,6 +63,7 @@
       $('.c-perk-img').find('img').removeClass('pick');
       $('.perk-tp').find('p').text(0);
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
+      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       statValue();
     }).change();
 
@@ -74,6 +75,7 @@
       $stats = $('.r-stats').find('.statData').clone();
       $($stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.statData').show();
+      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       $stat !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
 
       Stat = {
@@ -334,7 +336,7 @@
       $gearWeaponSlot = null;
       $clKn = 32730;$clWa = 37010;$clAs = 40711;$clAr = 45915;$clMe = 41867;$clWi = 42793;$clPr = 42793;$unKn = 45106;$unWa = 51120;$unAs = 56209;$unAr = 63264;$unMe = 57712;$unWi = 58985;$unPr = 58985;$arPl = 17052;$arSc = 11369;$arR = 5686;$scSh = 17052;$scC = 5686;$scH = 11369;$ms = 726278;$unTr = 1596066;$jR = 726278;$jE = 15801;$jB = 11369;$jN = 11369;$or = 726278;
       $gearWeaponType = $(this).children('option:selected').val();
-      $gHero = $('#calc_char_id').children('option:selected').text().split(' ').join('');
+      $gHero = $('#calc_char_id').children('option:selected').text();
       $gClass = $('#calc_role_id').children('option:selected').text();
       if ($gearWeaponType == 'Class') {
         $(this).css('background-image', 'url(/images/media/heroes/' + $gClass + '.png)');
@@ -354,7 +356,7 @@
         else if ($gClass == 'Priest')
           $('#wea').text($clPr);
       } else if ($gearWeaponType == 'Unique') {
-        $(this).css('background-image', 'url(/images/media/heroes/' + $gHero + '/uw.png');
+        $(this).attr('style', 'background-image: url("/images/media/heroes/' + $gHero + '/uw.png"); display: inline-block;');
         $('#wea').next('.rating').show();
         if ($gClass == 'Knight')
           $('#wea').text($unKn);
@@ -382,7 +384,7 @@
     $('select#calc_gear_treasure').change(function() {
       $('#heroHP').empty();
       $gearTreasureType = $(this).children('option:selected').val();
-      $gHero = $('#calc_char_id').children('option:selected').text().split(' ').join('');
+      $gHero = $('#calc_char_id').children('option:selected').text();
       if ($gearTreasureType == 'Mana Stone') {
         $eTr = {
           'width': '52px',
@@ -396,13 +398,12 @@
         $('.scnd').hide();
         $('.scnd select').prop('selectedIndex', 0);
       } else if ($gearTreasureType == 'Unique') {
-        $eTr1 = 'url(/images/media/heroes/' + $gHero + '/ut1.png)';
-        $eTr2 = 'url(/images/media/heroes/' + $gHero + '/ut2.png)';
-        $eTr3 = 'url(/images/media/heroes/' + $gHero + '/ut3.png)';
-        $eTr4 = 'url(/images/media/heroes/' + $gHero + '/ut4.png)';
+        $eTr1 = 'url("/images/media/heroes/' + $gHero + '/ut1.png")';
+        $eTr2 = 'url("/images/media/heroes/' + $gHero + '/ut2.png")';
+        $eTr3 = 'url("/images/media/heroes/' + $gHero + '/ut3.png")';
+        $eTr4 = 'url("/images/media/heroes/' + $gHero + '/ut4.png")';
         $eTr = $eTr1 + ',' + $eTr2 + ',' + $eTr3 + ',' + $eTr4;
         $hTreasure = {
-          'background-image': $eTr,
           'background-position': '0px, 52px, 104px, 156px',
           'background-repeat': 'no-repeat',
           'background-size': '52px 50px',
@@ -411,6 +412,7 @@
           'width': '209px',
           'height': '50px'
         }
+        $(this).attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css($hTreasure);
         $(this).css($hTreasure);
         $('#tre').text($unTr).next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({'position': 'relative', 'bottom': '210px'});
@@ -461,7 +463,7 @@
           $('#arm').text($arR);
         }
         $gearSet = $(this).children('option:selected').val();
-        $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $gearSet + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
         $('.calc_gear_armor').parent().find('.gOption').show();
       } else {
@@ -500,7 +502,7 @@
           $('#sec').text($scH);
         }
         $gearSet = $(this).children('option:selected').val();
-        $(this).css('background-image', 'url(/images/media/gears/' + $gType + '/' + $gearSet.split(' ').join('') + '.png)');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $gearSet + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
         $('.calc_gear_secondary').next().next().show();
       } else {
@@ -537,7 +539,7 @@
         else if ($gearType == 'Necklace')
           $('#acc').text($jN);
         $gearSet = $(this).children().children('option:selected').val();
-        $(this).css('background-image', 'url(/images/media/gears/7-J/' + $gearType + '/' + $gearSet.split(' ').join('') + '.png)');
+        $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $gearType + '/' + $gearSet + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
         $('.calc_gear_jewelry').parent().find('.gOption').show();
       } else {
@@ -566,7 +568,7 @@
       $gearTier = $(this).children('option:selected').val().toLowerCase();
       if ($gearTier !== '- - - - - - - - - -') {
         $gearSet = $(this).children('option:selected').val();
-        $(this).css('background-image', 'url(/images/media/gears/8-O/' + $gearSet.split(' ').join('') + '.png)');
+        $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $gearSet + '.png"); display: inline-block;');
         $('#orb').text($or).next('.rating').show();
 
         $('.calc_gear_orb').parent().find('.gOption').show();
