@@ -194,10 +194,10 @@ input {
 */
 
 .char {
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  min-height: 100vh;
+  background-attachment: fixed;
 }
 
 .c-main {
@@ -274,6 +274,21 @@ input {
     h4 {
       width: 15px;
     }
+    .p-description {
+      width: 415px;
+      border: 1px solid;
+      border-radius: 10px 10px 10px 10px;
+      background: rgba(210, 210, 210, 1);
+      display: none;
+      position: relative;
+      margin: -45px 30px;
+      padding: 0px 5px;
+      font-size: medium;
+
+      p {
+        padding: 3px;
+      }
+    }
   }
   .c-stat {
     padding: 2px 0;
@@ -335,7 +350,7 @@ input {
 }
 
 .s-description {
-  width: 415px;
+  width: 500px;
   border: 1px solid;
   border-radius: 10px 10px 10px 10px;
   background: rgba(210, 210, 210, 1);
@@ -349,7 +364,7 @@ input {
     padding: 3px;
   }
 }
-.c-perk-img:hover .s-description {
+.c-perk-img:hover .p-description, .c-perk-img:hover .s-description {
   display: grid;
   gap: 1px 1px;
   grid-template-areas: "p1 p1" "p2 p3" "p4 p4";
@@ -648,7 +663,7 @@ h4 {
 }
 
 .g-description {
-  width: 415px;
+  width: 500px;
   border: 1px solid;
   border-radius: 10px 10px 10px 10px;
   background: rgba(210, 210, 210, 1);

@@ -12,9 +12,9 @@
       $top = 0;
       if ($(document).width() - $(this).offset().left < $(document).width() / 2)
         $left = -1;
-      // if ($(document).height() - $(this).offset().top < $(document).height() / 2)
-      //   $top = -1;
-      $y = 10;
+      if ($(document).height() - $(this).offset().top < $(document).height() / 2)
+        $top = -1;
+      $y = $top * 100;
       $x = $left * 10 + $left * 400;
       $cs = {
         'top':$y,
@@ -22,9 +22,11 @@
         'display': 'grid'
       }
       $('.s-description', this).css($cs);
+      $('.p-description', this).css($cs);
       $('.g-description', this).css($cs);
     }).mouseleave(function() {
       $('.s-description').hide();
+      $('.p-description').hide();
       $('.g-description').hide();
     });
     $('.c-stat .r-stat').find('p').each(function() {

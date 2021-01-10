@@ -8,31 +8,6 @@
           .p1
             = gear.name
           .p2
-            / #p0 = gear.stat.name
-            / .g-star-button
-            /   .g-button
-            /     .g-btn
-            /       form
-            /         .rating
-            /           label#bt-star.bt5 ☆
-            /           input name="starValue" type="radio" value="5"
-            /           label#bt-star.bt4 ☆
-            /           input name="starValue" type="radio" value="4"
-            /           label#bt-star.bt3 ☆
-            /           input name="starValue" type="radio" value="3"
-            /           label#bt-star.bt2 ☆
-            /           input name="starValue" type="radio" value="2"
-            /           label#bt-star.bt1 ☆
-            /           input name="starValue" type="radio" value="1"
-            /           label.bt0 ◯
-            /           input name="starValue" type="radio" value="0"
-            /     .g-val
-            /       p#bt0.btn = gear.stat.star_0
-            /       p#bt1.btn = gear.stat.star_1
-            /       p#bt2.btn = gear.stat.star_2
-            /       p#bt3.btn = gear.stat.star_3
-            /       p#bt4.btn = gear.stat.star_4
-            /       p#bt5.btn = gear.stat.star_5
           .p3
           .p4
             hr
@@ -48,31 +23,6 @@
           .p1
             = gear.name
           .p2
-            / #p0 = gear.stat.name
-            / .g-star-button
-            /   .g-button
-            /     .g-btn
-            /       form
-            /         .rating
-            /           label#bt-star.bt5 ☆
-            /           input name="starValue" type="radio" value="5"
-            /           label#bt-star.bt4 ☆
-            /           input name="starValue" type="radio" value="4"
-            /           label#bt-star.bt3 ☆
-            /           input name="starValue" type="radio" value="3"
-            /           label#bt-star.bt2 ☆
-            /           input name="starValue" type="radio" value="2"
-            /           label#bt-star.bt1 ☆
-            /           input name="starValue" type="radio" value="1"
-            /           label.bt0 ◯
-            /           input name="starValue" type="radio" value="0"
-            /     .g-val
-            /       p#bt0.btn = gear.stat.star_0
-            /       p#bt1.btn = gear.stat.star_1
-            /       p#bt2.btn = gear.stat.star_2
-            /       p#bt3.btn = gear.stat.star_3
-            /       p#bt4.btn = gear.stat.star_4
-            /       p#bt5.btn = gear.stat.star_5
           .p3
           .p4
             hr
@@ -81,5 +31,19 @@
 .c-gear
   h4 Soul Weapon
   .c-g
-    .c-perk-img
-      img src="/images/media/heroes/#{@char.name}/sw.png"
+    - @skills.where(char: @char).where.not("length(parent_id) < 4").each do |skill|
+      .c-perk-img
+        img src="/images/media/heroes/#{@char.name}/sw.png"
+        .s-description
+          .p1
+            | Soul of
+            = skill.name
+          .p2
+            | Charges: 
+            = skill.mana
+          .p3
+            | Cooldown: 
+            = skill.cooldown
+          .p4
+            hr
+            = skill.description
