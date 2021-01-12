@@ -11,7 +11,7 @@
           .p3
           .p4
             hr
-            = gear.description
+            p = gear.description
 
 .c-gear
   h4 Unique Treasures
@@ -26,7 +26,7 @@
           .p3
           .p4
             hr
-            = gear.description
+            p = gear.description
 
 .c-gear
   h4 Soul Weapon
@@ -36,7 +36,7 @@
         img src="/images/media/heroes/#{@char.name}/sw.png"
         .s-description
           .p1
-            | Soul of
+            | Soul of 
             = skill.name
           .p2
             | Charges: 
@@ -46,4 +46,13 @@
             = skill.cooldown
           .p4
             hr
-            = skill.description
+            p = skill.description
+            p#ad-re = skill.parent_id
+            hr
+            img src="/images/media/manaOrb.png" id="a1"
+            span Advancement Phase 1
+            .a1
+            br
+            img src="/images/media/manaOrb.png" id="a2"
+            span Advancement Phase 2
+            .a2

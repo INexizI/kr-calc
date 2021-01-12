@@ -454,282 +454,479 @@ Heals HP of allies within range by ??? over 10 sec.
 
 Advancement Phase 2
 Dispels positiv effects of all enemies in range."
-424,"Aurelian Whisper, Goldbreeze","Summons the soul of Aurelian Whisper, Goldbreeze for 10 sec, increasing ATK Spd of all allies by 300, dealing ??? M.DMG to all enemies, and increasing M.DMG they take 25% for 10 sec. Upon this Skill at the Arena, inflicts Charm to all enemies for 5 sec.",4,2021-01-10 0:00:00,2021-01-10 0:00:00,9,23,Charges up upon using Skills 4 times.,"Advancement 1
+424,"Aurelian Whisper, Goldbreeze","Summons the soul of Aurelian Whisper, Goldbreeze for 10 sec, increasing ATK Spd of all allies by 300, dealing ??? M.DMG to all enemies, and increasing M.DMG they take 25% for 10 sec. Upon this Skill at the Arena, inflicts Charm to all enemies for 5 sec.",4,2021-01-10 0:00:00,2021-01-10 0:00:00,9,23,Charges up upon using Skills 4 times.,"Advancement Phase 1
 Changes Skill Activation Requirements to 3 times.
 
-Advancement 2
+Advancement Phase 2
 Upon activation, recovers Mana of all allies by 2000 and increases Crit DMG by 80% for the duration of Skill."
-425,"Supersonic Tempest, Gigantix","Summons the soul of Supersonic Tempest, Gigantix for 12 sec. Normal and Skill attacks have a 10% chance to deal ??? P.DMG to the target and enemies within a small range of it, inflicting stun for 1 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,10,22,Charges up upon using Skills 7 times.,"Advancement 1
+425,"Supersonic Tempest, Gigantix","Summons the soul of Supersonic Tempest, Gigantix for 12 sec. Normal and Skill attacks have a 10% chance to deal ??? P.DMG to the target and enemies within a small range of it, inflicting stun for 1 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,10,22,Charges up upon using Skills 7 times.,"Advancement Phase 1
 Increases own ATK by 40% for the duration of Skill.
 
-Advancement 2
+Advancement Phase 2
 Activation chance is increased to 20%."
-426,Blood Lancer Monolith,"Summons the soul of Blood Lancer Monolith, dealing ??? P.DMG to nearby enemies of self and knocking them down for 4 sec. Afterward, recovers own HP equal to 40% of Max HP, increasing ATK by 30% and Heal Rate by 30% for 10 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,11,22,Charges up upon dealing DMG 60 times.,"Advancement 1
+426,Blood Lancer Monolith,"Summons the soul of Blood Lancer Monolith, dealing ??? P.DMG to nearby enemies of self and knocking them down for 4 sec. Afterward, recovers own HP equal to 40% of Max HP, increasing ATK by 30% and Heal Rate by 30% for 10 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,11,22,Charges up upon dealing DMG 60 times.,"Advancement Phase 1
 Changes the duration of the effect to 15 sec.
 
-Advancement 2
+Advancement Phase 2
 For the duration of Skill, increases own DMG dealt to enemies by 20%. Normal attacks have a 10% chance to stun the target for 1.5 sec."
 427,"Prism Nova, Arc Lumineir","Summons the soul of Prism Nova, Arc lumineir for 10 sec. For the duration of the Skill, the soul attack according to the Light Chrisha owns every 3 sec.
 'Red Light' - Attacks the enemy and deals ??? M.DMG that ignores DEF.
 'Blue Light' - Attack all enemies, dealing ??? M.DMG and recovering all allies' 1 orb of Mana.
-'Green Light' - Attacks 2 enemies, dealing ??? M.DMG and reducing targets ATK by 35% for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,12,21,Charges up upon using Skills 5 times.,"Advancement 1
+'Green Light' - Attacks 2 enemies, dealing ??? M.DMG and reducing targets ATK by 35% for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,12,21,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Reduces Skill Activation Requirement to 4 times.
 
-Advancement 2
+Advancement Phase 2
 All effects will be enhanced.
 [Red Light] - DMG increases by 50%.
 [Blue Light] - Mana Recovery increases by 100%.
 [Green Light] - ATK Reduction changes to 50%."
-428,"The Guardian, Exian","Summons the soul of The Guardian, Exian, increasing P.DEF of all allies by 70% for 12 sec. For the duration of the Skill, normal attacks stun the target for 1 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,13,25,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement 1
+428,"The Guardian, Exian","Summons the soul of The Guardian, Exian, increasing P.DEF of all allies by 70% for 12 sec. For the duration of the Skill, normal attacks stun the target for 1 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,13,25,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement Phase 1
 For the Duration of the Skill, normal attacks reduce the target's P.DEF by 5% for 5 sec. The P.DEF reduction effect stacks up to max 7 times.
 
-Advancement 2
+Advancement Phase 2
 Upon activation, reduces P.DMG the ally with the highest ATK takes by 80% for 6 sec, and increases ATK equal to 100% of clauses P.DEF. This effect is irremovable."
-429,"Primal Flame, Flenos","Summons the Soul of Primal Flame, Flenos, dealing ??? M.DMG to 5 enemies. Dealing DMG to enemies with this Skill increases DEF Penetration by 25 for 60 sec. This effect stacks up to 20 times.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,14,22,Charges up upon using Skills 6 times.,"Advancement 1
+429,"Primal Flame, Flenos","Summons the Soul of Primal Flame, Flenos, dealing ??? M.DMG to 5 enemies. Dealing DMG to enemies with this Skill increases DEF Penetration by 25 for 60 sec. This effect stacks up to 20 times.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,14,22,Charges up upon using Skills 6 times.,"Advancement Phase 1
 Increases DMG by 50%.
 
-Advancement 2
+Advancement Phase 2
 Increases DMG by 50%. Each stack grants 2.5% ATK Boost effect."
-430,"Hellhound, Akistra","Summons the soul of Hellhound, Arkistra for 15 sec. When Crow casts [Even Gods shall die.], it deals additional ??? P.DMG. At max charge, deals 100% increased DMG. The soul disappears after dealing DMG.",3,2021-01-10 0:00:00,2021-01-10 0:00:00,15,30,Charges up upon using Skills 4 times.,"Advancement 1
+430,"Hellhound, Akistra","Summons the soul of Hellhound, Arkistra for 15 sec. When Crow casts [Even Gods shall die.], it deals additional ??? P.DMG. At max charge, deals 100% increased DMG. The soul disappears after dealing DMG.",3,2021-01-10 0:00:00,2021-01-10 0:00:00,15,30,Charges up upon using Skills 4 times.,"Advancement Phase 1
 DMG is increased by 80%.
 
-Advancement 2
+Advancement Phase 2
 For the duration fo Skill, increases own ATK by 40%."
-431,"Lake of Remembrance, Armekith","Summons the soul of Lake of Remembrance, Armekith, creating a tidal wave, dealing ??? M.DMG to enemies within wide frontal range of self and knocking them down for 3 sec. Dakaris then heals ??? HP and 1 orbs of Mana to allies within range. Afterward, absorbs the soul of Lake of Remembrance, Armekith, increasing own ATK by 60% for 10 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,16,20,Charges up upon using Skills 7 times.,"Advancement 1
+431,"Lake of Remembrance, Armekith","Summons the soul of Lake of Remembrance, Armekith, creating a tidal wave, dealing ??? M.DMG to enemies within wide frontal range of self and knocking them down for 3 sec. Dakaris then heals ??? HP and 1 orbs of Mana to allies within range. Afterward, absorbs the soul of Lake of Remembrance, Armekith, increasing own ATK by 60% for 10 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,16,20,Charges up upon using Skills 7 times.,"Advancement Phase 1
 Dispels positiv effects of enemies and negative effects of allies within range.
 
-Advancement 2
+Advancement Phase 2
 Reduces Skill Activation Requirements to 5 times, and for the duration of Skill, the number of targets of [May Their Agony End!] increases to 2."
 432,"Corrupted Holy Sword, Aea","Summons the soul of Corrupted Holy Sword, Aea for 10 sec, increasing own ATK by 50 and judging enemies upon Skill use.
 [Judgment Blade] Deals ??? P.DMG to the enemy with the highest ATK and enemies in a circular range of the target, reducing their Mana by 1000.
-[Doom] Deals ??? P.DMG with 500 increased DEF Penetration to the enemy with the highest ATK and nearby enemies in a circular range of the target",6,2021-01-10 0:00:00,2021-01-10 0:00:00,90,22,Charges up upon dealing DMG 80 times.,"Advancement 1
+[Doom] Deals ??? P.DMG with 500 increased DEF Penetration to the enemy with the highest ATK and nearby enemies in a circular range of the target",6,2021-01-10 0:00:00,2021-01-10 0:00:00,90,22,Charges up upon dealing DMG 80 times.,"Advancement Phase 1
 Changes Skill Activation Requirements to 60 times and Mana Reduction to 2000.
 
-Advancement 2
+Advancement Phase 2
 Changes the duration of Soul to 15 sec and increases DMG dealt to enemies by 20% for the duration."
-433,"The Blue Light, Arpheus","Summons the soul of The Blue Light, Arpheus, increasing all allies' P.Crit Resistance by 300 and P.Block Chance by 300 for 10 sec. Afterward, places [Mana Source of Blue Light] around self for 10 sec. For the duration of [Mana Source of Blue Light], deals a total of ??? P.DMG to enemies within range over 9 times and reduces their Mana by 300. At the end of duration, creates an explosion that deals ??? P.DMG and silences enemies within range for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,17,22,Charges up upon using Skills 4 times.,"Advancement 1
+433,"The Blue Light, Arpheus","Summons the soul of The Blue Light, Arpheus, increasing all allies' P.Crit Resistance by 300 and P.Block Chance by 300 for 10 sec. Afterward, places [Mana Source of Blue Light] around self for 10 sec. For the duration of [Mana Source of Blue Light], deals a total of ??? P.DMG to enemies within range over 9 times and reduces their Mana by 300. At the end of duration, creates an explosion that deals ??? P.DMG and silences enemies within range for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,17,22,Charges up upon using Skills 4 times.,"Advancement Phase 1
 Allies within [Mana Source of Blue Light] have their ATK Spd increases by 300 and recover 300 Mana every sec.
 
-Advancement 2
+Advancement Phase 2
 Continuously dispels positive effects placed upon enemies that are within [Mana Source of Blue Light] and changes the duration of Silence to 8 sec."
-434,"Tears of the Moon, Nerius","Summons the soul of Tears of the Moon, Nerius, dealing ??? M.DMG to frontal enemies and inflicting them with [Curse of the Moon] for 10 sec. Targets inflicted by [Curse of the Moon] take 25% increased M.DMG and have their Heal Rate reduced by 25%. Afterward, increases own Crit DMG by 50%.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,18,23,Charges up upon using Skills 5 times.,"Advancement 1
+434,"Tears of the Moon, Nerius","Summons the soul of Tears of the Moon, Nerius, dealing ??? M.DMG to frontal enemies and inflicting them with [Curse of the Moon] for 10 sec. Targets inflicted by [Curse of the Moon] take 25% increased M.DMG and have their Heal Rate reduced by 25%. Afterward, increases own Crit DMG by 50%.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,18,23,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Increases DMG by 50% and changes the M.DMG Boost effect to 45%.
 
-Advancement 2
+Advancement Phase 2
 For the Duration of Skill, increases own ATK by 40%."
-435,"Ancient Valor, Seliere","Summons the soul of Ancient Valor, Seliere, increasing P.Block chance of all allies by 500 for 10 sec. Afterward, deals ??? M.DMG near self every 3 sec and inflicts the target with Silence for 1 sec, creating a shield that grants immunity to CC and absorbs DMG equal to 300% of Dosarta's ATK for 4 sec on an ally with the lowest HP.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,19,25,Charges up upon using Skills 6 times.,"Advancement 1
+435,"Ancient Valor, Seliere","Summons the soul of Ancient Valor, Seliere, increasing P.Block chance of all allies by 500 for 10 sec. Afterward, deals ??? M.DMG near self every 3 sec and inflicts the target with Silence for 1 sec, creating a shield that grants immunity to CC and absorbs DMG equal to 300% of Dosarta's ATK for 4 sec on an ally with the lowest HP.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,19,25,Charges up upon using Skills 6 times.,"Advancement Phase 1
 Increases M.DMG the hit enemy takes by 25% for 5 sec.
 
-Advancement 2
+Advancement Phase 2
 Changes the number of targets applied by the shield to 3."
-436,"The Seductress, Guillotine","Summons the Soul of The Seductress, Guillotine, and increases own ATK by 40% for 8 sec. For the duration of Skill, Normal and Skill attacks have a 20% chance to deal ??? M.DMG that ignores DEF to a target. If [Absorbing Blow] hits a target, this effect will activate with a 100% chance.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,20,18,Charges up over 18 sec.,"Advancement 1
+436,"The Seductress, Guillotine","Summons the Soul of The Seductress, Guillotine, and increases own ATK by 40% for 8 sec. For the duration of Skill, Normal and Skill attacks have a 20% chance to deal ??? M.DMG that ignores DEF to a target. If [Absorbing Blow] hits a target, this effect will activate with a 100% chance.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,20,18,Charges up over 18 sec.,"Advancement Phase 1
 Activation chance changes to 30%, and DMG increases by 50%.
 
-Advancement 2
+Advancement Phase 2
 The M.DMG now ignores Block, and hit enemy takes 30% increased M.DMG for 7 sec."
-437,"Essence of Greed, Perion","Summons the soul of Essence of Greed, Perion for 7 sec. Every Skill attack grants a stack of 'Essence of Greed'. After 7 sec, the soul explodes and deals ??? P.DMG to all enemies. The DMG of this Skill increases by 1% for every 'Essence of Greed' stacks gained for the duration. 'Essence of Greed' can be stacked up to max 30 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,21,15,Charges up over 22 sec.,"Advancement 1
+437,"Essence of Greed, Perion","Summons the soul of Essence of Greed, Perion for 7 sec. Every Skill attack grants a stack of 'Essence of Greed'. After 7 sec, the soul explodes and deals ??? P.DMG to all enemies. The DMG of this Skill increases by 1% for every 'Essence of Greed' stacks gained for the duration. 'Essence of Greed' can be stacked up to max 30 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,21,15,Charges up over 22 sec.,"Advancement Phase 1
 Each stack of 'Essence of Greed' deals 2% DMG.
 
-Advancement 2
+Advancement Phase 2
 Max number of stacks of 'Essence of Greed' increases by 30, and DMG dealt at max stack of 'Essence of Greed' increases by 150%."
-438,"Wanderer's Pleasure, Lu Etrona Dice","Summons the soul of Wanderer's Pleasure, Lu Etrona Dice, and rolls the dice. Depending on the number of the dice's dots, immediately reduces Cooldown of Esker's next Soul Weapon use by 10% and increases ATK of all allies by 12% for 60 sec. The ATK Boost effect can be stacked up to max 5 times.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,22,18,Charges up upon using Skills 6 times.,"Advancement 1
+438,"Wanderer's Pleasure, Lu Etrona Dice","Summons the soul of Wanderer's Pleasure, Lu Etrona Dice, and rolls the dice. Depending on the number of the dice's dots, immediately reduces Cooldown of Esker's next Soul Weapon use by 10% and increases ATK of all allies by 12% for 60 sec. The ATK Boost effect can be stacked up to max 5 times.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,22,18,Charges up upon using Skills 6 times.,"Advancement Phase 1
 Changes the max number of stacks to 7.
 
-Advancement 2
+Advancement Phase 2
 Increases DEF Penetration of all allies by 50 per every stack."
-439,"Small Synthesized Darkness, Naav Gehen","Summons the soul of Small Synthesized Darkness, Naav Gehen for 10 sec, periodically healing HP of all allies by ??? and recovering Mana of all allies by 300 over 7 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,82,20,Charges up over 20 sec.,"Advancement 1
+439,"Small Synthesized Darkness, Naav Gehen","Summons the soul of Small Synthesized Darkness, Naav Gehen for 10 sec, periodically healing HP of all allies by ??? and recovering Mana of all allies by 300 over 7 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,82,20,Charges up over 20 sec.,"Advancement Phase 1
 Increases Heal Rate by 40% and changes Mana Recovery to 500.
 
-Advancement 2
+Advancement Phase 2
 Periodically reduces Evan's Skill Cooldown by 2 sec."
-440,Jailer of Despair Barbatos,"Summons the soul of Jailer of Despair, Barbatos for 12 sec, dealing ??? M.DMG to nearby enemies within a circular range of self, increasing own ATK by 50%. For the duration of Skill, if Ezekiel is in Fury State, he can still be controlled and will not consume HP upon Skill use. After Skill use, gains 1 stack(s) of Cursed Blood. Cursed Blood stacks gained from this Skill can also be gained during Fury State.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,83,18,Charges up upon using Skills 6 times.,"Advancement 1
+440,Jailer of Despair Barbatos,"Summons the soul of Jailer of Despair, Barbatos for 12 sec, dealing ??? M.DMG to nearby enemies within a circular range of self, increasing own ATK by 50%. For the duration of Skill, if Ezekiel is in Fury State, he can still be controlled and will not consume HP upon Skill use. After Skill use, gains 1 stack(s) of Cursed Blood. Cursed Blood stacks gained from this Skill can also be gained during Fury State.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,83,18,Charges up upon using Skills 6 times.,"Advancement Phase 1
 Gains 1 additional Cursed Blood stack(s).
 
-Advancement 2
+Advancement Phase 2
 For the duration of Skill, increases own DMG dealt to enemies by 30%."
-441,"Angel's Despair, Rosmerta","Summons the soul of Angel's Despair, Rosmerta, increasing DMG of Heaven's Vengeance by 50% for 10 sec, and applies [Angel's Despair] to all enemies, reducing their ATK by 25%. Afterward, delivers [Judgement of the Fallen Angel] to a random enemy and nearby every 1 sec, dealing ??? M.DMG each hit and reducing ATK Spd by 100 for 10 sec. The ATK Spd reduction effect can be stack up to max 5 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,91,18,Charges up over 20 sec.,"Advancement 1
+441,"Angel's Despair, Rosmerta","Summons the soul of Angel's Despair, Rosmerta, increasing DMG of Heaven's Vengeance by 50% for 10 sec, and applies [Angel's Despair] to all enemies, reducing their ATK by 25%. Afterward, delivers [Judgement of the Fallen Angel] to a random enemy and nearby every 1 sec, dealing ??? M.DMG each hit and reducing ATK Spd by 100 for 10 sec. The ATK Spd reduction effect can be stack up to max 5 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,91,18,Charges up over 20 sec.,"Advancement Phase 1
 Reduces Skill Activation Requirements by 4 sec, and changes ATK Reduction of [Angel's Despair] to 40%.
 
-Advancement 2
+Advancement Phase 2
 Each hit dispels positive effects from target and increases All DMG the target takes by 40% for 10 sec."
 442,"Twinswords of Fury, Veralta","Summons the soul of Twinswords of Fury, Veralta for 10 sec. For the Duration of Skill, the DMG of Normal attacks is increased by 50%, and Fluss' Skills are enhanced.
 [Tempest Blade] Attack the target and the enemies nearby 3 times, dealing a total of ??? additional P.DMG and reducing the Heal Rate of the hit target by 30% for 5 sec.
 [Flashstep] Increases own Crit DMG by 100% for 10 sec.
-[Bloody Petals] Deals a total of ??? P.DMG to one enemy over 16 attacks. The Mark effect of [Flashstep] will not be applied to this Skill.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,84,24,Charges up upon Dealing DMG 70 times.,"Advancement 1
+[Bloody Petals] Deals a total of ??? P.DMG to one enemy over 16 attacks. The Mark effect of [Flashstep] will not be applied to this Skill.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,84,24,Charges up upon Dealing DMG 70 times.,"Advancement Phase 1
 Charges the duration of the Soul Weapon to 15 sec.
 
-Advancement 2
+Advancement Phase 2
 For the duration of Skill, each attack has a 100% chance to reduce Cooldown of self's all Skills by 2%."
-443,"God's Authority, Rosmerta","Summons the soul of God's Authority, Rosmarta for 12 sec. Healing HP of 1 ally with the lowest HP by ??? every sec. Additionally, attack the enemy with the highest ATK and enemies nearby it every 1 sec, dealing ??? M.DMG and inflicting stun for 1 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,85,25,Charges up upon using Skills 5 times.,"Advancement 1
+443,"God's Authority, Rosmerta","Summons the soul of God's Authority, Rosmarta for 12 sec. Healing HP of 1 ally with the lowest HP by ??? every sec. Additionally, attack the enemy with the highest ATK and enemies nearby it every 1 sec, dealing ??? M.DMG and inflicting stun for 1 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,85,25,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Duration of the soul is changed to 15 sec.
 
-Advancement 2
+Advancement Phase 2
 Increases Heal Rate by 50%, and healed target block all incoming attacks for 5 sec."
-444,"Holy Bird, Numinu","Summons the soul of Holy Bird, Numinu, increasing own ATK by 60% for 8 sec. Upon activation, summons the Storm of Numinu in the front for 8 sec, dealing ??? P.DMG every 0.5 sec to enemies within range and reducing the target's ATK Spd by 100 for 5 sec. The ATK Spd Reduction effect can be stacked up to max 10 times. Enemies with 10 stacks are inflicted with Freeze and take 30% increased P.DMG for 5 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,86,22,Charges up upon using Skills 4 times.,"Advancement 1
+444,"Holy Bird, Numinu","Summons the soul of Holy Bird, Numinu, increasing own ATK by 60% for 8 sec. Upon activation, summons the Storm of Numinu in the front for 8 sec, dealing ??? P.DMG every 0.5 sec to enemies within range and reducing the target's ATK Spd by 100 for 5 sec. The ATK Spd Reduction effect can be stacked up to max 10 times. Enemies with 10 stacks are inflicted with Freeze and take 30% increased P.DMG for 5 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,86,22,Charges up upon using Skills 4 times.,"Advancement Phase 1
 Increases the duration of Storm of Numinu and soul by 4 sec.
 
-Advancement 2
+Advancement Phase 2
 Changes the increased P.DMG the enemies take to 50%, and every hit dispels positive effects from the enemy."
-445,"Beast Fist, Mastra","Summons the soul of Beast Fist, Mastra, dealing ??? P.DMG that ignores DEF to the enemy with the highest ATK, and increasing own ATK by 50% for 10 sec. For the duration of Skill, increases DMG of [Ultimate Punch!] by 50%. Upon activating [This will hurt!], deals ??? additional P.DMG that ignores DEF.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,87,20,Charges up upon using Skills 5 times.,"Advancement 1
+445,"Beast Fist, Mastra","Summons the soul of Beast Fist, Mastra, dealing ??? P.DMG that ignores DEF to the enemy with the highest ATK, and increasing own ATK by 50% for 10 sec. For the duration of Skill, increases DMG of [Ultimate Punch!] by 50%. Upon activating [This will hurt!], deals ??? additional P.DMG that ignores DEF.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,87,20,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Upon using [Ultimate Punch!] for the Duration of Skill, DMG that ignores DEF also applies to targets other than Bosses.
 
-Advancement 2
+Advancement Phase 2
 Increases DMG by 100% and changed DMG Boost of [Ultimate Punch!] to 100%."
-446,"The Counterattack, Maxithea","Summons the soul of The Counterattack, Maxithea, healing all allies' HP by 33224 and increasing DEF by 50% for 10 sec. Afterward, sends the soul charging to the front, dealing ??? P.DMG to enemies within range and knocking them down for 5 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,88,20,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement 1
+446,"The Counterattack, Maxithea","Summons the soul of The Counterattack, Maxithea, healing all allies' HP by 33224 and increasing DEF by 50% for 10 sec. Afterward, sends the soul charging to the front, dealing ??? P.DMG to enemies within range and knocking them down for 5 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,88,20,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement Phase 1
 For the duration of Skill, increases own DEF by 50%, and increases ATK of all allies except for self by 40%.
 
-Advancement 2
+Advancement Phase 2
 Upon activation, dispels negative effects from all allies. When the soul charges, it dispels positive effects from all enemies within range, and increases P.DMG the target takes by 25% for 10 sec."
-447,"Gateway to Purgatory, Pigritia","With the power of the Gateway to Purgatory, Pigritia, Gremory transforms into her true form and attacks enemies with a wide frontal range 2 times, dealing a total of ??? M.DMG. Afterward, she lets out a deafening roar, dealing ??? M.DMG to enemies within a wide range. Each stack of [Mana Charge] increases DMG of Soul Weapon by 20%.",8,2021-01-10 0:00:00,2021-01-10 0:00:00,95,12,Charges up upon using Skills 4 times.,"Advancement 1
+447,"Gateway to Purgatory, Pigritia","With the power of the Gateway to Purgatory, Pigritia, Gremory transforms into her true form and attacks enemies with a wide frontal range 2 times, dealing a total of ??? M.DMG. Afterward, she lets out a deafening roar, dealing ??? M.DMG to enemies within a wide range. Each stack of [Mana Charge] increases DMG of Soul Weapon by 20%.",8,2021-01-10 0:00:00,2021-01-10 0:00:00,95,12,Charges up upon using Skills 4 times.,"Advancement Phase 1
 Increases DMG by 50%.
 
-Advancement 2
+Advancement Phase 2
 Increases the max number of [Mana Charge] stacks by an additional 2."
 448,"The Playtime, HN-0","Summons the soul of The Playtime, HN-0, increasing Crit DMG by 30% for 60 sec. Afterward, commands 'Attack Order' 3 times every 3 sec, dealing ??? P.DMG to frontal enemies in a straight line and inflicting Stun for 2 sec. Upon activating this Skill in Guild Battles, additional effects apply, and Crit DMG Boost effect stacks up to 4 times.
 [Guild Conquest] - Every time 'Attack Order' activates, hit enemies take 30% increased P.DMG for 5 sec.
 [Guild War] - Reduces Skill Activation Requirements to 10 sec.
-[Guild Raid] - Upon activation of 'Attack Order', gains 50 Ammo.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,89,21,Charges up over 21 sec.,"Advancement 1
+[Guild Raid] - Upon activation of 'Attack Order', gains 50 Ammo.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,89,21,Charges up over 21 sec.,"Advancement Phase 1
 Increases DMG by 30%, and changes the max number of stacks to 7 times.
 
-Advancement 2
+Advancement Phase 2
 Increases DMG by 70%. ATK increases by 6% per each stack."
-449,"Dreams of an Artificial God, Innocentia","Summons the soul of Dreams of an Artificial God, Innocentia for 10sec, increasing own ATK by 40%, recovering Mana by 200 every sec, and reducing ATK of all enemies by 30% for the duration of Skill.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,92,20,Charges up over 20 sec.,"Advancement 1
+449,"Dreams of an Artificial God, Innocentia","Summons the soul of Dreams of an Artificial God, Innocentia for 10sec, increasing own ATK by 40%, recovering Mana by 200 every sec, and reducing ATK of all enemies by 30% for the duration of Skill.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,92,20,Charges up over 20 sec.,"Advancement Phase 1
 Changes the Skill Activation Requirements to 15sec, and reduces DEF of all enemies by 30% for the duration of Skill.
 
-Advancement 2
+Advancement Phase 2
 Changes the duration of soul to 15 sec and increases DMG dealt to enemies by 20% for the duration of Skill."
-450,"Coqnuerer of Darkness, Del Terravion","Summons the soul of Conquerer of Darkness, Del Terravion, dealing ??? P.DMG to all enemies and locking hit targets within an irremovable special barrier. Targets within the special barrier cannot receive positive effects and they take 25% increased P.DMG for 8 sec. Afterward, the Skill lasts for 12 sec and increases Isolet's ATK by 30%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,93,20,Charges up upon using Skills 4 times.,"Advancement 1
+450,"Coqnuerer of Darkness, Del Terravion","Summons the soul of Conquerer of Darkness, Del Terravion, dealing ??? P.DMG to all enemies and locking hit targets within an irremovable special barrier. Targets within the special barrier cannot receive positive effects and they take 25% increased P.DMG for 8 sec. Afterward, the Skill lasts for 12 sec and increases Isolet's ATK by 30%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,93,20,Charges up upon using Skills 4 times.,"Advancement Phase 1
 Increases the duration of the special barrier by 4 sec.
 
-Advancement 2
+Advancement Phase 2
 Increases Isolet's DMG dealt to non-Hero enemies by 35% for the duration of soul."
-451,"Unchanging Mind, Erekura","Summons the soul of Unchanging Mind, Erekura for 10 sec, increasing Heal Rate of self by 50%. Every 0.5 sec causes 4 random enemies to take 8% increased M.DMG for 5 sec. This effect stacks up to 5 times. After 10 sec, removes the stack from target, dealing ??? M.DMG per stack.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,23,20,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement 1
+451,"Unchanging Mind, Erekura","Summons the soul of Unchanging Mind, Erekura for 10 sec, increasing Heal Rate of self by 50%. Every 0.5 sec causes 4 random enemies to take 8% increased M.DMG for 5 sec. This effect stacks up to 5 times. After 10 sec, removes the stack from target, dealing ??? M.DMG per stack.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,23,20,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement Phase 1
 Reduces Activation Requirement to 60.
 
-Advancement 2
+Advancement Phase 2
 Increases the max number of Stacks to 10."
 452,"Hundred-Flavor Banquet, Tempora Fyrr","Summons the Soul of Hundred-Flavor Banquet, Tempora Fyrr for 10 sec and gains additional effects accourding to Juno's status.
 While in [Cook from Heaven], increases all allies' All DEF by 50% + euqal to 3% of Juno's ATK.
 While in [Cook from Hell], increases all allies' ATK by 30% + euqal to 3% of Juno's ATK.
-Upon using the Skill at 2 or more stacks of [Excellent Ingredient], consumes 2 stacks and increases all effect by 50%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,24,22,Charges up upon using Skills 7 times.,"Advancement 1
+Upon using the Skill at 2 or more stacks of [Excellent Ingredient], consumes 2 stacks and increases all effect by 50%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,24,22,Charges up upon using Skills 7 times.,"Advancement Phase 1
 Reduces Skill Activation Requirement to 5 times.
 
-Advancement 2
+Advancement Phase 2
 While in [Cook from Heaven], reduces All DMG all allies take by 20%.
 While in [Cook from Hell], increases All DMG all enemies take by 15%.
 The effect of Excellent Ingredient stacks applies to these effects."
-453,"0-Form Perpetual Motion Cannon, Heaven Shatterer","Summons the soul of 0-Form Perpetual Motion Cannon, Heaven Shatterer for 12 sec. The summoned soul attacks the target continuously, dealing ??? M.DMG every 0.5 sec. If the attack hits the same target for more than 5 sec, the effect is enhanced, increasing DMG by 100%",7,2021-01-10 0:00:00,2021-01-10 0:00:00,25,24,Charges up over 20 sec.,"Advancement 1
+453,"0-Form Perpetual Motion Cannon, Heaven Shatterer","Summons the soul of 0-Form Perpetual Motion Cannon, Heaven Shatterer for 12 sec. The summoned soul attacks the target continuously, dealing ??? M.DMG every 0.5 sec. If the attack hits the same target for more than 5 sec, the effect is enhanced, increasing DMG by 100%",7,2021-01-10 0:00:00,2021-01-10 0:00:00,25,24,Charges up over 20 sec.,"Advancement Phase 1
 Increases the duration of the soul by 6 sec.
 
-Advancement 2
+Advancement Phase 2
 The enhanced attack stuns the enemy for 1 sec, and increases its DMG by an additional 100%."
-454,"The Holy Sword, Aea","Summons the soul of the Holy Sword, Aea for 10 sec, increasing own ATK by 30% and All DEF by 30%. The soul of The Holy Sword, Aea follows Kasel around, healing HP of allies within range equal to 5% of their Max HP every sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,26,24,Charges up over 19 sec.,"Advancement 1
+454,"The Holy Sword, Aea","Summons the soul of the Holy Sword, Aea for 10 sec, increasing own ATK by 30% and All DEF by 30%. The soul of The Holy Sword, Aea follows Kasel around, healing HP of allies within range equal to 5% of their Max HP every sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,26,24,Charges up over 19 sec.,"Advancement Phase 1
 Dispels negative effects from the healed ally.
 
-Advancement 2
+Advancement Phase 2
 Deals ??? P.DMG to enemies within range every sec."
-455,"The Bluewind, Coventina","Summons the soul of The Bluewind, Conventina, recovering Mana of all allies by 2000. Afterward, reduces Heal Rate of all enemies by 30%, increases M.DMG the enemies take by 30% for 10 sec, and attacks a random enemy with lighting every 3 sec. dispelling positiv effects, dealing ??? M.DMG, and reducing the enemy's Mana by 500. After 10 sec, deals ??? M.DMG to all enemies and inflicts Stun for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,27,20,Charges up over 20 sec.,"Advancement 1
+455,"The Bluewind, Coventina","Summons the soul of The Bluewind, Conventina, recovering Mana of all allies by 2000. Afterward, reduces Heal Rate of all enemies by 30%, increases M.DMG the enemies take by 30% for 10 sec, and attacks a random enemy with lighting every 3 sec. dispelling positiv effects, dealing ??? M.DMG, and reducing the enemy's Mana by 500. After 10 sec, deals ??? M.DMG to all enemies and inflicts Stun for 5 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,27,20,Charges up over 20 sec.,"Advancement Phase 1
 Changes Heal Rate Reduction effect to 50% and M.DMG Boost effect to 50%.
 
-Advancement 2
+Advancement Phase 2
 Increases DEF Penetration of all allies by 500 for the duration of Skill."
 456,"Midnight Demonic Swords, Night Sky & Dark Shadow & Veil","Summons the soul of Midnight Demonic Swords, Night Sky & Dark Shadow & Veil, launching a blow to all enemies within wide frontal range of self that deals ??? M.DMG, inflicting Stun for 3 sec, and reducing their Mana by 2000. Afterward, increases own ATK by 30% for 10 sec and deals a total of ??? M.DMG to 1 random enemy over 4 hits every 3 sec. Additional effects will be applied depending on Kibera's selected sword.
 [Nocturnal Demonic Sword, Night Sky] - Increases DMG dealt to enemies by 30% for 10 sec.
 [Umbral Demonic Blade, Dark Shadow] - Reduces ATK of hit enemies by 40% for 10 sec.
-[Darkslayer Demonic Sword, Veil] - DMG ignores DEF.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,28,15,Charges up over 24 sec.,"Advancement 1
+[Darkslayer Demonic Sword, Veil] - DMG ignores DEF.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,28,15,Charges up over 24 sec.,"Advancement Phase 1
 Reduces Skill Activation Requirements by 2 sec and increases DMG by 50%.
 
-Advancement 2
+Advancement Phase 2
 Reduces Skill Activation Requirements by an additional 4 sec and dispels positive effects of the target."
-457,"Judgment Edge, Elicipira","Summons the soul of Judgment Edge, Elicipira, changing the activation chance of the additional M.DMG effect of Judgment Edge, Elicipira to 10% and reducing All DMG taken by 40% for 10 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,29,25,Charges up upon dealing DMG 60 times.,"Advancement 1
+457,"Judgment Edge, Elicipira","Summons the soul of Judgment Edge, Elicipira, changing the activation chance of the additional M.DMG effect of Judgment Edge, Elicipira to 10% and reducing All DMG taken by 40% for 10 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,29,25,Charges up upon dealing DMG 60 times.,"Advancement Phase 1
 For the duration of Skill, increases ATK by ???.
 
-Advancement 2
+Advancement Phase 2
 Increases the duration of the effect by 5 sec and changes the activation chance of Judgment Edge, Elicipira to 15%."
-458,"Flowing Circle, Eltoirre","Summons the soul of Flowing Circle, Eltoirre for 10 sec, healing all allies' HP by ??? and mana by 400 every sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,30,23,Charges up upon using Skills 5 times.,"Advancement 1
+458,"Flowing Circle, Eltoirre","Summons the soul of Flowing Circle, Eltoirre for 10 sec, healing all allies' HP by ??? and mana by 400 every sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,30,23,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Increases the healed ally's M.DEF by 10% and M.Block by 200. This effect stacks up to 5 times.
 
-Advancement 2
+Advancement Phase 2
 For the duration of the skill, self becomes immune to All DMG and Cooldown of all active Skills is reduced by 1 sec every sec."
-459,Lakrak MK-1,"Summons the soul of Lakrak MK-1, increasing own ATK by 50% for 12 sec. Afterward, deals a total of ??? P.DMG to enemies within range of a random enemy over 5 times every 4 sec, stunning them for 2 sec and increasing P.DMG they take by 30% for 8 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,31,19,Charges up over 18 sec.,"Advancement 1
+459,Lakrak MK-1,"Summons the soul of Lakrak MK-1, increasing own ATK by 50% for 12 sec. Afterward, deals a total of ??? P.DMG to enemies within range of a random enemy over 5 times every 4 sec, stunning them for 2 sec and increasing P.DMG they take by 30% for 8 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,31,19,Charges up over 18 sec.,"Advancement Phase 1
 Reduces Skill Activation Requirements by 2 sec and gains immunity to CC for 12 sec.
 
-Advancement 2
+Advancement Phase 2
 Reduces Skill Activation Requirements by an additional 4 sec, and immediately reduces Cooldown of all Skills by 3 sec every 4 sec."
-460,"Whispering Sands, Arlaq","Summons Whispering Sands, Arlaq for 6 sec, recovering own Mana by 500 every sec, and reducing ATK Spd of enemies within circular range of self by 120. The ATK Spd Reduction effect stacks up to 5 times, and enemies inflicted with 5 stacks take 50% increased M.DMG for 7 sec, and become Petrified.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,32,22,Charges up over 21 sec.,"Advancement 1
+460,"Whispering Sands, Arlaq","Summons Whispering Sands, Arlaq for 6 sec, recovering own Mana by 500 every sec, and reducing ATK Spd of enemies within circular range of self by 120. The ATK Spd Reduction effect stacks up to 5 times, and enemies inflicted with 5 stacks take 50% increased M.DMG for 7 sec, and become Petrified.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,32,22,Charges up over 21 sec.,"Advancement Phase 1
 Increases own ATK by 40% for the duration of the Skill.
 
-Advancement 2
+Advancement Phase 2
 For every sec, dispels positive effects from an enemy within range and deals ??? M.DMG."
-461,"Void Soul, Dunn Nemecia","Summons the soul of Void Soul, Dunn Nemecia, dealing ??? M.DMG to all enemies and inflicting them with 'Soul Mischief'. Enemies inflicted with 'Soul Mischief' take 8% increased M.DMG and have their Heal Rate reduced by 8% for 7 sec. Afterward, every time Lavril uses a Skill for 10 sec, she inflicts ??? M.DMG to all enemies and inflicts them with 'Soul Mischief'. The 'Soul Mischief' effect can be stacked up to max 3 times.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,33,25,Charges up over 22 sec.,"Advancement 1
+461,"Void Soul, Dunn Nemecia","Summons the soul of Void Soul, Dunn Nemecia, dealing ??? M.DMG to all enemies and inflicting them with 'Soul Mischief'. Enemies inflicted with 'Soul Mischief' take 8% increased M.DMG and have their Heal Rate reduced by 8% for 7 sec. Afterward, every time Lavril uses a Skill for 10 sec, she inflicts ??? M.DMG to all enemies and inflicts them with 'Soul Mischief'. The 'Soul Mischief' effect can be stacked up to max 3 times.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,33,25,Charges up over 22 sec.,"Advancement Phase 1
 Changes the max number of stacks of 'Soul Mischief' to 4.
 
-Advancement 2
+Advancement Phase 2
 Increases the effect of 'Soul Mischief' by 50%."
-462,"Phoenix Quill, Belisa","Summons the soul of Pheonix Quill, Belisa, creating a shield on an ally wiht the highest ATK for 10 sec that absorbs ??? DMG, grants immunity to CC, and increases DMG dealt to enemies by 20% for 10 sec. Afterward, dispels positive effects of frontal enemies in a straight line and deals ??? P.DMG.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,34,23,Charges up upon using Skills 5 times.,"Advancement 1
+462,"Phoenix Quill, Belisa","Summons the soul of Pheonix Quill, Belisa, creating a shield on an ally wiht the highest ATK for 10 sec that absorbs ??? DMG, grants immunity to CC, and increases DMG dealt to enemies by 20% for 10 sec. Afterward, dispels positive effects of frontal enemies in a straight line and deals ??? P.DMG.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,34,23,Charges up upon using Skills 5 times.,"Advancement Phase 1
 Changes Skill Activation Requirements to 3 times.
 
-Advancement 2
+Advancement Phase 2
 Prevents hit enemies from receiving positive effects for 5 sec."
-463,"Scarlet Ruler, Dominicia","Summons the Soul of Scarlet Ruler, Dominicia, increasing Lewisia's ATK by 40% and M.DMG the enemy takes by 20% for 12 sec. Afterwards, deals a total of ??? M.DMG over 10 times on the enemy and heals all allies' HP equal to 5% of the DMG dealt. After 10 sec, deals ??? M.DMG. If the target is a Boss, deals ??? additional M.DMG.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,35,23,Charges up upon dealing DMG 60 times.,"Advancement 1
+463,"Scarlet Ruler, Dominicia","Summons the Soul of Scarlet Ruler, Dominicia, increasing Lewisia's ATK by 40% and M.DMG the enemy takes by 20% for 12 sec. Afterwards, deals a total of ??? M.DMG over 10 times on the enemy and heals all allies' HP equal to 5% of the DMG dealt. After 10 sec, deals ??? M.DMG. If the target is a Boss, deals ??? additional M.DMG.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,35,23,Charges up upon dealing DMG 60 times.,"Advancement Phase 1
 Reduces Cooldown by 8 sec.
 
-Advancement 2
+Advancement Phase 2
 Increases DMG by 70%, and changes ATK Boost to 60%"
-464,"Infinite Spring, Cielamaha","Summons the soul of Infinite Spring, Cialamaha for 12 sec, increasing own DMG dealt to enemies by 20%. Normal and Skill attacks have a 10% chance of dealing ??? additional P.DMG.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,36,22,Charges up upon dealing DMG 70 times.,"Advancement 1
+464,"Infinite Spring, Cielamaha","Summons the soul of Infinite Spring, Cialamaha for 12 sec, increasing own DMG dealt to enemies by 20%. Normal and Skill attacks have a 10% chance of dealing ??? additional P.DMG.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,36,22,Charges up upon dealing DMG 70 times.,"Advancement Phase 1
 Fully recovers Mana for the duration of Skill.
 
-Advancement 2
+Advancement Phase 2
 Increases DMG by 100%."
-465,"Wave of Protection, Gaiamenes","Summons the soul of Wave of Protection, Gaiamenes, dealing ??? P.DMG to frontal enemies and inflicting Stun for 3 sec. Afterward, for 10 sec, increases all allies ATK by 30% + equal to 5% of Loman's ATK, and increases M.DEF by 30%, while recovering 1000 Mana of all allies every 3 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,37,22,Charges up over 22 sec.,"Advancement 1
+465,"Wave of Protection, Gaiamenes","Summons the soul of Wave of Protection, Gaiamenes, dealing ??? P.DMG to frontal enemies and inflicting Stun for 3 sec. Afterward, for 10 sec, increases all allies ATK by 30% + equal to 5% of Loman's ATK, and increases M.DEF by 30%, while recovering 1000 Mana of all allies every 3 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,37,22,Charges up over 22 sec.,"Advancement Phase 1
 Heals all allies equal to 12% of Max HP and dispels negative effects every 3 sec.
 
-Advancement 2
+Advancement Phase 2
 Reduces Skill Activation Requirements by 6 sec. Upon hit, increases P.DMG the hit target takes 35% for 10 sec."
-466,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,38,,,
-467,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,39,,,
-468,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,40,,,
-469,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,41,,,
-470,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,42,,,
-471,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,43,,,
-472,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,44,,,
-473,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,45,,,
-474,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,46,,,
-475,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,47,,,
-476,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,48,,,
-477,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,49,,,
-478,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,50,,,
-479,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,51,,,
-480,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,52,,,
-481,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,53,,,
-482,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,54,,,
-483,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,55,,,
-484,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,56,,,
-485,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,57,,,
-486,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,58,,,
-487,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,94,,,
-488,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,59,,,
-489,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,60,,,
-490,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,61,,,
-491,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,62,,,
-492,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,63,,,
-493,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,96,,,
-494,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,97,,,
-495,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,64,,,
-496,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,65,,,
-497,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,66,,,
-498,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,67,,,
-499,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,68,,,
-500,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,69,,,
-501,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,70,,,
-502,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,71,,,
-503,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,72,,,
-504,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,81,,,
-505,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,73,,,
-506,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,74,,,
-507,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,75,,,
-508,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,76,,,
-509,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,77,,,
-510,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,78,,,
-511,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,79,,,
-512,,,,2021-01-10 0:00:00,2021-01-10 0:00:00,80,,,
+466,"World Tree's Will, Roburu","Summons the soul of World Tree's Will, Roburu for 10 sec, dealing ??? M.DMG on a random enemy every 2 sec, increasing M.DMG it takes by 30% for 10 sec and inflicting Shackle for 2 sec. Also recovers own mana by 500 and reduces Cooldown of all Skills by 1 sec every 2 sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,38,21,Charges up over 17 sec.,"Advancement Phase 1
+Increases own ATK by 50% for the duration of soul.
+
+Advancement Phase 2
+Increases the duration of CC effects applied upon all enemies by 30% and reduces their M.DEF by 25% for the duration of soul."
+467,"Blessing of Light, Benedicia","Summons the soul of Blessing of Light, Benedicia for 10 sec, increasing all allies Heal Rate by 35% and ATK Spd by 350.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,39,24,Charges up upon using Skills 4 times.,"Advancement Phase 1
+Increases ATK of all allies by 35% for the duration of Skill.
+
+Advancement Phase 2
+Every 1 sec, Skill Cooldown of self is reduced by 1 sec for the duration of Skill."
+468,"Flower of Eternity, Hyacinth","Summons the soul of Flower of Eternity, Hyacinth, dealing ??? M.DMG to nearby enemies within a circular range of self, freezing them for 5 sec and knocking them back. Afterward, the Soul of Hyacinth deals ??? additional M.DMG to frozen enemies and increases own Crit DMG by 100% for 10 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,40,17,Charges up over 17 sec.,"Advancement Phase 1
+Hit targets take 40% increased M.DMG for 10 sec.
+
+Advancement Phase 2
+For the duration of Skill, Normal attacks hit 3 targets, and its range increases by 30%. Hit targets will be knocked back."
+469,"Lea's Messenger, Cocytus","Summons the Soul of Lea's Messenger, Cocytus, dealing ??? M.DMG to frontral enemies in a straight line, knocking them back far away for 3 sec, and inflicting 'Raven Catastrophe' for 10 sec. Targets inflicted with 'Raven Catastrophe' have their ATK reduced by 40%.",8,2021-01-10 0:00:00,2021-01-10 0:00:00,41,15,Charges up upon using Skills 4 times.,"Advancement Phase 1
+Reduces Heal Rate of the target inflicted with Raven Catastrophe by 50%.
+
+Advancement Phase 2
+Reduces Skill Activation Requirements to 3 times."
+470,"The Box of Fragrance, Etelia","Summons the soul of The Box of Fragrance, Etalia, healing a total of ??? HP of all allies over 10 sec and increasing ATK of the ally with the highest ATK by 4% for 120 sec every 3 sec. The ATK Boost effect can be stacked up to 15 times, and upon activation, there is a 30% chance to stack 2 times at once.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,42,20,Charges up over 15 sec.,"Advancement Phase 1
+Changes the max number of stacks to 20 times.
+
+Advancement Phase 2
+Increases Heal Rate by 100%, and increases the chance to stack 2 times at once to 50%."
+471,"Merciful Threat, Phistonia","Summons the Soul of Merciful Threat, Phistonia, increasing ATK of the ally with the highest ATK equal to 20% of Mediana's ATK for 10 sec, and healing the target and Mediana by a total of ??? HP over 10 sec.",4,2021-01-10 0:00:00,2021-01-10 0:00:00,43,25,Charges up over 25 sec.,"Advancement Phase 1
+For the duration of Skill, Mediana and the target recover 400 Mana every 1 sec.
+
+Advancement Phase 2
+ATK Boost is increased by 50%."
+472,"Endless Acceleration, Riventina","Places Endless Acceleration, Riventina on the ground for 10 sec. Endless Acceleration, Riventina attacks the enemy with the lowest M.DEF, dealing ??? M.DMG and inflicting 'Target Lock On'. Afterwards, attack the enemy every 3 sec, dealing ??? M.DMG and inflicting stun for 2 sec. All effects prioritize the enemy inflicted with 'Target Lock On'.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,44,23,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Upon activation, increases Mirianne's Crit DMG by 100% and ACC by 300 for 10 sec.
+
+Advancement Phase 2
+Upon activation, [Assassination] ignores the enemy's DEF, and increases its DMG by 30% for 10 sec."
+473,"Ultimate Weapon, Leviathan","Summons the soul of Ultimate Weapon, Leviathan, icnreasin own ATK by 30% for 10 sec, and dealing ??? P.DMG to all enemies every 3 sec. Each hit increases P.DMG the enemies take by 20% for 5 sec.",8,2021-01-10 0:00:00,2021-01-10 0:00:00,45,18,Charges up over 22 sec.,"Advancement Phase 1
+Increases the P.DMG Boost effect by additional 20%.
+
+Advancement Phase 2
+Reduces Cooldown by 7 sec and increases P.DMG boost by an additional 20%."
+474,"Roar of Madness, Velkinoth","Summons the soul of Roar of Madness, Velkinoth for 10 sec, increasing own ATK for 30%. The soul of Roar of Madness, Velkinoth attacks the enemy 12 times, dealing ??? each hit + ??? per each stack of Death Mark.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,46,25,Charges up upoin dealing DMG 80 times.,"Advancement Phase 1
+Increases DMG of the soul of Roar of Madness, Velkinoth by 70%.
+
+Advancement Phase 2
+For the duration of Skill, increases own DMG dealt to enemies by 30%."
+475,"Flame of Victory, Carprain","Deals ??? M.DMG to nearby enemies within a circular range of self and knocks them down for 3 sec. Afterwards, summons Flame of Victory, Carprain for 13 sec, increasing self's ATK by 60%.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,47,22,Charges up over 18 sec.,"Advancement Phase 1
+For the duration of Skill, reduces M.DMG all allies take by 50%.
+
+Advancement Phase 2
+For the duration of Skill, increases M.DMG all nearby enemies take by 40%. The effect is increased by 80% against Bosses."
+476,"Cursed Claws, Baroro","Summons the soul of Cursed Claws, Baroro, increasing own ATK by 40% for 10 sec. For the duration of Skill, deals ??? P.DMG to frontral enemies every 3 sec. Hit enemies are inflicted with Curse of Baroro for 5 secs, taking 30% increased P.DMG and having their Heal Rate reduced by 30%. If the target is a Boss, the Curse of Baroro effect increases by 1.5 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,48,23,Charges up upon using Skill 5 times.,"Advancement Phase 1
+Petrifies the hit enemy for 3 sec.
+
+Advancement Phase 2
+Changes Skill Activation Requirements to 4 times and increases the duration of the soul by 3 sec."
+477,"Roaring Dragonmaw, Acravita","Summons the soul of Roaring Dragonmaw, Acravita, attacking enemies in a wide frontal range, dealing ??? M.DMG proportional to own All DEF, inflicting stun for 4 sec, and reducing target's ATK by 35% for 10 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,49,18,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 80 charges.,"Advancement Phase 1
+Dispels positive effects of all enemies within range.
+
+Advancement Phase 2
+Changes Skill Activation Requirement to 50 times. Hit enemies take 25% increased M.DMG for 10 sec."
+478,"Rending Chaos, Zakadras","Summons the soul of Rending Chaos, Zakadras, dealing ??? P.DMG to all enemies, stunning them for 4 sec, and increasing P.DMG the enemies take by 20% for 10 sec. Afterward, increases own ATK by 25% and ATK Spd by 250 for 10 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,50,22,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Increases DMG by 30% and P.DMG the enemies take to 40%.
+
+Advancement Phase 2
+Reduces Cooldown by 7 sec. Upon activation, gains 2 stacks of Demonic Blood."
+479,"Mace of Rehabilitation, Hartnon","Summons the soul of Mace of Rehabilitation, Hartnon, dealing ??? P.DMG to enemies within range of self. Afterward, every Normal and Skill attack inflicts irremovable stack of Grudge of Hartnon for 10 sec, increasing P.DMG the target takes by 2% and reducing its ATK by 2% for 10 sec. After 10 sec, attacks all enemies, dealing ??? P.DMG and inflicting Stun for 5 sec. Grudge of Hartnon can be stacked up to max 10 times. If the target is a Boss, all effects are increased by 2 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,51,20,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Changes Skill Activation Requirements to 4 times.
+
+Advancement Phase 2
+Changes the max number of stacks of Grudge of Hartnon to 15."
+480,"Dimensional Key, Magnus Fille","Summons the soul of Dimensional Key, Magnus Fille for 10 sec and immediately recovers 3 Mana. For the duration of the Skill, increases own Crit DMG by 150%.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,52,24,Charges up upon dealing DMG 70 times.,"Advancement Phase 1
+Reduces Skill Activation Requirements to 50 time(s).
+
+Advancement Phase 2
+Increases the duration by 4 sec, and self becomes immune to CC for the duration of Skill."
+481,"Moonshade Countdown, Tempodiana","Summons the soul of Moonshade Countdown, Tempodiana, increasing Crit DMG of the ally with the Highest ATK by 80% for 15 sec, and reducing Cooldown of all Skills by 1 sec every sec.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,53,25,Charges up over 23 sec.,"Advancement Phase 1
+For the duration of Skill, increases the target's DEF Penetration by 350.
+
+Advancement Phase 2
+Changes the number of targets to 3."
+482,Cards of Destiny Del Arcana,"Summons the soul of Cards of Destiny Del Acana, discarding all currently owned cards. Afterward, acquires the [Star] card, increasing ATK by 60% for 10 sec. Upon using a Skill while owning the [Star] card, the effects of [Death], [Love], and [Fortune] will be activated and [Star] card will be consumed.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,54,17,Charges up upon using Skills 6 times.,"Advancement Phase 1
+Upon activation, self recovers 3 orbs of Mana.
+
+Advancement Phase 2
+Changes Skill Activation Requirements to 4 time(s)."
+483,"Roar of Raging Heat, Tersia","Summons the soul of Roar of Raging heat, Tersia, increasing Pansirone's ATK Spd by 500 for 8 sec. Afterward, attacks enemies in a wide frontal range 3 times, dealing total of ??? P.DMG. The last hit places 'Tersia's Prank' on a wide frontal range for 8 sec, dealing ??? P.DMG every 1 sec and increasin P.DMG the targets take by 25%. If the target is inflicted with 'Eternal Blaze', the increased P.DMG the target takes changes to 35%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,55,18,Charges up upon dealing DMG 85 times.,"Advancement Phase 1
+Increases DMG by 100%.
+
+Advancement Phase 2
+The duration of the ATK Spd Boost effect and 'Teria's Prank' increases by 4 sec."
+484,"Dragon Hearts, Andarta Andraste","Summons the soul of Dragon Hearts, Andarta Andraste, increasing own Crit DMG by 100% for 10 sec. Upon activation, deals ??? M.DMG to enemies in a straight line, increasing M.DMG the target takes by 30% for 10 sec, and inflicting Freeze for 6 sec. Upon attacking the frozen enemy, deals ??? M.DMG that ignores DEF, self recovers 2 orbs of Mana, and reduces Cooldown of all skills by 30%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,56,21,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Changes Skill Activation Requirements to 4 times.
+
+Advancement Phase 2
+Increases DMG 80% and dispels positiv effects from the hit enemy."
+485,"Dragon's Ruins, Atein","Summons the soul of Dragon's Ruins, Atein for 10 sec. For the duration of the soul, increases own DEF by 60%, normal attacks deal additional P.DMG equal to 1% of own Max HP, enhancing own Skills.
+[Collision] Deals ??? additional P.DMG to the target and increases P.DMG the target takes by 20% for 10 sec.
+[Headbutt] Deals additional P.DMG 10% of own HP.
+[Earth Incarnate] Upon activation, immediately heals HP equal to 20% own Max HP.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,57,24,Charges up over 23 sec.,"Advancement Phase 1
+Increases the duration of soul by 5 sec.
+
+Advancement Phase 2
+Changes the additional P.DMG proportional to Max HP from normal attacks to 2%, and increases DEF Reduction effect of [Destroy Armor] by 50% for the duration of Skill."
+486,"Tumultuous Dance, Excilius","Summons the soul of Tumultuous Dance, Excilius for 12 sec, increasing ATK of self and the ally with the highest ATK by 40%, and Crit DMG by 40%. Additionally grants immunity to CC effect to an ally with the highest ATK.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,58,18,Charges up over 19 sec.,"Advancement Phase 1
+Reduces Skill Activation Requirements by 4 sec.
+
+Advancement Phase 2
+For the duration of Skill, increases DMG dealt of the ally with the highest ATK by 30%."
+487,"Adversary of the Goddess, Galicta","Summons the soul of the Adversary of the Goddess, Galicta, increasing own ATK by 40% for 10 sec. Afterward, attack a random target and nearby enemies in a circular range, dealing ??? P.DMG and knocking them down for 3 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,94,16,charges up upon using Skills 4 times.,"Advancement Phase 1
+Increases DMG by 50%.
+
+Advancement Phase 2
+Increases own DMG that ignores DEF by 30% for the duration of soul."
+488,"Anthem of a New Road, Matimaruma","Summons the soul of Anthem of a New Road, Matimaruma, increasing all allies ATK by 50% for 10 sec. After 10 sec, deals ??? P.DMG to frontal enemies in a straight line, knocking them down for 3 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,59,24,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Increases ATK Spd of all allies by 400 for the duration of the Skill.
+
+Advancement Phase 2
+increases P.DMG the enemy takes by 50% for 15 sec."
+489,"Lightning Flash, Livatis","Summon the soul of Lightning Flash, Livatis, increasing own ATK by 60% for 12 sec. For the duration of Skill, increases DMG of [Float Like a Butterfly] by 50%.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,60,22,Charges up upon using Skills 10 times.,"Advancement Phase 1
+For the Duration of Skill, increases own DEF Penetration by 500.
+
+Advancement Phase 2
+Increases the duration of Skill by 5 sec and changes the Skill DMG Boost of [Float Like a Butterfly] to 100%."
+490,"God's Lamp, Kurulati","Summons the soul of God's Lamp, Kurulati for 10 sec, increases ATK Spd of all allies by 300 and Mana recovery per sec by 100%. Afterward, inflicts hallucination upon one random enemy every 3 sec, reducing their ACC by 350 for 3 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,61,23,Charges up upon using Skills 5 time.,"Advancement Phase 1
+Inflicts hallucination upon 2 enemies and reduces the target's Mana by 500.
+
+Advancement Phase 2
+Upon activation, immediately activates the invisibility effect of God's Lamp, Kurulati on 2 allies."
+491,The Flute of Silent Winds Rakshathar,"Summons the soul of The Flute of Silent Winds Rakshathar for 10 sec. For the duration of the Soul, deals ??? + ??? P.DMG per each 1 stack of Tickle Tickle Potion inflicted upon the target every sec. The hit target will be Petrified for 1 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,62,20,Charges up upon dealing DMG 70 times.,"Advancement Phase 1
+Increases All DMG the hit enemy takes by 30% for 10 sec.
+
+Advancement Phase 2
+Increases the duration of soul by 5 sec."
+492,"Light of Judgment, Theoria","Summons the soul of Light of Judgment, Theoria for 15 sec, increasing own DEF by 50%. If Ricardo takes DMG for the duration of Skill, there is a 10% chance to deal ??? P.DMG to the attacker and inflict stun for 2 sec.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,63,25,Charges up every sec and every time self takes DMG. This Skill can be cast upon gaining 100 charges.,"Advancement Phase 1
+Increases the duration of stun by 2 sec.
+
+Advancement Phase 2
+Increases activation chance by 10% and reduces Mana of the hit target by 500."
+493,"Black Lunar Wing, Noctipheus","Summons the soul of Black Lunar Wing, Noctipheus, dealing ??? M.DMG to the target and nearby enemies, and inflicts 30 stacks of [Otherworldly Curse] on hit targets. After use, gains a stack of [Black Moon Force]. Each stack of [Black Moon Force] increases DMG dealt to enemies by 5%. [Black Moon Force] can be stacked up to max 3 times and it is irremovable. If [Ripine] is in the team, [Ripine] also gains stacks of [Black Moon Force].",5,2021-01-10 0:00:00,2021-01-10 0:00:00,96,16,Charges up over 20 sec.,"Advancement Phase 1
+[Black Moon Force] additionally reduces DMG taken by 5%.
+
+Advancement Phase 2
+Increases the max number of [Black Moon Force] stacks by 2."
+494,"Silver Lunar Wings, Clarapheon","Summons the soul of Silver Lunar Wing, Clarapheon for 8 sec, increasing own ATK by 30% and creating a shield that absorbs ??? DMG and increases Crit DMG by 50% for 8 sec. If there is [Riheet] in the team, [Riheet] gains the same shield.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,97,20,Charges up over 20 sec.,"Advancement Phase 1
+Changes the duration of the soul and the shield to 12 sec.
+
+Advancement Phase 2
+Changes ATK Boost to 50% and Crit DMG Boost to 100%. The shield becomes irremovable."
+495,Rodina Custom Rifle Mod.0,"Summons the soul of Rodina Custom Rifle Mod.0, increasing own Crit DMG by 100% for 10 sec. For the duration of Skill, deals ??? P.DMG that ignores DEF every 2 sec and inflicts Stun on the hit target for 2 sec. If the target is a Boss, the DMG and duratoin of Stun increases by 2 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,64,22,Charges up over 22 sec.,"Advancement Phase 1
+Increases DMG by 50%.
+
+Advancement Phase 2
+Increases DMG by 50% and gains immunity to CC for the duration of Skill."
+496,"Specter's Breath, Redeal","Summons the soul of Specter's Breath, Redeal for 12 sec, increasing own Crit DMG by 80%. Each time Roi casts Blade Claw, the soul of Specter's Breath, Redeal deals ??? additional DMG.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,65,25,Charges up over 22 sec.,"Advancement Phase 1
+Reduces Cooldown by 7 sec.
+
+Advancement Phase 2
+Inflicts 1 stack(s) of Bleed on the hit enemy."
+497,"Blade of Conviction, White Belona","Summons the soul of Blade of Conviction, White Belona, increasing own ATK by 50% for 8 sec and dealing ??? P.DMG to the enemy with the highest ATK.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,66,16,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Changes Skill Activation Requirements to 4 times.
+
+Advancement Phase 2
+Increases DMG by 70%, and dispels positive effect from the hit target."
+498,"Green Winds, Notos","Summons the soul of Green Winds, Notos for 13 sec, increasing own ATK by 50% and Crit DMG by 50%. For the duration of Skill, deals ??? P.DMG that ignores DEF on an enemy every 4 sec, knocking them back for 2 sec, and immediately reducing the Cooldown of own Skills by 1 sec.",8,2021-01-10 0:00:00,2021-01-10 0:00:00,67,20,Charges up upon dealing DMG 60 times.,"Advancement Phase 1
+Increaes DMG by 50%, and every time the Soul attacks an enemy, recovers own Mana by 1000.
+
+Advancement Phase 2
+Increaes DMG by 30% and reduces Skill Activation Requirements to 40 times."
+499,"Executioner of Domains, Elsion","Summons the soul of Executioner of Domains, Elsion and deals ??? M.DMG to nearby enemies within a circular range of self and increases M.DMG the enemies take 30% for 5 sec. Afterward, absorbs the soul of Executioner of Domains, Elsion for 10 sec and deals ??? M.DMG to one random enemy every 1 sec. If the target is not a Hero, the DMG increases by 100%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,68,24,Charges up over 20 sec.,"Advancement Phase 1
+For the duration of Skill, Seria's ATK is increased by 25%, and Crit DMG is increased by 50%.
+
+Advancement Phase 2
+DMG dealt every 1 sec now ignores target's DEF."
+500,"Wings of Corruption, Apoliox","Summons the soul of Wings of Corruption, Apoliox, inflicting 'Curse of Apoliox' to all enemies and granting 'The Vessel of Curses.' on self. 'Curse of Apoliox' reduces enemy's M.DEF by 40% and Heal Rate by 40% for 10 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,69,18,Charges up over 20 sec.,"Advancement Phase 1
+Reduces Skill requirement by 2 sec, and recovers 1000 Mana upon use of Skill.
+
+Advancement Phase 2
+Skill requirement is reduced by an additional 5 sec. Mana of the enemies inflicted with 'Curse of Apoliox' is reduced by 300 every sec."
+501,"Charming Melody , Schwanheite","Summons the Soul of Charming Melody, Schwanheite, and recovers 100 Mana for 10 sec every sec. For the duration of Skill, upon using Trance at 3 stacks, increases allies' ATK by 25% and DEF by 25% for 6 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,70,30,Charges up upon using skills 7 times.,"Advancement Phase 1
+Upon using Trance at 3 stacks, also increases Crit DMG by 50%.
+
+Advancement Phase 2
+Changes ATK Boost to 40%, DEF Boost to 40%, and Crit DMG Boost to 80%."
+502,"Eye of the Storm, Yanadi","Summons the soul of Eye of the Storm, Yanadis, and deals ??? M.DMG to enemies in a wide frontal range and stuns them for 3 sec. Afterward, places 'Raging Magnetic Field' for 6 sec. Enemies within the 'Raging Magnetic Field' take 30% increases M.DMG, and the duration of all CC effects the enemies take increases by 30%.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,71,25,Charges up upon dealing DMG 90 times.,"Advancement Phase 1
+Increases the duration of 'Raging Magnetic Field' by 3 sec.
+
+Advancement Phase 2
+Deals M.DMG equal to 3% of Sonia's Max HP to enemies within 'Raging Magnetic Field' every sec."
+503,"Rock of Perseverance, Prochika","Dispels all positive effects from frontal enemies in a circular range, dealing ??? P.DMG, and summons the Soul of Rock of Perseverance, Prochika. The soul of Prochika disappears after activating an additional effect on the next Skill use.
+[BOOM! Here Goes!] Deals ??? P.DMG to enemies within range and increases All DMG they take by 40% for 8 sec.
+[Protection! Was dat Lucky Stone?] While charging energy, recovers target's Mana by a total of 2 orbs over 4 times. Afterward, increases the target's ATK by 50% for 10 sec.
+[Charge! Knight Commander Power!] Deals ??? P.DMG to the frontal enemy in range and instantly reduces the target's Mana by 3 orbs. Deals ??? additional P.DMG to Non-Hero enemies.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,72,18,Charges up upon using Skills 4 times.,"Advancement Phase 1
+Changes Skill Activation Requirements to 3 times.
+
+Advancement Phase 2
+Reduces Cooldown by 5 sec, and after summoning the soul, increases own DEF Penetration by 300 for 15 sec."
+504,"Colorful Splendor, Diogemme","Summons the soul of Colorful Splendor, Diogemme, icnreasing own Crit DMG by 100% for 12 sec. Afterward, attacks all enemies and deals ??? M.DMG. If the target is a Boss, deals ??? additional M.DMG that ignores DEF.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,81,18,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Increases DMG by 30% and reduces cooldown by 4 sec.
+
+Advancement Phase 2
+Increases DMG by 30%, and All DMG the hit targets take by 35% for 15 sec."
+505,"Demon of the Calm, Caethasis","Summons the soul of Demon of the Calm, Caethasis, increasing own ATK by 50% for 10 sec. Afterward, hits the enemy with the lowest P.DEF 4 times every 3 sec, dealing a total of ??? P.DMG.
+If the target's HP is 50% or above, this hit reduces target's P.DEF by 5% for 5 sec.
+If the target's HP is below 50%, this hit increases its DMG by 2 times and will be a Critical Hit.
+The P.DEF Reduction effect can be stacked up to max 10 times.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,73,22,Charges up over 18 sec.,"Advancement Phase 1
+Changes Skill Activation Requirements to 14 sec.
+
+Advancement Phase 2
+Changes the P.DEF Reduction effect to 7%. The DMG Boost effect applied to enemies below 50% HP applies as 3.6 times."
+506,"Lightning Bolt, Legios","Summons the soul of Lightning Bolt, Legios, attacking nearby enemies 4 times. Each attack deals ??? M.DMG and stuns enemies for 0.5 sec. Afterwards, increases ATK by 30% for 10 sec, and activates 'Fury of Legios' every sec that deals ??? M.DMG to a random enemy and nearby enemies within range. Hit enemies are stunned for 1 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,74,25,Charges up upon dealing DMG 100 times.,"Advancement Phase 1
+Target hit by 'Fury of Legios' takes 30% increased M.DMG for 5 sec.
+
+Advancement Phase 2
+Upon activation, the effect of 'Lightning Bolt, Legios' will be activated."
+507,"Infinite Charter, Accordio","Summons the soul of Infinte Charter, Accordio and immediately acquires 2 stacks of 'Top Financier's Knowledge', increasing Crit DMG of the ally with the highest ATK by 50% and DMG dealt to Bosses by 20% for 10 sec.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,75,21,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Increase the duration of the Skill by 4 sec.
+
+Advancement Phase 2
+Increases Boost effect that ally with the highest ATK receives by 100%."
+508,"Nightmare Fang, Kitrax","Summons the soul of Nightmare Fang, Kitrax for 10 sec. For every 1 stack of Soul owned, takes 6% reduced DMG, recovering HP equal to 1% of own Max HP and 50 Mana every sec. Afterward, deals ??? M.DMG to enemies in a wide frontal range and petrifies the hit targets for 4 sec. If Viska has 5 Souls, Skill Cooldown will reset.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,76,25,Charges up over 20 sec.,"Advancement Phase 1
+Increases the duration of Petrification by 3 sec and hit targets take 30% increased M.DMG for 10 sec.
+
+Advancement Phase 2
+For the Duration of Skill, DMG of 'I'll rip you to pieces!!' increases by 100%."
+509,"Crest of Extortion, Kaliosk","Summons the soul of Crest of Extortion, Kaliosk, for 10 sec, dealing ??? M.DMG to an enemy with the highest ATK. For the duration of the soul, reduces target's ATK by 20%, Mana by 250 every sec, and increases own ATK by 30%.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,77,22,Charges up upon using Skills 5 times.,"Advancement Phase 1
+Changes Skill Activation Requirements to 4 times, reduces ATK Reduction effect to 30%, and Boost effect to 50%.
+
+Advancement Phase 2
+Upon use, immediately enters Darkness Awakened state for 10 sec."
+510,"Dragonbane, Svelta","Summons the soul of Dragonbane, Svelta for 10 sec, increasing all allies' ATK Spd by 300 and recovering own Mana by 400 every sec. For the duration of Skill, increases All DMG that all enemies take by 20%. If the target enemy is a Dragon, the DMG Boost effect changes to 60%.",7,2021-01-10 0:00:00,2021-01-10 0:00:00,78,25,Charges up over 18 sec.,"Advancement Phase 1
+The duration of the effect increases by 10 sec.
+
+Advancement Phase 2
+For the duration of Skill, increases own ATK by 50%."
+511,"Starry Sky Weaver, Mellifluo","Summons the soul of Starry Sky Weaver, Mellifluo, resetting the Cooldown of [Blinding Karma]. Afterward, attacks the enemy, dealing ??? M.DMG, reducing Heal Rate by 50% for 10 sec, and inflicting 'Threading Destiny' for 10 sec. If the target is a Boss, deals ??? additional M.DMG that ignores DEF.",5,2021-01-10 0:00:00,2021-01-10 0:00:00,79,20,Charges up over 20 sec.,"Advancement Phase 1
+Increases DMG by 70%.
+
+Advancement Phase 2
+Reduces Skill Activation Requirements by 5 sec."
+512,"Glory of the God King, Zaries","Summons the soul of Glory of the God King, Zaries for 10 sec, increasing P.DMG all enemies take by 25%, and increases ATK Spd of self by 500 for the duration of the skill.",6,2021-01-10 0:00:00,2021-01-10 0:00:00,80,25,Charges up upon using Skills 6 times.,"Advancement Phase 1
+Increases DEF Penetration of self by 500 for the duration of the Skill.
+
+Advancement Phase 2
+Increases the duration by 4 sec, and becomes immune to CC for the duration of the Skill."

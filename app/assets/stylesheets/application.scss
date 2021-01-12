@@ -281,7 +281,7 @@ input {
       background: rgba(210, 210, 210, 1);
       display: none;
       position: relative;
-      margin: -45px 30px;
+      margin: -50px 60px;
       padding: 0px 5px;
       font-size: medium;
 
@@ -356,7 +356,7 @@ input {
   background: rgba(210, 210, 210, 1);
   display: none;
   position: relative;
-  margin: -45px 30px;
+  margin: -50px 60px;
   padding: 0px 5px;
   font-size: medium;
 
@@ -391,6 +391,21 @@ input {
   .p4 {
     grid-area: p4;
     padding: 10px 5px;
+
+    img {
+      width: 20px !important;
+      height: 20px !important;
+      margin: -5px 5px;
+    }
+    .a1, .a2 {
+      padding: 3px;
+    }
+    #a1 {
+      filter: hue-rotate(90deg) saturate(2) drop-shadow(1px 1px 0 black);
+    }
+    #a2 {
+      filter: hue-rotate(180deg) saturate(2) drop-shadow(1px 1px 0 black);
+    }
   }
 }
 
@@ -669,7 +684,7 @@ h4 {
   background: rgba(210, 210, 210, 1);
   display: none;
   position: relative;
-  margin: -45px 30px;
+  margin: -50px 60px;
   padding: 0px 5px;
   font-size: medium;
 
@@ -686,7 +701,7 @@ h4 {
     grid-area: p1;
     font-weight: bold;
     padding: 10px 5px 3px 5px;
-    text-align: center;
+    // text-align: center;
   }
   .p2 {
     grid-area: p2;

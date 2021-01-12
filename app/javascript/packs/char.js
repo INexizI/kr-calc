@@ -14,16 +14,23 @@
         $left = -1;
       if ($(document).height() - $(this).offset().top < $(document).height() / 2)
         $top = -1;
-      $y = $top * 100;
-      $x = $left * 10 + $left * 400;
+      $x = $left * 490;
+      $y = $top * 50;
       $cs = {
-        'top':$y,
         'left': $x,
+        'top':$y,
         'display': 'grid'
       }
-      $('.s-description', this).css($cs);
       $('.p-description', this).css($cs);
       $('.g-description', this).css($cs);
+      $xSW = $left * 490;
+      $ySW = $top * 150;
+      $csSW = {
+        'left': $xSW,
+        'top':$ySW,
+        'display': 'grid'
+      }
+      $('.s-description', this).css($csSW);
     }).mouseleave(function() {
       $('.s-description').hide();
       $('.p-description').hide();
@@ -59,5 +66,9 @@
       else if ($softcap == 'Crit DMG')
         $(this).text($softn + '%')
       });
+    $adv = $('#ad-re').text().split(/\n/);
+    $('.a1').text($adv[1]);
+    $('.a2').text($adv[4]);
+    $('#ad-re').text('');
   });
 }).call(this);
