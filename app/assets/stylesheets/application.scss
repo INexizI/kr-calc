@@ -22,6 +22,12 @@ input {
   outline: 0;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 1px 3px;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -364,7 +370,23 @@ input {
     padding: 3px;
   }
 }
-.c-perk-img:hover .p-description, .c-perk-img:hover .s-description {
+
+.calc-s-description {
+  width: 400px;
+  border: 1px solid;
+  border-radius: 10px 10px 10px 10px;
+  background: rgba(210, 210, 210, 1);
+  display: none;
+  position: relative;
+  margin: -50px 60px;
+  padding: 0px 5px;
+  font-size: medium;
+
+  p {
+    padding: 3px;
+  }
+}
+.c-perk-img:hover .p-description, .c-perk-img:hover .s-description, .c-perk-img:hover .calc-s-description  {
   display: grid;
   gap: 1px 1px;
   grid-template-areas: "p1 p1" "p2 p3" "p4 p4";
@@ -785,10 +807,10 @@ h4 {
         height: 50px;
 
         .opt {
-          .calc_st_treasure, .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
+          .calc_st_weapon, .calc_st_treasure, .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
             height: 0;
           }
-          .calc_st_treasure_st, .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
+          .calc_st_weapon_st, .calc_st_treasure_st, .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
             width: 0;
           }
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
@@ -796,7 +818,7 @@ h4 {
           }
           .ay {
             position: relative;
-            left: 65px;
+            left: 70px;
             min-width: 65px;
           }
           select {
@@ -804,41 +826,83 @@ h4 {
             border: 1px solid rgba(255, 255, 255, 0);
             opacity: 1;
           }
+          input {
+            position: relative;
+            left: 121px;
+            bottom: 21px;
+          }
+          .w-ad {
+            position: relative;
+            left: -20px;
+          }
+          .w-ad-ench {
+            position: relative;
+            left: 25px;
+            width: 37px;
+          }
+          .range {
+            .r-sl {
+              display: flex;
+              justify-content: center;
+
+              span {
+                padding: 0 5px;
+              }
+              .range-ou1 {
+                color: rgb(139, 0, 0);
+              }
+              .range-ou2 {
+                color: rgb(0, 200, 50);
+              }
+            }
+            input:focus {
+              outline: none;
+            }
+            input::-webkit-slider-runnable-track {
+              width: 100%;
+              height: 4px;
+              cursor: pointer;
+              animate: 0.2s;
+              background: rgb(2, 168, 244);
+              border-radius: 25px;
+            }
+            input::-webkit-slider-thumb {
+              height: 10px;
+              width: 10px;
+              border-radius: 50%;
+              background: #fff;
+              box-shadow: 0 0 4px 0 rgba(0,0,0, 1);
+              cursor: pointer;
+              -webkit-appearance: none;
+              margin-top: -3px;
+            }
+            input:focus::-webkit-slider-runnable-track {
+              background: rgb(2, 168, 244);
+            }
+            input {
+              position: relative;
+              left: 0;
+              bottom: 0;
+              -webkit-appearance: none;
+              margin: 15px 0;
+            }
+          }
         }
       }
       #g-left {
         right: 185px;
         bottom: 103px;
-        input {
-          position: relative;
-          left: 120px;
-          bottom: 21px;
-        }
       }
       #g-right {
         left: 120px;
         bottom: 103px;
-        input {
-          position: relative;
-          left: 120px;
-          bottom: 21px;
-        }
       }
       #g-treasure {
         left: 120px;
         bottom: 210px;
-        input {
-          position: relative;
-          left: 120px;
-          bottom: 21px;
-        }
         .ay {
           position: relative;
-          left: 145px;
-        }
-        .op {
-          position: relative;
-          left: 80px;
+          left: 150px;
         }
       }
       .scnd {
@@ -971,6 +1035,11 @@ h4 {
             .s-description {
               top: 30px !important;
               left: -435px !important;
+              z-index: 1;
+            }
+            .calc-s-description {
+              top: 30px !important;
+              left: -455px !important;
               z-index: 1;
             }
           }
