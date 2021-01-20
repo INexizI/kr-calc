@@ -25,7 +25,7 @@
   .c-p
     h4 3
     .c-pepe
-      - @perks.where(tier: @char.name).where.not(name: ['light', 'dark']).each do |perk|
+      - @perks.where(tier: @char.name).where(perk_type: 'hero').each do |perk|
         .c-perk-img
           img src="/images/media/heroes/#{@char.name}/#{perk.sequence}.png"
           .p-description
@@ -36,7 +36,7 @@
               = perk.description
   .c-p
     h4 5
-    - @perks.where(tier: @char.name, name: ['light', 'dark']).each do |perk|
+    - @perks.where(tier: @char.name, perk_type: 't5').each do |perk|
       .c-perk-img
         img src="/images/media/heroes/#{@char.name}/#{perk.name}.png"
         .p-description

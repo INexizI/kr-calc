@@ -8,8 +8,8 @@ title Skill
         p = c.name
       .s-skills
         - @skills.where(char_id: c.id).order('skill_number ASC').each do |skill|
-          / - if skill.parent_id.blank?
-          - if skill.parent_id == 'NULL'
+          / - if skill.parent_id == 'NULL'
+          - if skill.parent_id.blank?
             div
               .s-image
                 = link_to skill do

@@ -293,7 +293,7 @@ title Calculator
                           = perk.description
                 .c-p#perk-t3
                   .c-pepe
-                    - @perks.where(tier: c.name).where.not(name: ['light', 'dark']).each do |perk|
+                    - @perks.where(tier: c.name).where(perk_type: 'hero').each do |perk|
                       .c-perk-img
                         img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png" id=perk.sequence
                         .calc-s-description
@@ -302,7 +302,7 @@ title Calculator
                           .p4
                             = perk.description
                 .c-p#perk-t5
-                  - @perks.where(tier: c.name, name: ['light', 'dark']).each do |perk|
+                  - @perks.where(tier: c.name, perk_type: 't5').each do |perk|
                     .c-perk-img
                       img src="/images/media/heroes/#{c.name}/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
