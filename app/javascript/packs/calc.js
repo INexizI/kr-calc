@@ -327,6 +327,15 @@
         var z = Stat['S' + k];
         $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
       }
+      if ($stat == 1)
+        $('#range-atk').text(3500);
+      else if (($stat == 2) || ($stat == 3))
+        $('#range-atk').text(4000);
+      else if (($stat == 4) || ($stat == 5) || ($stat == 6) || ($stat == 7))
+        $('#range-atk').text(4500);
+      $('#range-hp').text(125000);
+      $rAtk = $('#range-atk').text();
+      $rHP = $('#range-hp').text();
     }).change();
 
     // Class / Unique Weapon
@@ -1751,6 +1760,10 @@
           var x = parseFloat(this.value).toFixed(1);
           $('.range-ou1').html(x);
           $('.range-ou2').html((100 - x).toFixed(1));
+          var a = parseFloat($rAtk) * (x / 100) * 2;
+          var h = parseFloat($rHP) * ((100 - x) / 100) * 2;
+          $('#range-atk').html(Math.round(a));
+          $('#range-hp').html(Math.round(h));
         });
       });
     };
@@ -1760,11 +1773,11 @@
       var x = '<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>',
           y = '<option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>',
           z = '<option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>';
-      if ($('.w-ad').val() === 'AD 0')
+      if ($('.w-ad').val() === 'Adv.0')
         $('.w-ad-ench').html(x);
-      else if ($('.w-ad').val() === 'AD 1')
+      else if ($('.w-ad').val() === 'Adv.1')
         $('.w-ad-ench').html(y);
-      else if ($('.w-ad').val() === 'AD 2')
+      else if ($('.w-ad').val() === 'Adv.2')
         $('.w-ad-ench').html(z);
       else
         $('.w-ad-ench').html('<option value="">- - -</option>');
