@@ -794,7 +794,7 @@ h4 {
           .bt0 {
             width: 15px;
             font-size: 12px;
-            vertical-align: 2px;
+            vertical-align: 3px;
           }
           input {
             display: none;
@@ -893,11 +893,15 @@ h4 {
         }
       }
       #g-left {
-        right: 185px;
+        right: 190px;
         bottom: 103px;
       }
       #g-right {
         left: 120px;
+        bottom: 103px;
+      }
+      #g-weapon {
+        right: 155px;
         bottom: 103px;
       }
       #g-treasure {
