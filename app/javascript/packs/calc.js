@@ -323,7 +323,7 @@
         $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
       }
 
-      $xyz = 0;
+      // $xyz = 0;
     }).change();
 
     // Hero
@@ -1000,11 +1000,11 @@
       }).next('p');
 
       // atk
-      $jewelType == 'Earrings' ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($swA) : $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($rAtk);
+      $jewelType == 'Earrings' ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($('#range-atk').text()) : $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
       $opA = $('p[name="ATK"]').text();
       $opA === '' ? $totalA.text($sumAtk + ' (' + $classATK + '+' + ($sumAtk - $classATK) + ')') : $totalA.text(Math.round($sumAtk * ($opA / 100 + 1)) + ' (' + $classATK + '+' + Math.round($sumAtk * ($opA / 100 + 1)) - $classATK + ')');
       // hp
-      $jewelType === 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($rHP) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($rHP);
+      $jewelType == 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
       $opH = $('p[name="Max HP"]').text();
       $opH === '' ? $totalH.text($sumTre + ' (' + $classHP + '+' + ($sumTre - $classHP) + ')') : $totalH.text(Math.round($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + ($sumTre * ($opH / 100 + 1) - $classHP) + ')');
       $('#heroHP').text($totalH.text());
@@ -1034,7 +1034,7 @@
       // jewel
       if ($jewelSet !== '- - - - - - - - - -') {
         if ($jewelType == 'Ring')
-          $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($rHP);
+          $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text());
         else if ($jewelType == 'Earrings')
           $sumAcc = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($rAtk);
         else if ($jewelType == 'Necklace')
@@ -1059,26 +1059,18 @@
             $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classPDEF + '+' + ($sumAcc - $classPDEF) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classPDEF + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classPDEF) + ')');
           }
         }
-      } else {
-        $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($rHP);
-        $opJ = $('p[name="Max HP"]').text();
-        $opJ === '' ? $swHP = $sumAcc + ' (' + $classHP + '+' + ($sumAcc - $classHP) + ')' : $swHP = Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')';
-        $totalJ.text($swHP);
-        $('#heroHP').text($totalJ.text());
-        $('#heroHPs').text($totalJ.text().split(' ')[0]);
       }
       // orb
-      $jewelType == 'Ring' ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($rHP) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($rHP);
+      $jewelType == 'Ring' ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
       $opO = $('p[name="Max HP"]').text();
       $opO === '' ? $totalO.text($sumOrb + ' (' + $classHP + '+' + ($sumOrb - $classHP) + ')') : $totalO.text($sumOrb * ($opO / 100 + 1) + ' (' + $classHP + '+' + ($sumOrb * ($opO / 100 + 1) - $classHP) + ')');
       $('#heroHP').text($totalO.text());
       $('#heroHPs').text($totalO.text().split(' ')[0]);
       option();
-      console.log('Tr - ', $totalH.text());
-      console.log('O - ', $totalO.text());
 
-      $xyz++;
-      console.log($xyz);
+      // $xyz++;
+      // console.log($xyz);
+      $totalH.text()
     };
 
     // Set Bonus
@@ -1290,7 +1282,7 @@
       $ohp = $('#heroO').text();
       if ($('#heroO').text() == '')
         $ohp = 0;
-      $sumHP = parseInt($statHP.text()) + parseInt($trhp) + parseInt($jhp) + parseInt($ohp);
+      $sumHP = parseInt($statHP.text()) + parseInt($trhp) + parseInt($jhp) + parseInt($ohp) + parseInt($('#range-hp').text());
       if (($fr > 1) && ($fr < 4)) {
         $qe = parseInt(Math.round($sumHP * (1.1 + $stHP/100)));
         $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
@@ -1540,7 +1532,7 @@
         else if ($softcap == 'MP Recovery/Attack')
           $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if (($softcap == 'Crit DMG') || ($softcap == 'Recovery'))
-          $(this).text($softn + '%')
+          $(this).text($softn)
         else
           $(this).next('#s-per').text($softn/10 + '%')
       });
@@ -1765,7 +1757,6 @@
       option();
     });
     $('.form-input select').change(function() {
-      // gearStat();
       gearSet();
       heroImg();
       hideOption();
@@ -1793,6 +1784,10 @@
       });
     };
     rangeSlider();
+    $('[name="range"]').change(function() {
+      gearStat();
+      gearSet();
+    });
 
     $('.w-ad').change(function() {
       var x = '<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>',
