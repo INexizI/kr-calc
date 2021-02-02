@@ -382,6 +382,7 @@
         $('#range-atk').text(0);
         $('#range-hp').text(0);
         $('.range').hide();
+        rangeC();
         $('#calc_st_weapon').prop('selectedIndex', 0);
         $('#calc_st_weapon_st').html('<option value="">- - -</option>');
       } else if ($gearWeaponType == 'Unique') {
@@ -420,6 +421,7 @@
         $('#range-atk').text(0);
         $('#range-hp').text(0);
         $('.range').hide();
+        rangeC();
         $('#calc_st_weapon').prop('selectedIndex', 0);
         $('#calc_st_weapon_st').html('<option value="">- - -</option>');
       }
@@ -436,20 +438,72 @@
         $rAtk = $('#range-atk').text(0);
         $rHP = $('#range-hp').text(0);
         $('.range').hide();
+        rangeC();
       } else if ($adv == 'Adv.0') {
         $rAtk = $('#range-atk').text(parseInt($swA));
         $rHP = $('#range-hp').text(parseInt($swH));
         $('.range').show();
+        rangeC();
       } else if ($adv == 'Adv.1') {
         $rAtk = $('#range-atk').text(parseInt($swA)*2);
         $rHP = $('#range-hp').text(parseInt($swH)*2);
         $('.range').show();
+        rangeC();
       } else if ($adv == 'Adv.2') {
         $rAtk = $('#range-atk').text(parseInt($swA)*4);
         $rHP = $('#range-hp').text(parseInt($swH)*4);
         $('.range').show();
+        rangeC();
       }
       gearStat();
+    }).change();
+
+    $('select#calc_st_weapon_st').change(function() {
+      $adv = $('#calc_st_weapon').children('option:selected').text();
+      $eth = $('#calc_st_weapon_st').children('option:selected').text();
+      if (($eth == 0) || ($eth == '- - -'))
+        $mltp = 1;
+      else if ($eth == 1)
+        $mltp = 1.03;
+      else if ($eth == 2)
+        $mltp = 1.06;
+      else if ($eth == 3)
+        $mltp = 1.09;
+      else if ($eth == 4)
+        $mltp = 1.12;
+      else if ($eth == 5)
+        $mltp = 1.16;
+      else if ($eth == 6)
+        $mltp = 1.24;
+      else if ($eth == 7)
+        $mltp = 1.32;
+      else if ($eth == 8)
+        $mltp = 1.42;
+      else if ($eth == 9)
+        $mltp = 1.52;
+      else if ($eth == 10)
+        $mltp = 1.62;
+      else if ($eth == 11)
+        $mltp = 1.82;
+      else if ($eth == 12)
+        $mltp = 2.04;
+      else if ($eth == 13)
+        $mltp = 2.28;
+      else if ($eth == 14)
+        $mltp = 2.55;
+      else if ($eth == 15)
+        $mltp = 2.86;
+      else if ($eth == 16)
+        $mltp = 3.43;
+      else if ($eth == 17)
+        $mltp = 4.12;
+      else if ($eth == 18)
+        $mltp = 4.95;
+      else if ($eth == 19)
+        $mltp = 5.94;
+      else if ($eth == 20)
+        $mltp = 7.13;
+      swStat();
     }).change();
 
     // Treasure
@@ -1793,24 +1847,7 @@
     function rangeSlider() {
       $('.range').each(function() {
         $('[name="range"]').on('input', function() {
-          var x = parseFloat(this.value).toFixed(1);
-          $('.range-ou1').html(x);
-          $('.range-ou2').html((100 - x).toFixed(1));
-          if ($adv == 'Adv.0') {
-            $sw_atk = parseFloat($swA) * (x / 100) * 2;
-            $sw_hp = parseFloat($swH) * ((100 - x) / 100) * 2;
-          } else if ($adv == 'Adv.1') {
-            $sw_atk = parseFloat($swA) * 2 * (x / 100) * 2;
-            $sw_hp = parseFloat($swH) * 2 * ((100 - x) / 100) * 2;
-          } else if ($adv == 'Adv.2') {
-            $sw_atk = parseFloat($swA) * 4 * (x / 100) * 2;
-            $sw_hp = parseFloat($swH) * 4 * ((100 - x) / 100) * 2;
-          } else {
-            $sw_atk = 0;
-            $sw_hp = 0;
-          }
-          $('#range-atk').html(Math.round($sw_atk));
-          $('#range-hp').html(Math.round($sw_hp));
+          swStat();
         });
       });
     };
@@ -1833,5 +1870,33 @@
       else
         $('.w-ad-ench').html('<option value="">- - -</option>');
     });
+
+    function swStat() {
+      $sw_atk = 0;
+      $sw_hp = 0;
+      var x = parseFloat($('[name="range"]').val()).toFixed(1);
+      $('.range-ou1').html(x);
+      $('.range-ou2').html((100 - x).toFixed(1));
+      if ($adv == 'Adv.0') {
+        $sw_atk = parseFloat($swA) * $mltp * (x / 100) * 2;
+        $sw_hp = parseFloat($swH) * $mltp * ((100 - x) / 100) * 2;
+      } else if ($adv == 'Adv.1') {
+        $sw_atk = parseFloat($swA) * $mltp * 2 * (x / 100) * 2;
+        $sw_hp = parseFloat($swH) * $mltp * 2 * ((100 - x) / 100) * 2;
+      } else if ($adv == 'Adv.2') {
+        $sw_atk = parseFloat($swA) * $mltp * 4 * (x / 100) * 2;
+        $sw_hp = parseFloat($swH) * $mltp * 4 * ((100 - x) / 100) * 2;
+      } else {
+        $sw_atk = 0;
+        $sw_hp = 0;
+      }
+      $('#range-atk').html(Math.round($sw_atk));
+      $('#range-hp').html(Math.round($sw_hp));
+    };
+    function rangeC(){
+      $('.range-ou1').text('50.0');
+      $('.range-ou2').text('50.0');
+      $('[name="range"]').val("option", "value", 50);
+    };
   });
 }).call(this);
