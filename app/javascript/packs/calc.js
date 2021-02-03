@@ -72,6 +72,10 @@
       $('.t-total').find('.statData').show();
       $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       $heroClass !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
+      $('#calc_st_weapon_st').html('<option value="">- - -</option>');
+      $('#range-atk').text(0);
+      $('#range-hp').text(0);
+      $('.range').hide();
 
       Stat = {
         S0: 'MAX HP',
@@ -326,18 +330,10 @@
 
     // Hero
     $('select#calc_char_id').change(function() {
-      $swA = 0;
-      $swH = 0;
       $hero = $(this).children('option:selected').val();
       $heroName = $('#calc_char_id').children('option:selected').text();
-      $classHP = $('.class-stats .role' + $heroClass).find('p').filter(function() {
-        return $(this).text() === 'MAX HP'
-      }).next('p').text();
-      $('.t-total').find('.role' + $heroClass).find('p').filter(function() {
-        return $(this).text() === 'MAX HP'
-      }).next('p').text($classHP);
       $stats = $('.class-stats').find('.statData').clone();
-      $('.t-total').find('.statData').empty();
+      $('.t-total').find('.r-stats').empty();
       $($stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.statData').show();
       $('.gOption').hide();
@@ -349,6 +345,9 @@
       $('.perk-tp').find('p').text(0);
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
       $('#calc_st_weapon_st').html('<option value="">- - -</option>');
+      $('#range-atk').text(0);
+      $('#range-hp').text(0);
+      $('.range').hide();
       $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       statValue();
     }).change();
@@ -427,8 +426,8 @@
       }
       $('#greyATK').text($('#wea').text());
       $('#uw label').filter('.active').removeClass('active');
-      gearSet();
       gearStat();
+      gearSet();
     }).change();
 
     // Soul Weapon
