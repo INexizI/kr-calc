@@ -1810,13 +1810,13 @@
     // SW Stats changes
     function rangeSlider() {
       $('.range').each(function() {
-        $('[name="range"]').on('input', function() {
+        $('[name="range"], [name="add-atk"], [name="add-hp"]').on('input', function() {
           swStat();
         });
       });
     };
     rangeSlider();
-    $('[name="range"]').change(function() {
+    $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
       gearStat();
       gearSet();
     });
@@ -1836,9 +1836,13 @@
     function swStat() {
       $sw_atk = 0;
       $sw_hp = 0;
+      $sw_atk_b = 0;
+      $sw_hp_b = 0;
       var x = parseFloat($('[name="range"]').val()).toFixed(1);
-      $('.range-ou1').html(x);
-      $('.range-ou2').html((100 - x).toFixed(1));
+      var y = $('[name="add-atk"]').val();
+      var z = $('[name="add-hp"]').val();
+      $('.range-ou1').html(x + '%');
+      $('.range-ou2').html((100 - x).toFixed(1) + '%');
       if ($adv == 'Adv.0') {
         $sw_atk = parseFloat($swA) * $mltp * (x / 100) * 2;
         $sw_hp = parseFloat($swH) * $mltp * ((100 - x) / 100) * 2;
@@ -1852,13 +1856,16 @@
         $sw_atk = 0;
         $sw_hp = 0;
       }
-      $('#range-atk').html(Math.round($sw_atk));
-      $('#range-hp').html(Math.round($sw_hp));
+      $('.range-ad1').html(y + '%');
+      $('.range-ad2').html(z + '%');
+      y > 0 ? $('#range-atk').html(Math.round($sw_atk + ($sw_atk * (y / 100)))) : $('#range-atk').html(Math.round($sw_atk));
+      z > 0 ? $('#range-hp').html(Math.round($sw_hp + ($sw_hp * (z / 100)))) : $('#range-hp').html(Math.round($sw_hp));
     };
     function rangeC(){
-      $('.range-ou1').text('50.0');
-      $('.range-ou2').text('50.0');
-      $('[name="range"]').val("option", "value", 50);
+      $('.range-ou1, .range-ou2').text('50.0%');
+      $('[name="range"]').val(50);
+      $('.range-ad1, .range-ad2').text('0%');
+      $('[name="add-atk"], [name="add-hp"]').val(0);
     };
     // Hero split/hide 0-stat
     function statSplit() {

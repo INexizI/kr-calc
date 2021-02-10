@@ -38,15 +38,17 @@ title Calculator
                 = f.input :st_weapon_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - -', input_html: {class: 'w-ad-ench'}
                 .range
                   .r-sl
-                    span#range 0%
+                    span.range-ou1
                     input type='range' name='range' value='50' min='30' max='70' step='0.1'
-                    span#range 0%
+                    span.range-ou2
                   .r-sl
-                    span.range-ou1 50.0
-                    span.range-ou2 50.0
+                    span.range-ad1#range
+                    input type='range' name='add-atk' class='r-add' value='0' min='0' max='20' step='0.1'
+                    input type='range' name='add-hp' class='r-add' value='0' min='0' max='20' step='0.1'
+                    span.range-ad2#range
                   .r-sl
-                    span#range-atk
-                    span#range-hp
+                    p#range-atk
+                    p#range-hp
 
           .form-input
             = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic'], required: false, label: false, include_blank: false, input_html: {class: 'img'}

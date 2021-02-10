@@ -844,19 +844,15 @@ h4 {
             .r-sl {
               display: flex;
               justify-content: center;
-
-              span {
-                padding: 0 5px;
-              }
-              #range {
-                padding: 5px;
-              }
-              .range-ou1 {
-                color: rgb(139, 0, 0);
-              }
-              .range-ou2 {
-                color: rgb(0, 200, 50);
-              }
+            }
+            #range {
+              min-width: 45px;
+            }
+            .r-add {
+              width: 50px;
+            }
+            p, .r-add {
+              padding: 0 5px;
             }
             input:focus {
               outline: none;
@@ -887,7 +883,13 @@ h4 {
               left: 0;
               bottom: 0;
               -webkit-appearance: none;
-              margin: 15px 0;
+              background: none;
+            }
+            .range-ou1, .range-ad1 {
+              color: rgb(139, 0, 0);
+            }
+            .range-ou2, .range-ad2 {
+              color: rgb(0, 200, 50);
             }
           }
         }
