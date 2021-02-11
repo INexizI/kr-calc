@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_151422) do
+ActiveRecord::Schema.define(version: 2021_02_11_045015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,17 +28,19 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
     t.string "slug"
     t.string "type_dmg"
     t.bigint "role_id"
+    t.string "position"
     t.index ["role_id"], name: "index_chars_on_role_id"
     t.index ["slug"], name: "index_chars_on_slug", unique: true
   end
 
   create_table "enchants", force: :cascade do |t|
     t.string "name"
-    t.string "value"
     t.string "tier"
-    t.string "set"
+    t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "stat_id"
+    t.index ["stat_id"], name: "index_enchants_on_stat_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -118,7 +120,7 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
     t.string "stat_type"
-    t.string "notice"
+    t.integer "notice"
     t.index ["role_id"], name: "index_stats_on_role_id"
   end
 
@@ -150,11 +152,12 @@ ActiveRecord::Schema.define(version: 2020_07_21_151422) do
   end
 
   add_foreign_key "chars", "roles"
-  add_foreign_key "gears", "chars"
+  add_foreign_key "enchants", "stats"
+  add_foreign_key "gears", "chars", name: "gears_char_id_fkey"
   add_foreign_key "gears", "roles"
   add_foreign_key "gears", "runes"
   add_foreign_key "gears", "stats", name: "gears_stat_id_fkey"
-  add_foreign_key "skills", "chars"
+  add_foreign_key "skills", "chars", name: "skills_char_id_fkey"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end
