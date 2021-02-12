@@ -761,11 +761,10 @@ h4 {
     }
   }
   #calc {
-    // margin: 0 auto;
-    margin: 30px 75px;
+    margin: 75px;
   }
   .from-calc {
-    width: 500px;
+    width: 600px;
 
     .form-input {
       .w-in, .tr-in, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_gear_artifact {
@@ -898,15 +897,15 @@ h4 {
         }
       }
       #g-left {
-        right: 190px;
+        right: 220px;
         bottom: 103px;
       }
       #g-right {
-        left: 120px;
+        left: 150px;
         bottom: 103px;
       }
       #g-weapon {
-        right: 155px;
+        right: 182.5px;
         bottom: 103px;
       }
       #g-treasure {
@@ -955,12 +954,25 @@ h4 {
         }
       }
     }
-    .enchantsBlock{
-      .opt-ench {
-        display: flex;
-        select {
-          width: 100px;
+    .opt-ench {
+      display: flex;
+      width: 270px;
+      position: relative;
+      right: 35px;
+      .input {
+        width: fit-content;
+        .ench-t {
+          width: 70px;
         }
+        .ench-n {
+          width: 150px;
+        }
+        .ench-v {
+          width: 50px;
+        }
+      }
+      select {
+        width: 100px;
       }
     }
   }
