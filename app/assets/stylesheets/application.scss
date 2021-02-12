@@ -849,7 +849,7 @@ h4 {
               min-width: 45px;
             }
             .r-add {
-              width: 50px;
+              width: 60px;
             }
             p, .r-add {
               padding: 0 5px;
@@ -890,6 +890,9 @@ h4 {
             }
             .range-ou2, .range-ad2 {
               color: rgb(0, 200, 50);
+            }
+            .range-ou1, .range-ou2 {
+              min-width: 60px;
             }
           }
         }
@@ -939,7 +942,7 @@ h4 {
 
       #empty-block {
         width: 52px;
-        height: 100px;
+        height: 120px;
       }
       div {
         width: 125px;
@@ -947,8 +950,16 @@ h4 {
 
         .form-input {
           margin: 5px 0;
-          height: 100px;
+          height: 120px;
           min-height: 52px;
+        }
+      }
+    }
+    .enchantsBlock{
+      .opt-ench {
+        display: flex;
+        select {
+          width: 100px;
         }
       }
     }

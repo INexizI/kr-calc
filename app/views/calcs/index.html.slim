@@ -246,6 +246,25 @@ title Calculator
 
         div
 
+      .enchantsBlock
+        .form-input
+          .opt-ench
+            = f.input :gear_ench_type, as: :select, collection: [], required: false, label: false
+            = f.input :gear_ar_ench, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+            = f.input :gear_ar_ench_op, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
+          .opt-ench
+            = f.input :gear_ench_type, as: :select, collection: [], required: false, label: false
+            = f.input :gear_sg_ench, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+            = f.input :gear_sg_ench_op, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
+          .opt-ench
+            = f.input :gear_ench_type, as: :select, collection: [], required: false, label: false
+            = f.input :gear_acc_ench, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+            = f.input :gear_acc_ench_op, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
+          .opt-ench
+            = f.input :gear_ench_type, as: :select, collection: [], required: false, label: false
+            = f.input :gear_orb_ench, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+            = f.input :gear_orb_ench_op, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
+
       // Other
       / .form-input
         = f.input :class_buff
