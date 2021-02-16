@@ -432,6 +432,7 @@
     // Soul Weapon
     $('select#calc_st_weapon').change(function() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
+      $('.calc_gear_weapon').removeClass('a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
         $rAtk = $('#range-atk').text(0);
         $rHP = $('#range-hp').text(0);
@@ -442,16 +443,19 @@
         $rHP = $('#range-hp').text(parseInt($swH));
         $('.range').show();
         rangeC();
+        $('.calc_gear_weapon').addClass('a0');
       } else if ($adv == 'Adv.1') {
         $rAtk = $('#range-atk').text(parseInt($swA)*2);
         $rHP = $('#range-hp').text(parseInt($swH)*2);
         $('.range').show();
         rangeC();
+        $('.calc_gear_weapon').addClass('a1');
       } else if ($adv == 'Adv.2') {
         $rAtk = $('#range-atk').text(parseInt($swA)*4);
         $rHP = $('#range-hp').text(parseInt($swH)*4);
         $('.range').show();
         rangeC();
+        $('.calc_gear_weapon').addClass('a2');
       }
       gearStat();
     }).change();
