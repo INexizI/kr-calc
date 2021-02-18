@@ -74,6 +74,7 @@
       $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       $heroClass !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
       $('#calc_st_weapon_st').html('<option value="">- - -</option>');
+      $('.w-in').removeClass('g-fr a0 a1 a2');
       $('#range-atk').text(0);
       $('#range-hp').text(0);
       $('.range').hide();
@@ -351,6 +352,7 @@
       $('#range-hp').text(0);
       $('.range').hide();
       $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
+      $('.w-in').removeClass('g-fr a0 a1 a2');
       statValue();
     }).change();
     // Class / Unique Weapon
@@ -360,6 +362,7 @@
       $gearWeaponSlot = null;
       $clKn = 32730;$clWa = 37010;$clAs = 40711;$clAr = 45915;$clMe = 41867;$clWi = 42793;$clPr = 42793;$unKn = 45106;$unWa = 51120;$unAs = 56209;$unAr = 63264;$unMe = 57712;$unWi = 58985;$unPr = 58985;$arPl = 17052;$arSc = 11369;$arR = 5686;$scSh = 17052;$scC = 5686;$scH = 11369;$ms = 726278;$unTr = 1596066;$jR = 726278;$jE = 15801;$jB = 11369;$jN = 11369;$or = 726278;
       $gearWeaponType = $(this).children('option:selected').val();
+      $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($gearWeaponType == 'Class') {
         $(this).css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
         $('#wea').next('.rating').show();
@@ -378,6 +381,7 @@
         else if ($heroClass == 7)
           $('#wea').text($clPr);
         $('.calc_gear_weapon').parent().find('.gOption').show();
+        $('.w-in').addClass('g-fr');
         $('#g-weapon').hide();
         $('#range-atk').text(0);
         $('#range-hp').text(0);
@@ -412,11 +416,13 @@
         $swH = 125000;
 
         $('.calc_gear_weapon').parent().find('.gOption').show();
+        $('.w-in').addClass('g-fr');
         $('#g-weapon').show();
       } else {
         $(this).css('background-image', 'url(/images/media/gears/bg-weapon.png)');
         $('#wea').text('').next('.rating').hide();
         $('.calc_gear_weapon').parent().find('.gOption').hide();
+        $('.w-in').removeClass('g-fr');
         $('#g-weapon').hide();
         $('#range-atk').text(0);
         $('#range-hp').text(0);
@@ -432,30 +438,32 @@
     // Soul Weapon
     $('select#calc_st_weapon').change(function() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
-      $('.calc_gear_weapon').removeClass('a0 a1 a2');
+      $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
         $rAtk = $('#range-atk').text(0);
         $rHP = $('#range-hp').text(0);
         $('.range').hide();
         rangeC();
+        if ($('#calc_gear_weapon').children('option:selected').text() !== '- - - - - - - - - -')
+          $('.w-in').addClass('g-fr');
       } else if ($adv == 'Adv.0') {
         $rAtk = $('#range-atk').text(parseInt($swA));
         $rHP = $('#range-hp').text(parseInt($swH));
         $('.range').show();
         rangeC();
-        $('.calc_gear_weapon').addClass('a0');
+        $('.w-in').addClass('a0');
       } else if ($adv == 'Adv.1') {
         $rAtk = $('#range-atk').text(parseInt($swA)*2);
         $rHP = $('#range-hp').text(parseInt($swH)*2);
         $('.range').show();
         rangeC();
-        $('.calc_gear_weapon').addClass('a1');
+        $('.w-in').addClass('a1');
       } else if ($adv == 'Adv.2') {
         $rAtk = $('#range-atk').text(parseInt($swA)*4);
         $rHP = $('#range-hp').text(parseInt($swH)*4);
         $('.range').show();
         rangeC();
-        $('.calc_gear_weapon').addClass('a2');
+        $('.w-in').addClass('a2');
       }
       gearStat();
     }).change();

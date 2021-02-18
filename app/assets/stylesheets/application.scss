@@ -780,35 +780,29 @@ h4 {
         height: 52px;
         color: transparent;
       }
-      .a0:before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        background-image: url(/images/media/icons/a0.png);
-        background-size: 55px;
-        width: 55px;
-        height: 55px;
-        margin: -1px;
+      .a0 {
+        border-image-source: url(/images/media/icons/a0.png);
+        border-image-width: 30px;
+        border-image-slice: 65;
+        border-image-outset: 3;
       }
-      .a1:before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        background-image: url(/images/media/icons/a1.png);
-        background-size: 55px;
-        width: 55px;
-        height: 55px;
-        margin: -1px;
+      .a1 {
+        border-image-source: url(/images/media/icons/a1.png);
+        border-image-width: 30px;
+        border-image-slice: 65;
+        border-image-outset: 3;
       }
-      .a2:before {
-        content: "";
-        display: inline-block;
-        position: absolute;
-        background-image: url(/images/media/icons/a2.png);
-        background-size: 55px;
-        width: 55px;
-        height: 55px;
-        margin: -1px;
+      .a2 {
+        border-image-source: url(/images/media/icons/a2.png);
+        border-image-width: 30px;
+        border-image-slice: 65;
+        border-image-outset: 3;
+      }
+      .g-fr {
+        border-image-source: url(/images/media/icons/gear.png);
+        border-image-slice: 27;
+        border-image-width: 8px;
+        border-image-outset: 2;
       }
       .gSt {
         width: 125px;
