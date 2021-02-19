@@ -2063,8 +2063,8 @@
       }
       $('.range-ad1').html(y + '%');
       $('.range-ad2').html(z + '%');
-      y > 0 ? $('#range-atk').html(Math.round($sw_atk + ($sw_atk * (y / 100)))) : $('#range-atk').html(Math.round($sw_atk));
-      z > 0 ? $('#range-hp').html(Math.round($sw_hp + ($sw_hp * (z / 100)))) : $('#range-hp').html(Math.round($sw_hp));
+      y > 0 ? $('#range-atk').html(Math.round($sw_atk + Math.trunc($sw_atk * (y / 100)))) : $('#range-atk').html(Math.round($sw_atk));
+      z > 0 ? $('#range-hp').html(Math.round($sw_hp + Math.trunc($sw_hp * (z / 100)))) : $('#range-hp').html(Math.round($sw_hp));
     };
     function rangeC(){
       $('.range-ou1, .range-ou2').text('50%');
