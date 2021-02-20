@@ -122,9 +122,9 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 121,I'll Break You! [Light],Reduces Mana Cost by 1,Chase,2020-06-18 11:47:01.543882,2020-06-18 11:47:01.543882,s1l,hero
 122,I'll Break You! [Dark],The inflicted target takes 25% more P.DMG for 10 seconds,Chase,2020-06-18 12:40:01.201681,2020-06-18 12:40:01.201681,s1d,hero
 123,Remove Limit [Light],Enemies hit are stunned for 2 sec,Chase,2020-06-18 12:40:15.526409,2020-06-18 12:40:15.526409,s2l,hero
-124,Remove Limit [Dark],"HP consumption per sec is increased by 100% and ATK Spd, Crit DMG boost is doubled",Chase,2020-06-18 12:40:23.095656,2020-06-18 12:40:23.095656,s2d,hero
-125,"Burn, Spear of Fury [Light]",Gains Immunity to CC while in use,Chase,2020-06-18 12:40:33.861562,2020-06-18 12:40:33.861562,s3l,hero
-126,"Burn, Spear of Fury [Dark]",Increases the Stun duration by 1 second,Chase,2020-06-18 12:40:45.977372,2020-06-18 12:40:45.977372,s3d,hero
+124,Remove Limit [Dark],"Wherever HP drops by 1% for the duration of Skill, increases Heal Rate by 0.4% and reduces All DMG taken by 0.4%.",Chase,2020-06-18 12:40:23.095656,2020-06-18 12:40:23.095656,s2d,hero
+125,"Burn, Spear of Fury [Light]",Increases Mana Cost by 1 and Heal Rate by 100%.,Chase,2020-06-18 12:40:33.861562,2020-06-18 12:40:33.861562,s3l,hero
+126,"Burn, Spear of Fury [Dark]","Upon use, dispels negative effects from self.",Chase,2020-06-18 12:40:45.977372,2020-06-18 12:40:45.977372,s3d,hero
 127,Remember This in Hell [Light],"Upon the activation of resurrection, increases ATK by 50%",Chase,2020-06-18 12:40:53.324978,2020-06-18 12:40:53.324978,s4l,hero
 128,Remember This in Hell [Dark],"Upon the activation of resurrection, knocks back nearby enemies in range for 3 seconds",Chase,2020-06-18 12:41:31.801965,2020-06-18 12:41:31.801965,s4d,hero
 129,Light of Annihilation [Light],Reduces Mana Cost by 1,Chrisha,2020-06-18 12:41:52.419633,2020-06-18 12:41:52.419633,s1l,hero
@@ -632,11 +632,11 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 631,Rapid Shot [Light],"If there is 1 enemy, DMG is increased by 100%",Rodina,2020-06-22 16:20:49.597157,2020-06-22 16:20:49.597157,s4l,hero
 632,Rapid Shot [Dark],Enemies hit are stunned for 2 sec,Rodina,2020-06-22 16:20:55.831619,2020-06-22 16:20:55.831619,s4d,hero
 633,Merciless [Light],Mana cost is reduced by 1,Roi,2020-06-22 16:22:04.623084,2020-06-22 16:22:04.623084,s1l,hero
-634,Merciless [Dark],Target takes 25% increased P.DMG for 10 sec,Roi,2020-06-22 16:22:10.5772,2020-06-22 16:22:10.5772,s1d,hero
-635,Curtain of Darkness [Light],ATK boost is increased by 40%,Roi,2020-06-22 16:22:23.008784,2020-06-22 16:22:23.008784,s2l,hero
+634,Merciless [Dark],Changes the number of hits to 5 times.,Roi,2020-06-22 16:22:10.5772,2020-06-22 16:22:10.5772,s1d,hero
+635,Curtain of Darkness [Light],"Upon use, dispels negative effects from self.",Roi,2020-06-22 16:22:23.008784,2020-06-22 16:22:23.008784,s2l,hero
 636,Curtain of Darkness [Dark],Auto attack DMG is boosted by 100% for the duration,Roi,2020-06-22 16:22:26.393348,2020-06-22 16:22:26.393348,s2d,hero
 637,Blade Claw [Light],"In exchange for 1 additional Mana Cost, DMG dealt is increased by 100%",Roi,2020-06-22 16:22:41.328576,2020-06-22 16:22:41.328576,s3l,hero
-638,Blade Claw [Dark],Cooldown is removed,Roi,2020-06-22 16:22:46.453299,2020-06-22 16:22:46.453299,s3d,hero
+638,Blade Claw [Dark],Changes the target to an enemy with the lowest HP.,Roi,2020-06-22 16:22:46.453299,2020-06-22 16:22:46.453299,s3d,hero
 639,Hack [Light],Each attack recovers 300 mana,Roi,2020-06-22 16:22:58.65384,2020-06-22 16:22:58.65384,s4l,hero
 640,Hack [Dark],Has a 50% chance to stack 1 stack of Bleed,Roi,2020-06-22 16:23:04.55459,2020-06-22 16:23:04.55459,s4d,hero
 641,Halt! [Light],Mana cost is reduced by 1,Scarlet,2020-06-22 16:23:21.282608,2020-06-22 16:23:21.282608,s1l,hero
@@ -657,10 +657,10 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 656,Moonlight Arrow [Dark],Auto attack range is boosted by 20%,Selene,2020-06-22 16:26:07.277855,2020-06-22 16:26:07.277855,s4d,hero
 657,Mysterious Sword - Falling Petals / Mysterious Sword - Blossom [Light],[Mysterious Sword - Falling Petals] - Mana cost is reduced by 1. [Mysterious Sword - Blossom] - Hit enemies' heal rate is reduced by 50% for 5 sec,Seria,2020-06-22 16:26:33.460217,2020-06-22 16:26:33.460217,s1l,hero
 658,Mysterious Sword - Falling Petals / Mysterious Sword - Blossom [Dark],"[Mysterious Sword - Falling Petals] - Target takes 25% increased M.DMG for 10 sec. [Mysterious Sword - Blossom] - Mana cost is increased by 1, and Ignores enemy's DEF",Seria,2020-06-22 16:26:40.784569,2020-06-22 16:26:40.784569,s1d,hero
-659,Blood Scattering Blade [Light],Reduces Mana Cost by 1,Seria,2020-06-22 16:26:51.700036,2020-06-22 16:26:51.700036,s2l,hero
+659,Blood Scattering Blade [Light],Cooldown is reduced by 5% per each enemy hit.,Seria,2020-06-22 16:26:51.700036,2020-06-22 16:26:51.700036,s2l,hero
 660,Blood Scattering Blade [Dark],"Upon each DMG dealt, recovers 200 Mana",Seria,2020-06-22 16:26:57.800891,2020-06-22 16:26:57.800891,s2d,hero
 661,Red Moon Blade [Light],Dispels positive effects of all enemies in range,Seria,2020-06-22 16:27:08.368019,2020-06-22 16:27:08.368019,s3l,hero
-662,Red Moon Blade [Dark],Increases Mana Cost by 1 and ignores DEF when attacking Non-Hero enemies,Seria,2020-06-22 16:27:14.881774,2020-06-22 16:27:14.881774,s3d,hero
+662,Red Moon Blade [Dark],"Upon every skill use, increases DMG of [Red Moon Blade] skill by 15%. This effect can be stacked up to max 10 times.",Seria,2020-06-22 16:27:14.881774,2020-06-22 16:27:14.881774,s3d,hero
 663,Cold-Blooded Witch [Light],Takes 0.7% reduced DMG per stack,Seria,2020-06-22 16:27:24.723067,2020-06-22 16:27:24.723067,s4l,hero
 664,Cold-Blooded Witch [Dark],"When the battle starts, increases DMG to Non-Hero enemies by 25% for 200 sec",Seria,2020-06-22 16:27:28.4127,2020-06-22 16:27:28.4127,s4d,hero
 665,Curse of Petrification [Light],Cooldown is reduced by 3 sec,Shamilia,2020-06-22 16:29:08.629794,2020-06-22 16:29:08.629794,s1l,hero
@@ -788,7 +788,7 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 787,light,"ATK, DEF, HP+15% / Crit DMG +20%",Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 788,dark,Attacking the enemy with the additional DMG gained from [Infinite Potential] will increase own ATK by 0.5%. This effect can be stacked up to max 200 times and is irremovable.,Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 789,light,"ATK, DEF, HP+15% / Crit DMG +20%",Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-790,dark,"Per every 1% of HP lost, Crit DMG is increased by 1% and ATK Spd is increased by 4.",Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+790,dark,Increases DMG dealt to Non-Hero enemies by 1% every 1 sec. This effect can be stacked up to max 60 times and is irremovable.,Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 791,light,"ATK, DEF, HP+15% / Crit Chance +100",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 792,dark,"Increases ATK Spd of normal attack by 400 and additional 40 per every skill use. This effect cannot be dispelled, and can be stacked up to max 10 times.",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 793,light,"ATK, DEF, HP+15% / P. Block +200",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
@@ -916,13 +916,13 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 915,light,"ATK, DEF, HP+15% / Crit Chance +100",Rodina,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 916,dark,Increases ATK by 20% for 10 seconds and sets 3 random enemies as Rodina's target at the start of every battle.,Rodina,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 917,light,"ATK, DEF, HP+15% / Crit DMG +20%",Roi,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-918,dark,"Upon a Crit Hit, there is a 10% chance of ATK Spd increasing by 300 and Crit DMG increasing by 60% for 5 sec. Does not activate again during activation.",Roi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+918,dark,"Upon a Crit Hit, increases ATK Spd increasing by 300 and Crit DMG increasing by 60% for 5 sec. Does not activate again during activation.",Roi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 919,light,"ATK, DEF, HP+15% / CC Resist +100",Scarlet,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 920,dark,"When receiving Critical DMG, there is a 5% chance the attacker is dispelled of all positive effects and is stunned for 1 sec. Skill cooldown is 8 sec.",Scarlet,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 921,light,"ATK, DEF, HP+15% / Crit DMG +20%",Selene,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 922,dark,Reduces own Crit Chance by 300 and increases Crit DMG by 150%.,Selene,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 923,light,"ATK, DEF, HP+15% / Crit DMG +20%",Seria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-924,dark,"All of caster's attacks will be critical hits, but the caster becomes unable to block while taking 25% increased damage.",Seria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+924,dark,"Seria's all attacks will be Crit Hit, but her All Block will be disabled and she takes 15% increased DMG from Heroes.",Seria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 925,light,"ATK, DEF, HP+15% / ATK.Spd +100",Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 926,dark,All effects of curse are enhanced. [Curse of Petrification] Petrification duration is increased by 2 sec. [Curse of Time] Curse of Time duration is increased by 3 sec. [Curse of Pain] Curse of Pain DOT is increased by 50%.,Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 927,light,"ATK, DEF, HP+15% / CC Resist +100",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
