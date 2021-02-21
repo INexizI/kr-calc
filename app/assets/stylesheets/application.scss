@@ -16,6 +16,10 @@ body {
   font-family: 'Quicksand', sans-serif;
   font-size: large;
   font-weight: bold;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 input {
@@ -213,7 +217,7 @@ select {
   flex-wrap: wrap;
   font-size: 18px;
   text-shadow: 0 0 10px white;
-  min-height: calc(100vh - 30px);
+  min-height: 100vh;
   backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 }
 
@@ -751,6 +755,8 @@ h4 {
   text-align: center;
   justify-content: center;
   width: 100%;
+  min-height: 100vh;
+  backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 
   select {
     outline: 0;
@@ -1435,4 +1441,10 @@ h4 {
 }
 .tgl-light:checked + .tgl-btn {
   background: #9FD6AE;
+}
+
+// Background
+#bg {
+  min-height: 100vh;
+  backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 }

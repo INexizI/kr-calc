@@ -1,6 +1,6 @@
 title KrCalc
 
-.home
+.home#bg
   .home-a
     p Hero
     = link_to chars_path do
@@ -25,11 +25,6 @@ title KrCalc
     p Skill
     = link_to skills_path do
       img src='/images/media/heroes/#{@skill.char.name}/s#{@skill.skill_number}.png' title=@skill.name
-  / .home-a
-    // (DEL FOR PROD)
-    p Stat
-    = link_to stats_path do
-      p Stat
   .home-a
     p Calculator
     = link_to calcs_path do

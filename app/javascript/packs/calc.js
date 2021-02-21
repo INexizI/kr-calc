@@ -1,5 +1,11 @@
 (function() {
   $(document).on("turbolinks:load", function() {
+    // Background
+    function bg() {
+      var background = Math.trunc(1 + Math.random() * 31);
+      $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + background + '.png)');
+    };
+    bg();
     // Class -> Hero
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
