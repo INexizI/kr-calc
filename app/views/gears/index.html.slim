@@ -121,6 +121,303 @@ title Gear
             - else
               img src='/images/media/gears/#{gear.gear_type}/#{gear.set}.png' title=(gear.set + ' ' + gear.name)
 
+    .g-title TM
+    .g-main
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Perseverance #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Hope #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Protection').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Courage').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Coldness').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wrath').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Passion').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Wisdom').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: 'Reclaimed', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Reclaimed Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+      .g-gear
+        - @gears.where(tier: 'TM', set: '', name: 'Blessing').each do |gear|
+          = link_to gear do
+            - if gear.gear_type == '7-J'
+              img src='/images/media/gears/#{gear.gear_type}/#{gear.gear_skill}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+            - else
+              img src='/images/media/gears/#{gear.gear_type}/Authority #{gear.name}.png' title=(gear.set + ' ' + gear.name)
+
     .g-title Mana Stone
     .g-main
       .g-gear

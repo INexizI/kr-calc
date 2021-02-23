@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_045015) do
+ActiveRecord::Schema.define(version: 2021_02_23_004432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,11 +65,9 @@ ActiveRecord::Schema.define(version: 2021_02_11_045015) do
     t.bigint "char_id"
     t.bigint "stat_id"
     t.bigint "role_id"
-    t.bigint "rune_id"
     t.string "gear_skill"
     t.index ["char_id"], name: "index_gears_on_char_id"
     t.index ["role_id"], name: "index_gears_on_role_id"
-    t.index ["rune_id"], name: "index_gears_on_rune_id"
     t.index ["stat_id"], name: "index_gears_on_stat_id"
   end
 
@@ -155,7 +153,6 @@ ActiveRecord::Schema.define(version: 2021_02_11_045015) do
   add_foreign_key "enchants", "stats"
   add_foreign_key "gears", "chars", name: "gears_char_id_fkey"
   add_foreign_key "gears", "roles"
-  add_foreign_key "gears", "runes"
   add_foreign_key "gears", "stats", name: "gears_stat_id_fkey"
   add_foreign_key "skills", "chars", name: "skills_char_id_fkey"
   add_foreign_key "stats", "roles"
