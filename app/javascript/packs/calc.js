@@ -604,9 +604,10 @@
       if ($armorSet == '- - - - - - - - - -') {
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#greyPDEF').text('');
-        $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
         $('#arm').text('').next('.rating').hide();
-        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '1-1H';
@@ -620,6 +621,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($armorSet == 'Perseverance') || ($armorSet == 'Hope') || ($armorSet == 'Authority')) {
@@ -635,6 +637,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
@@ -650,6 +653,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -690,7 +694,8 @@
         $('#greyMDEF').text('');
         $('#sec').next('.rating').hide();
         $('.calc_gear_secondary').parent().find('.gOption, .gTM').hide();
-        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '2-2H';
@@ -704,6 +709,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($secondarySet == 'Perseverance') || ($secondarySet == 'Hope') || ($secondarySet == 'Authority')) {
@@ -719,6 +725,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
@@ -734,6 +741,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -775,7 +783,8 @@
         $('#greyJ').text('');
         $('#acc').text('').next('.rating').hide();
         $('.calc_gear_jewelry').parent().find('.gOption, .gTM').hide();
-        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring')
           $('#greyJ').text($tm4R);
@@ -785,6 +794,7 @@
           $('#greyJ').text($tm2R);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($jewelSet == 'Perseverance') || ($jewelSet == 'Hope') || ($jewelSet == 'Authority')) {
@@ -796,6 +806,7 @@
           $('#greyJ').text($tm2);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
@@ -809,6 +820,7 @@
           $('#greyJ').text($jN);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -849,23 +861,27 @@
         $('#greyO').text('');
         $('#orb').text('').next('.rating').hide();
         $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
-        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4R);
         $('#orb').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4);
         $('#orb').next('.rating').show();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;');
         $('#greyO').text($or);
         $('#orb').next('.rating').show();
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -2118,6 +2134,7 @@
       $ax = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="Block">Block</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="Crit Resistance">Crit Resistance</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="DEF">DEF</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option><option value="Dodge">Dodge</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option>'
       $axTr = '<option value="Resistance">Resistance</option><option value="P.Resistance">P.Resistance</option><option value="M.Resistance">M.Resistance</option><option value="Recovery">Recovery</option><option value="Mana Recovery upon taking DMG">Mana Recovery upon taking DMG</option><option value="DMG Reduction upon Block">DMG Reduction upon Block</option><option value="DMG Reduction upon P.Block">DMG Reduction upon P.Block</option><option value="DMG Reduction upon M.Block">DMG Reduction upon M.Block</option>'
       $axtm = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option>'
+      $tmOp = '<option value="">- - - - - - - - - -</option><option value="Increases ATK by 35% when there is 1 enemy.">Increases ATK by 35% when there is 1 enemy.</option><option value="Increases DEF by 45% when there is 1 enemy.">Increases DEF by 45% when there is 1 enemy.</option><option value="Increases ATK by 35% when there is 3 enemy.">Increases ATK by 35% when there is 3 enemy.</option><option value="Increases DEF by 45% when there is 3 enemy.">Increases DEF by 45% when there is 3 enemy.</option><option value="Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.">Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.</option><option value="Increases own DMG dealt to enemies by 25% when HP is above 95%.">Increases own DMG dealt to enemies by 25% when HP is above 95%.</option><option value="Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.">Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.</option><option value="Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.">Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.</option><option value="Reduces Cooldown of 1st Skill by 10% every 10 sec.">Reduces Cooldown of 1st Skill by 10% every 10 sec.</option><option value="Reduces Cooldown of 2nd Skill by 10% every 10 sec.">Reduces Cooldown of 2nd Skill by 10% every 10 sec.</option><option value="Reduces Cooldown of 3rd Skill by 10% every 10 sec.">Reduces Cooldown of 3rd Skill by 10% every 10 sec.</option><option value="Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.">Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.</option><option value="Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.">Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.</option><option value="Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.">Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.</option><option value="Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.">Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.</option><option value="Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.">Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.</option><option value="Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.">Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.</option><option value="Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.">Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.</option><option value="Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.">Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.</option><option value="Increases DMG of [DMG that ignores DEF] by 25%.">Increases DMG of [DMG that ignores DEF] by 25%.</option><option value="Increases DMG of [Continuous DMG] by 20%.">Increases DMG of [Continuous DMG] by 20%.</option><option value="Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.">Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.</option><option value="At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.">At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.</option><option value="Increases DEF by 7% per 1 enemy.">Increases DEF by 7% per 1 enemy.</option><option value="Increases ATK by 6% per 1 enemy.">Increases ATK by 6% per 1 enemy.</option><option value="Increases ATK of all allies by 5%.">Increases ATK of all allies by 5%.</option><option value="Increases Crit DMG of all allies by 10%.">Increases Crit DMG of all allies by 10%.</option><option value="Increases All DEF of all allies by 7%.">Increases All DEF of all allies by 7%.</option><option value="At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.">At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.</option><option value="Increases DMG of normal attacks by 25%.">Increases DMG of normal attacks by 25%.</option><option value="Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.">Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.</option><option value="Increases own Shield by 25%.">Increases own Shield by 25%.</option><option value="Heals HP equal to 1% of Max HP every sec.">Heals HP equal to 1% of Max HP every sec.</option><option value="Recovers own Mana by 500 every 5 sec.">Recovers own Mana by 500 every 5 sec.</option><option value="Reduces All DEF by 25% and increases ATK by 50%.">Reduces All DEF by 25% and increases ATK by 50%.</option><option value="Reduces ATK by 20% and increases All DEF by 50%.">Reduces ATK by 20% and increases All DEF by 50%.</option><option value="Reduces the duration of CCs inflicted upon self by 15%.">Reduces the duration of CCs inflicted upon self by 15%.</option><option value="Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.">Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.</option><option value="Fixes ATK Spd to 1000 and increases ATK by 40%.">Fixes ATK Spd to 1000 and increases ATK by 40%.</option><option value="Increases Crit DMG by 50%.">Increases Crit DMG by 50%.</option><option value="Increases ATK Spd by 250.">Increases ATK Spd by 250.</option><option value="Increases DEF Penetration by 250.">Increases DEF Penetration by 250.</option><option value="Increases Max HP by 25%.">Increases Max HP by 25%.</option><option value="Increases All Block by 250.">Increases All Block by 250.</option><option value="Increases All DEF by 25%.">Increases All DEF by 25%.</option><option value="Increases Crit Chance by 250.">Increases Crit Chance by 250.</option><option value="Increases ATK by 25%.">Increases ATK by 25%.</option><option value="Soul Weapon Usage Limit +1">Soul Weapon Usage Limit +1</option><option value="Level of [1st Skill] +7">Level of [1st Skill] +7</option><option value="Level of [2nd Skill] +7">Level of [2nd Skill] +7</option><option value="Level of [3rd Skill] +7">Level of [3rd Skill] +7</option><option value="Level of [4th Skill] +7">Level of [4th Skill] +7</option><option value="Level of [All Skill] +5">Level of [All Skill] +5</option>'
       $ay = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q7" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
@@ -2142,6 +2159,9 @@
       });
       $('.opt-ench').find('.ench-v').each(function() {
         $(this).html('<option value="0" id="q">- - - </option>');
+      });
+      $('.opt').find('.tm-op').each(function() {
+        $(this).html($tmOp);
       });
       $('.opt').find('.ax-tm').each(function() {
         $(this).html($axtm);

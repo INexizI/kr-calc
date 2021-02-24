@@ -91,6 +91,8 @@ title Calculator
               .opt
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+              .opt
+                = f.input :st_armor_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input
             = f.input :gear_secondary, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic', 'Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
@@ -128,11 +130,13 @@ title Calculator
                 = f.input :ench_sg_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-left
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+              .opt
+                = f.input :st_secondary_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
         div
           .form-input#treasure
@@ -223,11 +227,13 @@ title Calculator
                 = f.input :ench_j_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+              .opt
+                = f.input :st_jewerly_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input
             = f.input :gear_orb, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic', 'Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
@@ -265,11 +271,13 @@ title Calculator
                 = f.input :ench_orb_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
+                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+              .opt
+                = f.input :st_orb_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input
             = f.input :gear_artifact, as: :select, collection: ['A', 'B', 'C'], required: false, label: false, input_html: {class: 'img'}
