@@ -837,7 +837,7 @@ h4 {
           }
         }
       }
-      .gOption {
+      .gOption, .gTM {
         display: none;
         position: relative;
         height: 50px;
@@ -852,7 +852,7 @@ h4 {
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
             display: none;
           }
-          .ay {
+          .ay, .ay-tm {
             position: relative;
             left: 70px;
             min-width: 65px;

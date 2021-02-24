@@ -575,7 +575,6 @@
         $('.calc_gear_treasure').parent().find('.gOption').hide();
         $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
-      statValue();
       $('#greyTR').text($('#tre').text());
       $('#ut label').filter('.active').removeClass('active');
     }).change();
@@ -605,8 +604,8 @@
       if ($armorSet == '- - - - - - - - - -') {
         $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#greyPDEF').text('');
+        $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
         $('#arm').text('').next('.rating').hide();
-        $('.calc_gear_armor').parent().find('.gOption').hide();
         $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       } else if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -621,7 +620,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('.calc_gear_armor').parent().find('.gOption').show();
+        $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($armorSet == 'Perseverance') || ($armorSet == 'Hope') || ($armorSet == 'Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -636,7 +635,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('.calc_gear_armor').parent().find('.gOption').show();
+        $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -651,7 +650,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('.calc_gear_armor').parent().find('.gOption').show();
+        $('.calc_gear_armor').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
       $('#arm').text($('#greyPDEF').text());
@@ -659,7 +658,7 @@
     }).change();
     $('select#calc_st_armor').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.ay');
+      $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
         statOption();
@@ -690,7 +689,7 @@
         $(this).css('background-image', 'url(/images/media/gears/bg-secondary.png)');
         $('#greyMDEF').text('');
         $('#sec').next('.rating').hide();
-        $('.calc_gear_secondary').parent().find('.gOption').hide();
+        $('.calc_gear_secondary').parent().find('.gOption, .gTM').hide();
         $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       } else if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -705,7 +704,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('.calc_gear_secondary').next().next().show();
+        $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($secondarySet == 'Perseverance') || ($secondarySet == 'Hope') || ($secondarySet == 'Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -720,7 +719,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('.calc_gear_secondary').next().next().show();
+        $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -735,7 +734,7 @@
         }
         $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('.calc_gear_secondary').next().next().show();
+        $('.calc_gear_secondary').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
       $('#sec').text($('#greyMDEF').text());
@@ -743,7 +742,7 @@
     }).change();
     $('select#calc_st_secondary').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.ay');
+      $opt = $(this).parent().parent().find('.ay, ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
         statOption();
@@ -775,7 +774,7 @@
         $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
         $('#greyJ').text('');
         $('#acc').text('').next('.rating').hide();
-        $('.calc_gear_jewelry').parent().find('.gOption').hide();
+        $('.calc_gear_jewelry').parent().find('.gOption, .gTM').hide();
         $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       } else if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring')
@@ -786,7 +785,7 @@
           $('#greyJ').text($tm2R);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('.calc_gear_jewelry').parent().find('.gOption').show();
+        $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($jewelSet == 'Perseverance') || ($jewelSet == 'Hope') || ($jewelSet == 'Authority')) {
         if ($jewelType == 'Ring')
@@ -797,7 +796,7 @@
           $('#greyJ').text($tm2);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('.calc_gear_jewelry').parent().find('.gOption').show();
+        $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
         if ($jewelType == 'Ring')
@@ -810,7 +809,7 @@
           $('#greyJ').text($jN);
         $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('.calc_gear_jewelry').parent().find('.gOption').show();
+        $('.calc_gear_jewelry').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
       $('#acc').text($('#greyJ').text());
@@ -818,7 +817,7 @@
     }).change();
     $('select#calc_st_jewerly').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.ay');
+      $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
         statOption();
@@ -849,25 +848,25 @@
         $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
         $('#greyO').text('');
         $('#orb').text('').next('.rating').hide();
-        $('.calc_gear_orb').parent().find('.gOption').hide();
+        $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
         $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4R);
         $('#orb').next('.rating').show();
-        $('.calc_gear_orb').parent().find('.gOption').show();
+        $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4);
         $('#orb').next('.rating').show();
-        $('.calc_gear_orb').parent().find('.gOption').show();
+        $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
         $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;');
         $('#greyO').text($or);
         $('#orb').next('.rating').show();
-        $('.calc_gear_orb').parent().find('.gOption').show();
+        $('.calc_gear_orb').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
       $('#orb').text($('#greyO').text());
@@ -875,7 +874,7 @@
     }).change();
     $('select#calc_st_orb').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.ay');
+      $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
         statOption();
@@ -2118,7 +2117,9 @@
     function statValue() {
       $ax = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="Block">Block</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="Crit Resistance">Crit Resistance</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="DEF">DEF</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option><option value="Dodge">Dodge</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option>'
       $axTr = '<option value="Resistance">Resistance</option><option value="P.Resistance">P.Resistance</option><option value="M.Resistance">M.Resistance</option><option value="Recovery">Recovery</option><option value="Mana Recovery upon taking DMG">Mana Recovery upon taking DMG</option><option value="DMG Reduction upon Block">DMG Reduction upon Block</option><option value="DMG Reduction upon P.Block">DMG Reduction upon P.Block</option><option value="DMG Reduction upon M.Block">DMG Reduction upon M.Block</option>'
+      $axtm = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="MP Recovery/Attack">MP Recovery/Attack</option><option value="MP Recovery/Sec">MP Recovery/Sec</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option>'
       $ay = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
+      $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q7" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
       $ench = '<option value="">- - - - - - - - - -</option><option value="Rare">Rare</option><option value="Heroic">Heroic</option><option value="Ancient">Ancient</option><option value="Legendary">Legendary</option>'
       $('.opt').find('.ax').each(function() {
@@ -2141,6 +2142,12 @@
       });
       $('.opt-ench').find('.ench-v').each(function() {
         $(this).html('<option value="0" id="q">- - - </option>');
+      });
+      $('.opt').find('.ax-tm').each(function() {
+        $(this).html($axtm);
+      });
+      $('.opt').find('.ay-tm').each(function() {
+        $(this).html($aytm);
       });
     };
     function option() {
@@ -2336,6 +2343,71 @@
           $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
         }
       });
+      $tmN = $('.opt .ax-tm').serializeArray();
+      $.each($tmN, function(iN, n) {
+        $tmV = $('.opt .ay-tm').serializeArray()[iN];
+        if (n.value == 'ATK') {
+          $sAtk += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="ATK"]').text($sAtk);
+        } else if (n.value == 'ATK Spd') {
+          $sAspd += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+        } else if (n.value == 'Crit') {
+          $sCr += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Crit"]').text($sCr);
+        } else if (n.value == 'Crit DMG') {
+          $sCrD += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+        } else if (n.value == 'MP Recovery/Attack') {
+          $sMPa += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+        } else if (n.value == 'MP Recovery/Sec') {
+          $sMPs += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
+        } else if (n.value == 'Penetration') {
+          $sPen += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Penetration"]').text($sPen);
+        } else if (n.value == 'Lifesteal') {
+          $sLif += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+        } else if (n.value == 'ACC') {
+          $sAcc += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="ACC"]').text($sAcc);
+        } else if (n.value == 'Debuff ACC') {
+          $sDAcc += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Debuff ACC"]').text($sDAcc);
+        } else if (n.value == 'Max HP') {
+          $sHP += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        } else if (n.value == 'CC Resist') {
+          $sCC += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+        } else if (n.value == 'P.Block') {
+          $sPBl += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
+        } else if (n.value == 'M.Block') {
+          $sMBl += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
+        } else if (n.value == 'P.Crit Resistance') {
+          $sPCR += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
+        } else if (n.value == 'M.Crit Resistance') {
+          $sMCR += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
+        } else if (n.value == 'P.DEF') {
+          $sPDef += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+        } else if (n.value == 'M.DEF') {
+          $sMDef += Number(parseFloat($tmV.value));
+          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+        } else if (n.value == 'P.Dodge') {
+          $sPDod += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
+        } else if (n.value == 'M.Dodge') {
+          $sMDod += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
+        }
+      });
     };
     // Gear Star changes
     $('.rating label').click(function() {
@@ -2445,7 +2517,7 @@
       });
     };
 
-    $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v').change(function() {
+    $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm').change(function() {
       option();
       gearStat();
       gearSet();
