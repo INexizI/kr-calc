@@ -1,0 +1,140 @@
+[
+  Knight {
+    "base_stats": [
+      {
+        "Max HP": 1706672,
+        "ATK": 19792,
+        "P.DEF": 8792,
+        "M.DEF": 6840
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 50,
+        "P.Block": 100,
+        "M.Block": 100,
+        "P.Tough": 250,
+        "M.Tough": 250,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Warrior {
+    "base_stats": [
+      {
+        "Max HP": 1449520,
+        "ATK": 22488,
+        "P.DEF": 7328,
+        "M.DEF": 8792
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 150,
+        "Penetration": 150,
+        "ACC": 100,
+        "P.Dodge": 100,
+        "M.Dodge": 100,
+        "CC Resist": 250,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Assassin {
+    "base_stats": [
+      {
+        "Max HP": 1384992,
+        "ATK": 24688,
+        "P.DEF": 7816,
+        "M.DEF": 6840
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 200,
+        "Crit DMG": 30,
+        "ACC": 100,
+        "P.Dodge": 200,
+        "M.Dodge": 200,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Archer {
+    "base_stats": [
+      {
+        "Max HP": 1066728,
+        "ATK": 27864,
+        "P.DEF": 5376,
+        "M.DEF": 4392
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 150,
+        "Penetration": 250,
+        "ACC": 100,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Mechanic {
+    "base_stats": [
+      {
+        "Max HP": 1157176,
+        "ATK": 25416,
+        "P.DEF": 5376,
+        "M.DEF": 4392
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 150,
+        "Crit DMG": 50,
+        "Penetration": 100,
+        "ACC": 200,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Wizard {
+    "base_stats": [
+      {
+        "Max HP": 985328,
+        "ATK": 29328,
+        "P.DEF": 3904,
+        "M.DEF": 5864
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 100,
+        "Penetration": 150,
+        "ACC": 100,
+        "M.Dodge": 200,
+        "M.Block": 250,
+        "ATK Spd": 1000
+      }
+    ],
+  },
+  Priest {
+    "base_stats": [
+      {
+        "Max HP": 1104864,
+        "ATK": 23216,
+        "P.DEF": 4888,
+        "M.DEF": 6104
+      }
+    ],
+    "add_stats": [
+      {
+        "Crit": 100,
+        "ACC": 100,
+        "M.Block": 500,
+        "M.Block DEF": 250,
+        "M.Tough": 150,
+        "ATK Spd": 1000
+      }
+    ],
+  }
+]

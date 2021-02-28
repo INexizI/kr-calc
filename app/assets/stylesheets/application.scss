@@ -306,6 +306,20 @@ select {
       text-align: center;
     }
   }
+  #statHead {
+    .r-stat {
+      grid-template: "item1 item2";
+
+      p {
+        img {
+          width: 18px;
+          height: 18px;
+          margin-right: 5px;
+          vertical-align: -4px;
+        }
+      }
+    }
+  }
   #statBase {
     .r-stat {
       grid-template: "item1 item2";
@@ -318,6 +332,13 @@ select {
     #s-per {
       margin-left: -40px;
     }
+  }
+  #statHead:before {
+    content: '';
+    background: url('/images/media/classes/basic head.png');
+    background-size: 285px;
+    height: 20px;
+    display: block;
   }
   #statBase:before {
     content: '';
@@ -333,7 +354,7 @@ select {
     height: 20px;
     display: block;
   }
-  #statBase:after, #statAdd:after {
+  #statHead:after, #statBase:after, #statAdd:after {
     content: '';
     background: url('/images/media/classes/stat foot.png');
     background-size: 285px;

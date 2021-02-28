@@ -1,3 +1,17 @@
+.c-stat#statHead
+  .r-stat
+    p#s-name Class
+    p#s-val
+      / img src='/images/media/classes/#{@char.role.name}.png' title=@char.role.name
+      = @char.role.name
+  .r-stat
+    p#s-name ATK Type
+    p#s-val
+      img src='/images/media/#{@char.type_dmg}.png'
+      = @char.type_dmg
+  .r-stat
+    p#s-name Position
+    p#s-val = @char.position
 .c-stat#statBase
   p#c-stat
   - @stats.where(role_id: @char.role, stat_type: 'base').each do |stat|

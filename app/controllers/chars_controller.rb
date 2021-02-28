@@ -3,6 +3,8 @@ class CharsController < ApplicationController
 
   def index
     @chars = Char.order('name ASC')
+    # @chars = JSON.parse(File.read('./public/json/chars.json'))
+    # render json: @chars
   end
 
   def show
@@ -13,46 +15,46 @@ class CharsController < ApplicationController
     @gears = Gear.order('id ASC')
   end
 
-  def new
-    @char = Char.new
-  end
-
-  def edit
-  end
-
-  def create
-    @char = Char.new(char_params)
-
-    respond_to do |format|
-      if @char.save
-        format.html { redirect_to @char, notice: 'char was successfully created.' }
-        format.json { render :show, status: :created, location: @char }
-      else
-        format.html { render :new }
-        format.json { render json: @char.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @char.update(char_params)
-        format.html { redirect_to @char, notice: 'char was successfully updated.' }
-        format.json { render :show, status: :ok, location: @char }
-      else
-        format.html { render :edit }
-        format.json { render json: @char.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @char.destroy
-    respond_to do |format|
-      format.html { redirect_to chars_url, notice: 'char was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # def new
+  #   @char = Char.new
+  # end
+  #
+  # def edit
+  # end
+  #
+  # def create
+  #   @char = Char.new(char_params)
+  #
+  #   respond_to do |format|
+  #     if @char.save
+  #       format.html { redirect_to @char, notice: 'char was successfully created.' }
+  #       format.json { render :show, status: :created, location: @char }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @char.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+  #
+  # def update
+  #   respond_to do |format|
+  #     if @char.update(char_params)
+  #       format.html { redirect_to @char, notice: 'char was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @char }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @char.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+  #
+  # def destroy
+  #   @char.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to chars_url, notice: 'char was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     def set_char

@@ -2549,7 +2549,6 @@
           $(this).next('#s-per').text($softn/10 + '%')
       });
     };
-
     $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm').change(function() {
       option();
       gearStat();
