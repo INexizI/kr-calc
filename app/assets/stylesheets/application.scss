@@ -778,7 +778,8 @@ h4 {
   text-align: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
+  height: fit-content;
   backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 
   select {
@@ -1469,8 +1470,13 @@ h4 {
   background: #9FD6AE;
 }
 
-// Background
 #bg {
   min-height: 100vh;
   backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
+}
+
+.share-link {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
 }

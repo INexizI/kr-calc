@@ -1,15 +1,25 @@
 (function() {
   $(document).on("turbolinks:load", function() {
-    // Background
-    function bg() {
-      var background = Math.trunc(1 + Math.random() * 31);
-      $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + background + '.png)');
-    };
-    bg();
-    // Class -> Hero
+    $('button#btn-gen').click(function() {
+      $lk = $('.calc form');
+      $('#this-link').text(CryptoJS.AES.encrypt($lk.serialize(),"/"));
+    });
+    $('button#btn-load').click(function(e) {
+      e.preventDefault();
+      $sl = CryptoJS.AES.decrypt($('#share_link').val(),"/").toString(CryptoJS.enc.Utf8);
+      $sl_st = $sl.replace(/\%5B/g, '[').replace(/\%5D/g, ']').replace(/\%20/g, ' ').split('&');
+      $($sl_st).each(function(i, n) {
+        var x = n.split('=').shift();
+        var y = n.split('=').pop();
+        $('[name="' + x + '"]').val(y);
+      });
+      option();
+      gearStat();
+      gearSet();
+    });
+    $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
-      // Gear stuff
       $('#calc_gear_weapon').parent().hide();
       $('#calc_gear_treasure').parent().hide();
       $('#calc_gear_armor').parent().hide(),
@@ -25,7 +35,6 @@
       $('.perk-tp').find('p').text(0);
       $('.t-st p').empty();
       $('.gOption, .gTM').hide();
-      // Options
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
       $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
@@ -51,7 +60,6 @@
         ]
       }
     });
-    // Hero stats
     $('select#calc_role_id').change(function() {
       heroImg();
       hideOption();
@@ -343,7 +351,6 @@
         $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
       }
     }).change();
-    // Hero
     $('select#calc_char_id').change(function() {
       heroImg();
       hideOption();
@@ -369,7 +376,6 @@
       $('.w-in').removeClass('g-fr a0 a1 a2');
       statValue();
     }).change();
-    // Class / Unique Weapon
     $('select#calc_gear_weapon').change(function() {
       $('#heroATK').empty();
       $uw = null;
@@ -451,7 +457,6 @@
       $('#uw label').filter('.active').removeClass('active');
       gearStat();
     }).change();
-    // Soul Weapon
     $('select#calc_st_weapon').change(function() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
       $('.w-in').removeClass('g-fr a0 a1 a2');
@@ -531,7 +536,6 @@
       swStat();
       gearStat();
     }).change();
-    // Treasure
     $('select#calc_gear_treasure').change(function() {
       $('#heroHP').empty();
       $gearTreasureType = $(this).children('option:selected').val();
@@ -596,7 +600,6 @@
           $(this).find('#a' + i + ' .ax').children('[value="' + $trOpts + '"]').attr('disabled', 'disabled');
       });
     });
-    // Armor Tier
     $('select#calc_gear_armor').change(function() {
       $('#heroPDEF').empty();
       $('#setAr').text($(this).children('option:selected').text());
@@ -679,12 +682,9 @@
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
       $ench.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').val() !== '') {
+      if ($(this).children('option:selected').val() !== '')
         statEnchant();
-        // gearStat();
-      }
     });
-    // Secondary Tier
     $('select#calc_gear_secondary').change(function() {
       $('#heroMDEF').empty();
       $('#setScnd').text($(this).children('option:selected').text());
@@ -767,12 +767,9 @@
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
       $ench.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').val() !== '') {
+      if ($(this).children('option:selected').val() !== '')
         statEnchant();
-        // gearStat();
-      }
     });
-    // Jewelry Type
     $('select#calc_gear_jewelry').change(function() {
       $('#heroJ').empty();
       $('#setAcs').text($('#calc_gear_jewelry').children().children('option:selected').val());
@@ -846,12 +843,9 @@
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
       $ench.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').val() !== '') {
+      if ($(this).children('option:selected').val() !== '')
         statEnchant();
-        // gearStat();
-      }
     });
-    // Orb Tier
     $('select#calc_gear_orb').change(function() {
       $('#heroO').empty();
       $('#setOrb').text($(this).children('option:selected').text());
@@ -907,18 +901,14 @@
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
       $ench.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').val() !== '') {
+      if ($(this).children('option:selected').val() !== '')
         statEnchant();
-        // gearStat();
-      }
     });
-    // Artifact
     $('select#calc_gear_artifact').change(function() {
       $(this).css('background-image', 'url(/images/media/gears/bg-art.png)');
       $('#art').text('').next('.rating').hide();
       $('#art label').filter('.active').removeClass('active');
     }).change();
-    // Gear Star Stats
     function weaponATK() {
       $uwStat = $('#greyATK').text();
       $starW = $('#uw').find('.active').next('input').val();
@@ -926,66 +916,73 @@
       if ($gearWeaponType == 'Unique') {
         if ($starW == 0)
           $('#wea').text($uwStat);
-        else if ($starW == 1) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+        else if ($starW == 1)
           if (($heroClass == 2) || ($heroClass == 4) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
-        } else if ($starW == 2) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+        else if ($starW == 2)
           if ($heroClass == 5)
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3) + 1);
-        } else if ($starW == 3) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3));
+        else if ($starW == 3)
           if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 4))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 1);
           else if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 2);
-        } else if ($starW == 4) {
-          $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6));
+        else if ($starW == 4)
           if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) - 1);
           else if ($heroClass == 5)
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + 1);
-        } else if ($starW == 5) {
-          $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2));
+          else
+            $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995));
+        else if ($starW == 5)
           if (($heroClass == 4) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2) - 1);
-        }
+          else
+            $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2));
       } else if ($gearWeaponType == 'Class') {
         if ($starW == 0)
           $('#wea').text($uwStat);
-        else if ($starW == 1) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+        else if ($starW == 1)
           if (($heroClass == 5))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) + 1);
           else if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
-        }
-        else if ($starW == 2) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
+        else if ($starW == 2)
           if ($heroClass == 1)
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) + 1);
           else if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) - 1);
-        } else if ($starW == 3) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25));
+        else if ($starW == 3)
           if ($heroClass == 1)
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45) + 1);
-        } else if ($starW == 4) {
-          $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45));
+        else if ($starW == 4)
           if (($heroClass == 1) || ($heroClass == 3) || ($heroClass == 4))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 1);
           else if (($heroClass == 2) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 2);
-        } else if ($starW == 5) {
-          $('#wea').text(2*parseInt($uwStat));
+          else
+            $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7));
+        else if ($starW == 5)
           if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*parseInt($uwStat) - 2);
           else if ($heroClass == 4)
             $('#wea').text(2*parseInt($uwStat) - 1);
           else if ($heroClass == 5)
             $('#wea').text(2*parseInt($uwStat) + 1);
-        }
+          else
+            $('#wea').text(2*parseInt($uwStat));
       }
     };
     function armorTR() {
@@ -1083,26 +1080,25 @@
       } else {
         if ($starAr == 0)
           $('#arm').text($arStat);
-        else if ($starAr == 1) {
+        else if ($starAr == 1)
           $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.1) + 1);
-        } else if ($starAr == 2) {
+        else if ($starAr == 2)
           $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25) + 1);
-        } else if ($starAr == 3) {
+        else if ($starAr == 3)
           if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.45));
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.45) + 1);
-        } else if ($starAr == 4) {
+        else if ($starAr == 4)
           if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.7));
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.7) + 1);
-        } else if ($starAr == 5) {
+        else if ($starAr == 5)
           if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(2*Math.trunc(parseInt($arStat)));
           else
             $('#arm').text(2*Math.trunc(parseInt($arStat)) + 1);
-        }
       }
     };
     function armorMDEF() {
@@ -1364,7 +1360,6 @@
           $('#orb').text(parseInt($orStat) + Math.trunc(parseInt($orStat)*0.5));
       }
     };
-    // Sum Stat
     function gearStat() {
       weaponATK();
       armorTR();
@@ -1449,17 +1444,16 @@
         return $(this).text() === 'MAX HP'
       }).next('p');
 
-      // atk
       $jewelType == 'Earrings' ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($('#range-atk').text()) : $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
       $opA = $('p[name="ATK"]').text();
       $opA === '' ? $totalA.text($sumAtk + ' (' + $classATK + '+' + ($sumAtk - $classATK) + ')') : $totalA.text(Math.round($sumAtk * ($opA / 100 + 1)) + ' (' + $classATK + '+' + (Math.round($sumAtk * ($opA / 100 + 1)) - $classATK) + ')');
-      // hp
+
       $jewelType == 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
       $opH = $('p[name="Max HP"]').text();
       $opH === '' ? $totalH.text($sumTre + ' (' + $classHP + '+' + ($sumTre - $classHP) + ')') : $totalH.text(Math.round($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
       $('#heroHP').text($totalH.text());
       $('#heroHPs').text($totalH.text().split(' ')[0]);
-      // p def
+
       if ($armorSet !== '- - - - - - - - - -') {
         $sumArm = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
         if ($gearP !== 0) {
@@ -1470,7 +1464,7 @@
         }
       } else
         $totalP.text($classPDEF);
-      // m def
+
       if ($secondarySet !== '- - - - - - - - - -') {
         $sumSec = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
         if ($gearM !== 0) {
@@ -1481,7 +1475,7 @@
         }
       } else
         $totalM.text($classMDEF);
-      // jewel
+
       if ($jewelSet !== '- - - - - - - - - -') {
         if ($jewelType == 'Ring')
           $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text());
@@ -1510,14 +1504,13 @@
           }
         }
       }
-      // orb
+
       $jewelType == 'Ring' ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
       $opO = $('p[name="Max HP"]').text();
       $opO === '' ? $totalO.text($sumOrb + ' (' + $classHP + '+' + ($sumOrb - $classHP) + ')') : $totalO.text(Math.round($sumOrb * ($opO / 100 + 1)) + ' (' + Math.round($classHP + '+' + ($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
       $('#heroHP').text($totalO.text());
       $('#heroHPs').text($totalO.text().split(' ')[0]);
     };
-    // Set Bonus
     function gearSet() {
       $setBonus = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'Set Bonus'
@@ -1963,13 +1956,11 @@
 
       statSplit();
     };
-    // Hero Icon
     function heroImg() {
       $('.hero-img').children().hide();
       $heroImg = $('#calc_char_id').children('option:selected').val();
       $('.hero-img').find('.hero-' + $heroImg).css('display', 'block');
     };
-    // Perk fn
     function perkTP() {
       $tp_1 = 0;$tp_2 = 0;$tp_3 = 0;$tp_5 = 0;
       $hero = $('#calc_char_id').children('option:selected').val();
@@ -2023,7 +2014,6 @@
       $('.perk-tp p').css('color', 'black').text(0);
       $('.c-perk-img').find('img').removeClass('pick');
     });
-    // Disabled non-Class
     function hideOption() {
       $('option:contains("----------")').attr('disabled', 'disabled');
     };
@@ -2042,7 +2032,6 @@
         $('select#calc_gear_artifact').css('background-image', 'url(/images/media/gears/bg-art.png)')
       ]
     };
-    // Gear Options
     function statOption() {
       $('.opt').find($statName).each(function() {
         $(this).parent().next().children().find('optgroup').hide();
@@ -2442,7 +2431,6 @@
         }
       });
     };
-    // Gear Star changes
     $('.rating label').click(function() {
       if ($(this).parent().parent().parent().attr('id') == 'treasure')
         statOptionTreasure();
@@ -2453,7 +2441,6 @@
     $('#calc_role_id, #calc_char_id').change(function() {
       hideGearImage();
     });
-    // SW Stats changes
     function rangeSlider() {
       $('.range').each(function() {
         $('[name="range"], [name="add-atk"], [name="add-hp"]').on('input', function() {
@@ -2515,7 +2502,6 @@
       $('.range-ad1, .range-ad2').text('0%');
       $('[name="add-atk"], [name="add-hp"]').val(0);
     };
-    // Hero split/hide 0-stat
     function statSplit() {
       $('.t-total').find('#s-val').each(function() {
         $statSplit = $(this).text().split('(').pop().slice(0, -1).split('+').pop();

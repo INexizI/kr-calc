@@ -299,7 +299,6 @@ title Calculator
 
         div
 
-      // Other
       / .form-input
         = f.input :class_buff
 
@@ -451,3 +450,13 @@ title Calculator
       p name='Mana Recovery upon taking DMG'
     .t-total
       .r-stats
+
+= simple_form_for :share do |f|
+  .share-link
+    = f.text_field :link, required: false, label: false, placeholder: 'Link Here'
+    = f.button :button, 'Load', id: 'btn-load'
+  .share-link
+    = f.button :button, 'Generate', id: 'btn-gen'
+    br
+    p#this-link
+    p#lil
