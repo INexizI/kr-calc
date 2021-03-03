@@ -790,10 +790,13 @@ h4 {
       background: rgba(0, 0, 0, 0.4);
     }
   }
-  #calc {
-    margin: 75px;
+  #calc{
+    // margin-left: 85px;
+    // margin-right: 85px;
+    margin: 40px 75px;
   }
   .from-calc {
+    // margin: auto 0;
     width: 600px;
 
     .form-input {
@@ -1040,15 +1043,17 @@ h4 {
   }
   .totalStat {
     width: 450px;
-    height: fit-content;
 
     .hero-img {
+      height: 379px;
+
       .hch {
         width: 450px;
         display: none;
 
         .heroImg {
           margin: auto;
+          height: 124px;
 
           div {
             display: grid;
@@ -1095,6 +1100,7 @@ h4 {
         .heroPerk {
           margin: auto;
           display: flex;
+          height: 255px;
 
           .hero-avatar {
             width: 130px;
@@ -1152,34 +1158,6 @@ h4 {
       display: none;
     }
     .t-total {
-      .statsBase::before {
-        content: '';
-        background: url('/images/media/classes/base head.png');
-        background-size: 450px;
-        height: 35px;
-        display: block;
-      }
-      .statsAdd::before {
-        content: '';
-        background: url('/images/media/classes/add head.png');
-        background-size: 450px;
-        height: 35px;
-        display: block;
-      }
-      .statSet::before {
-        content: '';
-        background: url('/images/media/classes/set head.png');
-        background-size: 450px;
-        height: 14px;
-        display: block;
-      }
-      .statsBase::after, .statsAdd::after, .statSet::after {
-        content: '';
-        background: url('/images/media/classes/stat foot.png');
-        background-size: 450px;
-        height: 14px;
-        display: block;
-      }
       .r-stats {
         .r-stat {
           background-image: url('/images/media/classes/stat.png');
@@ -1235,6 +1213,37 @@ h4 {
             padding: 0 10px;
           }
         }
+      }
+      .statBase {
+        height: 149px;
+      }
+      .statsBase::before {
+        content: '';
+        background: url('/images/media/classes/base head.png');
+        background-size: 450px;
+        height: 35px;
+        display: block;
+      }
+      .statsAdd::before {
+        content: '';
+        background: url('/images/media/classes/add head.png');
+        background-size: 450px;
+        height: 35px;
+        display: block;
+      }
+      .statSet::before {
+        content: '';
+        background: url('/images/media/classes/set head.png');
+        background-size: 450px;
+        height: 14px;
+        display: block;
+      }
+      .statsBase::after, .statsAdd::after, .statSet::after {
+        content: '';
+        background: url('/images/media/classes/stat foot.png');
+        background-size: 450px;
+        height: 14px;
+        display: block;
       }
     }
   }

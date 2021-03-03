@@ -11,39 +11,84 @@
       $($sl_st).each(function(i, n) {
         var x = n.split('=').shift();
         var y = n.split('=').pop();
-        if (x !== 'authenticity_token')
-          $('[name="' + x + '"]').val(y);
+        $('[name="' + x + '"]').val(y);
       });
-      change_role();
-      change_weapon();
-      weapon_sw();
-      weapon_sw_adv();
-      change_treasure();
+      option();
+      gearStat();
+      gearSet();
     });
     $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
-    $('#calc_role_id').html("<option value=''>----------</option><option value='Knight'>Knight</option><option value='Warrior'>Warrior</option><option value='Assassin'>Assassin</option><option value='Archer'>Archer</option><option value='Mechanic'>Mechanic</option><option value='Wizard'>Wizard</option><option value='Priest'>Priest</option>");
-    $('#calc_char_id').html("<option>----------</option><optgroup label='Knight'><option value='Aselica'>Aselica</option><option value='Clause'>Clause</option><option value='Demia'>Demia</option><option value='Dosarta'>Dosarta</option><option value='Glenwys'>Glenwys</option><option value='Jane'>Jane</option><option value='Loman'>Loman</option><option value='Morrah'>Morrah</option><option value='Neraxis'>Neraxis</option><option value='Phillop'>Phillop</option><option value='Ricardo'>Ricardo</option><option value='Shakmeh'>Shakmeh</option><option value='Sonia'>Sonia</option><option value='Taily'>Taily</option></optgroup><optgroup label='Warrior'><option value='Bernheim'>Bernheim</option><option value='Chase'>Chase</option><option value='Dark Lord Kasel'>Dark Lord Kasel</option><option value='Gau'>Gau</option><option value='Hilda'>Hilda</option><option value='Kasel'>Kasel</option><option value='Kirze'>Kirze</option><option value='Naila'>Naila</option><option value='Nicky'>Nicky</option><option value='Priscilla'>Priscilla</option><option value='Rebel Clause'>Rebel Clause</option><option value='Riheet'>Riheet</option><option value='Scarlet'>Scarlet</option><option value='Seria'>Seria</option><option value='Theo'>Theo</option><option value='Viska'>Viska</option></optgroup><optgroup label='Assassin'><option value='Epis'>Epis</option><option value='Erze'>Erze</option><option value='Ezekiel'>Ezekiel</option><option value='Fluss'>Fluss</option><option value='Gladi'>Gladi</option><option value='Gremory'>Gremory</option><option value='Kibera'>Kibera</option><option value='Laudia'>Laudia</option><option value='Mirianne'>Mirianne</option><option value='Nia'>Nia</option><option value='Reina'>Reina</option><option value='Ripine'>Ripine</option><option value='Roi'>Roi</option><option value='Tanya'>Tanya</option></optgroup><optgroup label='Archer'><option value='Arch'>Arch</option><option value='Dimael'>Dimael</option><option value='Luna'>Luna</option><option value='Requina'>Requina</option><option value='Selene'>Selene</option><option value='Shamilia'>Shamilia</option><option value='Talisha'>Talisha</option><option value='Yanne'>Yanne</option><option value='Yuria'>Yuria</option><option value='Zafir'>Zafir</option></optgroup><optgroup label='Mechanic'><option value='Annette'>Annette</option><option value='Cecilia'>Cecilia</option><option value='Chrisha'>Chrisha</option><option value='Crow'>Crow</option><option value='Hanus'>Hanus</option><option value='Kara'>Kara</option><option value='Lakrak'>Lakrak</option><option value='Miruru'>Miruru</option><option value='Mitra'>Mitra</option><option value='Oddy'>Oddy</option><option value='Pansirone'>Pansirone</option><option value='Rodina'>Rodina</option></optgroup><optgroup label='Wizard'><option value='Aisha'>Aisha</option><option value='Artemia'>Artemia</option><option value='Cain'>Cain</option><option value='Cleo'>Cleo</option><option value='Dakaris'>Dakaris</option><option value='Esker'>Esker</option><option value='Isolet'>Isolet</option><option value='Lewisia'>Lewisia</option><option value='Lilia'>Lilia</option><option value='Lorraine'>Lorraine</option><option value='Lucikiel'>Lucikiel</option><option value='Maria'>Maria</option><option value='Nyx'>Nyx</option><option value='Ophelia'>Ophelia</option><option value='Pavel'>Pavel</option><option value='Veronica'>Veronica</option><option value='Xerah'>Xerah</option></optgroup><optgroup label='Priest'><option value='Baudouin'>Baudouin</option><option value='Cassandra'>Cassandra</option><option value='Evan'>Evan</option><option value='Frey'>Frey</option><option value='Fallen Frey'>Fallen Frey</option><option value='Juno'>Juno</option><option value='Kaulah'>Kaulah</option><option value='Laias'>Laias</option><option value='Laias'>Laias</option><option value='Lavril'>Lavril</option><option value='Leo'>Leo</option><option value='Lucias'>Lucias</option><option value='May'>May</option><option value='Mediana'>Mediana</option><option value='Rehartna'>Rehartna</option><option value='Rephy'>Rephy</option><option value='Shea'>Shea</option></optgroup>");
-    function change_role() {
+    $chars = $('#calc_char_id').html();
+    $('#calc_role_id').change(function() {
+      $('#calc_gear_weapon').parent().hide();
+      $('#calc_gear_treasure').parent().hide();
+      $('#calc_gear_armor').parent().hide(),
+      $('#calc_gear_secondary').parent().hide(),
+      $('#calc_gear_jewelry').parent().hide(),
+      $('#calc_gear_jewelry_type').parent().hide(),
+      $('#calc_gear_orb').parent().hide(),
+      $('.hero-img').children().hide();
+      $('.form-input .gSt p').text('');
+      $('.form-input .gSt .rating').hide();
+      $('.rating').find('label').removeClass('active');
+      $('.c-perk-img').find('img').removeClass('pick');
+      $('.perk-tp').find('p').text(0);
+      $('.t-st p').empty();
+      $('.gOption, .gTM').hide();
+      $role = $('#calc_role_id :selected').text();
+      $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
+      if ($options) {
+        $('#calc_char_id').html($options);
+        return [
+          $('#calc_char_id').parent().show(),
+          $('#calc_gear_weapon').parent().show(),
+          $('#calc_gear_treasure').parent().show(),
+          $('#calc_gear_armor').parent().show(),
+          $('#calc_gear_secondary').parent().show(),
+          $('#calc_gear_jewelry').parent().show(),
+          $('#calc_gear_jewelry').show(),
+          $('#calc_gear_orb').parent().show(),
+          $('#calc_gear_artifact').parent().show(),
+          $('.form-input div select').show(),
+          $('select').not(this).prop('selectedIndex', 0)
+        ];
+      } else {
+        $('#calc_char_id').empty();
+        return [
+          $('#calc_char_id').parent().hide()
+        ]
+      }
+    });
+    $('select#calc_role_id').change(function() {
       heroImg();
       hideOption();
       $('.r-stats').children().hide();
       $('.t-total .r-stats').empty();
-      $heroName = $('#calc_char_id').children().children('option:selected').text();
+      $heroName = $('#calc_char_id').children('option:selected').text();
       $heroClass = $('#calc_role_id').children('option:selected').val();
-      if ($heroClass == 'Knight')
+      if ($heroClass == 1) {
+        $heroClassName = 'Knight';
         $gTM = 'Protection';
-      else if ($heroClass == 'Warrior')
+      } else if ($heroClass == 2) {
+        $heroClassName = 'Warrior';
         $gTM = 'Courage';
-      else if ($heroClass == 'Assassin')
+      } else if ($heroClass == 3) {
+        $heroClassName = 'Assassin';
         $gTM = 'Coldness';
-      else if ($heroClass == 'Archer')
+      } else if ($heroClass == 4) {
+        $heroClassName = 'Archer';
         $gTM = 'Wrath';
-      else if ($heroClass == 'Mechanic')
+      } else if ($heroClass == 5) {
+        $heroClassName = 'Mechanic';
         $gTM = 'Passion';
-      else if ($heroClass == 'Wizard')
+      } else if ($heroClass == 6) {
+        $heroClassName = 'Wizard';
         $gTM = 'Wisdom';
-      else if ($heroClass == 'Priest')
+      } else if ($heroClass == 7) {
+        $heroClassName = 'Priest';
         $gTM = 'Blessing';
+      }
 
       $stats = $('.class-stats').find('.statData').clone();
       $($stats).prependTo('.t-total .r-stats');
@@ -266,37 +311,37 @@
       };
       $('.statData .statsBase, .statData .statsAdd').empty();
       for (var i=0; i<=3; i++) {
-        if ($heroClass == 'Knight')
+        if ($heroClass == 1)
           var x = Knight['B' + i];
-        else if ($heroClass == 'Warrior')
+        else if ($heroClass == 2)
           var x = Warrior['B' + i];
-        else if ($heroClass == 'Assassin')
+        else if ($heroClass == 3)
           var x = Assassin['B' + i];
-        else if ($heroClass == 'Archer')
+        else if ($heroClass == 4)
           var x = Archer['B' + i];
-        else if ($heroClass == 'Mechanic')
+        else if ($heroClass == 5)
           var x = Mechanic['B' + i];
-        else if ($heroClass == 'Wizard')
+        else if ($heroClass == 6)
           var x = Wizard['B' + i];
-        else if ($heroClass == 'Priest')
+        else if ($heroClass == 7)
           var x = Priest['B' + i];
         $('.statData .statsBase').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p></div>');
         $('.statData .statsBase').find('.r-stat:eq(' + i + ') #s-val').text(x);
       }
       for (var j=0; j<=19; j++) {
-        if ($heroClass == 'Knight')
+        if ($heroClass == 1)
           var y = Knight['A' + j];
-        else if ($heroClass == 'Warrior')
+        else if ($heroClass == 2)
           var y = Warrior['A' + j];
-        else if ($heroClass == 'Assassin')
+        else if ($heroClass == 3)
           var y = Assassin['A' + j];
-        else if ($heroClass == 'Archer')
+        else if ($heroClass == 4)
           var y = Archer['A' + j];
-        else if ($heroClass == 'Mechanic')
+        else if ($heroClass == 5)
           var y = Mechanic['A' + j];
-        else if ($heroClass == 'Wizard')
+        else if ($heroClass == 6)
           var y = Wizard['A' + j];
-        else if ($heroClass == 'Priest')
+        else if ($heroClass == 7)
           var y = Priest['A' + j];
         $('.statData .statsAdd').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p><p id="s-per"></div>');
         $('.statData .statsAdd').find('.r-stat:eq(' + j + ') #s-val').text(y);
@@ -305,49 +350,12 @@
         var z = Stat['S' + k];
         $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
       }
-    };
-    $('select#calc_role_id').change(function() {
-      $(this).css('display', 'inline-block');
-      $('#calc_char_id').find('optgroup').hide();
-      $('#char').hide();
-      $('#calc_char_id').parent().hide();
-      $('#calc_gear_weapon').parent().hide();
-      $('#calc_gear_treasure').parent().hide();
-      $('#calc_gear_armor').parent().hide();
-      $('#calc_gear_secondary').parent().hide();
-      $('#calc_gear_jewelry').parent().hide();
-      $('#calc_gear_jewelry_type').parent().hide();
-      $('#calc_gear_orb').parent().hide();
-      $('#calc_gear_artifact').parent().hide();
-      $('.hero-img').children().hide();
-      $('.form-input .gSt p').text('');
-      $('.form-input .gSt .rating').hide();
-      $('.rating').find('label').removeClass('active');
-      $('.c-perk-img').find('img').removeClass('pick');
-      $('.perk-tp').find('p').text(0);
-      $('.t-st p').empty();
-      $('.gOption, .gTM').hide();
-      if ($(this).children('option:selected').val() !== '') {
-        $('#calc_char_id').find('[label="' + $(this).val() + '"]').show();
-        $('#char').show();
-        $('#calc_char_id').parent().show();
-        $('#calc_gear_weapon').parent().show();
-        $('#calc_gear_treasure').parent().show();
-        $('#calc_gear_armor').parent().show();
-        $('#calc_gear_secondary').parent().show();
-        $('#calc_gear_jewelry').parent().show();
-        $('#calc_gear_jewelry').show();
-        $('#calc_gear_orb').parent().show();
-        $('#calc_gear_artifact').parent().show();
-        $('.form-input div select').show();
-        $('select').not(this).prop('selectedIndex', 0);
-      }
-      change_role();
     }).change();
     $('select#calc_char_id').change(function() {
       heroImg();
       hideOption();
-      $heroName = $('#calc_char_id').children().children('option:selected').val();
+      $hero = $(this).children('option:selected').val();
+      $heroName = $('#calc_char_id').children('option:selected').text();
       $stats = $('.class-stats').find('.statData').clone();
       $('.t-total').find('.r-stats').empty();
       $($stats).prependTo('.t-total .r-stats');
@@ -368,30 +376,31 @@
       $('.w-in').removeClass('g-fr a0 a1 a2');
       statValue();
     }).change();
-    function change_weapon() {
+    $('select#calc_gear_weapon').change(function() {
       $('#heroATK').empty();
       $uw = null;
       $gearWeaponSlot = null;
       $clKn = 32730;$clWa = 37010;$clAs = 40711;$clAr = 45915;$clMe = 41867;$clWi = 42793;$clPr = 42793;$unKn = 45106;$unWa = 51120;$unAs = 56209;$unAr = 63264;$unMe = 57712;$unWi = 58985;$unPr = 58985;$arPl = 17052;$arSc = 11369;$arR = 5686;$scSh = 17052;$scC = 5686;$scH = 11369;$ms = 726278;$unTr = 1596066;$jR = 726278;$jE = 15801;$jB = 11369;$jN = 11369;$or = 726278;
       $tm1R = 53718;$tm1 = 40928;$tm2R = 35809;$tm2 = 27283;$tm3R = 17908;$tm3 = 13644;$tm4R = 1715830;$tm4 = 1307299;$tm5R = 37327;$tm5 = 28440;
-      $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
+
+      $gearWeaponType = $(this).children('option:selected').val();
       $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($gearWeaponType == 'Class') {
-        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClass + '.png)');
+        $(this).css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
         $('#wea').next('.rating').show();
-        if ($heroClass == 'Knight')
+        if ($heroClass == 1)
           $('#wea').text($clKn);
-        else if ($heroClass == 'Warrior')
+        else if ($heroClass == 2)
           $('#wea').text($clWa);
-        else if ($heroClass == 'Assassin')
+        else if ($heroClass == 3)
           $('#wea').text($clAs);
-        else if ($heroClass == 'Archer')
+        else if ($heroClass == 4)
           $('#wea').text($clAr);
-        else if ($heroClass == 'Mechanic')
+        else if ($heroClass == 5)
           $('#wea').text($clMe);
-        else if ($heroClass == 'Wizard')
+        else if ($heroClass == 6)
           $('#wea').text($clWi);
-        else if ($heroClass == 'Priest')
+        else if ($heroClass == 7)
           $('#wea').text($clPr);
         $('.calc_gear_weapon').parent().find('.gOption').show();
         $('.w-in').addClass('g-fr');
@@ -403,28 +412,28 @@
         $('#calc_st_weapon').prop('selectedIndex', 0);
         $('#calc_st_weapon_st').html('<option value="">- - -</option>');
       } else if ($gearWeaponType == 'Unique') {
-        $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
         $('#wea').next('.rating').show();
-        if ($heroClass == 'Knight')
+        if ($heroClass == 1)
           $('#wea').text($unKn);
-        else if ($heroClass == 'Warrior')
+        else if ($heroClass == 2)
           $('#wea').text($unWa);
-        else if ($heroClass == 'Assassin')
+        else if ($heroClass == 3)
           $('#wea').text($unAs);
-        else if ($heroClass == 'Archer')
+        else if ($heroClass == 4)
           $('#wea').text($unAr);
-        else if ($heroClass == 'Mechanic')
+        else if ($heroClass == 5)
           $('#wea').text($unMe);
-        else if ($heroClass == 'Wizard')
+        else if ($heroClass == 6)
           $('#wea').text($unWi);
-        else if ($heroClass == 'Priest')
+        else if ($heroClass == 7)
           $('#wea').text($unPr);
 
-        if ($heroClass == 'Knight')
+        if ($heroClass == 1)
           $swA = 3500;
-        else if (($heroClass == 'Warrior') || ($heroClass == 'Assassin'))
+        else if (($heroClass == 2) || ($heroClass == 3))
           $swA = 4000;
-        else if (($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+        else if (($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
           $swA = 4500;
         $swH = 125000;
 
@@ -432,7 +441,7 @@
         $('.w-in').addClass('g-fr');
         $('#g-weapon').show();
       } else {
-        $('#calc_gear_weapon').css('background-image', 'url(/images/media/gears/bg-weapon.png)');
+        $(this).css('background-image', 'url(/images/media/gears/bg-weapon.png)');
         $('#wea').text('').next('.rating').hide();
         $('.calc_gear_weapon').parent().find('.gOption').hide();
         $('.w-in').removeClass('g-fr');
@@ -447,8 +456,8 @@
       $('#greyATK').text($('#wea').text());
       $('#uw label').filter('.active').removeClass('active');
       gearStat();
-    };
-    function weapon_sw() {
+    }).change();
+    $('select#calc_st_weapon').change(function() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
       $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
@@ -478,8 +487,8 @@
         $('.w-in').addClass('a2');
       }
       gearStat();
-    };
-    function weapon_sw_adv() {
+    }).change();
+    $('select#calc_st_weapon_st').change(function() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
       $eth = $('#calc_st_weapon_st').children('option:selected').text();
       if (($eth == 0) || ($eth == '- - -'))
@@ -526,11 +535,11 @@
         $mltp = 7.13;
       swStat();
       gearStat();
-    };
-    function change_treasure() {
+    }).change();
+    $('select#calc_gear_treasure').change(function() {
       $('#heroHP').empty();
-      $gearTreasureType = $('#calc_gear_treasure').children('option:selected').val();
-      $heroName = $('#calc_char_id').children().children('option:selected').text();
+      $gearTreasureType = $(this).children('option:selected').val();
+      $heroName = $('#calc_char_id').children('option:selected').text();
       if ($gearTreasureType == 'Mana Stone') {
         $eTr = {
           'width': '52px',
@@ -538,7 +547,7 @@
           'position': 'relative',
           'right': '0'
         }
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
+        $(this).css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
         $('#tre').text($ms).next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst').show().css({'position': 'relative', 'bottom': '104px'});
         $('.scnd').hide();
@@ -559,31 +568,19 @@
           'width': '209px',
           'height': '50px'
         }
-        $('#calc_gear_treasure').attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css($hTreasure);
-        $('#calc_gear_treasure').css($hTreasure);
+        $(this).attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css($hTreasure);
+        $(this).css($hTreasure);
         $('#tre').text($unTr).next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({'position': 'relative', 'bottom': '210px'});
         gearStat();
       } else {
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
+        $(this).css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
         $('#tre').text('').next('.rating').hide();
         $('.calc_gear_treasure').parent().find('.gOption').hide();
-        $('#calc_gear_treasure').parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
       $('#greyTR').text($('#tre').text());
       $('#ut label').filter('.active').removeClass('active');
-    };
-    $('select#calc_gear_weapon').change(function() {
-      change_weapon();
-    }).change();
-    $('select#calc_st_weapon').change(function() {
-      weapon_sw();
-    }).change();
-    $('select#calc_st_weapon_st').change(function() {
-      weapon_sw_adv();
-    }).change();
-    $('select#calc_gear_treasure').change(function() {
-      change_treasure()
     }).change();
     $('select#calc_st_treasure').change(function() {
       $statName = $(this);
@@ -605,61 +602,61 @@
     });
     $('select#calc_gear_armor').change(function() {
       $('#heroPDEF').empty();
-      $('#setAr').text($('#calc_gear_armor').children('option:selected').text());
-      $armorSet = $('#calc_gear_armor').children('option:selected').val();
+      $('#setAr').text($(this).children('option:selected').text());
+      $armorSet = $(this).children('option:selected').val();
       if ($armorSet == '- - - - - - - - - -') {
-        $('#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.png)');
+        $(this).css('background-image', 'url(/images/media/gears/bg-armor.png)');
         $('#greyPDEF').text('');
         $('#arm').text('').next('.rating').hide();
         $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
-        $('#calc_gear_armor').parent().parent().find('.gOption optgroup').hide();
-        $('#calc_gear_armor').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '1-1H';
           $('#greyPDEF').text($tm1R);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '3-1L';
           $('#greyPDEF').text($tm2R);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '5-1I';
           $('#greyPDEF').text($tm3R);
         }
-        $('#calc_gear_armor').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('#calc_gear_armor').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($armorSet == 'Perseverance') || ($armorSet == 'Hope') || ($armorSet == 'Authority')) {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '1-1H';
           $('#greyPDEF').text($tm1);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '3-1L';
           $('#greyPDEF').text($tm2);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '5-1I';
           $('#greyPDEF').text($tm3);
         }
-        $('#calc_gear_armor').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('#calc_gear_armor').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '1-1H';
           $('#greyPDEF').text($arPl);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '3-1L';
           $('#greyPDEF').text($arSc);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '5-1I';
           $('#greyPDEF').text($arR);
         }
-        $('#calc_gear_armor').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.png"); display: inline-block;');
         $('#arm').next('.rating').show();
-        $('#calc_gear_armor').parent().parent().find('.gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -690,61 +687,61 @@
     });
     $('select#calc_gear_secondary').change(function() {
       $('#heroMDEF').empty();
-      $('#setScnd').text($('#calc_gear_secondary').children('option:selected').text());
-      $secondarySet = $('#calc_gear_secondary').children('option:selected').val();
+      $('#setScnd').text($(this).children('option:selected').text());
+      $secondarySet = $(this).children('option:selected').val();
       if ($secondarySet == '- - - - - - - - - -') {
-        $('#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.png)');
+        $(this).css('background-image', 'url(/images/media/gears/bg-secondary.png)');
         $('#greyMDEF').text('');
         $('#sec').next('.rating').hide();
         $('.calc_gear_secondary').parent().find('.gOption, .gTM').hide();
-        $('#calc_gear_secondary').parent().parent().find('.gOption optgroup').hide();
-        $('#calc_gear_secondary').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '2-2H';
           $('#greyMDEF').text($tm1R);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '4-2L';
           $('#greyMDEF').text($tm3R);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '6-2I';
           $('#greyMDEF').text($tm2R);
         }
-        $('#calc_gear_secondary').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('#calc_gear_secondary').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($secondarySet == 'Perseverance') || ($secondarySet == 'Hope') || ($secondarySet == 'Authority')) {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '2-2H';
           $('#greyMDEF').text($tm1);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '4-2L';
           $('#greyMDEF').text($tm3);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '6-2I';
           $('#greyMDEF').text($tm2);
         }
-        $('#calc_gear_secondary').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('#calc_gear_secondary').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
-        if (($heroClass == 'Knight') || ($heroClass == 'Warrior')) {
+        if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '2-2H';
           $('#greyMDEF').text($scSh);
-        } else if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic')) {
+        } else if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5)) {
           $gType = '4-2L';
           $('#greyMDEF').text($scC);
-        } else if (($heroClass == 'Wizard') || ($heroClass == 'Priest')) {
+        } else if (($heroClass == 6) || ($heroClass == 7)) {
           $gType = '6-2I';
           $('#greyMDEF').text($scH);
         }
-        $('#calc_gear_secondary').attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.png"); display: inline-block;');
         $('#sec').next('.rating').show();
-        $('#calc_gear_secondary').parent().parent().find('.gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -779,12 +776,12 @@
       $jewelSet = $('#calc_gear_jewelry').children().children('option:selected').val();
       $jewelType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
       if ($jewelSet == '- - - - - - - - - -') {
-        $('#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.png)');
+        $(this).css('background-image', 'url(/images/media/gears/bg-accessory.png)');
         $('#greyJ').text('');
         $('#acc').text('').next('.rating').hide();
         $('.calc_gear_jewelry').parent().find('.gOption, .gTM').hide();
-        $('#calc_gear_jewelry').parent().parent().find('.gOption optgroup').hide();
-        $('#calc_gear_jewelry').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring')
           $('#greyJ').text($tm4R);
@@ -792,9 +789,9 @@
           $('#greyJ').text($tm5R);
         else if (($jewelType == 'Bracelet') || ($jewelType == 'Necklace'))
           $('#greyJ').text($tm2R);
-        $('#calc_gear_jewelry').attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('#calc_gear_jewelry').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($jewelSet == 'Perseverance') || ($jewelSet == 'Hope') || ($jewelSet == 'Authority')) {
@@ -804,9 +801,9 @@
           $('#greyJ').text($tm5);
         else if (($jewelType == 'Bracelet') || ($jewelType == 'Necklace'))
           $('#greyJ').text($tm2);
-        $('#calc_gear_jewelry').attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('#calc_gear_jewelry').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
@@ -818,9 +815,9 @@
           $('#greyJ').text($jB);
         else if ($jewelType == 'Necklace')
           $('#greyJ').text($jN);
-        $('#calc_gear_jewelry').attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.png"); display: inline-block;');
         $('#acc').next('.rating').show();
-        $('#calc_gear_jewelry').parent().parent().find('.gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -851,34 +848,34 @@
     });
     $('select#calc_gear_orb').change(function() {
       $('#heroO').empty();
-      $('#setOrb').text($('#calc_gear_orb').children('option:selected').text());
-      $orbSet = $('#calc_gear_orb').children('option:selected').val();
+      $('#setOrb').text($(this).children('option:selected').text());
+      $orbSet = $(this).children('option:selected').val();
       if ($orbSet == '- - - - - - - - - -') {
-        $('#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.png)');
+        $(this).css('background-image', 'url(/images/media/gears/bg-orb.png)');
         $('#greyO').text('');
         $('#orb').text('').next('.rating').hide();
         $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
-        $('#calc_gear_orb').parent().parent().find('.gOption optgroup').hide();
-        $('#calc_gear_orb').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption optgroup').hide();
+        $(this).parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
       } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
-        $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4R);
         $('#orb').next('.rating').show();
-        $('#calc_gear_orb').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else if (($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) {
-        $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
         $('#greyO').text($tm4);
         $('#orb').next('.rating').show();
-        $('#calc_gear_orb').parent().parent().find('.gOption select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         gearStat();
       } else {
-        $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;');
+        $(this).attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;');
         $('#greyO').text($or);
         $('#orb').next('.rating').show();
-        $('#calc_gear_orb').parent().parent().find('.gTM select').prop('selectedIndex', 0);
+        $(this).parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gOption').show().parent().find('.gTM').hide();
         gearStat();
       }
@@ -920,7 +917,7 @@
         if ($starW == 0)
           $('#wea').text($uwStat);
         else if ($starW == 1)
-          if (($heroClass == 'Warrior') || ($heroClass == 'Archer') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 2) || ($heroClass == 4) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
@@ -930,21 +927,21 @@
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.3));
         else if ($starW == 3)
-          if (($heroClass == 'Warrior') || ($heroClass == 'Assassin') || ($heroClass == 'Archer'))
+          if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 4))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 1);
-          else if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          else if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6) - 2);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.6));
         else if ($starW == 4)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) - 1);
-          else if ($heroClass == 'Mechanic')
+          else if ($heroClass == 5)
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + 1);
           else
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995));
         else if ($starW == 5)
-          if (($heroClass == 'Archer') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 4) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2) - 1);
           else
             $('#wea').text(2*Math.trunc(parseInt($uwStat)*0.999995) + Math.trunc(parseInt($uwStat)/2));
@@ -952,37 +949,37 @@
         if ($starW == 0)
           $('#wea').text($uwStat);
         else if ($starW == 1)
-          if (($heroClass == 'Mechanic'))
+          if (($heroClass == 5))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) + 1);
-          else if (($heroClass == 'Warrior') || ($heroClass == 'Assassin') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          else if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1) - 1);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.1));
         else if ($starW == 2)
-          if ($heroClass == 'Knight')
+          if ($heroClass == 1)
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) + 1);
-          else if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          else if (($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25) - 1);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.25));
         else if ($starW == 3)
-          if ($heroClass == 'Knight')
+          if ($heroClass == 1)
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45) + 1);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.45));
         else if ($starW == 4)
-          if (($heroClass == 'Knight') || ($heroClass == 'Assassin') || ($heroClass == 'Archer'))
+          if (($heroClass == 1) || ($heroClass == 3) || ($heroClass == 4))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 1);
-          else if (($heroClass == 'Warrior') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          else if (($heroClass == 2) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7) - 2);
           else
             $('#wea').text(parseInt($uwStat) + Math.trunc(parseInt($uwStat)*0.7));
         else if ($starW == 5)
-          if (($heroClass == 'Warrior') || ($heroClass == 'Assassin') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 2) || ($heroClass == 3) || ($heroClass == 6) || ($heroClass == 7))
             $('#wea').text(2*parseInt($uwStat) - 2);
-          else if ($heroClass == 'Archer')
+          else if ($heroClass == 4)
             $('#wea').text(2*parseInt($uwStat) - 1);
-          else if ($heroClass == 'Mechanic')
+          else if ($heroClass == 5)
             $('#wea').text(2*parseInt($uwStat) + 1);
           else
             $('#wea').text(2*parseInt($uwStat));
@@ -1028,27 +1025,27 @@
         if ($starAr == 0)
           $('#arm').text($arStat);
         else if ($starAr == 1)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.05) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.05));
         else if ($starAr == 2)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.1) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.1));
         else if ($starAr == 3)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.15) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.15));
         else if ($starAr == 4)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.2) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.2));
         else if ($starAr == 5)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25));
@@ -1056,27 +1053,27 @@
         if ($starAr == 0)
           $('#arm').text($arStat);
         else if ($starAr == 1)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.05) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.05));
         else if ($starAr == 2)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.1) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.1));
         else if ($starAr == 3)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.15) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.15));
         else if ($starAr == 4)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.2) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.2));
         else if ($starAr == 5)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25) + 1);
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25));
@@ -1088,17 +1085,17 @@
         else if ($starAr == 2)
           $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.25) + 1);
         else if ($starAr == 3)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 5))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.45));
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.45) + 1);
         else if ($starAr == 4)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.7));
           else
             $('#arm').text(parseInt($arStat) + Math.trunc(parseInt($arStat)*0.7) + 1);
         else if ($starAr == 5)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#arm').text(2*Math.trunc(parseInt($arStat)));
           else
             $('#arm').text(2*Math.trunc(parseInt($arStat)) + 1);
@@ -1112,27 +1109,27 @@
         if ($starSe == 0)
           $('#sec').text($sgStat);
         else if ($starSe == 1)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.05) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.05));
         else if ($starSe == 2)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.1) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.1));
         else if ($starSe == 3)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.15) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.15));
         else if ($starSe == 4)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.2) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.2));
         else if ($starSe == 5)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.25) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.25));
@@ -1140,27 +1137,27 @@
         if ($starSe == 0)
           $('#sec').text($sgStat);
         else if ($starSe == 1)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.05) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.05));
         else if ($starSe == 2)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.1) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.1));
         else if ($starSe == 3)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.15) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.15));
         else if ($starSe == 4)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.2) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.2));
         else if ($starSe == 5)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic') || ($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5) || ($heroClass == 6) || ($heroClass == 7))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.25) + 1);
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.25));
@@ -1172,17 +1169,17 @@
         else if ($starSe == 2)
           $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.25) + 1);
         else if ($starSe == 3)
-          if (($heroClass == 'Wizard') || ($heroClass == 'Priest'))
+          if (($heroClass == 6) || ($heroClass == 7))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.45));
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.45) + 1);
         else if ($starSe == 4)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.7));
           else
             $('#sec').text(parseInt($sgStat) + Math.trunc(parseInt($sgStat)*0.7) + 1);
         else if ($starSe == 5)
-          if (($heroClass == 'Assassin') || ($heroClass == 'Archer') || ($heroClass == 'Mechanic'))
+          if (($heroClass == 3) || ($heroClass == 4) || ($heroClass == 5))
             $('#sec').text(2*Math.trunc(parseInt($sgStat)));
           else
             $('#sec').text(2*Math.trunc(parseInt($sgStat)) + 1);
@@ -1519,7 +1516,7 @@
         return $(this).text() === 'Set Bonus'
       }).next('p');
       if (!$setBonus.length)
-        $setBonus = $('.t-total .r-stats').append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="perKnight">4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.</span><span id="perWarrior">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="perAssassin">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="perArcher">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="perMechanic">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="perWizard">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="perPriest">4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.</span><span id="hopKnight">4 Set: Increases all allies All DEF by 10% and ATK by 5%.</span><span id="hopKnight">4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.</span><span id="hopAssassin">4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.</span><span id="hopArcher">4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.</span><span id="hopMechanic">4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.</span><span id="hopWizard">4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.</span><span id="hopPriest">4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.</span><span id="autKnight">4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.</span><span id="autWarrior">4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.</span><span id="autAssassin">4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.</span><span id="autArcher">4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.</span><span id="autMechanic">4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.</span><span id="autWizard">4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.</span><span id="autPriest">4 Set: Increases ATK of all allies by 10%.</span></p></div></div>');
+        $setBonus = $('.t-total .r-stats').append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="per1">4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.</span><span id="per2">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per3">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per4">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per5">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per6">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per7">4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.</span><span id="hop1">4 Set: Increases all allies All DEF by 10% and ATK by 5%.</span><span id="hop2">4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.</span><span id="hop3">4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.</span><span id="hop4">4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.</span><span id="hop5">4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.</span><span id="hop6">4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.</span><span id="hop7">4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.</span><span id="aut1">4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.</span><span id="aut2">4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.</span><span id="aut3">4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.</span><span id="aut4">4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.</span><span id="aut5">4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.</span><span id="aut6">4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.</span><span id="aut7">4 Set: Increases ATK of all allies by 10%.</span></p></div></div>');
       $setBonus.find('span').hide();
       $statCrit = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Crit'
@@ -1961,13 +1958,13 @@
     };
     function heroImg() {
       $('.hero-img').children().hide();
-      $heroImg = $('#calc_char_id').children().children('option:selected').val();
+      $heroImg = $('#calc_char_id').children('option:selected').val();
       $('.hero-img').find('.hero-' + $heroImg).css('display', 'block');
     };
     function perkTP() {
       $tp_1 = 0;$tp_2 = 0;$tp_3 = 0;$tp_5 = 0;
-      $heroName = $('#calc_char_id').children().children('option:selected').val();
-      $('.hero-img .hero-' + $heroName).find('.c-p').each(function() {
+      $hero = $('#calc_char_id').children('option:selected').val();
+      $('.hero-img .hero-' + $hero).find('.c-p').each(function() {
         $perkTier = $(this).attr('id');
         if ($perkTier == 'perk-t1') {
           $(this).find('.pick').each(function() {
