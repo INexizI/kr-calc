@@ -320,7 +320,7 @@ title Calculator
   .totalStat#calc
     .hero-img
       - @chars.each do |c|
-        .hch class='hero-#{c.name}'
+        .hch class='hero-#{c.id}'
           .heroPerk
             .hero-avatar
               img src='/images/media/heroes/#{c.name.downcase}/portrait.png'

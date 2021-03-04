@@ -5,11 +5,11 @@ title Calculator
     = simple_form_for :calc do |f|
       .form-input
         label for='role_id' Class
-        = f.collection_select :role_id, @roles, :id, :name, prompt: '----------'
+        = f.input :role_id, as: :select, collection: [], required: false, label: false, include_blank: false
 
       .form-input#char
         label for='char_id' Hero
-        = f.grouped_collection_select :char_id, @roles, :chars, :name, :id, :name
+        = f.input :char_id, as: :select, collection: [], required: false, label: false, include_blank: false
 
       .heroGear
         div
@@ -320,7 +320,7 @@ title Calculator
   .totalStat#calc
     .hero-img
       - @chars.each do |c|
-        .hch class='hero-#{c.id}'
+        .hch class='hero-#{c.name}'
           .heroPerk
             .hero-avatar
               img src='/images/media/heroes/#{c.name.downcase}/portrait.png'

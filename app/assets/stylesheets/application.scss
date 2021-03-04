@@ -800,7 +800,8 @@ h4 {
     width: 600px;
 
     .form-input {
-      #calc_role_id, #calc_char_id{
+      #calc_role_id, #calc_char_id {
+        display: inline-block;
         text-align-last: center;
         background: none;
         font-family: inherit;
