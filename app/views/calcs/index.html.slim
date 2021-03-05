@@ -68,16 +68,16 @@ title Calculator
                 label.bt0 ◯
                 input name="starValue" type="radio" value="0"
             .gOption#g-left
-              .opt
+              .opt#a1
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
-              .opt
+              .opt#a2
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
-              .opt
+              .opt#a3
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
-              .opt
+              .opt#a4
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
               .opt-ench
@@ -187,12 +187,13 @@ title Calculator
 
           .form-input
             .calc_gear_jewelry
-              - emp = ['- - - - - - - - - -']
-              - tmAct = ['Technomagic']
-              - tmRaid = ['Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority']
-              - options = ['Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion']
-              - gear_type = [['Unequip', emp], ['Ring', options + tmAct + tmRaid], ['Earrings', options + tmAct + tmRaid], ['Bracelet', options + tmRaid], ['Necklace', options + tmRaid]]
-              = f.select :gear_jewelry, grouped_options_for_select(gear_type), input_html: {class: 'img'}
+              / - emp = ['- - - - - - - - - -']
+              / - tmAct = ['Technomagic']
+              / - tmRaid = ['Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority']
+              / - options = ['Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion']
+              / - gear_type = [['Unequip', emp], ['Ring', options + tmAct + tmRaid], ['Earrings', options + tmAct + tmRaid], ['Bracelet', options + tmRaid], ['Necklace', options + tmRaid]]
+              / = f.select :gear_jewelry, grouped_options_for_select(gear_type), input_html: {class: 'img'}
+              = f.input :gear_jewelry, as: :select, collection: [], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#acc
               .rating#ac.c
@@ -416,38 +417,38 @@ title Calculator
         p#setAcs
         p#setOrb
     .t-st.t-op
-      p name='ATK'
-      p name='ATK Spd'
-      p name='Crit'
-      p name='Crit DMG'
-      p name='MP Recovery/Attack'
-      p name='MP Recovery/Sec'
-      p name='Penetration'
-      p name='Lifesteal'
-      p name='ACC'
-      p name='Debuff ACC'
-      p name='Max HP'
-      p name='CC Resist'
-      p name='Block'
-      p name='P.Block'
-      p name='M.Block'
-      p name='Block DEF'
-      p name='P.Block DEF'
-      p name='M.Block DEF'
-      p name='Crit Resistance'
-      p name='P.Crit Resistance'
-      p name='M.Crit Resistance'
-      p name='DEF'
-      p name='P.DEF'
-      p name='M.DEF'
-      p name='Dodge'
-      p name='P.Dodge'
-      p name='M.Dodge'
-      p name='Tough'
-      p name='P.Tough'
-      p name='M.Tough'
-      p name='Recovery'
-      p name='Mana Recovery upon taking DMG'
+      p name="ATK"
+      p name="ATK Spd"
+      p name="Crit"
+      p name="Crit DMG"
+      p name="MP Recovery/Attack"
+      p name="MP Recovery/Sec"
+      p name="Penetration"
+      p name="Lifesteal"
+      p name="ACC"
+      p name="Debuff ACC"
+      p name="Max HP"
+      p name="CC Resist"
+      p name="Block"
+      p name="P.Block"
+      p name="M.Block"
+      p name="Block DEF"
+      p name="P.Block DEF"
+      p name="M.Block DEF"
+      p name="Crit Resistance"
+      p name="P.Crit Resistance"
+      p name="M.Crit Resistance"
+      p name="DEF"
+      p name="P.DEF"
+      p name="M.DEF"
+      p name="Dodge"
+      p name="P.Dodge"
+      p name="M.Dodge"
+      p name="Tough"
+      p name="P.Tough"
+      p name="M.Tough"
+      p name="Recovery"
+      p name="Mana Recovery upon taking DMG"
     .t-total
       .r-stats
 
