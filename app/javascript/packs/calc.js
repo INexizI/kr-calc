@@ -1,18 +1,22 @@
 (function() {
   $(document).on("turbolinks:load", function() {
     $('button#btn-gen').click(function() {
-      $jN = 'calc[jewelry_type]=' + $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
+      $jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
       $lk = $('.calc form');
-      $('#this-link').text(CryptoJS.AES.encrypt($lk.serialize() + '&' + $jN,"/"));
+      $lk_sl = [];
+      $lk_sl.push({name :'calc[jewelry_type]', value: $jName});
+      $($lk.serializeArray().slice(1)).each(function(i, n) {
+        if ((this.value !== '0') && (this.value !== ''))
+          $lk_sl.push(n)
+      });
+      $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl),'/').toString());
     });
     $('button#btn-load').click(function(e) {
       e.preventDefault();
-      $sl = CryptoJS.AES.decrypt($('#share_link').val(),"/").toString(CryptoJS.enc.Utf8);
-      $sl_st = $sl.replace(/\%5B/g, '[').replace(/\%5D/g, ']').replace(/\%20/g, ' ').split('&');
-      $sl_st.splice(0, 1);
-      $($sl_st).each(function(i, n) {
-        var x = n.split('=').shift();
-        var y = n.split('=').pop();
+      $sl = CryptoJS.AES.decrypt($('#share_link').val(),"/");
+      $(JSON.parse($sl.toString(CryptoJS.enc.Utf8))).each(function(i, n) {
+        var x = this.name;
+        var y = this.value;
         $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
         if (x == 'calc[role_id]') {
           $role = $('#calc_role_id :selected').text();
@@ -31,24 +35,22 @@
               $('#calc_gear_orb').parent().show(),
               $('#calc_gear_artifact').parent().show(),
               $('.form-input div select').show(),
-              $('select').not('#calc_role_id').prop('selectedIndex', 0)
+              $('select').not('#calc_role_id').prop('selectedIndex', 0),
+              change_role()
             ]
           }
-          change_role();
         }
-        if (x == 'calc[char_id]') {
+        if (x == 'calc[char_id]')
           change_char();
-        }
+        if (x == 'calc[jewelry_type]')
+          $jewelType = y;
         if ((x == 'calc[gear_jewelry]') && (y !== '- - - - - - - - - -')) {
-          $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+          $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
           $jewelSet = y;
         } else if ((x == 'calc[gear_jewelry]') && (y == '- - - - - - - - - -')) {
           $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
           $jewelSet = y;
         }
-        if (x == 'calc[jewelry_type]')
-          $jewelType = y;
-        $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
       });
       change_weapon();
       change_sw_adv();
@@ -770,7 +772,8 @@
         $jewelSet = $('#calc_gear_jewelry').children('option:selected').val();
       else {
         $jewelSet = $('#calc_gear_jewelry').children().children('option:selected').val();
-        $jewelType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
+        if ($('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') !== null)
+          $jewelType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
       }
       if ($jewelSet == '- - - - - - - - - -') {
         $('#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.png)');
@@ -1281,7 +1284,8 @@
         $jewelSet = $('#calc_gear_jewelry').children('option:selected').val();
       else {
         $jewelSet = $('#calc_gear_jewelry').children().children('option:selected').val();
-        $jewelType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
+        if ($('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') !== null)
+          $jewelType = $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label');
       }
       if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring') {
