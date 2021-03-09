@@ -1266,7 +1266,7 @@ h4 {
   }
 }
 
-#char, .class-stats > div, .form-input > div > select, #calc_gear_artifact {
+#char, .class-stats > div, .form-input > div > select:not(#calc_st_weapon_st), #calc_gear_jewelry, #calc_gear_artifact {
   display: none;
 }
 

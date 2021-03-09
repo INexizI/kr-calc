@@ -438,19 +438,19 @@
         $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
-          $('#wea').text($clKn);
+          $('#greyATK').text($clKn);
         else if ($heroClass == 2)
-          $('#wea').text($clWa);
+          $('#greyATK').text($clWa);
         else if ($heroClass == 3)
-          $('#wea').text($clAs);
+          $('#greyATK').text($clAs);
         else if ($heroClass == 4)
-          $('#wea').text($clAr);
+          $('#greyATK').text($clAr);
         else if ($heroClass == 5)
-          $('#wea').text($clMe);
+          $('#greyATK').text($clMe);
         else if ($heroClass == 6)
-          $('#wea').text($clWi);
+          $('#greyATK').text($clWi);
         else if ($heroClass == 7)
-          $('#wea').text($clPr);
+          $('#greyATK').text($clPr);
         $('.calc_gear_weapon').parent().find('.gOption').show();
         $('.w-in').addClass('g-fr');
         $('#g-weapon').hide();
@@ -465,19 +465,19 @@
         $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
-          $('#wea').text($unKn);
+          $('#greyATK').text($unKn);
         else if ($heroClass == 2)
-          $('#wea').text($unWa);
+          $('#greyATK').text($unWa);
         else if ($heroClass == 3)
-          $('#wea').text($unAs);
+          $('#greyATK').text($unAs);
         else if ($heroClass == 4)
-          $('#wea').text($unAr);
+          $('#greyATK').text($unAr);
         else if ($heroClass == 5)
-          $('#wea').text($unMe);
+          $('#greyATK').text($unMe);
         else if ($heroClass == 6)
-          $('#wea').text($unWi);
+          $('#greyATK').text($unWi);
         else if ($heroClass == 7)
-          $('#wea').text($unPr);
+          $('#greyATK').text($unPr);
 
         if ($heroClass == 1)
           $swA = 3500;
@@ -505,13 +505,22 @@
         $('#calc_st_weapon').prop('selectedIndex', 0);
         $('#calc_st_weapon_st').html('<option value="">- - -</option>');
       }
-      $('#greyATK').text($('#wea').text());
+      $('#wea').text($('#greyATK').text());
       $('#uw label').filter('.active').removeClass('active');
     };
     function change_sw_adv() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
+      $('#calc_st_weapon_st').children('option').show();
       $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
+        $('#calc_st_weapon_st').children().each(function() {
+          if ($(this).text() !== '- - -') {
+            return [
+              $(this).hide()
+            ]
+          }
+        });
+        $('#calc_st_weapon_st').prop('selectedIndex', 0);
         $rAtk = $('#range-atk').text(0);
         $rHP = $('#range-hp').text(0);
         $('.range').hide();
@@ -526,6 +535,13 @@
         $('.w-in').addClass('a0');
         gearStat();
       } else if ($adv == 'Adv.1') {
+        $('#calc_st_weapon_st').children().each(function() {
+          if ($(this).val() < 5) {
+            return [
+              $(this).hide()
+            ]
+          }
+        });
         $rAtk = $('#range-atk').text(parseInt($swA)*2);
         $rHP = $('#range-hp').text(parseInt($swH)*2);
         $('.range').show();
@@ -533,6 +549,13 @@
         $('.w-in').addClass('a1');
         gearStat();
       } else if ($adv == 'Adv.2') {
+        $('#calc_st_weapon_st').children().each(function() {
+          if ($(this).val() < 10) {
+            return [
+              $(this).hide()
+            ]
+          }
+        });
         $rAtk = $('#range-atk').text(parseInt($swA)*4);
         $rHP = $('#range-hp').text(parseInt($swH)*4);
         $('.range').show();
@@ -1481,10 +1504,10 @@
         return $(this).text() === 'MAX HP'
       }).next('p').text();
       $classPDEF = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'P.Def'
+        return $(this).text() === 'P.DEF'
       }).next('p').text();
       $classMDEF = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'M.Def'
+        return $(this).text() === 'M.DEF'
       }).next('p').text();
 
       $gearA = $('#heroATK').text();
@@ -1517,10 +1540,10 @@
         return $(this).text() === 'MAX HP'
       }).next('p');
       $totalP = $('.t-total .r-stats').find('p').filter(function() {
-        return $(this).text() === 'P.Def'
+        return $(this).text() === 'P.DEF'
       }).next('p');
       $totalM = $('.t-total .r-stats').find('p').filter(function() {
-        return $(this).text() === 'M.Def'
+        return $(this).text() === 'M.DEF'
       }).next('p');
       if ($jewelSet !== '- - - - - - - - - -') {
         if ($jewelType == 'Earrings') {
@@ -2255,6 +2278,8 @@
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q7" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
       $ench = '<option value="">- - - - - - - - - -</option><option value="Rare">Rare</option><option value="Heroic">Heroic</option><option value="Ancient">Ancient</option><option value="Legendary">Legendary</option>'
+      $eth = '<option value="- - -">- - -</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>'
+      $('.w-ad-ench').html($eth);
       $('.opt').find('.ax').each(function() {
         $(this).html($ax);
       });
@@ -2566,19 +2591,6 @@
     $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
       gearStat();
       gearSet();
-    });
-    $('.w-ad').change(function() {
-      var x = '<option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>',
-          y = '<option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>',
-          z = '<option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>';
-      if ($('.w-ad').val() === 'Adv.0')
-        $('.w-ad-ench').html(x);
-      else if ($('.w-ad').val() === 'Adv.1')
-        $('.w-ad-ench').html(y);
-      else if ($('.w-ad').val() === 'Adv.2')
-        $('.w-ad-ench').html(z);
-      else
-        $('.w-ad-ench').html('<option value="">- - -</option>');
     });
     function swStat() {
       $sw_atk = 0;
