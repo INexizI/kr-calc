@@ -868,13 +868,13 @@ h4 {
         position: relative;
         height: 50px;
 
+        .opt:not(#tm) div:first-child {
+          height: 0;
+        }
+        .opt:not(#tm) div:last-child {
+          width: 0;
+        }
         .opt {
-          .calc_st_weapon, .calc_st_treasure, .calc_st_armor, .calc_st_secondary, .calc_st_jewerly, .calc_st_orb, .op {
-            height: 0;
-          }
-          .calc_st_weapon_st, .calc_st_treasure_st, .calc_st_armor_st, .calc_st_secondary_st, .calc_st_jewerly_st, .calc_st_orb_st {
-            width: 0;
-          }
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
             display: none;
           }

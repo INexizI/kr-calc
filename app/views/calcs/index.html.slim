@@ -69,17 +69,17 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-left
               .opt#a1
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
+                = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt#a2
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
+                = f.input :st_armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt#a3
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :armor_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
+                = f.input :st_armor_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt#a4
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
+                = f.input :st_armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench
                 = f.input :ench_type_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
@@ -91,7 +91,7 @@ title Calculator
               .opt
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
                 = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
-              .opt
+              .opt#tm
                 = f.input :st_armor_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input
@@ -113,17 +113,17 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-left
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :secondary_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_secondary'}
+                = f.input :st_secondary_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :secondary_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_secondary'}
+                = f.input :st_secondary_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :secondary_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_secondary'}
+                = f.input :st_secondary_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :secondary_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_secondary'}
+                = f.input :st_secondary_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt-ench
                 = f.input :ench_type_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
@@ -135,7 +135,7 @@ title Calculator
               .opt
                 = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
                 = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
-              .opt
+              .opt#tm
                 = f.input :st_secondary_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
         div
@@ -205,17 +205,17 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-right
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :jewerly_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :jewerly_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :jewerly_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :jewerly_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt-ench
                 = f.input :ench_type_j, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_j, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
@@ -227,7 +227,7 @@ title Calculator
               .opt
                 = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
                 = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
-              .opt
+              .opt#tm
                 = f.input :st_jewerly_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input
@@ -249,17 +249,17 @@ title Calculator
                 input name="starValue" type="radio" value="0"
             .gOption#g-right
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :orb_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_orb'}
+                = f.input :st_orb_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :orb_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_orb'}
+                = f.input :st_orb_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :orb_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_orb'}
+                = f.input :st_orb_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay'}
+                = f.input :orb_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_orb'}
+                = f.input :st_orb_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt-ench
                 = f.input :ench_type_orb, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_orb, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
@@ -271,7 +271,7 @@ title Calculator
               .opt
                 = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
                 = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
-              .opt
+              .opt#tm
                 = f.input :st_orb_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
           .form-input

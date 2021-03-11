@@ -42,6 +42,14 @@
         }
         if (x == 'calc[char_id]')
           change_char();
+        if ((x.slice(0, -3) + ']' == 'calc[armor]') || (x.slice(0, -3) + ']' == 'calc[secondary]') || (x.slice(0, -3) + ']' == 'calc[jewerly]') || (x.slice(0, -3) + ']' == 'calc[orb]')) {
+          $statName = $('[name="' + x + '"]');
+          $opt = $('[name="' + x + '"]').parent().parent().find('.ay, .ay-tm');
+          $opt.prop('selectedIndex', 0).find('optgroup').hide();
+          statOption();
+        }
+        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+          $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if (x == 'calc[jewelry_type]')
           $jewelType = y;
         if ((x == 'calc[gear_jewelry]') && (y !== '- - - - - - - - - -')) {
