@@ -33,7 +33,7 @@ title Calculator
                 label.bt0 ◯
                 input name="starValue" type="radio" value="0"
             .gOption#g-weapon
-              .opt
+              .opt#ow
                 = f.input :st_weapon, as: :select, collection: ['Adv.0', 'Adv.1', 'Adv.2'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'w-ad'}
                 = f.input :st_weapon_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - -', input_html: {class: 'w-ad-ench'}
                 .range
@@ -68,16 +68,16 @@ title Calculator
                 label.bt0 ◯
                 input name="starValue" type="radio" value="0"
             .gOption#g-left
-              .opt#a1
+              .opt
                 = f.input :armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
-              .opt#a2
+              .opt
                 = f.input :armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
-              .opt#a3
+              .opt
                 = f.input :armor_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
-              .opt#a4
+              .opt
                 = f.input :armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench

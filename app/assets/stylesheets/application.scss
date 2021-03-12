@@ -868,10 +868,10 @@ h4 {
         position: relative;
         height: 50px;
 
-        .opt:not(#tm) div:first-child {
+        .opt:not(#tm, #ow) div:first-child, .calc_st_weapon {
           height: 0;
         }
-        .opt:not(#tm) div:last-child {
+        .opt:not(#tm, #ow) div:last-child, .calc_st_weapon_st {
           width: 0;
         }
         .opt {

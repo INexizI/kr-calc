@@ -42,6 +42,10 @@
         }
         if (x == 'calc[char_id]')
           change_char();
+        if (x == 'calc[gear_weapon]')
+          change_weapon();
+        if (x == 'calc[st_weapon]')
+          change_sw_adv();
         if ((x.slice(0, -3) + ']' == 'calc[armor]') || (x.slice(0, -3) + ']' == 'calc[secondary]') || (x.slice(0, -3) + ']' == 'calc[jewerly]') || (x.slice(0, -3) + ']' == 'calc[orb]')) {
           $statName = $('[name="' + x + '"]');
           $opt = $('[name="' + x + '"]').parent().parent().find('.ay, .ay-tm');
@@ -49,6 +53,21 @@
           statOption();
         }
         if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+          $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+        if ((x == 'calc[ench_type_ar]') || (x == 'calc[ench_type_sg]') || (x == 'calc[ench_type_j]') || (x == 'calc[ench_type_orb]')) {
+          $enchName = $('[name="' + x + '"]');
+          $('[name="' + x + '"]').parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
+          if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+            statOptionEnchant();
+        }
+        if ((x == 'calc[ench_ar]') || (x == 'calc[ench_sg]') || (x == 'calc[ench_j]') || (x == 'calc[ench_orb]')) {
+          $enchName = $('[name="' + x + '"]');
+          $ench = $('[name="' + x + '"]').parent().next().find('.ench-v');
+          $ench.prop('selectedIndex', 0).find('optgroup').hide();
+          if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+            statEnchant();
+        }
+        if ((x == 'calc[ench_ar_st]') || (x == 'calc[ench_sg_st]') || (x == 'calc[ench_j_st]') || (x == 'calc[ench_orb_st]'))
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if (x == 'calc[jewelry_type]')
           $jewelType = y;
@@ -60,8 +79,6 @@
           $jewelSet = y;
         }
       });
-      change_weapon();
-      change_sw_adv();
       change_sw_eth();
       change_treasure();
       change_armor();
@@ -522,11 +539,8 @@
       $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
         $('#calc_st_weapon_st').children().each(function() {
-          if ($(this).text() !== '- - -') {
-            return [
-              $(this).hide()
-            ]
-          }
+          if ($(this).text() !== '- - -')
+            return $(this).hide()
         });
         $('#calc_st_weapon_st').prop('selectedIndex', 0);
         $rAtk = $('#range-atk').text(0);
@@ -536,6 +550,11 @@
         if ($('#calc_gear_weapon').children('option:selected').text() !== '- - - - - - - - - -')
           $('.w-in').addClass('g-fr');
       } else if ($adv == 'Adv.0') {
+        $('#calc_st_weapon_st').children().each(function() {
+          if ($(this).text() == '- - -')
+            return $(this).hide()
+        });
+        $('#calc_st_weapon_st').prop('selectedIndex', 1);
         $rAtk = $('#range-atk').text(parseInt($swA));
         $rHP = $('#range-hp').text(parseInt($swH));
         $('.range').show();
@@ -544,12 +563,10 @@
         gearStat();
       } else if ($adv == 'Adv.1') {
         $('#calc_st_weapon_st').children().each(function() {
-          if ($(this).val() < 5) {
-            return [
-              $(this).hide()
-            ]
-          }
+          if (($(this).val() < 5) || ($(this).text() == '- - -'))
+            return $(this).hide()
         });
+        $('#calc_st_weapon_st').prop('selectedIndex', 6);
         $rAtk = $('#range-atk').text(parseInt($swA)*2);
         $rHP = $('#range-hp').text(parseInt($swH)*2);
         $('.range').show();
@@ -558,12 +575,10 @@
         gearStat();
       } else if ($adv == 'Adv.2') {
         $('#calc_st_weapon_st').children().each(function() {
-          if ($(this).val() < 10) {
-            return [
-              $(this).hide()
-            ]
-          }
+          if (($(this).val() < 10) || ($(this).text() == '- - -'))
+            return $(this).hide()
         });
+        $('#calc_st_weapon_st').prop('selectedIndex', 11);
         $rAtk = $('#range-atk').text(parseInt($swA)*4);
         $rHP = $('#range-hp').text(parseInt($swH)*4);
         $('.range').show();
@@ -2286,8 +2301,8 @@
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q7" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
       $ench = '<option value="">- - - - - - - - - -</option><option value="Rare">Rare</option><option value="Heroic">Heroic</option><option value="Ancient">Ancient</option><option value="Legendary">Legendary</option>'
-      $eth = '<option value="- - -">- - -</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>'
-      $('.w-ad-ench').html($eth);
+      $ether = '<option value="- - -">- - -</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>'
+      $('.w-ad-ench').html($ether);
       $('.opt').find('.ax').each(function() {
         $(this).html($ax);
       });
