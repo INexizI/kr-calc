@@ -46,13 +46,26 @@
           change_weapon();
         if (x == 'calc[st_weapon]')
           change_sw_adv();
+        if (x.slice(0, -3) + ']' == 'calc[treasure]') {
+          statOptionTreasure();
+          $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
+          $('#treasure #g-treasure').each(function(i, n) {
+            $trOptf = $('#a' + i + ' .ax').children('option:selected').val();
+            $trOpts = $('#b' + i + ' .ax').children('option:selected').val();
+            $(this).find('.ax').children().removeAttr('disabled');
+            if ($trOptf !== '')
+              $(this).find('#b' + i + ' .ax').children('[value="' + $trOptf + '"]').attr('disabled', 'disabled');
+            if ($trOpts !== '')
+              $(this).find('#a' + i + ' .ax').children('[value="' + $trOpts + '"]').attr('disabled', 'disabled');
+          });
+        }
         if ((x.slice(0, -3) + ']' == 'calc[armor]') || (x.slice(0, -3) + ']' == 'calc[secondary]') || (x.slice(0, -3) + ']' == 'calc[jewerly]') || (x.slice(0, -3) + ']' == 'calc[orb]')) {
           $statName = $('[name="' + x + '"]');
           $opt = $('[name="' + x + '"]').parent().parent().find('.ay, .ay-tm');
           $opt.prop('selectedIndex', 0).find('optgroup').hide();
           statOption();
         }
-        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_treasure]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if ((x == 'calc[ench_type_ar]') || (x == 'calc[ench_type_sg]') || (x == 'calc[ench_type_j]') || (x == 'calc[ench_type_orb]')) {
           $enchName = $('[name="' + x + '"]');
@@ -534,6 +547,7 @@
       $('#uw label').filter('.active').removeClass('active');
     };
     function change_sw_adv() {
+      $('.w-ad-ench').html($ether);
       $adv = $('#calc_st_weapon').children('option:selected').text();
       $('#calc_st_weapon_st').children('option').show();
       $('.w-in').removeClass('g-fr a0 a1 a2');
