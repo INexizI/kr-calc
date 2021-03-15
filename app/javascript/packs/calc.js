@@ -9,6 +9,14 @@
         if ((this.value !== '0') && (this.value !== ''))
           $lk_sl.push(n)
       });
+      $lk_sl.push(
+        {name: 'uw', value: $starW},
+        {name: 'ar', value: $starAr},
+        {name: 'sg', value: $starSe},
+        {name: 'ut', value: $starTr},
+        {name: 'ac', value: $starJ},
+        {name: 'or', value: $starO}
+      );
       $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl),'/').toString());
     });
     $('button#btn-load').click(function(e) {
@@ -46,6 +54,31 @@
           change_weapon();
         if (x == 'calc[st_weapon]')
           change_sw_adv();
+        if (x == 'calc[st_weapon_st]')
+          change_sw_eth();
+        if (x == 'calc[gear_armor]')
+          change_armor();
+        if (x == 'calc[gear_secondary]')
+          change_secondary();
+        if (x == 'calc[gear_treasure]')
+          change_treasure();
+        if ((x == 'calc[gear_jewelry]') && (y !== '- - - - - - - - - -')) {
+          $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
+          $jewelSet = y;
+          change_jewerly();
+        } else if ((x == 'calc[gear_jewelry]') && (y == '- - - - - - - - - -')) {
+          $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
+          $jewelSet = y;
+          change_jewerly();
+        }
+        if (x == 'calc[gear_orb]')
+          change_orb();
+        if ((x == 'range') || (x == 'add-atk') || (x == 'add-hp')) {
+          $('[name="' + x + '"]').prop('value', y);
+          swStat();
+          gearStat();
+          gearSet();
+        }
         if (x.slice(0, -3) + ']' == 'calc[treasure]') {
           statOptionTreasure();
           $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
@@ -65,7 +98,9 @@
           $opt.prop('selectedIndex', 0).find('optgroup').hide();
           statOption();
         }
-        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_treasure]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+          $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+        if (x.slice(0, -3) + ']' == 'calc[st_treasure]')
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if ((x == 'calc[ench_type_ar]') || (x == 'calc[ench_type_sg]') || (x == 'calc[ench_type_j]') || (x == 'calc[ench_type_orb]')) {
           $enchName = $('[name="' + x + '"]');
@@ -84,20 +119,15 @@
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if (x == 'calc[jewelry_type]')
           $jewelType = y;
-        if ((x == 'calc[gear_jewelry]') && (y !== '- - - - - - - - - -')) {
-          $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
-          $jewelSet = y;
-        } else if ((x == 'calc[gear_jewelry]') && (y == '- - - - - - - - - -')) {
-          $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
-          $jewelSet = y;
+        if ((x == 'uw') || (x == 'ar') || (x == 'sg') || (x == 'ut') || (x == 'ac') || (x == 'or')) {
+          statOptionTreasure();
+          $('#' + x).find('label').removeClass('active');
+          $('#' + x).find('.bt' + y).addClass('active');
+          option();
+          gearStat();
+          gearSet();
         }
       });
-      change_sw_eth();
-      change_treasure();
-      change_armor();
-      change_secondary();
-      change_jewerly();
-      change_orb();
       heroImg();
       option();
       gearStat();
@@ -663,7 +693,8 @@
           'right': '0'
         }
         $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
-        $('#tre').text($ms).next('.rating').show();
+        $('#greyTR').text($ms);
+        $('#tre').next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst').show().css({'position': 'relative', 'bottom': '104px'});
         $('.scnd').hide();
         $('.scnd select').prop('selectedIndex', 0);
@@ -685,16 +716,18 @@
         }
         $('#calc_gear_treasure').attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css($hTreasure);
         $('#calc_gear_treasure').css($hTreasure);
-        $('#tre').text($unTr).next('.rating').show();
+        $('#greyTR').text($unTr);
+        $('#tre').next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({'position': 'relative', 'bottom': '210px'});
         gearStat();
       } else {
         $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
+        $('#greyTR').text('');
         $('#tre').text('').next('.rating').hide();
         $('.calc_gear_treasure').parent().find('.gOption').hide();
         $('#calc_gear_treasure').parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
       }
-      $('#greyTR').text($('#tre').text());
+      $('#tre').text($('#greyTR').text());
       $('#ut label').filter('.active').removeClass('active');
     };
     function change_armor() {
