@@ -69,8 +69,8 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 68,Critical Intensity [Dark],"When Blessing of Light reaches 10 stacks, cooldown is reduced by 50%",Artemia,2020-06-18 11:19:52.32141,2020-06-18 11:19:52.32141,s2d,hero
 69,Light's Judgment [Light],Cooldown is reduced by 3 sec,Artemia,2020-06-18 11:20:30.542151,2020-06-18 11:20:30.542151,s3l,hero
 70,Light's Judgment [Dark],Mana cost is increased by 1 orb but DMG is boosted by 100%,Artemia,2020-06-18 11:22:33.835317,2020-06-18 11:22:33.835317,s3d,hero
-71,Blessing of Light [Light],Activation chance is changed to 60%,Artemia,2020-06-18 11:22:44.51718,2020-06-18 11:22:44.51718,s4l,hero
-72,Blessing of Light [Dark],DMG Reduction from Non-Hero enemies is changed to 4%,Artemia,2020-06-18 11:22:50.470047,2020-06-18 11:22:50.470047,s4d,hero
+71,Blessing of Light [Light],Increases DMG dealt to Non-Hero enemies by an additional 2.5%.,Artemia,2020-06-18 11:22:44.51718,2020-06-18 11:22:44.51718,s4l,hero
+72,Blessing of Light [Dark],Changes DMG Reduction from Non-Hero enemies to DMG Reduction from all enemies.,Artemia,2020-06-18 11:22:50.470047,2020-06-18 11:22:50.470047,s4d,hero
 73,Sword of the Sun [Light],"After activation, increases ATK Spd by 350 for 5 sec",Aselica,2020-06-18 11:23:12.819118,2020-06-18 11:23:12.819118,s1l,hero
 74,Sword of the Sun [Dark],Reduces cooldown by 2 sec,Aselica,2020-06-18 11:23:19.824708,2020-06-18 11:23:19.824708,s1d,hero
 75,Blessing of the Sun [Light],"Increases Mana Cost by 1, and grants the effect to the 2 allies with the highest ATK",Aselica,2020-06-18 11:23:33.047659,2020-06-18 11:23:33.047659,s2l,hero
@@ -672,13 +672,13 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 671,The Vessel of Curses [Light],Shield is increased by 80%,Shamilia,2020-06-22 16:30:10.338785,2020-06-22 16:30:10.338785,s4l,hero
 672,The Vessel of Curses [Dark],"The Vessel of Curses duration is increased by 20 sec, and becomes dispellable",Shamilia,2020-06-22 16:30:14.341227,2020-06-22 16:30:14.341227,s4d,hero
 673,Green Nature's Melody [Light],Heals 15% HP of all allies when used,Shea,2020-06-22 16:30:32.46728,2020-06-22 16:30:32.46728,s1l,hero
-674,Green Nature's Melody [Dark],Increases Crit Resistance of all allies by 250 for 8 seconds,Shea,2020-06-22 16:30:38.125186,2020-06-22 16:30:38.125186,s1d,hero
+674,Green Nature's Melody [Dark],Increases all allies' DMG dealt to Non-Hero enemies by 20% for 8 sec.,Shea,2020-06-22 16:30:38.125186,2020-06-22 16:30:38.125186,s1d,hero
 675,Blue Wind's Song [Light],Heals 500 MP of all allies when used,Shea,2020-06-22 16:31:24.633738,2020-06-22 16:31:24.633738,s2l,hero
 676,Blue Wind's Song [Dark],Increases ATK Spd of all allies by 250 for 8 seconds,Shea,2020-06-22 16:31:30.542046,2020-06-22 16:31:30.542046,s2d,hero
 677,Dance of Red Passion [Light],ATK Boost is increased by 40%,Shea,2020-06-22 16:31:42.829004,2020-06-22 16:31:42.829004,s3l,hero
 678,Dance of Red Passion [Dark],All enemies take 15% more DMG for 8 seconds,Shea,2020-06-22 16:31:47.481044,2020-06-22 16:31:47.481044,s3d,hero
 679,Trance [Light],Increases Heal rate of Trance by 100%,Shea,2020-06-22 16:31:57.362083,2020-06-22 16:31:57.362083,s4l,hero
-680,Trance [Dark],"If a skill is used when there are 3 Trance stacks, inflicts M.DMG to enemies instead of healing allies, and reduces all DEF by 10% for 10 sec",Shea,2020-06-22 16:32:00.757361,2020-06-22 16:32:00.757361,s4d,hero
+680,Trance [Dark],"Instead of healing allies, Shea deals M.DMG equal to the Heal Rate to all enemies and reduces their All DEF by 20% for 10 sec when she enters [Trance] state.",Shea,2020-06-22 16:32:00.757361,2020-06-22 16:32:00.757361,s4d,hero
 681,Lightning Strike! [Light],Mana cost is reduced by 1,Sonia,2020-06-22 16:32:19.216819,2020-06-22 16:32:19.216819,s1l,hero
 682,Lightning Strike! [Dark],Stun chance is increased by 10%,Sonia,2020-06-22 16:32:24.195189,2020-06-22 16:32:24.195189,s1d,hero
 683,Power of Lightning! [Light],ATK and DEF boosts are increased by 40%,Sonia,2020-06-22 16:32:47.644889,2020-06-22 16:32:47.644889,s2l,hero
@@ -926,7 +926,7 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 925,light,"ATK, DEF, HP+15% / ATK.Spd +100",Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 926,dark,All effects of curse are enhanced. [Curse of Petrification] Petrification duration is increased by 2 sec. [Curse of Time] Curse of Time duration is increased by 3 sec. [Curse of Pain] Curse of Pain DOT is increased by 50%.,Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 927,light,"ATK, DEF, HP+15% / CC Resist +100",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-928,dark,"At the start of every battle, adds 1 Trance stack recovers 500 MP.",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+928,dark,"At the beginning of each battle, gains 1 stack of [Blissful Performance] and recovers own Mana by 500.",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 929,light,"ATK, DEF, HP+15% / ATK.Spd +100",Sonia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 930,dark,"Upon attack, with 15% chance deals extra M.DMG by 10% of Max HP and injects 1 extra stack of Electricity.",Sonia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 931,light,"ATK, DEF, HP+15% / CC Resist +100",Taily,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
@@ -979,14 +979,14 @@ id,name,description,tier,created_at,updated_at,sequence,perk_type
 978,Power of Galicta [Dark],Deals additional P.DMG equal to 100% of ATK to Non-Hero enemies.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s4d,hero
 979,light,"ATK, DEF, HP +15% / Crit Chance +100",Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,light,t5
 980,dark,"At the beginning of each battle, Rebel Clause deals 12% increased DMG to Non-Hero enemies and takes 5% reduced DMG. This effect can be stacked up to max 5 times and is irremovable.",Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,dark,t5
-981,"Pochi, bite them!","Additional M.DMG dealt against Bosses ignores DEF, but DMG is reduced by 50% and changes the DMG Boost from [Mana Charge] to 10%.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1l,hero
-982,"Pochi, bite them!",[Pochi's Mark] additionally reduced M.DEF by 6%.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1d,hero
-983,"Puchi, knock them away!",The M.Block Chance Reduction effect of [Puchi's Mark] will fix the M.Block Chance to 0 instead.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2l,hero
-984,"Puchi, knock them away!",Knocks the target away instead of inflicting Stun.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2d,hero
-985,"Pippi, wrap them!",Reduces Mana Cost by 1.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3l,hero
-986,"Pippi, wrap them!",[Pippi's Mark] additionally reduces ATK Spd by 20.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3d,hero
-987,"Eh, wahtever. I'm gonna sleep.",Increases All DMG Reduction effect by 20% while in use.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4l,hero
-988,"Eh, wahtever. I'm gonna sleep.","At the beginning of each battle, [Eh, whatevery. I'm gonna sleep.] becomes activated.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4d,hero
+981,"Pochi, bite them! [Light]","When there is 1 enemy, additional M.DMG dealt to Bosses ignores DEF.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1l,hero
+982,"Pochi, bite them! [Dark]",[Pochi's Mark] additionally reduced M.DEF by 6%.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1d,hero
+983,"Puchi, knock them away! [Light]",The M.Block Chance Reduction effect of [Puchi's Mark] will fix the M.Block Chance to 0 instead.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2l,hero
+984,"Puchi, knock them away! [Dark]",Knocks the target away instead of inflicting Stun.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2d,hero
+985,"Pippi, wrap them! [Light]",Reduces Mana Cost by 1.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3l,hero
+986,"Pippi, wrap them! [Dark]",Increases Mana Cost by 1 and DMG by 100%.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3d,hero
+987,"Eh, wahtever. I'm gonna sleep. [Light]",Increases All DMG Reduction effect by 20% while in use.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4l,hero
+988,"Eh, wahtever. I'm gonna sleep. [Dark]","At the beginning of each battle, [Eh, whatevery. I'm gonna sleep.] becomes activated.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4d,hero
 989,light,"ATK, DEF, HP +15% / Crit Chance +100",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,light,t5
 990,dark,Increases DMG dealt to Non-Hero enemies by 50% when there is 1 enemy.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,dark,t5
 991,Black Moon Brand [Light],Increases DMG by 40%.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s1l,hero

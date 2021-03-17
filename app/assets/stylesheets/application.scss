@@ -424,7 +424,7 @@ select {
   .p2 {
     grid-area: p2;
     height: 20px;
-    padding: 5px;
+    padding: 0 5px;
     margin: auto;
     margin-left: 0;
   }
@@ -453,6 +453,11 @@ select {
     #a2 {
       filter: hue-rotate(180deg) saturate(2) drop-shadow(1px 1px 0 black);
     }
+  }
+}
+.sw-description {
+  .p2 {
+    padding: 0 0 15px 5px !important;
   }
 }
 

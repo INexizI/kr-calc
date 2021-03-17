@@ -34,13 +34,15 @@
     - @skills.where(char: @char).where.not("length(parent_id) < 4").each do |skill|
       .c-perk-img
         img src="/images/media/heroes/#{@char.name}/sw.png"
-        .s-description
+        .s-description.sw-description
           .p1
             | Soul of 
             = skill.name
           .p2
             | Charges: 
             = skill.mana
+            br
+            = skill.skill_number
           .p3
             | Cooldown: 
             = skill.cooldown
