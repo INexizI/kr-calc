@@ -968,16 +968,29 @@ h4 {
         }
       }
       #g-left {
-        right: 220px;
-        bottom: 103px;
+        right: 230px;
+        bottom: 135px;
+        .ay-r {
+          position: relative;
+          min-width: 65px;
+        }
+        #calc_st_rune_w {
+          left: 70px;
+        }
+        #calc_st_rune_a {
+          left: 46px;
+        }
+        #calc_st_rune_s {
+          left: 65px;
+        }
       }
       #g-right {
-        left: 150px;
-        bottom: 103px;
+        left: 155px;
+        bottom: 135px;
       }
       #g-weapon {
-        right: 182.5px;
-        bottom: 103px;
+        right: 192.5px;
+        bottom: 180px;
       }
       #g-treasure {
         left: 120px;
@@ -1012,15 +1025,15 @@ h4 {
 
       #empty-block {
         width: 52px;
-        height: 120px;
+        height: 150px;
       }
       div {
         width: 125px;
         margin: auto;
 
         .form-input {
-          margin: 5px 0;
-          height: 120px;
+          // margin: 5px 0;
+          height: 150px;
           min-height: 52px;
         }
       }
