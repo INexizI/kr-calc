@@ -50,13 +50,19 @@ title Calculator
                     p#range-atk
                     p#range-hp
             .gOption#g-left
-              .opt
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeW.png" title='Runes for Weapons'
                 = f.input :rune_w_1, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
                 = f.input :st_rune_w_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
-              .opt
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeW.png" title='Runes for Weapons'
                 = f.input :rune_w_2, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
                 = f.input :st_rune_w_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
-              .opt
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeW.png" title='Runes for Weapons'
                 = f.input :rune_w_3, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
                 = f.input :st_rune_w_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
 
@@ -94,7 +100,9 @@ title Calculator
                 = f.input :ench_type_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
-              .opt
+              .opt#rune
+                p#rune-a
+                  img src="/images/media/icons/runeA.png" title='Runes for Armor'
                 = f.input :rune_a, as: :select, collection: ['Crit DMG', 'ACC', 'P.Block', 'P.DEF', 'M.Block', 'M.DEF', 'CC Resist', 'MAX HP'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_a'}
                 = f.input :st_rune_a, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_a'}
             .gTM#g-left
@@ -144,7 +152,9 @@ title Calculator
                 = f.input :ench_type_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
-              .opt
+              .opt#rune
+                p#rune-s
+                  img src="/images/media/icons/runeS.png" title='Runes for Secondary Gear'
                 = f.input :rune_s, as: :select, collection: ['Crit', 'P.Dodge', 'M.Dodge', 'MP Recovery/DMG'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_s'}
                 = f.input :st_rune_s, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_s'}
             .gTM#g-left

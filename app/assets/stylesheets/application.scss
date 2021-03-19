@@ -989,7 +989,7 @@ h4 {
         bottom: 135px;
       }
       #g-weapon {
-        right: 192.5px;
+        right: 203.5px;
         bottom: 180px;
       }
       #g-treasure {
@@ -1014,6 +1014,29 @@ h4 {
       .rating > #bt-star:hover ~ #bt-star:before {
         content: "\2605";
         position: absolute;
+      }
+      #rune {
+        p {
+          height: 0px;
+          position: relative;
+          top: 4px;
+          img {
+            width: 20px;
+            height: 20px;
+          }
+        }
+        #rune-w {
+          right: 74px;
+        }
+        #rune-a {
+          right: 55px;
+        }
+        #rune-s {
+          right: 73px;
+        }
+        .calc_rune_w_1, .calc_rune_w_2, .calc_rune_w_3, .calc_rune_a, .calc_rune_s {
+          height: 0;
+        }
       }
     }
     ::-webkit-scrollbar {
