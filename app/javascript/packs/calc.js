@@ -98,7 +98,7 @@
           $opt.prop('selectedIndex', 0).find('optgroup').hide();
           statOption();
         }
-        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
+        if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]') || x.slice(0, -3) + ']' == 'calc[st_rune]' || x.slice(0, -5) + ']' == 'calc[st_rune]')
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if (x.slice(0, -3) + ']' == 'calc[st_treasure]') {
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
