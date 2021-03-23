@@ -213,7 +213,7 @@ select {
 .c-main {
   display: flex;
   margin: 0 auto;
-  padding: 15px;
+  padding: 5 15px;
   flex-wrap: wrap;
   font-size: 18px;
   text-shadow: 0 0 10px white;
@@ -414,7 +414,7 @@ select {
 .c-perk-img:hover .p-description, .c-perk-img:hover .s-description, .c-perk-img:hover .calc-s-description  {
   display: grid;
   gap: 1px 1px;
-  grid-template-areas: "p1 p1" "p2 p3" "p4 p4";
+  grid-template-areas: "p1 p1 p1" "p2 p2 p3" "p4 p4 p4";
 
   .p1 {
     grid-area: p1;
@@ -457,7 +457,10 @@ select {
 }
 .sw-description {
   .p2 {
-    padding: 0 0 15px 5px !important;
+    height: fit-content !important;
+  }
+  .p4 {
+    padding: 5px !important;
   }
 }
 
@@ -743,7 +746,7 @@ h4 {
   font-size: medium;
 
   p {
-    padding: 3px;
+    padding: 3px 0;
   }
 }
 .c-perk-img:hover .g-description {
@@ -769,7 +772,7 @@ h4 {
    }
   .p4 {
     grid-area: p4;
-    padding: 3px 5px 10px 5px;
+    padding: 3px 5px 5px 5px;
   }
 }
 
