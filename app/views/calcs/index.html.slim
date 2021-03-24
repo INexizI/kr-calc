@@ -347,11 +347,11 @@ title Calculator
   .totalStat#calc
     .hero-img
       - @chars.each do |c|
-        .hch class='hero-#{c.id}'
+        .hch class='hero-#{c['id']}'
           .heroPerk
             .hero-avatar
-              img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
-              p = c.name
+              img src='/images/media/heroes/#{c['name'].downcase}/portrait.png'
+              p = c['name']
             .c-sub
               .perk-tp
                 img src='/images/slash.svg' id='tp-r'
@@ -368,7 +368,7 @@ title Calculator
                         .p4
                           = perk.description
                 .c-p#perk-t2
-                  - @perks.where(tier: c.role.name).each do |perk|
+                  - @perks.where(tier: c['role_id']).each do |perk|
                     .c-perk-img
                       img src="/images/media/genericPerks/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
@@ -378,35 +378,35 @@ title Calculator
                           = perk.description
                 .c-p#perk-t3
                   .c-pepe
-                    - @perks.where(tier: c.name).where(perk_type: 'hero').each do |perk|
+                    - @perks.where(tier: c['name']).where(perk_type: 'hero').each do |perk|
                       .c-perk-img
-                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png" id=perk.sequence
+                        img src="/images/media/heroes/#{c['name']}/#{perk.sequence}.png" id=perk.sequence
                         .calc-s-description
                           .p1
                             = perk.name
                           .p4
                             = perk.description
                 .c-p#perk-t5
-                  - @perks.where(tier: c.name, perk_type: 't5').each do |perk|
+                  - @perks.where(tier: c['name'], perk_type: 't5').each do |perk|
                     .c-perk-img
-                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png" id=perk.sequence
+                      img src="/images/media/heroes/#{c['name']}/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
                         .p1
-                          = c.name + ' ' + '[' + perk.name.capitalize + ']'
+                          = c['name'] + ' ' + '[' + perk.name.capitalize + ']'
                         .p4
                           = perk.description
           .heroImg
             div
               p#p1 Class
-              p#p2 = c.role.name
+              p#p2 = c['role_id']
             div
               p#p1 ATK Type
               p#p2
-                img src='/images/media/#{c.type_dmg}.png'
-                = c.type_dmg
+                img src='/images/media/#{c['type_dmg']}.png'
+                = c['type_dmg']
             div
               p#p1 Position
-              p#p2 = c.position
+              p#p2 = c['position']
 
     .t-st
       p#heroATK
