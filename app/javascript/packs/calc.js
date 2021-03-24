@@ -170,6 +170,7 @@
       $('.t-st p').empty();
       $('.gOption, .gTM').hide();
       $('select#calc_st_rune_w').find('optgroup').hide();
+      $('.opt').find('#q-velk').children().hide();
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
       $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
@@ -2392,6 +2393,7 @@
     function statRunes() {
       $('.opt').find($statName).each(function() {
         $(this).parent().next().children().find('optgroup').hide();
+        $(this).find('#q-velk').children().hide();
         $st = $(this).children('option:selected').text();
         if (($st == 'ATK') || ($st == 'MAX HP'))
           $(this).parent().next().children().find('#q1').show();
@@ -2404,9 +2406,7 @@
         else if ($st == 'MP Recovery/DMG')
           $(this).parent().next().children().find('#q5').show();
         else if ($(this).children('option:selected').attr('class').slice(0, -2) == 'rv')
-          $(this).parent().next().children().find('#q-velk').show();
-          // if ($st == '')
-          //   $(this).parent().next().children().find('#q-velk').show();
+          $(this).parent().next().children().find('#q-velk').show().find('.rv' + $(this).children('option:selected').attr('class').slice(2)).show();
         else
           $(this).parent().next().children().find('#q').show();
       });
@@ -2424,7 +2424,7 @@
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q7" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
       $ayR = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="10">10</option><option value="15">15</option><option value="20">20</option></optgroup><optgroup id="q2" label="Stat"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option></optgroup><optgroup id="q3" label="Stat"><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="200">200</option></optgroup><optgroup id="q4" label="Stat"><option value="100">100</option><option value="200">200</option><option value="300">300</option><option value="400">400</option></optgroup><optgroup id="q5" label="Stat"><option value="20">20</option><option value="35">35</option><option value="50">50</option><option value="60">60</option></optgroup>'
-      $ayRVelk = '<optgroup id="q-velk" label="Stat"><option class="rv1" value="11 / 11">11 / 11</option><option class="rv2" value="11 / 22">11 / 22</option><option class="rv3" value="11 / 33">11 / 33</option><option class="rv4" value="11 / 55">11 / 55</option><option class="rv5" value="11 / 110">11 / 110</option><option class="rv6" value="11 / 220">11 / 220</option><option class="rv7" value="22 / 11">22 / 11</option><option class="rv8" value="22 / 33">22 / 33</option><option class="rv9" value="22 / 55">22 / 55</option><option class="rv10" value="22 / 110">22 / 110</option><option class="rv11" value="22 / 220">22 / 220</option><option class="rv12" value="55 / 11">55 / 11</option><option class="rv13" value="55 / 33">55 / 33</option><option class="rv14" value="55 / 55">55 / 55</option><option class="rv15" value="55 / 110">55 / 110</option><option class="rv16" value="55 / 220">55 / 220</option><option class="rv17" value="110 / 22">110 / 22</option><option class="rv18" value="110 / 33">110 / 33</option><option class="rv19" value="110 / 55">110 / 55</option><option class="rv20" value="110 / 110">110 / 110</option><option class="rv21" value="110 / 220">110 / 220</option></optgroup>'
+      $ayRVelk = '<optgroup id="q-velk" label="Stat"><option class="rv01" value="11 / 11">11 / 11</option><option class="rv02" value="11 / 22">11 / 22</option><option class="rv03" value="11 / 33">11 / 33</option><option class="rv04" value="11 / 55">11 / 55</option><option class="rv05" value="11 / 110">11 / 110</option><option class="rv06" value="11 / 220">11 / 220</option><option class="rv07" value="22 / 11">22 / 11</option><option class="rv08" value="22 / 33">22 / 33</option><option class="rv09" value="22 / 55">22 / 55</option><option class="rv10" value="22 / 110">22 / 110</option><option class="rv11" value="22 / 220">22 / 220</option><option class="rv12" value="55 / 11">55 / 11</option><option class="rv13" value="55 / 33">55 / 33</option><option class="rv14" value="55 / 55">55 / 55</option><option class="rv15" value="55 / 110">55 / 110</option><option class="rv16" value="55 / 220">55 / 220</option><option class="rv17" value="110 / 22">110 / 22</option><option class="rv18" value="110 / 33">110 / 33</option><option class="rv19" value="110 / 55">110 / 55</option><option class="rv20" value="110 / 110">110 / 110</option><option class="rv21" value="110 / 220">110 / 220</option></optgroup>'
       $ench = '<option value="">- - - - - - - - - -</option><option value="Rare">Rare</option><option value="Heroic">Heroic</option><option value="Ancient">Ancient</option><option value="Legendary">Legendary</option>'
       $ether = '<option value="- - -">- - -</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>'
       $('.opt').find('.ax').each(function() {
@@ -2728,6 +2728,116 @@
           $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
         }
       });
+      $runN = $('.opt .ax-r').serializeArray();
+      $.each($runN, function(iN, n) {
+        $runV = $('.opt .ay-r').serializeArray()[iN];
+        if (n.value == 'ATK') {
+          $sAtk += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="ATK"]').text($sAtk);
+        } else if (n.value == 'ATK Spd') {
+          $sAspd += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+        } else if (n.value == 'Crit') {
+          $sCr += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Crit"]').text($sCr);
+        } else if (n.value == 'Crit DMG') {
+          $sCrD += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+        } else if (n.value == 'MP Recovery/Attack') {
+          $sMPa += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+        } else if (n.value == 'MP Recovery/Sec') {
+          $sMPs += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
+        } else if (n.value == 'Penetration') {
+          $sPen += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Penetration"]').text($sPen);
+        } else if (n.value == 'Lifesteal') {
+          $sLif += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+        } else if (n.value == 'ACC') {
+          $sAcc += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="ACC"]').text($sAcc);
+        } else if (n.value == 'Debuff ACC') {
+          $sDAcc += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Debuff ACC"]').text($sDAcc);
+        } else if (n.value == 'Max HP') {
+          $sHP += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        } else if (n.value == 'CC Resist') {
+          $sCC += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+        } else if (n.value == 'Block') {
+          $sBl += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Block"]').text($sBl);
+        } else if (n.value == 'P.Block') {
+          $sPBl += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
+        } else if (n.value == 'M.Block') {
+          $sMBl += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
+        } else if (n.value == 'Crit Resistance') {
+          $sCR += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
+        } else if (n.value == 'P.Crit Resistance') {
+          $sPCR += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
+        } else if (n.value == 'M.Crit Resistance') {
+          $sMCR += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
+        } else if (n.value == 'DEF') {
+          $sDef += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="DEF"]').text($sDef);
+        } else if (n.value == 'P.DEF') {
+          $sPDef += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+        } else if (n.value == 'M.DEF') {
+          $sMDef += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+        } else if (n.value == 'Dodge') {
+          $sDod += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Dodge"]').text($sDod);
+        } else if (n.value == 'P.Dodge') {
+          $sPDod += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
+        } else if (n.value == 'M.Dodge') {
+          $sMDod += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
+        } else if (n.value == 'Tough') {
+          $sTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Tough"]').text($sTgh);
+        } else if (n.value == 'P.Tough') {
+          $sPTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+        } else if (n.value == 'M.Tough') {
+          $sMTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+        } else if (n.value == 'Resistance') {
+          $sTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Tough"]').text($sTgh);
+        } else if (n.value == 'P.Resistance') {
+          $sPTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+        } else if (n.value == 'M.Resistance') {
+          $sMTgh += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+        } else if (n.value == 'Recovery') {
+          $sRec += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Recovery"]').text($sRec);
+        } else if (n.value == 'MP Recovery/DMG') {
+          $sMRec += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
+        } else if (n.value == 'P.Block DEF') {
+          $sDRPB += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
+        } else if (n.value == 'M.Block DEF') {
+          $sDRMB += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
+        } else if (n.value == 'MAX HP') {
+          $sHP += Number(parseFloat($runV.value));
+          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        }
+      });
     };
     $('.rating label').click(function() {
       if ($(this).parent().parent().parent().attr('id') == 'treasure')
@@ -2820,7 +2930,7 @@
           $(this).next('#s-per').text($softn/10 + '%')
       });
     };
-    $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm').change(function() {
+    $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
       option();
       gearStat();
       gearSet();

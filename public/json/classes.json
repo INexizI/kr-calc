@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "name": "Knight",
+    "base_stats": [
+      {"name": "Max HP", "value": 1706672},
+      {"name": "ATK", "value": 19792},
+      {"name": "P.DEF", "value": 8792},
+      {"name": "M.DEF", "value": 6840}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 50},
+      {"name": "P.Block", "value": 100},
+      {"name": "M.Block", "value": 100},
+      {"name": "P.Tough", "value": 250},
+      {"name": "M.Tough", "value": 250},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Warrior",
+    "base_stats": [
+      {"name": "Max HP", "value": 1449520},
+      {"name": "ATK", "value": 22488},
+      {"name": "P.DEF", "value": 7328},
+      {"name": "M.DEF", "value": 8792}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 150},
+      {"name": "Penetration", "value": 150},
+      {"name": "ACC", "value": 100},
+      {"name": "P.Dodge", "value": 100},
+      {"name": "M.Dodge", "value": 100},
+      {"name": "CC Resist", "value": 250},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Assassin",
+    "base_stats": [
+      {"name": "Max HP", "value": 1384992},
+      {"name": "ATK", "value": 24688},
+      {"name": "P.DEF", "value": 7816},
+      {"name": "M.DEF", "value": 6840}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 200},
+      {"name": "Crit DMG", "value": 30},
+      {"name": "ACC", "value": 100},
+      {"name": "P.Dodge", "value": 200},
+      {"name": "M.Dodge", "value": 200},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Archer",
+    "base_stats": [
+      {"name": "Max HP", "value": 1066728},
+      {"name": "ATK", "value": 27864},
+      {"name": "P.DEF", "value": 5376},
+      {"name": "M.DEF", "value": 4392}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 150},
+      {"name": "Penetration", "value": 250},
+      {"name": "ACC", "value": 100},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Mechanic",
+    "base_stats": [
+      {"name": "Max HP", "value": 1157176},
+      {"name": "ATK", "value": 25416},
+      {"name": "P.DEF", "value": 5376},
+      {"name": "M.DEF", "value": 4392}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 150},
+      {"name": "Crit DMG", "value": 50},
+      {"name": "Penetration", "value": 100},
+      {"name": "ACC", "value": 200},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Wizard",
+    "base_stats": [
+      {"name": "Max HP", "value": 985328},
+      {"name": "ATK", "value": 29328},
+      {"name": "P.DEF", "value": 3904},
+      {"name": "M.DEF", "value": 5864}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 100},
+      {"name": "Penetration", "value": 150},
+      {"name": "ACC", "value": 100},
+      {"name": "M.Dodge", "value": 200},
+      {"name": "M.Block", "value": 250},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Priest",
+    "base_stats": [
+      {"name": "Max HP", "value": 1104864},
+      {"name": "ATK", "value": 23216},
+      {"name": "P.DEF", "value": 4888},
+      {"name": "M.DEF", "value": 6104}
+    ],
+    "add_stats": [
+      {"name": "Crit", "value": 100},
+      {"name": "ACC", "value": 100},
+      {"name": "M.Block", "value": 500},
+      {"name": "M.Block DEF", "value": 250},
+      {"name": "M.Tough", "value": 150},
+      {"name": "ATK Spd", "value": 1000}
+    ]
+  }
+]
