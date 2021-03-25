@@ -998,10 +998,9 @@
       $opt = $(this).parent().parent().find('.ay-r');
       $opt.prop('selectedIndex', 0).find('optgroup');
       $(this).parent().next().children().find('optgroup').hide();
-      if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
+      $(this).parent().next().children().find('#q-velk').children().hide();
+      if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statRunes();
-        // gearStat();
-      }
     });
     $('select#calc_gear_treasure').change(function() {
       change_treasure();
@@ -1053,10 +1052,9 @@
       $statName = $(this);
       $opt = $(this).parent().parent().find('.ay-r');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
+      $(this).parent().next().children().find('#q-velk').children().hide();
+      if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statRunes();
-        // gearStat();
-      }
     });
     $('select#calc_gear_secondary').change(function() {
       change_secondary();
@@ -1087,10 +1085,9 @@
       $statName = $(this);
       $opt = $(this).parent().parent().find('.ay-r');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
-      if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
+      $(this).parent().next().children().find('#q-velk').children().hide();
+      if ($(this).children('option:selected').text() !== '- - - - - - - - - -')
         statRunes();
-        // gearStat();
-      }
     });
     $('select#calc_gear_jewelry').change(function() {
       change_jewerly();
@@ -2418,7 +2415,7 @@
       $axRw = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="Penetration">Penetration</option><option value="P.Block DEF">P.Block DEF</option><option value="P.Tough">P.Tough</option><option value="M.Block DEF">M.Block DEF</option><option value="M.Tough">M.Tough</option><option value="Lifesteal">Lifesteal</option><option value="MP Recovery/Attack">MP Recovery/Attack</option>'
       $axRa = '<option value="">- - - - - - - - - -</option><option value="Crit DMG">Crit DMG</option><option value="ACC">ACC</option><option value="P.Block">P.Block</option><option value="P.DEF">P.DEF</option><option value="M.Block">M.Block</option><option value="M.DEF">M.DEF</option><option value="CC Resist">CC Resist</option><option value="MAX HP">MAX HP</option>'
       $axRs = '<option value="">- - - - - - - - - -</option><option value="Crit">Crit</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option><option value="MP Recovery/DMG">MP Recovery/DMG</option>'
-      $rxVelk = '<option value="" disabled="disabled">-----Velkazar-----</option><option class="rv05" value="ATK / Penetration">ATK / Penetration</option><option class="rv05" value="ATK / Crit">ATK / Crit</option><option class="rv02" value="ATK / Crit DMG">ATK / Crit DMG</option><option class="rv05" value="ATK / ACC">ATK / ACC</option><option class="rv04" value="ATK / Tough">ATK / Tough</option><option class="rv01" value="ATK / DEF">ATK / DEF</option><option class="rv04" value="ATK / Dodge">ATK / Dodge</option><option class="rv04" value="ATK / Block">ATK / Block</option><option class="rv06" value="ATK / MP Recovery/Attack">ATK / MP Recovery/Attack</option><option class="rv01" value="ATK / MAX HP">ATK / MAX HP</option><option class="rv20" value="Cirt / Penetration">Cirt / Penetration</option><option class="rv10" value="Cirt DMG / Penetration">Cirt DMG / Penetration</option><option class="rv20" value="Penetration / ACC">Penetration / ACC</option><option class="rv19" value="Penetration / Tough">Penetration / Tough</option><option class="rv05" value="DEF / Penetration">DEF / Penetration</option><option class="rv19" value="Penetration / Dodge">Penetration / Dodge</option><option class="rv19" value="Penetration / Block">Penetration / Block</option><option class="rv21" value="Penetration / MP Recovery/Attack">Penetration / MP Recovery/Attack</option><option class="rv05" value="MAX HP / Penetration">MAX HP / Penetration</option><option class="rv17" value="Crit / Crit DMG">Crit / Crit DMG</option><option class="rv20" value="Crit / ACC">Crit / ACC</option><option class="rv19" value="Crit / Tough">Crit / Tough</option><option class="rv05" value="DEF / Crit">DEF / Crit</option><option class="rv19" value="Crit / Dodge">Crit / Dodge</option><option class="rv19" value="Crit / Block">Crit / Block</option><option class="rv21" value="Crit / MP Recovery/Attack">Crit / MP Recovery/Attack</option><option class="rv05" value="MAX HP / Crit">MAX HP / Crit</option><option class="rv10" value="Crit DMG / ACC">Crit DMG / ACC</option><option class="rv09" value="Crit DMG / Tough">Crit DMG / Tough</option><option class="rv02" value="DEF / Crit DMG">DEF / Crit DMG</option><option class="rv09" value="Crit DMG / Dodge">Crit DMG / Dodge</option><option class="rv09" value="Crit DMG / Block">Crit DMG / Block</option><option class="rv11" value="Crit DMG / MP Recovery/Attack">Crit DMG / MP Recovery/Attack</option><option class="rv02" value="MAX HP / Crit DMG">MAX HP / Crit DMG</option><option class="rv19" value="ACC / Tough">ACC / Tough</option><option class="rv05" value="DEF / ACC">DEF / ACC</option><option class="rv19" value="ACC / Dodge">ACC / Dodge</option><option class="rv19" value="ACC / Block">ACC / Block</option><option class="rv21" value="ACC / MP Recovery/Attack">ACC / MP Recovery/Attack</option><option class="rv05" value="MAX HP / ACC">MAX HP / ACC</option><option class="rv04" value="DEF / Tough">DEF / Tough</option><option class="rv14" value="Dodge / Tough">Dodge / Tough</option><option class="rv14" value="Block / Tough">Block / Tough</option><option class="rv16" value="Tough / MP Recovery/Attack">Tough / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Tough">MAX HP / Tough</option><option class="rv04" value="DEF / Dodge">DEF / Dodge</option><option class="rv04" value="DEF / Block">DEF / Block</option><option class="rv06" value="DEF / MP Recovery/Attack">DEF / MP Recovery/Attack</option><option class="rv01" value="DEF / MAX HP">DEF / MAX HP</option><option class="rv14" value="Dodge / Block">Dodge / Block</option><option class="rv16" value="Dodge / MP Recovery/Attack">Dodge / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Dodge">MAX HP / Dodge</option><option class="rv16" value="Block / MP Recovery/Attack">Block / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Block">MAX HP / Block</option><option class="rv06" value="MAX HP / MP Recovery/Attack">MAX HP / MP Recovery/Attack</option><option class="rv05" value="ATK / ATK Spd">ATK / ATK Spd</option><option class="rv10" value="Crit DMG / ATK Spd">Crit DMG / ATK Spd</option><option class="rv20" value="Crit / ATK Spd">Crit / ATK Spd</option><option class="rv05" value="MAX HP / ATK Spd">MAX HP / ATK Spd</option><option class="rv21" value="ATK Spd / MP Recovery/Attack">ATK Spd / MP Recovery/Attack</option><option class="rv15" value="Block / ATK Spd">Block / ATK Spd</option><option class="rv15" value="Tough / ATK Spd">Tough / ATK Spd</option><option class="rv05" value="Recovery / ATK Spd">Recovery / ATK Spd</option><option class="rv05" value="ATK / Lifesteal">ATK / Lifesteal</option><option class="rv20" value="Crit / Lifesteal">Crit / Lifesteal</option><option class="rv20" value="Lifesteal / ATK Spd">Lifesteal / ATK Spd</option><option class="rv10" value="Crit DMG / Lifesteal">Crit DMG / Lifesteal</option><option class="rv05" value="MAX HP / Lifesteal">MAX HP / Lifesteal</option><option class="rv20" value="CC Resist / Debuff ACC">CC Resist / Debuff ACC</option><option class="rv21" value="Debuff ACC / MP Recovery/Attack">Debuff ACC / MP Recovery/Attack</option><option class="rv20" value="ACC / Debuff ACC">ACC / Debuff ACC</option><option class="rv15" value="Tough / Debuff ACC">Tough / Debuff ACC</option><option class="rv20" value="Debuff ACC / ATK Spd">Debuff ACC / ATK Spd</option><option class="rv21" value="CC Resist / MP Recovery/Attack">CC Resist / MP Recovery/Attack</option><option class="rv05" value="Recovery / CC Resist">Recovery / CC Resist</option><option class="rv19" value="CC Resist / Crit Resistance">CC Resist / Crit Resistance</option><option class="rv15" value="Tough / CC Resist">Tough / CC Resist</option><option class="rv20" value="CC Resist / ATK Spd">CC Resist / ATK Spd</option><option class="rv03" value="ATK / MP Recovery/Sec">ATK / MP Recovery/Sec</option><option class="rv18" value="ATK Spd / MP Recovery/Sec">ATK Spd / MP Recovery/Sec</option><option class="rv08" value="Crit DMG / MP Recovery/Sec">Crit DMG / MP Recovery/Sec</option><option class="rv18" value="CC Resist / MP Recovery/Sec">CC Resist / MP Recovery/Sec</option><option class="rv13" value="Tough / MP Recovery/Sec">Tough / MP Recovery/Sec</option><option class="rv18" value="Debuff ACC / MP Recovery/Sec">Debuff ACC / MP Recovery/Sec</option><option class="rv07" value="P.DEF / MAX HP">P.DEF / MAX HP</option><option class="rv09" value="P.DEF / Tough">P.DEF / Tough</option><option class="rv07" value="M.DEF / MAX HP">M.DEF / MAX HP</option><option class="rv09" value="M.DEF / Tough">M.DEF / Tough</option><option class="rv12" value="Tough / Recovery">Tough / Recovery</option><option class="rv01" value="DEF / Recovery">DEF / Recovery</option><option class="rv12" value="Dodge / Recovery">Dodge / Recovery</option><option class="rv01" value="MAX HP / Recovery">MAX HP / Recovery</option><option class="rv14" value="Tough / Crit Resistance">Tough / Crit Resistance</option><option class="rv04" value="DEF / Crit Resistance">DEF / Crit Resistance</option><option class="rv04" value="Recovery / Crit Resistance">Recovery / Crit Resistance</option>'
+      $rxVelk = '<option value="" disabled="disabled">-----Velkazar-----</option><option class="rv05" value="ATK / Penetration">ATK / Penetration</option><option class="rv05" value="ATK / Crit">ATK / Crit</option><option class="rv02" value="ATK / Crit DMG">ATK / Crit DMG</option><option class="rv05" value="ATK / ACC">ATK / ACC</option><option class="rv04" value="ATK / Tough">ATK / Tough</option><option class="rv01" value="ATK / DEF">ATK / DEF</option><option class="rv04" value="ATK / Dodge">ATK / Dodge</option><option class="rv04" value="ATK / Block">ATK / Block</option><option class="rv06" value="ATK / MP Recovery/Attack">ATK / MP Recovery/Attack</option><option class="rv01" value="ATK / MAX HP">ATK / MAX HP</option><option class="rv20" value="Crit / Penetration">Crit / Penetration</option><option class="rv10" value="Crit DMG / Penetration">Crit DMG / Penetration</option><option class="rv20" value="Penetration / ACC">Penetration / ACC</option><option class="rv19" value="Penetration / Tough">Penetration / Tough</option><option class="rv05" value="DEF / Penetration">DEF / Penetration</option><option class="rv19" value="Penetration / Dodge">Penetration / Dodge</option><option class="rv19" value="Penetration / Block">Penetration / Block</option><option class="rv21" value="Penetration / MP Recovery/Attack">Penetration / MP Recovery/Attack</option><option class="rv05" value="MAX HP / Penetration">MAX HP / Penetration</option><option class="rv17" value="Crit / Crit DMG">Crit / Crit DMG</option><option class="rv20" value="Crit / ACC">Crit / ACC</option><option class="rv19" value="Crit / Tough">Crit / Tough</option><option class="rv05" value="DEF / Crit">DEF / Crit</option><option class="rv19" value="Crit / Dodge">Crit / Dodge</option><option class="rv19" value="Crit / Block">Crit / Block</option><option class="rv21" value="Crit / MP Recovery/Attack">Crit / MP Recovery/Attack</option><option class="rv05" value="MAX HP / Crit">MAX HP / Crit</option><option class="rv10" value="Crit DMG / ACC">Crit DMG / ACC</option><option class="rv09" value="Crit DMG / Tough">Crit DMG / Tough</option><option class="rv02" value="DEF / Crit DMG">DEF / Crit DMG</option><option class="rv09" value="Crit DMG / Dodge">Crit DMG / Dodge</option><option class="rv09" value="Crit DMG / Block">Crit DMG / Block</option><option class="rv11" value="Crit DMG / MP Recovery/Attack">Crit DMG / MP Recovery/Attack</option><option class="rv02" value="MAX HP / Crit DMG">MAX HP / Crit DMG</option><option class="rv19" value="ACC / Tough">ACC / Tough</option><option class="rv05" value="DEF / ACC">DEF / ACC</option><option class="rv19" value="ACC / Dodge">ACC / Dodge</option><option class="rv19" value="ACC / Block">ACC / Block</option><option class="rv21" value="ACC / MP Recovery/Attack">ACC / MP Recovery/Attack</option><option class="rv05" value="MAX HP / ACC">MAX HP / ACC</option><option class="rv04" value="DEF / Tough">DEF / Tough</option><option class="rv14" value="Dodge / Tough">Dodge / Tough</option><option class="rv14" value="Block / Tough">Block / Tough</option><option class="rv16" value="Tough / MP Recovery/Attack">Tough / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Tough">MAX HP / Tough</option><option class="rv04" value="DEF / Dodge">DEF / Dodge</option><option class="rv04" value="DEF / Block">DEF / Block</option><option class="rv06" value="DEF / MP Recovery/Attack">DEF / MP Recovery/Attack</option><option class="rv01" value="DEF / MAX HP">DEF / MAX HP</option><option class="rv14" value="Dodge / Block">Dodge / Block</option><option class="rv16" value="Dodge / MP Recovery/Attack">Dodge / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Dodge">MAX HP / Dodge</option><option class="rv16" value="Block / MP Recovery/Attack">Block / MP Recovery/Attack</option><option class="rv04" value="MAX HP / Block">MAX HP / Block</option><option class="rv06" value="MAX HP / MP Recovery/Attack">MAX HP / MP Recovery/Attack</option><option class="rv05" value="ATK / ATK Spd">ATK / ATK Spd</option><option class="rv10" value="Crit DMG / ATK Spd">Crit DMG / ATK Spd</option><option class="rv20" value="Crit / ATK Spd">Crit / ATK Spd</option><option class="rv05" value="MAX HP / ATK Spd">MAX HP / ATK Spd</option><option class="rv21" value="ATK Spd / MP Recovery/Attack">ATK Spd / MP Recovery/Attack</option><option class="rv15" value="Block / ATK Spd">Block / ATK Spd</option><option class="rv15" value="Tough / ATK Spd">Tough / ATK Spd</option><option class="rv05" value="Recovery / ATK Spd">Recovery / ATK Spd</option><option class="rv05" value="ATK / Lifesteal">ATK / Lifesteal</option><option class="rv20" value="Crit / Lifesteal">Crit / Lifesteal</option><option class="rv20" value="Lifesteal / ATK Spd">Lifesteal / ATK Spd</option><option class="rv10" value="Crit DMG / Lifesteal">Crit DMG / Lifesteal</option><option class="rv05" value="MAX HP / Lifesteal">MAX HP / Lifesteal</option><option class="rv20" value="CC Resist / Debuff ACC">CC Resist / Debuff ACC</option><option class="rv21" value="Debuff ACC / MP Recovery/Attack">Debuff ACC / MP Recovery/Attack</option><option class="rv20" value="ACC / Debuff ACC">ACC / Debuff ACC</option><option class="rv15" value="Tough / Debuff ACC">Tough / Debuff ACC</option><option class="rv20" value="Debuff ACC / ATK Spd">Debuff ACC / ATK Spd</option><option class="rv21" value="CC Resist / MP Recovery/Attack">CC Resist / MP Recovery/Attack</option><option class="rv05" value="Recovery / CC Resist">Recovery / CC Resist</option><option class="rv19" value="CC Resist / Crit Resistance">CC Resist / Crit Resistance</option><option class="rv15" value="Tough / CC Resist">Tough / CC Resist</option><option class="rv20" value="CC Resist / ATK Spd">CC Resist / ATK Spd</option><option class="rv03" value="ATK / MP Recovery/Sec">ATK / MP Recovery/Sec</option><option class="rv18" value="ATK Spd / MP Recovery/Sec">ATK Spd / MP Recovery/Sec</option><option class="rv08" value="Crit DMG / MP Recovery/Sec">Crit DMG / MP Recovery/Sec</option><option class="rv18" value="CC Resist / MP Recovery/Sec">CC Resist / MP Recovery/Sec</option><option class="rv13" value="Tough / MP Recovery/Sec">Tough / MP Recovery/Sec</option><option class="rv18" value="Debuff ACC / MP Recovery/Sec">Debuff ACC / MP Recovery/Sec</option><option class="rv07" value="P.DEF / MAX HP">P.DEF / MAX HP</option><option class="rv09" value="P.DEF / Tough">P.DEF / Tough</option><option class="rv07" value="M.DEF / MAX HP">M.DEF / MAX HP</option><option class="rv09" value="M.DEF / Tough">M.DEF / Tough</option><option class="rv12" value="Tough / Recovery">Tough / Recovery</option><option class="rv01" value="DEF / Recovery">DEF / Recovery</option><option class="rv12" value="Dodge / Recovery">Dodge / Recovery</option><option class="rv01" value="MAX HP / Recovery">MAX HP / Recovery</option><option class="rv14" value="Tough / Crit Resistance">Tough / Crit Resistance</option><option class="rv04" value="DEF / Crit Resistance">DEF / Crit Resistance</option><option class="rv04" value="Recovery / Crit Resistance">Recovery / Crit Resistance</option>'
       $tmOp = '<option value="">- - - - - - - - - -</option><option value="Increases ATK by 35% when there is 1 enemy.">Increases ATK by 35% when there is 1 enemy.</option><option value="Increases DEF by 45% when there is 1 enemy.">Increases DEF by 45% when there is 1 enemy.</option><option value="Increases ATK by 35% when there is 3 enemy.">Increases ATK by 35% when there is 3 enemy.</option><option value="Increases DEF by 45% when there is 3 enemy.">Increases DEF by 45% when there is 3 enemy.</option><option value="Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.">Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.</option><option value="Increases own DMG dealt to enemies by 25% when HP is above 95%.">Increases own DMG dealt to enemies by 25% when HP is above 95%.</option><option value="Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.">Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.</option><option value="Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.">Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.</option><option value="Reduces Cooldown of 1st Skill by 10% every 10 sec.">Reduces Cooldown of 1st Skill by 10% every 10 sec.</option><option value="Reduces Cooldown of 2nd Skill by 10% every 10 sec.">Reduces Cooldown of 2nd Skill by 10% every 10 sec.</option><option value="Reduces Cooldown of 3rd Skill by 10% every 10 sec.">Reduces Cooldown of 3rd Skill by 10% every 10 sec.</option><option value="Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.">Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.</option><option value="Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.">Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.</option><option value="Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.">Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.</option><option value="Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.">Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.</option><option value="Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.">Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.</option><option value="Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.">Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.</option><option value="Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.">Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.</option><option value="Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.">Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.</option><option value="Increases DMG of [DMG that ignores DEF] by 25%.">Increases DMG of [DMG that ignores DEF] by 25%.</option><option value="Increases DMG of [Continuous DMG] by 20%.">Increases DMG of [Continuous DMG] by 20%.</option><option value="Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.">Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.</option><option value="At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.">At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.</option><option value="Increases DEF by 7% per 1 enemy.">Increases DEF by 7% per 1 enemy.</option><option value="Increases ATK by 6% per 1 enemy.">Increases ATK by 6% per 1 enemy.</option><option value="Increases ATK of all allies by 5%.">Increases ATK of all allies by 5%.</option><option value="Increases Crit DMG of all allies by 10%.">Increases Crit DMG of all allies by 10%.</option><option value="Increases All DEF of all allies by 7%.">Increases All DEF of all allies by 7%.</option><option value="At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.">At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.</option><option value="Increases DMG of normal attacks by 25%.">Increases DMG of normal attacks by 25%.</option><option value="Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.">Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.</option><option value="Increases own Shield by 25%.">Increases own Shield by 25%.</option><option value="Heals HP equal to 1% of Max HP every sec.">Heals HP equal to 1% of Max HP every sec.</option><option value="Recovers own Mana by 500 every 5 sec.">Recovers own Mana by 500 every 5 sec.</option><option value="Reduces All DEF by 25% and increases ATK by 50%.">Reduces All DEF by 25% and increases ATK by 50%.</option><option value="Reduces ATK by 20% and increases All DEF by 50%.">Reduces ATK by 20% and increases All DEF by 50%.</option><option value="Reduces the duration of CCs inflicted upon self by 15%.">Reduces the duration of CCs inflicted upon self by 15%.</option><option value="Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.">Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.</option><option value="Fixes ATK Spd to 1000 and increases ATK by 40%.">Fixes ATK Spd to 1000 and increases ATK by 40%.</option><option value="Increases Crit DMG by 50%.">Increases Crit DMG by 50%.</option><option value="Increases ATK Spd by 250.">Increases ATK Spd by 250.</option><option value="Increases DEF Penetration by 250.">Increases DEF Penetration by 250.</option><option value="Increases Max HP by 25%.">Increases Max HP by 25%.</option><option value="Increases All Block by 250.">Increases All Block by 250.</option><option value="Increases All DEF by 25%.">Increases All DEF by 25%.</option><option value="Increases Crit Chance by 250.">Increases Crit Chance by 250.</option><option value="Increases ATK by 25%.">Increases ATK by 25%.</option><option value="Soul Weapon Usage Limit +1">Soul Weapon Usage Limit +1</option><option value="Level of [1st Skill] +7">Level of [1st Skill] +7</option><option value="Level of [2nd Skill] +7">Level of [2nd Skill] +7</option><option value="Level of [3rd Skill] +7">Level of [3rd Skill] +7</option><option value="Level of [4th Skill] +7">Level of [4th Skill] +7</option><option value="Level of [All Skill] +5">Level of [All Skill] +5</option>'
       $ay = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
@@ -2731,111 +2728,176 @@
       $runN = $('.opt .ax-r').serializeArray();
       $.each($runN, function(iN, n) {
         $runV = $('.opt .ay-r').serializeArray()[iN];
-        if (n.value == 'ATK') {
-          $sAtk += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="ATK"]').text($sAtk);
-        } else if (n.value == 'ATK Spd') {
-          $sAspd += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
-        } else if (n.value == 'Crit') {
-          $sCr += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Crit"]').text($sCr);
-        } else if (n.value == 'Crit DMG') {
-          $sCrD += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
-        } else if (n.value == 'MP Recovery/Attack') {
-          $sMPa += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
-        } else if (n.value == 'MP Recovery/Sec') {
-          $sMPs += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
-        } else if (n.value == 'Penetration') {
-          $sPen += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Penetration"]').text($sPen);
-        } else if (n.value == 'Lifesteal') {
-          $sLif += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
-        } else if (n.value == 'ACC') {
-          $sAcc += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="ACC"]').text($sAcc);
-        } else if (n.value == 'Debuff ACC') {
-          $sDAcc += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Debuff ACC"]').text($sDAcc);
-        } else if (n.value == 'Max HP') {
-          $sHP += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Max HP"]').text($sHP);
-        } else if (n.value == 'CC Resist') {
-          $sCC += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="CC Resist"]').text($sCC);
-        } else if (n.value == 'Block') {
-          $sBl += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Block"]').text($sBl);
-        } else if (n.value == 'P.Block') {
-          $sPBl += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Block"]').text($sPBl);
-        } else if (n.value == 'M.Block') {
-          $sMBl += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Block"]').text($sMBl);
-        } else if (n.value == 'Crit Resistance') {
-          $sCR += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
-        } else if (n.value == 'P.Crit Resistance') {
-          $sPCR += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Crit Resistance"]').text($sPCR);
-        } else if (n.value == 'M.Crit Resistance') {
-          $sMCR += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Crit Resistance"]').text($sMCR);
-        } else if (n.value == 'DEF') {
-          $sDef += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="DEF"]').text($sDef);
-        } else if (n.value == 'P.DEF') {
-          $sPDef += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
-        } else if (n.value == 'M.DEF') {
-          $sMDef += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
-        } else if (n.value == 'Dodge') {
-          $sDod += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Dodge"]').text($sDod);
-        } else if (n.value == 'P.Dodge') {
-          $sPDod += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
-        } else if (n.value == 'M.Dodge') {
-          $sMDod += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
-        } else if (n.value == 'Tough') {
-          $sTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Tough"]').text($sTgh);
-        } else if (n.value == 'P.Tough') {
-          $sPTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-        } else if (n.value == 'M.Tough') {
-          $sMTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-        } else if (n.value == 'Resistance') {
-          $sTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Tough"]').text($sTgh);
-        } else if (n.value == 'P.Resistance') {
-          $sPTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-        } else if (n.value == 'M.Resistance') {
-          $sMTgh += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-        } else if (n.value == 'Recovery') {
-          $sRec += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Recovery"]').text($sRec);
-        } else if (n.value == 'MP Recovery/DMG') {
-          $sMRec += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
-        } else if (n.value == 'P.Block DEF') {
-          $sDRPB += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
-        } else if (n.value == 'M.Block DEF') {
-          $sDRMB += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
-        } else if (n.value == 'MAX HP') {
-          $sHP += Number(parseFloat($runV.value));
-          $('.totalStat').find('p[name="Max HP"]').text($sHP);
+        if (n.value.search(' / ') == -1) {
+          if (n.value == 'ATK') {
+            $sAtk += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="ATK"]').text($sAtk);
+          } else if (n.value == 'Crit') {
+            $sCr += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Crit"]').text($sCr);
+          } else if (n.value == 'Crit DMG') {
+            $sCrD += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+          } else if (n.value == 'MP Recovery/Attack') {
+            $sMPa += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+          } else if (n.value == 'Penetration') {
+            $sPen += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Penetration"]').text($sPen);
+          } else if (n.value == 'Lifesteal') {
+            $sLif += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+          } else if (n.value == 'ACC') {
+            $sAcc += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="ACC"]').text($sAcc);
+          } else if (n.value == 'MAX HP') {
+            $sHP += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Max HP"]').text($sHP);
+          } else if (n.value == 'CC Resist') {
+            $sCC += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+          } else if (n.value == 'P.Block') {
+            $sPBl += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="P.Block"]').text($sPBl);
+          } else if (n.value == 'M.Block') {
+            $sMBl += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="M.Block"]').text($sMBl);
+          } else if (n.value == 'P.DEF') {
+            $sPDef += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+          } else if (n.value == 'M.DEF') {
+            $sMDef += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+          } else if (n.value == 'P.Dodge') {
+            $sPDod += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="P.Dodge"]').text($sPDod);
+          } else if (n.value == 'M.Dodge') {
+            $sMDod += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="M.Dodge"]').text($sMDod);
+          } else if (n.value == 'P.Tough') {
+            $sPTgh += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+          } else if (n.value == 'M.Tough') {
+            $sMTgh += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+          } else if (n.value == 'MP Recovery/DMG') {
+            $sMRec += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
+          } else if (n.value == 'P.Block DEF') {
+            $sDRPB += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
+          } else if (n.value == 'M.Block DEF') {
+            $sDRMB += Number(parseFloat($runV.value));
+            $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
+          }
+        }
+        if (n.value.search(' / ') !== -1) {
+          if (n.value.split(' / ').shift() == 'ACC') {
+            $sAcc += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="ACC"]').text($sAcc);
+          } else if (n.value.split(' / ').shift() == 'ATK') {
+            $sAtk += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="ATK"]').text($sAtk);
+          } else if (n.value.split(' / ').shift() == 'ATK Spd') {
+            $sAspd += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+          } else if (n.value.split(' / ').shift() == 'Block') {
+            $sBl += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Block"]').text($sBl);
+          } else if (n.value.split(' / ').shift() == 'CC Resist') {
+            $sCC += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+          } else if (n.value.split(' / ').shift() == 'Crit') {
+            $sCr += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Crit"]').text($sCr);
+          } else if (n.value.split(' / ').shift() == 'Crit DMG') {
+            $sCrD += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+          } else if (n.value.split(' / ').shift() == 'Debuff ACC') {
+            $sDAcc += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Debuff ACC"]').text($sDAcc);
+          } else if (n.value.split(' / ').shift() == 'DEF') {
+            $sDef += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="DEF"]').text($sDef);
+          } else if (n.value.split(' / ').shift() == 'Dodge') {
+            $sDod += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Dodge"]').text($sDod);
+          } else if (n.value.split(' / ').shift() == 'Lifesteal') {
+            $sLif += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+          } else if (n.value.split(' / ').shift() == 'MAX HP') {
+            $sHP += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Max HP"]').text($sHP);
+          } else if (n.value.split(' / ').shift() == 'M.DEF') {
+            $sMDef += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="M.DEF"]').text($sMDef);
+          } else if (n.value.split(' / ').shift() == 'P.DEF') {
+            $sPDef += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="P.DEF"]').text($sPDef);
+          } else if (n.value.split(' / ').shift() == 'Penetration') {
+            $sPen += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Penetration"]').text($sPen);
+          } else if (n.value.split(' / ').shift() == 'Recovery') {
+            $sRec += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Recovery"]').text($sRec);
+          } else if (n.value.split(' / ').shift() == 'Tough') {
+            $sTgh += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="Tough"]').text($sTgh);
+          } else if (n.value.split(' / ').shift() == 'ACC') {
+            $sAcc += Number(parseFloat($runV.value.split(' / ').shift()));
+            $('.totalStat').find('p[name="ACC"]').text($sAcc);
+          // } else if (n.value.split(' / ').pop() == 'Crit Resistance') {
+          //   $sCR += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Crit Resistance"]').text($sCR);
+          // } else if (n.value.split(' / ').pop() == 'ATK Spd') {
+          //   $sAspd += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
+          // } else if (n.value.split(' / ').pop() == 'Block') {
+          //   $sBl += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Block"]').text($sBl);
+          // } else if (n.value.split(' / ').pop() == 'CC Resist') {
+          //   $sCC += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="CC Resist"]').text($sCC);
+          // } else if (n.value.split(' / ').pop() == 'Crit') {
+          //   $sCr += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Crit"]').text($sCr);
+          // } else if (n.value.split(' / ').pop() == 'Crit DMG') {
+          //   $sCrD += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Crit DMG"]').text($sCrD);
+          // } else if (n.value.split(' / ').pop() == 'Debuff ACC') {
+          //   $sDAcc += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Debuff ACC"]').text($sDAcc);
+          // } else if (n.value.split(' / ').pop() == 'DEF') {
+          //   $sDef += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="DEF"]').text($sDef);
+          // } else if (n.value.split(' / ').pop() == 'Dodge') {
+          //   $sDod += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Dodge"]').text($sDod);
+          // } else if (n.value.split(' / ').pop() == 'Lifesteal') {
+          //   $sLif += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Lifesteal"]').text($sLif);
+          // } else if (n.value.split(' / ').pop() == 'MAX HP') {
+          //   $sHP += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Max HP"]').text($sHP);
+          // } else if (n.value.split(' / ').pop() == 'Penetration') {
+          //   $sPen += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Penetration"]').text($sPen);
+          // } else if (n.value.split(' / ').pop() == 'Recovery') {
+          //   $sRec += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Recovery"]').text($sRec);
+          // } else if (n.value.split(' / ').pop() == 'Tough') {
+          //   $sTgh += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="Tough"]').text($sTgh);
+          // } else if (n.value.split(' / ').pop() == 'ACC') {
+          //   $sAcc += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="ACC"]').text($sAcc);
+          // } else if (n.value.split(' / ').pop() == 'MP Recovery/Attack') {
+          //   $sMPa += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
+          // } else if (n.value.split(' / ').pop() == 'MP Recovery/Sec') {
+          //   $sMPs += Number(parseFloat($runV.value.split(' / ').pop()));
+          //   $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
+          }
         }
       });
     };

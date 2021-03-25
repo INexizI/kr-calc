@@ -976,15 +976,7 @@ h4 {
         .ay-r {
           position: relative;
           min-width: 65px;
-        }
-        #calc_st_rune_w {
-          left: 70px;
-        }
-        #calc_st_rune_a {
-          left: 46px;
-        }
-        #calc_st_rune_s {
-          left: 65px;
+          left: 75px;
         }
       }
       #g-right {
@@ -1023,19 +1015,11 @@ h4 {
           height: 0px;
           position: relative;
           top: 4px;
+          right: 75px;
           img {
             width: 20px;
             height: 20px;
           }
-        }
-        #rune-w {
-          right: 74px;
-        }
-        #rune-a {
-          right: 55px;
-        }
-        #rune-s {
-          right: 73px;
         }
         .calc_rune_w_1, .calc_rune_w_2, .calc_rune_w_3, .calc_rune_a, .calc_rune_s {
           height: 0;
@@ -1069,6 +1053,7 @@ h4 {
       width: 270px;
       position: relative;
       right: 35px;
+      margin: -1px 0 !important;
       .input {
         width: fit-content;
         .ench-t {
@@ -1076,6 +1061,7 @@ h4 {
         }
         .ench-n {
           width: 150px;
+          margin: 0 1px;
         }
         .ench-v {
           width: 50px;
