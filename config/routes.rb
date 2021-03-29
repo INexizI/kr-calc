@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :runes
   root to: 'home#index'
 
   resources :calcs
@@ -10,6 +9,7 @@ Rails.application.routes.draw do
   resources :skills
   resources :gears
   resources :enchants
+  resources :runes
 
   get :search, controller: :search
 end

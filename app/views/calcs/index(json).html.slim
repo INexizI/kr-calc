@@ -5,11 +5,11 @@ title Calculator
     = simple_form_for :calc do |f|
       .form-input
         label for='role_id' Class
-        = f.collection_select :role_id, @roles, :id, :name, prompt: '----------'
+        = f.input :role_id, as: :select, collection: [], required: false, label: false, include_blank: false
 
       .form-input#char
         label for='char_id' Hero
-        = f.grouped_collection_select :char_id, @roles, :chars, :name, :id, :name
+        = f.input :char_id, as: :select, collection: [], required: false, label: false, include_blank: false
 
       .heroGear
         div
@@ -53,18 +53,19 @@ title Calculator
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.png" title='Runes for Weapons'
-                = f.collection_select :rune_w_1, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
-                = f.select :st_rune_w_1, @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                = f.input :rune_w_1, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
+                = f.input :st_rune_w_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.png" title='Runes for Weapons'
-                = f.collection_select :rune_w_2, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
-                = f.select :st_rune_w_2, @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                = f.input :rune_w_2, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
+                = f.input :st_rune_w_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.png" title='Runes for Weapons'
-                = f.collection_select :rune_w_3, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
-                = f.select :st_rune_w_3, @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                = f.input :rune_w_3, as: :select, collection: ['ATK', 'Penetration', 'P.Block DEF', 'P.Tough', 'M.Block DEF', 'M.Tough', 'Lifesteal', 'MP Recovery/Attack'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_w'}
+                = f.input :st_rune_w_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_w'}
+
           .form-input
             = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic', 'Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
@@ -102,8 +103,8 @@ title Calculator
               .opt#rune
                 p#rune-a
                   img src="/images/media/icons/runeA.png" title='Runes for Armor'
-                = f.collection_select :rune_a, @runes.where(type_gear: ['armor', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_a'}
-                = f.select :st_rune_a, @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_a'}
+                = f.input :rune_a, as: :select, collection: ['Crit DMG', 'ACC', 'P.Block', 'P.DEF', 'M.Block', 'M.DEF', 'CC Resist', 'MAX HP'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_a'}
+                = f.input :st_rune_a, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_a'}
             .gTM#g-left
               .opt
                 = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
@@ -154,8 +155,8 @@ title Calculator
               .opt#rune
                 p#rune-s
                   img src="/images/media/icons/runeS.png" title='Runes for Secondary Gear'
-                = f.collection_select :rune_s, @runes.where(type_gear: ['secondary', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_s'}
-                = f.select :st_rune_s, @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_s'}
+                = f.input :rune_s, as: :select, collection: ['Crit', 'P.Dodge', 'M.Dodge', 'MP Recovery/DMG'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-r', id: 'calc_rune_s'}
+                = f.input :st_rune_s, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-r', id: 'calc_st_rune_s'}
             .gTM#g-left
               .opt
                 = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
@@ -346,11 +347,11 @@ title Calculator
   .totalStat#calc
     .hero-img
       - @chars.each do |c|
-        .hch class='hero-#{c.id}'
+        .hch class='hero-#{c['id']}'
           .heroPerk
             .hero-avatar
-              img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
-              p = c.name
+              img src='/images/media/heroes/#{c['name'].downcase}/portrait.png'
+              p = c['name']
             .c-sub
               .perk-tp
                 img src='/images/slash.svg' id='tp-r'
@@ -367,7 +368,7 @@ title Calculator
                         .p4
                           = perk.description
                 .c-p#perk-t2
-                  - @perks.where(tier: c.role.name).each do |perk|
+                  - @perks.where(tier: c['role_id']).each do |perk|
                     .c-perk-img
                       img src="/images/media/genericPerks/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
@@ -377,35 +378,35 @@ title Calculator
                           = perk.description
                 .c-p#perk-t3
                   .c-pepe
-                    - @perks.where(tier: c.name).where(perk_type: 'hero').each do |perk|
+                    - @perks.where(tier: c['name']).where(perk_type: 'hero').each do |perk|
                       .c-perk-img
-                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png" id=perk.sequence
+                        img src="/images/media/heroes/#{c['name']}/#{perk.sequence}.png" id=perk.sequence
                         .calc-s-description
                           .p1
                             = perk.name
                           .p4
                             = perk.description
                 .c-p#perk-t5
-                  - @perks.where(tier: c.name, perk_type: 't5').each do |perk|
+                  - @perks.where(tier: c['name'], perk_type: 't5').each do |perk|
                     .c-perk-img
-                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png" id=perk.sequence
+                      img src="/images/media/heroes/#{c['name']}/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
                         .p1
-                          = c.name + ' ' + '[' + perk.name.capitalize + ']'
+                          = c['name'] + ' ' + '[' + perk.name.capitalize + ']'
                         .p4
                           = perk.description
           .heroImg
             div
               p#p1 Class
-              p#p2 = c.role.name
+              p#p2 = c['role_id']
             div
               p#p1 ATK Type
               p#p2
-                img src='/images/media/#{c.type_dmg}.png'
-                = c.type_dmg
+                img src='/images/media/#{c['type_dmg']}.png'
+                = c['type_dmg']
             div
               p#p1 Position
-              p#p2 = c.position
+              p#p2 = c['position']
 
     .t-st
       p#heroATK

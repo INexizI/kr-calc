@@ -9,13 +9,16 @@ br
   - @runes.each do |rune|
     = rune.name
     br
-    - rune.value.each do |val|
-      = val
-      |  
+    = rune.value
     br
     = rune.tier
     br
-    = rune.type_gear
+    - if rune.type_gear == 'weapon'
+      img src="/images/media/icons/runeW.png" title='Runes for Secondary Gear'
+    - if rune.type_gear == 'armor'
+      img src="/images/media/icons/runeA.png" title='Runes for Secondary Gear'
+    - if rune.type_gear == 'secondary'
+      img src="/images/media/icons/runeS.png" title='Runes for Secondary Gear'
     hr
 
 = link_to 'New Rune', new_rune_path
