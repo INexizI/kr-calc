@@ -600,7 +600,6 @@
         $('#uw label').filter('.active').removeClass('active');
       }
       $('#wea').text($('#greyATK').text());
-      // $('#uw label').filter('.active').removeClass('active');
     };
     function change_sw_adv() {
       $('.w-ad-ench').html($ether);
@@ -755,7 +754,6 @@
         $('#ut label').filter('.active').removeClass('active');
       }
       $('#tre').text($('#greyTR').text());
-      // $('#ut label').filter('.active').removeClass('active');
     };
     function change_armor() {
       $('#heroPDEF').empty();
@@ -820,7 +818,6 @@
         gearStat();
       }
       $('#arm').text($('#greyPDEF').text());
-      // $('#ar label').filter('.active').removeClass('active');
     };
     function change_secondary() {
       $('#heroMDEF').empty();
@@ -885,7 +882,6 @@
         gearStat();
       }
       $('#sec').text($('#greyMDEF').text());
-      // $('#sg label').filter('.active').removeClass('active');
     };
     function change_jewerly() {
       $('#heroJ').empty();
@@ -945,7 +941,6 @@
         gearStat();
       }
       $('#acc').text($('#greyJ').text());
-      // $('#ac label').filter('.active').removeClass('active');
     };
     function change_orb() {
       $('#heroO').empty();
@@ -982,7 +977,6 @@
         gearStat();
       }
       $('#orb').text($('#greyO').text());
-      // $('#or label').filter('.active').removeClass('active');
     };
     $('select#calc_role_id').change(function() {
       change_role();
@@ -1002,9 +996,9 @@
     $('select#calc_rune_w').change(function() {
       $statName = $(this);
       $statVal = $(this).val();
-      $(this).parent().find('.ay-r').children().hide();
-      $(this).parent().find('.ay-r').prop('selectedIndex', 0);
-      $(this).parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
+      $(this).parent().parent().find('.ay-r').children().hide();
+      $(this).parent().parent().find('.ay-r').prop('selectedIndex', 0);
+      $(this).parent().parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
     });
     $('select#calc_gear_treasure').change(function() {
       change_treasure();
@@ -1035,7 +1029,7 @@
       $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
-        statOption();
+        statTM();
         gearStat();
       }
     });
@@ -1055,19 +1049,19 @@
     $('select#calc_rune_a').change(function() {
       $statName = $(this);
       $statVal = $(this).val();
-      $(this).parent().find('.ay-r').children().hide();
-      $(this).parent().find('.ay-r').prop('selectedIndex', 0);
-      $(this).parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
+      $(this).parent().parent().find('.ay-r').children().hide();
+      $(this).parent().parent().find('.ay-r').prop('selectedIndex', 0);
+      $(this).parent().parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
     });
     $('select#calc_gear_secondary').change(function() {
       change_secondary();
     }).change();
     $('select#calc_st_secondary').change(function() {
       $statName = $(this);
-      $opt = $(this).parent().parent().find('.ay, ay-tm');
+      $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
-        statOption();
+        statTM();
         gearStat();
       }
     });
@@ -1087,9 +1081,9 @@
     $('select#calc_rune_s').change(function() {
       $statName = $(this);
       $statVal = $(this).val();
-      $(this).parent().find('.ay-r').children().hide();
-      $(this).parent().find('.ay-r').prop('selectedIndex', 0);
-      $(this).parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
+      $(this).parent().parent().find('.ay-r').children().hide();
+      $(this).parent().parent().find('.ay-r').prop('selectedIndex', 0);
+      $(this).parent().parent().find('.ay-r').children('[name="' + $statVal + '"], option:first').show();
     });
     $('select#calc_gear_jewelry').change(function() {
       change_jewerly();
@@ -1099,7 +1093,7 @@
       $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
-        statOption();
+        statTM();
         gearStat();
       }
     });
@@ -1124,7 +1118,7 @@
       $opt = $(this).parent().parent().find('.ay, .ay-tm');
       $opt.prop('selectedIndex', 0).find('optgroup').hide();
       if ($(this).children('option:selected').text() !== '- - - - - - - - - -') {
-        statOption();
+        statTM();
         gearStat();
       }
     });
@@ -2346,6 +2340,24 @@
         });
       });
     };
+    function statTM() {
+      $('.opt').find($statName).each(function() {
+        $(this).parent().next().children().find('optgroup').hide();
+        $st = $(this).children('option:selected').text();
+        if (($st == 'ATK') || ($st == 'Max HP'))
+          $(this).parent().next().children().find('#q1').show();
+        else if (($st == 'Crit DMG') || ($st == 'P.DEF') || ($st == 'M.DEF'))
+          $(this).parent().next().children().find('#q2').show();
+        else if ($st == 'MP Recovery/Sec')
+          $(this).parent().next().children().find('#q3').show();
+        else if (($st == 'ATK Spd') || ($st == 'Crit') || ($st == 'Penetration') || ($st == 'Lifesteal') || ($st == 'ACC') || ($st == 'Debuff ACC') || ($st == 'CC Resist') || ($st == 'P.Dodge') || ($st == 'M.Dodge'))
+          $(this).parent().next().children().find('#q4').show();
+        else if (($st == 'MP Recovery/Attack') || ($st == 'P.Block') || ($st == 'M.Block') || ($st == 'P.Crit Resistance') || ($st == 'M.Crit Resistance'))
+          $(this).parent().next().children().find('#q5').show();
+        else
+          $(this).parent().next().children().find('#q').show();
+      });
+    };
     function statOptionTreasure() {
       $starTr = $('#ut').find('.active').next('input').val();
       $ayTr = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option></optgroup><optgroup id="q6" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option></optgroup>'
@@ -2898,13 +2910,13 @@
           $sMPs += Number(parseFloat($runV.value.split(' / ').pop()));
           $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
         } else if (n.value == 'ATK Spd / MP Recovery/Attack') {
-          $sAtk += Number(parseFloat($runV.value.split(' / ').shift()));
-          $('.totalStat').find('p[name="ATK Spd"]').text($sAtk);
+          $sAspd += Number(parseFloat($runV.value.split(' / ').shift()));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
           $sMPa += Number(parseFloat($runV.value.split(' / ').pop()));
           $('.totalStat').find('p[name="MP Recovery/Attack"]').text($sMPa);
-        } else if (n.value == 'ATK Spd / MP Recovery/Attack') {
-          $sAtk += Number(parseFloat($runV.value.split(' / ').shift()));
-          $('.totalStat').find('p[name="ATK Spd"]').text($sAtk);
+        } else if (n.value == 'ATK Spd / MP Recovery/Sec') {
+          $sAspd += Number(parseFloat($runV.value.split(' / ').shift()));
+          $('.totalStat').find('p[name="ATK Spd"]').text($sAspd);
           $sMPs += Number(parseFloat($runV.value.split(' / ').pop()));
           $('.totalStat').find('p[name="MP Recovery/Sec"]').text($sMPs);
         } else if (n.value == 'Block / ATK Spd') {
