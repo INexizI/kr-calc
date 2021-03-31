@@ -114,11 +114,11 @@ title Calculator
                   = f.select :st_rune_a, @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_a'}
             .gTM#g-left
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_armor'}
+                = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_armor_st'}
               .opt
-                = f.input :st_armor, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_armor_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_armor'}
+                = f.input :st_armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_armor_st'}
               .opt#tm
                 = f.input :st_armor_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
               .opt#rune
@@ -172,11 +172,11 @@ title Calculator
                   = f.select :st_rune_s, @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_s'}
             .gTM#g-left
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :secondary_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_secondary'}
+                = f.input :st_secondary_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_secondary_st'}
               .opt
-                = f.input :st_secondary, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_secondary_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :secondary_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_secondary'}
+                = f.input :st_secondary_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_secondary_st'}
               .opt#tm
                 = f.input :st_secondary_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
               .opt#rune
@@ -271,11 +271,11 @@ title Calculator
                 = f.input :ench_j_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :jewerly_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_jewerly_st'}
               .opt
-                = f.input :st_jewerly, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_jewerly_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :jewerly_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_jewerly'}
+                = f.input :st_jewerly_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_jewerly_st'}
               .opt#tm
                 = f.input :st_jewerly_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
@@ -315,11 +315,11 @@ title Calculator
                 = f.input :ench_orb_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :orb_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_orb'}
+                = f.input :st_orb_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_orb_st'}
               .opt
-                = f.input :st_orb, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm'}
-                = f.input :st_orb_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm'}
+                = f.input :orb_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'ax-tm', id: 'calc_st_orb'}
+                = f.input :st_orb_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay-tm', id: 'calc_st_orb_st'}
               .opt#tm
                 = f.input :st_orb_op, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'tm-op'}
 
