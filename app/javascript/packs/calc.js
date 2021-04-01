@@ -10,12 +10,12 @@
           $lk_sl.push(n);
         if (this.name == 'calc[gear_treasure]')
           $lk_sl.push(
-            {name: 'uw', value: $starW},
-            {name: 'ar', value: $starAr},
-            {name: 'sg', value: $starSe},
-            {name: 'ut', value: $starTr},
-            {name: 'ac', value: $starJ},
-            {name: 'or', value: $starO}
+            {name: 'uwS', value: $starW},
+            {name: 'arS', value: $starAr},
+            {name: 'sgS', value: $starSe},
+            {name: 'utS', value: $starTr},
+            {name: 'acS', value: $starJ},
+            {name: 'orS', value: $starO}
           );
       });
       $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl),'/').toString());
@@ -94,12 +94,20 @@
         }
         if ((x.slice(0, -3) + ']' == 'calc[armor]') || (x.slice(0, -3) + ']' == 'calc[secondary]') || (x.slice(0, -3) + ']' == 'calc[jewerly]') || (x.slice(0, -3) + ']' == 'calc[orb]')) {
           $statName = $('[name="' + x + '"]');
-          $opt = $('[name="' + x + '"]').parent().parent().find('.ay, .ay-tm');
+          $opt = $('[name="' + x + '"]').parent().parent().find('.ay');
           $opt.prop('selectedIndex', 0).find('optgroup').hide();
           statOption();
         }
+        if ((x.slice(0, -3) + ']' == 'calc[armor_tm]') || (x.slice(0, -3) + ']' == 'calc[secondary_tm]') || (x.slice(0, -3) + ']' == 'calc[jewerly_tm]') || (x.slice(0, -3) + ']' == 'calc[orb_tm]')) {
+          $statName = $('[name="' + x + '"]');
+          $opt = $('[name="' + x + '"]').parent().parent().find('.ay-tm');
+          $opt.prop('selectedIndex', 0).find('optgroup').hide();
+          statTM();
+        }
         if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
-          $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+          $('.gOption').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+        if ((x.slice(0, -3) + ']' == 'calc[st_armor_tm]') || (x.slice(0, -3) + ']' == 'calc[st_secondary_tm]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly_tm]') || (x.slice(0, -3) + ']' == 'calc[st_orb_tm]'))
+          $('.gTM').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -5) + ']' == 'calc[st_rune]')) {
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
           $statVal = $('[name="' + x + '"]').prev().val();
@@ -142,7 +150,7 @@
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
         if (x == 'calc[jewelry_type]')
           $jewelType = y;
-        if ((x == 'uw') || (x == 'ar') || (x == 'sg') || (x == 'ut') || (x == 'ac') || (x == 'or')) {
+        if ((x == 'uwS') || (x == 'arS') || (x == 'sgS') || (x == 'utS') || (x == 'acS') || (x == 'orS')) {
           statOptionTreasure();
           $('#' + x).find('label').removeClass('active');
           $('#' + x).find('.bt' + y).addClass('active');
