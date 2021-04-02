@@ -17,6 +17,23 @@
             {name: 'acS', value: $starJ},
             {name: 'orS', value: $starO}
           );
+        if (this.name == 'calc[char_id]')
+          $('.hero-' + this.value + ' #perk-t1').find('img').each(function() {
+            if ($(this).attr('class') == 'pick')
+              $lk_sl.push({name: 'perk-t1', value: $(this).attr('id')})
+          });
+          $('.hero-' + this.value + ' #perk-t2').find('img').each(function() {
+            if ($(this).attr('class') == 'pick')
+              $lk_sl.push({name: 'perk-t2', value: $(this).attr('id')})
+          });
+          $('.hero-' + this.value + ' #perk-t3').find('img').each(function() {
+            if ($(this).attr('class') == 'pick')
+              $lk_sl.push({name: 'perk-t3', value: $(this).attr('id')})
+          });
+          $('.hero-' + this.value + ' #perk-t5').find('img').each(function() {
+            if ($(this).attr('class') == 'pick')
+              $lk_sl.push({name: 'perk-t5', value: $(this).attr('id')})
+          });
       });
       $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl),'/').toString());
     });
@@ -158,6 +175,20 @@
           gearStat();
           gearSet();
         }
+        if ((x == 'perk-t1') || (x == 'perk-t2') || (x == 'perk-t3') || (x == 'perk-t5')) {
+          $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
+          perkTP();
+          $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
+            if ($tp == 0)
+              $('.perk-tp p').css('color', 'black');
+            else if (($tp > 0) && ($tp < 100))
+              $('.perk-tp p').css('color', 'greenyellow');
+            else if ($tp > 95) {
+              $('.perk-tp p').css('color', 'darkred');
+              alert('Not Enogh TP');
+            }
+          $('.perk-tp p').text($tp);
+        }
       });
       heroImg();
       option();
@@ -179,7 +210,7 @@
       $('.form-input .gSt .rating').hide();
       $('.rating').find('label').removeClass('active');
       $('.c-perk-img').find('img').removeClass('pick');
-      $('.perk-tp').find('p').text(0);
+      $('.perk-tp').find('p').text(0).css('color', 'black');
       $('.t-st p').empty();
       $('.gOption, .gTM').hide();
       $('select#calc_st_rune_w, select#calc_st_rune_a, select#calc_st_rune_s').find('option').hide();
