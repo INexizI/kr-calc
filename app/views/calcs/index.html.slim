@@ -106,7 +106,6 @@ title Calculator
                   = f.collection_select :armor_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench
-                = f.input :ench_type_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
               .opt#rune
@@ -171,7 +170,6 @@ title Calculator
                   = f.collection_select :secondary_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
                 = f.input :st_secondary_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt-ench
-                = f.input :ench_type_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
               .opt#rune
@@ -292,7 +290,6 @@ title Calculator
                   = f.collection_select :jewerly_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
                 = f.input :st_jewerly_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt-ench
-                = f.input :ench_type_j, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_j, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_j_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
@@ -343,7 +340,6 @@ title Calculator
                   = f.collection_select :orb_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
                 = f.input :st_orb_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt-ench
-                = f.input :ench_type_orb, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-t'}
                 = f.input :ench_orb, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
                 = f.input :ench_orb_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right

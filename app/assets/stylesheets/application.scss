@@ -1059,19 +1059,17 @@ h4 {
       display: flex;
       width: 270px;
       position: relative;
-      right: 35px;
-      margin: -1px 0 !important;
+      right: 3px;
       .input {
         width: fit-content;
-        .ench-t {
-          width: 70px;
-        }
+        margin: 0 1px;
         .ench-n {
           width: 150px;
-          margin: 0 1px;
+          height: 20px;
         }
         .ench-v {
           width: 50px;
+          height: 20px;
         }
       }
       select {

@@ -36,11 +36,11 @@
           });
         }
       });
-      $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl),'/').toString());
+      $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl), '/').toString());
     });
     $('button#btn-load').click(function(e) {
       e.preventDefault();
-      $sl = CryptoJS.AES.decrypt($('#share_link').val(),"/");
+      $sl = CryptoJS.AES.decrypt($('#share_link').val(), '/');
       $(JSON.parse($sl.toString(CryptoJS.enc.Utf8))).each(function(i, n) {
         var x = this.name;
         var y = this.value;
@@ -180,14 +180,14 @@
           $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
           perkTP();
           $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-            if ($tp == 0)
-              $('.perk-tp p').css('color', 'black');
-            else if (($tp > 0) && ($tp < 100))
-              $('.perk-tp p').css('color', 'greenyellow');
-            else if ($tp > 95) {
-              $('.perk-tp p').css('color', 'darkred');
-              alert('Not Enogh TP');
-            }
+          if ($tp == 0)
+            $('.perk-tp p').css('color', 'black');
+          else if (($tp > 0) && ($tp < 100))
+            $('.perk-tp p').css('color', 'greenyellow');
+          else if ($tp > 95) {
+            $('.perk-tp p').css('color', 'darkred');
+            alert('Not Enogh TP');
+          }
           $('.perk-tp p').text($tp);
         }
       });
@@ -202,10 +202,10 @@
     $('#calc_role_id').change(function() {
       $('#calc_gear_weapon').parent().hide();
       $('#calc_gear_treasure').parent().hide();
-      $('#calc_gear_armor').parent().hide(),
-      $('#calc_gear_secondary').parent().hide(),
-      $('#calc_gear_jewelry').parent().hide(),
-      $('#calc_gear_orb').parent().hide(),
+      $('#calc_gear_armor').parent().hide();
+      $('#calc_gear_secondary').parent().hide();
+      $('#calc_gear_jewelry').parent().hide();
+      $('#calc_gear_orb').parent().hide();
       $('.hero-img').children().hide();
       $('.form-input .gSt p').text('');
       $('.form-input .gSt .rating').hide();
@@ -554,7 +554,11 @@
       $('#range-atk').text(0);
       $('#range-hp').text(0);
       $('.range').hide();
-      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
+      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
+        'width': '52px',
+        'position': 'relative',
+        'right': '0'
+      });
       $('.w-in').removeClass('g-fr a0 a1 a2');
       statValue();
     };
@@ -564,7 +568,6 @@
       $gearWeaponSlot = null;
       $clKn = 32730;$clWa = 37010;$clAs = 40711;$clAr = 45915;$clMe = 41867;$clWi = 42793;$clPr = 42793;$unKn = 45106;$unWa = 51120;$unAs = 56209;$unAr = 63264;$unMe = 57712;$unWi = 58985;$unPr = 58985;$arPl = 17052;$arSc = 11369;$arR = 5686;$scSh = 17052;$scC = 5686;$scH = 11369;$ms = 726278;$unTr = 1596066;$jR = 726278;$jE = 15801;$jB = 11369;$jN = 11369;$or = 726278;
       $tm1R = 53718;$tm1 = 40928;$tm2R = 35809;$tm2 = 27283;$tm3R = 17908;$tm3 = 13644;$tm4R = 1715830;$tm4 = 1307299;$tm5R = 37327;$tm5 = 28440;
-
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $('.w-in').removeClass('g-fr a0 a1 a2');
       if ($gearWeaponType == 'Class') {
@@ -760,7 +763,10 @@
         $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
         $('#greyTR').text($ms);
         $('#tre').next('.rating').show();
-        $('.calc_gear_treasure').parent().find('.frst').show().css({'position': 'relative', 'bottom': '104px'});
+        $('.calc_gear_treasure').parent().find('.frst').show().css({
+          'position': 'relative',
+          'bottom': '104px'
+        });
         $('.scnd').hide();
         $('.scnd select').prop('selectedIndex', 0);
         gearStat();
@@ -783,10 +789,17 @@
         $('#calc_gear_treasure').css($hTreasure);
         $('#greyTR').text($unTr);
         $('#tre').next('.rating').show();
-        $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({'position': 'relative', 'bottom': '210px'});
+        $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({
+          'position': 'relative',
+          'bottom': '210px'
+        });
         gearStat();
       } else {
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
+        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
+          'width': '52px',
+          'position': 'relative',
+          'right': '0'
+        });
         $('#greyTR').text('');
         $('#tre').text('').next('.rating').hide();
         $('.calc_gear_treasure').parent().find('.gOption').hide();
@@ -1077,12 +1090,6 @@
         gearStat();
       }
     });
-    $('select#calc_ench_type_ar').change(function() {
-      $enchName = $(this);
-      $(this).parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
-      if ($(this).children('option:selected').val() !== '')
-        statOptionEnchant();
-    });
     $('select#calc_ench_ar').change(function() {
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
@@ -1112,12 +1119,6 @@
         statOption();
         gearStat();
       }
-    });
-    $('select#calc_ench_type_sg').change(function() {
-      $enchName = $(this);
-      $(this).parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
-      if ($(this).children('option:selected').val() !== '')
-        statOptionEnchant();
     });
     $('select#calc_ench_sg').change(function() {
       $enchName = $(this);
@@ -1149,12 +1150,6 @@
         gearStat();
       }
     });
-    $('select#calc_ench_type_j').change(function() {
-      $enchName = $(this);
-      $(this).parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
-      if ($(this).children('option:selected').val() !== '')
-        statOptionEnchant();
-    });
     $('select#calc_ench_j').change(function() {
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
@@ -1177,12 +1172,6 @@
         statOption();
         gearStat();
       }
-    });
-    $('select#calc_ench_type_orb').change(function() {
-      $enchName = $(this);
-      $(this).parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
-      if ($(this).children('option:selected').val() !== '')
-        statOptionEnchant();
     });
     $('select#calc_ench_orb').change(function() {
       $enchName = $(this);
@@ -2019,8 +2008,7 @@
       if (($f > 1) && ($f < 4)) {
         $tCrit.text($sumCrit + 100 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 100) + ')');
         $setBonus.find('#f1').show();
-      }
-      else if ($f == 4) {
+      } else if ($f == 4) {
         $tCrit.text($sumCrit + 230 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 230) + ')');
         $setBonus.find('#f1, #f2').show();
       } else
@@ -2118,7 +2106,7 @@
         $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 46) + '%)');
         $setBonus.find('#la1, #la2').show();
       } else
-        $tCritDMG.text($sumCritD + '%' +' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
+        $tCritDMG.text($sumCritD + '%' + ' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
 
       $stDebuff = $('p[name="Debuff ACC"]').text();
       if ($stDebuff === '')
@@ -2309,14 +2297,14 @@
 
       perkTP();
       $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-        if ($tp == 0)
-          $('.perk-tp p').css('color', 'black');
-        else if (($tp > 0) && ($tp < 100))
-          $('.perk-tp p').css('color', 'greenyellow');
-        else if ($tp > 95) {
-          $('.perk-tp p').css('color', 'darkred');
-          alert('Not Enogh TP');
-        }
+      if ($tp == 0)
+        $('.perk-tp p').css('color', 'black');
+      else if (($tp > 0) && ($tp < 100))
+        $('.perk-tp p').css('color', 'greenyellow');
+      else if ($tp > 95) {
+        $('.perk-tp p').css('color', 'darkred');
+        alert('Not Enogh TP');
+      }
       $('.perk-tp p').text($tp);
     });
     $('.perk-tp #tp-r').click(function() {
@@ -2364,21 +2352,9 @@
       });
     };
     function statEnchant() {
-      $ench0 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option></optgroup><optgroup id="q2" label="Stat"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option></optgroup><optgroup id="q4" label="Stat"><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option></optgroup>'
-      $ench1 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option></optgroup><optgroup id="q2" label="Stat"><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></optgroup><optgroup id="q3" label="Stat"><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option></optgroup><optgroup id="q4" label="Stat"><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option></optgroup>'
-      $ench2 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option></optgroup><optgroup id="q2" label="Stat"><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q3" label="Stat"><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option></optgroup><optgroup id="q4" label="Stat"><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option><option value="125">125</option><option value="130">130</option><option value="135">135</option><option value="140">140</option></optgroup>'
-      $ench3 = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option></optgroup><optgroup id="q2" label="Stat"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option></optgroup><optgroup id="q3" label="Stat"><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q4" label="Stat"><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option><option value="125">125</option><option value="130">130</option><option value="135">135</option><option value="140">140</option><option value="145">145</option><option value="150">150</option><option value="155">155</option><option value="160">160</option><option value="165">165</option><option value="170">170</option><option value="175">175</option><option value="180">180</option><option value="185">185</option><option value="190">190</option><option value="195">195</option><option value="200">200</option><option value="205">205</option><option value="210">210</option><option value="215">215</option><option value="220">220</option></optgroup>'
+      $ench = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option></optgroup><optgroup id="q2" label="Stat"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q4" label="Stat"><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option><option value="125">125</option><option value="130">130</option><option value="135">135</option><option value="140">140</option><option value="145">145</option><option value="150">150</option><option value="155">155</option><option value="160">160</option><option value="165">165</option><option value="170">170</option><option value="175">175</option><option value="180">180</option><option value="185">185</option><option value="190">190</option><option value="195">195</option><option value="200">200</option><option value="205">205</option><option value="210">210</option><option value="215">215</option><option value="220">220</option></optgroup>'
       $emchTier = $enchName.parent().prev().children().children('option:selected').val();
-      if ($emchTier !== '') {
-        if ($emchTier == 'Rare')
-          $enchName.parent().next().find('.ench-v').html($ench0);
-        else if ($emchTier == 'Heroic')
-          $enchName.parent().next().find('.ench-v').html($ench1);
-        else if ($emchTier == 'Ancient')
-          $enchName.parent().next().find('.ench-v').html($ench2);
-        else if ($emchTier == 'Legendary')
-          $enchName.parent().next().find('.ench-v').html($ench3);
-      }
+      $enchName.parent().next().find('.ench-v').html($ench);
       $('.opt-ench').find($enchName).each(function() {
         $(this).parent().next().find('optgroup').hide();
         $('.opt-ench').find($enchName).each(function() {
@@ -2392,7 +2368,7 @@
           else if (($stEnch == 'P.Block') || ($stEnch == 'M.Block') || ($stEnch == 'DMG Reduction upon P.Block') || ($stEnch == 'DMG Reduction upon M.Block'))
             $(this).parent().next().children().find('#q4').show();
           else
-           $(this).parent().next().children().find('#q').show();
+            $(this).parent().next().children().find('#q').show();
         });
       });
     };
@@ -2415,27 +2391,6 @@
       });
     };
     function statOptionTreasure() {
-      // $starTr = $('#ut').find('.active').next('input').val();
-      // $ayTr = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option><option value="42">42</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option><option value="140">140</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option><option value="280">280</option></optgroup><optgroup id="q6" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><</optgroup>'
-      // $ayTr1 = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></optgroup><optgroup id="q2" label="Stat"><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option></optgroup><optgroup id="q3" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option></optgroup><optgroup id="q4" label="Stat"><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></optgroup><optgroup id="q5" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option></optgroup><optgroup id="q6" label="Stat"><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option></optgroup>'
-      // $ayTr2 = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option></optgroup><optgroup id="q6" label="Stat"><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option></optgroup>'
-      // $ayTr3 = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option></optgroup>'
-      // $ayTr4 = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option></optgroup><optgroup id="q2" label="Stat"><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option></optgroup><optgroup id="q3" label="Stat"><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option></optgroup><optgroup id="q4" label="Stat"><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option></optgroup><optgroup id="q5" label="Stat"><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option></optgroup><optgroup id="q6" label="Stat"><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option></optgroup>'
-      // $ayTr5 = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q2" label="Stat"><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option><option value="42">42</option></optgroup><optgroup id="q3" label="Stat"><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></optgroup><optgroup id="q4" label="Stat"><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option><option value="140">140</option></optgroup><optgroup id="q5" label="Stat"><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option><option value="280">280</option></optgroup><optgroup id="q6" label="Stat"><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option></optgroup>'
-      // $('#treasure').find('.ay').each(function() {
-      //   if ($starTr == 0)
-      //     $(this).html($ayTr);
-      //   else if ($starTr == 1)
-      //     $(this).html($ayTr1);
-      //   else if ($starTr == 2)
-      //     $(this).html($ayTr2);
-      //   else if ($starTr == 3)
-      //     $(this).html($ayTr3);
-      //   else if ($starTr == 4)
-      //     $(this).html($ayTr4);
-      //   else if ($starTr == 5)
-      //     $(this).html($ayTr5);
-      // });
       $('#treasure').find('.ax').each(function() {
         $(this).parent().next().children().find('optgroup').hide();
         $stTr = $(this).children('option:selected').text();
@@ -2453,27 +2408,20 @@
           $(this).parent().next().children().find('#q6').show();
       });
     };
-    function statOptionEnchant() {
-      $enchType = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option><option value="Mana Recovery upon taking DMG">Mana Recovery upon taking DMG</option><option value="Recovery">Recovery</option><option value="P.Resistance">P.Resistance</option><option value="M.Resistance">M.Resistance</option><option value="DMG Reduction upon P.Block">DMG Reduction upon P.Block</option><option value="DMG Reduction upon M.Block">DMG Reduction upon M.Block</option>'
-      $enchName.parent().next().find('.ench-n').html($enchType);
-    };
     function statValue() {
       $ay = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option><option value="42">42</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option><option value="140">140</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option><option value="280">280</option></optgroup><optgroup id="q6" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><</optgroup>'
-      $ench = '<option value="">- - - - - - - - - -</option><option value="Rare">Rare</option><option value="Heroic">Heroic</option><option value="Ancient">Ancient</option><option value="Legendary">Legendary</option>'
       $ether = '<option value="- - -">- - -</option><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option>'
+      $enchType = '<option value="">- - - - - - - - - -</option><option value="ATK">ATK</option><option value="ATK Spd">ATK Spd</option><option value="Crit">Crit</option><option value="Crit DMG">Crit DMG</option><option value="Penetration">Penetration</option><option value="Lifesteal">Lifesteal</option><option value="ACC">ACC</option><option value="Debuff ACC">Debuff ACC</option><option value="Max HP">Max HP</option><option value="CC Resist">CC Resist</option><option value="P.Block">P.Block</option><option value="M.Block">M.Block</option><option value="P.Crit Resistance">P.Crit Resistance</option><option value="M.Crit Resistance">M.Crit Resistance</option><option value="P.DEF">P.DEF</option><option value="M.DEF">M.DEF</option><option value="P.Dodge">P.Dodge</option><option value="M.Dodge">M.Dodge</option><option value="Mana Recovery upon taking DMG">Mana Recovery upon taking DMG</option><option value="Recovery">Recovery</option><option value="P.Resistance">P.Resistance</option><option value="M.Resistance">M.Resistance</option><option value="DMG Reduction upon P.Block">DMG Reduction upon P.Block</option><option value="DMG Reduction upon M.Block">DMG Reduction upon M.Block</option>'
       $('.opt').find('.ay').each(function() {
         $(this).html($ay);
       });
       $('.opt').find('#calc_st_treasure_st').each(function() {
         $(this).html($ayTr);
       });
-      $('.opt-ench').find('.ench-t').each(function() {
-        $(this).html($ench);
-      });
       $('.opt-ench').find('.ench-n').each(function() {
-        $(this).html('<option value="">- - - - - - - - - -</option>');
+        $(this).html($enchType);
       });
       $('.opt-ench').find('.ench-v').each(function() {
         $(this).html('<option value="0" id="q">- - - </option>');
@@ -3339,7 +3287,7 @@
       y > 0 ? $('#range-atk').html(Math.round($sw_atk + Math.trunc($sw_atk * (y / 100)))) : $('#range-atk').html(Math.round($sw_atk));
       z > 0 ? $('#range-hp').html(Math.round($sw_hp + Math.trunc($sw_hp * (z / 100)))) : $('#range-hp').html(Math.round($sw_hp));
     };
-    function rangeC(){
+    function rangeC() {
       $('.range-ou1, .range-ou2').text('50%');
       $('[name="range"]').val(50);
       $('.range-ad1, .range-ad2').text('0%');
