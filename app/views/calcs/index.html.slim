@@ -35,7 +35,7 @@ title Calculator
             .gOption#g-weapon
               .opt#ow
                 = f.input :st_weapon, as: :select, collection: ['Adv.0', 'Adv.1', 'Adv.2'], required: false, label: false, include_blank: false, prompt: '- - - - - - - - - -', input_html: {class: 'w-ad'}
-                = f.input :st_weapon_st, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - -', input_html: {class: 'w-ad-ench'}
+                = f.input :st_weapon_st, as: :select, collection: 0..20, required: false, label: false, include_blank: false, prompt: '- - -', input_html: {class: 'w-ad-ench'}
                 .range
                   .r-sl
                     span.range-ou1
@@ -106,7 +106,8 @@ title Calculator
                   = f.collection_select :armor_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench
-                = f.input :ench_ar, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+                .input.select.optional.calc_ench_ar
+                  = f.collection_select :ench_ar, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
               .opt#rune
                 p#rune-a
@@ -170,7 +171,8 @@ title Calculator
                   = f.collection_select :secondary_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
                 = f.input :st_secondary_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt-ench
-                = f.input :ench_sg, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+                .input.select.optional.calc_ench_sg
+                  = f.collection_select :ench_sg, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
               .opt#rune
                 p#rune-s
@@ -290,7 +292,8 @@ title Calculator
                   = f.collection_select :jewerly_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
                 = f.input :st_jewerly_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt-ench
-                = f.input :ench_j, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+                .input.select.optional.calc_ench_j
+                  = f.collection_select :ench_j, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_j_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
@@ -340,7 +343,8 @@ title Calculator
                   = f.collection_select :orb_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
                 = f.input :st_orb_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt-ench
-                = f.input :ench_orb, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-n'}
+                .input.select.optional.calc_ench_orb
+                  = f.collection_select :ench_orb, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_orb_st, as: :select, collection: [], required: false, label: false, input_html: {class: 'ench-v'}
             .gTM#g-right
               .opt
