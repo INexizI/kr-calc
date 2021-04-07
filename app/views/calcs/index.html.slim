@@ -92,7 +92,8 @@ title Calculator
               .opt
                 .input.select.optional.calc_armor_1
                   = f.collection_select :armor_1, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
-                = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                / = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                = f.input :st_armor_1, as: :select, collection: (7..12).step(0.5) + (21..36).step(1.5) + (14..24) + (70..120).step(5) + (140..240).step(10) + (60..110).step(10), required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt
                 .input.select.optional.calc_armor_2
                   = f.collection_select :armor_2, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
