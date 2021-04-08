@@ -2326,24 +2326,24 @@
     };
     function statOption() {
       $('.opt').find($statName).each(function() {
-        $(this).parent().next().children().find('optgroup').hide();
+        $(this).parent().next().children().find('option').not('.q').hide();
         $st = $(this).children('option:selected').text();
         if (($st == 'ATK') || ($st == 'Max HP') || ($st == 'DEF'))
-          $(this).parent().next().children().find('#q1').show();
+          $(this).parent().next().children().find('.q1').show();
         else if (($st == 'MP Recovery/Sec') || ($st == 'Mana Recovery upon taking DMG'))
-          $(this).parent().next().children().find('#q2').show();
+          $(this).parent().next().children().find('.q2').show();
         else if (($st == 'Crit DMG') || ($st == 'P.DEF') || ($st == 'M.DEF') || ($st == 'Recovery'))
-          $(this).parent().next().children().find('#q3').show();
+          $(this).parent().next().children().find('.q3').show();
         else if (($st == 'ATK Spd') || ($st == 'Crit') || ($st == 'Lifesteal') || ($st == 'ACC') || ($st == 'Debuff ACC') || ($st == 'CC Resist') || ($st == 'Block') || ($st == 'Crit Resistance') || ($st == 'P.Dodge') || ($st == 'M.Dodge') || ($st == 'P.Tough') || ($st == 'M.Tough') || ($st == 'P.Resistance') || ($st == 'M.Resistance') || ($st == 'DMG Reduction upon P.Block') || ($st == 'DMG Reduction upon M.Block') || ($st == 'P.Block DEF') || ($st == 'M.Block DEF'))
-          $(this).parent().next().children().find('#q4').show();
+          $(this).parent().next().children().find('.q4').show();
         else if (($st == 'MP Recovery/Attack') || ($st == 'P.Block') || ($st == 'M.Block') || ($st == 'P.Crit Resistance') || ($st == 'M.Crit Resistance'))
-          $(this).parent().next().children().find('#q5').show();
+          $(this).parent().next().children().find('.q5').show();
         else if ($st == 'Penetration')
-          $(this).parent().next().children().find('#q6').show();
+          $(this).parent().next().children().find('.q6').show();
         else if (($st == 'Dodge') || ($st == 'Tough') || ($st == 'Resistance') || ($st == 'DMG Reduction upon Block'))
-          $(this).parent().next().children().find('#q7').show();
+          $(this).parent().next().children().find('.q7').show();
         else
-          $(this).parent().next().children().find('#q').show();
+          $(this).parent().next().children().find('.q').show();
       });
     };
     function statEnchant() {
@@ -2404,12 +2404,8 @@
       });
     };
     function statValue() {
-      // $ay = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option><option value="11.5">11.5</option><option value="12">12</option></optgroup><optgroup id="q2" label="Stat"><option value="21">21</option><option value="22.5">22.5</option><option value="24">24</option><option value="25.5">25.5</option><option value="27">27</option><option value="28.5">28.5</option><option value="30">30</option><option value="31.5">31.5</option><option value="33">33</option><option value="34.5">34.5</option><option value="36">36</option></optgroup><optgroup id="q3" label="Stat"><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option></optgroup><optgroup id="q4" label="Stat"><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option></optgroup><optgroup id="q5" label="Stat"><option value="140">140</option><option value="150">150</option><option value="160">160</option><option value="170">170</option><option value="180">180</option><option value="190">190</option><option value="200">200</option><option value="210">210</option><option value="220">220</option><option value="230">230</option><option value="240">240</option></optgroup><optgroup id="q6" label="Stat"><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q7" label="Stat"><option value="35">35</option><option value="37">37</option><option value="40">40</option><option value="42">42</option><option value="45">45</option><option value="47">47</option><option value="50">50</option><option value="52">52</option><option value="55">55</option><option value="57">57</option><option value="60">60</option></optgroup>'
       $aytm = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="12">12</option><option value="14">14</option><option value="16">16</option></optgroup><optgroup id="q2" label="Stat"><option value="24">24</option><option value="28">28</option><option value="32">32</option></optgroup><optgroup id="q3" label="Stat"><option value="36">36</option><option value="42">42</option><option value="48">48</option></optgroup><optgroup id="q4" label="Stat"><option value="120">120</option><option value="140">140</option><option value="160">160</option></optgroup><optgroup id="q5" label="Stat"><option value="240">240</option><option value="280">280</option><option value="320">320</option></optgroup>'
       $ayTr = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option><option value="42">42</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option><option value="140">140</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option><option value="280">280</option></optgroup><optgroup id="q6" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><</optgroup>'
-      // $('.opt').find('.ay').each(function() {
-      //   $(this).html($ay);
-      // });
       $('.opt').find('#calc_st_treasure_st').each(function() {
         $(this).html($ayTr);
       });

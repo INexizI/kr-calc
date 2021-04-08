@@ -92,20 +92,19 @@ title Calculator
               .opt
                 .input.select.optional.calc_armor_1
                   = f.collection_select :armor_1, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
-                / = f.input :st_armor_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
-                = f.input :st_armor_1, as: :select, collection: (7..12).step(0.5) + (21..36).step(1.5) + (14..24) + (70..120).step(5) + (140..240).step(10) + (60..110).step(10), required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                = f.input :st_armor_1, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt
                 .input.select.optional.calc_armor_2
                   = f.collection_select :armor_2, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
-                = f.input :st_armor_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                = f.input :st_armor_2, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt
                 .input.select.optional.calc_armor_3
                   = f.collection_select :armor_3, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
-                = f.input :st_armor_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                = f.input :st_armor_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt
                 .input.select.optional.calc_armor_4
                   = f.collection_select :armor_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
-                = f.input :st_armor_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_armor_st'}
+                = f.input :st_armor_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench
                 .input.select.optional.calc_ench_ar
                   = f.collection_select :ench_ar, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
@@ -158,19 +157,19 @@ title Calculator
               .opt
                 .input.select.optional.calc_secondary_1
                   = f.collection_select :secondary_1, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
-                = f.input :st_secondary_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
+                = f.input :st_secondary_1, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
                 .input.select.optional.calc_secondary_2
                   = f.collection_select :secondary_2, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
-                = f.input :st_secondary_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
+                = f.input :st_secondary_2, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
                 .input.select.optional.calc_secondary_3
                   = f.collection_select :secondary_3, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
-                = f.input :st_secondary_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
+                = f.input :st_secondary_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt
                 .input.select.optional.calc_secondary_4
                   = f.collection_select :secondary_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
-                = f.input :st_secondary_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_secondary_st'}
+                = f.input :st_secondary_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt-ench
                 .input.select.optional.calc_ench_sg
                   = f.collection_select :ench_sg, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
@@ -279,19 +278,19 @@ title Calculator
               .opt
                 .input.select.optional.calc_jewerly_1
                   = f.collection_select :jewerly_1, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
-                = f.input :st_jewerly_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
+                = f.input :st_jewerly_1, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
                 .input.select.optional.calc_jewerly_2
                   = f.collection_select :jewerly_2, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
-                = f.input :st_jewerly_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
+                = f.input :st_jewerly_2, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
                 .input.select.optional.calc_jewerly_3
                   = f.collection_select :jewerly_3, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
-                = f.input :st_jewerly_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
+                = f.input :st_jewerly_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt
                 .input.select.optional.calc_jewerly_4
                   = f.collection_select :jewerly_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
-                = f.input :st_jewerly_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
+                = f.input :st_jewerly_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt-ench
                 .input.select.optional.calc_ench_j
                   = f.collection_select :ench_j, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
@@ -330,19 +329,19 @@ title Calculator
               .opt
                 .input.select.optional.calc_orb_1
                   = f.collection_select :orb_1, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
-                = f.input :st_orb_1, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
+                = f.input :st_orb_1, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
                 .input.select.optional.calc_orb_2
                   = f.collection_select :orb_2, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
-                = f.input :st_orb_2, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
+                = f.input :st_orb_2, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
                 .input.select.optional.calc_orb_3
                   = f.collection_select :orb_3, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
-                = f.input :st_orb_3, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
+                = f.input :st_orb_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt
                 .input.select.optional.calc_orb_4
                   = f.collection_select :orb_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
-                = f.input :st_orb_4, as: :select, collection: [], required: false, label: false, include_blank: false, prompt: '- - - -', input_html: {class: 'ay', id: 'calc_st_orb_st'}
+                = f.input :st_orb_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt-ench
                 .input.select.optional.calc_ench_orb
                   = f.collection_select :ench_orb, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
