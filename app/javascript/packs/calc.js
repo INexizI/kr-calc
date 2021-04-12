@@ -214,9 +214,8 @@
       $('.perk-tp').find('p').text(0).css('color', 'black');
       $('.t-st p').empty();
       $('.gOption, .gTM').hide();
-      $('.ay, .ay-tm').find('option').not('.q').hide();
-      $('select#calc_st_rune_w, select#calc_st_rune_a, select#calc_st_rune_s').find('option').hide();
-      $('select#calc_st_rune_w, select#calc_st_rune_a, select#calc_st_rune_s').find('option:first').val(0);
+      $('.ay, .ay-tm, .ench-v').find('option').not('.q').hide();
+      $('select#calc_st_rune_w, select#calc_st_rune_a, select#calc_st_rune_s').find('option').not('.q').hide();
       $('.opt').find('#q-velk').children().hide();
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
@@ -559,7 +558,6 @@
         'right': '0'
       });
       $('.w-in').removeClass('g-fr a0 a1 a2');
-      statValue();
     };
     function change_weapon() {
       $('#heroATK').empty();
@@ -2348,23 +2346,21 @@
       });
     };
     function statEnchant() {
-      $ench = '<option value="0" id="q">- - - </option><optgroup id="q1" label="Stat"><option value="1">1</option><option value="1.5">1.5</option><option value="2">2</option><option value="2.5">2.5</option><option value="3">3</option><option value="3.5">3.5</option><option value="4">4</option><option value="4.5">4.5</option><option value="5">5</option><option value="5.5">5.5</option><option value="6">6</option><option value="6.5">6.5</option><option value="7">7</option><option value="7.5">7.5</option><option value="8">8</option><option value="8.5">8.5</option><option value="9">9</option><option value="9.5">9.5</option><option value="10">10</option><option value="10.5">10.5</option><option value="11">11</option></optgroup><optgroup id="q2" label="Stat"><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="15">15</option><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="85">85</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option></optgroup><optgroup id="q4" label="Stat"><option value="20">20</option><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><option value="75">75</option><option value="80">80</option><option value="90">90</option><option value="95">95</option><option value="100">100</option><option value="105">105</option><option value="110">110</option><option value="115">115</option><option value="120">120</option><option value="125">125</option><option value="130">130</option><option value="135">135</option><option value="140">140</option><option value="145">145</option><option value="150">150</option><option value="155">155</option><option value="160">160</option><option value="165">165</option><option value="170">170</option><option value="175">175</option><option value="180">180</option><option value="185">185</option><option value="190">190</option><option value="195">195</option><option value="200">200</option><option value="205">205</option><option value="210">210</option><option value="215">215</option><option value="220">220</option></optgroup>'
       $emchTier = $enchName.parent().prev().children().children('option:selected').val();
-      $enchName.parent().next().find('.ench-v').html($ench);
       $('.opt-ench').find($enchName).each(function() {
-        $(this).parent().next().find('optgroup').hide();
+        $(this).parent().next().find('option').hide();
         $('.opt-ench').find($enchName).each(function() {
           $stEnch = $(this).children('option:selected').val();
           if (($stEnch == 'ATK') || ($stEnch == 'Max HP') || ($stEnch == 'Mana Recovery upon taking DMG') || ($stEnch == 'Recovery'))
-            $(this).parent().next().children().find('#q1').show();
+            $(this).parent().next().children().find('.q1').show();
           else if (($stEnch == 'Crit DMG') || ($stEnch == 'P.DEF') || ($stEnch == 'M.DEF'))
-            $(this).parent().next().children().find('#q2').show();
+            $(this).parent().next().children().find('.q2').show();
           else if (($stEnch == 'ATK Spd') || ($stEnch == 'Crit') || ($stEnch == 'Lifesteal') || ($stEnch == 'ACC') || ($stEnch == 'Debuff ACC') || ($stEnch == 'CC Resist') || ($stEnch == 'P.Crit Resistance') || ($stEnch == 'M.Crit Resistance') || ($stEnch == 'P.Dodge') || ($stEnch == 'M.Dodge') || ($stEnch == 'P.Resistance') || ($stEnch == 'M.Resistance') || ($stEnch == 'Penetration'))
-            $(this).parent().next().children().find('#q3').show();
+            $(this).parent().next().children().find('.q3').show();
           else if (($stEnch == 'P.Block') || ($stEnch == 'M.Block') || ($stEnch == 'DMG Reduction upon P.Block') || ($stEnch == 'DMG Reduction upon M.Block'))
-            $(this).parent().next().children().find('#q4').show();
+            $(this).parent().next().children().find('.q4').show();
           else
-            $(this).parent().next().children().find('#q').show();
+            $(this).parent().next().children().find('.q').show();
         });
       });
     };
@@ -2388,26 +2384,20 @@
     };
     function statOptionTreasure() {
       $('#treasure').find('.ax').each(function() {
-        $(this).parent().next().children().find('optgroup').hide();
+        $(this).parent().next().children().find('option').hide();
         $stTr = $(this).children('option:selected').text();
         if (($stTr == 'ATK') || ($stTr == 'Max HP') || ($stTr == 'DEF'))
-          $(this).parent().next().children().find('#q1').show();
+          $(this).parent().next().children().find('.q1').show();
         else if (($stTr == 'MP Recovery/Sec') || ($stTr == 'Mana Recovery upon taking DMG'))
-          $(this).parent().next().children().find('#q2').show();
+          $(this).parent().next().children().find('.q2').show();
         else if (($stTr == 'Crit DMG') || ($stTr == 'P.DEF') || ($stTr == 'M.DEF') || ($stTr == 'Recovery'))
-          $(this).parent().next().children().find('#q3').show();
+          $(this).parent().next().children().find('.q3').show();
         else if (($stTr == 'ATK Spd') || ($stTr == 'Crit') || ($stTr == 'Lifesteal') || ($stTr == 'ACC') || ($stTr == 'Debuff ACC') || ($stTr == 'CC Resist') || ($stTr == 'Block') || ($stTr == 'Crit Resistance') || ($stTr == 'P.Dodge') || ($stTr == 'M.Dodge') || ($stTr == 'P.Tough') || ($stTr == 'M.Tough') || ($stTr == 'P.Resistance') || ($stTr == 'M.Resistance') || ($stTr == 'DMG Reduction upon P.Block') || ($stTr == 'DMG Reduction upon M.Block') || ($stTr == 'P.Block DEF') || ($stTr == 'M.Block DEF') || ($stTr == 'Penetration'))
-          $(this).parent().next().children().find('#q4').show();
+          $(this).parent().next().children().find('.q4').show();
         else if (($stTr == 'MP Recovery/Attack') || ($stTr == 'P.Block') || ($stTr == 'M.Block') || ($stTr == 'P.Crit Resistance') || ($stTr == 'M.Crit Resistance'))
-          $(this).parent().next().children().find('#q5').show();
+          $(this).parent().next().children().find('.q5').show();
         else if (($stTr == 'Dodge') || ($stTr == 'Tough') || ($stTr == 'Resistance') || ($stTr == 'DMG Reduction upon Block'))
-          $(this).parent().next().children().find('#q6').show();
-      });
-    };
-    function statValue() {
-      $ayTr = '<optgroup id="q"><option value="0">- - - </option></optgroup><optgroup id="q1" label="Stat"><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option></optgroup><optgroup id="q2" label="Stat"><option value="15">15</option><option value="18">18</option><option value="21">21</option><option value="24">24</option><option value="27">27</option><option value="30">30</option><option value="33">33</option><option value="36">36</option><option value="39">39</option><option value="42">42</option></optgroup><optgroup id="q3" label="Stat"><option value="10">10</option><option value="12">12</option><option value="14">14</option><option value="16">16</option><option value="18">18</option><option value="20">20</option><option value="22">22</option><option value="24">24</option><option value="26">26</option><option value="28">28</option></optgroup><optgroup id="q4" label="Stat"><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option><option value="110">110</option><option value="120">120</option><option value="130">130</option><option value="140">140</option></optgroup><optgroup id="q5" label="Stat"><option value="100">100</option><option value="120">120</option><option value="140">140</option><option value="160">160</option><option value="180">180</option><option value="200">200</option><option value="220">220</option><option value="240">240</option><option value="260">260</option><option value="280">280</option></optgroup><optgroup id="q6" label="Stat"><option value="25">25</option><option value="30">30</option><option value="35">35</option><option value="40">40</option><option value="45">45</option><option value="50">50</option><option value="55">55</option><option value="60">60</option><option value="65">65</option><option value="70">70</option><</optgroup>'
-      $('.opt').find('#calc_st_treasure_st').each(function() {
-        $(this).html($ayTr);
+          $(this).parent().next().children().find('.q6').show();
       });
     };
     function option() {
