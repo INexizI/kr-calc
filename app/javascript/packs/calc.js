@@ -566,7 +566,7 @@
       $clKn = 32730;$clWa = 37010;$clAs = 40711;$clAr = 45915;$clMe = 41867;$clWi = 42793;$clPr = 42793;$unKn = 45106;$unWa = 51120;$unAs = 56209;$unAr = 63264;$unMe = 57712;$unWi = 58985;$unPr = 58985;$arPl = 17052;$arSc = 11369;$arR = 5686;$scSh = 17052;$scC = 5686;$scH = 11369;$ms = 726278;$unTr = 1596066;$jR = 726278;$jE = 15801;$jB = 11369;$jN = 11369;$or = 726278;
       $tm1R = 53718;$tm1 = 40928;$tm2R = 35809;$tm2 = 27283;$tm3R = 17908;$tm3 = 13644;$tm4R = 1715830;$tm4 = 1307299;$tm5R = 37327;$tm5 = 28440;
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
-      $('.w-in').removeClass('g-fr a0 a1 a2');
+      $('.w-in').removeClass('g-fr-u a0 a1 a2');
       if ($gearWeaponType == 'Class') {
         $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
         $('#wea').next('.rating').show();
@@ -585,7 +585,7 @@
         else if ($heroClass == 7)
           $('#greyATK').text($clPr);
         $('.calc_gear_weapon').parent().find('.gOption').show();
-        $('.w-in').addClass('g-fr');
+        $('.w-in').addClass('g-fr-u');
         $('#g-weapon').hide();
         $('#range-atk').text(0);
         $('#range-hp').text(0);
@@ -620,7 +620,7 @@
         $swH = 125000;
 
         $('.calc_gear_weapon').parent().find('.gOption').show();
-        $('.w-in').addClass('g-fr');
+        $('.w-in').addClass('g-fr-u');
         $('#g-weapon').show();
         gearStat();
       } else if ($gearWeaponType == '- - - - - - - - - -') {
@@ -628,7 +628,7 @@
         $('#greyATK').text('');
         $('#wea').text('').next('.rating').hide();
         $('.calc_gear_weapon').parent().find('.gOption').hide();
-        $('.w-in').removeClass('g-fr');
+        $('.w-in').removeClass('g-fr-u');
         $('#g-weapon').hide();
         $('#range-atk').text(0);
         $('#range-hp').text(0);
@@ -763,6 +763,7 @@
         });
         $('.scnd').hide();
         $('.scnd select').prop('selectedIndex', 0);
+        $('#calc_gear_treasure').addClass('g-fr').removeClass('g-fr-u');
         gearStat();
       } else if ($gearTreasureType == 'Unique') {
         $eTr1 = 'url("/images/media/heroes/' + $heroName + '/ut1.png")';
@@ -787,6 +788,7 @@
           'position': 'relative',
           'bottom': '210px'
         });
+        $('#calc_gear_treasure').addClass('g-fr-u').removeClass('g-fr');
         gearStat();
       } else {
         $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
@@ -798,6 +800,7 @@
         $('#tre').text('').next('.rating').hide();
         $('.calc_gear_treasure').parent().find('.gOption').hide();
         $('#calc_gear_treasure').parent().parent().find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
+        $('#calc_gear_treasure').removeClass('g-fr g-fr-u');
         $('#ut label').filter('.active').removeClass('active');
       }
       $('#tre').text($('#greyTR').text());
@@ -814,6 +817,7 @@
         $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_armor').parent().parent().find('.gOption optgroup').hide();
         $('#calc_gear_armor').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $('#calc_gear_armor').removeClass('g-fr g-fr-t');
         $('#ar label').filter('.active').removeClass('active');
       } else if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -830,6 +834,7 @@
         $('#arm').next('.rating').show();
         $('#calc_gear_armor').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_armor').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else if (($armorSet == 'Perseverance') || ($armorSet == 'Hope') || ($armorSet == 'Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -846,6 +851,7 @@
         $('#arm').next('.rating').show();
         $('#calc_gear_armor').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_armor').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -862,6 +868,7 @@
         $('#arm').next('.rating').show();
         $('#calc_gear_armor').parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_armor').parent().find('.gOption').show().parent().find('.gTM').hide();
+        $('#calc_gear_armor').removeClass('g-fr-t').addClass('g-fr')
         gearStat();
       }
       $('#arm').text($('#greyPDEF').text());
@@ -878,6 +885,7 @@
         $('.calc_gear_secondary').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_secondary').parent().parent().find('.gOption optgroup').hide();
         $('#calc_gear_secondary').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $('#calc_gear_secondary').removeClass('g-fr g-fr-t');
         $('#sg label').filter('.active').removeClass('active');
       } else if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -894,6 +902,7 @@
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_secondary').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else if (($secondarySet == 'Perseverance') || ($secondarySet == 'Hope') || ($secondarySet == 'Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -910,6 +919,7 @@
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_secondary').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else {
         if (($heroClass == 1) || ($heroClass == 2)) {
@@ -926,6 +936,7 @@
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary').parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_secondary').parent().find('.gOption').show().parent().find('.gTM').hide();
+        $('#calc_gear_secondary').addClass('g-fr').removeClass('g-fr-t');
         gearStat();
       }
       $('#sec').text($('#greyMDEF').text());
@@ -947,6 +958,7 @@
         $('.calc_gear_jewelry').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_jewelry').parent().parent().find('.gOption optgroup').hide();
         $('#calc_gear_jewelry').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $('#calc_gear_jewelry').removeClass('g-fr g-fr-t');
         $('#ac label').filter('.active').removeClass('active');
       } else if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring')
@@ -959,6 +971,7 @@
         $('#acc').next('.rating').show();
         $('#calc_gear_jewelry').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_jewelry').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else if (($jewelSet == 'Perseverance') || ($jewelSet == 'Hope') || ($jewelSet == 'Authority')) {
         if ($jewelType == 'Ring')
@@ -971,6 +984,7 @@
         $('#acc').next('.rating').show();
         $('#calc_gear_jewelry').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_jewelry').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else {
         if ($jewelType == 'Ring')
@@ -985,6 +999,7 @@
         $('#acc').next('.rating').show();
         $('#calc_gear_jewelry').parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry').parent().find('.gOption').show().parent().find('.gTM').hide();
+        $('#calc_gear_jewelry').addClass('g-fr').removeClass('g-fr-t');
         gearStat();
       }
       $('#acc').text($('#greyJ').text());
@@ -1000,6 +1015,7 @@
         $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_orb').parent().parent().find('.gOption optgroup').hide();
         $('#calc_gear_orb').parent().parent().find('.gOption select, .gTM select').prop('selectedIndex', 0);
+        $('#calc_gear_orb').removeClass('g-fr g-fr-t');
         $('#or label').filter('.active').removeClass('active');
       } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
         $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
@@ -1007,6 +1023,7 @@
         $('#orb').next('.rating').show();
         $('#calc_gear_orb').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_orb').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else if (($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) {
         $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;');
@@ -1014,6 +1031,7 @@
         $('#orb').next('.rating').show();
         $('#calc_gear_orb').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
+        $('#calc_gear_orb').addClass('g-fr-t').removeClass('g-fr');
         gearStat();
       } else {
         $('#calc_gear_orb').attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;');
@@ -1021,6 +1039,7 @@
         $('#orb').next('.rating').show();
         $('#calc_gear_orb').parent().parent().find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_orb').parent().find('.gOption').show().parent().find('.gTM').hide();
+        $('#calc_gear_orb').addClass('g-fr').removeClass('g-fr-t');
         gearStat();
       }
       $('#orb').text($('#greyO').text());
