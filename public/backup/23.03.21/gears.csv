@@ -837,3 +837,20 @@ id,name,description,tier,set,created_at,updated_at,gear_type,char_id,stat_id,rol
 844,Estelle's Trip Memoir VI,"[Here's a Wake-Up!!] Reduces Cooldown by 6 sec, and [Cheer] additionally increases DMG dealt to Bosses by 6%.",T10,,2021-03-09 0:00:00,2021-03-09 0:00:00,9-UT,100,109,,2
 845,Whistle of Hundred Tones,"[It's Cheering Time!!] Increases Heal Rate by 20%, and all effects becomes irremovable.",T10,,2021-03-09 0:00:00,2021-03-09 0:00:00,9-UT,100,109,,3
 846,Second Homeland,[I'm the Adventure Guide!!] [Adventure Guide] becomes irremovable. Normal attacks have a 20% chance of reducing the target's Mana by 400 for the duration of Skill. This effect is activated only once every 3 sec.,T10,,2021-03-09 0:00:00,2021-03-09 0:00:00,9-UT,100,109,,4
+847,,,,Opportune Fire,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+848,,,,Gritty Frost,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+849,,,,Unrelenting Poison,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+850,,,,Swift Darkness,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+851,,,,Lava,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+852,,,,Legendary,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+853,,,,Beast of Chaos,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+854,,,,Hero Protection,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+855,,,,Hero Suppression,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+856,,,,Dark Legion,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+857,Technomagic,,,Technomagic,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+858,,,,Reclaimed Perseverance,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+859,,,,Perseverance,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+860,,,,Reclaimed Hope,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+861,,,,Hope,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+862,,,,Reclaimed Authority,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
+863,,,,Authority,2021-04-14 0:00:00,2021-04-14 0:00:00,acc,,,,
