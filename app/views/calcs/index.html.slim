@@ -56,21 +56,21 @@ title Calculator
                 div#rune-he
                   = f.collection_select :rune_w_1, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.png" title='Runes for Weapons'
                 div#rune-he
                   = f.collection_select :rune_w_2, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.png" title='Runes for Weapons'
                 div#rune-he
                   = f.collection_select :rune_w_3, @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
           .form-input
             = f.input :gear_armor, as: :select, collection: ['- - - - - - - - - -', 'Opportune Fire', 'Gritty Frost', 'Unrelenting Poison', 'Swift Darkness', 'Lava', 'Legendary', 'Beast of Chaos', 'Hero Protection', 'Hero Suppression', 'Dark Legion', 'Technomagic', 'Reclaimed Perseverance', 'Perseverance', 'Reclaimed Hope', 'Hope', 'Reclaimed Authority', 'Authority'], required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
@@ -106,6 +106,8 @@ title Calculator
                   = f.collection_select :armor_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_armor'}
                 = f.input :st_armor_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_armor_st'}
               .opt-ench
+                p#scroll
+                  img src="/images/media/icons/scroll.png" title='Enchant'
                 .input.select.optional.calc_ench_ar
                   = f.collection_select :ench_ar, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
@@ -171,6 +173,8 @@ title Calculator
                   = f.collection_select :secondary_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_secondary'}
                 = f.input :st_secondary_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_secondary_st'}
               .opt-ench
+                p#scroll
+                  img src="/images/media/icons/scroll.png" title='Enchant'
                 .input.select.optional.calc_ench_sg
                   = f.collection_select :ench_sg, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
@@ -294,6 +298,8 @@ title Calculator
                   = f.collection_select :jewerly_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_jewerly'}
                 = f.input :st_jewerly_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_jewerly_st'}
               .opt-ench
+                p#scroll
+                  img src="/images/media/icons/scroll.png" title='Enchant'
                 .input.select.optional.calc_ench_j
                   = f.collection_select :ench_j, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_j_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
@@ -345,6 +351,8 @@ title Calculator
                   = f.collection_select :orb_4, @stats.where(stat_type: 'opt'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_orb'}
                 = f.input :st_orb_4, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_orb_st'}
               .opt-ench
+                p#scroll
+                  img src="/images/media/icons/scroll.png" title='Enchant'
                 .input.select.optional.calc_ench_orb
                   = f.collection_select :ench_orb, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_orb_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
@@ -405,7 +413,8 @@ title Calculator
         .hch class='hero-#{c.id}'
           .heroPerk
             .hero-avatar
-              img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
+              .avatar
+                img src='/images/media/heroes/#{c.name.downcase}/portrait.png'
               p = c.name
             .c-sub
               .perk-tp

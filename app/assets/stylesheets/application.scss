@@ -1069,9 +1069,9 @@ h4 {
     }
     .opt-ench {
       display: flex;
-      width: 270px;
+      // width: 270px;
       position: relative;
-      right: 3px;
+      right: 27px;
       .input {
         width: fit-content;
         margin: 0 1px;
@@ -1086,6 +1086,21 @@ h4 {
       }
       select {
         width: 100px;
+      }
+      #scroll {
+        position: relative;
+        top: 4px;
+        right: 2px;
+        height: 0px;
+        img {
+          width: 20px;
+          height: 20px;
+          border: 1px solid;
+          border-image-source: url(/images/media/icons/gear.png);
+          border-image-slice: 25;
+          border-image-width: 5px;
+          border-image-outset: 1;
+        }
       }
     }
   }
@@ -1153,7 +1168,13 @@ h4 {
           .hero-avatar {
             width: 130px;
             margin: auto;
-
+            // .avatar {
+            //   border: 1px solid transparent;
+            //   border-image-source: url(/images/media/icons/hero.png);
+            //   border-image-slice: 30;
+            //   border-image-width: 10px;
+            //   border-image-outset: 1;
+            // }
             img {
               width: 75px;
               border-radius: 10%;
