@@ -1045,6 +1045,16 @@
       }
       $('#orb').text($('#greyO').text());
     };
+    function change_art() {
+      $artSet = $('#calc_gear_artifact').children('option:selected').val();
+      if ($artSet == '- - - - - - - - - -') {
+        $('#calc_gear_artifact').css('background-image', 'url(/images/media/gears/bg-art.png)');
+        $('#art').text('').next('.rating').hide();
+        $('#art label').filter('.active').removeClass('active');
+        $('#calc_gear_artifact').removeClass('g-fr-u');
+      } else
+        $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $artSet + '.png"); display: inline-block;').addClass('g-fr-u');
+    };
     $('select#calc_role_id').change(function() {
       change_role();
     }).change();
@@ -1195,9 +1205,7 @@
         statEnchant();
     });
     $('select#calc_gear_artifact').change(function() {
-      $(this).css('background-image', 'url(/images/media/gears/bg-art.png)');
-      $('#art').text('').next('.rating').hide();
-      $('#art label').filter('.active').removeClass('active');
+      change_art();
     }).change();
     function weaponATK() {
       $uwStat = $('#greyATK').text();
