@@ -92,6 +92,8 @@
         }
         if (x == 'calc[gear_orb]')
           change_orb();
+        if (x == 'calc[gear_artifact]')
+          change_art();
         if ((x == 'range') || (x == 'add-atk') || (x == 'add-hp')) {
           $('[name="' + x + '"]').prop('value', y);
           swStat();
