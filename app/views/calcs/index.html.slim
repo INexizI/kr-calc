@@ -136,7 +136,7 @@ title Calculator
                 div#rune-he
                   = f.collection_select :rune_a, @runes.where(type_gear: ['armor', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_a'}
                 div#rune-wi
-                  = f.select :st_rune_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_a'}
+                  = f.select :st_rune_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_a'}
 
           .form-input
             = f.input :gear_secondary, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
@@ -203,7 +203,7 @@ title Calculator
                 div#rune-he
                   = f.collection_select :rune_s, @runes.where(type_gear: ['secondary', 'all'], tier: ['Common', 'Velkazar']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax-r', id: 'calc_rune_s'}
                 div#rune-wi
-                  = f.select :st_rune_s, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: '- - - -'}, {class: 'ay-r', id: 'calc_st_rune_s'}
+                  = f.select :st_rune_s, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_s'}
 
         div
           .form-input#treasure
