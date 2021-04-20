@@ -7,8 +7,6 @@ class CalcsController < ApplicationController
     @gears = Gear.all
     @stats = Stat.all
     # @chars = JSON.parse(File.read('./public/json/heroes.json'))
-    # @roles = JSON.parse(File.read('./public/json/classes.json'))
-    # @perks = JSON.parse(File.read('./public/json/perks.json'))
   end
 
   def create

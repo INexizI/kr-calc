@@ -1,2 +1,0 @@
-class Enchant < ApplicationRecord
-end

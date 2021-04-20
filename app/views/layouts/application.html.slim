@@ -3,11 +3,4 @@ html
   head
     = render 'shared/head'
   body
-    .inner
-      .inner_links
-        = link_to root_path do
-          = image_tag '/images/home.svg'
-      .input_search
-        = form_with url: search_path, local: true, method: :get do |f|
-          = f.text_field :q, placeholder: "Search", data: { behavior: "autocomplete" }, id: "srch"
     = yield
