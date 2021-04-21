@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: 'calcs#index'
+  root to: redirect('/calcs')
+  resources :calcs
 end
