@@ -571,7 +571,7 @@
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
       if ($gearWeaponType == 'Class') {
-        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
+        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName.toLowerCase() + '.png)');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
           $('#greyATK').text($clKn);
@@ -597,7 +597,7 @@
         $('#calc_st_weapon').prop('selectedIndex', 0);
         gearStat();
       } else if ($gearWeaponType == 'Unique') {
-        $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
+        $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName.toLowerCase() + '/uw.png"); display: inline-block;');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
           $('#greyATK').text($unKn);
