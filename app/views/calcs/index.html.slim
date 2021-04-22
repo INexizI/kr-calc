@@ -444,7 +444,7 @@ title Calculator
                   .c-pepe
                     - @perks.where(tier: c.name).where(perk_type: 'hero').each do |perk|
                       .c-perk-img
-                        img src="/images/media/heroes/#{c.name}/#{perk.sequence}.png" id=perk.sequence
+                        img src="/images/media/heroes/#{c.name.downcase}/#{perk.sequence}.png" id=perk.sequence
                         .calc-s-description
                           .p1
                             = perk.name
@@ -453,7 +453,7 @@ title Calculator
                 .c-p#perk-t5
                   - @perks.where(tier: c.name, perk_type: 't5').each do |perk|
                     .c-perk-img
-                      img src="/images/media/heroes/#{c.name}/#{perk.name}.png" id=perk.sequence
+                      img src="/images/media/heroes/#{c.name.downcase}/#{perk.name}.png" id=perk.sequence
                       .calc-s-description
                         .p1
                           = c.name + ' ' + '[' + perk.name.capitalize + ']'
