@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_004432) do
 
   create_table "runes", force: :cascade do |t|
     t.string "name"
-    t.string "value", default: [], array: true
+    t.string "value", default: "{}"
     t.string "type_gear"
     t.string "tier"
     t.datetime "created_at", precision: 6, null: false
@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2021_02_23_004432) do
 
   create_table "stats", force: :cascade do |t|
     t.string "name"
-    t.integer "value"
+    t.string "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
