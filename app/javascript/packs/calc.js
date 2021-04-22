@@ -2490,8 +2490,8 @@
           $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(parseFloat($runV.value.split(' / ').shift()));
           $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(parseFloat($runV.value.split(' / ').pop()));
         } else {
-          $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(parseFloat($runV.value.split(' / ').shift()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift()) + '"]').text());
-          $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(parseFloat($runV.value.split(' / ').pop()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop()) + '"]').text());
+          $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(parseFloat($runV.value.split(' / ').shift()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
+          $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(parseFloat($runV.value.split(' / ').pop()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
         }
         if (n.value == 'MP Recovery/DMG') {
           $sMRec += Number(parseFloat($runV.value));
