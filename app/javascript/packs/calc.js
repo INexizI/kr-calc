@@ -573,7 +573,7 @@
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
       if ($gearWeaponType == 'Class') {
-        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName + '.png)');
+        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName.toLowerCase() + '.png)');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
           $('#greyATK').text($clKn);
@@ -760,7 +760,7 @@
           'position': 'relative',
           'right': '0'
         }
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/mana.png)').css($eTr);
+        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/Mana.png)').css($eTr);
         $('#greyTR').text($ms);
         $('#tre').next('.rating').show();
         $('.calc_gear_treasure').parent().find('.frst').show().css({
