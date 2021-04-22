@@ -280,7 +280,8 @@
       $('.t-total').find('.statData').show();
       $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({'width': '52px', 'position': 'relative', 'right': '0'});
       $heroClass !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
-      $('.w-in').removeClass('g-fr a0 a1 a2');
+      $('.w-in').removeClass('g-fr-u a0 a1 a2');
+      $('.img').removeClass('g-fr g-fr-u g-fr-t');
       $('#range-atk').text(0);
       $('#range-hp').text(0);
       $('.range').hide();
@@ -560,7 +561,8 @@
         'position': 'relative',
         'right': '0'
       });
-      $('.w-in').removeClass('g-fr a0 a1 a2');
+      $('.w-in').removeClass('g-fr-u a0 a1 a2');
+      $('.img').removeClass('g-fr g-fr-u g-fr-t');
     };
     function change_weapon() {
       $('#heroATK').empty();
@@ -750,7 +752,7 @@
     function change_treasure() {
       $('#heroHP').empty();
       $gearTreasureType = $('#calc_gear_treasure').children('option:selected').val();
-      $heroName = $('#calc_char_id').children('option:selected').text();
+      $heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       if ($gearTreasureType == 'Mana Stone') {
         $eTr = {
           'width': '52px',
