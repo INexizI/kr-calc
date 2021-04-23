@@ -2435,6 +2435,8 @@
     };
     function option() {
       $sAtk=0;$sAspd=0;$sCr=0;$sCrD=0;$sMPa=0;$sMPs=0;$sPen=0;$sLif=0;$sAcc=0;$sDAcc=0;$sHP=0;$sCC=0;$sBl=0;$sPBl=0;$sMBl=0;$sCR=0;$sPCR=0;$sMCR=0;$sDef=0;$sPDef=0;$sMDef=0;$sDod=0;$sPDod=0;$sMDod=0;$sTgh=0;$sPTgh=0;$sMTgh=0;$sRec=0;$sMRec=0;$sDRB=0;$sDRPB=0;$sDRMB=0;
+      var x = 0;
+      var y = 0;
       $('.t-op p').empty();
       $opN = $('.opt .ax').serializeArray();
       $.each($opN, function(iN, n) {
@@ -2486,13 +2488,15 @@
       $runN = $('.opt .ax-r').serializeArray();
       $.each($runN, function(iN, n) {
         $runV = $('.opt .ay-r').serializeArray()[iN];
-        if ($('.totalStat').find('p[name="' + n.value + '"]').text() == '') {
-          $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(parseFloat($runV.value.split(' / ').shift()));
-          $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(parseFloat($runV.value.split(' / ').pop()));
-        } else {
-          $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(parseFloat($runV.value.split(' / ').shift()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
-          $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(parseFloat($runV.value.split(' / ').pop()) + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
-        }
+        x = parseFloat($runV.value.split(' / ').shift());
+        y = parseFloat($runV.value.split(' / ').pop());
+        if ($('[name="' + n.name + '"]').children('option:selected').attr('class') == 'all') {
+          $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x) : $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
+          console.log($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text());
+          $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y) : $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
+          console.log($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text());
+        } else
+          $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
         if (n.value == 'MP Recovery/DMG') {
           $sMRec += Number(parseFloat($runV.value));
           $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
