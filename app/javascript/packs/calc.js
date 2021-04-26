@@ -36,7 +36,22 @@
           });
         }
       });
-      $('#this-link').text(CryptoJS.AES.encrypt(JSON.stringify($lk_sl), '/').toString());
+      $share = CryptoJS.AES.encrypt(JSON.stringify($lk_sl), '/').toString();
+      $('#this-link').text($share);
+      
+      var url = "https://pastebin.com/api/api_post.php";
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          console.log(xhr.status);
+          console.log(xhr.responseText);
+        }};
+      var data = "api_dev_key=d8gaAO1PZMaR5bow5j1SCYVnAeZn70Sb&api_paste_code=" + $share + "&api_option=paste";
+      console.log(data);
+      xhr.send(data);
+      // curl -X POST -d 'api_dev_key=d8gaAO1PZMaR5bow5j1SCYVnAeZn70Sb' -d 'api_paste_code=test' -d 'api_option=paste' "https://pastebin.com/api/api_post.php"
     });
     $('button#btn-load').click(function(e) {
       e.preventDefault();
