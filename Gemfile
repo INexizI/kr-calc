@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'image_processing'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
