@@ -37,7 +37,6 @@
         }
       });
       $share = CryptoJS.AES.encrypt(JSON.stringify($lk_sl), '/').toString();
-      $('#this-link').text($share);
 
       var url = "https://pastebin.com/api/api_post.php";
       var xhr = new XMLHttpRequest();
@@ -45,16 +44,14 @@
       xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-          console.log(xhr.status);
-          console.log(xhr.responseText);
-        }};
-      var data = "api_dev_key=d8gaAO1PZMaR5bow5j1SCYVnAeZn70Sb&api_paste_code=" + $share + "&api_option=paste";
-      // var data = "api_dev_key=iR9hIGAHbv49PmehomJ37UF0dB50DuG6&api_paste_code=" + $share + "&api_option=paste";
+        if (xhr.readyState === 4)
+          $('#this-link').text(xhr.responseText);
+      };
+      const api_dev_key = $('.share').attr('data');
+      var data = "api_dev_key=" + api_dev_key + "&api_paste_code=" + $share + "&api_paste_private=1&api_option=paste";
       xhr.crossDomain = true,
       xhr.withCredentials = false;
       xhr.send(data);
-      // curl -X POST -d 'api_dev_key=d8gaAO1PZMaR5bow5j1SCYVnAeZn70Sb' -d 'api_paste_code=test' -d 'api_option=paste' "https://pastebin.com/api/api_post.php"
     });
     $('button#btn-load').click(function(e) {
       e.preventDefault();
@@ -216,6 +213,23 @@
       gearStat();
       gearSet();
     });
+    $('#clip').click(function () {
+      if ($('#this-link').text() === '') { // NOTICE: make - all gear empty
+        $tmp = $('<input>');
+        $('body').append($tmp);
+        $tmp.val($('#this-link').text()).select();
+        document.execCommand('copy');
+        $tmp.remove();
+        $msg = 'Link Copied!';
+      } else
+        $msg = 'Create a Build!';
+      $('#clip p').fadeOut(150, function () {
+        $(this).html($msg).fadeIn(150);
+      });
+      setTimeout(function() {
+        $('#clip p').text('Copy');
+      }, 1000);
+    });
     $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
@@ -270,6 +284,7 @@
       $('.t-total .r-stats').empty();
       $heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       $heroClass = $('#calc_role_id').children('option:selected').val();
+      $heroClass == '' ? $('.share').hide() : $('.share').show();
       if ($heroClass == 1) {
         $heroClassName = 'Knight';
         $gTM = 'Protection';

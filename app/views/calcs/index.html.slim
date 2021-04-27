@@ -542,12 +542,14 @@ title Calculator
     .t-total
       .r-stats
 
-= simple_form_for :share do |f|
+= simple_form_for :share, html: {data: "#{Rails.application.secrets.api_dev_key}"} do |f|
   .share-link
     = f.text_field :link, required: false, label: false, placeholder: 'Link Here'
     = f.button :button, 'Load', id: 'btn-load'
-  .share-link
+  .share-link.share-add
     = f.button :button, 'Generate', id: 'btn-gen'
-    br
-    p#this-link
-    p#lil
+    #this-link
+    #clip
+      = image_tag '/images/clipboard.svg'
+      p Copy
+    #lil
