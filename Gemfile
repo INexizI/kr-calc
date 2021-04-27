@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'sass-rails', '>= 6'
@@ -21,7 +21,7 @@ gem 'friendly_id'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'image_processing'
-gem 'acts-as-taggable-on', '~> 6.0'
+gem 'acts-as-taggable-on'
 gem 'rack-cors'
 
 group :development, :test do
@@ -30,7 +30,7 @@ end
 
 group :development do
   gem 'web-console', '>= 3.3.0'
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
