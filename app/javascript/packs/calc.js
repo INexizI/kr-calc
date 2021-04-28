@@ -214,15 +214,19 @@
       gearSet();
     });
     $('#clip').click(function () {
-      if ($('#this-link').text() === '') { // NOTICE: make - all gear empty
+      checkShare();
+      if ($chk == 0)
+        $msg = 'Create a Build!';
+      else if ($('#this-link').text() == '')
+        $msg = 'Generate Link!';
+      else {
         $tmp = $('<input>');
         $('body').append($tmp);
         $tmp.val($('#this-link').text()).select();
         document.execCommand('copy');
         $tmp.remove();
         $msg = 'Link Copied!';
-      } else
-        $msg = 'Create a Build!';
+      };
       $('#clip p').fadeOut(150, function () {
         $(this).html($msg).fadeIn(150);
       });
@@ -230,7 +234,10 @@
         $('#clip p').text('Copy');
       }, 1000);
     });
-    $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
+    $('#share_link').keyup(function() {
+      $('#btn-load').prop('disabled', $(this).val() == '' ? true : false);
+    });
+    // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
       $('#calc_gear_weapon').parent().hide();
@@ -2546,14 +2553,13 @@
     $('#calc_role_id, #calc_char_id').change(function() {
       hideGearImage();
     });
-    function rangeSlider() {
+    (function rangeSlider() {
       $('.range').each(function() {
         $('[name="range"], [name="add-atk"], [name="add-hp"]').on('input', function() {
           swStat();
         });
       });
-    };
-    rangeSlider();
+    }).call(this);
     $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
       gearStat();
       gearSet();
@@ -2625,6 +2631,12 @@
           $(this).next('#s-per').text('')
         else
           $(this).next('#s-per').text($softn/10 + '%')
+      });
+    };
+    function checkShare() {
+      $chk = 0;
+      $('.img').each(function() {
+        $chk += $(this).prop('selectedIndex');
       });
     };
     $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
