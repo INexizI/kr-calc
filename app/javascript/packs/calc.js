@@ -1,6 +1,6 @@
 (function() {
   $(document).on("turbolinks:load", function() {
-    $('button#btn-gen').click(function() {
+    $('.btn-gen').click(function() {
       $jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
       $lk = $('.calc form');
       $lk_sl = [];
@@ -37,7 +37,11 @@
         }
       });
       $share = CryptoJS.AES.encrypt(JSON.stringify($lk_sl), '/').toString();
-
+    });
+    $('#genCode').click(function() {
+      $('#this-link').text($share).show();
+    });
+    $('#genLink').click(function() {
       var url = "https://pastebin.com/api/api_post.php";
       var xhr = new XMLHttpRequest();
       xhr.open("POST", url, true);
@@ -45,15 +49,16 @@
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4)
-          $('#this-link').text(xhr.responseText);
+        $('#this-link').text(xhr.responseText);
       };
       const api_dev_key = $('.share').attr('data');
       var data = "api_dev_key=" + api_dev_key + "&api_paste_code=" + $share + "&api_paste_private=1&api_option=paste";
       xhr.crossDomain = true,
       xhr.withCredentials = false;
       xhr.send(data);
+      $('#this-link').show();
     });
-    $('button#btn-load').click(function(e) {
+    $('#btn-load').click(function(e) {
       e.preventDefault();
       $sl = CryptoJS.AES.decrypt($('#share_link').val(), '/');
       $(JSON.parse($sl.toString(CryptoJS.enc.Utf8))).each(function(i, n) {
@@ -146,7 +151,6 @@
         if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -5) + ']' == 'calc[st_rune]')) {
           $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
           $statVal = $('[name="' + x + '"]').prev().val();
-          $('[name="' + x + '"]').children().hide();
           $('[name="' + x + '"]').children('[name="' + $statVal + '"], option:first').show();
         }
         if (x.slice(0, -3) + ']' == 'calc[st_treasure]') {
@@ -218,14 +222,14 @@
       if ($chk == 0)
         $msg = 'Create a Build!';
       else if ($('#this-link').text() == '')
-        $msg = 'Generate Link!';
+        $msg = 'Generate Link or Code!';
       else {
         $tmp = $('<input>');
         $('body').append($tmp);
         $tmp.val($('#this-link').text()).select();
         document.execCommand('copy');
         $tmp.remove();
-        $msg = 'Link Copied!';
+        $msg = 'Copied!';
       };
       $('#clip p').fadeOut(150, function () {
         $(this).html($msg).fadeIn(150);
@@ -235,7 +239,7 @@
       }, 1000);
     });
     $('#share_link').keyup(function() {
-      $('#btn-load').prop('disabled', $(this).val() == '' ? true : false);
+      $('#btn-load').prop('disabled', this.value == '' ? true : false);
     });
     // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();

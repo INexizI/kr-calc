@@ -545,10 +545,11 @@ title Calculator
 = simple_form_for :share, html: {data: "#{Rails.application.secrets.api_dev_key}"} do |f|
   .share-link
     = f.text_field :link, required: false, label: false, placeholder: 'Link Here'
-    = f.button :button, 'Load', id: 'btn-load'
+    = f.button :button, 'Load', id: 'btn-load', disabled: true
   .share-link.share-add
-    = f.button :button, 'Generate', id: 'btn-gen'
-    #this-link
+    = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink'
+    = f.button :button, 'Generate Code', class: 'btn-gen', id: 'genCode'
+    textarea#this-link readonly=''
     #clip
       = image_tag '/images/clipboard.svg'
       p Copy
