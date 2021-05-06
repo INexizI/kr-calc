@@ -26,6 +26,7 @@ gem 'rack-cors'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'brakeman'
 end
 
 group :development do
