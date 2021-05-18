@@ -875,7 +875,7 @@
     function change_sw_adv() {
       $adv = $('#calc_st_weapon').children('option:selected').text();
       $('#calc_st_weapon_st').children('option').show();
-      $('.w-in').removeClass('g-fr a0 a1 a2');
+      $('.w-in').removeClass('g-fr-u a0 a1 a2');
       if ($adv == '- - - - - - - - - -') {
         $('#calc_st_weapon_st').children().each(function() {
           if ($(this).text() !== '- - -')
@@ -887,7 +887,7 @@
         $('.range').hide();
         rangeC();
         if ($('#calc_gear_weapon').children('option:selected').text() !== '- - - - - - - - - -')
-          $('.w-in').addClass('g-fr');
+          $('.w-in').addClass('g-fr-u');
       } else if ($adv == 'Adv.0') {
         $('#calc_st_weapon_st').children().each(function() {
           if ($(this).text() == '- - -')
@@ -2820,6 +2820,7 @@
           $(this).next('#s-per').text($softn/10 + '%')
       });
     };
+    statSplit();
     function checkShare() {
       $chk = 0;
       $('.img').each(function() {

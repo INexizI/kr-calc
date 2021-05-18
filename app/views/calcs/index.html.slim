@@ -5,7 +5,7 @@ title Calculator
     = simple_form_for :calc do |f|
       .form-input
         label for='role_id' Class
-        = f.collection_select :role_id, @roles, :id, :name, prompt: '----------'
+        = f.collection_select :role_id, @roles, :id, :name
 
       .form-input#char
         label for='char_id' Hero
