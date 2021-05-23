@@ -51,15 +51,14 @@
     $('#genCode').click(function() {
       $('#this-link').text($encryptData).show();
     });
+    /*  --- Pastebin  ---
     $('#genLink').click(function() {
       var url = "https://pastebin.com/api/api_post.php";
       var xhr = new XMLHttpRequest();
       xhr.open("POST", url, true);
-      xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4)
-        $('#this-link').text(xhr.responseText);
+          $('#this-link').text(xhr.responseText);
       };
       const api_dev_key = $('.share').attr('data');
       var data = "api_dev_key=" + api_dev_key + "&api_paste_code=" + $encryptData + "&api_paste_private=1&api_option=paste";
@@ -68,11 +67,27 @@
       xhr.send(data);
       $('#this-link').show();
     });
+  */
+    /*  --- share_link  ---  */
+    $('#genLink').click(function() {
+      const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
+      var url = "https://krsharelink.herokuapp.com/api/v1/links/";
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.setRequestHeader("Authorization", "Bearer " + api_dev_key);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4)
+          $('#this-link').text(url + JSON.parse(xhr.responseText).data.slug);
+      };
+      var data = JSON.stringify({"text": $encryptData});
+      xhr.send(data);
+      $('#this-link').show();
+    });
     $('#btn-load').click(function(e) {
       e.preventDefault();
       var shr = $('#share_link').val().toString();
-      if (shr.length > 1000) {
-        // SHARE CODE
+      if (shr.length > 1000) { // SHARE CODE
         var decData = function(shr, key) {
           var C = CryptoJS;
           var Key = C.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
@@ -235,13 +250,21 @@
             $('.perk-tp p').text($tp);
           }
         });
-      } else if (shr.slice(0, 20) == "https://pastebin.com") {
-        // // SHARE LINK
-        $.get($('#share_link').val(), function (data, textStatus, jqXHR) {
-          $shr = $(data).find('.textarea').text();
-          $sl = CryptoJS.AES.decrypt($('#share_link').val(), '/');
-          $sl = CryptoJS.AES.decrypt($shr.toString(), '/');
-          $(JSON.parse($sl.toString(CryptoJS.enc.Utf8))).each(function(i, n) {
+      } else if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") { // SHARE LINK
+      // } else if (shr.slice(0, 20) == "https://pastebin.com") {
+        $.get(shr, function (data, textStatus, jqXHR) {
+          var decData = function(shr, key) {
+            var C = CryptoJS;
+            var Key = C.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
+            var IV = C.enc.Utf8.parse("br2fg9b3e7fb12q");
+            var dcT = C.AES.decrypt(data.data.text, Key, {
+              iv: IV,
+              mode: C.mode.CBC,
+              padding: C.pad.Pkcs7
+            });
+            return JSON.parse(dcT.toString(CryptoJS.enc.Utf8));
+          };
+          $(decData(shr)).each(function(i, n) {
             var x = this.name;
             var y = this.value;
             $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
