@@ -1,0 +1,1053 @@
+id,name,description,tier,created_at,updated_at,sequence,perk_type
+1,ATK Up,ATK is increased by 30%,Generic,2020-06-07 11:27:00.358642,2020-06-16 08:45:21.182357,1,generic
+2,HP Up,HP is increased by 30%,Generic,2020-06-07 11:27:14.376127,2020-06-16 08:45:35.126156,2,generic
+3,DEF Up,DEF is increased by 35%,Generic,2020-06-07 11:27:28.008435,2020-06-16 08:45:45.571742,3,generic
+4,Crit Resistance Up,Crit Resistance increases by 250,Generic,2020-06-07 11:27:43.370823,2020-06-16 08:45:58.721198,4,generic
+5,Monster Hunting,Increases DMG to non-hero Enemies by 10% and takes 10% reduced DMG,Generic,2020-06-07 11:28:04.170108,2020-06-16 08:46:12.592921,5,generic
+6,Expirienced Fighter,Increases the dmg targets take by 20%,Knight,2020-06-07 11:29:18.432561,2020-06-16 08:46:28.93395,1,generic
+7,Excellent Strategy,"Increases CC ACC of all allies by 150. If the ally uses the same Perk, only 50 additional CC ACC applies",Knight,2020-06-07 11:29:50.848442,2020-06-16 08:46:41.146817,2,generic
+8,Battle Cry,"Increases HP of all allies by 15%. If the ally uses the same Perk, only 5% additional HP applies",Knight,2020-06-07 11:30:07.327596,2020-06-16 08:46:49.681341,3,generic
+9,Shield of Protection,Block Rate is increased by 200 and CC resistance is increased by 200,Knight,2020-06-07 11:30:20.608149,2020-06-16 08:47:01.887328,4,generic
+10,Swift Move,Increases ATK Spd by 200 and ACC by 400,Knight,2020-06-07 11:30:44.482528,2020-06-16 08:47:13.551024,5,generic
+11,Opportune Strike,Crit Chance is increased by 150 and Crit DMG is increased by 30%. Does not stack,Warrior,2020-06-07 11:34:04.36193,2020-06-16 08:48:40.489469,1,generic
+12,Warlike,"Per each enemy, ATK is increased 7% and CC Resistance is increased by 30. Can be stacked up to max 10 times",Warrior,2020-06-07 11:34:23.75055,2020-06-16 08:48:53.580916,2,generic
+13,Offensive Guard,ATK rises equal to half of P.DEF and received P.DMG is decreased by 15%,Warrior,2020-06-07 11:35:01.393865,2020-06-16 08:49:03.846037,3,generic
+14,Tactical Foresight,Dodge rate is increased by 200 and takes 10% reduced DMG,Warrior,2020-06-07 11:35:17.441832,2020-06-16 08:49:14.377527,4,generic
+15,Blood Wrath,Increases Lifesteal by 200 and ATK Spd by 200,Warrior,2020-06-07 11:35:30.327596,2020-06-16 08:49:23.938665,5,generic
+16,Target Weakness,ATK rises by 20% and DEF Penetration rises by 200,Assassin,2020-06-07 11:35:48.307244,2020-06-16 08:50:40.037446,1,generic
+17,Swift and Nimble,"Per every sec, Dodge rate is increased by 100. This effect can be stacked up to max 5 times, and resets upon dodging an Attack",Assassin,2020-06-07 11:36:03.972668,2020-06-16 08:50:46.898603,2,generic
+18,Tactical Foresight,Dodge rate is increased by 200 and takes 10% reduced DMG,Assassin,2020-06-07 11:36:19.037538,2020-06-16 08:50:58.928845,3,generic
+19,Opportune Strike,Crit Chance is increased by 150 and Crit DMG is increased by 30%,Assassin,2020-06-07 11:36:41.843866,2020-06-16 08:51:08.875392,4,generic
+20,Vital Detection,"Upon attack, causes the target to take 10% increased All DMG and have their ATK Spd reduced by 100 for 10 sec. This effect activates once every 3 sec",Assassin,2020-06-07 11:36:53.643345,2020-06-16 08:51:31.676838,5,generic
+21,Precision Shot,ATK rises by 20% and ACC rises by 400,Archer,2020-06-07 11:37:12.73838,2020-06-16 08:51:54.168645,1,generic
+22,Eagle Eye,"Increases all allies DEF Penetration by 150 and ACC by 75. If the ally uses the same Perk, only 50 additional DEF Penetration and 25 additional ACC apply",Archer,2020-06-07 11:37:24.418979,2020-06-16 08:52:04.311621,2,generic
+23,Mortal Wound,Successful Crit Attack reduces enemy recovery rate by 50% and deal Physical continuous DMG every second equal to 20% ATK. Does not stack,Archer,2020-06-07 11:37:41.502571,2020-06-16 08:52:17.969289,3,generic
+24,Opportune Strike,Crit Chance is increased by 150 and Crit DMG is increased by 30%,Archer,2020-06-07 11:41:05.560693,2020-06-16 08:52:25.520147,4,generic
+25,Concentration,"Every 5 sec, increases own Crit DMG by 4%. This effect can be stacked up to max 25 times and is irremovable",Archer,2020-06-07 11:41:17.796651,2020-06-16 08:52:37.550712,5,generic
+26,Target Weakness,ATK rises by 20% and DEF Penetration rises by 200,Mechanic,2020-06-07 11:41:39.093107,2020-06-16 08:52:46.534682,1,generic
+27,Ready Cannons,Mana recovery per second rises by 62.5% per every enemy,Mechanic,2020-06-07 11:41:54.698973,2020-06-16 08:52:54.897351,2,generic
+28,Pressure Point,Crit chance increases by 400,Mechanic,2020-06-07 11:42:08.031019,2020-06-16 08:53:04.190284,3,generic
+29,Special Bullet,Attacked target loses 15% of ATK and 150 of Crit. Chance. Does not stack,Mechanic,2020-06-07 11:42:20.697565,2020-06-16 08:54:09.694581,4,generic
+30,Amplified Gunpowder,"Increases Crit DMG of all allies by 30%. If the ally uses the same Perk, only 10% additional Crit DMG is applied",Mechanic,2020-06-07 11:42:34.225282,2020-06-16 08:54:53.165758,5,generic
+31,Deception,"When receiving DMG, becomes immune to the next 3 hit of DMG. This effect is activated every 40 sec",Wizard,2020-06-07 11:52:09.670729,2020-06-16 08:55:02.11499,1,generic
+32,Moral Rise,"Increases ATK of all allies by 15%. If the ally uses the same Perk, only 3% additional ATK applies",Wizard,2020-06-07 11:52:30.424232,2020-06-16 08:55:11.357094,2,generic
+33,Blessing of Mana,Mana recovery per second rises by 250%,Wizard,2020-06-07 11:53:05.44302,2020-06-16 08:55:22.335774,3,generic
+34,Circuit Burst,Receives 15% more DMG but gains 40% ATK. ACC is increases by 200,Wizard,2020-06-07 11:53:20.615621,2020-06-16 08:55:30.621329,4,generic
+35,Destruction,Increases Crit Chance by 200 and DEF Penetration by 200,Wizard,2020-06-07 11:53:37.65328,2020-06-16 08:55:38.164827,5,generic
+36,Vengeful Curse,"When hit by an enemy, attacker's DMG is reduced by 70% for 3 sec. This effect only activates once in 40 sec, and cannot be dispelled",Priest,2020-06-07 11:53:58.495904,2020-06-16 08:55:45.160979,1,generic
+37,Goddess Blessing,"Increases Crit Chance of all allies by 150. If the ally uses the same Perk, only 50 additional Crit Chance applies",Priest,2020-06-07 11:54:16.469817,2020-06-16 08:55:54.596839,2,generic
+38,Inner Peace,"Heal all allies by 1% every sec and increases CC Resist by 75. If the ally uses the same Perk, only 0.3% additional healing per sec and 25 additional CC Resist apply",Priest,2020-06-07 11:54:28.523476,2020-06-16 08:56:03.244158,3,generic
+39,Blessing of Mana,Mana recovery per second rises by 250%,Priest,2020-06-07 11:54:40.793177,2020-06-16 08:56:14.802896,4,generic
+40,Swiftness,"Increases ATK Spd of all allies by 150. If the ally uses the same Perk, only 50 additional ATK Spd applies",Priest,2020-06-07 11:54:56.931741,2020-06-16 08:56:22.679303,5,generic
+41,Mystic Barrage [Light],"If there is 1 enemy, DMG is increased by 100%",Aisha,2020-06-18 10:54:36.477419,2020-06-18 10:54:36.477419,s1l,hero
+42,Mystic Barrage [Dark],"Upon a Crit Hit, recovers 300 mana",Aisha,2020-06-18 10:55:52.729408,2020-06-18 10:57:46.013617,s1d,hero
+43,Destruction Ray [Light],The mana cost of the Boosted Ray is half,Aisha,2020-06-18 10:58:09.293589,2020-06-18 10:58:09.293589,s2l,hero
+44,Destruction Ray [Dark],The mana cost of the Boosted Ray is doubled and the DMG increase is boosted from 100% to 200%,Aisha,2020-06-18 10:58:17.972619,2020-06-18 10:58:17.972619,s2d,hero
+45,Torrential Rainfall [Light],Deals AoE DMG,Aisha,2020-06-18 10:58:34.387664,2020-06-18 10:58:34.387664,s3l,hero
+46,Torrential Rainfall [Dark],M.DEF reduction effect now stacks up to 10 times max,Aisha,2020-06-18 10:58:40.543934,2020-06-18 10:58:40.543934,s3d,hero
+47,Mystic Boost [Light],DMG is increased by 40%,Aisha,2020-06-18 10:58:59.377549,2020-06-18 10:58:59.377549,s4l,hero
+48,Mystic Boost [Dark],Ignores enemy Block,Aisha,2020-06-18 10:59:08.002274,2020-06-18 10:59:08.002274,s4d,hero
+49,Blasting Ray [Light],Target takes 25% increased M.DMG for 10 sec,Annette,2020-06-18 11:13:48.863006,2020-06-18 11:13:48.863006,s1l,hero
+50,Blasting Ray [Dark],Charge amount is boosted by 40% upon use,Annette,2020-06-18 11:13:55.29365,2020-06-18 11:13:55.29365,s1d,hero
+51,Emergency Treatment [Light],Cooldown is reduced by 3 sec,Annette,2020-06-18 11:14:05.648038,2020-06-18 11:14:05.648038,s2l,hero
+52,Emergency Treatment [Dark],Charge amount is boosted by 40% upon use,Annette,2020-06-18 11:14:12.519142,2020-06-18 11:14:12.519142,s2d,hero
+53,Process of Elimination [Light],DMG is increased by 40%,Annette,2020-06-18 11:14:24.801038,2020-06-18 11:14:24.801038,s3l,hero
+54,Process of Elimination [Dark],Target takes 25% increased M.DMG,Annette,2020-06-18 11:14:31.930498,2020-06-18 11:14:31.930498,s3d,hero
+55,Charge [Light],ATK boost is increased by 40%,Annette,2020-06-18 11:14:42.339443,2020-06-18 11:14:42.339443,s4l,hero
+56,Charge [Dark],Overcharge duration is increased by 3 sec,Annette,2020-06-18 11:14:49.471074,2020-06-18 11:14:49.471074,s4d,hero
+57,Celestial Arrow [Light],"If there is 1 enemy, DMG is increased by 100%",Arch,2020-06-18 11:17:51.298176,2020-06-18 11:17:51.298176,s1l,hero
+58,Celestial Arrow [Dark],Stuns enemies with a Sigil for 1 sec,Arch,2020-06-18 11:18:03.899539,2020-06-18 11:18:03.899539,s1d,hero
+59,Purifying Blaze [Light],Crit Chance is increased by 40%,Arch,2020-06-18 11:18:20.655801,2020-06-18 11:18:20.655801,s2l,hero
+60,Purifying Blaze [Dark],Cooldown is reduced by 3 sec,Arch,2020-06-18 11:18:27.345229,2020-06-18 11:18:27.345229,s2d,hero
+61,Arbiter [Light],Inflicts a sigil upon damaged enemies,Arch,2020-06-18 11:18:41.441129,2020-06-18 11:18:41.441129,s3l,hero
+62,Arbiter [Dark],M.DMG increase and Silence effect occur to enemies with no Sigil as well,Arch,2020-06-18 11:18:47.455076,2020-06-18 11:18:47.455076,s3d,hero
+63,The Last Judgment [Light],"For 20 sec after activation, auto attacks target 2 enemies",Arch,2020-06-18 11:19:01.539026,2020-06-18 11:19:01.539026,s4l,hero
+64,The Last Judgment [Dark],Effect occurs 3 sec faster,Arch,2020-06-18 11:19:07.235003,2020-06-18 11:19:07.235003,s4d,hero
+65,Pillar of Light [Light],DMG is increased by 40%,Artemia,2020-06-18 11:19:25.029118,2020-06-18 11:19:25.029118,s1l,hero
+66,Pillar of Light [Dark],Each hit has a 25% chance to stun the enemy for 1 sec,Artemia,2020-06-18 11:19:34.927945,2020-06-18 11:19:34.927945,s1d,hero
+67,Critical Intensity [Light],Mana cost reduced by 1,Artemia,2020-06-18 11:19:45.800321,2020-06-18 11:19:45.800321,s2l,hero
+68,Critical Intensity [Dark],"When Blessing of Light reaches 10 stacks, cooldown is reduced by 50%",Artemia,2020-06-18 11:19:52.32141,2020-06-18 11:19:52.32141,s2d,hero
+69,Light's Judgment [Light],Cooldown is reduced by 3 sec,Artemia,2020-06-18 11:20:30.542151,2020-06-18 11:20:30.542151,s3l,hero
+70,Light's Judgment [Dark],Mana cost is increased by 1 orb but DMG is boosted by 100%,Artemia,2020-06-18 11:22:33.835317,2020-06-18 11:22:33.835317,s3d,hero
+71,Blessing of Light [Light],Increases DMG dealt to Non-Hero enemies by an additional 2.5%.,Artemia,2020-06-18 11:22:44.51718,2020-06-18 11:22:44.51718,s4l,hero
+72,Blessing of Light [Dark],Changes DMG Reduction from Non-Hero enemies to DMG Reduction from all enemies.,Artemia,2020-06-18 11:22:50.470047,2020-06-18 11:22:50.470047,s4d,hero
+73,Sword of the Sun [Light],"After activation, increases ATK Spd by 350 for 5 sec",Aselica,2020-06-18 11:23:12.819118,2020-06-18 11:23:12.819118,s1l,hero
+74,Sword of the Sun [Dark],Reduces cooldown by 2 sec,Aselica,2020-06-18 11:23:19.824708,2020-06-18 11:23:19.824708,s1d,hero
+75,Blessing of the Sun [Light],"Increases Mana Cost by 1, and grants the effect to the 2 allies with the highest ATK",Aselica,2020-06-18 11:23:33.047659,2020-06-18 11:23:33.047659,s2l,hero
+76,Blessing of the Sun [Dark],Used while ignoring negative effects on self and removes negative effects on the target ally,Aselica,2020-06-18 11:23:40.130645,2020-06-18 11:23:40.130645,s2d,hero
+77,Judgment of the Sun [Light],Reduces Mana Cost by 1,Aselica,2020-06-18 11:23:52.6271,2020-06-18 11:23:52.6271,s3l,hero
+78,Judgment of the Sun [Dark],Increases the duration of M.DEF reduction effect by 5 sec,Aselica,2020-06-18 11:24:01.496117,2020-06-18 11:24:01.496117,s3d,hero
+79,Curse of the Sun [Light],Changes ATK Reduction to 30%,Aselica,2020-06-18 11:24:12.284806,2020-06-18 11:24:12.284806,s4l,hero
+80,Curse of the Sun [Dark],Activates the effect upon reaching the 7th stack of Curse of the Sun,Aselica,2020-06-18 11:24:17.39039,2020-06-18 11:24:17.39039,s4d,hero
+81,Holy Nova [Light],DMG and Heal rate is increased by 40%,Baudouin,2020-06-18 11:24:36.293396,2020-06-18 11:24:36.293396,s1l,hero
+82,Holy Nova [Dark],Enemies hit are stunned for 1 sec,Baudouin,2020-06-18 11:24:44.703434,2020-06-18 11:24:44.703434,s1d,hero
+83,Spear of Light [Light],Mana cost is reduced by 1,Baudouin,2020-06-18 11:24:57.308306,2020-06-18 11:24:57.308306,s2l,hero
+84,Spear of Light [Dark],Number of targets changes to 2,Baudouin,2020-06-18 11:25:03.393425,2020-06-18 11:25:03.393425,s2d,hero
+85,Holy Sanctuary [Light],Mana cost is reduced by 1,Baudouin,2020-06-18 11:25:15.156579,2020-06-18 11:25:15.156579,s3l,hero
+86,Holy Sanctuary [Dark],"In exchange for 2 additional Mana Cost and a 3 sec reduction of Invincibility duration, all allies gain 50% ATK",Baudouin,2020-06-18 11:25:21.440632,2020-06-18 11:25:21.440632,s3d,hero
+87,Training of God [Light],Activation chance is boosted by 10%,Baudouin,2020-06-18 11:25:36.361393,2020-06-18 11:25:36.361393,s4l,hero
+88,Training of God [Dark],Attack range is boosted by 20%,Baudouin,2020-06-18 11:25:43.935811,2020-06-18 11:25:43.935811,s4d,hero
+89,Circle of Futility [Light],Reduces the initial Cooldown by 3 sec,Bernheim,2020-06-18 11:26:01.903752,2020-06-18 11:26:01.903752,s1l,hero
+90,Circle of Futility [Dark],"f [Circle of Futility] is cast while [Battle Initiation] is active, its duration will be increased by 4 sec",Bernheim,2020-06-18 11:26:10.769806,2020-06-18 11:26:10.769806,s1d,hero
+91,Battle Initiation [Light],Dispels all negative effects from self upon use,Bernheim,2020-06-18 11:26:26.552782,2020-06-18 11:26:26.552782,s2l,hero
+92,Battle Initiation [Dark],The duration of the effect is increased by 8 sec,Bernheim,2020-06-18 11:26:33.123474,2020-06-18 11:26:33.123474,s2d,hero
+93,Destroyer [Light],Ignores the target's P.Block and M.Block,Bernheim,2020-06-18 11:26:46.114337,2020-06-18 11:26:46.114337,s3l,hero
+94,Destroyer [Dark],Additional DMG against Non-Hero enemies now ignores DEF,Bernheim,2020-06-18 11:26:53.063739,2020-06-18 11:26:53.063739,s3d,hero
+95,Breakdown [Light],Breakdown stack becomes irremovable,Bernheim,2020-06-18 11:27:01.948712,2020-06-18 11:27:01.948712,s4l,hero
+96,Breakdown [Dark],ATK and Heal Rate Boost become irremovable,Bernheim,2020-06-18 11:27:10.971479,2020-06-18 11:27:10.971479,s4d,hero
+97,Tremble! / Kneel [Light],"[Tremble!] The effect applies to 3 allies, but all the effects that activate after 3.5 sec will not be activated",Cain,2020-06-18 11:36:47.297382,2020-06-18 11:36:47.297382,s1l,hero
+98,Tremble! / Kneel [Dark],"[Kneel] The effect applies to 3 enemies, but all the effects that activate after 5 sec will not be activated",Cain,2020-06-18 11:37:17.708064,2020-06-18 11:37:17.708064,s1d,hero
+99,Behold My Might [Light],Each stack of [King of the Desert] increases the DMG of this Skill by 30%,Cain,2020-06-18 11:37:35.002136,2020-06-18 11:37:35.002136,s2l,hero
+100,Behold My Might [Dark],"Reduces Cooldown by 4 sec, and during Auto Battle, allows Cain to return to God King form after turning into Tyrant form",Cain,2020-06-18 11:37:46.58557,2020-06-18 11:37:46.58557,s2d,hero
+101,Gaze Upon My Almighty Power! / Now Die [Light],[Gaze Upon My Almighty Power!] Increases the duration of the effect by 10 sec,Cain,2020-06-18 11:38:26.177061,2020-06-18 11:38:26.177061,s3l,hero
+102,Gaze Upon My Almighty Power! / Now Die [Dark],[Now Die.] Reduces mana cost by 1,Cain,2020-06-18 11:38:34.614709,2020-06-18 11:38:34.614709,s3d,hero
+103,I Am the King of the Desert [Light],DMG Boost against Bosses changes to 100%,Cain,2020-06-18 11:38:44.184512,2020-06-18 11:38:44.184512,s4l,hero
+104,I Am the King of the Desert [Dark],Mana recovery per sec changes to 150,Cain,2020-06-18 11:38:55.082489,2020-06-18 11:38:55.082489,s4d,hero
+105,Softly~ [Light],Healed allies gain a 200 ATK Spd boost for 10 sec,Cassandra,2020-06-18 11:42:47.443863,2020-06-18 11:42:47.443863,s1l,hero
+106,Softly~ [Dark],"For 5 sec, hit enemies have their Mana reduced by 200 every second",Cassandra,2020-06-18 11:42:54.358741,2020-06-18 11:42:54.358741,s1d,hero
+107,Fiercely! [Light],ATK boost is increased by 40%,Cassandra,2020-06-18 11:43:07.36228,2020-06-18 11:43:07.36228,s2l,hero
+108,Fiercely! [Dark],Mana cost is reduced by 1,Cassandra,2020-06-18 11:43:13.982262,2020-06-18 11:43:13.982262,s2d,hero
+109,Tempting Wave [Light],Target takes 25% increased M.DMG for 10 sec,Cassandra,2020-06-18 11:43:26.529782,2020-06-18 11:43:26.529782,s3l,hero
+110,Tempting Wave [Dark],Mana cost is reduced by 1,Cassandra,2020-06-18 11:43:33.949102,2020-06-18 11:43:33.949102,s3d,hero
+111,Gentle Touch [Light],All DMG upon allies is reduced by 20% for 5 sec,Cassandra,2020-06-18 11:43:44.552536,2020-06-18 11:43:44.552536,s4l,hero
+112,Gentle Touch [Dark],DEF increase effect has its duration increased by 5 sec,Cassandra,2020-06-18 11:43:49.611021,2020-06-18 11:43:49.611021,s4d,hero
+113,Outta the way! / Crushing Kick! / Tempest Kick! [Light],Increases P.DMG the target takes by 25% for 10 sec,Cecilia,2020-06-18 11:44:20.546718,2020-06-18 11:44:20.546718,s1l,hero
+114,Outta the way! / Crushing Kick! / Tempest Kick! [Dark],Dispels positive effects from the target,Cecilia,2020-06-18 11:44:29.902583,2020-06-18 11:44:29.902583,s1d,hero
+115,Infinite Potential [Light],Increases DMG to Non-Hero enemies by 20% for the duration of Skill,Cecilia,2020-06-18 11:45:31.844856,2020-06-18 11:45:31.844856,s2l,hero
+116,Infinite Potential [Dark],Takes 20% reduced DMG for the duration of Skill,Cecilia,2020-06-18 11:45:39.106189,2020-06-18 11:45:39.106189,s2d,hero
+117,WA-TAAAAAH!!! / Special Move. Meteor Kick!!! [Light],Increases DMG by 100% when there is only 1 enemy left,Cecilia,2020-06-18 11:45:56.123411,2020-06-18 11:45:56.123411,s3l,hero
+118,WA-TAAAAAH!!! / Special Move. Meteor Kick!!! [Dark],Gains immunity to CC for the duration of Skill,Cecilia,2020-06-18 11:46:02.90057,2020-06-18 11:46:02.90057,s3d,hero
+119,Inborn Talent [Light],Takes 15% reduced DMG,Cecilia,2020-06-18 11:46:19.201703,2020-06-18 11:46:19.201703,s4l,hero
+120,Inborn Talent [Dark],Increases DMG to Heroes by 15%,Cecilia,2020-06-18 11:46:30.327028,2020-06-18 11:46:30.327028,s4d,hero
+121,I'll Break You! [Light],Reduces Mana Cost by 1,Chase,2020-06-18 11:47:01.543882,2020-06-18 11:47:01.543882,s1l,hero
+122,I'll Break You! [Dark],The inflicted target takes 25% more P.DMG for 10 seconds,Chase,2020-06-18 12:40:01.201681,2020-06-18 12:40:01.201681,s1d,hero
+123,Remove Limit [Light],Enemies hit are stunned for 2 sec,Chase,2020-06-18 12:40:15.526409,2020-06-18 12:40:15.526409,s2l,hero
+124,Remove Limit [Dark],"Wherever HP drops by 1% for the duration of Skill, increases Heal Rate by 0.4% and reduces All DMG taken by 0.4%.",Chase,2020-06-18 12:40:23.095656,2020-06-18 12:40:23.095656,s2d,hero
+125,"Burn, Spear of Fury [Light]",Increases Mana Cost by 1 and Heal Rate by 100%.,Chase,2020-06-18 12:40:33.861562,2020-06-18 12:40:33.861562,s3l,hero
+126,"Burn, Spear of Fury [Dark]","Upon use, dispels negative effects from self.",Chase,2020-06-18 12:40:45.977372,2020-06-18 12:40:45.977372,s3d,hero
+127,Remember This in Hell [Light],"Upon the activation of resurrection, increases ATK by 50%",Chase,2020-06-18 12:40:53.324978,2020-06-18 12:40:53.324978,s4l,hero
+128,Remember This in Hell [Dark],"Upon the activation of resurrection, knocks back nearby enemies in range for 3 seconds",Chase,2020-06-18 12:41:31.801965,2020-06-18 12:41:31.801965,s4d,hero
+129,Light of Annihilation [Light],Reduces Mana Cost by 1,Chrisha,2020-06-18 12:41:52.419633,2020-06-18 12:41:52.419633,s1l,hero
+130,Light of Annihilation [Dark],Increases Mana Cost by 1 and DMG by 100%,Chrisha,2020-06-18 12:41:58.799164,2020-06-18 12:41:58.799164,s1d,hero
+131,Enemy Blockade [Light],Reduces Mana Cost by 1,Chrisha,2020-06-18 12:42:10.966866,2020-06-18 12:42:10.966866,s2l,hero
+132,Enemy Blockade [Dark],Increases Silence duration by 1 sec,Chrisha,2020-06-18 12:42:28.819749,2020-06-18 12:42:28.819749,s2d,hero
+133,Green Zone [Light],Reduces Mana Cost by 1,Chrisha,2020-06-18 12:42:43.281618,2020-06-18 12:42:43.281618,s3l,hero
+134,Green Zone [Dark],Increases Green Zone duration by 1.5 sec,Chrisha,2020-06-18 12:42:49.404895,2020-06-18 12:42:49.404895,s3d,hero
+135,Technomagic of the Empire [Light],Enhances the effect of Lights on normal attacks. Red Light: Changes Cooldown Reduction to 2 sec. Blue Light: Target takes 60% increased M.DMG. Green Light: Heal Rate Reduction is increased to 40%,Chrisha,2020-06-18 12:42:59.953419,2020-06-18 12:42:59.953419,s4l,hero
+136,Technomagic of the Empire [Dark],Increases the Range of normal attack by 20%,Chrisha,2020-06-18 12:43:06.71224,2020-06-18 12:43:06.71224,s4d,hero
+137,Cut Ground [Light],Cooldown is reduced by 2 sec,Clause,2020-06-18 12:43:45.53907,2020-06-18 12:43:45.53907,s1l,hero
+138,Cut Ground [Dark],"In exchange for 1 additional Mana Cost, the skill has a 100% chance to draw the target in",Clause,2020-06-18 12:43:51.795984,2020-06-18 12:43:51.795984,s1d,hero
+139,Shield Strike [Light],Increases All DMG the target takes by 25% for 10 sec.,Clause,2020-06-18 12:44:06.006088,2020-06-18 12:44:06.006088,s2l,hero
+140,Shield Strike [Dark],Stuns the enemy for 1 sec,Clause,2020-06-18 12:44:11.376035,2020-06-18 12:44:11.376035,s2d,hero
+141,Guardian Shield [Light],DEF boost is increased by 40%,Clause,2020-06-18 12:44:21.616148,2020-06-18 12:44:21.616148,s3l,hero
+142,Guardian Shield [Dark],Increases P.Block Chance by 250 for the duration.,Clause,2020-06-18 12:44:28.637276,2020-06-18 12:44:28.637276,s3d,hero
+143,Vow of Knights [Light],Increases All DMG the target hit takes by 20% for 10 sec. A 10 sec Cooldown will be applied.,Clause,2020-06-18 12:44:36.981511,2020-06-18 12:44:36.981511,s4l,hero
+144,Vow of Knights [Dark],Reduce an additional 10% of ATK.,Clause,2020-06-18 12:44:42.161802,2020-06-18 12:44:42.161802,s4d,hero
+145,Fire Needle [Light],"The skill's DMG is reduced by 50% when attacking more than 5 enemies, but all enemies will take damage",Cleo,2020-06-18 12:44:58.600945,2020-06-18 12:44:58.600945,s1l,hero
+146,Fire Needle [Dark],Changes the target to the enemy with the highhest ATK.,Cleo,2020-06-18 12:45:07.483172,2020-06-18 12:45:07.483172,s1d,hero
+147,Fire Ball [Light],"Upon hitting an enemy with 10 or more stacks of Ember, increases M.DMG it takes by 40% for 10 seconds",Cleo,2020-06-18 12:45:17.172175,2020-06-18 12:45:17.172175,s2l,hero
+148,Fire Ball [Dark],Reduces Cooldown by 10% per enemy hit.,Cleo,2020-06-18 12:45:24.124437,2020-06-18 12:45:24.124437,s2d,hero
+149,Fire Rain [Light],Increases DMG by 40%,Cleo,2020-06-18 12:45:36.16269,2020-06-18 12:45:36.16269,s3l,hero
+150,Fire Rain [Dark],Reduces Mana Cost by 2 for 10 sec when attacking more than 5 enemies. 10 sec Cooldown is applied,Cleo,2020-06-18 12:45:42.513347,2020-06-18 12:45:42.513347,s3d,hero
+151,Flame Diffusion [Light],Reduces the target's M.DEF by 2.5% per Ember stack.,Cleo,2020-06-18 12:45:51.810956,2020-06-18 12:45:51.810956,s4l,hero
+152,Flame Diffusion [Dark],"Every 10 sec, enemies affected by Ember are stunned for 2 sec. Enemies with more than 10 stacks of Ember are stunned for 3 sec",Cleo,2020-06-18 12:45:57.490455,2020-06-18 12:45:57.490455,s4d,hero
+153,Target will be Eliminated [Light],"Upon each DMG dealt, recovers 30 Mana",Crow,2020-06-18 12:46:20.400834,2020-06-18 12:46:20.400834,s1l,hero
+154,Target will be Eliminated [Dark],Gains immunity to CC while in use,Crow,2020-06-18 12:46:27.704639,2020-06-18 12:46:27.704639,s1d,hero
+155,Struggle is Meaningless [Light],Cooldown is reduced by 3 sec,Crow,2020-06-18 12:46:38.361654,2020-06-18 12:46:38.361654,s2l,hero
+156,Struggle is Meaningless [Dark],Freezing chance of the Freezing Area increases by 30%,Crow,2020-06-18 12:46:46.285399,2020-06-18 12:46:46.285399,s2d,hero
+157,Even Gods shall Die [Light],Increases Cooldown by 10 sec and DMG by 100%,Crow,2020-06-18 12:47:00.110392,2020-06-18 12:47:00.110392,s3l,hero
+158,Even Gods shall Die [Dark],Reduces Mana Cost by 1,Crow,2020-06-18 12:47:05.962527,2020-06-18 12:47:05.962527,s3d,hero
+159,Hunting Preparation [Light],Boss monster takes 15% increased DMG,Crow,2020-06-18 12:47:14.120976,2020-06-18 12:47:14.120976,s4l,hero
+160,Hunting Preparation [Dark],Mana recovery increases by 40%,Crow,2020-06-18 12:47:20.544225,2020-06-18 12:47:20.544225,s4d,hero
+161,Judgment Upon Them! [Light],Increases Stun duration by 1 sec,Dakaris,2020-06-18 12:47:35.820449,2020-06-18 12:47:35.820449,s1l,hero
+162,Judgment Upon Them! [Dark],Reduces Mana Cost by 1,Dakaris,2020-06-18 12:47:46.563391,2020-06-18 12:47:46.563391,s1d,hero
+163,Grant Me Strength! [Light],"Upon activation, increases own ATK Spd by 500",Dakaris,2020-06-18 12:47:59.091088,2020-06-18 12:47:59.091088,s2l,hero
+164,Grant Me Strength! [Dark],Increases duration of the shield by 5 sec,Dakaris,2020-06-18 12:48:03.599149,2020-06-18 12:48:25.791353,s2d,hero
+165,May Their Agony End! [Light],Gains CC Immunity for the duration of Skill,Dakaris,2020-06-18 12:48:43.466777,2020-06-18 12:48:43.466777,s3l,hero
+166,May Their Agony End! [Dark],Increases DMG by 40%,Dakaris,2020-06-18 12:48:48.761981,2020-06-18 12:48:48.761981,s3d,hero
+167,Might of the Ancestors! [Light],Heal Rate is increased by 100%,Dakaris,2020-06-18 12:48:57.730464,2020-06-18 12:48:57.730464,s4l,hero
+168,Might of the Ancestors! [Dark],"If own HP is full, recovers 300 Mana every sec",Dakaris,2020-06-18 12:49:03.550686,2020-06-18 12:49:03.550686,s4d,hero
+169,Judgment Blade [Light],Increases number of Dark Energy stacks required for use by 10 and increases DMG by 80%,Dark Lord Kasel,2020-06-18 12:52:12.114401,2020-06-18 12:52:12.114401,s1l,hero
+170,Judgment Blade [Dark],Increases the duration of disabling Mana recovery by 2 sec,Dark Lord Kasel,2020-06-18 12:52:18.97671,2020-06-18 12:52:18.97671,s1d,hero
+171,Doom [Light],Increases P.DMG the hit targets take by 30% for 10 sec,Dark Lord Kasel,2020-06-18 12:52:31.931331,2020-06-18 12:52:31.931331,s2l,hero
+172,Doom [Dark],Inflicts Stun on enemies instead of knocking them away,Dark Lord Kasel,2020-06-18 12:52:38.369887,2020-06-18 12:52:38.369887,s2d,hero
+173,Advent of the Dark Lord [Light],Increases P.Block Chance by 400 for the duration of Skill,Dark Lord Kasel,2020-06-18 12:52:52.328934,2020-06-18 12:52:52.328934,s3l,hero
+174,Advent of the Dark Lord [Dark],Increases DMG of normal attacks by 50% for the duration of Skill,Dark Lord Kasel,2020-06-18 12:52:58.998271,2020-06-18 12:52:58.998271,s3d,hero
+175,One Fallen to Darkness [Light],"At the beginning of each battle, gains 10 stacks of [Dark Energy]",Dark Lord Kasel,2020-06-18 12:53:11.126635,2020-06-18 12:53:11.126635,s4l,hero
+176,One Fallen to Darkness [Dark],"When there is 1 enemy, gains 2 additional stacks of [Dark Energy]",Dark Lord Kasel,2020-06-18 12:53:17.950125,2020-06-18 12:53:17.950125,s4d,hero
+177,Penetration [Light],"In exchange for 1 additional Mana Cost, pull in 2 enemies",Demia,2020-06-18 12:53:36.952032,2020-06-18 12:53:36.952032,s1l,hero
+178,Penetration [Dark],All pulled enemies take 25% increased DMG from all sources for 10 sec,Demia,2020-06-18 12:53:43.864239,2020-06-18 12:53:43.864239,s1d,hero
+179,Will to Win [Light],Mana cost is reduced by 1,Demia,2020-06-18 12:53:56.454418,2020-06-18 12:53:56.454418,s2l,hero
+180,Will to Win [Dark],Ally P.DEF is boosted by 20% for 10 sec after activation,Demia,2020-06-18 12:54:02.997586,2020-06-18 12:54:02.997586,s2d,hero
+181,Steel Fortress [Light],"Upon jumping into the air, charge at the target with the highest ATK",Demia,2020-06-18 12:54:14.831915,2020-06-18 12:54:14.831915,s3l,hero
+182,Steel Fortress [Dark],"While casting, all allies take 20% reduced P.DMG",Demia,2020-06-18 12:54:22.908464,2020-06-18 12:54:22.908464,s3d,hero
+183,Spearhead [Light],P.DEF is increased by 20% and P. Block is boosted by 50%,Demia,2020-06-18 12:54:32.23702,2020-06-18 12:54:32.23702,s4l,hero
+184,Spearhead [Dark],Recovers HP equal to 40% of P.DEF upon blocking,Demia,2020-06-18 12:54:38.423136,2020-06-18 12:54:38.423136,s4d,hero
+185,Dark Rampage [Light],"If there is 1 enemy, DMG is increased by 100%",Dimael,2020-06-18 13:00:37.97519,2020-06-18 13:00:37.97519,s1l,hero
+186,Dark Rampage [Dark],Has a 25% chance of Blinding the enemy for 5 sec,Dimael,2020-06-18 13:00:46.988036,2020-06-18 13:00:46.988036,s1d,hero
+187,Black Shackle [Light],Mana cost is reduced by 1,Dimael,2020-06-18 13:00:57.022979,2020-06-18 13:00:57.022979,s2l,hero
+188,Black Shackle [Dark],Hit enemies are drawn together,Dimael,2020-06-18 13:01:03.223681,2020-06-18 13:01:03.223681,s2d,hero
+189,Shadow Wave [Light],Mana cost is increased by 1 orb but DMG is boosted by 100%,Dimael,2020-06-18 13:01:19.476605,2020-06-18 13:01:19.476605,s3l,hero
+190,Shadow Wave [Dark],Dispels positive effects of all enemies in range,Dimael,2020-06-18 13:01:32.372627,2020-06-18 13:01:32.372627,s3d,hero
+191,Black Stain [Light],DMG is increased by 40%,Dimael,2020-06-18 13:01:42.782783,2020-06-18 13:01:42.782783,s4l,hero
+192,Black Stain [Dark],There is a 10% chance that Skill 1 is fired upon an auto-attack,Dimael,2020-06-18 13:01:49.968069,2020-06-18 13:01:49.968069,s4d,hero
+193,This Will Hurt! [Light],Recovers 1 orb of Mana of allies within range,Dosarta,2020-06-18 13:02:15.87094,2020-06-18 13:02:15.87094,s1l,hero
+194,This Will Hurt! [Dark],Reduces a target's M.Block by 500 for 5 sec,Dosarta,2020-06-18 13:02:24.701272,2020-06-18 13:02:24.701272,s1d,hero
+195,On Guard! [Light],Reduces Mana Cost by 1,Dosarta,2020-06-18 13:02:39.313551,2020-06-18 13:02:39.313551,s2l,hero
+196,On Guard! [Dark],Gains immunity to CC for 2 sec,Dosarta,2020-06-18 13:02:46.762948,2020-06-18 13:02:46.762948,s2d,hero
+197,Hya! Kya! Take this! [Light],Gains immunity to CC for the duration of skill,Dosarta,2020-06-18 13:03:20.225518,2020-06-18 13:03:20.225518,s3l,hero
+198,Hya! Kya! Take this! [Dark],Increases the amount of M.DMG that a target takes by 25% for 10 sec,Dosarta,2020-06-18 13:03:28.801334,2020-06-18 13:03:28.801334,s3d,hero
+199,Let Us Challenge Together! [Light],DEF Boost effects become irremovable,Dosarta,2020-06-18 13:03:38.992988,2020-06-18 13:03:38.992988,s4l,hero
+200,Let Us Challenge Together! [Dark],Cooldown changes to 4 sec,Dosarta,2020-06-18 13:03:44.103694,2020-06-18 13:03:44.103694,s4d,hero
+201,Absorbing Blow [Light],"If there is 1 enemy, DMG is increased by 100%",Epis,2020-06-18 13:08:18.828248,2020-06-18 13:08:18.828248,s1l,hero
+202,Absorbing Blow [Dark],Ignores enemy Block,Epis,2020-06-18 13:08:24.513254,2020-06-18 13:08:24.513254,s1d,hero
+203,Nightmare [Light],Mana cost is reduced by 1,Epis,2020-06-18 13:08:37.251107,2020-06-18 13:08:37.251107,s2l,hero
+204,Nightmare [Dark],"Mana consumption is increased by 1, and upon using the skill, 'Absorbing Blow' is activated. Cannot use when there are no enemies in range",Epis,2020-06-18 13:08:43.511919,2020-06-18 13:08:43.511919,s2d,hero
+205,Devil's Prom [Light],DMG is increased by 40%,Epis,2020-06-18 13:08:57.556685,2020-06-18 13:08:57.556685,s3l,hero
+206,Devil's Prom [Dark],DMG taken is reduced by 50% while skill is in use,Epis,2020-06-18 13:09:04.521579,2020-06-18 13:09:04.521579,s3d,hero
+207,Harvest [Light],Each stack increases Mana recovery per sec by 50%,Epis,2020-06-18 13:09:17.153045,2020-06-18 13:09:17.153045,s4l,hero
+208,Harvest [Dark],"While stack number is higher than 5, Mana is always at 100% and cooldowns are decreased by an additional 1 sec per each sec",Epis,2020-06-18 13:09:23.013516,2020-06-18 13:09:23.013516,s4d,hero
+209,Sweet Blood [Light],Recovers 150 Mana every hit,Erze,2020-06-18 13:59:32.562993,2020-06-18 13:59:32.562993,s1l,hero
+210,Sweet Blood [Dark],Each use increases DMG by 10%. Stacks 30 times max,Erze,2020-06-18 13:59:43.912647,2020-06-18 13:59:43.912647,s1d,hero
+211,Soaking Blood [Light],Stuns the target for 3 sec upon hit,Erze,2020-06-18 14:00:41.793613,2020-06-18 14:00:41.793613,s2l,hero
+212,Soaking Blood [Dark],Mana cost is reduced by 1,Erze,2020-06-18 14:00:48.409956,2020-06-18 14:00:48.409956,s2d,hero
+213,Blood Liberation [Light],Recovers 75 Mana every hit,Erze,2020-06-18 14:01:02.259327,2020-06-18 14:01:02.259327,s3l,hero
+214,Blood Liberation [Dark],Mana cost is increased by 1 orb but DMG is boosted by 100%,Erze,2020-06-18 14:01:09.743284,2020-06-18 14:01:09.743284,s3d,hero
+215,Life Drinker [Light],Increases Max HP by 100% upon killing an enemy and changes the Max HP reduction after auto-casting [Soaking Blood] to 33%,Erze,2020-06-18 14:01:18.619633,2020-06-18 14:01:18.619633,s4l,hero
+216,Life Drinker [Dark],"Increases ATK by 200% upon killing an enemy, but Max HP boost does not apply",Erze,2020-06-18 14:01:33.07947,2020-06-18 14:01:33.07947,s4d,hero
+217,This Is My Game [Light],Increases DMG by 100% when there is only 1 enemy left,Esker,2020-06-18 14:02:15.180535,2020-06-18 14:02:15.180535,s1l,hero
+218,This Is My Game [Dark],Reduces ATK Spd of the enemy by 200 for 10 sec,Esker,2020-06-18 14:02:22.033115,2020-06-18 14:02:22.033115,s1d,hero
+219,My Turn [Light],"Increases Mana Cost by 1, but rolls 6 every time",Esker,2020-06-18 14:07:57.303906,2020-06-18 14:07:57.303906,s2l,hero
+220,My Turn [Dark],Reduces Mana Cost by 1,Esker,2020-06-18 14:08:48.917738,2020-06-18 14:08:48.917738,s2d,hero
+221,Shall I Try My Luck? [Light],DMG increase effect will activate after the Cooldown Reduction effect activates at max stack first,Esker,2020-06-18 14:09:04.157619,2020-06-18 14:09:04.157619,s3l,hero
+222,Shall I Try My Luck? [Dark],"Changes the target to 4 enemies, but reduces Cooldown by 50% upon killing an enemy",Esker,2020-06-18 14:09:10.19585,2020-06-18 14:09:10.19585,s3d,hero
+223,This Is Not a Trick [Light],Increases the max number of stacks by 3,Esker,2020-06-18 14:09:18.675297,2020-06-18 14:09:18.675297,s4l,hero
+224,This Is Not a Trick [Dark],Increases DMG against Non-Hero enemies by 3% per stack,Esker,2020-06-18 14:09:25.226528,2020-06-18 14:09:25.226528,s4d,hero
+225,Purification of Life / Uproar of Naav Gehen [Light],[Purification of Life] Reduces Cooldown of the Skill by 5 sec,Evan,2020-06-18 14:09:58.471163,2020-06-18 14:09:58.471163,s1l,hero
+226,Purification of Life / Uproar of Naav Gehen [Dark],[Uproar of Naav Gehen] Changes the duration of the P.DMG Boost effect to 20 sec,Evan,2020-06-18 14:10:05.954255,2020-06-18 14:10:05.954255,s1d,hero
+227,Magic Circle of Life / Naav Gehen of Gluttony [Light],[Magic Circle of Life] Increases CC Resist by 500 for the duration of the magic circle,Evan,2020-06-18 14:10:22.025512,2020-06-18 14:10:22.025512,s2l,hero
+228,Magic Circle of Life / Naav Gehen of Gluttony [Dark],[Naav Gehen of Gluttony] Reduces Mana Cost by 1,Evan,2020-06-18 14:10:31.7289,2020-06-18 14:10:31.7289,s2d,hero
+229,Origin of Life / Rampage of Naav Gehen [Light],"[Origin of Life] The Shield becomes irremovable, but reduces the shield to 50%",Evan,2020-06-18 14:10:48.047971,2020-06-18 14:10:48.047971,s3l,hero
+230,Origin of Life / Rampage of Naav Gehen [Dark],[Rampage of Naav Gehen] Each hit reduces the target's Mana by 300,Evan,2020-06-18 14:10:53.507668,2020-06-18 14:10:53.507668,s3d,hero
+231,Alchemy of Green [Light],Changes P.DMG Reduction to 25%,Evan,2020-06-18 14:11:50.732902,2020-06-18 14:11:50.732902,s4l,hero
+232,Alchemy of Green [Dark],"At the beginning of the first battle, Evan starts as 'Alchemist of the Dark Evan' and gains immunity to CC for 5 sec",Evan,2020-06-18 14:11:59.0059,2020-06-18 14:11:59.0059,s4d,hero
+233,Destructive Instinct [Light],DMG is increased by 40%,Ezekiel,2020-06-18 14:13:50.835628,2020-06-18 14:13:50.835628,s1l,hero
+234,Destructive Instinct [Dark],"After activation, ATK is increased by 40% for 5 sec",Ezekiel,2020-06-18 14:13:56.092557,2020-06-18 14:14:15.560007,s1d,hero
+235,Dawning Despair [Light],Mana cost is reduced by 1,Ezekiel,2020-06-18 14:14:36.955031,2020-06-18 14:14:36.955031,s2l,hero
+236,Dawning Despair [Dark],"When activated during Fury state, ignores target DEF",Ezekiel,2020-06-18 14:14:43.391788,2020-06-18 14:14:43.391788,s2d,hero
+237,Strike of Doom [Light],Becomes immune to CC during activation,Ezekiel,2020-06-18 14:14:52.66623,2020-06-18 14:14:52.66623,s3l,hero
+238,Strike of Doom [Dark],"If there is 1 enemy, DMG is increased by 100%",Ezekiel,2020-06-18 14:14:58.546387,2020-06-18 14:14:58.546387,s3d,hero
+239,Cursed Blood [Light],"When in Fury state, heal rate is increased by 50%",Ezekiel,2020-06-18 14:15:09.421411,2020-06-18 14:15:09.421411,s4l,hero
+240,Cursed Blood [Dark],"Per every stacked 'Cursed Blood', takes 12% reduced DMG",Ezekiel,2020-06-18 14:15:15.272604,2020-06-18 14:15:15.272604,s4d,hero
+241,Light of Doom [Light],Increases All DMG the hit enemies takes by 20% for 10 sec,Fallen Frey,2020-06-18 14:15:38.409276,2020-06-18 14:15:38.409276,s1l,hero
+242,Light of Doom [Dark],ncreases Mana Cost by 1 and Heal Rate by 100%,Fallen Frey,2020-06-18 14:15:44.592701,2020-06-18 14:15:44.592701,s1d,hero
+243,Blessing of Doom [Light],Changes the target of shield to all allies,Fallen Frey,2020-06-18 14:15:56.172624,2020-06-18 14:15:56.172624,s2l,hero
+244,Blessing of Doom [Dark],Increases All Block Chance of shielded allies by 400,Fallen Frey,2020-06-18 14:16:03.102605,2020-06-18 14:16:03.102605,s2d,hero
+245,Heaven's Vengeance [Light],Increases DMG by 40%,Fallen Frey,2020-06-18 14:16:16.700146,2020-06-18 14:16:16.700146,s3l,hero
+246,Heaven's Vengeance [Dark],Each hit reduces Mana by 200,Fallen Frey,2020-06-18 14:16:24.79861,2020-06-18 14:16:24.79861,s3d,hero
+247,Tainted Angel [Light],"At the beginning of the first battle, grants [Blessing of the Fallen Angel] to all allies excluding self, reducing All DMG the targets take by 10% and increasing All DEF by 20%. The [Blessing of the Fallen Angel] effect is irremovable",Fallen Frey,2020-06-18 14:16:34.229817,2020-06-18 14:16:34.229817,s4l,hero
+248,Tainted Angel [Dark],"At the beginning of the first battle, grants [Bond of the Fallen Angel] to 1 ally with the highest ATK excluding self, increasing the targets ATK Spd by 200 and ATK euqal to 7% of Fallen Frey's ATK. The [Bond of the Fallen Angel] effect is irremovable",Fallen Frey,2020-06-18 14:16:57.469819,2020-06-18 14:16:57.469819,s4d,hero
+249,Tempest Blade [Light],Ignores DEF when there is only 1 enemy,Fluss,2020-06-18 14:17:46.229749,2020-06-18 14:17:46.229749,s1l,hero
+250,Tempest Blade [Dark],"Upon a Crit Hit, cooldown is reduced by 6%",Fluss,2020-06-18 14:17:53.486183,2020-06-18 14:17:53.486183,s1d,hero
+251,Flashstep [Light],"In exchange for 1 additional Mana Cost, cooldown is reduced by 5 sec",Fluss,2020-06-18 14:18:06.12873,2020-06-18 14:18:06.12873,s2l,hero
+252,Flashstep [Dark],Dispels positive effects from enemy,Fluss,2020-06-18 14:18:12.905388,2020-06-18 14:18:12.905388,s2d,hero
+253,Bloody Petals [Light],Each Critical Hit increases the last hit's DMG by 10%,Fluss,2020-06-18 14:18:23.566584,2020-06-18 14:18:23.566584,s3l,hero
+254,Bloody Petals [Dark],"While in cooldown, auto attack DMG is boosted by 50%",Fluss,2020-06-18 14:18:33.342321,2020-06-18 14:18:33.342321,s3d,hero
+255,Spell Cutter [Light],"Upon dodging, raise own ATK by 3%. Stacks up to 10 times",Fluss,2020-06-18 14:18:50.493653,2020-06-18 14:18:50.493653,s4l,hero
+256,Spell Cutter [Dark],Has a 30% chance to stun enemies for 3 sec,Fluss,2020-06-18 14:18:57.014384,2020-06-18 14:18:57.014384,s4d,hero
+257,Miraculous Light [Light],"In exchange for 1 additional Mana Cost, the skill targets 2 allies",Frey,2020-06-18 14:21:51.252875,2020-06-18 14:21:51.252875,s1l,hero
+258,Miraculous Light [Dark],Healed allies take 25% reduced M.DMG for 10 sec,Frey,2020-06-18 14:21:59.258784,2020-06-18 14:21:59.258784,s1d,hero
+259,Blessings of Light [Light],Shield is increased by 40%,Frey,2020-06-18 14:22:10.179681,2020-06-18 14:22:10.179681,s2l,hero
+260,Blessings of Light [Dark],Shielded allies gain 20% ATK,Frey,2020-06-18 14:22:16.086779,2020-06-18 14:22:16.086779,s2d,hero
+261,Heaven's Vengeance [Light],"In exchange for 1 additional Mana Cost, DMG is increased by 80%",Frey,2020-06-18 14:22:31.365771,2020-06-18 14:22:31.365771,s3l,hero
+262,Heaven's Vengeance [Dark],Blind duration is reduced by 2 sec and now targets a random enemy,Frey,2020-06-18 14:22:38.280895,2020-06-18 14:22:38.280895,s3d,hero
+263,Goddess Grace [Light],Target's ATK Spd. is boosted by 250,Frey,2020-06-18 14:22:47.153755,2020-06-18 14:22:47.153755,s4l,hero
+264,Goddess Grace [Dark],Number of targets changes to 2,Frey,2020-06-18 14:22:52.553168,2020-06-18 14:22:52.553168,s4d,hero
+265,Smash [Light],Mana cost is reduced by 1,Gau,2020-06-18 14:23:10.400422,2020-06-18 14:23:10.400422,s1l,hero
+266,Smash [Dark],Each use increases DMG by 15%. Stacks 10 times max,Gau,2020-06-18 14:23:17.080968,2020-06-18 14:23:17.080968,s1d,hero
+267,Battle Roar [Light],ATK boost is increased by 40%,Gau,2020-06-18 14:23:29.736583,2020-06-18 14:23:29.736583,s2l,hero
+268,Battle Roar [Dark],ATK Spd boost of 200 is added to the effect,Gau,2020-06-18 14:23:34.162721,2020-06-18 14:23:34.162721,s2d,hero
+269,Vortex [Light],Cooldown reduced by 3 sec,Gau,2020-06-18 14:23:58.629596,2020-06-18 14:23:58.629596,s3l,hero
+270,Vortex [Dark],Immune to all types of DMG while in use,Gau,2020-06-18 14:24:03.564772,2020-06-18 14:24:03.564772,s3d,hero
+271,Enrage [Light],ATK boost is increased by 40%,Gau,2020-06-18 14:24:12.087155,2020-06-18 14:24:12.087155,s4l,hero
+272,Enrage [Dark],"Takes 5% more DMG per each stack, but gains a boost of 50 Crit Chance and Lifesteal per each stack as well",Gau,2020-06-18 14:24:15.787138,2020-06-18 14:24:15.787138,s4d,hero
+273,Quick Strikes [Light],"When there is 1 enemy, DMG is boosted by 100%",Gladi,2020-06-18 14:24:42.076345,2020-06-18 14:24:42.076345,s1l,hero
+274,Quick Strikes [Dark],P.DMG taken increase effect amount is changed to 50%,Gladi,2020-06-18 14:24:48.160811,2020-06-18 14:24:48.160811,s1d,hero
+275,Advent of the War God [Light],War God state lasts 5 seconds longer,Gladi,2020-06-18 14:25:01.651931,2020-06-18 14:25:01.651931,s2l,hero
+276,Advent of the War God [Dark],Additional DMG hit chance rises by 20%,Gladi,2020-06-18 14:25:05.788321,2020-06-18 14:25:05.788321,s2d,hero
+277,Ultimate Punch! [Light],DMG is increased by 40%,Gladi,2020-06-18 14:25:15.517961,2020-06-18 14:25:15.517961,s3l,hero
+278,Ultimate Punch! [Dark],Mana cost is reduced by 1,Gladi,2020-06-18 14:25:21.918328,2020-06-18 14:25:21.918328,s3d,hero
+279,This will hurt! [Light],"When there is 1 enemy, DMG is boosted by 100%",Gladi,2020-06-18 14:25:30.810403,2020-06-18 14:25:30.810403,s4l,hero
+280,This will hurt! [Dark],"When activated in the Arena, deal 15% of the target's current HP as additional P.DMG that ignores DEF",Gladi,2020-06-18 14:25:36.826715,2020-06-18 14:25:36.826715,s4d,hero
+281,That Is It [Light],Mana Cost increases by 1. DMG dealt to Non-Hero enemies now ignores DEF,Glenwys,2020-06-18 14:26:02.51232,2020-06-18 14:26:02.51232,s1l,hero
+282,That Is It [Dark],Reduces target's ATK Spd by 250 for 10 sec,Glenwys,2020-06-18 14:26:10.577141,2020-06-18 14:26:10.577141,s1d,hero
+283,I Will Not Stay My Hand [Light],Increases the amount of P.DMG that a target takes by 25% for 10 sec,Glenwys,2020-06-18 14:26:19.357218,2020-06-18 14:26:19.357218,s2l,hero
+284,I Will Not Stay My Hand [Dark],The duration of Stun increases by 0.5 sec,Glenwys,2020-06-18 14:26:25.726196,2020-06-18 14:26:25.726196,s2d,hero
+285,Time For Counterattack [Light],Reduces target's P.Crit Resistance by 250 for 10 sec,Glenwys,2020-06-18 14:26:38.566843,2020-06-18 14:26:38.566843,s3l,hero
+286,Time For Counterattack [Dark],Mana Cost is increases by 1 and the amount of ATK and DEF boost increases by 100%,Glenwys,2020-06-18 14:26:45.321311,2020-06-18 14:26:45.321311,s3d,hero
+287,Pride of Imperial Knights [Light],DMG effect dealt to Non-Hero enemies is now 20%,Glenwys,2020-06-18 14:26:53.945786,2020-06-18 14:26:53.945786,s4l,hero
+288,Pride of Imperial Knights [Dark],DMG effect received from Non-Hero enemies is now 20%,Glenwys,2020-06-18 14:26:57.800007,2020-06-18 14:26:57.800007,s4d,hero
+289,I See Through Your Every Move! [Light],Removes positive effects from the target,Hanus,2020-06-18 14:27:17.417715,2020-06-18 14:27:17.417715,s1l,hero
+290,I See Through Your Every Move! [Dark],"Hanus now gains 40 Ammo, increasing own ATK by 3% for 60 sec upon gaining an Ammo. The ATK Boost effect can be stacked up to max 5 times",Hanus,2020-06-18 14:27:22.729848,2020-06-18 14:27:22.729848,s1d,hero
+291,Shoot You Full of Holes! [Light],"Ammo usage is increased to 3 , but while Hanus is in the state of consuming Ammo, Hanus' Crit DMG is increased by 150%",Hanus,2020-06-18 14:28:13.446069,2020-06-18 14:28:13.446069,s2l,hero
+292,Shoot You Full of Holes! [Dark],Hanus no longer takes additional DMG from enemies,Hanus,2020-06-18 14:28:18.835321,2020-06-18 14:28:18.835321,s2d,hero
+293,Hide If You Can! [Light],Ignores the target's DMG Reduction effects in Guild War,Hanus,2020-06-18 14:28:27.847313,2020-06-18 14:28:27.847313,s3l,hero
+294,Hide If You Can! [Dark],"Hanus now gains 80 Ammo, increasing own DEF Penetration by 60 for 60 sec upon gaining an Ammo. The DEF Penetration Boost can be stacked up to max 5 times",Hanus,2020-06-18 14:28:34.50354,2020-06-18 14:28:34.50354,s3d,hero
+295,I Shall Train You Hard! [Light],"At the beginning of a Guild War battle, reduces DMG that all allies take by 20% for 6 sec",Hanus,2020-06-18 14:28:44.103232,2020-06-18 14:28:44.103232,s4l,hero
+296,I Shall Train You Hard! [Dark],Hanus gains 30 Ammo every 10 sec,Hanus,2020-06-18 14:28:49.580396,2020-06-18 14:28:49.580396,s4d,hero
+297,Funeral Rites [Light],Target takes 25% increased M.DMG for 10 sec,Jane,2020-06-18 14:30:04.488058,2020-06-18 14:30:04.488058,s1l,hero
+298,Funeral Rites [Dark],"In exchange for 1 additional Mana Cost, the skill has a 100% chance to draw the target in",Jane,2020-06-18 14:30:12.779365,2020-06-18 14:30:12.779365,s1d,hero
+299,Mark of Death [Light],Duration is reduced to 10 sec and DMG is boosted by 250%,Jane,2020-06-18 14:30:27.695791,2020-06-18 14:30:27.695791,s2l,hero
+300,Mark of Death [Dark],Engraved Mark is not be dispelled when negative effects are dispelled,Jane,2020-06-18 14:30:38.821302,2020-06-18 14:30:38.821302,s2d,hero
+301,Day of Ruin [Light],DMG is increased by 40%,Jane,2020-06-18 14:30:49.787582,2020-06-18 14:30:49.787582,s3l,hero
+302,Day of Ruin [Dark],"Upon use, dispels negative effects of all allies.",Jane,2020-06-18 14:30:57.920954,2020-06-18 14:30:57.920954,s3d,hero
+303,Rest in Peace [Light],"Upon activation, displels positive effects of all enemies.",Jane,2020-06-18 14:31:07.299879,2020-06-18 14:31:07.299879,s4l,hero
+304,Rest in Peace [Dark],"Upon activation, stun all enemies for 2 sec",Jane,2020-06-18 14:31:11.648722,2020-06-18 14:31:11.648722,s4d,hero
+305,Best Dish / Juno's Spicy Special [Light],[Best Dish] Increases ATK of the target by 15% for the duration of skill. [Juno's Spicy Special] Target takes 25% increased P.DMG for 10 sec,Juno,2020-06-18 14:31:34.624758,2020-06-18 14:31:34.624758,s1l,hero
+306,Best Dish / Juno's Spicy Special [Dark],[Best Dish] Increases Crit Chance of the target by 150 for the duration of skill. [Juno's Spicy Special] Reduces Mana Cost by 1,Juno,2020-06-18 14:31:42.296518,2020-06-18 14:31:42.296518,s1d,hero
+307,"Power-up / Help Yourself, Then Get Lost! [Light]","[Power-up] Increases Mana Cost by 1, but casts shields on 2 targets. [Help Yourself, Then Get Lost!] Reduces ATK Spd of hit enemy by 200 for 10 seconds",Juno,2020-06-18 14:32:01.740985,2020-06-18 14:32:01.740985,s2l,hero
+308,"Power-up / Help Yourself, Then Get Lost! [Dark]","[Power-up] Reduces Mana Cost by 1. [Help Yourself, Then Get Lost!] Increases Cooldown of hit enemy's active skills by 2 seconds",Juno,2020-06-18 14:32:07.873318,2020-06-18 14:32:07.873318,s2d,hero
+309,Cook from Hell [Light],Increases Heal Rate by 100%,Juno,2020-06-18 14:32:59.683392,2020-06-18 14:32:59.683392,s3l,hero
+310,Cook from Hell [Dark],Recovers 1 orb of Mana upon use,Juno,2020-06-18 14:33:07.87766,2020-06-18 14:33:07.87766,s3d,hero
+311,Open for Business! [Light],Increases Crit Chance of all allies by 200,Juno,2020-06-18 14:33:17.056656,2020-06-18 14:33:17.056656,s4l,hero
+312,Open for Business! [Dark],Reduces DEF Penetration of all enemies by 200,Juno,2020-06-18 14:33:22.515212,2020-06-18 14:33:22.515212,s4d,hero
+313,Anti-personnel Laser / Siege Laser [Light],[Anti-personnel Laser] - Recovers 200 MP upon a Crit Hit. [Siege Laser] - Increases Mana Cost by 1 and DMG by 100%,Kara,2020-06-18 14:33:41.236124,2020-06-18 14:33:41.236124,s1l,hero
+314,Anti-personnel Laser / Siege Laser [Dark],[Anti-personnel Laser] - Reduces 300 MP of the enemy that took the DMG. [Siege Laser] - Reduces Mana Cost by 1,Kara,2020-06-18 14:33:48.294847,2020-06-18 14:33:48.294847,s1d,hero
+315,Wide-area Cannon / Focused Fire [Light],[Wide-area Cannon] - Increases the Stun duration by 1 second. [Focused Fire] - Stacks 1 additional Focused Fire,Kara,2020-06-18 14:34:02.364322,2020-06-18 14:34:02.364322,s2l,hero
+316,Wide-area Cannon / Focused Fire [Dark],[Wide-area Cannon] - Reduces Mana Cost by 1. [Focused Fire] - Increases the Max Stack of Focused Fire to 60,Kara,2020-06-18 14:34:08.292752,2020-06-18 14:34:08.292752,s2d,hero
+317,Release Siege Weapon [Light],Increases DMG by 100% when there is only 1 enemy,Kara,2020-06-18 14:34:20.010761,2020-06-18 14:34:20.010761,s3l,hero
+318,Release Siege Weapon [Dark],Reduces all skill cooldown by 3% upon a Crit Hit,Kara,2020-06-18 14:34:27.426077,2020-06-18 14:34:27.426077,s3d,hero
+319,Essence of Technomagic [Light],MP Recovery triples when there is only one enemy,Kara,2020-06-18 14:35:06.751998,2020-06-18 14:35:06.751998,s4l,hero
+320,Essence of Technomagic [Dark],"[Anti-personnel Weapon] - Decreases ATK by 20%, but increases MP Recovery/Sec by 100%. [Siege Weapon] - Decreases all DEF by 60%, but increases Crit DMG by 140%",Kara,2020-06-18 14:35:19.236445,2020-06-18 14:35:19.236445,s4d,hero
+321,Judgment Blade [Light],Increases DMG by 40%.,Kasel,2020-06-22 08:55:18.643633,2020-06-22 08:55:18.643633,s1l,hero
+322,Judgment Blade [Dark],Ignores DEF when there is only 1 enemy,Kasel,2020-06-22 08:55:36.778321,2020-06-22 08:55:36.778321,s1d,hero
+323,Valiant Dash [Light],Mana cost is reduced by 1,Kasel,2020-06-22 08:55:49.337328,2020-06-22 08:55:49.337328,s2l,hero
+324,Valiant Dash [Dark],Reduces the target's P.DEF by 30% for 10 sec.,Kasel,2020-06-22 08:55:56.322277,2020-06-22 08:55:56.322277,s2d,hero
+325,Proxy of God [Light],Reduces DMG taken by 20% during the [Proxy of God] state.,Kasel,2020-06-22 08:57:11.49807,2020-06-22 08:57:11.49807,s3l,hero
+326,Proxy of God [Dark],Increases Mana Cost by 1 and DMG dealt to Non-Hero enemies by 100% for the duration of Skill,Kasel,2020-06-22 08:57:18.445405,2020-06-22 08:57:18.445405,s3d,hero
+327,Goddess Strike [Light],Increases Dodge Chance by an additional 150 and recovers 5% of Max HP upon dodging. This effect only activates once every 3 sec.,Kasel,2020-06-22 08:57:31.67193,2020-06-22 08:57:31.67193,s4l,hero
+328,Goddess Strike [Dark],Reduces DMG received from Heroes by 15%,Kasel,2020-06-22 08:57:37.518733,2020-06-22 08:57:37.518733,s4d,hero
+329,Thunderbolt [Light],Mana cost is reduced by 1,Kaulah,2020-06-22 08:59:24.339265,2020-06-22 08:59:24.339265,s1l,hero
+330,Thunderbolt [Dark],Target takes 25% increased M.DMG for 10 sec,Kaulah,2020-06-22 08:59:30.703636,2020-06-22 08:59:30.703636,s1d,hero
+331,Healing Rain [Light],Allies take 25% less DMG while skill is in effect,Kaulah,2020-06-22 08:59:42.271785,2020-06-22 08:59:42.271785,s2l,hero
+332,Healing Rain [Dark],"In exchange for 1 additional Mana Cost, additionally heal allies by 5% of their Max HP",Kaulah,2020-06-22 08:59:48.722903,2020-06-22 08:59:48.722903,s2d,hero
+333,Swift Wind [Light],Recovers 1 orb of Mana for all allies,Kaulah,2020-06-22 09:00:01.141546,2020-06-22 09:00:01.141546,s3l,hero
+334,Swift Wind [Dark],Cooldown is reduced by 3 sec,Kaulah,2020-06-22 09:00:07.769177,2020-06-22 09:00:07.769177,s3d,hero
+335,Chain Lightning [Light],Electric Shock effect becomes irremovable,Kaulah,2020-06-22 09:00:16.214539,2020-06-22 09:00:16.214539,s4l,hero
+336,Chain Lightning [Dark],Increases Stun duration by 0.7 sec,Kaulah,2020-06-22 09:00:21.665303,2020-06-22 09:00:21.665303,s4d,hero
+337,"Mm, You Better Pay Attention! [Light]",Reduces MP cost by 1,Kibera,2020-06-22 09:00:46.090869,2020-06-22 09:00:46.090869,s1l,hero
+338,"Mm, You Better Pay Attention! [Dark]",Gains Immunity to CC for the duration of the Skill,Kibera,2020-06-22 09:00:52.647038,2020-06-22 09:00:52.647038,s1d,hero
+339,"Heh, Let's Have Some Fun! / Ha! Full of Openings [Light]","Upon using [Ha! Full of Openings], inflicts silence on all enemies for 2 sec",Kibera,2020-06-22 09:01:10.139674,2020-06-22 09:01:10.139674,s2l,hero
+340,"Heh, Let's Have Some Fun! / Ha! Full of Openings [Dark]","When there are 3 allies or less, the effect of [Shadow Dominion] applies to all allies",Kibera,2020-06-22 09:01:19.554366,2020-06-22 09:01:19.554366,s2d,hero
+341,Say Hello to Death!! [Light],Dispels positive effects of enemies within the range of the shockwave,Kibera,2020-06-22 09:04:05.98534,2020-06-22 09:04:05.98534,s3l,hero
+342,Say Hello to Death!! [Dark],"Increases Mana Cost by 1, and icnreases DMG by 100%",Kibera,2020-06-22 09:04:13.043446,2020-06-22 09:04:13.043446,s3d,hero
+343,Three Demonic Swords [Light],"Increaes own ATK by 20% and automatically selects [Nocturnal Demonic Sword, Night Sky] at the beginning of the first Battle",Kibera,2020-06-22 09:04:22.192165,2020-06-22 09:04:22.192165,s4l,hero
+344,Three Demonic Swords [Dark],"Recovers own Mana by 150 every sec, and automatically selects [Darkslayer Demonic Sword, Veil] at the beginning of the first battle",Kibera,2020-06-22 09:04:30.526817,2020-06-22 09:04:30.526817,s4d,hero
+345,"Slash, Blade of Judgment! [Light]",Reduces Cooldown by 3% per each enemy hit,Kirze,2020-06-22 09:04:52.303448,2020-06-22 09:04:52.303448,s1l,hero
+346,"Slash, Blade of Judgment! [Dark]","If there is only 1 enemy, DMG is increased by 100%",Kirze,2020-06-22 09:04:57.886018,2020-06-22 09:04:57.886018,s1d,hero
+347,"Disperse, Crystal Haze! [Light]",Reduces Mana Cost by 1,Kirze,2020-06-22 09:05:07.95553,2020-06-22 09:05:07.95553,s2l,hero
+348,"Disperse, Crystal Haze! [Dark]","While under [Arcane Crystal Awakening], self deals 20% increased DMG to Non-Hero enemies",Kirze,2020-06-22 09:05:13.916154,2020-06-22 09:05:13.916154,s2d,hero
+349,"Bloom, Crimson Flower! [Light]",Increases ATK Spd reduction by 300,Kirze,2020-06-22 09:05:25.378397,2020-06-22 09:05:25.378397,s3l,hero
+350,"Bloom, Crimson Flower! [Dark]",Inflicts 2 stacks of Arcane Crystal Energy,Kirze,2020-06-22 09:05:32.864473,2020-06-22 09:05:32.864473,s3d,hero
+351,End to Evil Deeds! [Light],"At the beginning of each battle, self deals 25% increased DMG to Non-Hero enemies for 20 sec",Kirze,2020-06-22 09:05:42.668716,2020-06-22 09:05:42.668716,s4l,hero
+352,End to Evil Deeds! [Dark],Deals 15% increased DMG to Bosses,Kirze,2020-06-22 09:05:48.659221,2020-06-22 09:05:48.659221,s4d,hero
+353,Healing Droplets [Light],Heal rate is increased by 40%,Laias,2020-06-22 09:06:10.477329,2020-06-22 09:06:10.477329,s1l,hero
+354,Healing Droplets [Dark],"Upon healing, M. Crit Resistance rises by 25%",Laias,2020-06-22 09:06:16.293281,2020-06-22 09:06:16.293281,s1d,hero
+355,Bubble Shield [Light],Changes the target to the ally with the highest ATK,Laias,2020-06-22 09:06:32.137251,2020-06-22 09:06:32.137251,s2l,hero
+356,Bubble Shield [Dark],Mana cost is reduced by 1,Laias,2020-06-22 09:06:41.046226,2020-06-22 09:06:41.046226,s2d,hero
+357,Festival of the Flow [Light],DMG effect occurs every 3 sec,Laias,2020-06-22 09:06:54.495694,2020-06-22 09:06:54.495694,s3l,hero
+358,Festival of the Flow [Dark],Heals all allies by 15% of their max HP,Laias,2020-06-22 09:07:00.947416,2020-06-22 09:07:00.947416,s3d,hero
+359,Blessing of the Water Dragon [Light],"M.DEF increase rate increases by 20%, and M. Crit Resistance increases by 150",Laias,2020-06-22 09:07:08.444547,2020-06-22 09:07:08.444547,s4l,hero
+360,Blessing of the Water Dragon [Dark],Increases self CC Resist by 400,Laias,2020-06-22 09:07:16.662881,2020-06-22 09:07:16.662881,s4d,hero
+361,Rapid Fire [Light],DMG is increased by 40%,Lakrak,2020-06-22 09:08:01.937533,2020-06-22 09:08:01.937533,s1l,hero
+362,Rapid Fire [Dark],Reduces the Mana of hit target by 700,Lakrak,2020-06-22 09:08:08.024684,2020-06-22 09:08:08.024684,s1d,hero
+363,Smoke Bomb [Light],Mana cost is reduced by 1,Lakrak,2020-06-22 09:08:17.823235,2020-06-22 09:08:17.823235,s2l,hero
+364,Smoke Bomb [Dark],Blind duration is increased by 2 sec,Lakrak,2020-06-22 09:08:26.153137,2020-06-22 09:08:26.153137,s2d,hero
+365,Glue Bomb [Light],"Mana cost is increased by 1, and attaches the bomb on a random enemy twice",Lakrak,2020-06-22 09:08:40.749459,2020-06-22 09:08:40.749459,s3l,hero
+366,Glue Bomb [Dark],Changes the target to the enemy with the highest ATK,Lakrak,2020-06-22 09:08:49.912169,2020-06-22 09:08:49.912169,s3d,hero
+367,Load Cannon [Light],Increases the activation chance of the bomb by 10% and the duration of Stun by 1 sec,Lakrak,2020-06-22 09:09:04.942161,2020-06-22 09:09:04.942161,s4l,hero
+368,Load Cannon [Dark],"Upon a successful experiment, recovers 500 Mana",Lakrak,2020-06-22 09:09:10.62473,2020-06-22 09:09:10.62473,s4d,hero
+369,Whisper of Sand [Light],Mana cost is reduced by 1,Laudia,2020-06-22 09:09:38.298644,2020-06-22 09:09:38.298644,s1l,hero
+370,Whisper of Sand [Dark],Target takes 25% increased M.DMG for 10 sec,Laudia,2020-06-22 09:09:45.11215,2020-06-22 09:09:45.11215,s1d,hero
+371,Enchanting Flow / Alluring Ambush [Light],Gains 2 orbs of mana after movement. Gained Mana is consumed over 10 sec,Laudia,2020-06-22 09:10:01.257502,2020-06-22 09:10:01.257502,s2l,hero
+372,Enchanting Flow / Alluring Ambush [Dark],"After using [Enchanting Flow], [Alluring Ambush] can be used twice within 10 sec",Laudia,2020-06-22 09:10:35.224116,2020-06-22 09:10:35.224116,s2d,hero
+373,Dance of the Desert / Blinding Acceleration [Light],Recovers 30 Mana every hit,Laudia,2020-06-22 09:11:36.63651,2020-06-22 09:11:36.63651,s3l,hero
+374,Dance of the Desert / Blinding Acceleration [Dark],Mana cost is increased by 1 and DMG is increased by 100%,Laudia,2020-06-22 09:11:45.780794,2020-06-22 09:11:45.780794,s3d,hero
+375,Blessing of Oasis [Light],Gains 2 stack of [Blessing of Oasis],Laudia,2020-06-22 09:12:00.68748,2020-06-22 09:12:00.68748,s4l,hero
+376,Blessing of Oasis [Dark],"Per each stack, takes 2% less DMG from enemies other than heroes",Laudia,2020-06-22 09:12:07.236056,2020-06-22 09:12:07.236056,s4d,hero
+377,G-go Away! [Light],Increases M.DMG the target takes by 25%,Lavril,2020-06-22 09:12:28.309011,2020-06-22 09:12:28.309011,s1l,hero
+378,G-go Away! [Dark],"Recovers 1 orb of Mana when the target dies, and Cooldown of this skill is reset",Lavril,2020-06-22 09:12:34.063724,2020-06-22 09:12:34.063724,s1d,hero
+379,Bear Up...! / You Scare Me...! [Light],[Bear Up...!] Keeps target's HP from going below 5% for the duration of skill. [You Scare Me...!] Dispels positive effects from the target,Lavril,2020-06-22 09:12:49.751491,2020-06-22 09:12:49.751491,s2l,hero
+380,Bear Up...! / You Scare Me...! [Dark],[Bear Up...!] Increases ATK of the target by 20% for the duration of skill. [You Scare Me...!] - Increases the target by 1,Lavril,2020-06-22 09:12:57.726188,2020-06-22 09:12:57.726188,s2d,hero
+381,Leave Me Alone...! [Light],Reduces Cooldown by 30%,Lavril,2020-06-22 09:13:14.432023,2020-06-22 09:13:14.432023,s3l,hero
+382,Leave Me Alone...! [Dark],Reduces Mana Cost by 1,Lavril,2020-06-22 09:13:20.305896,2020-06-22 09:13:20.305896,s3d,hero
+383,Together Forever... [Light],Increases DEF Penetration of the ally bound by Soul Link by 300,Lavril,2020-06-22 09:13:29.845606,2020-06-22 09:13:29.845606,s4l,hero
+384,Together Forever... [Dark],Increases All DEF of the ally bound by Soul Link by 15%,Lavril,2020-06-22 09:13:35.792759,2020-06-22 09:13:35.792759,s4d,hero
+385,Rune of Frailty [Light],Cooldown is reduced by 2 sec,Leo,2020-06-22 09:14:02.155092,2020-06-22 09:14:02.155092,s1l,hero
+386,Rune of Frailty [Dark],Target number increased to 2,Leo,2020-06-22 09:14:13.364406,2020-06-22 09:14:13.364406,s1d,hero
+387,Rune of Healing [Light],Heal rate is increased by 40%,Leo,2020-06-22 09:14:24.431699,2020-06-22 09:14:24.431699,s2l,hero
+388,Rune of Healing [Dark],Increase ally P.DEF for 25% for 10 sec after healing,Leo,2020-06-22 09:14:31.844387,2020-06-22 09:14:31.844387,s2d,hero
+389,Rune of Silence [Light],Mana cost is reduced by 1,Leo,2020-06-22 09:15:16.693649,2020-06-22 09:15:16.693649,s3l,hero
+390,Rune of Silence [Dark],DMG is increased by 200% and the enemy target receives 20% more DMG from all sources for 10 sec. Mana cost is increased by 2,Leo,2020-06-22 09:15:27.779509,2020-06-22 09:15:27.779509,s3d,hero
+391,Rune of Protection [Light],Heal rate is increased by 40%,Leo,2020-06-22 09:15:43.933015,2020-06-22 09:15:43.933015,s4l,hero
+392,Rune of Protection [Dark],"After healing an ally, increase target P.DEF for 40% for a duration of 10 sec",Leo,2020-06-22 09:15:50.237218,2020-06-22 09:15:50.237218,s4d,hero
+393,Blood Orb [Light],Mana cost is increased by 1 orb but DMG is boosted by 100%,Lewisia,2020-06-22 09:17:13.077095,2020-06-22 09:17:13.077095,s1l,hero
+394,Blood Orb [Dark],Target takes 25% increased M.DMG for 10 sec,Lewisia,2020-06-22 09:17:21.583711,2020-06-22 09:17:21.583711,s1d,hero
+395,Blood Zone [Light],DMG is increased by 40%,Lewisia,2020-06-22 09:17:38.875915,2020-06-22 09:17:38.875915,s2l,hero
+396,Blood Zone [Dark],Cooldown is reduced by 3 sec,Lewisia,2020-06-22 09:17:42.334245,2020-06-22 09:17:42.334245,s2d,hero
+397,Blood Banquet [Light],"Upon attacking an enemy with over 80 stacks of Blood Curse, all skill cooldown is reduced by 5%",Lewisia,2020-06-22 09:17:54.507344,2020-06-22 09:17:54.507344,s3l,hero
+398,Blood Banquet [Dark],Mana cost is reduced by 1,Lewisia,2020-06-22 09:17:59.400936,2020-06-22 09:17:59.400936,s3d,hero
+399,Blood Dominator [Light],Max stack of Blood Curse is changed to 200 stacks,Lewisia,2020-06-22 09:18:08.794574,2020-06-22 09:18:08.794574,s4l,hero
+400,Blood Dominator [Dark],All allies' heal rate is increased by 20% and all enemies' heal rate is reduced by 20%,Lewisia,2020-06-22 09:18:14.153816,2020-06-22 09:18:14.153816,s4d,hero
+401,Aqua Tempest [Light],Hit target's ATK Spd is decreased by 250 for 10 sec,Lilia,2020-06-22 09:18:34.232747,2020-06-22 09:18:34.232747,s1l,hero
+402,Aqua Tempest [Dark],Each use increases DMG by 20%. Stacks 15 times max,Lilia,2020-06-22 09:18:38.114332,2020-06-22 09:18:38.114332,s1d,hero
+403,Everlasting Oasis [Light],Mana cost is increased by 1 and is additionally activated on the ally with the highest ATK excluding self,Lilia,2020-06-22 09:18:48.188686,2020-06-22 09:18:48.188686,s2l,hero
+404,Everlasting Oasis [Dark],Skill duration is decreased by 5 sec and all effects are increased by 100%,Lilia,2020-06-22 09:18:54.549805,2020-06-22 09:18:54.549805,s2d,hero
+405,Celestial Cataract [Light],"While in use, gain immunity to CC",Lilia,2020-06-22 09:42:44.899232,2020-06-22 09:42:44.899232,s3l,hero
+406,Celestial Cataract [Dark],"Per each water drop thrown, mana cost and mana consumption rate are increased by 100%, and per each water drop thrown, there is a 50% chance of throwing an extra water drop",Lilia,2020-06-22 09:56:21.040239,2020-06-22 09:56:21.040239,s3d,hero
+407,Aqua Purification [Light],"At the start of each battle, recovers 1000 mana",Lilia,2020-06-22 09:56:33.667717,2020-06-22 09:56:33.667717,s4l,hero
+408,Aqua Purification [Dark],Deals 15% increased DMG to Boss monsters,Lilia,2020-06-22 09:56:39.277726,2020-06-22 09:56:39.277726,s4d,hero
+409,Cut Ground [Light],Cooldown is reduced by 3 sec,Loman,2020-06-22 12:10:27.802076,2020-06-22 12:10:27.802076,s1l,hero
+410,Cut Ground [Dark],Increases P.Weakness of the affected target by 25% for 10 seconds,Loman,2020-06-22 12:10:31.708881,2020-06-22 12:10:31.708881,s1d,hero
+411,Shrouding Creed [Light],Reduces Cooldown by 5 seconds,Loman,2020-06-22 12:10:43.887597,2020-06-22 12:10:43.887597,s2l,hero
+412,Shrouding Creed [Dark],The shield lasts 5 seconds longer,Loman,2020-06-22 12:10:50.083381,2020-06-22 12:10:50.083381,s2d,hero
+413,Knight's Creed [Light],"When there is 1 enemy, DMG is boosted by 100%",Loman,2020-06-22 12:11:01.605266,2020-06-22 12:11:01.605266,s3l,hero
+414,Knight's Creed [Dark],"While in use, gains immunity to CC",Loman,2020-06-22 12:11:10.42012,2020-06-22 12:11:10.42012,s3d,hero
+415,The Last Gatekeeper [Light],Increases the number of 'Endurance' stacked every second by 1,Loman,2020-06-22 12:11:20.44724,2020-06-22 12:11:20.44724,s4l,hero
+416,The Last Gatekeeper [Dark],Decreases ATK Spd of the affected enemy by 200 for 10 sec,Loman,2020-06-22 12:11:26.716129,2020-06-22 12:11:26.716129,s4d,hero
+417,Thornbush Forest [Light],"Reduces Mana of the hit target by 250. If the target is a boss, reduces Mana by 500",Lorraine,2020-06-22 12:11:46.920662,2020-06-22 12:11:46.920662,s1l,hero
+418,Thornbush Forest [Dark],Recovers 250 Mana upon Critical Hit,Lorraine,2020-06-22 12:11:54.030594,2020-06-22 12:11:54.030594,s1d,hero
+419,Seed of Belladonna [Light],Increases DMG by 40%,Lorraine,2020-06-22 12:12:05.930546,2020-06-22 12:12:05.930546,s2l,hero
+420,Seed of Belladonna [Dark],Increases the duration of the CC inflicted upon hit enemies by 30% for 5 sec,Lorraine,2020-06-22 12:12:13.301554,2020-06-22 12:12:13.301554,s2d,hero
+421,Wrath of the Forest [Light],Mana cost is increased by 1 orb but DMG is boosted by 100%,Lorraine,2020-06-22 12:12:22.914915,2020-06-22 12:12:22.914915,s3l,hero
+422,Wrath of the Forest [Dark],Dispels positive effects of enemies within Range,Lorraine,2020-06-22 12:12:31.519118,2020-06-22 12:12:31.519118,s3d,hero
+423,Poison [Light],Reduces target's ATK by 5% per stack of Poison,Lorraine,2020-06-22 12:12:41.842745,2020-06-22 12:12:41.842745,s4l,hero
+424,Poison [Dark],"If the target is a boss, increases DMG of Poison by x3",Lorraine,2020-06-22 12:12:50.456684,2020-06-22 12:12:50.456684,s4d,hero
+425,Path of Blessings [Light],Increases Heal Rate by 40%,Lucias,2020-06-22 12:13:38.928979,2020-06-22 12:13:38.928979,s1l,hero
+426,Path of Blessings [Dark],Recovers target's Mana by 500,Lucias,2020-06-22 12:13:46.021341,2020-06-22 12:13:46.021341,s1d,hero
+427,Zone of Faith [Light],Recovers Mana for allies within range by 200 per sec,Lucias,2020-06-22 12:13:56.929888,2020-06-22 12:13:56.929888,s2l,hero
+428,Zone of Faith [Dark],Continuously dispels positive effects from enemies within range,Lucias,2020-06-22 12:14:04.316773,2020-06-22 12:14:04.316773,s2d,hero
+429,Stigmata [Light],Additional P.DMG from [Stigmata] decreases the target's ACC by 150 for 5 sec,Lucias,2020-06-22 12:14:13.065035,2020-06-22 12:14:13.065035,s3l,hero
+430,Stigmata [Dark],Gains immunity to CC for the duration of skill,Lucias,2020-06-22 12:14:19.716739,2020-06-22 12:14:19.716739,s3d,hero
+431,Holy Sacrifice [Light],Increases Heal Rate by 40%,Lucias,2020-06-22 12:14:30.085312,2020-06-22 12:14:30.085312,s4l,hero
+432,Holy Sacrifice [Dark],No longer consumes HP,Lucias,2020-06-22 12:14:34.428421,2020-06-22 12:14:34.428421,s4d,hero
+433,Pew! [Light],Gains immunity to CC for the duration of Skill,Luna,2020-06-22 12:14:49.943672,2020-06-22 12:14:49.943672,s1l,hero
+434,Pew! [Dark],Stuns the hit enemy for 2 sec,Luna,2020-06-22 12:14:54.406035,2020-06-22 12:14:54.406035,s1d,hero
+435,Look out above! [Light],"In exchange for 2 additional Mana Cost, attacks random enemies 3 times",Luna,2020-06-22 12:15:07.50698,2020-06-22 12:15:07.50698,s2l,hero
+436,Look out above! [Dark],Ignores enemy Block,Luna,2020-06-22 12:15:13.682008,2020-06-22 12:15:13.682008,s2d,hero
+437,Twinkle Twinkle [Light],Reduces ACC of hit enemies by 150 for 7 sec,Luna,2020-06-22 12:15:26.799627,2020-06-22 12:15:26.799627,s3l,hero
+438,Twinkle Twinkle [Dark],"In exchange for 1 additional Mana Cost, knock back the enemy over a long distance",Luna,2020-06-22 12:15:35.418691,2020-06-22 12:15:35.418691,s3d,hero
+439,Gotcha! [Light],Removes positive effects from the target,Luna,2020-06-22 12:15:48.219916,2020-06-22 12:15:48.219916,s4l,hero
+440,Gotcha! [Dark],Number of targets changes to 2,Luna,2020-06-22 12:15:53.466145,2020-06-22 12:15:53.466145,s4d,hero
+441,Raven Storm [Light],DMG is increased by 40%,Maria,2020-06-22 12:16:10.700733,2020-06-22 12:16:10.700733,s1l,hero
+442,Raven Storm [Dark],Has a 20% chance of inflicting a 3 sec Shackle,Maria,2020-06-22 12:16:17.722812,2020-06-22 12:16:17.722812,s1d,hero
+443,Claw of Restriction [Light],Mana cost is increased by 1 and the skill targets 3 enemies,Maria,2020-06-22 12:16:28.95524,2020-06-22 12:16:28.95524,s2l,hero
+444,Claw of Restriction [Dark],Shackle duration is increased by 1.5 sec,Maria,2020-06-22 12:16:33.824937,2020-06-22 12:16:33.824937,s2d,hero
+445,Area of Darkness [Light],Target takes 25% increased M.DMG for 10 sec,Maria,2020-06-22 12:16:43.651574,2020-06-22 12:16:43.651574,s3l,hero
+446,Area of Darkness [Dark],Mana cost is reduced by 1,Maria,2020-06-22 12:16:49.442642,2020-06-22 12:16:49.442642,s3d,hero
+447,Black Wind [Light],ATK reduction is increased by 40%,Maria,2020-06-22 12:16:59.119654,2020-06-22 12:16:59.119654,s4l,hero
+448,Black Wind [Dark],Reduces enemy M. Crit Resistance by 25% for 10 sec,Maria,2020-06-22 12:17:02.627209,2020-06-22 12:17:02.627209,s4d,hero
+449,Take anything! [Light],All effects are not dispelled by 'dispel positive effect' effect,May,2020-06-22 12:17:19.074186,2020-06-22 12:17:19.074186,s1l,hero
+450,Take anything! [Dark],All effects can be stacked max 8 times,May,2020-06-22 12:17:26.426246,2020-06-22 12:17:26.426246,s1d,hero
+451,Cheer up! [Light],Increases ally CC Resist by 250 for 10 sec,May,2020-06-22 12:17:38.462023,2020-06-22 12:17:38.462023,s2l,hero
+452,Cheer up! [Dark],There is a 15% chance to recover 1 orb of mana,May,2020-06-22 12:17:43.009896,2020-06-22 12:17:43.009896,s2d,hero
+453,Not for sale! [Light],Mana cost is reduced by 1,May,2020-06-22 12:17:56.597795,2020-06-22 12:17:56.597795,s3l,hero
+454,Not for sale! [Dark],All attacks will be focused on a single enemy,May,2020-06-22 12:18:05.0289,2020-06-22 12:18:05.0289,s3d,hero
+455,Take this! [Light],Activates every 12 sec,May,2020-06-22 12:18:16.462447,2020-06-22 12:18:16.462447,s4l,hero
+456,Take this! [Dark],Increases target M.DMG taken by 25%,May,2020-06-22 12:18:20.573641,2020-06-22 12:18:20.573641,s4d,hero
+457,Healing Salve [Light],Boosts healed ally ATK by 10% for 10 sec,Mediana,2020-06-22 12:19:27.240213,2020-06-22 12:19:27.240213,s1l,hero
+458,Healing Salve [Dark],Mana cost is reduced by 1,Mediana,2020-06-22 12:19:32.108268,2020-06-22 12:19:32.108268,s1d,hero
+459,Special Water Cannon [Light],DMG and Heal rate are increased by 40%,Mediana,2020-06-22 12:19:44.570466,2020-06-22 12:19:44.570466,s2l,hero
+460,Special Water Cannon [Dark],Gain CC immunity while using said skill,Mediana,2020-06-22 12:19:49.612236,2020-06-22 12:19:49.612236,s2d,hero
+461,Strengthening Potion [Light],ATK boost is increased by 40%,Mediana,2020-06-22 12:27:08.353213,2020-06-22 12:27:08.353213,s3l,hero
+462,Strengthening Potion [Dark],Crit Chance is boosted by 400,Mediana,2020-06-22 12:27:15.659547,2020-06-22 12:27:15.659547,s3d,hero
+463,Mediana's Special Poison [Light],P.Crit Resistance amount is changed to 300,Mediana,2020-06-22 12:27:45.158905,2020-06-22 12:27:45.158905,s4l,hero
+464,Mediana's Special Poison [Dark],Target takes 20% increased P.DMG,Mediana,2020-06-22 12:27:49.267316,2020-06-22 12:27:49.267316,s4d,hero
+465,Target Lock On [Light],"When there is 1 enemy, DMG is boosted by 100%",Mirianne,2020-06-22 12:28:07.257164,2020-06-22 12:28:07.257164,s1l,hero
+466,Target Lock On [Dark],Stun duration is increased by 1 sec,Mirianne,2020-06-22 12:28:12.538496,2020-06-22 12:28:12.538496,s1d,hero
+467,Restrain and Protect [Light],Gain CC immunity while using said skill,Mirianne,2020-06-22 12:28:25.350811,2020-06-22 12:28:25.350811,s2l,hero
+468,Restrain and Protect [Dark],Stun duration is increased by 2 sec,Mirianne,2020-06-22 12:28:31.195262,2020-06-22 12:28:31.195262,s2d,hero
+469,Assassination [Light],Dispels target's positive effects and inflicts Stun for 1 sec,Mirianne,2020-06-22 12:28:46.184781,2020-06-22 12:28:46.184781,s3l,hero
+470,Assassination [Dark],DMG is increased by 40%,Mirianne,2020-06-22 12:28:51.592274,2020-06-22 12:28:51.592274,s3d,hero
+471,Target Eliminated [Light],"When there is an enemy inflicted by 'Target Lock On', Crit Chance is increased by 400",Mirianne,2020-06-22 12:29:27.605428,2020-06-22 12:29:27.605428,s4l,hero
+472,Target Eliminated [Dark],Receives 30% reduced DMG when enemy is inflicted by 'Target Lock On',Mirianne,2020-06-22 12:29:31.251253,2020-06-22 12:29:31.251253,s4d,hero
+473,Baaaam! [Light],Increase P.DMG that the target takes by 25% for 10 sec,Miruru,2020-06-22 12:29:59.562513,2020-06-22 12:29:59.562513,s1l,hero
+474,Baaaam! [Dark],"Upon activation, ATK is increased by 35% for 10 sec",Miruru,2020-06-22 12:30:04.888366,2020-06-22 12:30:04.888366,s1d,hero
+475,Roll Over [Light],DMG is increased by 40%,Miruru,2020-06-22 12:30:18.849666,2020-06-22 12:30:18.849666,s2l,hero
+476,Roll Over [Dark],"For each enemy that takes DMG, reduce cooldown by 8%",Miruru,2020-06-22 12:30:23.71333,2020-06-22 12:30:23.71333,s2d,hero
+477,Miruru Pirates! [Light],"If there is 1 enemy, DMG is increased by 100%",Miruru,2020-06-22 12:30:36.617864,2020-06-22 12:30:36.617864,s3l,hero
+478,Miruru Pirates! [Dark],Removes ATK Spd debuff effect and adds a 3 sec Stun,Miruru,2020-06-22 12:30:41.851615,2020-06-22 12:30:41.851615,s3d,hero
+479,Boooooom! [Light],Increases ATK by 0.5% for 10 seconds upon a Crit Hit. This effect can be stacked up to max 100 times,Miruru,2020-06-22 12:30:54.886515,2020-06-22 12:30:54.886515,s4l,hero
+480,Boooooom! [Dark],Activation chance changes to 80%,Miruru,2020-06-22 12:30:59.652251,2020-06-22 12:30:59.652251,s4d,hero
+481,Bang! Bang!! [Light],DMG is increased by 100% when there is 1 enemy,Mitra,2020-06-22 12:31:16.342058,2020-06-22 12:31:16.342058,s1l,hero
+482,Bang! Bang!! [Dark],Mark stacks 2 times,Mitra,2020-06-22 12:31:29.932438,2020-06-22 12:31:29.932438,s1d,hero
+483,Time to Die!! [Light],"Upon activation, HP will not be reduced below 5% for 3 sec",Mitra,2020-06-22 12:31:40.889685,2020-06-22 12:31:40.889685,s2l,hero
+484,Time to Die!! [Dark],Crit DMG is increased by 50% for the duration of Skill,Mitra,2020-06-22 12:31:46.660715,2020-06-22 12:31:46.660715,s2d,hero
+485,Dance with me!! [Light],DMG is increased by 40%,Mitra,2020-06-22 12:32:15.906122,2020-06-22 12:32:15.906122,s3l,hero
+486,Dance with me!! [Dark],Stacks 2 more mark per hit,Mitra,2020-06-22 12:32:24.922018,2020-06-22 12:32:24.922018,s3d,hero
+487,You're Next!! [Light],Mark maximum is changed to 300,Mitra,2020-06-22 12:32:33.400704,2020-06-22 12:32:33.400704,s4l,hero
+488,You're Next!! [Dark],All cooldowns are reduced by 0.3 when hitting a target with 100 stacks,Mitra,2020-06-22 12:32:44.072897,2020-06-22 12:32:44.072897,s4d,hero
+489,Burning Power [Light],ATK Spd. is increased by 200 for 15 sec,Morrah,2020-06-22 14:14:49.140109,2020-06-22 14:14:49.140109,s1l,hero
+490,Burning Power [Dark],Reduces cooldown by 6% per each enemy hit,Morrah,2020-06-22 14:41:03.10349,2020-06-22 14:41:03.10349,s1d,hero
+491,Hellfire [Light],M.Block rate is boosted by 20%,Morrah,2020-06-22 14:41:14.460012,2020-06-22 14:41:14.460012,s2l,hero
+492,Hellfire [Dark],"While Hellfire is active, deal DMG based on own M.DEF to nearby enemies",Morrah,2020-06-22 14:41:18.522611,2020-06-22 14:41:18.522611,s2d,hero
+493,Lava Eruption [Light],DMG is increased by 40%,Morrah,2020-06-22 14:41:30.794334,2020-06-22 14:41:30.794334,s3l,hero
+494,Lava Eruption [Dark],Heals HP equal to 40% of DMG dealt,Morrah,2020-06-22 14:41:36.14776,2020-06-22 14:41:36.14776,s3d,hero
+495,Fire Smash [Light],Increases own M.DEF by 5% per each block. Max stack is 10,Morrah,2020-06-22 14:41:46.547027,2020-06-22 14:41:46.547027,s4l,hero
+496,Fire Smash [Dark],Target with over 100 stacks of Flame takes 40% increased M.DMG,Morrah,2020-06-22 14:41:50.71621,2020-06-22 14:41:50.71621,s4d,hero
+497,Fierce Winds [Light],Gains immunity to CC for the duration of the Skill,Naila,2020-06-22 14:42:10.017884,2020-06-22 14:42:10.017884,s1l,hero
+498,Fierce Winds [Dark],Increases P.DMG the hit target takes by 25% for 10 sec,Naila,2020-06-22 14:42:15.478511,2020-06-22 14:42:15.478511,s1d,hero
+499,Wind Reading [Light],Increases mana Cost by 1 and dispels positive effects from all enemies upon activation,Naila,2020-06-22 14:42:26.606662,2020-06-22 14:42:26.606662,s2l,hero
+500,Wind Reading [Dark],Increases the max number of stacks for Crit DMG Boost effect to 20,Naila,2020-06-22 14:42:31.458971,2020-06-22 14:42:31.458971,s2d,hero
+501,Dive Bomb [Light],Increases DMG by 40%,Naila,2020-06-22 14:42:43.906163,2020-06-22 14:42:43.906163,s3l,hero
+502,Dive Bomb [Dark],Reduces the Heal Rate of the hit target by 40% for 10 sec,Naila,2020-06-22 14:42:49.06212,2020-06-22 14:42:49.06212,s3d,hero
+503,Tornado Strike [Light],"Increases DMG of normal attacks by 25%, and reduces Cooldown of all Skills by 2 sec",Naila,2020-06-22 14:43:00.651808,2020-06-22 14:43:00.651808,s4l,hero
+504,Tornado Strike [Dark],"At the beginning of each battle, increases own DEF Penetration by 400 for 20 sec. Upon activation during Guild War, gains immunity to CC for 10 sec. The DEF Penetration Boost effect is irremovable",Naila,2020-06-22 14:43:06.814675,2020-06-22 14:43:06.814675,s4d,hero
+505,Black Lightning Claw [Light],Increases Stun duration by 2 sec,Neraxis,2020-06-22 14:43:28.289929,2020-06-22 14:43:28.289929,s1l,hero
+506,Black Lightning Claw [Dark],Increases the M.DMG that the hit enemy takes by 25% for 10 sec,Neraxis,2020-06-22 14:43:33.696977,2020-06-22 14:43:33.696977,s1d,hero
+507,Obsidian Roar [Light],Increases Mana Cost by 1 and ATK and DEF Boost by 100%,Neraxis,2020-06-22 14:43:43.344813,2020-06-22 14:43:43.344813,s2l,hero
+508,Obsidian Roar [Dark],Reduces ATK Spd of the hit enemy by 300 for 15 sec,Neraxis,2020-06-22 14:43:48.697086,2020-06-22 14:43:48.697086,s2d,hero
+509,Breath of Destruction [Light],Reduce Mana Cost by 1,Neraxis,2020-06-22 14:44:13.778802,2020-06-22 14:44:13.778802,s3l,hero
+510,Breath of Destruction [Dark],Changes M.DEF Reduction to 30%,Neraxis,2020-06-22 14:44:18.612946,2020-06-22 14:44:18.612946,s3d,hero
+511,Black Dragon Hide [Light],ATK Spd is increased by 300,Neraxis,2020-06-22 14:44:28.59646,2020-06-22 14:44:28.59646,s4l,hero
+512,Black Dragon Hide [Dark],"When HP falls below 50%, skill effects are increased by 50%",Neraxis,2020-06-22 14:44:32.969497,2020-06-22 14:44:32.969497,s4d,hero
+513,Scar of Barbarism / Enhanced Scar of Barbarism [Light],Increases DMG by 40%,Nia,2020-06-22 14:44:58.851213,2020-06-22 14:44:58.851213,s1l,hero
+514,Scar of Barbarism / Enhanced Scar of Barbarism [Dark],Recovers own Mana by 50 upon every hit,Nia,2020-06-22 14:45:05.400979,2020-06-22 14:45:05.400979,s1d,hero
+515,On the Hunt / Enhanced On the Hunt [Light],"Stuns targets for 1 sec when [Hunt Mark] is inflicted, and for 3 sec when [Enhanced Hunt Mark] is inflicted",Nia,2020-06-22 14:47:06.199487,2020-06-22 14:47:06.199487,s2l,hero
+516,On the Hunt / Enhanced On the Hunt [Dark],[Hunt Mark] and [Enhanced Hunt Mark] cannot be dispelled by skills that remove negative effects,Nia,2020-06-22 14:47:13.350748,2020-06-22 14:47:13.350748,s2d,hero
+517,Demonic Eyes of Petrification / Enhanced Demonic Eyes of Petrification [Light],Gains immunity to CC for the skill duration,Nia,2020-06-22 14:47:34.883274,2020-06-22 14:47:34.883274,s3l,hero
+518,Demonic Eyes of Petrification / Enhanced Demonic Eyes of Petrification [Dark],Increases DMG to Non-Hero enemies by 100% for the skill duration,Nia,2020-06-22 14:47:41.167447,2020-06-22 14:47:41.167447,s3d,hero
+519,Demonic Blood [Light],Increases ATK Boost and All Dodge Chance Boost by 50%,Nia,2020-06-22 14:48:24.900604,2020-06-22 14:48:24.900604,s4l,hero
+520,Demonic Blood [Dark],Dispels own negative effects upon gaining 4 stacks of [Demonic Blood],Nia,2020-06-22 14:48:33.874831,2020-06-22 14:48:33.874831,s4d,hero
+521,Mace of Rehabilitation [Light],Increases the duration of Disarmament by 3 sec,Nicky,2020-06-22 14:49:15.640353,2020-06-22 14:49:15.640353,s1l,hero
+522,Mace of Rehabilitation [Dark],Reduces Mana Cost by 1,Nicky,2020-06-22 14:49:22.33442,2020-06-22 14:49:22.33442,s1d,hero
+523,Merciless Gale [Light],Dispels enemies' positive effects upon every hit,Nicky,2020-06-22 14:49:56.488183,2020-06-22 14:49:56.488183,s2l,hero
+524,Merciless Gale [Dark],Increases DMG to Non-Hero enemies by 100% for the skill duration,Nicky,2020-06-22 14:50:02.680475,2020-06-22 14:50:02.680475,s2d,hero
+525,Last Execution [Light],Reduces Mana Cost by 1,Nicky,2020-06-22 14:50:19.074693,2020-06-22 14:50:19.074693,s3l,hero
+526,Last Execution [Dark],Increases Mana Cost by 1 and DMG by 100%,Nicky,2020-06-22 14:50:24.120577,2020-06-22 14:50:24.120577,s3d,hero
+527,Massacre Instinct [Light],Increases Cruel Madness duration by 5 sec,Nicky,2020-06-22 14:50:33.473782,2020-06-22 14:50:33.473782,s4l,hero
+528,Massacre Instinct [Dark],Recovers 3 orbs of Mana when 'Cruel Madness' activates,Nicky,2020-06-22 14:50:38.375241,2020-06-22 14:50:38.375241,s4d,hero
+529,Dimension Blade [Light],"When there are over 5 enemies, 20 sec cooldown is reset, and DMG is increased by 250%. Has a cooldown of 20 sec",Nyx,2020-06-22 14:50:55.536681,2020-06-22 14:50:55.536681,s1l,hero
+530,Dimension Blade [Dark],Max Blade stack is increased by 1,Nyx,2020-06-22 14:51:02.878976,2020-06-22 14:51:02.878976,s1d,hero
+531,Dimension Cleaver [Light],Mana cost is reduced by 1,Nyx,2020-06-22 14:51:49.61267,2020-06-22 14:51:49.61267,s2l,hero
+532,Dimension Cleaver [Dark],Target receives 25% increased P.DMG for 10 sec,Nyx,2020-06-22 14:51:55.954091,2020-06-22 14:51:55.954091,s2d,hero
+533,Infinity Blades [Light],Cooldown is reduced by 5 sec,Nyx,2020-06-22 14:52:21.821192,2020-06-22 14:52:21.821192,s3l,hero
+534,Infinity Blades [Dark],"When there are 5 blade stacks or more, DMG is increased by 70%",Nyx,2020-06-22 14:52:25.552958,2020-06-22 14:52:25.552958,s3d,hero
+535,Hidden Blade [Light],DMG is increased by 15% per each enemy on the field,Nyx,2020-06-22 14:52:57.744819,2020-06-22 14:52:57.744819,s4l,hero
+536,Hidden Blade [Dark],There is a 10% chance of dispelling enemy positive effects,Nyx,2020-06-22 14:53:03.551666,2020-06-22 14:53:03.551666,s4d,hero
+537,Time Fracture [Light],DMG is increased by 40%,Oddy,2020-06-22 14:53:21.323164,2020-06-22 14:53:21.323164,s1l,hero
+538,Time Fracture [Dark],Cooldown is reduced by 1.5 sec,Oddy,2020-06-22 14:53:35.649184,2020-06-22 14:53:35.649184,s1d,hero
+539,Time Fragments [Light],Target changes to 2 random enemies,Oddy,2020-06-22 14:53:54.874905,2020-06-22 14:53:54.874905,s2l,hero
+540,Time Fragments [Dark],"While in cooldown, auto-attacks will reduce the cooldown of 'Time Fragments' by 1 sec",Oddy,2020-06-22 14:54:01.426223,2020-06-22 14:54:01.426223,s2d,hero
+541,Time Distortion [Light],Increases Mana Cost by 2 and fully recovers Mana for all allies,Oddy,2020-06-22 14:54:15.469053,2020-06-22 14:54:15.469053,s3l,hero
+542,Time Distortion [Dark],"When there are 5 or more enemies, increases DMG by 100%. Hit Enemies take extra 50% DMG for 10 sec",Oddy,2020-06-22 14:54:26.362398,2020-06-22 14:54:26.362398,s3d,hero
+543,Clock Magic [Light],Changes the instances of gaining extra DMG from using the skill to 3 times,Oddy,2020-06-22 14:54:35.393535,2020-06-22 14:54:35.393535,s4l,hero
+544,Clock Magic [Dark],Changes the chance to Petrify to 40%,Oddy,2020-06-22 14:54:41.797036,2020-06-22 14:54:41.797036,s4d,hero
+545,Card of Death - Carta [Light],"For 10 sec, target takes 25% increased M.DMG",Ophelia,2020-06-22 14:55:19.456189,2020-06-22 14:55:19.456189,s1l,hero
+546,Card of Death - Carta [Dark],Mana cost is reduced by 1,Ophelia,2020-06-22 14:55:25.862146,2020-06-22 14:55:25.862146,s1d,hero
+547,Card of Love - Elliciad [Light],Recovers target's mana by 1000,Ophelia,2020-06-22 14:55:36.70095,2020-06-22 14:55:36.70095,s2l,hero
+548,Card of Love - Elliciad [Dark],ATK boost is increased by 40%,Ophelia,2020-06-22 14:55:43.887135,2020-06-22 14:55:43.887135,s2d,hero
+549,Card of Fortune - Vellekia [Light],Mana cost is increased by 1 orb but DMG is boosted by 100%,Ophelia,2020-06-22 14:55:56.802009,2020-06-22 14:55:56.802009,s3l,hero
+550,Card of Fortune - Vellekia [Dark],Always inflicts a Crit Hit,Ophelia,2020-06-22 14:56:03.599125,2020-06-22 14:56:03.599125,s3d,hero
+551,Pathfinder of Fate [Light],"At the start of each battle, gains the card of [Death]. This card does not have DMG boost effect",Ophelia,2020-06-22 14:56:11.217692,2020-06-22 14:56:11.217692,s4l,hero
+552,Pathfinder of Fate [Dark],"At the start of each battle, gains the card of [Love]. This card does not have heal effect",Ophelia,2020-06-22 14:56:17.322456,2020-06-22 14:56:17.322456,s4d,hero
+553,A Present For You! / Now D.I.E! [Light],[A Present for You!] Hit enemy takes 25% increased P.DMG for 10 sec,Pansirone,2020-06-22 14:56:36.029056,2020-06-22 14:56:36.029056,s1l,hero
+554,A Present For You! / Now D.I.E! [Dark],[Now D.I.E!] Gains immunity to CC for the duration of the skill,Pansirone,2020-06-22 14:56:43.178861,2020-06-22 14:56:43.178861,s1d,hero
+555,The Thrill! How Exciting!! [Light],Reduces Mana Cost by 1,Pansirone,2020-06-22 14:56:55.914532,2020-06-22 14:56:55.914532,s2l,hero
+556,The Thrill! How Exciting!! [Dark],"Upon activation, HP does not fall below 10% for 5 sec",Pansirone,2020-06-22 14:57:01.487786,2020-06-22 14:57:01.487786,s2d,hero
+557,Don't You Dare Run! [Light],Inflicts stun on the hit enemy for 2 sec,Pansirone,2020-06-22 14:57:13.898442,2020-06-22 14:57:13.898442,s3l,hero
+558,Don't You Dare Run! [Dark],"Increases Mana Cost by 2, and changes of targets to 3",Pansirone,2020-06-22 14:57:21.480646,2020-06-22 14:57:21.480646,s3d,hero
+559,Cruel Delight [Light],Eternal Blaze becomes irremovable,Pansirone,2020-06-22 14:57:33.926119,2020-06-22 14:57:33.926119,s4l,hero
+560,Cruel Delight [Dark],Attacking the enemy inflicted with 'Eternal Blaze' 70 Mana each hit,Pansirone,2020-06-22 14:57:39.475323,2020-06-22 14:57:39.475323,s4d,hero
+561,Wedge of Cold Snap [Light],DMG is increased by 40%,Pavel,2020-06-22 14:58:22.849716,2020-06-22 14:58:22.849716,s1l,hero
+562,Wedge of Cold Snap [Dark],"In exchange for 1 additional Mana Cost, Freeze duration is boosted by 5 sec",Pavel,2020-06-22 14:58:28.683699,2020-06-22 14:58:28.683699,s1d,hero
+563,Ice Spear [Light],Mana cost is reduced by 1,Pavel,2020-06-22 14:58:41.912413,2020-06-22 14:58:41.912413,s2l,hero
+564,Ice Spear [Dark],Target changes to the enemy with the highest ATK,Pavel,2020-06-22 14:58:47.835457,2020-06-22 14:58:47.835457,s2d,hero
+565,Icy Conquest [Light],Mana cost is reduced by 1,Pavel,2020-06-22 14:59:00.834413,2020-06-22 14:59:00.834413,s3l,hero
+566,Icy Conquest [Dark],Gain CC immunity while using said skill,Pavel,2020-06-22 14:59:08.222884,2020-06-22 14:59:08.222884,s3d,hero
+567,Chill of Early Dawn [Light],Target's CC resistance is reduced by 250 for 10 sec,Pavel,2020-06-22 14:59:16.019315,2020-06-22 14:59:16.019315,s4l,hero
+568,Chill of Early Dawn [Dark],Frost cannot be dispelled by dispel skills,Pavel,2020-06-22 14:59:21.958809,2020-06-22 14:59:21.958809,s4d,hero
+569,Collision [Light],Mana cost is reduced by 1,Phillop,2020-06-22 15:10:17.812003,2020-06-22 15:10:17.812003,s1l,hero
+570,Collision [Dark],Cooldown is reduced by 10% per each enemy hit,Phillop,2020-06-22 15:10:24.577177,2020-06-22 15:10:24.577177,s1d,hero
+571,Headbutt [Light],Deals extra P.DMG equal to 10% of max HP,Phillop,2020-06-22 15:10:35.374647,2020-06-22 15:10:35.374647,s2l,hero
+572,Headbutt [Dark],Effect changes to a 3 sec Stun to nearby enemies,Phillop,2020-06-22 15:10:42.777836,2020-06-22 15:10:42.777836,s2d,hero
+573,Earth Incarnate [Light],Deals 1% of Max HP as DMG per sec to nearby enemies,Phillop,2020-06-22 15:10:53.777041,2020-06-22 15:10:53.777041,s3l,hero
+574,Earth Incarnate [Dark],Stuns nearby enemies for 3 sec,Phillop,2020-06-22 15:10:58.17634,2020-06-22 15:10:58.17634,s3d,hero
+575,Destroy Armor [Light],Enemies with 5 stacks take 1% extra P.DMG based off Max HP per attack,Phillop,2020-06-22 15:11:07.839985,2020-06-22 15:11:07.839985,s4l,hero
+576,Destroy Armor [Dark],"Upon attack, dispel all positive effects and target receives 20% increased P.DMG for 20 sec. Has a cooldown of 20 sec",Phillop,2020-06-22 15:11:12.755035,2020-06-22 15:11:12.755035,s4d,hero
+577,Vital Strike [Light],Stun duration is increased by 2 sec,Priscilla,2020-06-22 15:11:36.038155,2020-06-22 15:11:36.038155,s1l,hero
+578,Vital Strike [Dark],"No longer Crits unconditionally, and Crit DMG is increased by 150%.",Priscilla,2020-06-22 15:11:39.893794,2020-06-22 15:11:39.893794,s1d,hero
+579,Coordination [Light],Crit DMG is increased by 80%,Priscilla,2020-06-22 15:11:49.640722,2020-06-22 15:11:49.640722,s2l,hero
+580,Coordination [Dark],"While in Co-Op state, auto attacks increase the target's received DMG from all sources by 30%",Priscilla,2020-06-22 15:11:54.75058,2020-06-22 15:11:54.75058,s2d,hero
+581,Turbulent Dance [Light],"Upon a Crit hit, cooldown is reduced by 10%",Priscilla,2020-06-22 15:12:06.695917,2020-06-22 15:12:06.695917,s3l,hero
+582,Turbulent Dance [Dark],"When there is only 1 enemy, DMG is increased by 100%",Priscilla,2020-06-22 15:12:24.333132,2020-06-22 15:12:24.333132,s3d,hero
+583,Weapon Mastery [Light],ATK boost is increased by 40%,Priscilla,2020-06-22 15:12:33.918613,2020-06-22 15:12:33.918613,s4l,hero
+584,Weapon Mastery [Dark],Crit Chance is increased by 250,Priscilla,2020-06-22 15:12:37.42221,2020-06-22 15:12:37.42221,s4d,hero
+585,Release! Ultrasonic Wave! [Light],Increases mana cost by 1 and dispels positiv effects from the target,Rehartna,2020-06-22 15:13:02.078768,2020-06-22 15:13:02.078768,s1l,hero
+586,Release! Ultrasonic Wave! [Dark],Reduces DEF Penetration of the hit target by 250 for 10 sec,Rehartna,2020-06-22 15:13:07.453351,2020-06-22 15:13:07.453351,s1d,hero
+587,"Crystal Clear, Matimaruma! [Light]",Reduces mana cost by 1,Rehartna,2020-06-22 15:13:18.295488,2020-06-22 15:13:18.295488,s2l,hero
+588,"Crystal Clear, Matimaruma! [Dark]","For the Duration of the skill, enemies within range take 25% increased P.DMG",Rehartna,2020-06-22 15:13:24.670283,2020-06-22 15:13:24.670283,s2d,hero
+589,You've Never Seen a Weapon Like This! [Light],The effect applies to 6 allies,Rehartna,2020-06-22 15:13:39.994016,2020-06-22 15:13:39.994016,s3l,hero
+590,You've Never Seen a Weapon Like This! [Dark],Reduces Cooldown by 7 sec,Rehartna,2020-06-22 15:13:45.034221,2020-06-22 15:13:45.034221,s3d,hero
+591,Battle March Melody [Light],"At the beginning of each battle, recovers own mana by 1000",Rehartna,2020-06-22 15:13:53.285853,2020-06-22 15:13:53.285853,s4l,hero
+592,Battle March Melody [Dark],Each stack increases Crit DMG of all allies by 12%,Rehartna,2020-06-22 15:13:56.482705,2020-06-22 15:13:56.482705,s4d,hero
+593,Float Like a Butterfly [Light],Mana cost is increased by 1 and Wound stack max is changed to 10. Deals 150% of ATK as extra DMG to enemies with 10 Wounds,Reina,2020-06-22 15:19:12.92942,2020-06-22 15:19:12.92942,s1l,hero
+594,Float Like a Butterfly [Dark],Cooldown is removed,Reina,2020-06-22 15:19:19.58821,2020-06-22 15:19:19.58821,s1d,hero
+595,Sharp End [Light],Mana cost is reduced by 1,Reina,2020-06-22 15:19:32.720272,2020-06-22 15:19:32.720272,s2l,hero
+596,Sharp End [Dark],"In exchange for 1 additional Mana Cost, Crit Chance effect is changed to a 100% Crit DMG boost. Also gains a 25% DMG boost towards Bosses",Reina,2020-06-22 15:19:37.186782,2020-06-22 15:19:37.186782,s2d,hero
+597,Shooting Star [Light],Each crit boosts the last attack's DMG by 10%,Reina,2020-06-22 15:19:55.082962,2020-06-22 15:19:55.082962,s3l,hero
+598,Shooting Star [Dark],Gain immunity to all DMG while using skill,Reina,2020-06-22 15:20:00.323871,2020-06-22 15:20:00.323871,s3d,hero
+599,Lucky Child [Light],"Per each stack, DMG is increased by 4% to enemies other than heroes",Reina,2020-06-22 15:20:14.257851,2020-06-22 15:20:14.257851,s4l,hero
+600,Lucky Child [Dark],"When there are 5 or more stacks, takes 20% reduced P.DMG and M.DMG",Reina,2020-06-22 15:20:18.018952,2020-06-22 15:20:18.018952,s4d,hero
+601,Healing Soul [Light],Mana Cost is increased by 1 and skill effect range changes to all allies,Rephy,2020-06-22 16:00:47.919685,2020-06-22 16:00:47.919685,s1l,hero
+602,Healing Soul [Dark],Each heal has a 20% chance to remove negative effects,Rephy,2020-06-22 16:00:54.117603,2020-06-22 16:00:54.117603,s1d,hero
+603,Salvation [Light],Mana Cost is increased by 1 and skill effect range changes to all allies,Rephy,2020-06-22 16:01:06.686966,2020-06-22 16:01:06.686966,s2l,hero
+604,Salvation [Dark],Each heal has a 20% chance to remove negative effects,Rephy,2020-06-22 16:01:12.062618,2020-06-22 16:01:12.062618,s2d,hero
+605,Soulrush [Light],Mana cost is reduced by 1,Rephy,2020-06-22 16:01:24.103554,2020-06-22 16:01:24.103554,s3l,hero
+606,Soulrush [Dark],Increases M.DEF by additional 10% of the caster's M.DEF,Rephy,2020-06-22 16:01:28.488887,2020-06-22 16:01:28.488887,s3d,hero
+607,Spiritual Tuning [Light],Each hit removes 250 mana from the target,Rephy,2020-06-22 16:01:37.842276,2020-06-22 16:01:37.842276,s4l,hero
+608,Spiritual Tuning [Dark],"In exchange for 1 additional Mana Cost, Silence enemies in range for 1 sec",Rephy,2020-06-22 16:01:41.379939,2020-06-22 16:01:41.379939,s4d,hero
+609,Tears of Mr. Python! [Light],Mana cost is reduced by 1,Requina,2020-06-22 16:01:54.958121,2020-06-22 16:01:54.958121,s1l,hero
+610,Tears of Mr. Python! [Dark],Reduces target's mana by 1200,Requina,2020-06-22 16:02:00.030982,2020-06-22 16:02:00.030982,s1d,hero
+611,Screechy Grass Extract! [Light],"If there is 1 enemy, DMG is increased by 100%",Requina,2020-06-22 16:02:11.188754,2020-06-22 16:02:11.188754,s2l,hero
+612,Screechy Grass Extract! [Dark],Stuns the target for 1 sec,Requina,2020-06-22 16:02:15.25568,2020-06-22 16:02:15.25568,s2d,hero
+613,More! Stronger! [Light],"For the duration, auto attack DMG is increased by 100%",Requina,2020-06-22 16:02:24.686232,2020-06-22 16:02:24.686232,s3l,hero
+614,More! Stronger! [Dark],Mana cost is reduced by 1,Requina,2020-06-22 16:02:29.489209,2020-06-22 16:02:29.489209,s3d,hero
+615,Tickle Tickle Potion! [Light],Tickle Tickle Potion! is stacked 3 at a time,Requina,2020-06-22 16:02:40.975573,2020-06-22 16:02:40.975573,s4l,hero
+616,Tickle Tickle Potion! [Dark],Target takes 20% increased P.DMG,Requina,2020-06-22 16:02:45.923523,2020-06-22 16:02:45.923523,s4d,hero
+617,Destruction [Light],Target receives 25% increased P.DMG for 10 sec,Ricardo,2020-06-22 16:03:02.816413,2020-06-22 16:03:02.816413,s1l,hero
+618,Destruction [Dark],Deals extra P.DMG equal to 200% of M.DEF,Ricardo,2020-06-22 16:03:13.289399,2020-06-22 16:03:13.289399,s1d,hero
+619,Divine Protection [Light],"In exchange for 1 additional Mana Cost, Ricardo gains 30% DMG resistance to DMG taken due to covering for allies",Ricardo,2020-06-22 16:03:26.410699,2020-06-22 16:03:26.410699,s2l,hero
+620,Divine Protection [Dark],This skill's effect cannot be dispelled,Ricardo,2020-06-22 16:03:30.935279,2020-06-22 16:03:30.935279,s2d,hero
+621,Divine Judgment [Light],Stun duration is increased by 2 sec,Ricardo,2020-06-22 16:03:44.131988,2020-06-22 16:03:44.131988,s3l,hero
+622,Divine Judgment [Dark],Mana cost is reduced by 1,Ricardo,2020-06-22 16:03:48.107019,2020-06-22 16:03:48.107019,s3d,hero
+623,Divine Blessing [Light],M.DEF increase rate is boosted by 40%,Ricardo,2020-06-22 16:03:59.34307,2020-06-22 16:03:59.34307,s4l,hero
+624,Divine Blessing [Dark],Max stack count is boosted to 8,Ricardo,2020-06-22 16:04:04.532629,2020-06-22 16:04:04.532629,s4d,hero
+625,Penetration Shot [Light],DMG is increased by 40%,Rodina,2020-06-22 16:19:21.151661,2020-06-22 16:19:21.151661,s1l,hero
+626,Penetration Shot [Dark],Gain CC immunity while using said skill,Rodina,2020-06-22 16:19:26.698699,2020-06-22 16:19:26.698699,s1d,hero
+627,Target Aim [Light],ATK Spd is boosted by 250 for the duration,Rodina,2020-06-22 16:19:38.893085,2020-06-22 16:19:38.893085,s2l,hero
+628,Target Aim [Dark],Mana cost is reduced by 1,Rodina,2020-06-22 16:19:45.14615,2020-06-22 16:19:45.14615,s2d,hero
+629,Focused Fire [Light],Reduces cooldown by 5% when Critical Hits occur,Rodina,2020-06-22 16:20:32.427974,2020-06-22 16:20:32.427974,s3l,hero
+630,Focused Fire [Dark],Ignores enemy Block,Rodina,2020-06-22 16:20:38.609784,2020-06-22 16:20:38.609784,s3d,hero
+631,Rapid Shot [Light],"If there is 1 enemy, DMG is increased by 100%",Rodina,2020-06-22 16:20:49.597157,2020-06-22 16:20:49.597157,s4l,hero
+632,Rapid Shot [Dark],Enemies hit are stunned for 2 sec,Rodina,2020-06-22 16:20:55.831619,2020-06-22 16:20:55.831619,s4d,hero
+633,Merciless [Light],Mana cost is reduced by 1,Roi,2020-06-22 16:22:04.623084,2020-06-22 16:22:04.623084,s1l,hero
+634,Merciless [Dark],Changes the number of hits to 5 times.,Roi,2020-06-22 16:22:10.5772,2020-06-22 16:22:10.5772,s1d,hero
+635,Curtain of Darkness [Light],"Upon use, dispels negative effects from self.",Roi,2020-06-22 16:22:23.008784,2020-06-22 16:22:23.008784,s2l,hero
+636,Curtain of Darkness [Dark],Auto attack DMG is boosted by 100% for the duration,Roi,2020-06-22 16:22:26.393348,2020-06-22 16:22:26.393348,s2d,hero
+637,Blade Claw [Light],"In exchange for 1 additional Mana Cost, DMG dealt is increased by 100%",Roi,2020-06-22 16:22:41.328576,2020-06-22 16:22:41.328576,s3l,hero
+638,Blade Claw [Dark],Changes the target to an enemy with the lowest HP.,Roi,2020-06-22 16:22:46.453299,2020-06-22 16:22:46.453299,s3d,hero
+639,Hack [Light],Each attack recovers 300 mana,Roi,2020-06-22 16:22:58.65384,2020-06-22 16:22:58.65384,s4l,hero
+640,Hack [Dark],Has a 50% chance to stack 1 stack of Bleed,Roi,2020-06-22 16:23:04.55459,2020-06-22 16:23:04.55459,s4d,hero
+641,Halt! [Light],Mana cost is reduced by 1,Scarlet,2020-06-22 16:23:21.282608,2020-06-22 16:23:21.282608,s1l,hero
+642,Halt! [Dark],Dispels all harmful effects on oneself upon use,Scarlet,2020-06-22 16:23:27.12658,2020-06-22 16:23:27.12658,s1d,hero
+643,Justice Served! [Light],"If the target is not a Hero, stuns them for 4 sec",Scarlet,2020-06-22 16:23:37.290034,2020-06-22 16:23:37.290034,s2l,hero
+644,Justice Served! [Dark],Increases All Crit Resistance of all allies by 250 for 10 sec,Scarlet,2020-06-22 16:23:42.777498,2020-06-22 16:23:42.777498,s2d,hero
+645,Sword of Honor!! [Light],Each hit destroys the target's Shield.,Scarlet,2020-06-22 16:23:57.531855,2020-06-22 16:23:57.531855,s3l,hero
+646,Sword of Honor!! [Dark],Damaged enemies receive 40% reduced heals for 10 sec,Scarlet,2020-06-22 16:24:02.76464,2020-06-22 16:24:02.76464,s3d,hero
+647,Goddess of War [Light],"At the beginning of each battle, gains 15 stacks of [Spirit of Orvelia].",Scarlet,2020-06-22 16:24:11.635038,2020-06-22 16:24:11.635038,s4l,hero
+648,Goddess of War [Dark],Stun duration lasts for 2 more sec when there is only one enemy,Scarlet,2020-06-22 16:24:19.820517,2020-06-22 16:24:19.820517,s4d,hero
+649,Arrow Rain [Light],DMG is increased by 40%,Selene,2020-06-22 16:24:46.954963,2020-06-22 16:24:46.954963,s1l,hero
+650,Arrow Rain [Dark],There is a 20% chance to inflict Stun for 2 sec,Selene,2020-06-22 16:24:52.422317,2020-06-22 16:24:52.422317,s1d,hero
+651,Rush [Light],Ignores DEF when there is only 1 enemy,Selene,2020-06-22 16:25:20.915111,2020-06-22 16:25:20.915111,s2l,hero
+652,Rush [Dark],Makes the enemy flinch for 0.5 sec,Selene,2020-06-22 16:25:24.921907,2020-06-22 16:25:24.921907,s2d,hero
+653,Moonlight Flash [Light],Reduces cooldown by 3 sec,Selene,2020-06-22 16:25:36.924887,2020-06-22 16:25:36.924887,s3l,hero
+654,Moonlight Flash [Dark],Ignores enemy Block,Selene,2020-06-22 16:25:40.957878,2020-06-22 16:25:40.957878,s3d,hero
+655,Moonlight Arrow [Light],Max stack number is changed to 5,Selene,2020-06-22 16:25:57.844415,2020-06-22 16:25:57.844415,s4l,hero
+656,Moonlight Arrow [Dark],Auto attack range is boosted by 20%,Selene,2020-06-22 16:26:07.277855,2020-06-22 16:26:07.277855,s4d,hero
+657,Mysterious Sword - Falling Petals / Mysterious Sword - Blossom [Light],[Mysterious Sword - Falling Petals] - Mana cost is reduced by 1. [Mysterious Sword - Blossom] - Hit enemies' heal rate is reduced by 50% for 5 sec,Seria,2020-06-22 16:26:33.460217,2020-06-22 16:26:33.460217,s1l,hero
+658,Mysterious Sword - Falling Petals / Mysterious Sword - Blossom [Dark],"[Mysterious Sword - Falling Petals] - Target takes 25% increased M.DMG for 10 sec. [Mysterious Sword - Blossom] - Mana cost is increased by 1, and Ignores enemy's DEF",Seria,2020-06-22 16:26:40.784569,2020-06-22 16:26:40.784569,s1d,hero
+659,Blood Scattering Blade [Light],Cooldown is reduced by 5% per each enemy hit.,Seria,2020-06-22 16:26:51.700036,2020-06-22 16:26:51.700036,s2l,hero
+660,Blood Scattering Blade [Dark],"Upon each DMG dealt, recovers 200 Mana",Seria,2020-06-22 16:26:57.800891,2020-06-22 16:26:57.800891,s2d,hero
+661,Red Moon Blade [Light],Dispels positive effects of all enemies in range,Seria,2020-06-22 16:27:08.368019,2020-06-22 16:27:08.368019,s3l,hero
+662,Red Moon Blade [Dark],"Upon every skill use, increases DMG of [Red Moon Blade] skill by 15%. This effect can be stacked up to max 10 times.",Seria,2020-06-22 16:27:14.881774,2020-06-22 16:27:14.881774,s3d,hero
+663,Cold-Blooded Witch [Light],Takes 0.7% reduced DMG per stack,Seria,2020-06-22 16:27:24.723067,2020-06-22 16:27:24.723067,s4l,hero
+664,Cold-Blooded Witch [Dark],"When the battle starts, increases DMG to Non-Hero enemies by 25% for 200 sec",Seria,2020-06-22 16:27:28.4127,2020-06-22 16:27:28.4127,s4d,hero
+665,Curse of Petrification [Light],Cooldown is reduced by 3 sec,Shamilia,2020-06-22 16:29:08.629794,2020-06-22 16:29:08.629794,s1l,hero
+666,Curse of Petrification [Dark],Reduces hit enemy's Mana by 1000.,Shamilia,2020-06-22 16:29:15.49133,2020-06-22 16:29:15.49133,s1d,hero
+667,Curse of Time [Light],Mana cost is reduced by 1,Shamilia,2020-06-22 16:29:28.787037,2020-06-22 16:29:28.787037,s2l,hero
+668,Curse of Time [Dark],Changes the target to the enemy with the highest ATK.,Shamilia,2020-06-22 16:29:33.572095,2020-06-22 16:29:33.572095,s2d,hero
+669,Curse of Pain [Light],Target takes 25% increased M.DMG for 10 sec,Shamilia,2020-06-22 16:29:54.39525,2020-06-22 16:29:54.39525,s3l,hero
+670,Curse of Pain [Dark],DMG is increased by 40%,Shamilia,2020-06-22 16:30:01.082048,2020-06-22 16:30:01.082048,s3d,hero
+671,The Vessel of Curses [Light],Reduces DMG taken by 30% when not owning [The Vessel of Curses].,Shamilia,2020-06-22 16:30:10.338785,2020-06-22 16:30:10.338785,s4l,hero
+672,The Vessel of Curses [Dark],"[The Vessel of Curses] can now be dispelled, but the Shield increases by 100%.",Shamilia,2020-06-22 16:30:14.341227,2020-06-22 16:30:14.341227,s4d,hero
+673,Green Nature's Melody [Light],Heals 15% HP of all allies when used,Shea,2020-06-22 16:30:32.46728,2020-06-22 16:30:32.46728,s1l,hero
+674,Green Nature's Melody [Dark],Increases all allies' DMG dealt to Non-Hero enemies by 20% for 8 sec.,Shea,2020-06-22 16:30:38.125186,2020-06-22 16:30:38.125186,s1d,hero
+675,Blue Wind's Song [Light],Heals 500 MP of all allies when used,Shea,2020-06-22 16:31:24.633738,2020-06-22 16:31:24.633738,s2l,hero
+676,Blue Wind's Song [Dark],Increases ATK Spd of all allies by 250 for 8 seconds,Shea,2020-06-22 16:31:30.542046,2020-06-22 16:31:30.542046,s2d,hero
+677,Dance of Red Passion [Light],ATK Boost is increased by 40%,Shea,2020-06-22 16:31:42.829004,2020-06-22 16:31:42.829004,s3l,hero
+678,Dance of Red Passion [Dark],All enemies take 15% more DMG for 8 seconds,Shea,2020-06-22 16:31:47.481044,2020-06-22 16:31:47.481044,s3d,hero
+679,Trance [Light],Increases Heal rate of Trance by 100%,Shea,2020-06-22 16:31:57.362083,2020-06-22 16:31:57.362083,s4l,hero
+680,Trance [Dark],"Instead of healing allies, Shea deals M.DMG equal to the Heal Rate to all enemies and reduces their All DEF by 20% for 10 sec when she enters [Trance] state.",Shea,2020-06-22 16:32:00.757361,2020-06-22 16:32:00.757361,s4d,hero
+681,Lightning Strike! [Light],Mana cost is reduced by 1,Sonia,2020-06-22 16:32:19.216819,2020-06-22 16:32:19.216819,s1l,hero
+682,Lightning Strike! [Dark],Stun chance is increased by 10%,Sonia,2020-06-22 16:32:24.195189,2020-06-22 16:32:24.195189,s1d,hero
+683,Power of Lightning! [Light],ATK and DEF boosts are increased by 40%,Sonia,2020-06-22 16:32:47.644889,2020-06-22 16:32:47.644889,s2l,hero
+684,Power of Lightning! [Dark],Additional DMG effect applies to all enemies,Sonia,2020-06-22 16:32:52.716278,2020-06-22 16:32:52.716278,s2d,hero
+685,Electric Explosion! [Light],"While in use, gain immunity to CC",Sonia,2020-06-22 16:33:01.036018,2020-06-22 16:33:01.036018,s3l,hero
+686,Electric Explosion! [Dark],Stun duration is increased by 2 sec,Sonia,2020-06-22 16:33:08.40221,2020-06-22 16:33:08.40221,s3d,hero
+687,Shock [Light],Shock duration is increased by 2 sec,Sonia,2020-06-22 16:33:16.829615,2020-06-22 16:33:16.829615,s4l,hero
+688,Shock [Dark],Increased M.DMG taken' effect changes to 'Increased P. and M. DMG taken',Sonia,2020-06-22 16:33:21.50116,2020-06-22 16:33:21.50116,s4d,hero
+689,BOOM! Here Goes! [Light],The All Block Chance Reduction effect on the target becomes irremovable,Taily,2020-06-22 16:33:37.079033,2020-06-22 16:33:37.079033,s1l,hero
+690,BOOM! Here Goes! [Dark],Reduces Mana Cost by 1,Taily,2020-06-22 16:33:41.369455,2020-06-22 16:33:41.369455,s1d,hero
+691,Protection! Was dat Lucky Stone? [Light],"While charging energy, Taily gains immunity to All DMG",Taily,2020-06-22 16:33:52.72459,2020-06-22 16:33:52.72459,s2l,hero
+692,Protection! Was dat Lucky Stone? [Dark],Reduces Mana Cost by 1,Taily,2020-06-22 16:33:58.293932,2020-06-22 16:33:58.293932,s2d,hero
+693,Charge! Knight Commander Power! [Light],"When there is 1 enemy, increases stack gain of [Power of da Shuti Tribe] by 3 times",Taily,2020-06-22 16:34:17.429199,2020-06-22 16:34:17.429199,s3l,hero
+694,Charge! Knight Commander Power! [Dark],Gains immunity to CC for the duration of Skill,Taily,2020-06-22 16:34:22.228534,2020-06-22 16:34:22.228534,s3d,hero
+695,Blessing of da Shuti Tribe! [Light],Reduces ATK of the hit target by 20% for 3 sec,Taily,2020-06-22 16:34:30.756499,2020-06-22 16:34:30.756499,s4l,hero
+696,Blessing of da Shuti Tribe! [Dark],"Upon hitting an enemy at the Arena, Taily deals additional P.DMG equal to 2% of the target's Max HP. This effect does not inflict a Crit Hit, but its DMG increases proportionally to DEF Penetration",Taily,2020-06-22 16:34:37.504825,2020-06-22 16:34:37.504825,s4d,hero
+697,Target Sighted [Light],Reduces the target's Heal Rate by 30%,Tanya,2020-06-22 16:34:59.663666,2020-06-22 16:34:59.663666,s1l,hero
+698,Target Sighted [Dark],"For 10 sec, target's P.Crit resistance is reduced by 250",Tanya,2020-06-22 16:35:04.762777,2020-06-22 16:35:04.762777,s1d,hero
+699,Blade Tornado [Light],"If there is 1 enemy, DMG is increased by 100%",Tanya,2020-06-22 16:35:16.671685,2020-06-22 16:35:16.671685,s2l,hero
+700,Blade Tornado [Dark],Recovers 200 mana upon a Crit hit,Tanya,2020-06-22 16:35:22.91059,2020-06-22 16:35:22.91059,s2d,hero
+701,Whisper of Death [Light],Mana cost is increased by 1 orb but DMG is boosted by 100%,Tanya,2020-06-22 16:35:35.420799,2020-06-22 16:35:35.420799,s3l,hero
+702,Whisper of Death [Dark],Cooldown is reduced by 5 sec,Tanya,2020-06-22 16:35:42.066906,2020-06-22 16:35:42.066906,s3d,hero
+703,Silent Ambush [Light],Increases additional DMG against non-Hero enemies by 100%,Tanya,2020-06-22 16:35:51.343513,2020-06-22 16:35:51.343513,s4l,hero
+704,Silent Ambush [Dark],Increases Silence duration by 0.5 sec,Tanya,2020-06-22 16:35:54.805376,2020-06-22 16:35:54.805376,s4d,hero
+705,Final Crash [Light],"If there is 1 enemy, DMG is increased by 100%",Theo,2020-06-22 16:36:12.939032,2020-06-22 16:36:12.939032,s1l,hero
+706,Final Crash [Dark],Cooldown is reduced by 2 sec,Theo,2020-06-22 16:36:17.061971,2020-06-22 16:36:17.061971,s1d,hero
+707,God of Lightning [Light],Mana cost is reduced by 1,Theo,2020-06-22 16:36:28.227757,2020-06-22 16:36:28.227757,s2l,hero
+708,God of Lightning [Dark],DMG taken while in Lightning God state is increased by 30% but ATK increase rate is increased by 100%,Theo,2020-06-22 16:36:35.228589,2020-06-22 16:36:35.228589,s2d,hero
+709,Lightning Explosion [Light],DMG is increased by 40%,Theo,2020-06-22 16:36:47.053688,2020-06-22 16:36:47.053688,s3l,hero
+710,Lightning Explosion [Dark],Stun duration is increased by 1 sec,Theo,2020-06-22 16:36:54.351141,2020-06-22 16:36:54.351141,s3d,hero
+711,For Jane [Light],DMG is increased by 40%,Theo,2020-06-22 16:37:00.914529,2020-06-22 16:37:00.914529,s4l,hero
+712,For Jane [Dark],Stun duration is increased by 0.2 sec,Theo,2020-06-22 16:37:06.023215,2020-06-22 16:37:06.023215,s4d,hero
+713,This will hurt a little! [Light],DMG is increased by 100% when there is 1 enemy,Veronica,2020-06-22 16:38:14.045959,2020-06-22 16:38:14.045959,s1l,hero
+714,This will hurt a little! [Dark],Number of targets changes to 2,Veronica,2020-06-22 16:38:19.471198,2020-06-22 16:38:19.471198,s1d,hero
+715,Let me help you [Light],"After the beginning of the first battle, changes the DMG Boost effect against Bosses to 25% for 3 Skill uses",Veronica,2020-06-22 16:38:29.998805,2020-06-22 16:38:29.998805,s2l,hero
+716,Let me help you [Dark],Reduces cooldown by 5 sec,Veronica,2020-06-22 16:38:36.114363,2020-06-22 16:38:36.114363,s2d,hero
+717,Get out of my sight! [Light],Increases Mana Cost by 1 and DMG by 100%,Veronica,2020-06-22 16:38:58.33427,2020-06-22 16:38:58.33427,s3l,hero
+718,Get out of my sight! [Dark],Target takes increased M.DMG and P.DMG,Veronica,2020-06-22 16:39:02.688766,2020-06-22 16:39:02.688766,s3d,hero
+719,Top Financier's Knowledge [Light],Recovers the caster's MP by 2 orbs when activated,Veronica,2020-06-22 16:39:12.706991,2020-06-22 16:39:12.706991,s4l,hero
+720,Top Financier's Knowledge [Dark],"When activated, increases the caster's ATK by 50% for 10 sec",Veronica,2020-06-22 16:39:17.417564,2020-06-22 16:39:17.417564,s4d,hero
+721,Meal Time!! [Light],"In exchange for 1 additional Mana Cost, cooldown is reduced by 4 sec",Viska,2020-06-22 16:39:37.322525,2020-06-22 16:39:37.322525,s1l,hero
+722,Meal Time!! [Dark],Soul condition for Shackle effect is erased,Viska,2020-06-22 16:39:43.767117,2020-06-22 16:39:43.767117,s1d,hero
+723,I'll slice you up!! [Light],Mana cost is reduced by 1,Viska,2020-06-22 16:39:53.289829,2020-06-22 16:39:53.289829,s2l,hero
+724,I'll slice you up!! [Dark],Soul condition for M.DEF reduction is erased,Viska,2020-06-22 16:40:00.673159,2020-06-22 16:40:00.673159,s2d,hero
+725,I'll rip you to pieces!! [Light],The 5 Soul consuming effect no longer consumes Souls,Viska,2020-06-22 16:40:17.203615,2020-06-22 16:40:17.203615,s3l,hero
+726,I'll rip you to pieces!! [Dark],Mana cost is reduced by 1,Viska,2020-06-22 16:40:22.306581,2020-06-22 16:40:22.306581,s3d,hero
+727,Yummy Souls! [Light],"At the beginning of each battle, steals the soul of the enemy with the highest ATK, and reduces M.DMG that self takes by 20% for 10 sec",Viska,2020-06-22 16:40:32.245322,2020-06-22 16:40:32.245322,s4l,hero
+728,Yummy Souls! [Dark],"Per each stacked Soul, ATK is increased by 10%",Viska,2020-06-22 16:40:37.157699,2020-06-22 16:40:37.157699,s4d,hero
+729,Orbs of Darkness [Light],"Upon use, recovers 1 orb of Mana",Xerah,2020-06-22 16:41:10.807689,2020-06-22 16:41:10.807689,s1l,hero
+730,Orbs of Darkness [Dark],Increases Mana Cost by 1 and changes the target to the enemy with the highest ATK,Xerah,2020-06-22 16:41:18.648889,2020-06-22 16:41:18.648889,s1d,hero
+731,Crest of Extortion / Crest Bestowal [Light],[Crest of Extortion / Crest Bestowal] Gains Immunity to All DMG while in use,Xerah,2020-06-22 16:41:38.666329,2020-06-22 16:41:38.666329,s2l,hero
+732,Crest of Extortion / Crest Bestowal [Dark],"For the duration of the [Crest Bestowal] effect, the ally takes 20% reduced DMG",Xerah,2020-06-22 16:41:47.510607,2020-06-22 16:41:47.510607,s2d,hero
+733,Blood Moon [Light],"Increases Mana Cost by 1. Upon use, dispels negative effects from self, and for the duration of the Skill, continuously dispels negative effects from all allies",Xerah,2020-06-22 16:42:00.390283,2020-06-22 16:42:00.390283,s3l,hero
+734,Blood Moon [Dark],Increases M.DMG the enemy takes by 30% for the duration of Skill,Xerah,2020-06-22 16:42:06.907707,2020-06-22 16:42:06.907707,s3d,hero
+735,Darkness Awakened [Light],"While in [Darkness Awakened] state, changes the DMG Boost effect against Non-Hero enemies to 100%",Xerah,2020-06-22 16:42:14.350377,2020-06-22 16:42:14.350377,s4l,hero
+736,Darkness Awakened [Dark],"At the beginning of every battle, enters [Darkness Awakened] state, and becomes unable to gain [Darkness] stacks for 40 sec",Xerah,2020-06-22 16:42:19.623777,2020-06-22 16:42:19.623777,s4d,hero
+737,Focus Shot! [Light],DMG is increased by 40%,Yanne,2020-06-22 16:42:37.867265,2020-06-22 16:42:37.867265,s1l,hero
+738,Focus Shot! [Dark],Target takes 25% additional P.DMG for 10 sec,Yanne,2020-06-22 16:42:43.732783,2020-06-22 16:42:43.732783,s1d,hero
+739,Wipeout! [Light],"When there is 1 enemy, DMG is boosted by 100%",Yanne,2020-06-22 16:42:55.51209,2020-06-22 16:42:55.51209,s2l,hero
+740,Wipeout! [Dark],Enemies hit are stunned for 2 sec,Yanne,2020-06-22 16:43:00.113826,2020-06-22 16:43:00.113826,s2d,hero
+741,No Holding Back! [Light],ATK Spd is boosted by 250 for the duration,Yanne,2020-06-22 16:43:12.452976,2020-06-22 16:43:12.452976,s3l,hero
+742,No Holding Back! [Dark],"For the duration, all DMG taken is reduced by 25%",Yanne,2020-06-22 16:43:17.661254,2020-06-22 16:43:17.661254,s3d,hero
+743,Dragon Slayer [Light],Reduces DMG that all allies take from Dragons by 20%,Yanne,2020-06-22 16:43:27.479102,2020-06-22 16:43:27.479102,s4l,hero
+744,Dragon Slayer [Dark],Changes self's DMG Boost against Dragons to 130%,Yanne,2020-06-22 16:43:32.111008,2020-06-22 16:43:32.111008,s4d,hero
+745,Binding Karma [Light],"Now reduces 1,000 Mana",Yuria,2020-06-22 16:43:51.514547,2020-06-22 16:43:51.514547,s1l,hero
+746,Binding Karma [Dark],Stuns hit targets for 3 sec,Yuria,2020-06-22 16:43:55.79652,2020-06-22 16:43:55.79652,s1d,hero
+747,Starlight Sewing [Light],"Reduces Shield by 50%, but it becomes irremovable.",Yuria,2020-06-22 16:44:15.086248,2020-06-22 16:44:15.086248,s2l,hero
+748,Starlight Sewing [Dark],Increases Mana Cost by 1 but the same effect will be cast on an ally with the highest ATK,Yuria,2020-06-22 16:44:19.652726,2020-06-22 16:44:19.652726,s2d,hero
+749,Circle of Fate [Light],Now reduces 500 ATK Spd,Yuria,2020-06-22 16:44:35.718911,2020-06-22 16:44:35.718911,s3l,hero
+750,Circle of Fate [Dark],Dispels positive effects from the target,Yuria,2020-06-22 16:44:41.03971,2020-06-22 16:44:41.03971,s3d,hero
+751,Blessing of Truth [Light],Targets now take 2.5% increased M.DMG,Yuria,2020-06-22 16:44:48.732997,2020-06-22 16:44:48.732997,s4l,hero
+752,Blessing of Truth [Dark],Increases DEF and ATK Spd Boost by 50%,Yuria,2020-06-22 16:44:53.018972,2020-06-22 16:44:53.018972,s4d,hero
+753,Judgment of the Desert [Light],Crit DMG boost per use changes to 10%,Zafir,2020-06-22 16:45:07.069649,2020-06-22 16:45:07.069649,s1l,hero
+754,Judgment of the Desert [Dark],Stuns the hit enemy for 1 sec,Zafir,2020-06-22 16:45:12.74548,2020-06-22 16:45:12.74548,s1d,hero
+755,Blessing of the Sand Spirit [Light],"If there are 3 or less allies, applies shield to all allies. Sand Storm does not activate during this time",Zafir,2020-06-22 16:45:22.938901,2020-06-22 16:45:22.938901,s2l,hero
+756,Blessing of the Sand Spirit [Dark],"At the beginning of each battle, casts shield on self for 5 sec. Sand Storm does not activate during this time",Zafir,2020-06-22 16:45:28.425159,2020-06-22 16:45:28.425159,s2d,hero
+757,Doom of the Desert [Light],Gains immunity to CC while in use,Zafir,2020-06-22 16:45:37.230296,2020-06-22 16:45:37.230296,s3l,hero
+758,Doom of the Desert [Dark],Duration of 'Pit of Sand' is increased by 2 sec,Zafir,2020-06-22 16:45:42.549768,2020-06-22 16:45:42.549768,s3d,hero
+759,Calling of the Guardian [Light],Inflicts Mark of Desert to all enemies every second if there are more than 5 enemies,Zafir,2020-06-22 16:45:51.204714,2020-06-22 16:45:51.204714,s4l,hero
+760,Calling of the Guardian [Dark],Activation chance changes to 30%,Zafir,2020-06-22 16:45:56.53237,2020-06-22 16:45:56.53237,s4d,hero
+761,Radiance of Cimatis / Dance of Luberry [Light],"[Radiance of Cimatis] Changes Cooldown to 25 sec, and Cooldown will be applied every time the skill is used 3 times.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s1l,hero
+762,Radiance of Cimatis / Dance of Luberry [Dark],"[Dance of Luberry] At the beginning of each battle, increases DMG by 20%. This effect can be stacked up to max 20 times.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s1d,hero
+763,Splendor of Cimatis / Full Bloom of Luberry [Light],[Splendor of Cimatis] Reduces Mana Cost by 1.,Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s2l,hero
+764,Splendor of Cimatis / Full Bloom of Luberry [Dark],"[Full Bloom of Luberry] After 2 sec of the beginning of each battle, creates [Full Bloom of Luberry] that lasts for 3 sec in front of self.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s2d,hero
+765,Crystal of Resonance [Light],"Upon every Skill use, increases self's All DEF by 5%. This effect can be stacked up to max 10 times.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s3l,hero
+766,Crystal of Resonance [Dark],"Upon every Skill use, increases self's ATK by 5%. This effect can be stacked up to max 10 times.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s3d,hero
+767,Brilliant Gemologist [Light],Changes the activation interval to 0.5 sec.,Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s4l,hero
+768,Brilliant Gemologist [Dark],The effect becomes irremovable.,Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,s4d,hero
+769,light,"ATK, DEF, HP+15% / Crit Chance +100",Aisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+770,dark,"Upon using a Skill, increases Mana Recovery/Sec by 10% and Crit DMG by 7%. This effect stacks up to 20 times and is irremovable.",Aisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+771,light,"ATK, DEF, HP+15% / ATK.Spd +100",Annette,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+772,dark,"When Overcharge activates, increase all allies Atk Spd by 200, and increase the ATK of all allies by 5% of Annette's ATK.",Annette,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+773,light,"ATK, DEF, HP+15% / Crit Chance +100",Arch,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+774,dark,"At the beginning of each battle, self gains immunity to M.DMG for 5 sec.",Arch,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+775,light,"ATK, DEF, HP+15% / Crit Chance +100",Artemia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+776,dark,"When HP falls below 50%, gain 2 sec of immunity to all DMG. This effect activates only once every 30 sec.",Artemia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+777,light,"ATK, DEF, HP+15% / P. Block +200",Aselica,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+778,dark,"At the beginning of the first battle, increases P.DEF of the ally with the highest ATK by 20% of P.DEF. This effect cannot be dispelled.",Aselica,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+779,light,"ATK, DEF, HP+15% / M. Block +200",Baudouin,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+780,dark,"When attacking with Holy Nova and Spear of Light, deal extra M.DMG equal to 100% of ATK and reduce the used skill's cooldown by 20%.",Baudouin,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+781,light,"ATK, DEF, HP +15% / Crit Chance +100",Bernheim,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+782,dark,"At the beginnign of the first battle, reduces self's Cooldown of Skills by 5 sec. When this effect is activated during Guild War, the effect is doubled.",Bernheim,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+783,light,"ATK, DEF, HP+15% / HP +10%",Cain,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+784,dark,"At the beginning of each battle, consumes 20% of self's current HP and increases ATK of all allies by 20% for 20 sec. If there 3 or less allies, reduces DMG that all allies take by 30%",Cain,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+785,light,"ATK, DEF, HP+15% / ATK.Spd +100",Cassandra,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+786,dark,"At the beginning of each battle, a random ally is immune to DMG for 3 sec.",Cassandra,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+787,light,"ATK, DEF, HP+15% / Crit DMG +20%",Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+788,dark,Attacking the enemy with the additional DMG gained from [Infinite Potential] will increase own ATK by 0.5%. This effect can be stacked up to max 200 times and is irremovable.,Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+789,light,"ATK, DEF, HP+15% / Crit DMG +20%",Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+790,dark,Increases DMG dealt to Non-Hero enemies by 1% every 1 sec. This effect can be stacked up to max 60 times and is irremovable.,Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+791,light,"ATK, DEF, HP+15% / Crit Chance +100",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+792,dark,"Increases ATK Spd of normal attack by 400 and additional 40 per every skill use. This effect cannot be dispelled, and can be stacked up to max 10 times.",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+793,light,"ATK, DEF, HP+15% / P. Block +200",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+794,dark,"At the beggining of each battle, increases ATK of all allies by 15%. This effect can be stacked up to max 3 times and is irremovable.",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+795,light,"ATK, DEF, HP+15% / Crit Chance +100",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+796,dark,"If a target has 10 stacks of Ember, increases the M.DMG the target takes by 30%, and adds 2 stacks of Ember per second to all non-hero enemies.",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+797,light,"ATK, DEF, HP+15% / Crit DMG +20%",Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+798,dark,Increases Mana Cost of all skills by 1 and DMG by 75%.,Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+799,light,"ATK, DEF, HP +15% / Crit Chance +100",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+800,dark,"At the beginning of the first battle, gains [Ancestral Advice] that increases own CC Resist by 200 for 5 sec. If [Ancestral Advice] is still active after 5 sec, dispels negative effects from 3 random allies, and increases their DEF by 50% for 10 sec. DEF Boost is irremovable.",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+801,light,"ATK, DEF, HP +15% / Crit DMG +20%",Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+802,dark,Normal attacks increase own ATK by 1% and DMG dealt to bosses by 1% for 20 sec. This effect can be stacked up to max 30 times and is irremovable.,Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+803,light,"ATK, DEF, HP+15% / P. Block +200",Demia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+804,dark,"At the beginning of every battle, decrease the ATK of all enemies by 20% for 6 sec. This effect cannot be dispelled.",Demia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+805,light,"ATK, DEF, HP+15% / ATK.Spd +100",Dimael,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+806,dark,"Upon auto attacking, deal extra M.DMG worth 80% of ATK and recover 100 mana. There is a 10% chance of dealing double DMG and recovering double mana.",Dimael,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+807,light,"ATK, DEF, HP +15% / HP + 10%",Dosarta,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+808,dark,"Upon using a Skill, the self blocks all DMG for 2 sec.",Dosarta,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+809,light,"ATK, DEF, HP+15% / Crit DMG +20%",Epis,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+810,dark,All of Epis's attacks decrease the M.DEF of hit enemies by 20% for 10 sec. ATK rises by 2% per each enemy hit. Maximum stack number is 10.,Epis,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+811,light,"ATK, DEF, HP+15% / Crit Chance +100",Erze,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+812,dark,Steals HP equal to 25% of DMG dealt by the final normal attack and gains 1 stack of [Sweet Blood].,Erze,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+813,light,"ATK, DEF, HP+15% / ATK.Spd +100",Esker,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+814,dark,"Every 10 sec, gain up to 6 stacks of Blessing of the Dice. Reduces Cooldown of active skills by 5% per 1 Blessing of the Dice gained.",Esker,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+815,light,"ATK, DEF, HP+15% / HP +10%",Evan,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+816,dark,"Whenever Evan changes his alchemist form, increases ATK of all allies by 1% and ATK Spd by 10. This effect can be stacked up to max 30 times and is irremovable.",Evan,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+817,light,"ATK, DEF, HP+15% / ATK.Spd +100",Ezekiel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+818,dark,"When in Fury state, auto attack deals DMG that ignores DEF.",Ezekiel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+819,light,"ATK, DEF, HP +15% / Crit Chance +100",Fallen Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+820,dark,"At the beginning of each Battle, increases ATK Spd of the ally with the Highest ATK excluding self by 150 and its DMG dealt to Non-Hero enemies by 15% for 30 sec. This effect is irremovable",Fallen Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+821,light,"ATK, DEF, HP+15% / M.Dodge +100",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+822,dark,"Increases DMG of normal attacks by 35%, and upon attacking a Wizard with normal attacks, deals additional P.DMG equal to 100% of ATK.",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+823,light,"ATK, DEF, HP+15% / M. Block +200",Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+824,dark,Increases ATK of all allies by 5% of own ATK.,Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+825,light,"ATK, DEF, HP+15% / P. Block +200",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+826,dark,"Heals HP worth 10% of ATK every second, and every 1% of HP lost reduces received DMG by 0.6%.",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+827,light,"ATK, DEF, HP+15% / ATK.Spd +100",Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+828,dark,Increases all DEF by 8% of ATK.,Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+829,light,"ATK, DEF, HP+15% / All DEF + 10%",Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+830,dark,Increases ATK of all allies by 8% of self's All DEF.,Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+831,light,"ATK, DEF, HP +15% / Crit DMG +20%",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+832,dark,"At the beginning of a Guild War battle, reduces Mana of all enemies by 500 , and increases all DMG they take by 15% for 5 sec.",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+833,light,"ATK, DEF, HP+15% / M. Block +200",Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+834,dark,Each hit of Jane's attacks increase her ATK and Recovery Rate by 1% each. (Maximum stack number is 50),Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+835,light,"ATK, DEF, HP+15% / P. Block +200",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+836,dark,"At the beginning of every battle, gains 2 stacks of [Excellent Ingredient] and increases MP Recovery/Sec by 200% for 10 seconds.",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+837,light,"ATK, DEF, HP+15% / Crit DMG +20%",Kara,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+838,dark,[Anti-personnel Weapon] - Increases CC ACC by 400. [Siege Weapon] - Increases ACC by 400.,Kara,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+839,light,"ATK, DEF, HP+15% / P.Dodge +100",Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+840,dark,"Upon attacking, deals additional P.DMG equal to 80% of own ATK. This effect is applied as 160% to Non-Hero targets and has a Cooldown of 0.5 sec.",Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+841,light,"ATK, DEF, HP+15% / Crit Chance +100",Kaulah,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+842,dark,"When Kaulah takes DMG, reduces ATK Spd of the attacker by 300 for 5 sec and its Mana by 200 every sec. This effect is only activated once every 5 sec.",Kaulah,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+843,light,"ATK, DEF, HP+15% / Crit DMG +20%",Kibera,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+844,dark,"Every 20 sec, increases M.DMG all enemies take by 30% for 15 sec.",Kibera,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+845,light,"ATK, DEF, HP+15% / ATK Spd +100",Kirze,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+846,dark,Increases Crit DMG by 40% and DEF Penetration by 150. This effect increases by 2 times after Kirze attack the enemy 100 times.,Kirze,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+847,light,"ATK, DEF, HP+15% / M. Block +200",Laias,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+848,dark,Recovers 350 Mana of all allies every 3 sec.,Laias,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+849,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lakrak,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+850,dark,Each successful experiment increases own ATK Spd by 300 and CC ACC by 300 for 10 sec.,Lakrak,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+851,light,"ATK, DEF, HP+15% / ATK.Spd +100",Laudia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+852,dark,"At the start of each battle, gains immunity to CC for 7 sec, and ACC, CC ACC are increased by 300 for 10 sec.",Laudia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+853,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lavril,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+854,dark,"Upon taking a hit, increases ATK of the ally bound by Soul Link by 3%. This effect can be stacked up to max 20 times.",Lavril,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+855,light,"ATK, DEF, HP+15% / P. Block +200",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+856,dark,"Upon attacking, there is a 10% chance of dealing 120% of ATK as P.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec.",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+857,light,"ATK, DEF, HP+15% / Crit Chance +100",Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+858,dark,All skill HP consumption is increased by 50% but cooldowns are reduced by 20%.,Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+859,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+860,dark,ATK is increased by 15% per 1 orb of mana.,Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+861,light,"ATK, DEF, HP+15% / M. Block +200",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+862,dark,"Upon successfully blocking M.DMG, all allies have their M.Block increased by 200 and M.DEF by 10% of Loman's M.DEF for 5 sec. This effect is activated only once every 5 seconds.",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+863,light,"ATK, DEF, HP+15% / Crit Chance +100",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+864,dark,"At the beginning of each battle, immediately reduces self's Cooldown of all Skills by 30% and increases DMG dealt to Non-Hero enemies by 20% for 90 sec. DMG Boost effect can be stacked up to max 5 times and is irremovable.",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+865,light,"ATK, DEF, HP+15% / CC Resist +100",Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+866,dark,Increases own Mana Recovery/Sec by 300% for 3 sec upon casting an active skill.,Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+867,light,"ATK, DEF, HP+15% / Crit DMG +20%",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+868,dark,"Being granted with blessing of the carrot, Luna increases DMG dealt to Non-Hero enemies by 30%, and takes 30% reduced DMG.",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+869,light,"ATK, DEF, HP+15% / Crit Chance +100",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+870,dark,"Upon a Crit Hit, target's CC resistance is reduced by 250 for 10 sec, and all Skill Cooldown, excluding the skill in use, is reduced by 2% each.",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+871,light,"ATK, DEF, HP+15% / CC Resist +100",May,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+872,dark,Each auto-attack has a 30% chance of healing the ally with the lowest HP by 3% of their HP. Also provides 5% mana to the ally.,May,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+873,light,"ATK, DEF, HP+15% / CC Resist +100",Mediana,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+874,dark,"When Mediana takes DMG, all allies gain 2% ATK. This effect stacks 20 times.",Mediana,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+875,light,"ATK, DEF, HP+15% / Crit DMG +20%",Mirianne,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+876,dark,"Upon killing an enemy, all skill cooldown is reduced by 50%, and recovers 1 orb of mana.",Mirianne,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+877,light,"ATK, DEF, HP+15% / Crit Chance +100",Miruru,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+878,dark,"Miruru stacks Darkness depending on the number of enemies she hits. When she reaches 50 stacks, she goes berserk, boosting her Atk Spd by 800 and her ATK by 20%.",Miruru,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+879,light,"ATK, DEF, HP+15% / Crit DMG +20%",Mitra,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+880,dark,"Upon a Critical Hit, increases own Crit DMG by 0.5% and ATK Spd by 5. This can be stacked up to max 120 times and is irremovable.",Mitra,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+881,light,"ATK, DEF, HP+15% / M. Block +200",Morrah,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+882,dark,"Flame stack DMG is increased by 100%, and max stack number is changed to 120",Morrah,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+883,light,"ATK, DEF, HP+15% / Crit Chance +100",Naila,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+884,dark,"Upon a Critical Hit, increases own ATK by 3% and P.Dodge by 30 for 10 sec. This effect can be stacked up to max 10 times.",Naila,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+885,light,"ATK, DEF, HP+15% / CC Resist +100",Neraxis,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+886,dark,"At the beginning of every battle, reduces DMG that non-Hero enemies deal to all allies except Neraxis by 10% for 30 sec.",Neraxis,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+887,light,"ATK, DEF, HP+15% / ATK.Spd +100",Nia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+888,dark,Normal attacks and [Enhanced Scar of Barbarism] deal additional P.DMG equal to 25% of ATK that ignores DEF.,Nia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+889,light,"ATK, DEF, HP+15% / ATK.Spd +100",Nicky,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+890,dark,Increases own CC Resist by 500.,Nicky,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+891,light,"ATK, DEF, HP+15% / Crit DMG +20%",Nyx,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+892,dark,"When auto attacking, there is a 10% chance of stacking 1 stack of Blade. Nyx's ATK is boosted by 10% per each Blade Stack he holds.",Nyx,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+893,light,"ATK, DEF, HP+15% / ATK.Spd +100",Oddy,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+894,dark,"Every 10 sec, any skills on cooldown for 4 random allies have their cooldowns reduced by 1 sec.",Oddy,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+895,light,"ATK, DEF, HP+15% / Crit DMG +20%",Ophelia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+896,dark,"Upon using a skill, there is a 7% chance that mana cost of all skill is reduced by 1 for 7 sec. This effect cannot be dispelled.",Ophelia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+897,light,"ATK, DEF, HP+15% / Crit DMG +20%",Pansirone,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+898,dark,"For 200 sec after the beginning of the battle, ATK increases by 5% for 15 sec every 10 sec. This effect can be stacked up to max 20 times.",Pansirone,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+899,light,"ATK, DEF, HP+15% / Crit DMG +20%",Pavel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+900,dark,"Every 3 sec, attacks all enemies and deals 50% of ATK as M.DMG, inflicting Frost with 50% chance. Enemies already inflicted with Frost takes 300% of ATK as M.DMG over time for 3 sec.",Pavel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+901,light,"ATK, DEF, HP+15% / P. Block +200",Phillop,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+902,dark,"When auto attacking, there is a 10% chance to Stun the target for 2 sec and deal extra DMG worth 10% of own HP.",Phillop,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+903,light,"ATK, DEF, HP+15% / CC Resist +100",Priscilla,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+904,dark,Increase all allies' ATK and P.DEF by 3% of own ATK and P.DEF.,Priscilla,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+905,light,"ATK, DEF, HP+15% / CC Resist +100",Rehartna,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+906,dark,"Upon every skill use, increases 4 random allies' ATK by 3% and All DEF by 3%. This effect can be stacked up to max 10 times, and is irremovable.",Rehartna,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+907,light,"ATK, DEF, HP+15% / Crit DMG +20%",Reina,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+908,dark,"When auto attacking, there is a 10% chance to increase Crit DMG by 100% for 5 sec.",Reina,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+909,light,"ATK, DEF, HP+15% / M.Dodge +100",Rephy,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+910,dark,"Upon attacking, there is a 10% chance to reduce all DEF of the target by 20% and reduce all the hero's cooldowns by 5%.",Rephy,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+911,light,"ATK, DEF, HP+15% / Crit Chance +100",Requina,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+912,dark,"Upon auto attacking an enemy with 50 or more stacks of Tickle Tickle Potion, deals 200% of ATK as extra P.DMG that ignores DEF.",Requina,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+913,light,"ATK, DEF, HP+15% / P. Block +200",Ricardo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+914,dark,"When own HP goes below 40%, HP does not go under 10% for 6 sec, and all allies' ATK is increased by 50% of own M.DEF. This effect is activated once every 60 sec.",Ricardo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+915,light,"ATK, DEF, HP+15% / Crit Chance +100",Rodina,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+916,dark,Increases ATK by 20% for 10 seconds and sets 3 random enemies as Rodina's target at the start of every battle.,Rodina,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+917,light,"ATK, DEF, HP+15% / Crit DMG +20%",Roi,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+918,dark,"Upon a Crit Hit, increases ATK Spd increasing by 300 and Crit DMG increasing by 60% for 5 sec. Does not activate again during activation.",Roi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+919,light,"ATK, DEF, HP+15% / CC Resist +100",Scarlet,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+920,dark,"When receiving Critical DMG, there is a 5% chance the attacker is dispelled of all positive effects and is stunned for 1 sec. Skill cooldown is 8 sec.",Scarlet,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+921,light,"ATK, DEF, HP+15% / Crit DMG +20%",Selene,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+922,dark,Reduces own Crit Chance by 300 and increases Crit DMG by 150%.,Selene,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+923,light,"ATK, DEF, HP+15% / Crit DMG +20%",Seria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+924,dark,"Seria's all attacks will be Crit Hit, but her All Block will be disabled and she takes 15% increased DMG from Heroes.",Seria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+925,light,"ATK, DEF, HP+15% / ATK.Spd +100",Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+926,dark,All effects of curse are enhanced. [Curse of Petrification] Petrification duration is increased by 2 sec. [Curse of Time] Curse of Time duration is increased by 3 sec. [Curse of Pain] Curse of Pain DOT is increased by 50%.,Shamilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+927,light,"ATK, DEF, HP+15% / CC Resist +100",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+928,dark,"At the beginning of each battle, gains 1 stack of [Blissful Performance] and recovers own Mana by 500.",Shea,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+929,light,"ATK, DEF, HP+15% / ATK.Spd +100",Sonia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+930,dark,"Upon attack, with 15% chance deals extra M.DMG by 10% of Max HP and injects 1 extra stack of Electricity.",Sonia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+931,light,"ATK, DEF, HP+15% / CC Resist +100",Taily,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+932,dark,"At the beginning of the first battle, reduces 100 Mana every sec for 5 sec, but gains immunity to All DMG.",Taily,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+933,light,"ATK, DEF, HP +15% / Crit DMG +20%",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+934,dark,"When there is only 1 enemy or more than 5 enemies, reduces Mana Cost of all Skills by 1.",Talisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+935,light,"ATK, DEF, HP+15% / Crit DMG +20%",Tanya,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+936,dark,"Normal attacks have a 15% chance to activate Stealth mode that lasts for 10 sec. While in Stealth mode, normal attacks deal 50% increased DMG.",Tanya,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+937,light,"ATK, DEF, HP+15% / Crit Chance +100",Theo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+938,dark,"When 'God of Lightning' is activated, recovers half mana instead. When mana is full, ATK is increased by 50% for 10 sec. This effect only activates once every 20 sec.",Theo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+939,light,"ATK, DEF, HP+15% / Crit Chance +100",Veronica,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+940,dark,Reduces the cooldown of the caster's all skills by 15% every 20 sec.,Veronica,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+941,light,"ATK, DEF, HP+15% / Crit Chance +100",Viska,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+942,dark,"Per each stacked Soul, Crit Chance is increased by 50 and Crit DMG is increased by 30%.",Viska,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+943,light,"ATK, DEF, HP+15% / Crit Chance +100",Xerah,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+944,dark,Dealing DMG with normal or Skill attacks increases M.DMG the target takes by 2% for 10 sec and reduces its Heal Rate by 2%. This effect can be stacked up to max 10 times.,Xerah,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+945,light,"ATK, DEF, HP+15% / Crit DMG +20%",Yanne,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+946,dark,Auto-attacks ignore enemy Block effects.,Yanne,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+947,light,"ATK, DEF, HP +15% / ATK Spd +100",Yuria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+948,dark,"At the beginning of the first battle, Yuria gains 'Blessing of Foresight' 'Blessing of Foresight' increases All Dodge Chance by 300 and reduces All DMG to self by 300 for 20 sec. This effect is irremovable. If Yuria is inflicted with CC while under 'Blessing of Foresight' Yuria consumes 'Blessing of Foresight' to dispel all negative effects, gains immunity to CC for 3 sec, and recovers 1 orb of Mana.",Yuria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+949,light,"ATK, DEF, HP+15% / Crit Chance +100",Zafir,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+950,dark,"Upon Skill use, recovers 700 Mana. If there are 5 or more enemies, Mana Recovery is doubled, and ATK Spd is increased by 500 for 5 sec. This effect does not stack.",Zafir,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+951,Void Whirlwind [Light],Each hit recovers 100 Mana.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s1l,hero
+952,Void Whirlwind [Dark],Gains immunity to CC while in use.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s1d,hero
+953,Transcendant [Light],Increases ATK Spd by 500 during [Transcendant] state.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s2l,hero
+954,Transcendant [Dark],Takes 20% reduced DMG during [Transcendant state.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s2d,hero
+955,Void Strike [Light],Dispels postive effect from enemies within range.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s3l,hero
+956,Void Strike [Dark],Increases DMG by 40%.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s3d,hero
+957,Void Frenzy [Light],Changes the Cooldown of [Void Freny] to 7 Sec.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s4l,hero
+958,Void Frenzy [Dark],Increeases DMG dealt to bosses by 50% during [Void Frenzy] state.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,s4d,hero
+959,light,"ATK, DEF, HP +15% / ATK Spd +100",Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,light,t5
+960,dark,[Void] stacks become irremoveable and normal attacks have a 25% chance to inflict 1 [Void] stack.,Hilda,2020-08-18 0:00:00,2020-08-18 0:00:00,dark,t5
+961,Devouring Flame - Caienne [Light],Enemies inflicted with [Ignite] additionally take 25% increased P.DMG.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s1l,hero
+962,Devouring Flame - Caienne [Dark],Increases the duration of [Ignite] by 5 sec.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s1d,hero
+963,Frost of Absolute Zero - Devion [Light],Each hit reduces enemy’s mana by 200.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s2l,hero
+964,Frost of Absolute Zero - Devion [Dark],Increases DMG of [Explosive Reaction] by 60% instead of freezing enemies.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s2d,hero
+965,Raging Storm - Icarus [Light],Reduces Mana Cost by 1.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s3l,hero
+966,Raging Storm - Icarus [Dark],Changes Heal Rate Reduction effect of [Blazing Storm] to 2.5%.,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s3d,hero
+967,Quintessence of Technomagic [Light],Additionally increases DMG dealt to non-Hero enemies by 1% upon creating [Exlposive Reaction].,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s4l,hero
+968,Quintessence of Technomagic [Dark],Additionally increases Heal Rate by 10% upn creating [Blazing Storm].,Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,s4d,hero
+969,light,"ATK, DEF, HP+15% / Crit Chance +100",Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,light,t5
+970,dark,"When there is 1 enemy, increases own DMG dealt to bosses by 50%. WHen there are 6 or more allies, increases all allies DMG dealt to bosses excluding self by 5%.",Isolet,2020-09-22 0:00:00,2020-09-22 0:00:00,dark,t5
+971,Determined Strike [Light],Increases DMG by 100% when there is one enemy.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s1l,hero
+972,Determined Strike [Dark],Increases the duration of Stun by 1 sec.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s1d,hero
+973,Indomitable Will [Light],Increases Crit DMG by 50% while in [Indomitable Will] state.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s2l,hero
+974,Indomitable Will [Dark],"Upon using the skill, dispels all negative effects from self.",Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s2d,hero
+975,Perish [Light],Recovers own Mana by 100 each hit.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s3l,hero
+976,Perish [Dark],Gains immunity to CC while in use.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s3d,hero
+977,Power of Galicta [Light],Additionally reduces the target's P.DEF by 50% for the duration of [Curse of Galicta].,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s4l,hero
+978,Power of Galicta [Dark],Deals additional P.DMG equal to 100% of ATK to Non-Hero enemies.,Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,s4d,hero
+979,light,"ATK, DEF, HP +15% / Crit Chance +100",Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,light,t5
+980,dark,"At the beginning of each battle, Rebel Clause deals 12% increased DMG to Non-Hero enemies and takes 5% reduced DMG. This effect can be stacked up to max 5 times and is irremovable.",Rebel Clause,2020-10-28 0:00:00,2020-10-28 0:00:00,dark,t5
+981,"Pochi, bite them! [Light]","When there is 1 enemy, additional M.DMG dealt to Bosses ignores DEF.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1l,hero
+982,"Pochi, bite them! [Dark]",[Pochi's Mark] additionally reduced M.DEF by 6%.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s1d,hero
+983,"Puchi, knock them away! [Light]",The M.Block Chance Reduction effect of [Puchi's Mark] will fix the M.Block Chance to 0 instead.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2l,hero
+984,"Puchi, knock them away! [Dark]",Knocks the target away instead of inflicting Stun.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s2d,hero
+985,"Pippi, wrap them! [Light]",Reduces Mana Cost by 1.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3l,hero
+986,"Pippi, wrap them! [Dark]",Increases Mana Cost by 1 and DMG by 100%.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s3d,hero
+987,"Eh, wahtever. I'm gonna sleep. [Light]",Increases All DMG Reduction effect by 20% while in use.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4l,hero
+988,"Eh, wahtever. I'm gonna sleep. [Dark]","At the beginning of each battle, [Eh, whatevery. I'm gonna sleep.] becomes activated.",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,s4d,hero
+989,light,"ATK, DEF, HP +15% / Crit Chance +100",Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,light,t5
+990,dark,Increases DMG dealt to Non-Hero enemies by 50% when there is 1 enemy.,Gremory,2020-10-28 0:00:00,2020-10-28 0:00:00,dark,t5
+991,Black Moon Brand [Light],Increases DMG by 40%.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s1l,hero
+992,Black Moon Brand [Dark],[Black Moon Brand] becomes irremovable.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s1d,hero
+993,Black Moon Mark [Light],Inflicts Stun on the hit enemy for 5 sec.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s2l,hero
+994,Black Moon Mark [Dark],Increases M.DMG the hit target takes by 30% for 10 sec.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s2d,hero
+995,Black Moon Strike [Light],Gains immunity to All DMG while in use.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s3l,hero
+996,Black Moon Strike [Dark],Increases the duration of Stun by 1 sec.,Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s3d,hero
+997,Otherworldly Mana [Light],"When there are 3 or more enemies, each hit inficts 1 additional stack of [Otherworldly Curse].",Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s4l,hero
+998,Otherworldly Mana [Dark],"When there is 1 enemy, each hit inflicts 1 additional stack of [Otherworldly Curse].",Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,s4d,hero
+999,light,"ATK, DEF, HP +15% / ATK Spd +100",Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,light,t5
+1000,dark,"At the beginning of each battle, HP does not fall below 10% for 7 sec. If HP falls below 15% for the duration of Skill, DMG dealt to Heroes reduces by 70% for 5 sec. All effects are irremovable.",Riheet,2020-12-21 0:00:00,2020-12-21 0:00:00,dark,t5
+1001,Silver Moon Gust [Light],The last hit reduces the target's Mana by 2000.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s1l,hero
+1002,Silver Moon Gust [Dark],Reduces Cooldown by 3 sec.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s1d,hero
+1003,Silver Moon Mark [Light],Changes the target to the enemy with the highest ATK.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s2l,hero
+1004,Silver Moon Mark [Dark],Increases M.DMG the hit target takes by 30% for 10 sec.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s2d,hero
+1005,Silver Moon Bladestorm [Light],Each hit inflicts Stun on the target for 1 sec.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s3l,hero
+1006,Silver Moon Bladestorm [Dark],Increases DMG by 40%.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s3d,hero
+1007,Otherworldly Mana [Light],Each hit reduces the target's ATK Spd by 30 for 10 sec. This effect can be stacked up to max 10 times.,Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s4l,hero
+1008,Otherworldly Mana [Dark],"When there is 1 enemy, each hit inflicts 1 additional stack of [Otherworldly Curse].",Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,s4d,hero
+1009,light,"ATK, DEF, HP +15% / Crit Chance +100",Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,light,t5
+1010,dark,"At the beginning of each battle, increases DMG dealt to bosses by 15%. This effect can be stacked up to max 5 times.",Ripine,2020-12-21 0:00:00,2020-12-21 0:00:00,dark,t5
+1011,Death Storm [Light],[Shadow of Death] becomes irremovable.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s1l,hero
+1012,Death Storm [Dark],[Shadow of Death] additionally increases M.DMG taken by 25%.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s1d,hero
+1013,Annihilation Wave [Light],Reduces Mana Cost by 1.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s2l,hero
+1014,Annihilation Wave [Dark],"At the beginnig of the first battle, changes the Skill to [Annihilation Surge].",Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s2d,hero
+1015,Doomsday [Light],Reduces Cooldown by 7 sec.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s3l,hero
+1016,Doomsday [Dark],Each hit reduces the target's Mana by 200.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s3d,hero
+1017,Armor of the Demon God [Light],"At the beginning of each battle, creates [Armor of the Demon God]",Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s4l,hero
+1018,Armor of the Demon God [Dark],Reduces All DMG taken by an additional 15%.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,s4d,hero
+1019,light,"ATK, DEF, HP +15% / Crit Chance +100",Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,light,t5
+1020,dark,Inceases DMG dealt to enemies by 5% every 6 sec. This effect can be stacked up to max 10 times and is irremovable.,Lucikiel,2021-01-19 0:00:00,2021-01-19 0:00:00,dark,t5
+1021,Wind of Heart [Light],Increases P.DMG the hit target takes by 25% for 10 sec.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s1l,hero
+1022,Wind of Heart [Dark],Dispels postive effect from the target.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s1d,hero
+1023,Gate of Grudges [Light],Reduces Cooldown by 6 sec.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s2l,hero
+1024,Gate of Grudges [Dark],"For the duration of [Gate of Grudges], each hit inflicts Stun on the target for 1 sec.",Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s2d,hero
+1025,Advent of Despair [Light],Increases DMG by 40%.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s3l,hero
+1026,Advent of Despair [Dark],Dispels negatives effects from all allies.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s3d,hero
+1027,Vessel of Dark Spirit [Light],Changes additional DMG proportional to Max HP percentage to 1.5%.,Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s4l,hero
+1028,Vessel of Dark Spirit [Dark],"When there is 1 enemy, changes Heal Rate proporional to Max HP to 1%.",Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,s4d,hero
+1029,light,"ATK, DEF, HP +15% / HP +10%",Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,light,t5
+1030,dark,"Increases ATK of 1 ally with the highest ATK by 0.1% of own Max HP and takes 20% of All DMG dealt to the target instead. This effect is irremovable, and when Shakmeh takes DMG of the ally instead, that DMG is reduced by 50%. The ATK Boost rate is reduced to half in the Arena.",Shakmeh,2021-02-16 0:00:00,2021-02-16 0:00:00,dark,t5
+1031,"Blow, Tailwind!! / Blow, Headwind!! [Light]",Increases the target's P.Block Chance by 300 for the duration [Tailwind].,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s1l,hero
+1032,"Blow, Tailwind!! / Blow, Headwind!! [Dark]",Reduces the target's P.DEF by 30% for the duration of [Headwind].,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s1d,hero
+1033,Here's a Wake-Up Call!! [Light],Increases the number of targets for [Cheer] by 1.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s2l,hero
+1034,Here's a Wake-Up Call!! [Dark],"Upon activation of [Discouragement], dispels positive effects from target.",Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s2d,hero
+1035,It's Cheering Time!! [Light],Inceases melee Heroes' DMG dealt to Non-Hero enemies by 15% for the duration of Skill.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s3l,hero
+1036,It's Cheering Time!! [Dark],Inceases ranged Heroes' DMG dealt to Non-Hero enemies by 15% for the duration of Skill.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s3d,hero
+1037,I'm the Adventure Guide!! [Light],MP recovery rate is increased by 100%.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s4l,hero
+1038,I'm the Adventure Guide!! [Dark],Dealing normal attacks during [Adventure Guide] state increases P.DMG the target takes by 20% for 10 sec.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,s4d,hero
+1039,light,"ATK, DEF, HP +15% / ATK.Spd +100",Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,light,t5
+1040,dark,Increases Mana Recovery per attack of all allies by 300. This effect is irremovable.,Estelle,2021-03-09 0:00:00,2021-03-09 0:00:00,dark,t5
+1041,Light of Salvation [Light],Increases Heal Rate by 40%.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s1l,hero
+1042,Light of Salvation [Dark],Increases All DMG the hit target takes by 20% for 12 sec.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s1d,hero
+1043,Touch of the Goddess - Mercy / Touch of the Goddess - Embrace [Light],"[Touch of the Goddess - Embrace]
+Reduces Mana Cost by 1.",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s2l,hero
+1044,Touch of the Goddess - Mercy / Touch of the Goddess - Embrace [Dark],"[Touch of the Goddess - Mercy]
+Additionally displels the target's positive effects.",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s2d,hero
+1045,Offering of Atonement [Light],"For every 2 sec, [Field of Atonement] additionally increases DMG dealt to bosses of allies within range by 10% for 8 sec. ",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s3l,hero
+1046,Offering of Atonement [Dark],Increases Heal Rate and DMG of [Field of Atonement] by 30% and 30% respectively.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s3d,hero
+1047,Baptism of the Goddess [Light],[Baptism of the Goddess] [Baptism of the Goddess] effect granted to the ally with the highest ATK additionally increases Crit DMG by 50%.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s4l,hero
+1048,Baptism of the Goddess [Dark],"At the beginning of the first battle, gains 1 stack of [Sin].",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s4d,hero
+1049,light,"ATK, DEF, HP +15% / HP +10%",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,light,t5
+1050,dark,Reduces All DMG self taken by 150 and increases Heal Rate by 15%.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,dark,t5
