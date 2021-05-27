@@ -250,6 +250,10 @@
             $('.perk-tp p').text($tp);
           }
         });
+        heroImg();
+        option();
+        gearStat();
+        gearSet();
       } else if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") { // SHARE LINK
       // } else if (shr.slice(0, 20) == "https://pastebin.com") {
         $.get(shr, function (data, textStatus, jqXHR) {
@@ -415,13 +419,13 @@
               $('.perk-tp p').text($tp);
             }
           });
+          heroImg();
+          option();
+          gearStat();
+          gearSet();
         });
       } else
         alert("Enter valid link/code!");
-      heroImg();
-      option();
-      gearStat();
-      gearSet();
     });
     $('#clip').click(function () {
       checkShare();
@@ -822,6 +826,8 @@
       $tm1R = 53718;$tm1 = 40928;$tm2R = 35809;$tm2 = 27283;$tm3R = 17908;$tm3 = 13644;$tm4R = 1715830;$tm4 = 1307299;$tm5R = 37327;$tm5 = 28440;
       $gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
+      $('#calc_st_weapon, #calc_st_weapon_st').prop('selectedIndex', 0);
+      $('#calc_st_weapon_st').children().hide();
       if ($gearWeaponType == 'Class') {
         $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName.toLowerCase() + '.png)');
         $('#wea').next('.rating').show();
@@ -846,7 +852,6 @@
         $('#range-hp').text(0);
         $('.range').hide();
         rangeC();
-        $('#calc_st_weapon').prop('selectedIndex', 0);
         gearStat();
       } else if ($gearWeaponType == 'Unique') {
         $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
@@ -875,6 +880,7 @@
         $swH = 125000;
 
         $('.calc_gear_weapon').parent().find('.gOption').show();
+        $('#calc_st_weapon_st').children(':first').show();
         $('.w-in').addClass('g-fr-u');
         $('#g-weapon').show();
         gearStat();
@@ -889,7 +895,6 @@
         $('#range-hp').text(0);
         $('.range').hide();
         rangeC();
-        $('#calc_st_weapon').prop('selectedIndex', 0);
         $('#calc_gear_weapon').parent().parent().find('.gOption select').prop('selectedIndex', 0);
         $('#uw label').filter('.active').removeClass('active');
       }
