@@ -895,6 +895,9 @@ h4 {
           width: 0;
         }
         .opt {
+          height: 20px;
+          padding: 1px;
+
           #q1, #q2, #q3, #q4, #q5, #q6, #q7 {
             display: none;
           }
@@ -983,6 +986,12 @@ h4 {
             .range-ou1, .range-ou2 {
               min-width: 60px;
             }
+          }
+        }
+        .opt-ench {
+          div {
+            height: 20px;
+            margin: 0;
           }
         }
       }
@@ -1074,12 +1083,12 @@ h4 {
       display: flex;
       // width: 270px;
       position: relative;
-      right: 27px;
+      right: 22px;
       .input {
         width: fit-content;
         margin: 0 1px;
         .ench-n {
-          width: 150px;
+          width: 149px;
           height: 20px;
         }
         .ench-v {
@@ -1098,7 +1107,7 @@ h4 {
         height: 0px;
         img {
           width: 20px;
-          height: 20px;
+          height: 18px;
           border: 1px solid;
           border-image-source: url(/images/media/icons/gear.png);
           border-image-slice: 25;
