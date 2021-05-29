@@ -1087,6 +1087,16 @@
     function change_armor() {
       $('#heroPDEF').empty();
       $('#setAr').text($('#calc_gear_armor').children('option:selected').text());
+      /* --- Reset All Stats --- */
+      $('#armor').find('.ench-n').children().removeAttr('disabled');
+      $('#armor').find('.ax, .ay, .ench-n, .ench-v, .ax-r, .ay-r').each(function() {
+        $(this).prop('selectedIndex', 0);
+      });
+      $('#armor').find('.ay, .ench-v, .ay-r').each(function() {
+        $(this).children().not(':first').hide();
+        $(this).find('.q').show();
+      });
+      /* ----------------------- */
       $armorSet = $('#calc_gear_armor').children('option:selected').val();
       $heroClass = $('#calc_role_id').children('option:selected').val();
       if ($armorSet == '- - - - - - - - - -') {
@@ -1155,6 +1165,16 @@
     function change_secondary() {
       $('#heroMDEF').empty();
       $('#setScnd').text($('#calc_gear_secondary').children('option:selected').text());
+      /* --- Reset All Stats --- */
+      $('#secondary').find('.ench-n').children().removeAttr('disabled');
+      $('#secondary').find('.ax, .ay, .ench-n, .ench-v, .ax-r, .ay-r').each(function() {
+        $(this).prop('selectedIndex', 0);
+      });
+      $('#secondary').find('.ay, .ench-v, .ay-r').each(function() {
+        $(this).children().not(':first').hide();
+        $(this).find('.q').show();
+      });
+      /* ----------------------- */
       $secondarySet = $('#calc_gear_secondary').children('option:selected').val();
       $heroClass = $('#calc_role_id').children('option:selected').val();
       if ($secondarySet == '- - - - - - - - - -') {
@@ -1223,6 +1243,16 @@
     function change_jewerly() {
       $('#heroJ').empty();
       $('#setAcs').text($('#calc_gear_jewelry').children().children('option:selected').val());
+      /* --- Reset All Stats --- */
+      $('#jewerly').find('.ench-n').children().removeAttr('disabled');
+      $('#jewerly').find('.ax, .ay, .ench-n, .ench-v').each(function() {
+        $(this).prop('selectedIndex', 0);
+      });
+      $('#jewerly').find('.ay, .ench-v').each(function() {
+        $(this).children().not(':first').hide();
+        $(this).find('.q').show();
+      });
+      /* ----------------------- */
       if ($('#calc_gear_jewelry').children('option:selected').val() == '- - - - - - - - - -')
         $jewelSet = $('#calc_gear_jewelry').children('option:selected').val();
       else {
@@ -1286,6 +1316,16 @@
     function change_orb() {
       $('#heroO').empty();
       $('#setOrb').text($('#calc_gear_orb').children('option:selected').text());
+      /* --- Reset All Stats --- */
+      $('#_orb').find('.ench-n').children().removeAttr('disabled');
+      $('#_orb').find('.ax, .ay, .ench-n, .ench-v').each(function() {
+        $(this).prop('selectedIndex', 0);
+      });
+      $('#_orb').find('.ay, .ench-v').each(function() {
+        $(this).children().not(':first').hide();
+        $(this).find('.q').show();
+      });
+      /* ----------------------- */
       $orbSet = $('#calc_gear_orb').children('option:selected').val();
       if ($orbSet == '- - - - - - - - - -') {
         $('#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.png)');
@@ -1673,6 +1713,7 @@
       $arStat = $('#greyPDEF').text();
       $starAr = $('#ar').find('.active').next('input').val();
       $armorSet = $('#calc_gear_armor').children('option:selected').val();
+      (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority') || ($armorSet == 'Perseverance') || ($armorSet == 'Hope') || ($armorSet == 'Authority')) ? $armorTM = true : $armorTM = false;
       if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
         if ($starAr == 0)
           $('#arm').text($arStat);
@@ -1757,6 +1798,7 @@
       $sgStat = $('#greyMDEF').text();
       $starSe = $('#sg').find('.active').next('input').val();
       $secondarySet = $('#calc_gear_secondary').children('option:selected').val();
+      (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority') || ($secondarySet == 'Perseverance') || ($secondarySet == 'Hope') || ($secondarySet == 'Authority')) ? $secondaryTM = true : $secondaryTM = false;
       if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
         if ($starSe == 0)
           $('#sec').text($sgStat);
@@ -1978,6 +2020,7 @@
       $orStat = $('#greyO').text();
       $starO = $('#or').find('.active').next('input').val();
       $orbSet = $('#calc_gear_orb').children('option:selected').val();
+      (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority') || ($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) ? $orbTM = true : $orbTM = false;
       if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
         if ($starO == 0)
           $('#orb').text($orStat);
@@ -2763,6 +2806,37 @@
             $(this).parent().next().children().find('.q5').show();
           else
             $(this).parent().next().children().find('.q').show();
+          /* --- TM Specializaed Stats --- */
+          if ($('#calc_gear_armor').val() !== '- - - - - - - - - -') {
+            if (($stEnch == 'P.DEF') && ($armorTM == true)) {
+              $(this).parent().next().children().find('.q2').hide();
+              $(this).parent().next().children().find('.q6').show();
+            }
+          }
+          if ($('#calc_gear_secondary').val() !== '- - - - - - - - - -') {
+            if (($stEnch == 'M.DEF') && ($secondaryTM == true)) {
+              $(this).parent().next().children().find('.q2').hide();
+              $(this).parent().next().children().find('.q6').show();
+            }
+          }
+          if ($('#calc_gear_jewelry').val() !== '- - - - - - - - - -') {
+            if ( (($stEnch == 'P.DEF') && ($jewelType == 'Bracelet')) || (($stEnch == 'M.DEF') && ($jewelType == 'Necklace')) ) {
+              $(this).parent().next().children().find('.q2').hide();
+              $(this).parent().next().children().find('.q6').show();
+            }
+          }
+          if ($('#calc_gear_jewelry').val() !== '- - - - - - - - - -') {
+            if ( (($stEnch == 'ATK') && ($jewelType == 'Earrings')) || (($stEnch == 'Max HP') && ($jewelType == 'Ring')) ) {
+              $(this).parent().next().children().find('.q1').hide();
+              $(this).parent().next().children().find('.q2').show();
+            }
+          }
+          if ($('#calc_gear_orb').val() !== '- - - - - - - - - -') {
+            if (($stEnch == 'Max HP') && ($orbTM == true)) {
+              $(this).parent().next().children().find('.q1').hide();
+              $(this).parent().next().children().find('.q2').show();
+            }
+          }
         });
       });
     };
@@ -2861,9 +2935,7 @@
         y = parseFloat($runV.value.split(' / ').pop());
         if ($('[name="' + n.name + '"]').children('option:selected').attr('class') == 'all') {
           $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x) : $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
-          console.log($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text());
           $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y) : $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
-          console.log($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text());
         } else
           $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
         if (n.value == 'MP Recovery/DMG') {
