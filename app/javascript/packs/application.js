@@ -6,5 +6,6 @@ require("jquery-ui")
 require("packs/gear")
 require("packs/calc")
 require("packs/stat")
+require("packs/link")
 
 console.log('Webpacker loaded')
