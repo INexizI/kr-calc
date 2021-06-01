@@ -1595,3 +1595,15 @@ h4 {
     box-shadow: none;
   }
 }
+
+.share_data {
+  p:first-child {
+    padding: 10px 0 0 20px;
+  }
+  .raw {
+    overflow-wrap: anywhere;
+    border: 1px solid;
+    margin: 0 20px;
+    padding: 10px;
+  }
+}
