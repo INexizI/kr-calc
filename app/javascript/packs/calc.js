@@ -1394,23 +1394,29 @@
       $('#heroHP').empty();
       $gearTreasureType = $('#calc_gear_treasure').children('option:selected').val();
       $heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
+      $('.gOption .ax').children().removeAttr('disabled');
+      $('#treasure')
+        .find('.ax, .ay').prop('selectedIndex', 0).end()
+        .find('.ay')
+          .children().hide().end()
+          .find('.q').show();
       if ($gearTreasureType == 'Mana Stone') {
-        $eTr = {
-          'width': '52px',
-          'background-size': '50px 50px',
-          'position': 'relative',
-          'right': '0'
-        }
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/9-UT/Mana.png)').css($eTr);
         $('#greyTR').text($ms);
         $('#tre').next('.rating').show();
+        $('#calc_gear_treasure')
+          .css('background-image', 'url(/images/media/gears/9-UT/Mana.png)').css({
+            'width': '52px',
+            'background-size': '50px 50px',
+            'position': 'relative',
+            'right': '0'
+          })
+          .addClass('g-fr').removeClass('g-fr-u');
         $('.calc_gear_treasure').parent().find('.frst').show().css({
           'position': 'relative',
           'bottom': '104px'
         });
         $('.scnd').hide();
         $('.scnd select').prop('selectedIndex', 0);
-        $('#calc_gear_treasure').addClass('g-fr').removeClass('g-fr-u');
         gearStat();
       } else if ($gearTreasureType == 'Unique') {
         $eTr1 = 'url("/images/media/heroes/' + $heroName + '/ut1.png")';
@@ -1418,36 +1424,36 @@
         $eTr3 = 'url("/images/media/heroes/' + $heroName + '/ut3.png")';
         $eTr4 = 'url("/images/media/heroes/' + $heroName + '/ut4.png")';
         $eTr = $eTr1 + ',' + $eTr2 + ',' + $eTr3 + ',' + $eTr4;
-        $hTreasure = {
-          'background-position': '0px, 52px, 104px, 156px',
-          'background-repeat': 'no-repeat',
-          'background-size': '52px 50px',
-          'position': 'relative',
-          'right': '120px',
-          'width': '209px',
-          'height': '50px'
-        }
-        $('#calc_gear_treasure').attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css($hTreasure);
-        $('#calc_gear_treasure').css($hTreasure);
         $('#greyTR').text($unTr);
         $('#tre').next('.rating').show();
+        $('#calc_gear_treasure')
+          .attr('style', 'background-image: ' + $eTr + '; display: inline-block;').css({
+            'background-position': '0px, 52px, 104px, 156px',
+            'background-repeat': 'no-repeat',
+            'background-size': '52px 50px',
+            'position': 'relative',
+            'right': '120px',
+            'width': '209px',
+            'height': '50px'
+          })
+          .addClass('g-fr-u').removeClass('g-fr');
         $('.calc_gear_treasure').parent().find('.frst, .scnd').show().css({
           'position': 'relative',
           'bottom': '210px'
         });
-        $('#calc_gear_treasure').addClass('g-fr-u').removeClass('g-fr');
         gearStat();
       } else {
-        $('#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
-          'width': '52px',
-          'position': 'relative',
-          'right': '0'
-        });
         $('#greyTR').text('');
         $('#tre').text('').next('.rating').hide();
+        $('#calc_gear_treasure')
+          .css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
+            'width': '52px',
+            'position': 'relative',
+            'right': '0'
+          })
+          .removeClass('g-fr g-fr-u')
+          .parents().eq(1).find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
         $('.calc_gear_treasure').parent().find('.gOption').hide();
-        $('#calc_gear_treasure').parents().eq(1).find('.gOption select').prop('selectedIndex', 0).find('optgroup').hide();
-        $('#calc_gear_treasure').removeClass('g-fr g-fr-u');
         $('#ut label').filter('.active').removeClass('active');
       }
       $('#tre').text($('#greyTR').text());
