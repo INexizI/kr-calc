@@ -801,7 +801,8 @@ h4 {
   #calc{
     // margin-left: 85px;
     // margin-right: 85px;
-    margin: 40px 75px;
+    // margin: 40px 75px;
+    margin: 10px 75px 0px 75px;
   }
   .from-calc {
     // margin: auto 0;
@@ -1585,14 +1586,15 @@ h4 {
     display: none;
     margin: 3px 0;
     border: none;
-    width: 500px;
-    height: 30px;
+    width: 260px;
+    height: 18px;
     resize: none;
     overflow: auto;
     outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    text-align: center;
   }
 }
 
