@@ -1567,10 +1567,38 @@ h4 {
   backdrop-filter: blur(3px) saturate(0.3) grayscale(0.5) opacity(0.8);
 }
 
+.share {
+  button {
+    width: 100px;
+    padding: 2px;
+    margin: 1px 0;
+    color: black;
+    border-radius: 3px;
+    border: 1px solid #757575;
+    background: darkgrey;
+    transition: all 0.2s;
+  }
+  button:hover {
+    color: black;
+    background-color: white;
+  }
+}
+
 .share-link {
   display: flex;
   margin: 0 auto;
-  width: fit-content;
+  width: -webkit-fill-available;
+  flex-direction: column;
+  align-items: center;
+
+  #share_link {
+    width: 200px;
+    padding: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+  }
 }
 .share-add {
   flex-direction: column;

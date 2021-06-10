@@ -879,9 +879,9 @@
         $('#clip p').text('Copy');
       }, 1000);
     });
-    $('#share_link').keyup(function() {
-      $('#btn-load').prop('disabled', this.value == '' ? true : false);
-    });
+    // $('#share_link').keyup(function() {
+    //   $('#btn-load').prop('disabled', this.value == '' ? true : false);
+    // });
     // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
