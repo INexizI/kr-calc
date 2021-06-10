@@ -275,7 +275,6 @@
               });
               return JSON.parse(dcT.toString(CryptoJS.enc.Utf8));
             };
-            console.log(decData(shr));
             $(decData(shr)).each(function(i, n) {
               var x = this.name;
               var y = this.value;
@@ -336,7 +335,30 @@
               }
               if (x.slice(0, -3) + ']' == 'calc[treasure]') {
                 $statName = $('[name="' + x + '"]');
-                statOptionTreasure();
+                $('#treasure .opt').find($statName).each(function() {
+                  $(this).parent().next().children().find('option').not('.q').hide();
+                  $stTr = $(this).children('option:selected').text();
+                  if (($stTr == 'ATK') || ($stTr == 'Max HP') || ($stTr == 'DEF')) {
+                    $(this).parent().next().children().find('.q1').show();
+                    $tr = 'q1'
+                  } else if (($stTr == 'MP Recovery/Sec') || ($stTr == 'Mana Recovery upon taking DMG')) {
+                    $(this).parent().next().children().find('.q2').show();
+                    $tr = 'q2'
+                  } else if (($stTr == 'Crit DMG') || ($stTr == 'P.DEF') || ($stTr == 'M.DEF') || ($stTr == 'Recovery')) {
+                    $(this).parent().next().children().find('.q3').show();
+                    $tr = 'q3'
+                  } else if (($stTr == 'ATK Spd') || ($stTr == 'Crit') || ($stTr == 'Lifesteal') || ($stTr == 'ACC') || ($stTr == 'Debuff ACC') || ($stTr == 'CC Resist') || ($stTr == 'Block') || ($stTr == 'Crit Resistance') || ($stTr == 'P.Dodge') || ($stTr == 'M.Dodge') || ($stTr == 'P.Tough') || ($stTr == 'M.Tough') || ($stTr == 'P.Resistance') || ($stTr == 'M.Resistance') || ($stTr == 'DMG Reduction upon P.Block') || ($stTr == 'DMG Reduction upon M.Block') || ($stTr == 'P.Block DEF') || ($stTr == 'M.Block DEF') || ($stTr == 'Penetration')) {
+                    $(this).parent().next().children().find('.q4').show();
+                    $tr = 'q4'
+                  } else if (($stTr == 'MP Recovery/Attack') || ($stTr == 'P.Block') || ($stTr == 'M.Block') || ($stTr == 'P.Crit Resistance') || ($stTr == 'M.Crit Resistance')) {
+                    $(this).parent().next().children().find('.q5').show();
+                    $tr = 'q5'
+                  } else if (($stTr == 'Dodge') || ($stTr == 'Tough') || ($stTr == 'Resistance') || ($stTr == 'DMG Reduction upon Block')) {
+                    $(this).parent().next().children().find('.q6').show();
+                    $tr = 'q6'
+                  } else
+                    $(this).parent().next().children().find('.q').show();
+                });
                 $('#treasure #g-treasure').each(function(i, n) {
                   $trOptf = $('#a' + i + ' .ax').children('option:selected').val();
                   $trOpts = $('#b' + i + ' .ax').children('option:selected').val();
@@ -375,19 +397,19 @@
                 });
                 $r = y;
               }
-              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]')) {
+              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]'))
                 $('[name="' + x + '"]')
                   .children().hide().end()
                   .prop('selectedIndex', 0)
                   .find('[name="' + $r + '"]')
                   .prop('selected', true).show().end()
                   .children('.q').show();
-              }
-              if (x.slice(0, -3) + ']' == 'calc[st_treasure]') {
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
-                $statName = $('[name="' + x + '"]');
-                statOptionTreasure();
-              }
+              if (x.slice(0, -3) + ']' == 'calc[st_treasure]')
+                $('[name="' + x + '"]')
+                  .children().hide().end()
+                  .prop('selectedIndex', 0)
+                  .children('.' + $tr + '[value="' + y + '"]').show().prop('selected', true).end()
+                  .children('.q, .' + $tr).show();
               if ((x == 'calc[ench_type_ar]') || (x == 'calc[ench_type_sg]') || (x == 'calc[ench_type_j]') || (x == 'calc[ench_type_orb]')) {
                 $enchName = $('[name="' + x + '"]');
                 $('[name="' + x + '"]').parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
@@ -401,17 +423,21 @@
                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
                   statEnchant();
               }
-              if ((x.slice(0, -2) == 'calc[ench_ar_tm]') || (x.slice(0, -2) == 'calc[ench_sg_tm]') || (x.slice(0, -2) == 'calc[ench_j_tm]') || (x.slice(0, -2) == 'calc[ench_orb_tm]')) {
+              if ((x.slice(0, -3) + ']' == 'calc[ench_ar_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_sg_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_j_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_orb_tm]')) {
                 $enchTMName = $('[name="' + x + '"]');
                 $ench = $('[name="' + x + '"]').parent().next().find('.ench-v');
                 $ench.prop('selectedIndex', 0).find('optgroup').hide();
                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
                   statEnchantTM();
               }
-              if ((x.slice(0, -2) == 'calc[ench_ar_tm_st]') || (x.slice(0, -2) == 'calc[ench_sg_tm_st]') || (x.slice(0, -2) == 'calc[ench_j_tm_st]') || (x.slice(0, -2) == 'calc[ench_orb_tm_st]'))
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+              if ((x.slice(0, -3) + ']' == 'calc[ench_ar_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_sg_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_j_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_orb_tm_st]'))
+                $('[name="' + x + '"]')
+                  .children('[value="' + y + '"]').prop('selected', true).end()
+                  .children('.q, option:selected').show();
               if ((x == 'calc[ench_ar_st]') || (x == 'calc[ench_sg_st]') || (x == 'calc[ench_j_st]') || (x == 'calc[ench_orb_st]'))
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+                $('[name="' + x + '"]')
+                  .children('[value="' + y + '"]').prop('selected', true).end()
+                  .children('.q, option:selected').show();
               if (x == 'calc[jewelry_type]')
                 $jewelType = y;
               if ((x == 'uw') || (x == 'ar') || (x == 'sg') || (x == 'ut') || (x == 'ac') || (x == 'or')) {
@@ -679,7 +705,6 @@
                 $jewelSet = y;
                 change_jewerly();
               } else if ((x == 'calc[gear_jewelry]') && (y == '- - - - - - - - - -')) {
-                $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
                 $jewelSet = y;
                 change_jewerly();
               }
@@ -694,7 +719,31 @@
                 gearSet();
               }
               if (x.slice(0, -3) + ']' == 'calc[treasure]') {
-                $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
+                $statName = $('[name="' + x + '"]');
+                $('#treasure .opt').find($statName).each(function() {
+                  $(this).parent().next().children().find('option').not('.q').hide();
+                  $stTr = $(this).children('option:selected').text();
+                  if (($stTr == 'ATK') || ($stTr == 'Max HP') || ($stTr == 'DEF')) {
+                    $(this).parent().next().children().find('.q1').show();
+                    $tr = 'q1'
+                  } else if (($stTr == 'MP Recovery/Sec') || ($stTr == 'Mana Recovery upon taking DMG')) {
+                    $(this).parent().next().children().find('.q2').show();
+                    $tr = 'q2'
+                  } else if (($stTr == 'Crit DMG') || ($stTr == 'P.DEF') || ($stTr == 'M.DEF') || ($stTr == 'Recovery')) {
+                    $(this).parent().next().children().find('.q3').show();
+                    $tr = 'q3'
+                  } else if (($stTr == 'ATK Spd') || ($stTr == 'Crit') || ($stTr == 'Lifesteal') || ($stTr == 'ACC') || ($stTr == 'Debuff ACC') || ($stTr == 'CC Resist') || ($stTr == 'Block') || ($stTr == 'Crit Resistance') || ($stTr == 'P.Dodge') || ($stTr == 'M.Dodge') || ($stTr == 'P.Tough') || ($stTr == 'M.Tough') || ($stTr == 'P.Resistance') || ($stTr == 'M.Resistance') || ($stTr == 'DMG Reduction upon P.Block') || ($stTr == 'DMG Reduction upon M.Block') || ($stTr == 'P.Block DEF') || ($stTr == 'M.Block DEF') || ($stTr == 'Penetration')) {
+                    $(this).parent().next().children().find('.q4').show();
+                    $tr = 'q4'
+                  } else if (($stTr == 'MP Recovery/Attack') || ($stTr == 'P.Block') || ($stTr == 'M.Block') || ($stTr == 'P.Crit Resistance') || ($stTr == 'M.Crit Resistance')) {
+                    $(this).parent().next().children().find('.q5').show();
+                    $tr = 'q5'
+                  } else if (($stTr == 'Dodge') || ($stTr == 'Tough') || ($stTr == 'Resistance') || ($stTr == 'DMG Reduction upon Block')) {
+                    $(this).parent().next().children().find('.q6').show();
+                    $tr = 'q6'
+                  } else
+                    $(this).parent().next().children().find('.q').show();
+                });
                 $('#treasure #g-treasure').each(function(i, n) {
                   $trOptf = $('#a' + i + ' .ax').children('option:selected').val();
                   $trOpts = $('#b' + i + ' .ax').children('option:selected').val();
@@ -721,30 +770,31 @@
                 $('.gOption').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
               if ((x.slice(0, -3) + ']' == 'calc[st_armor_tm]') || (x.slice(0, -3) + ']' == 'calc[st_secondary_tm]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly_tm]') || (x.slice(0, -3) + ']' == 'calc[st_orb_tm]'))
                 $('.gTM').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
-              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -5) + ']' == 'calc[st_rune]')) {
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
-                $statVal = $('[name="' + x + '"]').prev().val();
-                $('[name="' + x + '"]').children('[name="' + $statVal + '"], option:first').show();
-              }
-              if (x.slice(0, -3) + ']' == 'calc[st_treasure]') {
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
-                $('#treasure').find('.ax').each(function() {
-                  $(this).parent().next().children().find('optgroup').hide();
-                  $stTr = $(this).children('option:selected').text();
-                  if (($stTr == 'ATK') || ($stTr == 'Max HP') || ($stTr == 'DEF'))
-                    $(this).parent().next().children().find('#q1').show();
-                  else if (($stTr == 'MP Recovery/Sec') || ($stTr == 'Mana Recovery upon taking DMG'))
-                    $(this).parent().next().children().find('#q2').show();
-                  else if (($stTr == 'Crit DMG') || ($stTr == 'P.DEF') || ($stTr == 'M.DEF') || ($stTr == 'Recovery'))
-                    $(this).parent().next().children().find('#q3').show();
-                  else if (($stTr == 'ATK Spd') || ($stTr == 'Crit') || ($stTr == 'Lifesteal') || ($stTr == 'ACC') || ($stTr == 'Debuff ACC') || ($stTr == 'CC Resist') || ($stTr == 'Block') || ($stTr == 'Crit Resistance') || ($stTr == 'P.Dodge') || ($stTr == 'M.Dodge') || ($stTr == 'P.Tough') || ($stTr == 'M.Tough') || ($stTr == 'P.Resistance') || ($stTr == 'M.Resistance') || ($stTr == 'DMG Reduction upon P.Block') || ($stTr == 'DMG Reduction upon M.Block') || ($stTr == 'P.Block DEF') || ($stTr == 'M.Block DEF') || ($stTr == 'Penetration'))
-                    $(this).parent().next().children().find('#q4').show();
-                  else if (($stTr == 'MP Recovery/Attack') || ($stTr == 'P.Block') || ($stTr == 'M.Block') || ($stTr == 'P.Crit Resistance') || ($stTr == 'M.Crit Resistance'))
-                    $(this).parent().next().children().find('#q5').show();
-                  else if (($stTr == 'Dodge') || ($stTr == 'Tough') || ($stTr == 'Resistance') || ($stTr == 'DMG Reduction upon Block'))
-                    $(this).parent().next().children().find('#q6').show();
+              if ((x.slice(0, -3) + ']' == 'calc[rune]') || (x.slice(0, -5) + ']' == 'calc[rune]') || (x.slice(0, -3) + ']' == 'calc[rune_w]')) {
+                $('[name="' + x + '"]').parents().eq(1).find('.ay-r').each(function() {
+                  $(this).children('[name="' + y + '"], option:first').show();
                 });
+                $r = y;
               }
+              if (x.slice(0, -3) + ']' == 'calc[rune_tm]') {
+                $('[name="' + x + '"]').parents().eq(1).find('.ay-r').each(function() {
+                  $(this).children('[name="' + y + '"], option:first').show();
+                });
+                $r = y;
+              }
+              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]'))
+                $('[name="' + x + '"]')
+                  .children().hide().end()
+                  .prop('selectedIndex', 0)
+                  .find('[name="' + $r + '"]')
+                  .prop('selected', true).show().end()
+                  .children('.q').show();
+              if (x.slice(0, -3) + ']' == 'calc[st_treasure]')
+                $('[name="' + x + '"]')
+                  .children().hide().end()
+                  .prop('selectedIndex', 0)
+                  .children('.' + $tr + '[value="' + y + '"]').show().prop('selected', true).end()
+                  .children('.q, .' + $tr).show();
               if ((x == 'calc[ench_type_ar]') || (x == 'calc[ench_type_sg]') || (x == 'calc[ench_type_j]') || (x == 'calc[ench_type_orb]')) {
                 $enchName = $('[name="' + x + '"]');
                 $('[name="' + x + '"]').parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>').parent().next().find('.ench-v').html('<option value="">- - - </option>');
@@ -758,21 +808,24 @@
                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
                   statEnchant();
               }
-              if ((x.slice(0, -2) == 'calc[ench_ar_tm]') || (x.slice(0, -2) == 'calc[ench_sg_tm]') || (x.slice(0, -2) == 'calc[ench_j_tm]') || (x.slice(0, -2) == 'calc[ench_orb_tm]')) {
+              if ((x.slice(0, -3) + ']' == 'calc[ench_ar_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_sg_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_j_tm]') || (x.slice(0, -3) + ']' == 'calc[ench_orb_tm]')) {
                 $enchTMName = $('[name="' + x + '"]');
                 $ench = $('[name="' + x + '"]').parent().next().find('.ench-v');
                 $ench.prop('selectedIndex', 0).find('optgroup').hide();
                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
                   statEnchantTM();
               }
-              if ((x.slice(0, -2) == 'calc[ench_ar_tm_st]') || (x.slice(0, -2) == 'calc[ench_sg_tm_st]') || (x.slice(0, -2) == 'calc[ench_j_tm_st]') || (x.slice(0, -2) == 'calc[ench_orb_tm_st]'))
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+              if ((x.slice(0, -3) + ']' == 'calc[ench_ar_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_sg_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_j_tm_st]') || (x.slice(0, -3) + ']' == 'calc[ench_orb_tm_st]'))
+                $('[name="' + x + '"]')
+                  .children('[value="' + y + '"]').prop('selected', true).end()
+                  .children('.q, option:selected').show();
               if ((x == 'calc[ench_ar_st]') || (x == 'calc[ench_sg_st]') || (x == 'calc[ench_j_st]') || (x == 'calc[ench_orb_st]'))
-                $('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+                $('[name="' + x + '"]')
+                  .children('[value="' + y + '"]').prop('selected', true).end()
+                  .children('.q, option:selected').show();
               if (x == 'calc[jewelry_type]')
                 $jewelType = y;
               if ((x == 'uw') || (x == 'ar') || (x == 'sg') || (x == 'ut') || (x == 'ac') || (x == 'or')) {
-                statOptionTreasure();
                 $('#' + x).find('label').removeClass('active');
                 $('#' + x).find('.bt' + y).addClass('active');
                 option();
