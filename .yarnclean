@@ -42,5 +42,5 @@ wercker.yml
 .travis.yml
 
 # misc
-.yaml
+*.yaml
 *.md
