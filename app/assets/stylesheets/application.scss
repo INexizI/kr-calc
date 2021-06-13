@@ -411,7 +411,18 @@ select {
     padding: 3px;
   }
 }
-.c-perk-img:hover .p-description, .c-perk-img:hover .s-description, .c-perk-img:hover .calc-s-description  {
+.calc-art-description {
+  width: 310px !important;
+  border: 1px solid;
+  border-radius: 10px;
+  background: #d2d2d2;
+  margin: -45% 100px !important;
+  font-size: 0.8em;
+  p {
+    padding: 3px;
+  }
+}
+.c-perk-img:hover .p-description, .c-perk-img:hover .s-description, .c-perk-img:hover .calc-s-description {
   display: grid;
   gap: 1px 1px;
   grid-template-areas: "p1 p1 p1" "p2 p2 p3" "p4 p4 p4";
@@ -996,6 +1007,9 @@ h4 {
           }
         }
       }
+      .gArt {
+        display: none;
+      }
       #g-left {
         right: 230px;
         bottom: 135px;
@@ -1568,6 +1582,8 @@ h4 {
 }
 
 .share {
+  margin: 10px 0;
+
   button {
     width: 100px;
     padding: 2px;

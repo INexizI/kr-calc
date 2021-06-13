@@ -1822,15 +1822,19 @@
       $('#orb').text($('#greyO').text());
     };
     function change_art() {
-      $artSet = $('#calc_gear_artifact').children('option:selected').val();
-      if ($artSet == '- - - - - - - - - -') {
+      $artSet = $('#calc_gear_artifact').children('option:selected');
+      $('.calc-art-description').find('p').text($($artSet).attr('desc'));
+      if ($($artSet).val() == '- - - - - - - - - -') {
         $('#art').text('').next('.rating').hide();
         $('#art label').filter('.active').removeClass('active');
         $('#calc_gear_artifact')
           .css('background-image', 'url(/images/media/gears/bg-art.png)')
           .removeClass('g-fr-u');
-      } else
-        $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $artSet + '.png"); display: inline-block;').addClass('g-fr-u');
+        $('.gArt').hide();
+      } else {
+        $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $($artSet).val() + '.png"); display: inline-block;').addClass('g-fr-u');
+        $('.gArt').show();
+      }
     };
     function change_rune() {
       $($rc)
