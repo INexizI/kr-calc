@@ -447,32 +447,11 @@ title Calculator
 
           .form-input
             = f.input :gear_artifact, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.order(name: 'ASC').where(gear_type: 'art').collect {|g| [g.name, g.name, {desc: g.description}]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
-            / .gSt
-              p#art
-              .rating#at.c
-                label#bt-star.bt5 ☆
-                input name="starValue" type="radio" value="5"
-                label#bt-star.bt4 ☆
-                input name="starValue" type="radio" value="4"
-                label#bt-star.bt3 ☆
-                input name="starValue" type="radio" value="3"
-                label#bt-star.bt2 ☆
-                input name="starValue" type="radio" value="2"
-                label#bt-star.bt1 ☆
-                input name="starValue" type="radio" value="1"
-                label.bt0 ◯
-                input name="starValue" type="radio" value="0"
             .gArt
               .calc-art-description
                 p
 
         div
-
-      / .form-input
-        = f.input :class_buff
-
-      / .form-input
-        = f.input :guild_buff
 
   .r-stats.class-stats
     .statData
@@ -627,7 +606,6 @@ title Calculator
     = f.button :button, 'Load', id: 'btn-load'
   .share-link.share-add
     = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink'
-    / = f.button :button, 'Generate Code', class: 'btn-gen', id: 'genCode'
     #clip
       = image_tag '/images/clipboard.svg'
       p Copy

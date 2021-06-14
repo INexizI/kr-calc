@@ -48,24 +48,6 @@
       };
       $encryptData = encData($lk_sl);
     });
-    // $('#genCode').click(function() {  /*  --- ShareCode  ---  */
-    //   $('#this-link').text($encryptData).show();
-    // });
-    // $('#genLink').click(function() { /*  --- Pastebin API ---  */
-    //   var url = "https://pastebin.com/api/api_post.php";
-    //   var xhr = new XMLHttpRequest();
-    //   xhr.open("POST", url, true);
-    //   xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4)
-    //       $('#this-link').text(xhr.responseText);
-    //   };
-    //   const api_dev_key = $('.share').attr('data');
-    //   var data = "api_dev_key=" + api_dev_key + "&api_paste_code=" + $encryptData + "&api_paste_private=1&api_option=paste";
-    //   xhr.crossDomain = true,
-    //   xhr.withCredentials = false;
-    //   xhr.send(data);
-    //   $('#this-link').show();
-    // });
     $('#genLink').click(function() {  /*  --- KRCalc API  ---  */
       const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
       var url = "https://krsharelink.herokuapp.com/api/v1/links/";
@@ -646,7 +628,7 @@
       //   option();
       //   gearStat();
       //   gearSet();
-      } else if ((shr.slice(0, 27) == "http://localhost:3000/links") || (shr.slice(0, 35) == window.location.origin + "/links")) { /* --- localhost API ---  */
+      } else if ((shr.slice(0, 27) == "http://localhost:3000/links") || (shr.slice(0, 35) == "https://kr-calc.herokuapp.com/links")) { /* --- localhost API ---  */
         $.get(shr)
           .done(function(data) {
             var decData = function(shr, key) {
@@ -879,9 +861,6 @@
         $('#clip p').text('Copy');
       }, 1000);
     });
-    // $('#share_link').keyup(function() {
-    //   $('#btn-load').prop('disabled', this.value == '' ? true : false);
-    // });
     // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
