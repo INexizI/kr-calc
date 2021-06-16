@@ -10,12 +10,4 @@ Rails.application.routes.draw do
 
   resources :calcs, only: [:index, :create]
   resources :links, only: :show
-
-  namespace :api do
-    namespace :v1 do
-      resources :links
-
-      post 'authenticate', to: 'authentication#create'
-    end
-  end
 end
