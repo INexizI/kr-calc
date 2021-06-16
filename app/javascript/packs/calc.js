@@ -49,8 +49,10 @@
       $encryptData = encData($lk_sl);
     });
     $('#genLink').click(function() {  /*  --- KRCalc API  ---  */
-      const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
-      var url = "https://krsharelink.herokuapp.com/api/v1/links/";
+      const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEifQ.EBKUcSunAlFLTxnFwuPNoBVpCyYR-QaFdQlPl-W4XXw";
+      // var url = "https://krsharelink.herokuapp.com/api/v1/links/";
+      var url = "https://kr-calc.herokuapp.com/api/v1/links/";
+      // var url = "http://localhost:3000/api/v1/links/";
       var xhr = new XMLHttpRequest();
       xhr.open("POST", url, true);
       xhr.setRequestHeader("Content-Type", "application/json");
@@ -1032,7 +1034,7 @@
       $('.t-total').find('.r-stats').empty();
       $($stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.statData').show();
-      $('.gOption, .gTM').hide();
+      $('.gOption, .gTM, .gArt').hide();
       $('.t-st p').empty();
       $('.form-input .gSt p').text('');
       $('.form-input .gSt .rating').hide();

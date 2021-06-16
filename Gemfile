@@ -6,18 +6,22 @@ ruby '3.0.1'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.3', '>= 4.3.8'
+gem 'bcrypt', '~> 3.1.7'
+gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sass-rails', '>= 6.0.0'
+gem 'jwt'
+gem 'sidekiq'
+
+gem 'active_model_serializers', '~> 0.10.12'
 gem 'webpacker', '~> 4.3', '>= 4.3.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.7'
 gem 'json', '~> 2.5', '>= 2.5.1'
 
-gem 'bootsnap', '>= 1.4.2', require: false
-
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'slim-rails', '>= 3.2.0'
 gem 'simple_form', '>= 5.1.0'
-gem 'friendly_id'
+gem 'friendly_id', '~> 5.4.0'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'image_processing'
