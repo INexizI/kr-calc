@@ -49,7 +49,7 @@
       $encryptData = encData($lk_sl);
     });
     $('#genLink').click(function() {  /*  --- KRCalc API  ---  */
-      const api_dev_key = "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiMSJ9.tVCQ5riIpb28FNekKouhs4TxW6MTUYmb31Vl3wb87OE";
+      const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
       var url = "https://krsharelink.herokuapp.com/api/v1/links/";
       var xhr = new XMLHttpRequest();
       xhr.open("POST", url, true);
