@@ -48,7 +48,8 @@
       };
       $encryptData = encData($lk_sl);
     });
-    $('#genLink').click(function() {  /*  --- KRCalc API  ---  */
+    $('#genLink').click(function(e) {  /*  --- KRCalc API  ---  */
+      e.preventDefault();
       const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
       var url = "https://krsharelink.herokuapp.com/api/v1/links/";
       var xhr = new XMLHttpRequest();
@@ -64,6 +65,7 @@
       $('#this-link').show();
     });
     $('#btn-load').click(function(e) {
+      e.preventDefault();
       var shr = $('#share_link').val().toString();
       if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") {  /* --- KRCalc API ---  */
         $.get(shr)

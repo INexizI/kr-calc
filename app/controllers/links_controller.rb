@@ -9,7 +9,4 @@ class LinksController < ApplicationController
     # @q = request.original_url.byteslice(36, 38) #heroku
     @q = request.original_url[-6..-1]
   end
-
-  def create
-  end
 end

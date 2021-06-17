@@ -8,7 +8,4 @@ class CalcsController < ApplicationController
     @stats = Stat.all
     # @chars = JSON.parse(File.read('./public/json/heroes.json'))
   end
-
-  def create
-  end
 end
