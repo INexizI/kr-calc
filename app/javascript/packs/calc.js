@@ -485,7 +485,7 @@
       //     .fail(function(jqXHR, textStatus, errorThrown) {
       //       alert("Enter valid link/code!\n" + errorThrown);
       //     });
-      } else if ((shr.slice(0, 27) == "http://localhost:3000/links") || (shr.slice(0, 35) == "https://kr-calc.herokuapp.com/links")) { /* --- localhost API --- */
+      } else if ((shr.slice(0, 27) == "http://localhost:3000/links") || (shr.slice(0, 35) == "https://kr-calc.herokuapp.com/links") || (shr.slice(0, 29) == "https://www.kr-calc.com/links")) { /* --- localhost API --- */
         $.get(shr)
           .done(function(data) {
             var decData = function(shr, key) {
