@@ -490,7 +490,7 @@
               var C = CryptoJS;
               var Key = C.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
               var IV = C.enc.Utf8.parse("br2fg9b3e7fb12q");
-              var dcT = C.AES.decrypt(data.text, Key, {
+              var dcT = C.AES.decrypt($(data).find('.raw').text(), Key, {
                 iv: IV,
                 mode: C.mode.CBC,
                 padding: C.pad.Pkcs7
