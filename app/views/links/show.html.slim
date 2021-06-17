@@ -2,8 +2,8 @@ title Link
 
 .links
   - @links.each do |l|
-    - if l.slug == @q
+    - if l['slug'] == @q
       .share_data
         p Raw Data
         p.raw
-          = l.text
+          = l['text']
