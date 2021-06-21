@@ -17,7 +17,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 16,Lifesteal,30,weapon,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
 17,MP Recovery/Attack,50,weapon,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
 18,CC Resist,30,armor,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
-19,MAX HP,3,armor,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
+19,Max HP,3,armor,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
 20,MP Recovery/DMG,10,secondary,Common,2021-03-28 0:00:00,2021-03-28 0:00:00
 21,ATK,5,weapon,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
 22,Penetration,50,weapon,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -37,7 +37,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 36,Lifesteal,50,weapon,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
 37,MP Recovery/Attack,100,weapon,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
 38,CC Resist,50,armor,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
-39,MAX HP,5,armor,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
+39,Max HP,5,armor,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
 40,MP Recovery/DMG,20,secondary,Uncommon,2021-03-28 0:00:00,2021-03-28 0:00:00
 41,ATK,10,weapon,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
 42,Penetration,100,weapon,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -57,7 +57,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 56,Lifesteal,100,weapon,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
 57,MP Recovery/Attack,200,weapon,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
 58,CC Resist,100,armor,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
-59,MAX HP,10,armor,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
+59,Max HP,10,armor,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
 60,MP Recovery/DMG,35,secondary,Rare,2021-03-28 0:00:00,2021-03-28 0:00:00
 61,ATK,15,weapon,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
 62,Penetration,150,weapon,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -77,7 +77,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 76,Lifesteal,150,weapon,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
 77,MP Recovery/Attack,300,weapon,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
 78,CC Resist,150,armor,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
-79,MAX HP,15,armor,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
+79,Max HP,15,armor,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
 80,MP Recovery/DMG,50,secondary,Heroic,2021-03-28 0:00:00,2021-03-28 0:00:00
 81,ATK,20,weapon,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
 82,Penetration,200,weapon,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -97,7 +97,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 96,Lifesteal,200,weapon,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
 97,MP Recovery/Attack,400,weapon,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
 98,CC Resist,200,armor,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
-99,MAX HP,20,armor,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
+99,Max HP,20,armor,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
 100,MP Recovery/DMG,60,secondary,Ancient,2021-03-28 0:00:00,2021-03-28 0:00:00
 101,ATK / Penetration,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 102,ATK / Crit,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -108,7 +108,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 107,ATK / Dodge,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 108,ATK / Block,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 109,ATK / MP Recovery/Attack,11 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-110,ATK / MAX HP,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+110,ATK / Max HP,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 111,Crit / Penetration,110 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 112,Crit DMG / Penetration,22 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 113,Penetration / ACC,110 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -117,7 +117,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 116,Penetration / Dodge,110 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 117,Penetration / Block,110 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 118,Penetration / MP Recovery/Attack,110 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-119,MAX HP / Penetration,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+119,Max HP / Penetration,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 120,Crit / Crit DMG,110 / 22,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 121,ACC / Block,110 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 122,ACC / Debuff ACC,110 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -161,7 +161,7 @@ id,name,value,type_gear,tier,created_at,updated_at
 160,DEF / Crit DMG,11 / 22,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 161,DEF / Crit Resistance,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 162,DEF / Dodge,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-163,DEF / MAX HP,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+163,DEF / Max HP,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 164,DEF / MP Recovery/Attack,11 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 165,DEF / Recovery,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 166,DEF / Tough,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
@@ -170,19 +170,19 @@ id,name,value,type_gear,tier,created_at,updated_at
 169,Dodge / Recovery,55 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 170,Dodge / Tough,55 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 171,Lifesteal / ATK Spd,110 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-172,M.DEF / MAX HP,22 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+172,M.DEF / Max HP,22 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 173,M.DEF / Tough,22 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-174,MAX HP / ACC,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-175,MAX HP / ATK Spd,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-176,MAX HP / Block,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-177,MAX HP / Crit,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-178,MAX HP / Crit DMG,11 / 22,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-179,MAX HP / Dodge,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-180,MAX HP / Lifesteal,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-181,MAX HP / MP Recovery/Attack,11 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-182,MAX HP / Recovery,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-183,MAX HP / Tough,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
-184,P.DEF / MAX HP,22 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+174,Max HP / ACC,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+175,Max HP / ATK Spd,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+176,Max HP / Block,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+177,Max HP / Crit,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+178,Max HP / Crit DMG,11 / 22,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+179,Max HP / Dodge,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+180,Max HP / Lifesteal,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+181,Max HP / MP Recovery/Attack,11 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+182,Max HP / Recovery,11 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+183,Max HP / Tough,11 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+184,P.DEF / Max HP,22 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 185,P.DEF / Tough,22 / 55,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 186,Recovery / ATK Spd,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 187,Recovery / CC Resist,11 / 110,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
