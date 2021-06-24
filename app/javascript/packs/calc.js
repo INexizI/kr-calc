@@ -1490,7 +1490,6 @@
     $('select#calc_char_id').change(function() {
       change_char();
     }).change();
-
     $('select#calc_gear_weapon').change(function() {
       change_weapon();
     }).change();
@@ -1506,7 +1505,6 @@
       $rc = $(this).parents().eq(1).find('.ay-r');
       change_rune();
     });
-
     $('select#calc_gear_treasure').change(function() {
       change_treasure();
     }).change();
@@ -1526,7 +1524,6 @@
           $(this).find('#a' + i + ' .ax').children('[value="' + $trOpts + '"]').attr('disabled', 'disabled');
       });
     });
-
     $('select#calc_gear_armor').change(function() {
       change_armor();
     }).change();
@@ -1575,7 +1572,6 @@
       $rc = $(this).parents().eq(1).find('.ay-r');
       change_rune();
     });
-
     $('select#calc_gear_secondary').change(function() {
       change_secondary();
     }).change();
@@ -1624,7 +1620,6 @@
       $rc = $(this).parents().eq(1).find('.ay-r');
       change_rune();
     });
-
     $('select#calc_gear_jewelry').change(function() {
       change_jewerly();
     }).change();
@@ -1667,7 +1662,6 @@
           $(this).find('#a0 .ench-n, #b0 .ench-n').children('[value="' + $tmEnchT + '"]').attr('disabled', 'disabled');
       });
     });
-
     $('select#calc_gear_orb').change(function() {
       change_orb();
     }).change();
@@ -1710,7 +1704,6 @@
           $(this).find('#a0 .ench-n, #b0 .ench-n').children('[value="' + $tmEnchT + '"]').attr('disabled', 'disabled');
       });
     });
-
     $('select#calc_gear_artifact').change(function() {
       change_art();
     }).change();
