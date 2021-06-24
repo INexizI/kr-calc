@@ -605,7 +605,8 @@ title Calculator
     = f.text_field :link, required: false, label: false, placeholder: 'Link Here'
     = f.button :button, 'Load', id: 'btn-load'
   .share-link.share-add
-    = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink'
+    / = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink'
+    = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink', data: { controller: 'calc', action: 'click->calc#generate' }
     #clip
       = image_tag '/images/clipboard.svg'
       p Copy
