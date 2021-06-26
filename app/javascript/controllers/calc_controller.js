@@ -52,7 +52,7 @@ export default class extends Controller {
     };
     var encryptData = encData(lk_sl);
 
-    const request = new FetchRequest('post', 'http://localhost:3000/links', { body: JSON.stringify({ text: encryptData }) })
+    const request = new FetchRequest('post', window.location.origin + '/links', { body: JSON.stringify({ text: encryptData }) })
     const response = await request.perform()
 
     if (response.ok) {
