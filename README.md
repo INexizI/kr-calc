@@ -2,7 +2,8 @@
 
 <!-- ![image](https://user-images.githubusercontent.com/39536903/115387745-bcac7900-a1e3-11eb-9612-a8eff9987700.png) -->
 <p>
-  <img alt="license" src="https://img.shields.io/github/license/INexizI/kr-calc?style=for-the-badge">
+  <a href="https://github.com/INexizI/kr-calc/blob/master/LICENSE.md">
+    <img alt="license" src="https://img.shields.io/github/license/INexizI/kr-calc?style=for-the-badge"></a>
   <a href="https://circleci.com/gh/INexizI/kr-calc">
     <img alt="CircleCI Status" src="https://img.shields.io/circleci/build/github/INexizI/kr-calc?logo=CircleCI&logoColor=%23fff&style=for-the-badge"></a>
   <a href="https://github.com/INexizI/kr-calc/actions/workflows/main.yml">
