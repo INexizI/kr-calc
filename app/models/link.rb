@@ -10,4 +10,12 @@ class Link < ApplicationRecord
     sl = (0..5).map { r[rand(r.length)] }.join
     self.title = sl
   end
+
+  def date_expired
+    self.created_at + 1.month
+  end
+
+  def destroy_expired
+    self.destroy
+  end
 end

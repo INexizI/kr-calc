@@ -13,6 +13,7 @@ gem 'webpacker', '~> 4.3', '>= 4.3.0'
 gem 'jbuilder', '~> 2.7'
 gem 'json', '~> 2.5', '>= 2.5.1'
 gem 'redis', '~> 4.0'
+gem 'sidekiq', '~> 6.2', '>= 6.2.1'
 gem 'hotwire-rails', '~> 0.1.3'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'

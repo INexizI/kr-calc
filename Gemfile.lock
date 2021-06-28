@@ -89,6 +89,7 @@ GEM
       xpath (~> 3.2)
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
+    connection_pool (2.2.5)
     crass (1.0.6)
     erubi (1.10.0)
     ffi (1.15.3)
@@ -179,6 +180,10 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    sidekiq (6.2.1)
+      connection_pool (>= 2.2.2)
+      rack (~> 2.0)
+      redis (>= 4.2.0)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -251,6 +256,7 @@ DEPENDENCIES
   redis (~> 4.0)
   sass-rails (>= 6.0.0)
   selenium-webdriver
+  sidekiq (~> 6.2, >= 6.2.1)
   simple_form (>= 5.1.0)
   slim-rails (>= 3.2.0)
   spring
