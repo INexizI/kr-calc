@@ -1,71 +1,11 @@
 (function() {
   $(document).on("turbolinks:load", function() {
-    $('.btn-gen').click(function() {
-      $jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
-      $lk = $('.calc form');
-      $lk_sl = [];
-      $lk_sl.push({name :'calc[jewelry_type]', value: $jName});
-      $($lk.serializeArray().slice(1)).each(function(i, n) {
-        if ((this.value !== '0') && (this.value !== '') && (this.value !== '- - - - - - - - - -'))
-          $lk_sl.push(n);
-        if (this.name == 'calc[gear_treasure]')
-          $lk_sl.push(
-            {name: 'uw', value: $starW},
-            {name: 'ar', value: $starAr},
-            {name: 'sg', value: $starSe},
-            {name: 'ut', value: $starTr},
-            {name: 'ac', value: $starJ},
-            {name: 'or', value: $starO}
-          );
-        if (this.name == 'calc[char_id]') {
-          $('.hero-' + this.value + ' #perk-t1').find('img').each(function() {
-            if ($(this).attr('class') == 'pick')
-            $lk_sl.push({name: 'perk-t1', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t2').find('img').each(function() {
-            if ($(this).attr('class') == 'pick')
-            $lk_sl.push({name: 'perk-t2', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t3').find('img').each(function() {
-            if ($(this).attr('class') == 'pick')
-            $lk_sl.push({name: 'perk-t3', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t5').find('img').each(function() {
-            if ($(this).attr('class') == 'pick')
-            $lk_sl.push({name: 'perk-t5', value: $(this).attr('id')})
-          });
-        }
-      });
-      function encData($lk_sl) {
-        var Key = CryptoJS.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
-        var IV = CryptoJS.enc.Utf8.parse("br2fg9b3e7fb12q");
-        var enT = CryptoJS.AES.encrypt(JSON.stringify($lk_sl), Key, {
-          iv: IV,
-          mode: CryptoJS.mode.CBC,
-          padding: CryptoJS.pad.Pkcs7
-        });
-        return enT.toString(CryptoJS.format.Base64);
-      };
-      $encryptData = encData($lk_sl);
+    $('#genLink').click(function() {
+      disableGenerateButton();
     });
-    // $('#genLink').click(function(e) {  /*  --- KRCalc API  ---  */
-    //   e.preventDefault();
-    //   const api_dev_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMSJ9.m7m9f3zflL47U68AoZPV52gyxFc0dwT8-1CGX8Xg0A4";
-    //   var url = "https://krsharelink.herokuapp.com/api/v1/links/";
-    //   var xhr = new XMLHttpRequest();
-    //   xhr.open("POST", url, true);
-    //   xhr.setRequestHeader("Content-Type", "application/json");
-    //   xhr.setRequestHeader("Authorization", "Bearer " + api_dev_key);
-    //   xhr.onreadystatechange = function () {
-    //     if (xhr.readyState === 4)
-    //       $('#this-link').text(window.location.origin + '/links/' + JSON.parse(xhr.responseText).data.slug);
-    //   };
-    //   var data = JSON.stringify({"text": $encryptData});
-    //   xhr.send(data);
-    //   $('#this-link').show();
-    // });
     $('#btn-load').click(function(e) {
       e.preventDefault();
+      disableGenerateButton();
       var shr = $('#share_link').val().toString();
       if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") {  /* --- KRCalc API ---  */
         $.get(shr)
@@ -3136,6 +3076,12 @@
       $chk = 0;
       $('.img').each(function() {
         $chk += $(this).prop('selectedIndex');
+      });
+    };
+    function disableGenerateButton() {
+      $('#genLink').attr('disabled','disabled').css({
+        'background': 'rgba(0, 0, 0, 0.2)',
+        'text-decoration': 'line-through'
       });
     };
     $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {

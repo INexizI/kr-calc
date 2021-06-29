@@ -8,7 +8,7 @@ export default class extends Controller {
     var jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
     var lk = $('.calc form');
     var lk_sl = [];
-    $(lk_sl).push({name :'calc[jewelry_type]', value: jName});
+    lk_sl.push({name :'calc[jewelry_type]', value: jName});
     $(lk.serializeArray().slice(1)).each(function(i, n) {
       if ((this.value !== '0') && (this.value !== '') && (this.value !== '- - - - - - - - - -'))
         lk_sl.push(n);
@@ -57,7 +57,7 @@ export default class extends Controller {
 
     if (response.ok) {
       const body = await response.json
-      console.log(window.location.origin + '/links/' + body.data.slug)
+      // console.log(window.location.origin + '/links/' + body.data.slug)
       $('#this-link').text(window.location.origin + '/links/' + body.data.slug).show()
     }
   }
