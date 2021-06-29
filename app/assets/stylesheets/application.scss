@@ -1643,7 +1643,7 @@ h4 {
 }
 
 .share_data {
-  p:first-child {
+  p:first-child, p:last-child {
     padding: 10px 0 0 20px;
   }
   .raw {

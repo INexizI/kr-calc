@@ -5,14 +5,16 @@ class Link < ApplicationRecord
   validates :text, presence: true
   validates :title, presence: true
 
-  def title
+  after_initialize do
     r = [('a'..'z'), ('A'..'Z'), (0..9)].map(&:to_a).flatten
     sl = (0..5).map { r[rand(r.length)] }.join
-    self.title = sl
+    self.title ||= sl
+
+    self.date_expired ||= 1.month.from_now
   end
 
-  def date_expired
-    self.created_at + 1.month
+  after_save_commit do
+    LinkExpiredJob.set(wait_until: date_expired).perform_later(self)
   end
 
   def destroy_expired
