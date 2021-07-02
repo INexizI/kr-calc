@@ -1,11 +1,16 @@
 (function() {
   $(document).on("turbolinks:load", function() {
     $('#genLink').click(function() {
-      disableGenerateButton();
+      checkShare();
+      if ($check != 0)
+        disableGenerateButton()
+      else {
+        $msg = "Create a Build!";
+        messgeBox();
+      }
     });
     $('#btn-load').click(function(e) {
       e.preventDefault();
-      disableGenerateButton();
       var shr = $('#share_link').val().toString();
       if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") {  /* --- KRCalc API ---  */
         $.get(shr)
@@ -214,8 +219,10 @@
             gearSet();
           })
           .fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Enter valid link/code!\n" + errorThrown);
+            $msg = "Enter valid link/code!\n" + errorThrown;
+            messgeBox();
           });
+        disableGenerateButton();
       } else if ((shr.slice(0, 27) == "http://localhost:3000/links") || (shr.slice(0, 35) == "https://kr-calc.herokuapp.com/links") || (shr.slice(0, 29) == "https://www.kr-calc.com/links")) { /* --- localhost API --- */
         $.get(shr)
           .done(function(data) {
@@ -423,17 +430,21 @@
             gearSet();
           })
           .fail(function(jqXHR, textStatus, errorThrown) {
-            alert("Enter valid link/code!\n" + errorThrown);
+            $msg = "Enter valid link/code!\n" + errorThrown;
+            messgeBox();
           });
-      } else
-        alert("Enter valid link/code!");
+        disableGenerateButton();
+      } else {
+        $msg = "Enter valid link!";
+        messgeBox();
+      }
     });
     $('#clip').click(function () {
       checkShare();
-      if ($chk == 0)
+      if ($check == 0)
         $msg = 'Create a Build!';
       else if ($('#this-link').text() == '')
-        $msg = 'Generate Link or Code!';
+        $msg = 'Generate Link!';
       else {
         $tmp = $('<input>');
         $('body').append($tmp);
@@ -3073,11 +3084,21 @@
     };
     statSplit();
     function checkShare() {
-      $chk = 0;
-      $('.img').each(function() {
-        $chk += $(this).prop('selectedIndex');
+      $form = $('form.calc').find('.img').serializeArray();
+      $check = 0;
+      $.each($form, function(i, n) {
+        if (n.value != "- - - - - - - - - -")
+          $check++
       });
     };
+    function messgeBox() {
+      $('.msg').fadeOut(500, function () {
+        $(this).html($msg).fadeIn(500).show();
+      });
+      setTimeout(function() {
+        $('.msg').text('').hide();
+      }, 1000);
+    }
     function disableGenerateButton() {
       $('#genLink').attr('disabled','disabled').css({
         'background': 'rgba(0, 0, 0, 0.2)',
