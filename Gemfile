@@ -15,6 +15,7 @@ gem 'json', '~> 2.5', '>= 2.5.1'
 gem 'redis', '~> 4.0'
 gem 'sidekiq', '~> 6.2', '>= 6.2.1'
 gem 'hotwire-rails', '~> 0.1.3'
+gem 'meta-tags'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'slim-rails', '>= 3.2.0'

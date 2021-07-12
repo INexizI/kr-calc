@@ -115,6 +115,8 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    meta-tags (2.14.0)
+      actionpack (>= 3.2.0, < 6.2)
     method_source (1.0.0)
     mini_mime (1.1.0)
     minitest (5.14.4)
@@ -248,6 +250,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   json (~> 2.5, >= 2.5.1)
   listen
+  meta-tags
   pg (>= 0.18, < 2.0)
   puma (~> 4.3, >= 4.3.8)
   rack-cors
