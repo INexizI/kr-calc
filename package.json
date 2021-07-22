@@ -8,7 +8,7 @@
     "@rails/request.js": "^0.0.4",
     "@rails/ujs": "^6.1.4",
     "@rails/webpacker": "^5.4.0",
-    "glob-parent": "^6.0.0",
+    "glob-parent": "^6.0.1",
     "jquery": "^3.6.0",
     "jquery-ui": "^1.12.1",
     "normalize-url": "^6.1.0",
