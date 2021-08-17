@@ -71,13 +71,13 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 70,Light's Judgment [Dark],Mana cost is increased by 1 orb but DMG is boosted by 100%,Artemia,2020-06-18 11:22:33.835317,2020-06-18 11:22:33.835317,s3d,hero
 71,Blessing of Light [Light],Increases DMG dealt to Non-Hero enemies by an additional 2.5%.,Artemia,2020-06-18 11:22:44.51718,2020-06-18 11:22:44.51718,s4l,hero
 72,Blessing of Light [Dark],Changes DMG Reduction from Non-Hero enemies to DMG Reduction from all enemies.,Artemia,2020-06-18 11:22:50.470047,2020-06-18 11:22:50.470047,s4d,hero
-73,Sword of the Sun [Light],"After activation, increases ATK Spd by 350 for 5 sec",Aselica,2020-06-18 11:23:12.819118,2020-06-18 11:23:12.819118,s1l,hero
+73,Sword of the Sun [Light],Increases M.DMG the target takes by 25% for 10 sec.,Aselica,2020-06-18 11:23:12.819118,2020-06-18 11:23:12.819118,s1l,hero
 74,Sword of the Sun [Dark],Reduces cooldown by 2 sec,Aselica,2020-06-18 11:23:19.824708,2020-06-18 11:23:19.824708,s1d,hero
-75,Blessing of the Sun [Light],"Increases Mana Cost by 1, and grants the effect to the 2 allies with the highest ATK",Aselica,2020-06-18 11:23:33.047659,2020-06-18 11:23:33.047659,s2l,hero
-76,Blessing of the Sun [Dark],Used while ignoring negative effects on self and removes negative effects on the target ally,Aselica,2020-06-18 11:23:40.130645,2020-06-18 11:23:40.130645,s2d,hero
+75,Blessing of the Sun [Light],"Increases Mana Cost by 1, and grants the effect to the 2 allies with the highest ATK.",Aselica,2020-06-18 11:23:33.047659,2020-06-18 11:23:33.047659,s2l,hero
+76,Blessing of the Sun [Dark],"Ignores negative effects from self upon use, and dispels negative effects from the ally.",Aselica,2020-06-18 11:23:40.130645,2020-06-18 11:23:40.130645,s2d,hero
 77,Judgment of the Sun [Light],Reduces Mana Cost by 1,Aselica,2020-06-18 11:23:52.6271,2020-06-18 11:23:52.6271,s3l,hero
-78,Judgment of the Sun [Dark],Increases the duration of M.DEF reduction effect by 5 sec,Aselica,2020-06-18 11:24:01.496117,2020-06-18 11:24:01.496117,s3d,hero
-79,Curse of the Sun [Light],Changes ATK Reduction to 30%,Aselica,2020-06-18 11:24:12.284806,2020-06-18 11:24:12.284806,s4l,hero
+78,Judgment of the Sun [Dark],"Upon use, dispels negative effects from self.",Aselica,2020-06-18 11:24:01.496117,2020-06-18 11:24:01.496117,s3d,hero
+79,Curse of the Sun [Light],[Blessing of the Angel] becomes irremovable.,Aselica,2020-06-18 11:24:12.284806,2020-06-18 11:24:12.284806,s4l,hero
 80,Curse of the Sun [Dark],Activates the effect upon reaching the 7th stack of Curse of the Sun,Aselica,2020-06-18 11:24:17.39039,2020-06-18 11:24:17.39039,s4d,hero
 81,Holy Nova [Light],DMG and Heal rate is increased by 40%,Baudouin,2020-06-18 11:24:36.293396,2020-06-18 11:24:36.293396,s1l,hero
 82,Holy Nova [Dark],Enemies hit are stunned for 1 sec,Baudouin,2020-06-18 11:24:44.703434,2020-06-18 11:24:44.703434,s1d,hero
@@ -356,9 +356,9 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 355,Bubble Shield [Light],Changes the target to the ally with the highest ATK,Laias,2020-06-22 09:06:32.137251,2020-06-22 09:06:32.137251,s2l,hero
 356,Bubble Shield [Dark],Mana cost is reduced by 1,Laias,2020-06-22 09:06:41.046226,2020-06-22 09:06:41.046226,s2d,hero
 357,Festival of the Flow [Light],DMG effect occurs every 3 sec,Laias,2020-06-22 09:06:54.495694,2020-06-22 09:06:54.495694,s3l,hero
-358,Festival of the Flow [Dark],Heals all allies by 15% of their max HP,Laias,2020-06-22 09:07:00.947416,2020-06-22 09:07:00.947416,s3d,hero
+358,Festival of the Flow [Dark],Changes the target of the whirlpool to the enemy with the highest ATK,Laias,2020-06-22 09:07:00.947416,2020-06-22 09:07:00.947416,s3d,hero
 359,Blessing of the Water Dragon [Light],"M.DEF increase rate increases by 20%, and M. Crit Resistance increases by 150",Laias,2020-06-22 09:07:08.444547,2020-06-22 09:07:08.444547,s4l,hero
-360,Blessing of the Water Dragon [Dark],Increases self CC Resist by 400,Laias,2020-06-22 09:07:16.662881,2020-06-22 09:07:16.662881,s4d,hero
+360,Blessing of the Water Dragon [Dark],The DMG Reduction effect becomes irremovable.,Laias,2020-06-22 09:07:16.662881,2020-06-22 09:07:16.662881,s4d,hero
 361,Rapid Fire [Light],DMG is increased by 40%,Lakrak,2020-06-22 09:08:01.937533,2020-06-22 09:08:01.937533,s1l,hero
 362,Rapid Fire [Dark],Reduces the Mana of hit target by 700,Lakrak,2020-06-22 09:08:08.024684,2020-06-22 09:08:08.024684,s1d,hero
 363,Smoke Bomb [Light],Mana cost is reduced by 1,Lakrak,2020-06-22 09:08:17.823235,2020-06-22 09:08:17.823235,s2l,hero
@@ -776,7 +776,7 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 775,light,"ATK, DEF, HP+15% / Crit Chance +100",Artemia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 776,dark,"When HP falls below 50%, gain 2 sec of immunity to all DMG. This effect activates only once every 30 sec.",Artemia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 777,light,"ATK, DEF, HP+15% / P. Block +200",Aselica,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-778,dark,"At the beginning of the first battle, increases P.DEF of the ally with the highest ATK by 20% of P.DEF. This effect cannot be dispelled.",Aselica,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+778,dark,"At the beginning of the first battle, increases P.DEF of the ally with the highest ATK by 20% of self's P.DEF. This effect is irremovable.",Aselica,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 779,light,"ATK, DEF, HP+15% / M. Block +200",Baudouin,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 780,dark,"When attacking with Holy Nova and Spear of Light, deal extra M.DMG equal to 100% of ATK and reduce the used skill's cooldown by 20%.",Baudouin,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 781,light,"ATK, DEF, HP +15% / Crit Chance +100",Bernheim,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
