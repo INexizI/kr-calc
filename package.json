@@ -16,7 +16,7 @@
     "rails-ujs": "^5.2.6",
     "stimulus": "^2.0.0",
     "turbolinks": "^5.2.0",
-    "ws": "^8.0.0"
+    "ws": "^8.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
