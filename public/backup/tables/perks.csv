@@ -736,13 +736,13 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 735,Darkness Awakened [Light],"While in [Darkness Awakened] state, changes the DMG Boost effect against Non-Hero enemies to 100%",Xerah,2020-06-22 16:42:14.350377,2020-06-22 16:42:14.350377,s4l,hero
 736,Darkness Awakened [Dark],"At the beginning of every battle, enters [Darkness Awakened] state, and becomes unable to gain [Darkness] stacks for 40 sec",Xerah,2020-06-22 16:42:19.623777,2020-06-22 16:42:19.623777,s4d,hero
 737,Focus Shot! [Light],DMG is increased by 40%,Yanne,2020-06-22 16:42:37.867265,2020-06-22 16:42:37.867265,s1l,hero
-738,Focus Shot! [Dark],Target takes 25% additional P.DMG for 10 sec,Yanne,2020-06-22 16:42:43.732783,2020-06-22 16:42:43.732783,s1d,hero
+738,Focus Shot! [Dark],"If the target is a Dragon, deals additional P.DMG equal to 300% of ATK that ignores DEF.",Yanne,2020-06-22 16:42:43.732783,2020-06-22 16:42:43.732783,s1d,hero
 739,Wipeout! [Light],"When there is 1 enemy, DMG is boosted by 100%",Yanne,2020-06-22 16:42:55.51209,2020-06-22 16:42:55.51209,s2l,hero
-740,Wipeout! [Dark],Enemies hit are stunned for 2 sec,Yanne,2020-06-22 16:43:00.113826,2020-06-22 16:43:00.113826,s2d,hero
-741,No Holding Back! [Light],ATK Spd is boosted by 250 for the duration,Yanne,2020-06-22 16:43:12.452976,2020-06-22 16:43:12.452976,s3l,hero
-742,No Holding Back! [Dark],"For the duration, all DMG taken is reduced by 25%",Yanne,2020-06-22 16:43:17.661254,2020-06-22 16:43:17.661254,s3d,hero
-743,Dragon Slayer [Light],Reduces DMG that all allies take from Dragons by 20%,Yanne,2020-06-22 16:43:27.479102,2020-06-22 16:43:27.479102,s4l,hero
-744,Dragon Slayer [Dark],Changes self's DMG Boost against Dragons to 130%,Yanne,2020-06-22 16:43:32.111008,2020-06-22 16:43:32.111008,s4d,hero
+740,Wipeout! [Dark],Reduces the hit target's P.Crit Resistance by 500 for 10 sec.,Yanne,2020-06-22 16:43:00.113826,2020-06-22 16:43:00.113826,s2d,hero
+741,No Holding Back! [Light],Increases Mana consumed by normal attacks by 100% and additional P.DMG that ignores DEF dealt to Dragons by 50%.,Yanne,2020-06-22 16:43:12.452976,2020-06-22 16:43:12.452976,s3l,hero
+742,No Holding Back! [Dark],Reduces the duration of CC effects inflicted upon self by 50% for the duration of Skill.,Yanne,2020-06-22 16:43:17.661254,2020-06-22 16:43:17.661254,s3d,hero
+743,Dragon Slayer [Light],Changes the DMG Reduction effect from Dragons of all allies to 30%.,Yanne,2020-06-22 16:43:27.479102,2020-06-22 16:43:27.479102,s4l,hero
+744,Dragon Slayer [Dark],"The DMG Reduction effect from Dragons is not applied to allies, but self's DMG Boost effect against Dragons is applied as 130%.",Yanne,2020-06-22 16:43:32.111008,2020-06-22 16:43:32.111008,s4d,hero
 745,Binding Karma [Light],"Now reduces 1,000 Mana",Yuria,2020-06-22 16:43:51.514547,2020-06-22 16:43:51.514547,s1l,hero
 746,Binding Karma [Dark],Stuns hit targets for 3 sec,Yuria,2020-06-22 16:43:55.79652,2020-06-22 16:43:55.79652,s1d,hero
 747,Starlight Sewing [Light],"Reduces Shield by 50%, but it becomes irremovable.",Yuria,2020-06-22 16:44:15.086248,2020-06-22 16:44:15.086248,s2l,hero
@@ -944,7 +944,7 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 943,light,"ATK, DEF, HP+15% / Crit Chance +100",Xerah,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 944,dark,Dealing DMG with normal or Skill attacks increases M.DMG the target takes by 2% for 10 sec and reduces its Heal Rate by 2%. This effect can be stacked up to max 10 times.,Xerah,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 945,light,"ATK, DEF, HP+15% / Crit DMG +20%",Yanne,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-946,dark,Auto-attacks ignore enemy Block effects.,Yanne,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+946,dark,"Upon landing 10 normal attacks, dispels all positeve effects from the target and deals additional P.DMG equal to 500% of ATK.",Yanne,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 947,light,"ATK, DEF, HP +15% / ATK Spd +100",Yuria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 948,dark,"At the beginning of the first battle, Yuria gains 'Blessing of Foresight' 'Blessing of Foresight' increases All Dodge Chance by 300 and reduces All DMG to self by 300 for 20 sec. This effect is irremovable. If Yuria is inflicted with CC while under 'Blessing of Foresight' Yuria consumes 'Blessing of Foresight' to dispel all negative effects, gains immunity to CC for 3 sec, and recovers 1 orb of Mana.",Yuria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 949,light,"ATK, DEF, HP+15% / Crit Chance +100",Zafir,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5

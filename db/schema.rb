@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2021_06_29_135018) do
 
   create_table "stats", force: :cascade do |t|
     t.string "name"
-    t.string "value"
+    t.integer "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "role_id"
@@ -161,10 +161,10 @@ ActiveRecord::Schema.define(version: 2021_06_29_135018) do
 
   add_foreign_key "chars", "roles"
   add_foreign_key "enchants", "stats"
-  add_foreign_key "gears", "chars", name: "gears_char_id_fkey"
+  add_foreign_key "gears", "chars"
   add_foreign_key "gears", "roles"
-  add_foreign_key "gears", "stats", name: "gears_stat_id_fkey"
-  add_foreign_key "skills", "chars", name: "skills_char_id_fkey"
+  add_foreign_key "gears", "stats"
+  add_foreign_key "skills", "chars"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
 end

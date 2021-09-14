@@ -194,3 +194,23 @@ id,name,value,type_gear,tier,created_at,updated_at
 193,Tough / MP Recovery/Attack,55 / 220,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 194,Tough / MP Recovery/Sec,55 / 33,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
 195,Tough / Recovery,55 / 11,all,Velkazar,2021-03-28 0:00:00,2021-03-28 0:00:00
+196,ATK,25,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+197,Penetration,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+198,Crit DMG,50,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+199,ACC,250,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+200,Crit,250,secondary,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+201,P.Block DEF,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+202,P.Tough,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+203,M.Block DEF,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+204,M.Tough,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+205,P.Block,250,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+206,P.DEF,250,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+207,M.Block,50,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+208,M.DEF,50,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+209,P.Dodge,250,secondary,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+210,M.Dodge,250,secondary,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+211,Lifesteal,250,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+212,MP Recovery/Attack,500,weapon,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+213,CC Resist,250,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+214,Max HP,25,armor,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
+215,MP Recovery/DMG,75,secondary,Legendary,2021-09-14 0:00:00,2021-09-14 0:00:00
