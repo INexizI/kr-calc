@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/activerecord-hackery/ransack.git
-  revision: 16ce9110cbaee6682aca6e06ccb9d66a0c7a46c3
+  revision: 4caf7c25b07e6c7271b02e46dc3a7985cca61162
   specs:
     ransack (2.4.2)
       activerecord (>= 5.2.4)
@@ -74,7 +74,7 @@ GEM
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
-    bootsnap (1.7.7)
+    bootsnap (1.9.0)
       msgpack (~> 1.0)
     brakeman (5.1.1)
     builder (3.2.4)
@@ -92,7 +92,8 @@ GEM
     connection_pool (2.2.5)
     crass (1.0.6)
     erubi (1.10.0)
-    ffi (1.15.3)
+    execjs (2.8.1)
+    ffi (1.15.4)
     friendly_id (5.4.2)
       activerecord (>= 4.0.0)
     globalid (0.5.2)
@@ -118,11 +119,11 @@ GEM
     meta-tags (2.15.0)
       actionpack (>= 3.2.0, < 6.2)
     method_source (1.0.0)
-    mini_mime (1.1.0)
+    mini_mime (1.1.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.3-x86_64-linux)
+    nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
     public_suffix (4.0.6)
@@ -154,7 +155,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.1)
+    rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
     railties (6.1.4.1)
       actionpack (= 6.1.4.1)
@@ -182,7 +183,7 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sidekiq (6.2.1)
+    sidekiq (6.2.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
@@ -207,15 +208,17 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    stimulus-rails (0.3.8)
+    stimulus-rails (0.5.3)
       rails (>= 6.0.0)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
-    turbo-rails (0.7.4)
+    turbo-rails (0.7.13)
       rails (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     web-console (4.1.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -257,6 +260,7 @@ DEPENDENCIES
   rails (~> 6.1.4, >= 6.1.4.1)
   ransack!
   redis (~> 4.0)
+  rubyzip
   sass-rails (>= 6.0.0)
   selenium-webdriver
   sidekiq (~> 6.2, >= 6.2.1)
@@ -265,6 +269,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
+  uglifier
   web-console (>= 4.1.0)
   webdrivers (>= 4.6.0)
   webpacker (~> 4.3, >= 4.3.0)
