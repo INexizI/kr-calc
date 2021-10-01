@@ -55,7 +55,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.assets.compress = true
-  config.assets.js_compressor  = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
