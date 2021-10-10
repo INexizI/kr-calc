@@ -35,4 +35,5 @@ yarn-debug.log*
 
 dump*
 
-/vendor/bundle
+# ruby gems
+/vendor
