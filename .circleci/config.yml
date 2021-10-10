@@ -5,7 +5,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.1
+      - image: circleci/ruby:3.0.2
     executor: ruby/default
     steps:
       - checkout
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: install bundler
           command: |
-            gem install bundler:2.2.20
+            gem install bundler:2.2.29
 
       - run:
           name: install dependencies
