@@ -29,6 +29,8 @@ gem 'rack-cors'
 gem 'rubyzip'
 gem 'uglifier'
 
+gem 'nokogiri', '>= 1.12.5'
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman'
