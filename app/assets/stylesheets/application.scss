@@ -813,7 +813,7 @@ h4 {
     // margin-left: 85px;
     // margin-right: 85px;
     // margin: 40px 75px;
-    margin: 10px 75px 0px 75px;
+    margin: 5px 75px 0px 75px;
   }
   .from-calc {
     // margin: auto 0;
@@ -825,7 +825,7 @@ h4 {
         text-align-last: center;
         background: none;
         font-family: inherit;
-        font-size: 1.5em;
+        font-size: 1.2em;
         font-weight: bolder;
       }
       .w-in, .tr-in, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_gear_artifact {
@@ -1136,7 +1136,7 @@ h4 {
     width: 450px;
 
     .hero-img {
-      height: 379px;
+      height: 377px;
 
       .hch {
         width: 450px;
@@ -1185,7 +1185,7 @@ h4 {
           content: '';
           background: url('/images/media/classes/stat_foot.png');
           background-size: 450px;
-          height: 14px;
+          height: 13px;
           display: block;
         }
         .heroPerk {
@@ -1196,6 +1196,7 @@ h4 {
           .hero-avatar {
             width: 130px;
             margin: auto;
+            font-size: 1.2em !important;
             // .avatar {
             //   border: 1px solid transparent;
             //   border-image-source: url(/images/media/icons/hero.png);
@@ -1333,14 +1334,14 @@ h4 {
         content: '';
         background: url('/images/media/classes/set_head.png');
         background-size: 450px;
-        height: 14px;
+        height: 13px;
         display: block;
       }
       .statsBase::after, .statsAdd::after, .statSet::after {
         content: '';
         background: url('/images/media/classes/stat_foot.png');
         background-size: 450px;
-        height: 14px;
+        height: 13px;
         display: block;
       }
     }
@@ -1360,6 +1361,7 @@ h4 {
 
   label {
     display: block;
+    font-size: 15px;
   }
 }
 
@@ -1583,7 +1585,11 @@ h4 {
 }
 
 .share {
+  top: 30px;
+  left: 30px;
+  width: 300px;
   margin: 10px 0;
+  position: absolute;
 
   button {
     width: 100px;
