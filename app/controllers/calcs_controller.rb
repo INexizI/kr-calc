@@ -9,5 +9,6 @@ class CalcsController < ApplicationController
     @arts = Gear.order(name: 'ASC')
     @stats = Stat.all
     # @chars = JSON.parse(File.read('./public/json/heroes.json'))
+    @gear = JSON.parse(File.read('./public/json/gears.json'))
   end
 end

@@ -17,6 +17,11 @@ title Calculator
           .form-input#empty-block
           .form-input#weapon
             = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in img'}
+            .g-desc
+              - @gear.each do |gear|
+                - if gear['gear_type'] == '10-UW'
+                  p id='ch-#{gear['char_id']}'
+                    = gear['description']
             .gSt
               p#wea
               .rating#uw.c

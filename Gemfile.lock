@@ -284,7 +284,7 @@ DEPENDENCIES
   ransack!
   redis
   redis-namespace
-  redis-rails
+  redis-rails (>= 5.0.2)
   rubyzip
   sass-rails
   selenium-webdriver

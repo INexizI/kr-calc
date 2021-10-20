@@ -1083,6 +1083,12 @@ h4 {
         width: 52px;
         height: 150px;
       }
+      #weapon {
+        .g-desc, p {
+          display: none;
+          border: 1px solid black;
+        }
+      }
       div {
         width: 125px;
         margin: auto;
