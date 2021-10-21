@@ -460,7 +460,7 @@
         $('#clip p').text('Copy');
       }, 1000);
     });
-    // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 31) + '.png)');
+    // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 32) + '.png)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
       $('#calc_gear_weapon').parent().hide();
@@ -877,6 +877,7 @@
         $('.range').hide();
         rangeC();
         gearStat();
+        $('#w-d').hide();
       } else if ($gearWeaponType == 'Unique') {
         $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
         $('#wea').next('.rating').show();
@@ -908,6 +909,7 @@
         $('.w-in').addClass('g-fr-u');
         $('#g-weapon').show();
         gearStat();
+        $('#w-d').show();
       } else if ($gearWeaponType == '- - - - - - - - - -') {
         $('.calc_gear_weapon').parent().find('.gOption').hide();
         $('#calc_gear_weapon')
@@ -926,6 +928,7 @@
           .children().hide().end()
           .prop('selectedIndex', 0)
           .children('.q').show();
+        $('#w-d').hide();
       }
       $('#wea').text($('#greyATK').text());
     };

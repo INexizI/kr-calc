@@ -11,11 +11,17 @@
       $(this).parent().find('label').removeClass('active');
       $(this).addClass('active');
     });
-    $('.calc_gear_weapon').click(function() {
+    function weapon_description() {
       $char_id = $('#calc_char_id').children('option:selected').val();
-      $(this)
+      $('.calc_gear_weapon')
         .next('.g-desc').toggle()
         .find('#ch-' + $char_id).toggle();
+    };
+    $('#w-d').click(function() {
+      weapon_description();
     });
+    $('select#calc_char_id').change(function() {
+      $('.g-desc, .g-desc p').hide();
+    }).change();
   });
 }).call(this);
