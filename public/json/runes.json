@@ -1,0 +1,1937 @@
+[
+  {
+    "id": 1,
+    "name": "ATK",
+    "value": 3,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 2,
+    "name": "Penetration",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 3,
+    "name": "Crit DMG",
+    "value": 6,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 4,
+    "name": "ACC",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 5,
+    "name": "Crit",
+    "value": 30,
+    "type_gear": "secondary",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 6,
+    "name": "P.Block DEF",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 7,
+    "name": "P.Tough",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 8,
+    "name": "M.Block DEF",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 9,
+    "name": "M.Tough",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 10,
+    "name": "P.Block",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 11,
+    "name": "P.DEF",
+    "value": 6,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 12,
+    "name": "M.Block",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 13,
+    "name": "M.DEF",
+    "value": 6,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 14,
+    "name": "P.Dodge",
+    "value": 30,
+    "type_gear": "secondary",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 15,
+    "name": "M.Dodge",
+    "value": 30,
+    "type_gear": "secondary",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 16,
+    "name": "Lifesteal",
+    "value": 30,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 17,
+    "name": "MP Recovery/Attack",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 18,
+    "name": "CC Resist",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 19,
+    "name": "Max HP",
+    "value": 3,
+    "type_gear": "armor",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 20,
+    "name": "MP Recovery/DMG",
+    "value": 10,
+    "type_gear": "secondary",
+    "tier": "Common",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 21,
+    "name": "ATK",
+    "value": 5,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 22,
+    "name": "Penetration",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 23,
+    "name": "Crit DMG",
+    "value": 10,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 24,
+    "name": "ACC",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 25,
+    "name": "Crit",
+    "value": 50,
+    "type_gear": "secondary",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 26,
+    "name": "P.Block DEF",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 27,
+    "name": "P.Tough",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 28,
+    "name": "M.Block DEF",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 29,
+    "name": "M.Tough",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 30,
+    "name": "P.Block",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 31,
+    "name": "P.DEF",
+    "value": 10,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 32,
+    "name": "M.Block",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 33,
+    "name": "M.DEF",
+    "value": 10,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 34,
+    "name": "P.Dodge",
+    "value": 50,
+    "type_gear": "secondary",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 35,
+    "name": "M.Dodge",
+    "value": 50,
+    "type_gear": "secondary",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 36,
+    "name": "Lifesteal",
+    "value": 50,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 37,
+    "name": "MP Recovery/Attack",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 38,
+    "name": "CC Resist",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 39,
+    "name": "Max HP",
+    "value": 5,
+    "type_gear": "armor",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 40,
+    "name": "MP Recovery/DMG",
+    "value": 20,
+    "type_gear": "secondary",
+    "tier": "Uncommon",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 41,
+    "name": "ATK",
+    "value": 10,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 42,
+    "name": "Penetration",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 43,
+    "name": "Crit DMG",
+    "value": 20,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 44,
+    "name": "ACC",
+    "value": 100,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 45,
+    "name": "Crit",
+    "value": 100,
+    "type_gear": "secondary",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 46,
+    "name": "P.Block DEF",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 47,
+    "name": "P.Tough",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 48,
+    "name": "M.Block DEF",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 49,
+    "name": "M.Tough",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 50,
+    "name": "P.Block",
+    "value": 100,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 51,
+    "name": "P.DEF",
+    "value": 20,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 52,
+    "name": "M.Block",
+    "value": 100,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 53,
+    "name": "M.DEF",
+    "value": 20,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 54,
+    "name": "P.Dodge",
+    "value": 100,
+    "type_gear": "secondary",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 55,
+    "name": "M.Dodge",
+    "value": 100,
+    "type_gear": "secondary",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 56,
+    "name": "Lifesteal",
+    "value": 100,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 57,
+    "name": "MP Recovery/Attack",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 58,
+    "name": "CC Resist",
+    "value": 100,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 59,
+    "name": "Max HP",
+    "value": 10,
+    "type_gear": "armor",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 60,
+    "name": "MP Recovery/DMG",
+    "value": 35,
+    "type_gear": "secondary",
+    "tier": "Rare",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 61,
+    "name": "ATK",
+    "value": 15,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 62,
+    "name": "Penetration",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 63,
+    "name": "Crit DMG",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 64,
+    "name": "ACC",
+    "value": 150,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 65,
+    "name": "Crit",
+    "value": 150,
+    "type_gear": "secondary",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 66,
+    "name": "P.Block DEF",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 67,
+    "name": "P.Tough",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 68,
+    "name": "M.Block DEF",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 69,
+    "name": "M.Tough",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 70,
+    "name": "P.Block",
+    "value": 150,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 71,
+    "name": "P.DEF",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 72,
+    "name": "M.Block",
+    "value": 150,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 73,
+    "name": "M.DEF",
+    "value": 30,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 74,
+    "name": "P.Dodge",
+    "value": 150,
+    "type_gear": "secondary",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 75,
+    "name": "M.Dodge",
+    "value": 150,
+    "type_gear": "secondary",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 76,
+    "name": "Lifesteal",
+    "value": 150,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 77,
+    "name": "MP Recovery/Attack",
+    "value": 300,
+    "type_gear": "weapon",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 78,
+    "name": "CC Resist",
+    "value": 150,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 79,
+    "name": "Max HP",
+    "value": 15,
+    "type_gear": "armor",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 80,
+    "name": "MP Recovery/DMG",
+    "value": 50,
+    "type_gear": "secondary",
+    "tier": "Heroic",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 81,
+    "name": "ATK",
+    "value": 20,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 82,
+    "name": "Penetration",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 83,
+    "name": "Crit DMG",
+    "value": 40,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 84,
+    "name": "ACC",
+    "value": 200,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 85,
+    "name": "Crit",
+    "value": 200,
+    "type_gear": "secondary",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 86,
+    "name": "P.Block DEF",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 87,
+    "name": "P.Tough",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 88,
+    "name": "M.Block DEF",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 89,
+    "name": "M.Tough",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 90,
+    "name": "P.Block",
+    "value": 200,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 91,
+    "name": "P.DEF",
+    "value": 40,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 92,
+    "name": "M.Block",
+    "value": 200,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 93,
+    "name": "M.DEF",
+    "value": 40,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 94,
+    "name": "P.Dodge",
+    "value": 200,
+    "type_gear": "secondary",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 95,
+    "name": "M.Dodge",
+    "value": 200,
+    "type_gear": "secondary",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 96,
+    "name": "Lifesteal",
+    "value": 200,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 97,
+    "name": "MP Recovery/Attack",
+    "value": 400,
+    "type_gear": "weapon",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 98,
+    "name": "CC Resist",
+    "value": 200,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 99,
+    "name": "Max HP",
+    "value": 20,
+    "type_gear": "armor",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 100,
+    "name": "MP Recovery/DMG",
+    "value": 60,
+    "type_gear": "secondary",
+    "tier": "Ancient",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 101,
+    "name": "ATK / Penetration",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 102,
+    "name": "ATK / Crit",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 103,
+    "name": "ATK / Crit DMG",
+    "value": "11 / 22",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 104,
+    "name": "ATK / ACC",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 105,
+    "name": "ATK / Tough",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 106,
+    "name": "ATK / DEF",
+    "value": "11 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 107,
+    "name": "ATK / Dodge",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 108,
+    "name": "ATK / Block",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 109,
+    "name": "ATK / MP Recovery/Attack",
+    "value": "11 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 110,
+    "name": "ATK / Max HP",
+    "value": "11 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 111,
+    "name": "Crit / Penetration",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 112,
+    "name": "Crit DMG / Penetration",
+    "value": "22 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 113,
+    "name": "Penetration / ACC",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 114,
+    "name": "Penetration / Tough",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 115,
+    "name": "DEF / Penetration",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 116,
+    "name": "Penetration / Dodge",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 117,
+    "name": "Penetration / Block",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 118,
+    "name": "Penetration / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 119,
+    "name": "Max HP / Penetration",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 120,
+    "name": "Crit / Crit DMG",
+    "value": "110 / 22",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 121,
+    "name": "ACC / Block",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 122,
+    "name": "ACC / Debuff ACC",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 123,
+    "name": "ACC / Dodge",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 124,
+    "name": "ACC / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 125,
+    "name": "ACC / Tough",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 126,
+    "name": "ATK / ATK Spd",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 127,
+    "name": "ATK / Lifesteal",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 128,
+    "name": "ATK / MP Recovery/Sec",
+    "value": "11 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 129,
+    "name": "ATK Spd / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 130,
+    "name": "ATK Spd / MP Recovery/Sec",
+    "value": "110 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 131,
+    "name": "Block / ATK Spd",
+    "value": "55 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 132,
+    "name": "Block / MP Recovery/Attack",
+    "value": "55 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 133,
+    "name": "Block / Tough",
+    "value": "55 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 134,
+    "name": "CC Resist / ATK Spd",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 135,
+    "name": "CC Resist / Crit Resistance",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 136,
+    "name": "CC Resist / Debuff ACC",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 137,
+    "name": "CC Resist / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 138,
+    "name": "CC Resist / MP Recovery/Sec",
+    "value": "110 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 139,
+    "name": "Crit / ACC",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 140,
+    "name": "Crit / ATK Spd",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 141,
+    "name": "Crit / Block",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 142,
+    "name": "Crit / Dodge",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 143,
+    "name": "Crit / Lifesteal",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 144,
+    "name": "Crit / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 145,
+    "name": "Crit / Tough",
+    "value": "110 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 146,
+    "name": "Crit DMG / ACC",
+    "value": "22 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 147,
+    "name": "Crit DMG / ATK Spd",
+    "value": "22 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 148,
+    "name": "Crit DMG / Block",
+    "value": "22 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 149,
+    "name": "Crit DMG / Dodge",
+    "value": "22 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 150,
+    "name": "Crit DMG / Lifesteal",
+    "value": "22 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 151,
+    "name": "Crit DMG / MP Recovery/Attack",
+    "value": "22 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 152,
+    "name": "Crit DMG / MP Recovery/Sec",
+    "value": "22 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 153,
+    "name": "Crit DMG / Tough",
+    "value": "22 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 154,
+    "name": "Debuff ACC / ATK Spd",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 155,
+    "name": "Debuff ACC / MP Recovery/Attack",
+    "value": "110 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 156,
+    "name": "Debuff ACC / MP Recovery/Sec",
+    "value": "110 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 157,
+    "name": "DEF / ACC",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 158,
+    "name": "DEF / Block",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 159,
+    "name": "DEF / Crit",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 160,
+    "name": "DEF / Crit DMG",
+    "value": "11 / 22",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 161,
+    "name": "DEF / Crit Resistance",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 162,
+    "name": "DEF / Dodge",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 163,
+    "name": "DEF / Max HP",
+    "value": "11 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 164,
+    "name": "DEF / MP Recovery/Attack",
+    "value": "11 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 165,
+    "name": "DEF / Recovery",
+    "value": "11 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 166,
+    "name": "DEF / Tough",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 167,
+    "name": "Dodge / Block",
+    "value": "55 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 168,
+    "name": "Dodge / MP Recovery/Attack",
+    "value": "55 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 169,
+    "name": "Dodge / Recovery",
+    "value": "55 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 170,
+    "name": "Dodge / Tough",
+    "value": "55 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 171,
+    "name": "Lifesteal / ATK Spd",
+    "value": "110 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 172,
+    "name": "M.DEF / Max HP",
+    "value": "22 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 173,
+    "name": "M.DEF / Tough",
+    "value": "22 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 174,
+    "name": "Max HP / ACC",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 175,
+    "name": "Max HP / ATK Spd",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 176,
+    "name": "Max HP / Block",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 177,
+    "name": "Max HP / Crit",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 178,
+    "name": "Max HP / Crit DMG",
+    "value": "11 / 22",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 179,
+    "name": "Max HP / Dodge",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 180,
+    "name": "Max HP / Lifesteal",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 181,
+    "name": "Max HP / MP Recovery/Attack",
+    "value": "11 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 182,
+    "name": "Max HP / Recovery",
+    "value": "11 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 183,
+    "name": "Max HP / Tough",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 184,
+    "name": "P.DEF / Max HP",
+    "value": "22 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 185,
+    "name": "P.DEF / Tough",
+    "value": "22 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 186,
+    "name": "Recovery / ATK Spd",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 187,
+    "name": "Recovery / CC Resist",
+    "value": "11 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 188,
+    "name": "Recovery / Crit Resistance",
+    "value": "11 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 189,
+    "name": "Tough / ATK Spd",
+    "value": "55 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 190,
+    "name": "Tough / CC Resist",
+    "value": "55 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 191,
+    "name": "Tough / Crit Resistance",
+    "value": "55 / 55",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 192,
+    "name": "Tough / Debuff ACC",
+    "value": "55 / 110",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 193,
+    "name": "Tough / MP Recovery/Attack",
+    "value": "55 / 220",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 194,
+    "name": "Tough / MP Recovery/Sec",
+    "value": "55 / 33",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 195,
+    "name": "Tough / Recovery",
+    "value": "55 / 11",
+    "type_gear": "all",
+    "tier": "Velkazar",
+    "created_at": "2021-03-28 0:00:00",
+    "updated_at": "2021-03-28 0:00:00"
+  },
+  {
+    "id": 196,
+    "name": "ATK",
+    "value": 25,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 197,
+    "name": "Penetration",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 198,
+    "name": "Crit DMG",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 199,
+    "name": "ACC",
+    "value": 250,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 200,
+    "name": "Crit",
+    "value": 250,
+    "type_gear": "secondary",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 201,
+    "name": "P.Block DEF",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 202,
+    "name": "P.Tough",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 203,
+    "name": "M.Block DEF",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 204,
+    "name": "M.Tough",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 205,
+    "name": "P.Block",
+    "value": 250,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 206,
+    "name": "P.DEF",
+    "value": 250,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 207,
+    "name": "M.Block",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 208,
+    "name": "M.DEF",
+    "value": 50,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 209,
+    "name": "P.Dodge",
+    "value": 250,
+    "type_gear": "secondary",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 210,
+    "name": "M.Dodge",
+    "value": 250,
+    "type_gear": "secondary",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 211,
+    "name": "Lifesteal",
+    "value": 250,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 212,
+    "name": "MP Recovery/Attack",
+    "value": 500,
+    "type_gear": "weapon",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 213,
+    "name": "CC Resist",
+    "value": 250,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 214,
+    "name": "Max HP",
+    "value": 25,
+    "type_gear": "armor",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  },
+  {
+    "id": 215,
+    "name": "MP Recovery/DMG",
+    "value": 75,
+    "type_gear": "secondary",
+    "tier": "Legendary",
+    "created_at": "2021-09-14 0:00:00",
+    "updated_at": "2021-09-14 0:00:00"
+  }
+]

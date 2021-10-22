@@ -14,14 +14,16 @@
     function weapon_description() {
       $char_id = $('#calc_char_id').children('option:selected').val();
       $('.calc_gear_weapon')
-        .next('.g-desc').toggle()
-        .find('#ch-' + $char_id).toggle();
+        .next('.g-desc').show()
+        .find('#ch-' + $char_id).show();
     };
-    $('#w-d').click(function() {
+    $('#w-d').on('mousedown', function() {
       weapon_description();
+    }).on('mouseup mouseleave', function() {
+      $('.g-desc, .g-desc p').hide();
     });
     $('select#calc_char_id').change(function() {
-      $('.g-desc, .g-desc p').hide();
+      $('.g-desc, .g-desc p, #w-d').hide();
     }).change();
   });
 }).call(this);
