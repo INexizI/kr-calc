@@ -37,3 +37,7 @@ dump*
 
 # ruby gems
 /vendor
+
+# service-worker
+/public/service-worker.js*
+/public/vendors~actioncable*

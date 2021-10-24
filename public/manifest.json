@@ -1,0 +1,16 @@
+{
+  "short_name": "PWA",
+  "name": "Progressive Web App",
+  "icons": [
+    {
+      "src": "/images/media/manaOrb.png",
+      "sizes": "22x25",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6"
+}
