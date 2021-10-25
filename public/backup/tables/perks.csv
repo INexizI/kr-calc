@@ -784,23 +784,23 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 783,light,"ATK, DEF, HP+15% / HP +10%",Cain,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 784,dark,"At the beginning of each battle, consumes 20% of self's current HP and increases ATK of all allies by 20% for 20 sec. If there 3 or less allies, reduces DMG that all allies take by 30%",Cain,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 785,light,"ATK, DEF, HP+15% / ATK.Spd +100",Cassandra,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-786,dark,"At the beginning of each battle, a random ally is immune to DMG for 3 sec.",Cassandra,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-787,light,"ATK, DEF, HP+15% / Crit DMG +20%",Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-788,dark,Attacking the enemy with the additional DMG gained from [Infinite Potential] will increase own ATK by 0.5%. This effect can be stacked up to max 200 times and is irremovable.,Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-789,light,"ATK, DEF, HP+15% / Crit DMG +20%",Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-790,dark,Increases DMG dealt to Non-Hero enemies by 1% every 1 sec. This effect can be stacked up to max 60 times and is irremovable.,Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-791,light,"ATK, DEF, HP+15% / Crit Chance +100",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-792,dark,"Increases ATK Spd of normal attack by 400 and additional 40 per every skill use. This effect cannot be dispelled, and can be stacked up to max 10 times.",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-793,light,"ATK, DEF, HP+15% / P. Block +200",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-794,dark,"At the beggining of each battle, increases ATK of all allies by 15%. This effect can be stacked up to max 3 times and is irremovable.",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-795,light,"ATK, DEF, HP+15% / Crit Chance +100",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-796,dark,"If a target has 10 stacks of Ember, increases the M.DMG the target takes by 30%, and adds 2 stacks of Ember per second to all non-hero enemies.",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-797,light,"ATK, DEF, HP+15% / Crit DMG +20%",Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-798,dark,Increases Mana Cost of all skills by 1 and DMG by 75%.,Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-799,light,"ATK, DEF, HP +15% / Crit Chance +100",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-800,dark,"At the beginning of the first battle, gains [Ancestral Advice] that increases own CC Resist by 200 for 5 sec. If [Ancestral Advice] is still active after 5 sec, dispels negative effects from 3 random allies, and increases their DEF by 50% for 10 sec. DEF Boost is irremovable.",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-801,light,"ATK, DEF, HP +15% / Crit DMG +20%",Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-802,dark,Normal attacks increase own ATK by 1% and DMG dealt to bosses by 1% for 20 sec. This effect can be stacked up to max 30 times and is irremovable.,Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+786,dark,"At the beginning of each battle, a random ally is immune to DMG for 3 sec.",Cassandra,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+787,light,"ATK, DEF, HP+15% / Crit DMG +20%",Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+788,dark,Attacking the enemy with the additional DMG gained from [Infinite Potential] will increase own ATK by 0.5%. This effect can be stacked up to max 200 times and is irremovable.,Cecilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+789,light,"ATK, DEF, HP+15% / Crit DMG +20%",Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+790,dark,Increases DMG dealt to Non-Hero enemies by 1% every 1 sec. This effect can be stacked up to max 60 times and is irremovable.,Chase,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+791,light,"ATK, DEF, HP+15% / Crit Chance +100",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+792,dark,"Increases ATK Spd of normal attack by 400 and additional 40 per every skill use. This effect cannot be dispelled, and can be stacked up to max 10 times.",Chrisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+793,light,"ATK, DEF, HP+15% / P. Block +200",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+794,dark,"At the beggining of each battle, increases ATK of all allies by 15%. This effect can be stacked up to max 3 times and is irremovable.",Clause,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+795,light,"ATK, DEF, HP+15% / Crit Chance +100",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+796,dark,"If a target has 10 stacks of Ember, increases the M.DMG the target takes by 30%, and adds 2 stacks of Ember per second to all non-hero enemies.",Cleo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+797,light,"ATK, DEF, HP+15% / Crit DMG +20%",Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+798,dark,Increases Mana Cost of all skills by 1 and DMG by 75%.,Crow,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+799,light,"ATK, DEF, HP +15% / Crit Chance +100",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+800,dark,"At the beginning of the first battle, gains [Ancestral Advice] that increases own CC Resist by 200 for 5 sec. If [Ancestral Advice] is still active after 5 sec, dispels negative effects from 3 random allies, and increases their DEF by 50% for 10 sec. DEF Boost is irremovable.",Dakaris,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+801,light,"ATK, DEF, HP +15% / Crit DMG +20%",Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+802,dark,Normal attacks increase own ATK by 1% and DMG dealt to bosses by 1% for 20 sec. This effect can be stacked up to max 30 times and is irremovable.,Dark Lord Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 803,light,"ATK, DEF, HP+15% / P. Block +200",Demia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 804,dark,"At the beginning of every battle, decrease the ATK of all enemies by 20% for 6 sec. This effect cannot be dispelled.",Demia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 805,light,"ATK, DEF, HP+15% / ATK.Spd +100",Dimael,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
@@ -818,23 +818,23 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 817,light,"ATK, DEF, HP+15% / ATK.Spd +100",Ezekiel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 818,dark,"When in Fury state, auto attack deals DMG that ignores DEF.",Ezekiel,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 819,light,"ATK, DEF, HP +15% / Crit Chance +100",Fallen Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-820,dark,"At the beginning of each Battle, increases ATK Spd of the ally with the Highest ATK excluding self by 150 and its DMG dealt to Non-Hero enemies by 15% for 30 sec. This effect is irremovable",Fallen Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-821,light,"ATK, DEF, HP+15% / M.Dodge +100",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-822,dark,"Increases DMG of normal attacks by 35%, and upon attacking a Wizard with normal attacks, deals additional P.DMG equal to 100% of ATK.",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-823,light,"ATK, DEF, HP+15% / M. Block +200",Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-824,dark,Increases ATK of all allies by 5% of own ATK.,Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-825,light,"ATK, DEF, HP+15% / P. Block +200",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-826,dark,"Heals HP worth 10% of ATK every second, and every 1% of HP lost reduces received DMG by 0.6%.",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-827,light,"ATK, DEF, HP+15% / ATK.Spd +100",Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-828,dark,Increases all DEF by 8% of ATK.,Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-829,light,"ATK, DEF, HP+15% / All DEF + 10%",Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-830,dark,Increases ATK of all allies by 8% of self's All DEF.,Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-831,light,"ATK, DEF, HP +15% / Crit DMG +20%",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-832,dark,"At the beginning of a Guild War battle, reduces Mana of all enemies by 500 , and increases all DMG they take by 15% for 5 sec.",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-833,light,"ATK, DEF, HP+15% / M. Block +200",Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-834,dark,Each hit of Jane's attacks increase her ATK and Recovery Rate by 1% each. (Maximum stack number is 50),Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-835,light,"ATK, DEF, HP+15% / P. Block +200",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-836,dark,"At the beginning of every battle, gains 2 stacks of [Excellent Ingredient] and increases MP Recovery/Sec by 200% for 10 seconds.",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+820,dark,"At the beginning of each Battle, increases ATK Spd of the ally with the Highest ATK excluding self by 150 and its DMG dealt to Non-Hero enemies by 15% for 30 sec. This effect is irremovable",Fallen Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+821,light,"ATK, DEF, HP+15% / M.Dodge +100",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+822,dark,"Increases DMG of normal attacks by 35%, and upon attacking a Wizard with normal attacks, deals additional P.DMG equal to 100% of ATK.",Fluss,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+823,light,"ATK, DEF, HP+15% / M. Block +200",Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+824,dark,Increases ATK of all allies by 5% of own ATK.,Frey,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+825,light,"ATK, DEF, HP+15% / P. Block +200",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+826,dark,"Heals HP worth 10% of ATK every second, and every 1% of HP lost reduces received DMG by 0.6%.",Gau,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+827,light,"ATK, DEF, HP+15% / ATK.Spd +100",Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+828,dark,Increases all DEF by 8% of ATK.,Gladi,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+829,light,"ATK, DEF, HP+15% / All DEF + 10%",Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+830,dark,Increases ATK of all allies by 8% of self's All DEF.,Glenwys,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+831,light,"ATK, DEF, HP +15% / Crit DMG +20%",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+832,dark,"At the beginning of a Guild War battle, reduces Mana of all enemies by 500 , and increases all DMG they take by 15% for 5 sec.",Hanus,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+833,light,"ATK, DEF, HP+15% / M. Block +200",Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+834,dark,Each hit of Jane's attacks increase her ATK and Recovery Rate by 1% each. (Maximum stack number is 50),Jane,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+835,light,"ATK, DEF, HP+15% / P. Block +200",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+836,dark,"At the beginning of every battle, gains 2 stacks of [Excellent Ingredient] and increases MP Recovery/Sec by 200% for 10 seconds.",Juno,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 837,light,"ATK, DEF, HP+15% / Crit DMG +20%",Kara,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 838,dark,[Anti-personnel Weapon] - Increases CC ACC by 400. [Siege Weapon] - Increases ACC by 400.,Kara,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 839,light,"ATK, DEF, HP+15% / P.Dodge +100",Kasel,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
@@ -852,23 +852,23 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 851,light,"ATK, DEF, HP+15% / ATK.Spd +100",Laudia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 852,dark,"At the start of each battle, gains immunity to CC for 7 sec, and ACC, CC ACC are increased by 300 for 10 sec.",Laudia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 853,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lavril,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-854,dark,"Upon taking a hit, increases ATK of the ally bound by Soul Link by 3%. This effect can be stacked up to max 20 times.",Lavril,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-855,light,"ATK, DEF, HP+15% / P. Block +200",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-856,dark,"Upon attacking, there is a 10% chance of dealing 120% of ATK as P.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec.",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-857,light,"ATK, DEF, HP+15% / Crit Chance +100",Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-858,dark,All skill HP consumption is increased by 50% but cooldowns are reduced by 20%.,Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-859,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-860,dark,ATK is increased by 15% per 1 orb of mana.,Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-861,light,"ATK, DEF, HP+15% / M. Block +200",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-862,dark,"Upon successfully blocking M.DMG, all allies have their M.Block increased by 200 and M.DEF by 10% of Loman's M.DEF for 5 sec. This effect is activated only once every 5 seconds.",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-863,light,"ATK, DEF, HP+15% / Crit Chance +100",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-864,dark,"At the beginning of each battle, immediately reduces self's Cooldown of all Skills by 30% and increases DMG dealt to Non-Hero enemies by 20% for 90 sec. DMG Boost effect can be stacked up to max 5 times and is irremovable.",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-865,light,"ATK, DEF, HP+15% / CC Resist +100",Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-866,dark,Increases own Mana Recovery/Sec by 300% for 3 sec upon casting an active skill.,Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-867,light,"ATK, DEF, HP+15% / Crit DMG +20%",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-868,dark,"Being granted with blessing of the carrot, Luna increases DMG dealt to Non-Hero enemies by 30%, and takes 30% reduced DMG.",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-869,light,"ATK, DEF, HP+15% / Crit Chance +100",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
-870,dark,"Upon a Crit Hit, target's CC resistance is reduced by 250 for 10 sec, and all Skill Cooldown, excluding the skill in use, is reduced by 2% each.",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+854,dark,"Upon taking a hit, increases ATK of the ally bound by Soul Link by 3%. This effect can be stacked up to max 20 times.",Lavril,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+855,light,"ATK, DEF, HP+15% / P. Block +200",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+856,dark,"Upon attacking, there is a 10% chance of dealing 120% of ATK as P.DMG to a random enemy, while also removing 300 mana and inflicting Silence for 1 sec.",Leo,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+857,light,"ATK, DEF, HP+15% / Crit Chance +100",Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+858,dark,All skill HP consumption is increased by 50% but cooldowns are reduced by 20%.,Lewisia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+859,light,"ATK, DEF, HP+15% / Crit DMG +20%",Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+860,dark,ATK is increased by 15% per 1 orb of mana.,Lilia,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+861,light,"ATK, DEF, HP+15% / M. Block +200",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+862,dark,"Upon successfully blocking M.DMG, all allies have their M.Block increased by 200 and M.DEF by 10% of Loman's M.DEF for 5 sec. This effect is activated only once every 5 seconds.",Loman,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+863,light,"ATK, DEF, HP+15% / Crit Chance +100",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+864,dark,"At the beginning of each battle, immediately reduces self's Cooldown of all Skills by 30% and increases DMG dealt to Non-Hero enemies by 20% for 90 sec. DMG Boost effect can be stacked up to max 5 times and is irremovable.",Lorraine,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+865,light,"ATK, DEF, HP+15% / CC Resist +100",Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+866,dark,Increases own Mana Recovery/Sec by 300% for 3 sec upon casting an active skill.,Lucias,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+867,light,"ATK, DEF, HP+15% / Crit DMG +20%",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+868,dark,"Being granted with blessing of the carrot, Luna increases DMG dealt to Non-Hero enemies by 30%, and takes 30% reduced DMG.",Luna,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+869,light,"ATK, DEF, HP+15% / Crit Chance +100",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
+870,dark,"Upon a Crit Hit, target's CC resistance is reduced by 250 for 10 sec, and all Skill Cooldown, excluding the skill in use, is reduced by 2% each.",Maria,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 871,light,"ATK, DEF, HP+15% / CC Resist +100",May,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 872,dark,Each auto-attack has a 30% chance of healing the ally with the lowest HP by 3% of their HP. Also provides 5% mana to the ally.,May,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 873,light,"ATK, DEF, HP+15% / CC Resist +100",Mediana,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
