@@ -215,7 +215,7 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 214,Blood Liberation [Dark],Mana cost is increased by 1 orb but DMG is boosted by 100%,Erze,2020-06-18 14:01:09.743284,2020-06-18 14:01:09.743284,s3d,hero
 215,Life Drinker [Light],Increases Max HP by 100% upon killing an enemy and changes the Max HP reduction after auto-casting [Soaking Blood] to 33%,Erze,2020-06-18 14:01:18.619633,2020-06-18 14:01:18.619633,s4l,hero
 216,Life Drinker [Dark],"Increases ATK by 200% upon killing an enemy, but Max HP boost does not apply",Erze,2020-06-18 14:01:33.07947,2020-06-18 14:01:33.07947,s4d,hero
-217,This Is My Game [Light],Increases DMG by 100% when there is only 1 enemy left,Esker,2020-06-18 14:02:15.180535,2020-06-18 14:02:15.180535,s1l,"Upon use, increases own DMG dealt to Bosses by2%. This effect can be stacked up to max 10 times."
+217,This Is My Game [Light],Increases DMG by 100% when there is only 1 enemy left,Esker,2020-06-18 14:02:15.180535,2020-06-18 14:02:15.180535,s1l,hero
 218,This Is My Game [Dark],Reduces ATK Spd of the enemy by 200 for 10 sec,Esker,2020-06-18 14:02:22.033115,2020-06-18 14:02:22.033115,s1d,hero
 219,My Turn [Light],"Increases Mana Cost by 1, but rolls 6 every time",Esker,2020-06-18 14:07:57.303906,2020-06-18 14:07:57.303906,s2l,hero
 220,My Turn [Dark],Reduces Mana Cost by 1,Esker,2020-06-18 14:08:48.917738,2020-06-18 14:08:48.917738,s2d,hero
@@ -1051,3 +1051,13 @@ Additionally displels the target's positive effects.",Isaiah,2021-05-25 0:00:00,
 1048,Baptism of the Goddess [Dark],"At the beginning of the first battle, gains 1 stack of [Sin].",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,s4d,hero
 1049,light,"ATK, DEF, HP +15% / HP +10%",Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,light,t5
 1050,dark,Reduces All DMG self taken by 150 and increases Heal Rate by 15%.,Isaiah,2021-05-25 0:00:00,2021-05-25 0:00:00,dark,t5
+1051,Prototype - VA [Light],[Hologram] applies to 2 allies with the highhest ATK.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s1l,hero
+1052,Prototype - VA [Dark],[Hologram] additionally increases Crit DMG by 50%.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s1d,hero
+1053,Absolute Protection Field - LA [Light],[Violet Force Field] additionally reduces DMG taken by 25%.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s2l,hero
+1054,Absolute Protection Field - LA [Dark],[Violet Force Field] additionally increases ATK Spd by 300.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s2d,hero
+1055,Ultimate Laser Cannon - NCE [Light],Displels positive effects from the hit target.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s3l,hero
+1056,Ultimate Laser Cannon - NCE [Dark],Reduces Mana Cost by 1.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s3d,hero
+1057,Technomagic Awakening [Light],Reduces DMG all allies take by 30% in Technomagic Kingdom.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s4l,hero
+1058,Technomagic Awakening [Dark],Additionally increases all allies' DMG dealt to Bosses by 15% in Technomagic Kingdom.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,s4d,hero
+1059,light,"ATK, DEF, HP +15% / ATK Spd +100",Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,light,t5
+1060,dark,Reduces All DMG all allies take by 2.5% and increases All DMG all enemies take by 2.5%. This effect can be stacked up the number of Technomagic Gear equipped to self.,Valance,2021-10-27 0:00:00,2021-10-27 0:00:00,dark,t5

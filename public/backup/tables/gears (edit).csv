@@ -864,3 +864,12 @@ id,name,description,tier,set,created_at,updated_at,gear_type,char_id,stat_id,rol
 981,Passion,"4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.",,Authority,2021-10-04 0:00:00,2021-10-04 0:00:00,,,,,,
 982,Wisdom,"4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.",,Authority,2021-10-04 0:00:00,2021-10-04 0:00:00,,,,,,
 983,Blessing,4 Set: Increases ATK of all allies by 10%.,,Authority,2021-10-04 0:00:00,2021-10-04 0:00:00,,,,,,
+984,"Wonder of Magos Le'Flamme, Corbeau Rose","The following buffs are applied to the target based on the number of Technomagic Gear equipped to each ally.
+1 Part: Increases ATK by 6%
+2 Parts: Increases All DEF by 6%
+3 Parts: Increases Max HP by 6%
+4 Parts: Increases DMG dealt to enemies by 4%",T10,,2021-10-27 0:00:00,2021-10-27 0:00:00,10-UW,102,212,,,
+985,Formula Input Device,[Prototype -VA] [Hologram] The effect additionally increases DMG dealt to Non-Hero enemies by 10% and the target's Cooldown Reduction by 50%.,T10,,2021-10-27 0:00:00,2021-10-27 0:00:00,9-UT,102,109,,1,
+986,A Moment of Tea,"[Absolute Protection Field - LA] Dispels negative effects from self upon use. For the duration of [Violet Force Field], increases the target's All Block Chance by 200.",T10,,2021-10-27 0:00:00,2021-10-27 0:00:00,9-UT,102,109,,2,
+987,Sloppy Sincerity,[Ultimate Laser Cannon - NCE] Reduces Cooldown by 2 sec and changes the max number of [Manipulated] stacks to 10.,T10,,2021-10-27 0:00:00,2021-10-27 0:00:00,9-UT,102,109,,3,
+988,First Failure,[Technomagic Awakening] All DEF Boost and Mana Recovery/Attack Boost effects now apply to all allies. Increases Heal Rate of all allies by 10%.,T10,,2021-10-27 0:00:00,2021-10-27 0:00:00,9-UT,102,109,,4,
