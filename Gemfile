@@ -16,7 +16,7 @@ gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
 gem 'sidekiq'
-gem 'hotwire-rails'
+gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
@@ -31,7 +31,7 @@ gem 'rack-cors'
 gem 'rubyzip'
 gem 'uglifier'
 
-gem 'turbo-rails', '~> 0.8.1'
+gem 'turbo-rails', '~> 0.8.3'
 
 gem 'nokogiri', '>= 1.12.5'
 
