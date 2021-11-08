@@ -31,6 +31,8 @@ gem 'rack-cors'
 gem 'rubyzip'
 gem 'uglifier'
 
+gem 'turbo-rails', '~> 0.8.1'
+
 gem 'nokogiri', '>= 1.12.5'
 
 group :development, :test do
