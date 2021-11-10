@@ -1,4 +1,4 @@
-of ,name,description,tier,created_at,updated_at,sequence,perk_type
+id,name,description,tier,created_at,updated_at,sequence,perk_type
 1,ATK Up,ATK is increased by 30%,Generic,2020-06-07 11:27:00.358642,2020-06-16 08:45:21.182357,1,generic
 2,HP Up,HP is increased by 30%,Generic,2020-06-07 11:27:14.376127,2020-06-16 08:45:35.126156,2,generic
 3,DEF Up,DEF is increased by 35%,Generic,2020-06-07 11:27:28.008435,2020-06-16 08:45:45.571742,3,generic
@@ -49,12 +49,12 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 48,Mystic Boost [Dark],Ignores enemy Block,Aisha,2020-06-18 10:59:08.002274,2020-06-18 10:59:08.002274,s4d,hero
 49,Blasting Ray [Light],Target takes 25% increased M.DMG for 10 sec,Annette,2020-06-18 11:13:48.863006,2020-06-18 11:13:48.863006,s1l,hero
 50,Blasting Ray [Dark],Charge amount is boosted by 40% upon use,Annette,2020-06-18 11:13:55.29365,2020-06-18 11:13:55.29365,s1d,hero
-51,Emergency Treatment [Light],Cooldown is reduced by 3 sec,Annette,2020-06-18 11:14:05.648038,2020-06-18 11:14:05.648038,s2l,hero
+51,Emergency Treatment [Light],The heal effect becomes irremovable.,Annette,2020-06-18 11:14:05.648038,2020-06-18 11:14:05.648038,s2l,hero
 52,Emergency Treatment [Dark],Charge amount is boosted by 40% upon use,Annette,2020-06-18 11:14:12.519142,2020-06-18 11:14:12.519142,s2d,hero
 53,Process of Elimination [Light],DMG is increased by 40%,Annette,2020-06-18 11:14:24.801038,2020-06-18 11:14:24.801038,s3l,hero
 54,Process of Elimination [Dark],Target takes 25% increased M.DMG,Annette,2020-06-18 11:14:31.930498,2020-06-18 11:14:31.930498,s3d,hero
-55,Charge [Light],ATK boost is increased by 40%,Annette,2020-06-18 11:14:42.339443,2020-06-18 11:14:42.339443,s4l,hero
-56,Charge [Dark],Overcharge duration is increased by 3 sec,Annette,2020-06-18 11:14:49.471074,2020-06-18 11:14:49.471074,s4d,hero
+55,Charge [Light],Applies the ATK Boost effect to all allies.,Annette,2020-06-18 11:14:42.339443,2020-06-18 11:14:42.339443,s4l,hero
+56,Charge [Dark],"Increases the duration of [Overcharge] by 5 sec. Upon normal attack, change the Cooldown Reduction effect of all Skills to 12%.",Annette,2020-06-18 11:14:49.471074,2020-06-18 11:14:49.471074,s4d,hero
 57,Celestial Arrow [Light],"If there is 1 enemy, DMG is increased by 100%",Arch,2020-06-18 11:17:51.298176,2020-06-18 11:17:51.298176,s1l,hero
 58,Celestial Arrow [Dark],Stuns enemies with a Sigil for 1 sec,Arch,2020-06-18 11:18:03.899539,2020-06-18 11:18:03.899539,s1d,hero
 59,Purifying Blaze [Light],Crit Chance is increased by 40%,Arch,2020-06-18 11:18:20.655801,2020-06-18 11:18:20.655801,s2l,hero
@@ -197,8 +197,8 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 196,On Guard! [Dark],Gains immunity to CC for 2 sec,Dosarta,2020-06-18 13:02:46.762948,2020-06-18 13:02:46.762948,s2d,hero
 197,Hya! Kya! Take this! [Light],Gains immunity to CC for the duration of skill,Dosarta,2020-06-18 13:03:20.225518,2020-06-18 13:03:20.225518,s3l,hero
 198,Hya! Kya! Take this! [Dark],Increases the amount of M.DMG that a target takes by 25% for 10 sec,Dosarta,2020-06-18 13:03:28.801334,2020-06-18 13:03:28.801334,s3d,hero
-199,Let Us Challenge Together! [Light],DEF Boost effects become irremovable,Dosarta,2020-06-18 13:03:38.992988,2020-06-18 13:03:38.992988,s4l,hero
-200,Let Us Challenge Together! [Dark],Cooldown changes to 4 sec,Dosarta,2020-06-18 13:03:44.103694,2020-06-18 13:03:44.103694,s4d,hero
+199,Let Us Challenge Together! [Light],The DEF Boost and P.Crit Resistance Boost effects become irremovable,Dosarta,2020-06-18 13:03:38.992988,2020-06-18 13:03:38.992988,s4l,hero
+200,Let Us Challenge Together! [Dark],"Upon activation, increases P.Block of all allies by 250 for 5 sec. This effect only activates once every 10 sec.",Dosarta,2020-06-18 13:03:44.103694,2020-06-18 13:03:44.103694,s4d,hero
 201,Absorbing Blow [Light],"If there is 1 enemy, DMG is increased by 100%",Epis,2020-06-18 13:08:18.828248,2020-06-18 13:08:18.828248,s1l,hero
 202,Absorbing Blow [Dark],Ignores enemy Block,Epis,2020-06-18 13:08:24.513254,2020-06-18 13:08:24.513254,s1d,hero
 203,Nightmare [Light],Mana cost is reduced by 1,Epis,2020-06-18 13:08:37.251107,2020-06-18 13:08:37.251107,s2l,hero
@@ -375,14 +375,14 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 374,Dance of the Desert / Blinding Acceleration [Dark],Mana cost is increased by 1 and DMG is increased by 100%,Laudia,2020-06-22 09:11:45.780794,2020-06-22 09:11:45.780794,s3d,hero
 375,Blessing of Oasis [Light],Gains 2 stack of [Blessing of Oasis],Laudia,2020-06-22 09:12:00.68748,2020-06-22 09:12:00.68748,s4l,hero
 376,Blessing of Oasis [Dark],"Per each stack, takes 2% less DMG from enemies other than heroes",Laudia,2020-06-22 09:12:07.236056,2020-06-22 09:12:07.236056,s4d,hero
-377,G-go Away! [Light],Increases M.DMG the target takes by 25%,Lavril,2020-06-22 09:12:28.309011,2020-06-22 09:12:28.309011,s1l,hero
-378,G-go Away! [Dark],"Recovers 1 orb of Mana when the target dies, and Cooldown of this skill is reset",Lavril,2020-06-22 09:12:34.063724,2020-06-22 09:12:34.063724,s1d,hero
+377,G-go Away! [Light],Changes All Crit Resistance Reduction to 500.,Lavril,2020-06-22 09:12:28.309011,2020-06-22 09:12:28.309011,s1l,hero
+378,G-go Away! [Dark],Increases Heal Rate by 100% when there is only 1 enemy.,Lavril,2020-06-22 09:12:34.063724,2020-06-22 09:12:34.063724,s1d,hero
 379,Bear Up...! / You Scare Me...! [Light],[Bear Up...!] Keeps target's HP from going below 5% for the duration of skill. [You Scare Me...!] Dispels positive effects from the target,Lavril,2020-06-22 09:12:49.751491,2020-06-22 09:12:49.751491,s2l,hero
-380,Bear Up...! / You Scare Me...! [Dark],[Bear Up...!] Increases ATK of the target by 20% for the duration of skill. [You Scare Me...!] - Increases the target by 1,Lavril,2020-06-22 09:12:57.726188,2020-06-22 09:12:57.726188,s2d,hero
+380,Bear Up...! / You Scare Me...! [Dark],[Bear Up...!] Increases the number of targets by 1. [You Scare Me...!] - Increases the targets by 1,Lavril,2020-06-22 09:12:57.726188,2020-06-22 09:12:57.726188,s2d,hero
 381,Leave Me Alone...! [Light],Reduces Cooldown by 30%,Lavril,2020-06-22 09:13:14.432023,2020-06-22 09:13:14.432023,s3l,hero
 382,Leave Me Alone...! [Dark],Reduces Mana Cost by 1,Lavril,2020-06-22 09:13:20.305896,2020-06-22 09:13:20.305896,s3d,hero
-383,Together Forever... [Light],Increases DEF Penetration of the ally bound by Soul Link by 300,Lavril,2020-06-22 09:13:29.845606,2020-06-22 09:13:29.845606,s4l,hero
-384,Together Forever... [Dark],Increases All DEF of the ally bound by Soul Link by 15%,Lavril,2020-06-22 09:13:35.792759,2020-06-22 09:13:35.792759,s4d,hero
+383,Together Forever... [Light],Changes the DMG Boost effect against Non-Hero enemies of Lavril and the ally bound to 'Soul Link' to 12%.,Lavril,2020-06-22 09:13:29.845606,2020-06-22 09:13:29.845606,s4l,hero
+384,Together Forever... [Dark],Reduces DMG taken of self and the ally bound to Soul Link by 20%.,Lavril,2020-06-22 09:13:35.792759,2020-06-22 09:13:35.792759,s4d,hero
 385,Rune of Frailty [Light],Cooldown is reduced by 2 sec,Leo,2020-06-22 09:14:02.155092,2020-06-22 09:14:02.155092,s1l,hero
 386,Rune of Frailty [Dark],Target number increased to 2,Leo,2020-06-22 09:14:13.364406,2020-06-22 09:14:13.364406,s1d,hero
 387,Rune of Healing [Light],Heal rate is increased by 40%,Leo,2020-06-22 09:14:24.431699,2020-06-22 09:14:24.431699,s2l,hero
@@ -770,7 +770,7 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 769,light,"ATK, DEF, HP+15% / Crit Chance +100",Aisha,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 770,dark,"Upon using a Skill, increases Mana Recovery/Sec by 10% and Crit DMG by 7%. This effect stacks up to 20 times and is irremovable.",Aisha,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 771,light,"ATK, DEF, HP+15% / ATK.Spd +100",Annette,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-772,dark,"When Overcharge activates, increase all allies Atk Spd by 200, and increase the ATK of all allies by 5% of Annette's ATK.",Annette,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+772,dark,Increase all allies Atk Spd by 200 and ATK by 5% of Annette's ATK for the duration of [Overcharge].,Annette,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 773,light,"ATK, DEF, HP+15% / Crit Chance +100",Arch,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 774,dark,"At the beginning of each battle, self gains immunity to M.DMG for 5 sec.",Arch,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 775,light,"ATK, DEF, HP+15% / Crit Chance +100",Artemia,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
@@ -806,7 +806,7 @@ of ,name,description,tier,created_at,updated_at,sequence,perk_type
 805,light,"ATK, DEF, HP+15% / ATK.Spd +100",Dimael,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 806,dark,"Upon auto attacking, deal extra M.DMG worth 80% of ATK and recover 100 mana. There is a 10% chance of dealing double DMG and recovering double mana.",Dimael,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 807,light,"ATK, DEF, HP +15% / HP + 10%",Dosarta,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
-808,dark,"Upon using a Skill, the self blocks all DMG for 2 sec.",Dosarta,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
+808,dark,"Reduces all enemies' DMG that ignores DEF by 25%. When Dosarta uses a Skill, this effect is multiplied by 2 for 3 sec.",Dosarta,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 809,light,"ATK, DEF, HP+15% / Crit DMG +20%",Epis,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
 810,dark,All of Epis's attacks decrease the M.DEF of hit enemies by 20% for 10 sec. ATK rises by 2% per each enemy hit. Maximum stack number is 10.,Epis,2020-07-07 0:00:00,2020-07-07 0:00:00,dark,t5
 811,light,"ATK, DEF, HP+15% / Crit Chance +100",Erze,2020-07-07 0:00:00,2020-07-07 0:00:00,light,t5
