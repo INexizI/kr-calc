@@ -1324,7 +1324,7 @@ h4 {
             color: rgb(0, 200, 50);
           }
         }
-        .r-set {
+        .r-set, .r-tms {
           display: grid;
           height: auto !important;
           grid-template: "item1 item2";
@@ -1339,7 +1339,7 @@ h4 {
             width: 150px;
             padding-left: 15px;
           }
-          #sb {
+          #sb, #tms {
             display: grid;
             width: 265px;
             height: auto;
@@ -1371,7 +1371,14 @@ h4 {
         height: 13px;
         display: block;
       }
-      .statsBase::after, .statsAdd::after, .statSet::after {
+      .statTMS::before {
+        content: '';
+        background: url('/images/media/classes/set_head.png');
+        background-size: 450px;
+        height: 13px;
+        display: block;
+      }
+      .statsBase::after, .statsAdd::after, .statSet::after, .statTMS::after {
         content: '';
         background: url('/images/media/classes/stat_foot.png');
         background-size: 450px;

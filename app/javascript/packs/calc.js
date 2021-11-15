@@ -1494,6 +1494,9 @@
         gearStat();
       }
     });
+    $('select#calc_st_armor_op').change(function() {
+      $('#propAr').text($('#calc_st_armor_op').children('option:selected').text());
+    });
     $('select#calc_ench_ar').change(function() {
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
@@ -1541,6 +1544,9 @@
         statOption();
         gearStat();
       }
+    });
+    $('select#calc_st_secondary_op').change(function() {
+      $('#propScnd').text($('#calc_st_secondary_op').children('option:selected').text());
     });
     $('select#calc_ench_sg').change(function() {
       $enchName = $(this);
@@ -1590,6 +1596,9 @@
         gearStat();
       }
     });
+    $('select#calc_st_jewerly_op').change(function() {
+      $('#propAcs').text($('#calc_st_jewerly_op').children('option:selected').text());
+    });
     $('select#calc_ench_j').change(function() {
       $enchName = $(this);
       $ench = $(this).parent().next().find('.ench-v');
@@ -1631,6 +1640,9 @@
         statOption();
         gearStat();
       }
+    });
+    $('select#calc_st_orb_op').change(function() {
+      $('#propOrb').text($('#calc_st_orb_op').children('option:selected').text());
     });
     $('select#calc_ench_orb').change(function() {
       $enchName = $(this);
@@ -2296,6 +2308,14 @@
       if (!$setBonus.length)
         $setBonus = $('.t-total .r-stats').append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="per1">4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.</span><span id="per2">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per3">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per4">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per5">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per6">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per7">4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.</span><span id="hop1">4 Set: Increases all allies All DEF by 10% and ATK by 5%.</span><span id="hop2">4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.</span><span id="hop3">4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.</span><span id="hop4">4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.</span><span id="hop5">4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.</span><span id="hop6">4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.</span><span id="hop7">4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.</span><span id="aut1">4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.</span><span id="aut2">4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.</span><span id="aut3">4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.</span><span id="aut4">4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.</span><span id="aut5">4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.</span><span id="aut6">4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.</span><span id="aut7">4 Set: Increases ATK of all allies by 10%.</span></p></div></div>');
       $setBonus.find('span').hide();
+
+      $tmSkill = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'TM Skill'
+      }).next('p');
+      if (!$tmSkill.length)
+        $tmSkill = $('.t-total .r-stats').append('<div class="statTMS"><div class="r-tms"><p id="s-name">TM Skill</p><p id="tms"><span id="tms1">Increases ATK by 35% when there is 1 enemy.</span><span id="tms2">Increases DEF by 45% when there is 1 enemy.</span><span id="tms3">Increases ATK by 35% when there is 3 enemy.</span><span id="tms4">Increases DEF by 45% when there is 3 enemy.</span><span id="tms5">Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.</span><span id="tms6">Increases own DMG dealt to enemies by 25% when HP is above 95%.</span><span id="tms7">Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.</span><span id="tms8">Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.</span><span id="tms9">Reduces Cooldown of 1st Skill by 10% every 10 sec.</span><span id="tms10">Reduces Cooldown of 2nd Skill by 10% every 10 sec.</span><span id="tms11">Reduces Cooldown of 3rd Skill by 10% every 10 sec.</span><span id="tms12">Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.</span><span id="tms13">Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.</span><span id="tms14">Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.</span><span id="tms15">Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.</span><span id="tms16">Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.</span><span id="tms17">Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.</span><span id="tms18">Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.</span><span id="tms19">Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.</span><span id="tms20">Increases DMG of [DMG that ignores DEF] by 25%.</span><span id="tms21">Increases DMG of [Continuous DMG] by 20%.</span><span id="tms22">Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.</span><span id="tms23">At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.</span><span id="tms24">Increases DEF by 7% per 1 enemy.</span><span id="tms25">Increases ATK by 6% per 1 enemy.</span><span id="tms26">Increases ATK of all allies by 5%.</span><span id="tms27">Increases Crit DMG of all allies by 10%.</span><span id="tms28">Increases All DEF of all allies by 7%.</span><span id="tms29">At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.</span><span id="tms30">Increases DMG of normal attacks by 25%.</span><span id="tms31">Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.</span><span id="tms32">Increases own Shield by 25%.</span><span id="tms33">Heals HP equal to 1% of Max HP every sec.</span><span id="tms34">Recovers own Mana by 500 every 5 sec.</span><span id="tms35">Reduces All DEF by 25% and increases ATK by 50%.</span><span id="tms36">Reduces ATK by 20% and increases All DEF by 50%.</span><span id="tms37">Reduces the duration of CCs inflicted upon self by 15%.</span><span id="tms38">Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.</span><span id="tms39">Fixes ATK Spd to 1000 and increases ATK by 40%.</span><span id="tms40">Increases Crit DMG by 50%.</span><span id="tms41">Increases ATK Spd by 250.</span><span id="tms42">Increases DEF Penetration by 250.</span><span id="tms43">Increases Max HP by 25%.</span><span id="tms44">Increases All Block by 250.</span><span id="tms45">Increases All DEF by 25%.</span><span id="tms46">Increases Crit Chance by 250.</span><span id="tms47">Increases ATK by 25%.</span><span id="tms48">Soul Weapon Usage Limit +1</span><span id="tms49">Level of [1st Skill] +7</span><span id="tms50">Level of [2nd Skill] +7</span><span id="tms51">Level of [3rd Skill] +7</span><span id="tms52">Level of [4th Skill] +7</span><span id="tms53">Level of [All Skill] +5</span></p></div></div>');
+      $tmSkill.find('span').hide();
+
       $statCrit = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'Crit'
       }).next('p');
