@@ -1496,6 +1496,7 @@
     });
     $('select#calc_st_armor_op').change(function() {
       $('#propAr').text($('#calc_st_armor_op').children('option:selected').text());
+      gearSet();
     });
     $('select#calc_ench_ar').change(function() {
       $enchName = $(this);
@@ -1547,6 +1548,7 @@
     });
     $('select#calc_st_secondary_op').change(function() {
       $('#propScnd').text($('#calc_st_secondary_op').children('option:selected').text());
+      gearSet();
     });
     $('select#calc_ench_sg').change(function() {
       $enchName = $(this);
@@ -1598,6 +1600,7 @@
     });
     $('select#calc_st_jewerly_op').change(function() {
       $('#propAcs').text($('#calc_st_jewerly_op').children('option:selected').text());
+      gearSet();
     });
     $('select#calc_ench_j').change(function() {
       $enchName = $(this);
@@ -1643,6 +1646,7 @@
     });
     $('select#calc_st_orb_op').change(function() {
       $('#propOrb').text($('#calc_st_orb_op').children('option:selected').text());
+      gearSet();
     });
     $('select#calc_ench_orb').change(function() {
       $enchName = $(this);
@@ -2423,6 +2427,116 @@
           $tmH++;
         else if ($(this).is(':contains("Authority")'))
           $tmA++;
+      });
+
+       $tms1 = 0;$tms2 = 0;$tms3 = 0;$tms4 = 0;$tms5 = 0;$tms6 = 0;$tms7 = 0;$tms8 = 0;$tms9 = 0;$tms10 = 0;$tms11 = 0;$tms12 = 0;$tms13 = 0;$tms14 = 0;$tms15 = 0;$tms16 = 0;$tms17 = 0;$tms18 = 0;$tms19 = 0;$tms20 = 0;$tms21 = 0;$tms22 = 0;$tms23 = 0;$tms24 = 0;$tms25 = 0;$tms26 = 0;$tms27 = 0;$tms28 = 0;$tms29 = 0;$tms30 = 0;$tms31 = 0;$tms32 = 0;$tms33 = 0;$tms34 = 0;$tms35 = 0;$tms36 = 0;$tms37 = 0;$tms38 = 0;$tms39 = 0;$tms40 = 0;$tms41 = 0;$tms42 = 0;$tms43 = 0;$tms44 = 0;$tms45 = 0;$tms46 = 0;$tms47 = 0;$tms48 = 0;$tms49 = 0;$tms50 = 0;$tms51 = 0;$tms52 = 0;$tms53 = 0;
+      $tmsq = $('.tm-prop').find('p').each(function() {
+        if ($(this).is(':contains("ATK by 35% when there is 1")'))
+          $tms1++;
+        else if ($(this).is(':contains("DEF by 45% when there is 1")'))
+          $tms2++;
+        else if ($(this).is(':contains("ATK by 35% when there is 3")'))
+          $tms3++;
+        else if ($(this).is(':contains("DEF by 45% when there is 3")'))
+          $tms4++;
+        else if ($(this).is(':contains("ATK by 50% for 10 sec when HP falls below 30%")'))
+          $tms5++;
+        else if ($(this).is(':contains("25% when HP is above 95%")'))
+          $tms6++;
+        else if ($(this).is(':contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")'))
+          $tms7++;
+        else if ($(this).is(':contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")'))
+          $tms8++;
+        else if ($(this).is(':contains("Reduces Cooldown of 1st")'))
+          $tms9++;
+        else if ($(this).is(':contains("Reduces Cooldown of 2nd")'))
+          $tms10++;
+        else if ($(this).is(':contains("Reduces Cooldown of 3rd")'))
+          $tms11++;
+        else if ($(this).is(':contains("Upon every Skill use, increases ATK by 2%")'))
+          $tms12++;
+        else if ($(this).is(':contains("Upon every Skill use, takes 3% reduces DMG")'))
+          $tms13++;
+        else if ($(this).is(':contains("Upon blocking the enemys attack, increases All Block by 20")'))
+          $tms14++;
+        else if ($(this).is(':contains("Takes 20% reduces P.DMG")'))
+          $tms15++;
+        else if ($(this).is(':contains("Takes 20% reduces M.DMG")'))
+          $tms16++;
+        else if ($(this).is(':contains("Increases DMG dealt to enemies by 3% every 15 sec")'))
+          $tms17++;
+        else if ($(this).is(':contains("Upon blocking an enemy attack, recovers 200 Mana")'))
+          $tms18++;
+        else if ($(this).is(':contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")'))
+          $tms19++;
+        else if ($(this).is(':contains("Increases DMG of [DMG that ignores DEF] by 25%")'))
+          $tms20++;
+        else if ($(this).is(':contains("Increases DMG of [Continuous DMG] by 20%")'))
+          $tms21++;
+        else if ($(this).is(':contains("Upon killing an enemy, increases ATK by 2%")'))
+          $tms22++;
+        else if ($(this).is(':contains("At the beginning of each battle, increases ATK by 5%")'))
+          $tms23++;
+        else if ($(this).is(':contains("Increases DEF by 7% per 1 enemy")'))
+          $tms24++;
+        else if ($(this).is(':contains("Increases ATK by 6% per 1 enemy")'))
+          $tms25++;
+        else if ($(this).is(':contains("Increases ATK of all allies by 5%")'))
+          $tms26++;
+        else if ($(this).is(':contains("Increases Crit DMG of all allies by 10%")'))
+          $tms27++;
+        else if ($(this).is(':contains("Increases All DEF of all allies by 7%")'))
+          $tms28++;
+        else if ($(this).is(':contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")'))
+          $tms29++;
+        else if ($(this).is(':contains("Increases DMG of normal attacks by 25%")'))
+          $tms30++;
+        else if ($(this).is(':contains("Increases All Block by 150")'))
+          $tms31++;
+        else if ($(this).is(':contains("Increases own Shield by 25%")'))
+          $tms32++;
+        else if ($(this).is(':contains("Heals HP equal to 1% of Max HP every sec")'))
+          $tms33++;
+        else if ($(this).is(':contains("Recovers own Mana by 500 every 5 sec")'))
+          $tms34++;
+        else if ($(this).is(':contains("Reduces All DEF by 25% and increases ATK by 50%")'))
+          $tms35++;
+        else if ($(this).is(':contains("Reduces ATK by 20% and increases All DEF by 50%")'))
+          $tms36++;
+        else if ($(this).is(':contains("Reduces the duration of CCs inflicted upon self by 15%")'))
+          $tms37++;
+        else if ($(this).is(':contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")'))
+          $tms38++;
+        else if ($(this).is(':contains("Fixes ATK Spd to 1000 and increases ATK by 40%")'))
+          $tms39++;
+        else if ($(this).is(':contains("Increases Crit DMG by 50%")'))
+          $tms40++;
+        else if ($(this).is(':contains("Increases ATK Spd by 250")'))
+          $tms41++;
+        else if ($(this).is(':contains("Increases DEF Penetration by 250")'))
+          $tms42++;
+        else if ($(this).is(':contains("Increases Max HP by 25%")'))
+          $tms43++;
+        else if ($(this).is(':contains("Increases All Block by 250")'))
+          $tms44++;
+        else if ($(this).is(':contains("Increases All DEF by 25%")'))
+          $tms45++;
+        else if ($(this).is(':contains("Increases Crit Chance by 250")'))
+          $tms46++;
+        else if ($(this).is(':contains("Increases ATK by 25%")'))
+          $tms47++;
+        else if ($(this).is(':contains("Soul Weapon Usage Limit +1")'))
+          $tms48++;
+        else if ($(this).is(':contains("Level of [1st Skill] +7")'))
+          $tms49++;
+        else if ($(this).is(':contains("Level of [2nd Skill] +7")'))
+          $tms50++;
+        else if ($(this).is(':contains("Level of [3rd Skill] +7")'))
+          $tms51++;
+        else if ($(this).is(':contains("Level of [4th Skill] +7")'))
+          $tms52++;
+        else if ($(this).is(':contains("Level of [All Skill] +5")'))
+          $tms53++;
       });
 
       $tPDef = $('.t-total .r-stats').find('p').filter(function() {
