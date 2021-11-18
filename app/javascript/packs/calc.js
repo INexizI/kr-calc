@@ -1133,6 +1133,7 @@
           .children().hide().end()
           .prop('selectedIndex', 0)
           .children('.q').show();
+        $('#propAr').empty();
       } else if (($armorSet == 'Reclaimed Perseverance') || ($armorSet == 'Reclaimed Hope') || ($armorSet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '1-1H';
@@ -1193,6 +1194,7 @@
           .parent().find('.gOption').show()
           .parent().find('.gTM').hide();
         gearStat();
+        $('#propAr').empty();
       }
       $('#arm').text($('#greyPDEF').text());
     };
@@ -1220,6 +1222,7 @@
           .children().hide().end()
           .prop('selectedIndex', 0)
           .children('.q').show();
+        $('#propScnd').empty();
       } else if (($secondarySet == 'Reclaimed Perseverance') || ($secondarySet == 'Reclaimed Hope') || ($secondarySet == 'Reclaimed Authority')) {
         if (($heroClass == 1) || ($heroClass == 2)) {
           $gType = '2-2H';
@@ -1280,6 +1283,7 @@
           .parent().find('.gOption').show()
           .parent().find('.gTM').hide();
         gearStat();
+        $('#propScnd').empty();
       }
       $('#sec').text($('#greyMDEF').text());
     };
@@ -1308,6 +1312,7 @@
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#ac label').filter('.active').removeClass('active');
+        $('#propAcs').empty();
       } else if (($jewelSet == 'Reclaimed Perseverance') || ($jewelSet == 'Reclaimed Hope') || ($jewelSet == 'Reclaimed Authority')) {
         if ($jewelType == 'Ring')
           $('#greyJ').text($tm4R);
@@ -1358,6 +1363,7 @@
           .parent().find('.gOption').show()
           .parent().find('.gTM').hide();
         gearStat();
+        $('#propAcs').empty();
       }
       $('#acc').text($('#greyJ').text());
     };
@@ -1380,6 +1386,7 @@
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#or label').filter('.active').removeClass('active');
+        $('#propOrb').empty();
       } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
         $('#greyO').text($tm4R);
         $('#orb').next('.rating').show();
@@ -1414,6 +1421,7 @@
           .parent().find('.gOption').show()
           .parent().find('.gTM').hide();
         gearStat();
+        $('#propOrb').empty();
       }
       $('#orb').text($('#greyO').text());
     };
