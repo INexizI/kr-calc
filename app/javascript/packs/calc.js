@@ -148,13 +148,15 @@
                 });
                 $r = y;
               }
-              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]'))
+              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]')) {
                 $('[name="' + x + '"]')
                   .children().hide().end()
                   .prop('selectedIndex', 0)
                   .find('[name="' + $r + '"]')
                   .prop('selected', true).show().end()
-                  .children('.q').show();
+                  .children('.q').show().end()
+                  .children('[value="' + y + '"]').prop('selected', true);
+              }
               if (x.slice(0, -3) + ']' == 'calc[st_treasure]')
                 $('[name="' + x + '"]')
                   .children().hide().end()
@@ -237,6 +239,7 @@
               });
               return JSON.parse(dcT.toString(CryptoJS.enc.Utf8));
             };
+            // console.log(decData(shr));
             $(decData(shr)).each(function(i, n) {
               var x = this.name;
               var y = this.value;
@@ -359,13 +362,15 @@
                 });
                 $r = y;
               }
-              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]'))
+              if ((x.slice(0, -3) + ']' == 'calc[st_rune]') || (x.slice(0, -3) + ']' == 'calc[st_rune_w]') || (x.slice(0, -3) + ']' == 'calc[st_rune_tm]')) {
                 $('[name="' + x + '"]')
                   .children().hide().end()
                   .prop('selectedIndex', 0)
                   .find('[name="' + $r + '"]')
                   .prop('selected', true).show().end()
-                  .children('.q').show();
+                  .children('.q').show().end()
+                  .children('[value="' + y + '"]').prop('selected', true);
+              }
               if (x.slice(0, -3) + ']' == 'calc[st_treasure]')
                 $('[name="' + x + '"]')
                   .children().hide().end()
