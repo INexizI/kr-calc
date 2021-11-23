@@ -348,6 +348,14 @@
               }
               if ((x.slice(0, -3) + ']' == 'calc[st_armor]') || (x.slice(0, -3) + ']' == 'calc[st_secondary]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly]') || (x.slice(0, -3) + ']' == 'calc[st_orb]'))
                 $('.gOption').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
+              if (x == 'calc[st_armor_op]')
+                $('#propAr').text(y);
+              if (x == 'calc[st_secondary_op]')
+                $('#propScnd').text(y);
+              if (x == 'calc[st_jewerly_op]')
+                $('#propAcs').text(y);
+              if (x == 'calc[st_orb_op]')
+                $('#propOrb').text(y);
               if ((x.slice(0, -3) + ']' == 'calc[st_armor_tm]') || (x.slice(0, -3) + ']' == 'calc[st_secondary_tm]') || (x.slice(0, -3) + ']' == 'calc[st_jewerly_tm]') || (x.slice(0, -3) + ']' == 'calc[st_orb_tm]'))
                 $('.gTM').find('[name="' + x + '"]').children().children('[value="' + y + '"]').prop('selected', true);
               if ((x.slice(0, -3) + ']' == 'calc[rune]') || (x.slice(0, -5) + ']' == 'calc[rune]') || (x.slice(0, -3) + ']' == 'calc[rune_w]')) {
