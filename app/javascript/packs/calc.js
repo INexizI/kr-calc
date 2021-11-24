@@ -2454,320 +2454,373 @@
       $tmsq = $('.tm-prop').find('p').each(function() {
         if ($(this).is(':contains("ATK by 35% when there is 1")')) {
           $tms1++;
-          $('#tms span span').remove();
-          $('#tms1').append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 1")').length + ')</span>')
+          $('#tms1')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 1")').length + ')</span>')
           $('#tms1').show();
         }
         else if ($(this).is(':contains("DEF by 45% when there is 1")')) {
           $tms2++;
-          $('#tms span span').remove();
-          $('#tms2').append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 1")').length + ')</span>')
+          $('#tms2')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 1")').length + ')</span>')
           $('#tms2').show();
         }
         else if ($(this).is(':contains("ATK by 35% when there is 3")')) {
           $tms3++;
-          $('#tms span span').remove();
-          $('#tms3').append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 3")').length + ')</span>')
+          $('#tms3')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 3")').length + ')</span>')
           $('#tms3').show();
         }
         else if ($(this).is(':contains("DEF by 45% when there is 3")')) {
           $tms4++;
-          $('#tms span span').remove();
-          $('#tms4').append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 3")').length + ')</span>')
+          $('#tms4')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 3")').length + ')</span>')
           $('#tms4').show();
         }
         else if ($(this).is(':contains("ATK by 50% for 10 sec when HP falls below 30%")')) {
           $tms5++;
-          $('#tms span span').remove();
-          $('#tms5').append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 50% for 10 sec when HP falls below 30%")').length + ')</span>')
+          $('#tms5')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 50% for 10 sec when HP falls below 30%")').length + ')</span>')
           $('#tms5').show();
         }
         else if ($(this).is(':contains("25% when HP is above 95%")')) {
           $tms6++;
-          $('#tms span span').remove();
-          $('#tms6').append('<span> (x' + $('.tm-prop').find('p:contains("25% when HP is above 95%")').length + ')</span>')
+          $('#tms6')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("25% when HP is above 95%")').length + ')</span>')
           $('#tms6').show();
         }
         else if ($(this).is(':contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")')) {
           $tms7++;
-          $('#tms span span').remove();
-          $('#tms7').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")').length + ')</span>')
+          $('#tms7')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")').length + ')</span>')
           $('#tms7').show();
         }
         else if ($(this).is(':contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")')) {
           $tms8++;
-          $('#tms span span').remove();
-          $('#tms8').append('<span> (x' + $('.tm-prop').find('p:contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")').length + ')</span>')
+          $('#tms8')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")').length + ')</span>')
           $('#tms8').show();
         }
         else if ($(this).is(':contains("Reduces Cooldown of 1st")')) {
           $tms9++;
-          $('#tms span span').remove();
-          $('#tms9').append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 1st")').length + ')</span>')
+          $('#tms9')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 1st")').length + ')</span>')
           $('#tms9').show();
         }
         else if ($(this).is(':contains("Reduces Cooldown of 2nd")')) {
           $tms10++;
-          $('#tms span span').remove();
-          $('#tms10').append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 2nd")').length + ')</span>')
+          $('#tms10')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 2nd")').length + ')</span>')
           $('#tms10').show();
         }
         else if ($(this).is(':contains("Reduces Cooldown of 3rd")')) {
           $tms11++;
-          $('#tms span span').remove();
-          $('#tms11').append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 3rd")').length + ')</span>')
+          $('#tms11')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 3rd")').length + ')</span>')
           $('#tms11').show();
         }
         else if ($(this).is(':contains("Upon every Skill use, increases ATK by 2%")')) {
           $tms12++;
-          $('#tms span span').remove();
-          $('#tms12').append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, increases ATK by 2%")').length + ')</span>')
+          $('#tms12')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, increases ATK by 2%")').length + ')</span>')
           $('#tms12').show();
         }
         else if ($(this).is(':contains("Upon every Skill use, takes 3% reduces DMG")')) {
           $tms13++;
-          $('#tms span span').remove();
-          $('#tms13').append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, takes 3% reduces DMG")').length + ')</span>')
+          $('#tms13')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, takes 3% reduces DMG")').length + ')</span>')
           $('#tms13').show();
         }
         else if ($(this).is(':contains("increases All Block by 20")')) {
           $tms14++;
-          $('#tms span span').remove();
-          $('#tms14').append('<span> (x' + $('.tm-prop').find('p:contains("increases All Block by 20")').length + ')</span>')
+          $('#tms14')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("increases All Block by 20")').length + ')</span>')
           $('#tms14').show();
         }
         else if ($(this).is(':contains("Takes 20% reduces P.DMG")')) {
           $tms15++;
-          $('#tms span span').remove();
-          $('#tms15').append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces P.DMG")').length + ')</span>')
+          $('#tms15')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces P.DMG")').length + ')</span>')
           $('#tms15').show();
         }
         else if ($(this).is(':contains("Takes 20% reduces M.DMG")')) {
           $tms16++;
-          $('#tms span span').remove();
-          $('#tms16').append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces M.DMG")').length + ')</span>')
+          $('#tms16')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces M.DMG")').length + ')</span>')
           $('#tms16').show();
         }
         else if ($(this).is(':contains("Increases DMG dealt to enemies by 3% every 15 sec")')) {
           $tms17++;
-          $('#tms span span').remove();
-          $('#tms17').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 3% every 15 sec")').length + ')</span>')
+          $('#tms17')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 3% every 15 sec")').length + ')</span>')
           $('#tms17').show();
         }
         else if ($(this).is(':contains("Upon blocking an enemy attack, recovers 200 Mana")')) {
           $tms18++;
-          $('#tms span span').remove();
-          $('#tms18').append('<span> (x' + $('.tm-prop').find('p:contains("Upon blocking an enemy attack, recovers 200 Mana")').length + ')</span>')
+          $('#tms18')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Upon blocking an enemy attack, recovers 200 Mana")').length + ')</span>')
           $('#tms18').show();
         }
         else if ($(this).is(':contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")')) {
           $tms19++;
-          $('#tms span span').remove();
-          $('#tms19').append('<span> (x' + $('.tm-prop').find('p:contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")').length + ')</span>')
+          $('#tms19')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")').length + ')</span>')
           $('#tms19').show();
         }
         else if ($(this).is(':contains("Increases DMG of [DMG that ignores DEF] by 25%")')) {
           $tms20++;
-          $('#tms span span').remove();
-          $('#tms20').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [DMG that ignores DEF] by 25%")').length + ')</span>')
+          $('#tms20')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [DMG that ignores DEF] by 25%")').length + ')</span>')
           $('#tms20').show();
         }
         else if ($(this).is(':contains("Increases DMG of [Continuous DMG] by 20%")')) {
           $tms21++;
-          $('#tms span span').remove();
-          $('#tms21').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [Continuous DMG] by 20%")').length + ')</span>')
+          $('#tms21')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [Continuous DMG] by 20%")').length + ')</span>')
           $('#tms21').show();
         }
         else if ($(this).is(':contains("Upon killing an enemy, increases ATK by 2%")')) {
           $tms22++;
-          $('#tms span span').remove();
-          $('#tms22').append('<span> (x' + $('.tm-prop').find('p:contains("Upon killing an enemy, increases ATK by 2%")').length + ')</span>')
+          $('#tms22')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Upon killing an enemy, increases ATK by 2%")').length + ')</span>')
           $('#tms22').show();
         }
         else if ($(this).is(':contains("At the beginning of each battle, increases ATK by 5%")')) {
           $tms23++;
-          $('#tms span span').remove();
-          $('#tms23').append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases ATK by 5%")').length + ')</span>')
+          $('#tms23')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases ATK by 5%")').length + ')</span>')
           $('#tms23').show();
         }
         else if ($(this).is(':contains("Increases DEF by 7% per 1 enemy")')) {
           $tms24++;
-          $('#tms span span').remove();
-          $('#tms24').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF by 7% per 1 enemy")').length + ')</span>')
+          $('#tms24')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF by 7% per 1 enemy")').length + ')</span>')
           $('#tms24').show();
         }
         else if ($(this).is(':contains("Increases ATK by 6% per 1 enemy")')) {
           $tms25++;
-          $('#tms span span').remove();
-          $('#tms25').append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 6% per 1 enemy")').length + ')</span>')
+          $('#tms25')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 6% per 1 enemy")').length + ')</span>')
           $('#tms25').show();
         }
         else if ($(this).is(':contains("Increases ATK of all allies by 5%")')) {
           $tms26++;
-          $('#tms span span').remove();
-          $('#tms26').append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK of all allies by 5%")').length + ')</span>')
+          $('#tms26')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK of all allies by 5%")').length + ')</span>')
           $('#tms26').show();
         }
         else if ($(this).is(':contains("Increases Crit DMG of all allies by 10%")')) {
           $tms27++;
-          $('#tms span span').remove();
-          $('#tms27').append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG of all allies by 10%")').length + ')</span>')
+          $('#tms27')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG of all allies by 10%")').length + ')</span>')
           $('#tms27').show();
         }
         else if ($(this).is(':contains("Increases All DEF of all allies by 7%")')) {
           $tms28++;
-          $('#tms span span').remove();
-          $('#tms28').append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF of all allies by 7%")').length + ')</span>')
+          $('#tms28')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF of all allies by 7%")').length + ')</span>')
           $('#tms28').show();
         }
         else if ($(this).is(':contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")')) {
           $tms29++;
-          $('#tms span span').remove();
-          $('#tms29').append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")').length + ')</span>')
+          $('#tms29')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")').length + ')</span>')
           $('#tms29').show();
         }
         else if ($(this).is(':contains("Increases DMG of normal attacks by 25%")')) {
           $tms30++;
-          $('#tms span span').remove();
-          $('#tms30').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of normal attacks by 25%")').length + ')</span>')
+          $('#tms30')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of normal attacks by 25%")').length + ')</span>')
           $('#tms30').show();
         }
         else if ($(this).is(':contains("Increases All Block by 150")')) {
           $tms31++;
-          $('#tms span span').remove();
-          $('#tms31').append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 150")').length + ')</span>')
+          $('#tms31')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 150")').length + ')</span>')
           $('#tms31').show();
         }
         else if ($(this).is(':contains("Increases own Shield by 25%")')) {
           $tms32++;
-          $('#tms span span').remove();
-          $('#tms32').append('<span> (x' + $('.tm-prop').find('p:contains("Increases own Shield by 25%")').length + ')</span>')
+          $('#tms32')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases own Shield by 25%")').length + ')</span>')
           $('#tms32').show();
         }
         else if ($(this).is(':contains("Heals HP equal to 1% of Max HP every sec")')) {
           $tms33++;
-          $('#tms span span').remove();
-          $('#tms33').append('<span> (x' + $('.tm-prop').find('p:contains("Heals HP equal to 1% of Max HP every sec")').length + ')</span>')
+          $('#tms33')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Heals HP equal to 1% of Max HP every sec")').length + ')</span>')
           $('#tms33').show();
         }
         else if ($(this).is(':contains("Recovers own Mana by 500 every 5 sec")')) {
           $tms34++;
-          $('#tms span span').remove();
-          $('#tms34').append('<span> (x' + $('.tm-prop').find('p:contains("Recovers own Mana by 500 every 5 sec")').length + ')</span>')
+          $('#tms34')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Recovers own Mana by 500 every 5 sec")').length + ')</span>')
           $('#tms34').show();
         }
         else if ($(this).is(':contains("Reduces All DEF by 25% and increases ATK by 50%")')) {
           $tms35++;
-          $('#tms span span').remove();
-          $('#tms35').append('<span> (x' + $('.tm-prop').find('p:contains("Reduces All DEF by 25% and increases ATK by 50%")').length + ')</span>')
+          $('#tms35')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces All DEF by 25% and increases ATK by 50%")').length + ')</span>')
           $('#tms35').show();
         }
         else if ($(this).is(':contains("Reduces ATK by 20% and increases All DEF by 50%")')) {
           $tms36++;
-          $('#tms span span').remove();
-          $('#tms36').append('<span> (x' + $('.tm-prop').find('p:contains("Reduces ATK by 20% and increases All DEF by 50%")').length + ')</span>')
+          $('#tms36')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces ATK by 20% and increases All DEF by 50%")').length + ')</span>')
           $('#tms36').show();
         }
         else if ($(this).is(':contains("inflicted upon self by 15%")')) {
           $tms37++;
-          $('#tms span span').remove();
-          $('#tms37').append('<span> (x' + $('.tm-prop').find('p:contains("inflicted upon self by 15%")').length + ')</span>')
+          $('#tms37')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("inflicted upon self by 15%")').length + ')</span>')
           $('#tms37').show();
         }
         else if ($(this).is(':contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")')) {
           $tms38++;
-          $('#tms span span').remove();
-          $('#tms38').append('<span> (x' + $('.tm-prop').find('p:contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")').length + ')</span>')
+          $('#tms38')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")').length + ')</span>')
           $('#tms38').show();
         }
         else if ($(this).is(':contains("Fixes ATK Spd to 1000 and increases ATK by 40%")')) {
           $tms39++;
-          $('#tms span span').remove();
-          $('#tms39').append('<span> (x' + $('.tm-prop').find('p:contains("Fixes ATK Spd to 1000 and increases ATK by 40%")').length + ')</span>')
+          $('#tms39')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Fixes ATK Spd to 1000 and increases ATK by 40%")').length + ')</span>')
           $('#tms39').show();
         }
         else if ($(this).is(':contains("Increases Crit DMG by 50%")')) {
           $tms40++;
-          $('#tms span span').remove();
-          $('#tms40').append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG by 50%")').length + ')</span>')
+          $('#tms40')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG by 50%")').length + ')</span>')
           $('#tms40').show();
         }
         else if ($(this).is(':contains("Increases ATK Spd by 250")')) {
           $tms41++;
-          $('#tms span span').remove();
-          $('#tms41').append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK Spd by 250")').length + ')</span>')
+          $('#tms41')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK Spd by 250")').length + ')</span>')
           $('#tms41').show();
         }
         else if ($(this).is(':contains("Increases DEF Penetration by 250")')) {
           $tms42++;
-          $('#tms span span').remove();
-          $('#tms42').append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF Penetration by 250")').length + ')</span>')
+          $('#tms42')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF Penetration by 250")').length + ')</span>')
           $('#tms42').show();
         }
         else if ($(this).is(':contains("Increases Max HP by 25%")')) {
           $tms43++;
-          $('#tms span span').remove();
-          $('#tms43').append('<span> (x' + $('.tm-prop').find('p:contains("Increases Max HP by 25%")').length + ')</span>')
+          $('#tms43')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Max HP by 25%")').length + ')</span>')
           $('#tms43').show();
         }
         else if ($(this).is(':contains("Increases All Block by 250")')) {
           $tms44++;
-          $('#tms span span').remove();
-          $('#tms44').append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 250")').length + ')</span>')
+          $('#tms44')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 250")').length + ')</span>')
           $('#tms44').show();
         }
         else if ($(this).is(':contains("Increases All DEF by 25%")')) {
           $tms45++;
-          $('#tms span span').remove();
-          $('#tms45').append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF by 25%")').length + ')</span>')
+          $('#tms45')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF by 25%")').length + ')</span>')
           $('#tms45').show();
         }
         else if ($(this).is(':contains("Increases Crit Chance by 250")')) {
           $tms46++;
-          $('#tms span span').remove();
-          $('#tms46').append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit Chance by 250")').length + ')</span>')
+          $('#tms46')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit Chance by 250")').length + ')</span>')
           $('#tms46').show();
         }
         else if ($(this).is(':contains("Increases ATK by 25%")')) {
           $tms47++;
-          $('#tms span span').remove();
-          $('#tms47').append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 25%")').length + ')</span>')
+          $('#tms47')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 25%")').length + ')</span>')
           $('#tms47').show();
         }
         else if ($(this).is(':contains("Soul Weapon Usage Limit +1")')) {
           $tms48++;
-          $('#tms span span').remove();
-          $('#tms48').append('<span> (x' + $('.tm-prop').find('p:contains("Soul Weapon Usage Limit +1")').length + ')</span>')
+          $('#tms48')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Soul Weapon Usage Limit +1")').length + ')</span>')
           $('#tms48').show();
         }
         else if ($(this).is(':contains("Level of [1st Skill] +7")')) {
           $tms49++;
-          $('#tms span span').remove();
-          $('#tms49').append('<span> (x' + $('.tm-prop').find('p:contains("Level of [1st Skill] +7")').length + ')</span>')
+          $('#tms49')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [1st Skill] +7")').length + ')</span>')
           $('#tms49').show();
         }
         else if ($(this).is(':contains("Level of [2nd Skill] +7")')) {
           $tms50++;
-          $('#tms span span').remove();
-          $('#tms50').append('<span> (x' + $('.tm-prop').find('p:contains("Level of [2nd Skill] +7")').length + ')</span>')
+          $('#tms50')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [2nd Skill] +7")').length + ')</span>')
           $('#tms50').show();
         }
         else if ($(this).is(':contains("Level of [3rd Skill] +7")')) {
           $tms51++;
-          $('#tms span span').remove();
-          $('#tms51').append('<span> (x' + $('.tm-prop').find('p:contains("Level of [3rd Skill] +7")').length + ')</span>')
+          $('#tms51')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [3rd Skill] +7")').length + ')</span>')
           $('#tms51').show();
         }
         else if ($(this).is(':contains("Level of [4th Skill] +7")')) {
           $tms52++;
-          $('#tms span span').remove();
-          $('#tms52').append('<span> (x' + $('.tm-prop').find('p:contains("Level of [4th Skill] +7")').length + ')</span>')
+          $('#tms52')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [4th Skill] +7")').length + ')</span>')
           $('#tms52').show();
         }
         else if ($(this).is(':contains("Level of [All Skill] +5")')) {
           $tms53++;
-          $('#tms span span').remove();
-          $('#tms53').append('<span> (x' + $('.tm-prop').find('p:contains("Level of [All Skill] +5")').length + ')</span>')
+          $('#tms53')
+            .find('span').remove().end()
+            .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [All Skill] +5")').length + ')</span>')
           $('#tms53').show();
         }
       });
