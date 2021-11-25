@@ -473,7 +473,7 @@
         $('#clip p').text('Copy');
       }, 1000);
     });
-    // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 32) + '.png)');
+    // $('#bg').parent().css('background-image', 'url(/images/media/background/bg' + Math.trunc(1 + Math.random() * 32) + '.webp)');
     $chars = $('#calc_char_id').html();
     $('#calc_role_id').change(function() {
       $('#calc_gear_weapon').parent().hide();
@@ -555,27 +555,31 @@
       $($stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.statData').show();
       $('#calc_gear_weapon')
-        .css('background-image', 'url(/images/media/gears/bg-weapon.png)')
+        .css('background-image', 'url(/images/media/gears/bg-weapon.webp)')
         .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-      $('#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.png)');
-      $('#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.png)');
+      $('#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.webp)');
+      $('#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.webp)');
       $('#calc_gear_treasure').css({
-        'background-image': 'url(/images/media/gears/bg-treasure.png)',
+        'background-image': 'url(/images/media/gears/bg-treasure.webp)',
         'width': '52px',
         'position': 'relative',
         'right': '0'
       });
-      $('#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.png)');
-      $('#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.png)');
+      $('#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.webp)');
+      $('#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.webp)');
       $('#calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb')
         .removeClass('g-fr g-fr-t')
         .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
+      $('#calc_gear_artifact')
+        .css('background-image', 'url(/images/media/gears/bg-art.webp)')
+        .parents().eq(1).find('.gArt').hide();
       $heroClass !== '' ? $('.t-total .r-stats').show() : $('.t-total .r-stats').hide();
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
       $('.img').removeClass('g-fr g-fr-u g-fr-t');
       $('#range-atk').text(0);
       $('#range-hp').text(0);
       $('.range').hide();
+      $('#w-d').hide();
 
       Stat = {
         S0: 'MAX HP',
@@ -847,7 +851,7 @@
       $('#range-atk').text(0);
       $('#range-hp').text(0);
       $('.range').hide();
-      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.png)').css({
+      $('select#calc_gear_treasure').css('background-image', 'url(/images/media/gears/bg-treasure.webp)').css({
         'width': '52px',
         'position': 'relative',
         'right': '0'
@@ -866,7 +870,7 @@
       $('#calc_st_weapon, #calc_st_weapon_st').prop('selectedIndex', 0);
       $('#calc_st_weapon_st').children().hide();
       if ($gearWeaponType == 'Class') {
-        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName.toLowerCase() + '.png)');
+        $('#calc_gear_weapon').css('background-image', 'url(/images/media/heroes/' + $heroClassName.toLowerCase() + '.webp)');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
           $('#greyATK').text($clKn);
@@ -892,7 +896,7 @@
         gearStat();
         $('#w-d').hide();
       } else if ($gearWeaponType == 'Unique') {
-        $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.png"); display: inline-block;');
+        $('#calc_gear_weapon').attr('style', 'background-image: url("/images/media/heroes/' + $heroName + '/uw.webp"); display: inline-block;');
         $('#wea').next('.rating').show();
         if ($heroClass == 1)
           $('#greyATK').text($unKn);
@@ -926,7 +930,7 @@
       } else if ($gearWeaponType == '- - - - - - - - - -') {
         $('.calc_gear_weapon').parent().find('.gOption').hide();
         $('#calc_gear_weapon')
-          .css('background-image', 'url(/images/media/gears/bg-weapon.png)')
+          .css('background-image', 'url(/images/media/gears/bg-weapon.webp)')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('#greyATK').text('');
         $('#wea').text('').next('.rating').hide();
@@ -1068,7 +1072,7 @@
         $('#tre').text('').next('.rating').hide();
         $('#calc_gear_treasure')
           .css({
-            'background-image': 'url(/images/media/gears/bg-treasure.png)',
+            'background-image': 'url(/images/media/gears/bg-treasure.webp)',
             'width': '52px',
             'position': 'relative',
             'right': '0'
@@ -1081,7 +1085,7 @@
         $('#greyTR').text($ms);
         $('#tre').next('.rating').show();
         $('#calc_gear_treasure')
-          .css('background-image', 'url(/images/media/gears/9-UT/Mana.png)').css({
+          .css('background-image', 'url(/images/media/gears/9-UT/Mana.webp)').css({
             'width': '52px',
             'background-size': '50px 50px',
             'position': 'relative',
@@ -1096,10 +1100,10 @@
         $('.scnd select').prop('selectedIndex', 0);
         gearStat();
       } else if ($gearTreasureType == 'Unique') {
-        $eTr1 = 'url("/images/media/heroes/' + $heroName + '/ut1.png")';
-        $eTr2 = 'url("/images/media/heroes/' + $heroName + '/ut2.png")';
-        $eTr3 = 'url("/images/media/heroes/' + $heroName + '/ut3.png")';
-        $eTr4 = 'url("/images/media/heroes/' + $heroName + '/ut4.png")';
+        $eTr1 = 'url("/images/media/heroes/' + $heroName + '/ut1.webp")';
+        $eTr2 = 'url("/images/media/heroes/' + $heroName + '/ut2.webp")';
+        $eTr3 = 'url("/images/media/heroes/' + $heroName + '/ut3.webp")';
+        $eTr4 = 'url("/images/media/heroes/' + $heroName + '/ut4.webp")';
         $eTr = $eTr1 + ',' + $eTr2 + ',' + $eTr3 + ',' + $eTr4;
         $('#greyTR').text($unTr);
         $('#tre').next('.rating').show();
@@ -1138,7 +1142,7 @@
         $('#arm').text('').next('.rating').hide();
         $('.calc_gear_armor').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_armor')
-          .css('background-image', 'url(/images/media/gears/bg-armor.png)')
+          .css('background-image', 'url(/images/media/gears/bg-armor.webp)')
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#ar label').filter('.active').removeClass('active');
@@ -1160,7 +1164,7 @@
         }
         $('#arm').next('.rating').show();
         $('#calc_gear_armor')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor')
@@ -1180,7 +1184,7 @@
         }
         $('#arm').next('.rating').show();
         $('#calc_gear_armor')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_armor')
@@ -1200,7 +1204,7 @@
         }
         $('#arm').next('.rating').show();
         $('#calc_gear_armor')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $armorSet + '.webp"); display: inline-block;')
           .removeClass('g-fr-t').addClass('g-fr')
           .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_armor')
@@ -1227,7 +1231,7 @@
         $('#sec').next('.rating').hide();
         $('.calc_gear_secondary').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_secondary')
-          .css('background-image', 'url(/images/media/gears/bg-secondary.png)')
+          .css('background-image', 'url(/images/media/gears/bg-secondary.webp)')
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#sg label').filter('.active').removeClass('active');
@@ -1249,7 +1253,7 @@
         }
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary')
@@ -1269,7 +1273,7 @@
         }
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_secondary')
@@ -1289,7 +1293,7 @@
         }
         $('#sec').next('.rating').show();
         $('#calc_gear_secondary')
-          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/' + $gType + '/' + $secondarySet + '.webp"); display: inline-block;')
           .addClass('g-fr').removeClass('g-fr-t')
           .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_secondary')
@@ -1321,7 +1325,7 @@
         $('#acc').next('.rating').hide();
         $('.calc_gear_jewelry').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_jewelry')
-          .css('background-image', 'url(/images/media/gears/bg-accessory.png)')
+          .css('background-image', 'url(/images/media/gears/bg-accessory.webp)')
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#ac label').filter('.active').removeClass('active');
@@ -1335,7 +1339,7 @@
           $('#greyJ').text($tm2R);
           $('#acc').next('.rating').show();
         $('#calc_gear_jewelry')
-          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry')
@@ -1351,7 +1355,7 @@
           $('#greyJ').text($tm2);
           $('#acc').next('.rating').show();
         $('#calc_gear_jewelry')
-          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry')
@@ -1369,7 +1373,7 @@
           $('#greyJ').text($jN);
           $('#acc').next('.rating').show();
         $('#calc_gear_jewelry')
-          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/7-J/' + $jewelType + '/' + $jewelSet + '.webp"); display: inline-block;')
           .addClass('g-fr').removeClass('g-fr-t')
           .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_jewelry')
@@ -1395,7 +1399,7 @@
         $('#orb').text('').next('.rating').hide();
         $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
         $('#calc_gear_orb')
-          .css('background-image', 'url(/images/media/gears/bg-orb.png)')
+          .css('background-image', 'url(/images/media/gears/bg-orb.webp)')
           .removeClass('g-fr g-fr-t')
           .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
         $('#or label').filter('.active').removeClass('active');
@@ -1405,7 +1409,7 @@
         $('#orb').next('.rating').show();
         $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
         $('#calc_gear_orb')
-          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb')
@@ -1416,7 +1420,7 @@
         $('#greyO').text($tm4);
         $('#orb').next('.rating').show();
         $('#calc_gear_orb')
-          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.webp"); display: inline-block;')
           .addClass('g-fr-t').removeClass('g-fr')
           .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
         $('.calc_gear_orb')
@@ -1427,7 +1431,7 @@
         $('#greyO').text($or);
         $('#orb').next('.rating').show();
         $('#calc_gear_orb')
-          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.png"); display: inline-block;')
+          .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.webp"); display: inline-block;')
           .addClass('g-fr').removeClass('g-fr-t')
           .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
         $('.calc_gear_orb')
@@ -1445,11 +1449,11 @@
         $('#art').text('').next('.rating').hide();
         $('#art label').filter('.active').removeClass('active');
         $('#calc_gear_artifact')
-          .css('background-image', 'url(/images/media/gears/bg-art.png)')
+          .css('background-image', 'url(/images/media/gears/bg-art.webp)')
           .removeClass('g-fr-u');
         $('.gArt').hide();
       } else {
-        $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $($artSet).val() + '.png"); display: inline-block;').addClass('g-fr-u');
+        $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $($artSet).val() + '.webp"); display: inline-block;').addClass('g-fr-u');
         $('.gArt').show();
       }
     };
@@ -3216,17 +3220,17 @@
     };
     function hideGearImage() {
       $trCss = {
-        'background-image': 'url(/images/media/gears/bg-treasure.png)',
+        'background-image': 'url(/images/media/gears/bg-treasure.webp)',
         'width': '52px'
       }
       return [
-        $('select#calc_gear_weapon').css('background-image', 'url(/images/media/gears/bg-weapon.png)'),
+        $('select#calc_gear_weapon').css('background-image', 'url(/images/media/gears/bg-weapon.webp)'),
         $('select#calc_gear_treasure').css($trCss),
-        $('select#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.png)'),
-        $('select#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.png)'),
-        $('select#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.png)'),
-        $('select#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.png)'),
-        $('select#calc_gear_artifact').css('background-image', 'url(/images/media/gears/bg-art.png)')
+        $('select#calc_gear_armor').css('background-image', 'url(/images/media/gears/bg-armor.webp)'),
+        $('select#calc_gear_secondary').css('background-image', 'url(/images/media/gears/bg-secondary.webp)'),
+        $('select#calc_gear_jewelry').css('background-image', 'url(/images/media/gears/bg-accessory.webp)'),
+        $('select#calc_gear_orb').css('background-image', 'url(/images/media/gears/bg-orb.webp)'),
+        $('select#calc_gear_artifact').css('background-image', 'url(/images/media/gears/bg-art.webp)')
       ]
     };
     function statOption() {
@@ -3528,8 +3532,6 @@
         'text-decoration': 'line-through'
       });
     };
-    // $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_jewelry ,select#calc_gear_orb').change(function() {
-    // });
     $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
       option();
       gearStat();

@@ -4,6 +4,7 @@ import { Turbo } from "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
+import "src/stylesheets/application"
 
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
