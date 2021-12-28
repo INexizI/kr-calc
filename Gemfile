@@ -3,13 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.2'
 
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.2'
 gem 'pg'
 gem 'puma'
 gem 'bootsnap', require: false
-gem 'sass-rails'
+gem 'sass-rails', '>= 6.0.0'
 
-gem 'webpacker'
+gem 'webpacker', '>= 5.4.3'
 gem 'jbuilder'
 gem 'json'
 gem 'redis'
@@ -17,11 +17,11 @@ gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
 gem 'sidekiq'
 gem 'hotwire-rails', '>= 0.1.3'
-gem 'meta-tags'
+gem 'meta-tags', '>= 2.16.0'
 
 gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'slim-rails'
-gem 'simple_form'
+gem 'slim-rails', '>= 3.3.0'
+gem 'simple_form', '>= 5.1.0'
 gem 'friendly_id'
 # gem 'mini_magick'
 # gem 'carrierwave'
@@ -41,7 +41,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console'
+  gem 'web-console', '>= 4.2.0'
   gem 'listen'
   gem 'spring'
   gem 'spring-watcher-listen'
