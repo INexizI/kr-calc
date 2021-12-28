@@ -20,7 +20,7 @@
     "stimulus": "^3.0.1",
     "turbolinks": "^5.2.0",
     "webpacker-pwa": "^0.1.2",
-    "ws": "^8.2.3"
+    "ws": "^8.3.0"
   },
   "version": "0.1.0",
   "devDependencies": {
