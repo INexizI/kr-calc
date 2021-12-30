@@ -14,7 +14,7 @@
     "jquery-ui": "^1.13.0",
     "normalize-url": "^7.0.2",
     "nth-check": "^2.0.1",
-    "postcss": "^8.4.0",
+    "postcss": "^8.4.4",
     "rails-ujs": "^5.2.6",
     "set-value": "^4.1.0",
     "stimulus": "^3.0.1",
