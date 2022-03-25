@@ -105,7 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_06_29_135018) do
     t.bigint "char_id"
     t.integer "cooldown"
     t.string "skill_number"
-    t.integer "parent_id"
+    t.string "parent_id"
     t.index ["char_id"], name: "index_skills_on_char_id"
   end
 

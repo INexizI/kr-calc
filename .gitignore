@@ -41,3 +41,6 @@ dump*
 # service-worker
 /public/service-worker.js*
 /public/vendors~actioncable*
+
+/docker
+Dockerfile

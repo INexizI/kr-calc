@@ -11,14 +11,11 @@
       $(this).parent().find('label').removeClass('active');
       $(this).addClass('active');
     });
-    function weapon_description() {
+    $('#w-d').on('mousedown', function() {
       $char_id = $('#calc_char_id').children('option:selected').val();
       $('.calc_gear_weapon')
         .next('.g-desc').show()
         .find('#ch-' + $char_id).show();
-    };
-    $('#w-d').on('mousedown', function() {
-      weapon_description();
     }).on('mouseup mouseleave', function() {
       $('.g-desc, .g-desc p').hide();
     });

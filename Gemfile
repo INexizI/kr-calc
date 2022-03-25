@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.1'
 
 gem 'rails', '~> 7.0.0'
 gem 'pg'
@@ -19,6 +19,7 @@ gem 'sidekiq', '>= 6.4.0'
 gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags', '>= 2.16.0'
 
+# gem 'ransack'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'slim-rails', '>= 3.3.0'
 gem 'simple_form', '>= 5.1.0'

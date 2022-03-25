@@ -3125,16 +3125,16 @@
     $('.heroPerk .c-sub .c-perk img').click(function() {
       $perkId = $(this).attr('id');
       $perkCl = $(this);
-      if ($perkCl.length == null) {
-        if ($perkId.slice(2) == 'd')
-          $(this).toggleClass('pick').parent().prev('.c-perk-img').find('img').removeClass('pick');
-        else if ($perkId.slice(2) == 'l')
-          $(this).toggleClass('pick').parent().next('.c-perk-img').find('img').removeClass('pick');
-        else
-          $(this).toggleClass('pick');
-      } else
+      // if ($perkCl.length == null) {
+      if ($perkId.slice(2) == 'd')
+        $(this).toggleClass('pick').parent().prev('.c-perk-img').find('img').removeClass('pick');
+      else if ($perkId.slice(2) == 'l')
+        $(this).toggleClass('pick').parent().next('.c-perk-img').find('img').removeClass('pick');
+      else
         $(this).toggleClass('pick');
-
+      // } else
+      //   $(this).toggleClass('pick');
+      
       perkTP();
       $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
       if ($tp == 0)
