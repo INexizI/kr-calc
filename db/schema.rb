@@ -89,7 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2021_06_29_135018) do
 
   create_table "runes", force: :cascade do |t|
     t.string "name"
-    t.string "value", default: [], array: true
+    t.string "value"
     t.string "type_gear"
     t.string "tier"
     t.datetime "created_at", null: false
