@@ -43,4 +43,4 @@ dump*
 /public/vendors~actioncable*
 
 /docker
-Dockerfile
+docker-compose.yml
