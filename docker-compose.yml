@@ -1,0 +1,73 @@
+version: '3.9'
+
+networks:
+  development:
+  # test:
+
+volumes:
+  redis:
+  db_data:
+  gem_cache:
+  shared_data:
+
+services:
+  db:
+    image: postgres:14.2
+    container_name: postgres
+    networks:
+      - development
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    ports:
+      - 54320:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - shared_data:/var/shared
+  redis:
+    image: redis:7.0-rc
+    container_name: redis
+    command: redis-server
+    environment:
+      REDIS_URL: "${REDIS_URL}"
+      REDIS_PORT: "${REDIS_PORT}"
+      REDIS_DB: "${REDIS_DB}"
+    volumes:
+      - redis:/data
+  sidekiq:
+    depends_on:
+      - db
+      - redis
+    build: .
+    command: bundle exec sidekiq
+    entrypoint: []
+    environment:
+      REDIS_URL: "${REDIS_URL_SIDEKIQ}"
+    env_file:
+      - .env
+    volumes:
+      - .:/var/app
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calc
+    volumes:
+      - .:/var/app
+      - shared_data:/var/shared
+      - gem_cache:/usr/local/bundle/gem
+      - redis:/data
+    networks:
+      development:
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_HOST: "${DATABASE_HOST}"
+      DATABASE_PORT: "${DATABASE_PORT}"
+      DATABASE_USERNAME: "${DATABASE_USERNAME}"
+      DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+      REDIS_URL: "${REDIS_URL_SIDEKIQ}"
+    depends_on:
+      - db
+      - redis
