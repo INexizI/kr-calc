@@ -25,8 +25,8 @@ WORKDIR $APP_HOME
 ENV RAILS_ENV=development \
   RACK_ENV=development
 
-# Проброс порта 8000
-EXPOSE 8000
+# Проброс порта 3000
+EXPOSE 3000
 
 # Запуск по умолчанию сервера puma
 CMD ["rails", "server", "-b", "0.0.0.0"]

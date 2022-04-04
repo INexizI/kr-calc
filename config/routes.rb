@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
   resources :calcs, only: :index
   resources :links
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
