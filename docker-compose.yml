@@ -40,6 +40,7 @@ services:
       - db
       - redis
     build: .
+    container_name: sidekiq
     command: bundle exec sidekiq
     entrypoint: []
     environment:
