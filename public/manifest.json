@@ -3,9 +3,9 @@
   "name": "Progressive Web App",
   "icons": [
     {
-      "src": "/images/media/manaOrb.png",
-      "sizes": "22x25",
-      "type": "image/png"
+      "src": "/images/media/manaOrb.webp",
+      "sizes": "25x25",
+      "type": "any"
     }
   ],
   "start_url": "/",
