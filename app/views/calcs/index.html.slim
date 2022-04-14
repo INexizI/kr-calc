@@ -61,7 +61,7 @@ title Calculator
                   .r-sl
                     p#range-atk
                     p#range-hp
-            .gOption#g-left
+            / .gOption#g-left
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeW.webp" title='Runes for Weapons' alt='Runes for Weapons'
@@ -123,7 +123,7 @@ title Calculator
                 .input.select.optional.calc_ench_ar
                   = f.collection_select :ench_ar, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
-              .opt#rune
+              / .opt#rune
                 p#rune-a
                   img src="/images/media/icons/runeA.webp" title='Runes for Armor' alt='Runes for Armor'
                 div#rune-he
@@ -161,7 +161,7 @@ title Calculator
                   .input.select.optional.calc_ench_ar_tm_3
                     = f.collection_select :ench_ar_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_ar_tm'}
                   = f.input :ench_ar_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_ar_tm_st'}
-              .opt#rune
+              / .opt#rune
                 p#rune-a
                   img src="/images/media/icons/runeA.webp" title='Runes for Armor' alt='Runes for Armor'
                 div#rune-he
@@ -209,7 +209,7 @@ title Calculator
                 .input.select.optional.calc_ench_sg
                   = f.collection_select :ench_sg, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
-              .opt#rune
+              / .opt#rune
                 p#rune-s
                   img src="/images/media/icons/runeS.webp" title='Runes for Secondary Gear' alt='Runes for Gear'
                 div#rune-he
@@ -247,7 +247,7 @@ title Calculator
                   .input.select.optional.calc_ench_sg_tm_3
                     = f.collection_select :ench_sg_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_sg_tm'}
                   = f.input :ench_sg_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_sg_tm_st'}
-              .opt#rune
+              / .opt#rune
                 p#rune-s
                   img src="/images/media/icons/runeS.webp" title='Runes for Secondary Gear' alt='Runes for Secondary Gear'
                 div#rune-he

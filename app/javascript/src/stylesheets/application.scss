@@ -144,11 +144,13 @@ select {
   p {padding: 3px;}
 }
 .calc-art-description {
-  width: 310px !important;
+  // width: 310px !important;
+  width: 277px !important;
   border: 1px solid;
   border-radius: 10px;
   background: #d2d2d2;
-  margin: -45% 100px !important;
+  // margin: -45% 100px !important;
+  margin: -45% 120px !important;
   font-size: 0.9em;
   p {padding: 3px 5px;}
 }
@@ -229,7 +231,8 @@ select {
       background: rgba(0, 0, 0, 0.4);
     }
   }
-  #calc {margin: 5px 75px 0px 75px;}
+  // #calc {margin: 5px 75px 0px 75px;}
+  #calc {margin: 5px 5% 0px 5%;}
   .from-calc {
     width: 600px;
 
@@ -376,8 +379,10 @@ select {
       }
       .gArt {display: none;}
       #g-left {
-        right: 230px;
-        bottom: 135px;
+        // right: 230px;
+        // bottom: 135px;
+        right: 200px;
+        bottom: 120px;
         .ay-r {
           text-align-last: center;
           position: relative;
@@ -390,8 +395,10 @@ select {
         bottom: 135px;
       }
       #g-weapon {
-        right: 265.5px;
-        bottom: 230px;
+        // right: 265.5px;
+        // bottom: 230px;
+        right: 240px;
+        bottom: 110px;
         width: 0px;
         height: 0px;
       }
@@ -530,14 +537,17 @@ select {
         display: none;
 
         .heroImg {
-          margin: auto;
-          height: 124px;
+          // margin: auto;
+          // height: 124px;
+          margin: 5px auto;
+          width: 400px;
 
           div {
             display: grid;
             grid-template: "item1 item2";
             background-image: url(/images/media/classes/stat.webp);
-            background-size: 450px 25px;
+            // background-size: 450px 25px;
+            background-size: 400px 25px;
             font-size: 15px;
             line-height: 25px;
             color: rgb(171, 142, 116);
@@ -551,12 +561,14 @@ select {
             }
           }
           #p1 {
-            width: 150px;
+            // width: 150px;
+            width: 130px;
             padding-left: 15px;
             text-align: left;
           }
           #p2 {
-            width: 265px;
+            // width: 265px;
+            width: 240px;
             padding: 0 10px;
             text-align: left;
           }
@@ -564,15 +576,19 @@ select {
         .heroImg::before {
           content: '';
           background: url('/images/media/classes/basic_head.webp');
-          background-size: 450px;
-          height: 35px;
+          // background-size: 450px;
+          // height: 35px;
+          background-size: 400px;
+          height: 30px;
           display: block;
         }
         .heroImg::after {
           content: '';
           background: url('/images/media/classes/stat_foot.webp');
-          background-size: 450px;
-          height: 13px;
+          // background-size: 450px;
+          // height: 13px;
+          background-size: 400px;
+          height: 12px;
           display: block;
         }
         .heroPerk {
@@ -637,9 +653,12 @@ select {
     .t-st {display: none;}
     .t-total {
       .r-stats {
+        width: 400px;
+        margin: auto;
         .r-stat {
           background-image: url('/images/media/classes/stat.webp');
-          background-size: 450px 25px;
+          // background-size: 450px 25px;
+          background-size: 400px 25px;
           font-size: 15px;
           line-height: 25px;
           color: rgb(171, 142, 116);
@@ -649,12 +668,14 @@ select {
             margin: 0;
           }
           #s-name {
-            width: 150px;
+            // width: 150px;
+            width: 130px;
             padding-left: 15px;
             text-align: left;
           }
           #s-val {
-            width: 265px;
+            // width: 265px;
+            width: 240px;
             padding: 0 10px;
             text-align: left;
           }
@@ -674,19 +695,22 @@ select {
           height: auto !important;
           grid-template: "item1 item2";
           background-image: url('/images/media/classes/stat.webp');
-          background-size: 450px 25px;
+          // background-size: 450px 25px;
+          background-size: 400px 25px;
           font-size: 15px;
           line-height: 25px;
           color: #8e8073;
           text-align: left;
 
           #s-name {
-            width: 150px;
+            // width: 150px;
+            width: 130px;
             padding-left: 15px;
           }
           #sb, #tms {
             display: grid;
-            width: 265px;
+            // width: 265px;
+            width: 240px;
             height: auto;
             padding: 0 10px;
           }
@@ -697,8 +721,10 @@ select {
       }
       .statsBase::before, .statsAdd::before {
         content: '';
-        background-size: 450px !important;
-        height: 35px;
+        // background-size: 450px !important;
+        // height: 35px;
+        background-size: 400px !important;
+        height: 30px;
         display: block;
       }
       .statSet::before,
@@ -708,8 +734,10 @@ select {
       .statSet::after,
       .statTMS::after {
         content: '';
-        background-size: 450px !important;
-        height: 13px;
+        // background-size: 450px !important;
+        // height: 13px;
+        background-size: 400px !important;
+        height: 12px;
         display: block;
       }
       .statsBase::before {background: url('/images/media/classes/base_head.webp');}
@@ -844,8 +872,8 @@ select {
     position: relative;
     left: -50%;
     padding: 10px;
-    border-radius: 5px;
     color: rgb(215, 0, 10);
     background-color: rgb(255, 210, 210);
+    border-radius: 5px;
   }
 }
