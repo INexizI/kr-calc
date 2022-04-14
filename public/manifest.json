@@ -1,16 +1,35 @@
 {
-  "short_name": "PWA",
-  "name": "Progressive Web App",
+  "short_name": "KRC",
+  "name": "KR Calculator",
   "icons": [
     {
-      "src": "/images/media/manaOrb.webp",
+      "src": "/images/manaOrbS.webp",
       "sizes": "25x25",
-      "type": "any"
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/manaOrbM.webp",
+      "sizes": "144x144",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/manaOrbL.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/manaOrb.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "start_url": "/",
-  "background_color": "#3367D6",
+  "background_color": "#121212",
   "display": "standalone",
   "scope": "/",
-  "theme_color": "#3367D6"
+  "theme_color": "#121212"
 }
