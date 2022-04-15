@@ -383,12 +383,6 @@ select {
         // bottom: 135px;
         right: 200px;
         bottom: 120px;
-        .ay-r {
-          text-align-last: center;
-          position: relative;
-          min-width: 65px;
-          left: 85px;
-        }
       }
       #g-right {
         left: 155px;
@@ -423,21 +417,33 @@ select {
         content: "\2605";
         position: absolute;
       }
-      #rune {
-        position: relative;
-        right: 5px;
-        p {
-          height: 0px;
+      #g-rune {
+        bottom: 6px;
+        right: 240px;
+        display: block !important;
+
+        #rune {
           position: relative;
-          top: 4px;
-          right: 75px;
-          img {
-            width: 20px;
-            height: 19px;
+          right: 5px;
+          p {
+            height: 0px;
+            position: relative;
+            top: 4px;
+            right: 75px;
+            img {
+              width: 20px;
+              height: 19px;
+            }
+          }
+          #rune-wi {width: 0;}
+          #rune-he {height: 0;}
+          .ay-r {
+            text-align-last: center;
+            position: relative;
+            min-width: 65px;
+            left: 85px;
           }
         }
-        #rune-wi {width: 0;}
-        #rune-he {height: 0;}
       }
     }
     ::-webkit-scrollbar {display: none;}

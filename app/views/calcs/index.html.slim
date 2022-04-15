@@ -15,6 +15,42 @@ title Calculator
         div
         div
           .form-input#empty-block
+            .gOption#g-rune
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeA.webp" title='Runes Laz' alt='Runes Laz'
+                div#rune-he
+                  = f.select :rune_w_1, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                div#rune-wi
+                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeA.webp" title='Runes Doh' alt='Runes Doh'
+                div#rune-he
+                  = f.select :rune_w_2, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                div#rune-wi
+                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+              .opt#rune
+                p#rune-w
+                  img src="/images/media/icons/runeA.webp" title='Runes Geb' alt='Runes Geb'
+                div#rune-he
+                  = f.select :rune_w_3, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                div#rune-wi
+                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+              .opt#rune
+                p#rune-s
+                  img src="/images/media/icons/runeA.webp" title='Runes Ans' alt='Runes Ans'
+                div#rune-he
+                  = f.select :rune_s, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['secondary', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_s'}
+                div#rune-wi
+                  = f.select :st_rune_s, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_s'}
+              .opt#rune
+                p#rune-a
+                  img src="/images/media/icons/runeA.webp" title='Runes Oth' alt='Runes Oth'
+                div#rune-he
+                  = f.select :rune_a, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['armor', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_a'}
+                div#rune-wi
+                  = f.select :st_rune_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_a'}
           .form-input#weapon
             = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in img'}
             .g-desc
@@ -61,28 +97,6 @@ title Calculator
                   .r-sl
                     p#range-atk
                     p#range-hp
-            / .gOption#g-left
-              .opt#rune
-                p#rune-w
-                  img src="/images/media/icons/runeW.webp" title='Runes for Weapons' alt='Runes for Weapons'
-                div#rune-he
-                  = f.select :rune_w_1, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
-                div#rune-wi
-                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
-              .opt#rune
-                p#rune-w
-                  img src="/images/media/icons/runeW.webp" title='Runes for Weapons' alt='Runes for Weapons'
-                div#rune-he
-                  = f.select :rune_w_2, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
-                div#rune-wi
-                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
-              .opt#rune
-                p#rune-w
-                  img src="/images/media/icons/runeW.webp" title='Runes for Weapons' alt='Runes for Weapons'
-                div#rune-he
-                  = f.select :rune_w_3, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
-                div#rune-wi
-                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
           .form-input#armor
             = f.input :gear_armor, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
@@ -123,13 +137,6 @@ title Calculator
                 .input.select.optional.calc_ench_ar
                   = f.collection_select :ench_ar, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_ar_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
-              / .opt#rune
-                p#rune-a
-                  img src="/images/media/icons/runeA.webp" title='Runes for Armor' alt='Runes for Armor'
-                div#rune-he
-                  = f.select :rune_a, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['armor', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_a'}
-                div#rune-wi
-                  = f.select :st_rune_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_a'}
             .gTM#g-left
               .opt
                 .input.select.optional.calc_armor_tm_1
@@ -161,13 +168,6 @@ title Calculator
                   .input.select.optional.calc_ench_ar_tm_3
                     = f.collection_select :ench_ar_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_ar_tm'}
                   = f.input :ench_ar_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_ar_tm_st'}
-              / .opt#rune
-                p#rune-a
-                  img src="/images/media/icons/runeA.webp" title='Runes for Armor' alt='Runes for Armor'
-                div#rune-he
-                  = f.select :rune_tm_a, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['armor', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_a'}
-                div#rune-wi
-                  = f.select :st_rune_tm_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_a'}
 
           .form-input#secondary
             = f.input :gear_secondary, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
@@ -209,13 +209,6 @@ title Calculator
                 .input.select.optional.calc_ench_sg
                   = f.collection_select :ench_sg, @stats.where(stat_type: 'scroll'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n'}
                 = f.input :ench_sg_st, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v'}
-              / .opt#rune
-                p#rune-s
-                  img src="/images/media/icons/runeS.webp" title='Runes for Secondary Gear' alt='Runes for Gear'
-                div#rune-he
-                  = f.select :rune_s, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['secondary', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_s'}
-                div#rune-wi
-                  = f.select :st_rune_s, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_s'}
             .gTM#g-left
               .opt
                 .input.select.optional.calc_secondary_tm_1
@@ -247,13 +240,6 @@ title Calculator
                   .input.select.optional.calc_ench_sg_tm_3
                     = f.collection_select :ench_sg_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_sg_tm'}
                   = f.input :ench_sg_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_sg_tm_st'}
-              / .opt#rune
-                p#rune-s
-                  img src="/images/media/icons/runeS.webp" title='Runes for Secondary Gear' alt='Runes for Secondary Gear'
-                div#rune-he
-                  = f.select :rune_tm_s, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['secondary', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_s'}
-                div#rune-wi
-                  = f.select :st_rune_tm_s, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['secondary', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_s'}
 
         div
           .form-input#treasure

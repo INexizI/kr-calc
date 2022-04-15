@@ -19,12 +19,6 @@
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any"
-    },
-    {
-      "src": "/images/manaOrb.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
     }
   ],
   "start_url": "/",
