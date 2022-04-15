@@ -1,6 +1,7 @@
 (function() {
   $(document).on("turbolinks:load", function() {
     $('#btn-load').click(function(e) {
+      const CryptoJS = require("crypto-js");
       e.preventDefault();
       var shr = $('#share_link').val().toString();
       if (shr.slice(0, 46) == "https://krsharelink.herokuapp.com/api/v1/links") {  /* --- KRCalc API ---  */
@@ -441,8 +442,7 @@
       $('.perk-tp').find('p').text(0).css('color', 'black');
       $('.t-st p').empty();
       $('.gOption, .gTM').hide();
-      $('.ay, .ay-tm, .ench-v').find('option').not('.q').hide();
-      $('select#calc_st_rune_w, select#calc_st_rune_a, select#calc_st_rune_s').find('option').not('.q').hide();
+      $('.ay, .ay-tm, .ay-r, .ench-v').find('option').not('.q').hide();
       $('.opt').find('#q-velk').children().hide();
       $role = $('#calc_role_id :selected').text();
       $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
@@ -1414,7 +1414,7 @@
     $('select#calc_st_weapon_st').change(function() {
       change_sw_eth();
     }).change();
-    $('select#calc_rune_w').change(function() {
+    $('select.calc_rune_w').change(function() {
       $statName = $(this);
       $statVal = $(this).val();
       $rc = $(this).parents().eq(1).find('.ay-r');
@@ -3134,7 +3134,7 @@
         $(this).toggleClass('pick');
       // } else
       //   $(this).toggleClass('pick');
-      
+
       perkTP();
       $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
       if ($tp == 0)

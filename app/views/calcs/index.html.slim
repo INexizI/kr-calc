@@ -20,23 +20,23 @@ title Calculator
                 p#rune-w
                   img src="/images/media/icons/runeA.webp" title='Runes Laz' alt='Runes Laz'
                 div#rune-he
-                  = f.select :rune_w_1, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                  = f.select :rune_w_1, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_1, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeA.webp" title='Runes Doh' alt='Runes Doh'
                 div#rune-he
-                  = f.select :rune_w_2, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                  = f.select :rune_w_2, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_2, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r'}
               .opt#rune
                 p#rune-w
                   img src="/images/media/icons/runeA.webp" title='Runes Geb' alt='Runes Geb'
                 div#rune-he
-                  = f.select :rune_w_3, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r', id: 'calc_rune_w'}
+                  = f.select :rune_w_3, [['- - - - - - - - - -', '- - - - - - - - - -']] + @runes.where(type_gear: ['weapon', 'all'], tier: ['Common', 'Velkazar']).collect {|r| [r.name, r.name, {class: r.type_gear}] }, {include_blank: false}, {class: 'ax-r calc_rune_w'}
                 div#rune-wi
-                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_w'}
+                  = f.select :st_rune_w_3, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['weapon', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r'}
               .opt#rune
                 p#rune-s
                   img src="/images/media/icons/runeA.webp" title='Runes Ans' alt='Runes Ans'
@@ -458,7 +458,7 @@ title Calculator
         = f.button :button, 'Generate Link', class: 'btn-gen', id: 'genLink', data: { controller: 'calc', action: 'click->calc#generate' }
         div
           = f.button :button, 'Copy', id:'clip', data: { controller: 'calc', action: 'click->calc#copy' } do
-            img src='/images/clipboard.svg'
+            img src='/images/clipboard.svg' alt='Copy'
             span Copy
         textarea#this-link readonly=''
 
