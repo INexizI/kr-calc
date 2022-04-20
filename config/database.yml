@@ -19,4 +19,11 @@ production:
   timeout: 5000
 
 test:
-  <<: *defaults
+  adapter: postgresql
+  encoding: utf8
+  database: <%= Rails.application.secrets.TEST_DATABASE %>
+  username: <%= Rails.application.secrets.TEST_USERNAME %>
+  password: <%= Rails.application.secrets.TEST_PASSWORD %>
+  host: <%= Rails.application.secrets.TEST_HOST %>
+  pool: 5
+  timeout: 5000

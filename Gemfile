@@ -34,24 +34,26 @@ gem 'uglifier'
 
 gem 'turbo-rails', '~> 0.8.3'
 
-gem 'nokogiri', '>= 1.13.4'
+gem 'nokogiri', '~> 1.13', '>= 1.13.4'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman'
+  gem 'rspec-rails', '~> 6.0.0.rc1'
 end
 
 group :development do
   gem 'web-console', '>= 4.2.0'
   gem 'listen'
-  gem 'spring'
-  gem 'spring-watcher-listen'
+  # gem 'spring'
+  # gem 'spring-watcher-listen'
 end
 
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'shoulda-matchers'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
