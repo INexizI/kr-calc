@@ -6,7 +6,7 @@ class Char < ApplicationRecord
   has_many :gears
 
   validates :name, length: { minimum: 3 }, presence: true
-  validates :description, length: { maximum: 2000 }, presence: true
+  validates :description, length: { maximum: 3000 }, presence: true
   validates :type_dmg, presence: true
   validates :position, presence: true
 

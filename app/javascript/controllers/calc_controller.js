@@ -54,6 +54,7 @@ export default class extends Controller {
         }
       });
       function encData(lk_sl) {
+        const CryptoJS = require("crypto-js");
         var Key = CryptoJS.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
         var IV = CryptoJS.enc.Utf8.parse("br2fg9b3e7fb12q");
         var enT = CryptoJS.AES.encrypt(JSON.stringify(lk_sl), Key, {

@@ -3,6 +3,11 @@ class Stat < ApplicationRecord
   # belongs_to :gear, optional: true
   has_many :gears
 
+  validate :name
+  validate :value
+  validates :stat_type, presence: true
+  validate :notice
+
   def star_0
     self.value
   end

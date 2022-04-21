@@ -1,6 +1,6 @@
 class Link < ApplicationRecord
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: %i[slugged finders]
 
   validates :text, presence: true
   validates :title, presence: true
