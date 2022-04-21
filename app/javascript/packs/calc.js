@@ -24,7 +24,8 @@
               $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
               if (x == 'calc[role_id]') {
                 $role = $('#calc_role_id :selected').text();
-                $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                // $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                $escaped_role = escaped_role($role);
                 $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
                 if ($options) {
                   $('#calc_char_id').html($options);
@@ -230,7 +231,8 @@
               $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
               if (x == 'calc[role_id]') {
                 $role = $('#calc_role_id :selected').text();
-                $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                // $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                $escaped_role = escaped_role($role);
                 $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
                 if ($options) {
                   $('#calc_char_id').html($options);
@@ -445,7 +447,8 @@
       $('.ay, .ay-tm, .ay-r, .ench-v').find('option').not('.q').hide();
       $('.opt').find('#q-velk').children().hide();
       $role = $('#calc_role_id :selected').text();
-      $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      // $escaped_role = $role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+      $escaped_role = escaped_role($role);
       $options = $($chars).filter("optgroup[label='" + $escaped_role + "']").html();
       if ($options) {
         $('#calc_char_id').html($options);
@@ -3465,5 +3468,7 @@
       gearStat();
       gearSet();
     });
+
+    function escaped_role(s) { s.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1') };
   });
 }).call(this);
