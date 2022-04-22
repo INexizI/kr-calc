@@ -9,7 +9,7 @@
     "@rails/ujs": "^6.1.5",
     "@rails/webpacker": "^5.4.3",
     "ansi-regex": "^6.0.1",
-    "async": "3.2.2",
+    "async": "3.2.3",
     "crypto-js": "^4.1.1",
     "glob-parent": "^6.0.2",
     "jquery": "^3.6.0",
