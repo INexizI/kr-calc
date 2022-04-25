@@ -3423,7 +3423,7 @@
       $('.t-total .r-stats').find('#s-val').each(function() {
         $zeroStat = $(this);
         $softcap = $($zeroStat).prev().text();
-        $zeroStat.text() === '0' || $zeroStat.text() === '0%' ? $(this).parent().css('height', 0).children().hide() : $(this).parent().css('height', '25px').children().show();
+        $zeroStat.text() === '0' || $zeroStat.text() === '0%' ? $(this).parent().hide().children().hide() : $(this).parent().show().children().show();
         $(this).find('#plsSt1').text() === '' ? $softn = $zeroStat.text() : $softn = $(this).find('#plsSt1').text();
         if (($softcap == 'Crit') || ($softcap == 'ACC'))
           $softn > 1500 ? $(this).next('#s-per').text((1500 + ($softn - 1500)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');

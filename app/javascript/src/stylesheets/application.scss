@@ -199,13 +199,23 @@ select {
 
 .r-stats {
   .r-stat {
-    display: grid;
-    grid-template: "item1 item2 item3";
-    text-align: center;
+    // display: grid;
+    display: flex;
+    // grid-template: "item1 item2 item3";
+    // text-align: center;
+    gap: 1rem;
 
-    p {
-      width: 150px;
-      margin: 5px;
+    // p {
+    //   width: 150px;
+    //   margin: 5px;
+    // }
+  }
+  .statsAdd {
+    .r-stat:after {
+      content: "";
+      height: 15px;
+      margin: auto 0;
+      border: 0.5px solid #d3d3d3;
     }
   }
 }
@@ -665,36 +675,21 @@ select {
           background-image: url('/images/media/classes/stat.webp');
           // background-size: 450px 25px;
           background-size: 400px 25px;
-          font-size: 15px;
-          line-height: 25px;
           color: rgb(171, 142, 116);
+          line-height: 25px;
+          font-size: 15px;
+          text-align: left;
+          padding-left: 15px;
 
-          p {
-            height: 25px;
-            margin: 0;
-          }
-          #s-name {
-            // width: 150px;
-            width: 130px;
-            padding-left: 15px;
-            text-align: left;
-          }
-          #s-val {
-            // width: 265px;
-            width: 240px;
-            padding: 0 10px;
-            text-align: left;
-          }
+          #s-name {width: 130px;}
+          #s-val {width: 155px;}
           #s-per {
             width: 50px;
-            margin-left: -60px;
+            margin-left: auto;
+            order: 1;
           }
-          #plsSt1 {
-            color: rgb(50, 170, 180);
-          }
-          #plsSt2 {
-            color: rgb(0, 200, 50);
-          }
+          #plsSt1 {color: rgb(50, 170, 180);}
+          #plsSt2 {color: rgb(0, 200, 50);}
         }
         .r-set, .r-tms {
           display: grid;
