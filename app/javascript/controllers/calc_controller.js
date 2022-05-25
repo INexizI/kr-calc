@@ -13,10 +13,7 @@ export default class extends Controller {
     })
 
     if (check != 0) {
-      $('#genLink').attr('disabled','disabled').css({
-        'background': 'rgba(0, 0, 0, 0.2)',
-        'text-decoration': 'line-through'
-      });
+      $('.share-main, .btn-gen').remove();
 
       var jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
       var lk = $('.calc form');
@@ -99,6 +96,7 @@ export default class extends Controller {
     else if ($('#this-link').text() == '')
       var msg = 'Generate Link!'
     else {
+      var msg = 'Copied!';
       var tmp = $('<input>');
       $('body').append(tmp);
       tmp.val($('#this-link').text()).select();

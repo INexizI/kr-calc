@@ -3440,7 +3440,7 @@
         else if ($softcap == 'MP Recovery/Attack')
           $softn > 1600 ? $(this).next('#s-per').text((1600 + ($softn - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text($softn/10 + '%');
         else if (($softcap == 'Crit DMG') || ($softcap == 'Recovery'))
-          $(this).next('#s-per').text('')
+          $(this).next('#s-per').text('').css('order', 0)
         else
           $(this).next('#s-per').text($softn/10 + '%')
       });
@@ -3455,10 +3455,7 @@
       }, 1000);
     };
     function disableGenerateButton() {
-      $('#genLink, #clip').attr('disabled','disabled').css({
-        'background': 'rgba(0, 0, 0, 0.2)',
-        'text-decoration': 'line-through'
-      });
+      $('.share-add').remove();
     };
     $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
       option();
