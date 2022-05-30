@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
-gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
+gem 'rails', '~> 7.0.3'
 gem 'pg'
 gem 'puma', '>= 5.6.4'
 gem 'bootsnap', require: false
@@ -15,13 +15,13 @@ gem 'json'
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
-gem 'sidekiq', '>= 6.4.0'
+gem 'sidekiq', '>= 6.4.2'
 gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags', '>= 2.16.0'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'slim-rails', '>= 3.4.0'
+gem 'slim-rails', '>= 3.5.1'
 gem 'simple_form', '>= 5.1.0'
 gem 'friendly_id'
 # gem 'mini_magick'
