@@ -67,5 +67,7 @@ Rails.application.configure do
   # config.hosts = nil
   config.hosts.clear
 
+  # config.force_ssl = true
+
   config.active_job.queue_adapter = :sidekiq
 end

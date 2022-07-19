@@ -50,11 +50,11 @@ export default class extends Controller {
           });
         }
       });
-      function encData(lk_sl) {
+      function encData(raw) {
         const CryptoJS = require("crypto-js");
-        var Key = CryptoJS.enc.Utf8.parse("6il7YCRSqIOB9NooY225lPKQ0KuAF/nkFX6cY3vJkS0=");
-        var IV = CryptoJS.enc.Utf8.parse("br2fg9b3e7fb12q");
-        var enT = CryptoJS.AES.encrypt(JSON.stringify(lk_sl), Key, {
+        var Key = process.env.CRYPTO_KEY;
+        var IV = process.env.CRYPTO_IV;
+        var enT = CryptoJS.AES.encrypt(JSON.stringify(raw), Key, {
           iv: IV,
           mode: CryptoJS.mode.CBC,
           padding: CryptoJS.pad.Pkcs7

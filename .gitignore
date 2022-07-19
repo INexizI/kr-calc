@@ -50,3 +50,6 @@ dump*
 # Ignore service-worker
 /public/service-worker.js*
 /public/vendors~actioncable*
+
+localhost.*
+*.old

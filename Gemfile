@@ -31,6 +31,7 @@ gem 'acts-as-taggable-on'
 gem 'rack-cors'
 gem 'rubyzip'
 gem 'uglifier'
+gem 'dotenv-rails'
 
 gem 'turbo-rails', '~> 0.8.3'
 
