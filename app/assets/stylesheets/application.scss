@@ -83,27 +83,15 @@ select {
     .r-stat {grid-template: "item1 item2 item3";}
     #s-per {margin-left: -40px;}
   }
-  #statHead:before {
+  #statHead:before, #statBase:before, #statAdd:before {
     content: '';
-    background: url('/images/media/classes/basic_head.webp');
     background-size: 285px;
     height: 20px;
     display: block;
   }
-  #statBase:before {
-    content: '';
-    background: url('/images/media/classes/base_head.webp');
-    background-size: 285px;
-    height: 20px;
-    display: block;
-  }
-  #statAdd:before {
-    content: '';
-    background: url('/images/media/classes/add_head.webp');
-    background-size: 285px;
-    height: 20px;
-    display: block;
-  }
+  #statHead:before { background: url('/images/media/classes/basic_head.webp') }
+  #statBase:before { background: url('/images/media/classes/base_head.webp') }
+  #statAdd:before { background: url('/images/media/classes/add_head.webp') }
   #statHead:after, #statBase:after, #statAdd:after {
     content: '';
     background: url('/images/media/classes/stat_foot.webp');
@@ -144,11 +132,13 @@ select {
   p {padding: 3px;}
 }
 .calc-art-description {
-  width: 310px !important;
+  // width: 310px !important;
+  width: 277px !important;
   border: 1px solid;
   border-radius: 10px;
   background: #d2d2d2;
-  margin: -45% 100px !important;
+  // margin: -45% 100px !important;
+  margin: -45% 120px !important;
   font-size: 0.9em;
   p {padding: 3px 5px;}
 }
@@ -197,13 +187,23 @@ select {
 
 .r-stats {
   .r-stat {
-    display: grid;
-    grid-template: "item1 item2 item3";
-    text-align: center;
+    // display: grid;
+    display: flex;
+    // grid-template: "item1 item2 item3";
+    // text-align: center;
+    gap: 1rem;
 
-    p {
-      width: 150px;
-      margin: 5px;
+    // p {
+    //   width: 150px;
+    //   margin: 5px;
+    // }
+  }
+  .statsAdd {
+    .r-stat:after {
+      content: "";
+      height: 15px;
+      margin: auto 0;
+      border: 0.5px solid #d3d3d3;
     }
   }
 }
@@ -229,7 +229,8 @@ select {
       background: rgba(0, 0, 0, 0.4);
     }
   }
-  #calc {margin: 5px 75px 0px 75px;}
+  // #calc {margin: 5px 75px 0px 75px;}
+  #calc {margin: 5px 5% 0px 5%;}
   .from-calc {
     width: 600px;
 
@@ -241,6 +242,7 @@ select {
         font-family: inherit;
         font-size: 1.2em;
         font-weight: bolder;
+        border: 0;
       }
       .w-in, .tr-in, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_gear_artifact {
         background-size: 50px 50px;
@@ -378,14 +380,8 @@ select {
       #g-left {
         // right: 230px;
         // bottom: 135px;
-        right: 230px;
-        bottom: 135px;
-        .ay-r {
-          text-align-last: center;
-          position: relative;
-          min-width: 65px;
-          left: 85px;
-        }
+        right: 200px;
+        bottom: 120px;
       }
       #g-right {
         left: 155px;
@@ -394,7 +390,7 @@ select {
       #g-weapon {
         // right: 265.5px;
         // bottom: 230px;
-        right: 238.5px;
+        right: 240px;
         bottom: 110px;
         width: 0px;
         height: 0px;
@@ -420,21 +416,34 @@ select {
         content: "\2605";
         position: absolute;
       }
-      #rune {
-        position: relative;
-        right: 5px;
-        p {
-          height: 0px;
+      #g-rune {
+        bottom: 6px;
+        right: 240px;
+        display: block !important;
+
+        #rune {
           position: relative;
-          top: 4px;
-          right: 75px;
-          img {
-            width: 20px;
-            height: 19px;
+          right: 5px;
+          p {
+            height: 0px;
+            position: relative;
+            top: 4px;
+            right: 75px;
+            img {
+              width: 20px;
+              height: 19px;
+            }
+          }
+          #rune-wi {width: 0;}
+          #rune-he {height: 0;}
+          .ay-r {
+            text-align-last: center;
+            position: relative;
+            min-width: 65px;
+            left: 85px;
+            option:not(.q) {display: none;}
           }
         }
-        #rune-wi {width: 0;}
-        #rune-he {height: 0;}
       }
     }
     ::-webkit-scrollbar {display: none;}
@@ -534,14 +543,17 @@ select {
         display: none;
 
         .heroImg {
-          margin: auto;
-          height: 124px;
+          // margin: auto;
+          // height: 124px;
+          margin: 5px auto;
+          width: 400px;
 
           div {
             display: grid;
             grid-template: "item1 item2";
             background-image: url(/images/media/classes/stat.webp);
-            background-size: 450px 25px;
+            // background-size: 450px 25px;
+            background-size: 400px 25px;
             font-size: 15px;
             line-height: 25px;
             color: rgb(171, 142, 116);
@@ -555,12 +567,14 @@ select {
             }
           }
           #p1 {
-            width: 150px;
+            // width: 150px;
+            width: 130px;
             padding-left: 15px;
             text-align: left;
           }
           #p2 {
-            width: 265px;
+            // width: 265px;
+            width: 240px;
             padding: 0 10px;
             text-align: left;
           }
@@ -568,15 +582,19 @@ select {
         .heroImg::before {
           content: '';
           background: url('/images/media/classes/basic_head.webp');
-          background-size: 450px;
-          height: 35px;
+          // background-size: 450px;
+          // height: 35px;
+          background-size: 400px;
+          height: 30px;
           display: block;
         }
         .heroImg::after {
           content: '';
           background: url('/images/media/classes/stat_foot.webp');
-          background-size: 450px;
-          height: 13px;
+          // background-size: 450px;
+          // height: 13px;
+          background-size: 400px;
+          height: 12px;
           display: block;
         }
         .heroPerk {
@@ -641,68 +659,62 @@ select {
     .t-st {display: none;}
     .t-total {
       .r-stats {
+        width: 400px;
+        margin: auto;
         .r-stat {
           background-image: url('/images/media/classes/stat.webp');
-          background-size: 450px 25px;
-          font-size: 15px;
-          line-height: 25px;
+          // background-size: 450px 25px;
+          background-size: 400px 25px;
           color: rgb(171, 142, 116);
+          line-height: 25px;
+          font-size: 15px;
+          text-align: left;
+          padding-left: 15px;
 
-          p {
-            height: 25px;
-            margin: 0;
-          }
-          #s-name {
-            width: 150px;
-            padding-left: 15px;
-            text-align: left;
-          }
-          #s-val {
-            width: 265px;
-            padding: 0 10px;
-            text-align: left;
-          }
+          #s-name {width: 130px;}
+          #s-val {width: 155px;}
           #s-per {
             width: 50px;
-            margin-left: -60px;
+            margin-left: auto;
+            order: 1;
           }
-          #plsSt1 {
-            color: rgb(50, 170, 180);
-          }
-          #plsSt2 {
-            color: rgb(0, 200, 50);
-          }
+          #plsSt1 {color: rgb(50, 170, 180);}
+          #plsSt2 {color: rgb(0, 200, 50);}
         }
         .r-set, .r-tms {
           display: grid;
           height: auto !important;
           grid-template: "item1 item2";
           background-image: url('/images/media/classes/stat.webp');
-          background-size: 450px 25px;
+          // background-size: 450px 25px;
+          background-size: 400px 25px;
           font-size: 15px;
           line-height: 25px;
           color: #8e8073;
           text-align: left;
 
           #s-name {
-            width: 150px;
+            // width: 150px;
+            width: 130px;
             padding-left: 15px;
           }
           #sb, #tms {
             display: grid;
-            width: 265px;
+            // width: 265px;
+            width: 240px;
             height: auto;
             padding: 0 10px;
           }
         }
       }
-      .statBase {
-        height: 149px;
-      }
+      .statBase { height: 149px; }
+      .statsBase { #s-val { width: 220px !important; } }
       .statsBase::before, .statsAdd::before {
         content: '';
-        background-size: 450px !important;
-        height: 35px;
+        // background-size: 450px !important;
+        // height: 35px;
+        background-size: 400px !important;
+        height: 30px;
         display: block;
       }
       .statSet::before,
@@ -712,8 +724,10 @@ select {
       .statSet::after,
       .statTMS::after {
         content: '';
-        background-size: 450px !important;
-        height: 13px;
+        // background-size: 450px !important;
+        // height: 13px;
+        background-size: 400px !important;
+        height: 12px;
         display: block;
       }
       .statsBase::before {background: url('/images/media/classes/base_head.webp');}
@@ -740,7 +754,7 @@ select {
   }
 }
 
-#char, .class-stats > div, .form-input > div > select:not(#calc_st_weapon_st), #calc_gear_jewelry, #calc_gear_artifact {display: none;}
+// #char, .class-stats > div, .form-input > div > select:not(#calc_st_weapon_st), #calc_gear_jewelry, #calc_gear_artifact {display: none;}
 
 // #bg {
 //   min-height: 100vh;
@@ -757,7 +771,8 @@ select {
     margin: 1px 0;
     color: black;
     border-radius: 3px;
-    border: 1px solid #757575;
+    // border: 1px solid #757575;
+    border: 0;
     background: darkgrey;
     transition: all 0.2s;
 
@@ -849,7 +864,9 @@ select {
     left: -50%;
     padding: 10px;
     color: rgb(215, 0, 10);
+    // color: rgb(50 60 255);
     background-color: rgb(255, 210, 210);
+    // background-color: rgb(150 150 255);
     border-radius: 5px;
   }
 }

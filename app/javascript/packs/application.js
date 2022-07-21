@@ -4,7 +4,7 @@ import { Turbo } from "@hotwired/turbo-rails"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "controllers"
-import "src/stylesheets/application"
+// import "src/stylesheets/application"
 import jquery from "jquery"
 window.jQuery = jquery
 window.$ = jquery

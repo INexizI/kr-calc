@@ -52,7 +52,7 @@ title Calculator
                 div#rune-wi
                   = f.select :st_rune_a, [['- - - -', 0, class: 'q']] + @runes.where(type_gear: ['armor', 'all']).collect {|r| [r.value, r.value, {name: r.name}] }, {include_blank: false}, {class: 'ay-r', id: 'calc_st_rune_a'}
           .form-input#weapon
-            = f.input :gear_weapon, as: :select, collection: ['- - - - - - - - - -', 'Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in img'}
+            = f.input :gear_weapon, as: :select, collection: ['Class', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'w-in img'}
             .g-desc
               / *Load from JSON file*
               / - @gearsJ.each do |gear|
@@ -98,7 +98,7 @@ title Calculator
                     p#range-atk
                     p#range-hp
           .form-input#armor
-            = f.input :gear_armor, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
+            = f.input :gear_armor, as: :select, collection: @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#arm
               .rating#ar.c
@@ -168,9 +168,8 @@ title Calculator
                   .input.select.optional.calc_ench_ar_tm_3
                     = f.collection_select :ench_ar_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_ar_tm'}
                   = f.input :ench_ar_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_ar_tm_st'}
-
           .form-input#secondary
-            = f.input :gear_secondary, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
+            = f.input :gear_secondary, as: :select, collection: @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#sec
               .rating#sg.c
@@ -243,7 +242,7 @@ title Calculator
 
         div
           .form-input#treasure
-            = f.input :gear_treasure, as: :select, collection: ['- - - - - - - - - -', 'Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in img'}
+            = f.input :gear_treasure, as: :select, collection: ['Mana Stone', 'Unique'], required: false, label: false, include_blank: false, input_html: {class: 'tr-in img'}
             .gSt
               p#tre
               .rating#ut.c
@@ -295,7 +294,6 @@ title Calculator
                 .input.select.optional.calc_treasure_8
                   = f.collection_select :treasure_8, @stats.where(stat_type: ['opt', 'tr']), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ax', id: 'calc_st_treasure'}
                 = f.input :st_treasure_8, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tr-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ay', id: 'calc_st_treasure_st'}
-
           .form-input#jewerly
             .calc_gear_jewelry
               - acc_1 = @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}
@@ -370,9 +368,8 @@ title Calculator
                   .input.select.optional.calc_ench_j_tm_3
                     = f.collection_select :ench_j_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_j_tm'}
                   = f.input :ench_j_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_j_tm_st'}
-
           .form-input#_orb
-            = f.input :gear_orb, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
+            = f.input :gear_orb, as: :select, collection: @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gSt
               p#orb
               .rating#or.c
@@ -442,9 +439,8 @@ title Calculator
                   .input.select.optional.calc_ench_orb_tm_3
                     = f.collection_select :ench_orb_tm_3, @stats.where(stat_type: 'tm-ench'), :name, :name, {prompt: '- - - - - - - - - -'}, {class: 'ench-n', id: 'calc_ench_orb_tm'}
                   = f.input :ench_orb_tm_st_3, as: :select, collection: [['- - - -', 0, class: 'q']] + @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}] }, required: false, label: false, include_blank: false, input_html: {class: 'ench-v', id: 'ench_orb_tm_st'}
-
           .form-input
-            = f.input :gear_artifact, as: :select, collection: [['- - - - - - - - - -', '- - - - - - - - - -']] + @arts.where(gear_type: 'art').collect {|g| [g.name, g.name, {desc: g.description}]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
+            = f.input :gear_artifact, as: :select, collection: @arts.where(gear_type: 'art').collect {|g| [g.name, g.name, {desc: g.description}]}, required: false, label: false, include_blank: false, input_html: {class: 'img'}
             .gArt
               .calc-art-description
                 p
