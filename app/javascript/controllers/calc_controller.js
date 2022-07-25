@@ -2,24 +2,24 @@ import { Controller } from 'stimulus'
 import { FetchRequest } from '@rails/request.js'
 
 export default class extends Controller {
-  async generate(event) {
+  async generate() {
     event.preventDefault()
 
-    const form = $('form.calc').find('.img').serializeArray()
+    const form = $('form.calc .img').serializeArray()
     var check = 0
     $.each(form, function(i, n) {
       if (n.value != "- - - - - - - - - -")
         check++
     })
 
-    if (check != 0) {
-      $('.share-main, .btn-gen').remove();
+    if (check !== 0) {
+      $('.share-main, .btn-gen').remove()
 
       var jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
       var lk = $('.calc form');
       var lk_sl = [];
       lk_sl.push({name :'calc[jewelry_type]', value: jName});
-      $(lk.serializeArray().slice(1)).each(function(i, n) {
+      $(lk.serializeArray().slice(1, -1)).each(function(i, n) {
         if ((this.value !== '0') && (this.value !== '') && (this.value !== '- - - - - - - - - -'))
           lk_sl.push(n);
         if (this.name == 'calc[gear_treasure]')
@@ -63,56 +63,49 @@ export default class extends Controller {
       };
       var encryptData = encData(lk_sl);
 
-      const request = new FetchRequest('post', window.location.origin + '/links', { body: JSON.stringify({ text: encryptData }) })
+      const request = new FetchRequest('POST', window.location.origin + '/links', { body: JSON.stringify({ text: encryptData }) })
       const response = await request.perform()
 
       if (response.ok) {
         const body = await response.json
-        // console.log(window.location.origin + '/links/' + body.data.slug)
         $('#this-link').text(window.location.origin + '/links/' + body.data.slug).show()
       }
-    } else {
-      $('.msg').fadeOut(500, function () {
-        $(this).html('Create a Build!').fadeIn(500).show();
-      })
-      setTimeout(function() {
-        $('.msg').text('').hide();
-      }, 1000)
-    }
+    } else
+      this.message('Create a Build!')
   }
 
-  async copy(event) {
+  async copy() {
     event.preventDefault()
 
-    const form = $('form.calc').find('.img').serializeArray()
-    var check = 0
+    const form = $('.img').serializeArray()
+    let check = 0
     $.each(form, function(i, n) {
       if (n.value != "- - - - - - - - - -")
         check++
     })
 
     if (check == 0)
-      var msg = 'Create a Build!'
+      this.message('Create a Build!')
     else if ($('#this-link').text() == '')
-      var msg = 'Generate Link!'
+      this.message('Generate Link!')
     else {
-      var msg = 'Copied!';
-      var tmp = $('<input>');
-      $('body').append(tmp);
-      tmp.val($('#this-link').text()).select();
-      document.execCommand('copy');
-      tmp.remove();
-      $('#clip').fadeOut(150, function () {
-        $(this).html('Copied!').fadeIn(150)
-      })
+      this.message('Copied!')
+      let tmp = $('<input>')
+      $('body').append(tmp)
+      tmp.val($('#this-link').text()).select()
+      document.execCommand('copy')
+      tmp.remove()
     }
+  }
 
-    $('.msg').fadeOut(500, function () {
-      $(this).html(msg).fadeIn(500).show();
-    })
-    setTimeout(function() {
-      $('.msg').text('').hide();
-      $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>');
-    }, 1000)
+  async message(msg) {
+    $('.msg').html(msg)
+      .fadeIn(function() {
+        $(this).show()
+      })
+      .fadeOut(1000, function() {
+        $(this).empty().hide()
+        $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>')
+      })
   }
 }

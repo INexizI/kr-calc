@@ -863,9 +863,11 @@ select {
     position: relative;
     left: -50%;
     padding: 10px;
-    color: rgb(215, 0, 10);
+    color: black;
+    border: 1px solid;
+    // color: rgb(215, 0, 10);
     // color: rgb(50 60 255);
-    background-color: rgb(255, 210, 210);
+    // background-color: rgb(255, 210, 210);
     // background-color: rgb(150 150 255);
     border-radius: 5px;
   }
