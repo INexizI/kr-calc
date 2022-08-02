@@ -103,7 +103,7 @@ export default class extends Controller {
       .fadeIn(function() {
         $(this).show()
       })
-      .fadeOut(1000, function() {
+      .fadeOut(250, function() {
         $(this).empty().hide()
         $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>')
       })

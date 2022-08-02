@@ -384,192 +384,194 @@
         allTreasure = [],
         armorSet;
     /* Loading build from Link */
-    // $('#btn-load').click(() => {
-    //   event.preventDefault();
-    //   const CryptoJS = require("crypto-js");
-    //   let shr = $('#share_link').val().toString();
-    //   if (shr.length !== 0) {
-    //     $.get(shr)
-    //       .done((data) => {
-    //         let link_local = process.env.LINK_LOCAL;
-    //         let link_heroku = process.env.LINK_HEROKU;
-    //         let link_main = process.env.LINK_MAIN;
-    //         let link_api = process.env.LINK_API;
-    //         switch (shr.slice(0, -12)) {
-    //           /* --- localhost API --- */
-    //           case link_local:
-    //           case link_heroku:
-    //           case link_main:
-    //             rawData = $(data).find('.raw').text();
-    //             break;
-    //           /* --- KRCalc API ---  */
-    //           case link_api:
-    //             rawData = data.text;
-    //             break;
-    //           default:
-    //             rawData = null;
-    //         };
-    //         var decData = (raw) => {
-    //           var C = CryptoJS;
-    //           var Key = process.env.CRYPTO_KEY;
-    //           var IV = process.env.CRYPTO_IV;
-    //           var dcT = C.AES.decrypt(raw, Key, {
-    //             iv: IV,
-    //             mode: C.mode.CBC,
-    //             padding: C.pad.Pkcs7
-    //           });
-    //           return JSON.parse(dcT.toString(C.enc.Utf8));
-    //         };
-    //         if (rawData !== null) {
-    //           $(decData(rawData)).each(function(i, n) {
-    //             let x = this.name;
-    //             let y = this.value;
-    //             $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
-    //             switch (x) {
-    //               case 'calc[role_id]':
-    //                 let role = $('#calc_role_id :selected').text();
-    //                 let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
-    //                 let options = $(chars).filter("optgroup[label='" + escaped_role + "']").html();
-    //                 if (options) {
-    //                   $('#calc_char_id').html(options);
-    //                   $('select').not('#calc_role_id').prop('selectedIndex', 0);
-    //                   change_role();
-    //                 }
-    //                 break;
-    //               case 'calc[char_id]':
-    //                 change_char();
-    //                 break;
-    //               case 'calc[gear_weapon]':
-    //                 change_weapon();
-    //                 break;
-    //               case 'calc[st_weapon]':
-    //                 change_sw_adv();
-    //                 break;
-    //               case 'calc[st_weapon_st]':
-    //                 change_sw_eth();
-    //                 break;
-    //               case 'calc[gear_armor]':
-    //                 change_armor();
-    //                 break;
-    //               case 'calc[gear_secondary]':
-    //                 change_secondary();
-    //                 break;
-    //               case 'calc[gear_treasure]':
-    //                 change_treasure();
-    //                 break;
-    //               case 'calc[gear_jewelry]':
-    //                 if (y !== '- - - - - - - - - -')
-    //                   $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
-    //                 $jewelSet = y;
-    //                 change_jewerly();
-    //                 break;
-    //               case 'calc[gear_orb]':
-    //                 change_orb();
-    //                 break;
-    //               case 'calc[gear_artifact]':
-    //                 change_art();
-    //                 break;
-    //               case 'range':
-    //               case 'add-atk':
-    //               case 'add-hp':
-    //                 $('[name="' + x + '"]').prop('value', y);
-    //                 swStat();
-    //                 gearStat();
-    //                 gearSet();
-    //                 break;
-    //               case 'calc[st_armor_op]':
-    //                 $('#propAr').text(y);
-    //                 break;
-    //               case 'calc[st_secondary_op]':
-    //                 $('#propScnd').text(y);
-    //                 break;
-    //               case 'calc[st_jewerly_op]':
-    //                 $('#propAcs').text(y);
-    //                 break;
-    //               case 'calc[st_orb_op]':
-    //                 $('#propOrb').text(y);
-    //                 break;
-    //               case 'calc[ench_type_ar]':
-    //               case 'calc[ench_type_sg]':
-    //               case 'calc[ench_type_j]':
-    //               case 'calc[ench_type_orb]':
-    //                 $enchName = $('[name="' + x + '"]');
-    //                 $('[name="' + x + '"]')
-    //                   .parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>')
-    //                   .parent().next().find('.ench-v').html('<option value="">- - - </option>');
-    //                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-    //                   statOptionEnchant();
-    //                 break;
-    //               case 'calc[ench_ar]':
-    //               case 'calc[ench_sg]':
-    //               case 'calc[ench_j]':
-    //               case 'calc[ench_orb]':
-    //                 $enchName = $('[name="' + x + '"]');
-    //                 $ench = $('[name="' + x + '"]').parent().next().find('.ench-v');
-    //                 $ench.prop('selectedIndex', 0).find('optgroup').hide();
-    //                 if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-    //                   statEnchant();
-    //                 break;
-    //               case 'calc[ench_ar_st]':
-    //               case 'calc[ench_sg_st]':
-    //               case 'calc[ench_j_st]':
-    //               case 'calc[ench_orb_st]':
-    //                 $('[name="' + x + '"]')
-    //                   .children('[value="' + y + '"]').prop('selected', true).end()
-    //                   .children('.q, option:selected').show();
-    //                 break;
-    //               case 'calc[jewelry_type]':
-    //                 $jewelType = y;
-    //                 break;
-    //               case 'perk-t1':
-    //               case 'perk-t2':
-    //               case 'perk-t3':
-    //               case 'perk-t5':
-    //                 $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
-    //                 perkTP();
-    //                 $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-    //                 if ($tp == 0)
-    //                   $('.perk-tp p').css('color', 'black');
-    //                 else if (($tp > 0) && ($tp < 100))
-    //                   $('.perk-tp p').css('color', 'greenyellow');
-    //                 else if ($tp > 95) {
-    //                   $('.perk-tp p').css('color', 'darkred');
-    //                   alert('Not Enogh TP');
-    //                 }
-    //                 $('.perk-tp p').text($tp);
-    //                 break;
-    //               case 'uw':
-    //               case 'ar':
-    //               case 'sg':
-    //               case 'ut':
-    //               case 'ac':
-    //               case 'or':
-    //                 $('#' + x).find('label').removeClass('active');
-    //                 $('#' + x).find('.bt' + y).addClass('active');
-    //                 option();
-    //                 gearStat();
-    //                 gearSet();
-    //                 break;
-    //             };
-    //           });
-    //
-    //           option();
-    //           gearStat();
-    //           gearSet();
-    //
-    //           $('.share-add').remove();
-    //         } else
-    //           messgeBox('Enter valid link!');
-    //       })
-    //       .fail(function(jqXHR, textStatus, errorThrown) {
-    //         messgeBox(`Enter valid link/code! - ${errorThrown}`);
-    //       });
-    //   } else
-    //     messgeBox('Enter link!')
-    // });
+    $('#btn-load').click(() => {
+      event.preventDefault();
+      const CryptoJS = require("crypto-js");
+      let shr = $('#share_link').val().toString();
+      if (shr.length !== 0) {
+        $.get(shr)
+          .done((data) => {
+            let link_local = process.env.LINK_LOCAL;
+            let link_heroku = process.env.LINK_HEROKU;
+            let link_main = process.env.LINK_MAIN;
+            let link_api = process.env.LINK_API;
+            switch (shr.slice(0, -12)) {
+              /* --- localhost API --- */
+              case link_local:
+              case link_heroku:
+              case link_main:
+                rawData = $(data).find('.raw').text();
+                break;
+              /* --- KRCalc API ---  */
+              case link_api:
+                rawData = data.text;
+                break;
+              default:
+                rawData = null;
+            };
+            var decData = (raw) => {
+              var C = CryptoJS;
+              var Key = process.env.CRYPTO_KEY;
+              var IV = process.env.CRYPTO_IV;
+              var dcT = C.AES.decrypt(raw, Key, {
+                iv: IV,
+                mode: C.mode.CBC,
+                padding: C.pad.Pkcs7
+              });
+              return JSON.parse(dcT.toString(C.enc.Utf8));
+            };
+            if (rawData !== null) {
+              $(decData(rawData)).each(function(i, n) {
+                let x = this.name;
+                let y = this.value;
+                $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
+                switch (x) {
+                  case 'calc[role_id]':
+                    let role = $('#calc_role_id :selected').text();
+                    let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                    let options = $(chars).filter("optgroup[label='" + escaped_role + "']").html();
+                    if (options) {
+                      $('#calc_char_id').html(options);
+                      $('select').not('#calc_role_id').prop('selectedIndex', 0);
+                      change_role();
+                    }
+                    break;
+                  case 'calc[char_id]':
+                    change_char();
+                    break;
+                  case 'calc[gear_weapon]':
+                    change_weapon();
+                    break;
+                  case 'calc[st_weapon]':
+                    change_sw_adv();
+                    break;
+                  case 'calc[st_weapon_st]':
+                    change_sw_eth();
+                    break;
+                  case 'calc[gear_armor]':
+                    change_armor();
+                    break;
+                  case 'calc[gear_secondary]':
+                    change_secondary();
+                    break;
+                  case 'calc[gear_treasure]':
+                    change_treasure();
+                    break;
+                  case 'calc[gear_jewelry]':
+                    if (y !== '- - - - - - - - - -')
+                      $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
+                    $jewelSet = y;
+                    change_jewerly();
+                    break;
+                  case 'calc[gear_orb]':
+                    change_orb();
+                    break;
+                  case 'calc[gear_artifact]':
+                    change_art();
+                    break;
+                  case 'range':
+                  case 'add-atk':
+                  case 'add-hp':
+                    $('[name="' + x + '"]').prop('value', y);
+                    swStat();
+                    gearStat();
+                    gearSet();
+                    break;
+                  case 'calc[st_armor_op]':
+                    $('#propAr').text(y);
+                    break;
+                  case 'calc[st_secondary_op]':
+                    $('#propScnd').text(y);
+                    break;
+                  case 'calc[st_jewerly_op]':
+                    $('#propAcs').text(y);
+                    break;
+                  case 'calc[st_orb_op]':
+                    $('#propOrb').text(y);
+                    break;
+                  case 'calc[ench_type_ar]':
+                  case 'calc[ench_type_sg]':
+                  case 'calc[ench_type_j]':
+                  case 'calc[ench_type_orb]':
+                    $enchName = $('[name="' + x + '"]');
+                    $('[name="' + x + '"]')
+                      .parent().next().find('.ench-n').html('<option value="">- - - - - - - - - -</option>')
+                      .parent().next().find('.ench-v').html('<option value="">- - - </option>');
+                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                      statOptionEnchant();
+                    break;
+                  case 'calc[ench_ar]':
+                  case 'calc[ench_sg]':
+                  case 'calc[ench_j]':
+                  case 'calc[ench_orb]':
+                    $enchName = $('[name="' + x + '"]');
+                    $ench = $('[name="' + x + '"]').parent().next().find('.ench-v');
+                    $ench.prop('selectedIndex', 0).find('optgroup').hide();
+                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                      statEnchant();
+                    break;
+                  case 'calc[ench_ar_st]':
+                  case 'calc[ench_sg_st]':
+                  case 'calc[ench_j_st]':
+                  case 'calc[ench_orb_st]':
+                    $('[name="' + x + '"]')
+                      .children('[value="' + y + '"]').prop('selected', true).end()
+                      .children('.q, option:selected').show();
+                    break;
+                  case 'calc[jewelry_type]':
+                    $jewelType = y;
+                    break;
+                  case 'perk-t1':
+                  case 'perk-t2':
+                  case 'perk-t3':
+                  case 'perk-t5':
+                    $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
+                    perkTP();
+                    $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
+                    if ($tp == 0)
+                      $('.perk-tp p').css('color', 'black');
+                    else if (($tp > 0) && ($tp < 100))
+                      $('.perk-tp p').css('color', 'greenyellow');
+                    else if ($tp > 95) {
+                      $('.perk-tp p').css('color', 'darkred');
+                      alert('Not Enogh TP');
+                    }
+                    $('.perk-tp p').text($tp);
+                    break;
+                  case 'uw':
+                  case 'ar':
+                  case 'sg':
+                  case 'ut':
+                  case 'ac':
+                  case 'or':
+                    $('#' + x).find('label').removeClass('active');
+                    $('#' + x).find('.bt' + y).addClass('active');
+                    option();
+                    gearStat();
+                    gearSet();
+                    break;
+                };
+              });
+
+              option();
+              gearStat();
+              gearSet();
+
+              $('.share-add').remove();
+            } else
+              messgeBox('Enter valid link!');
+          })
+          .fail(function(jqXHR, textStatus, errorThrown) {
+            messgeBox(`Enter valid link/code! - ${errorThrown}`);
+          });
+      } else
+        messgeBox('Enter link!')
+    });
     $('#calc_role_id').change(function() {
-      if ($('.img').children(':first').attr('value') !== '- - - - - - - - - -')
-        $('.img').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>')
+      if ($('.null-name').children(':first').attr('value') !== '- - - - - - - - - -')
+        $('.null-name').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>');
+      if ($('.null-stat').children(':first').attr('value') !== '0')
+        $('.null-stat').prepend('<option class="q" value="0">- - - -</option>');
       $('.gSt p, .t-st p').empty();
       $('.gSt .rating, .gOption, .gTM').hide();
       $('.rating label').removeClass('active');
@@ -2892,28 +2894,42 @@
     // $('#calc_role_id, #calc_char_id').change(function() {
     //   hideGearImage();
     // });
-    // function statOption() {
-    //   $('.opt').find($statName).each(function() {
-    //     $(this).parent().next().children().find('option').not('.q').hide();
-    //     $st = $(this).children('option:selected').text();
-    //     if (($st == 'ATK') || ($st == 'Max HP') || ($st == 'DEF'))
-    //       $(this).parent().next().children().find('.q1').show();
-    //     else if (($st == 'MP Recovery/Sec') || ($st == 'Mana Recovery upon taking DMG'))
-    //       $(this).parent().next().children().find('.q2').show();
-    //     else if (($st == 'Crit DMG') || ($st == 'P.DEF') || ($st == 'M.DEF') || ($st == 'Recovery'))
-    //       $(this).parent().next().children().find('.q3').show();
-    //     else if (($st == 'ATK Spd') || ($st == 'Crit') || ($st == 'Lifesteal') || ($st == 'ACC') || ($st == 'Debuff ACC') || ($st == 'CC Resist') || ($st == 'Block') || ($st == 'Crit Resistance') || ($st == 'P.Dodge') || ($st == 'M.Dodge') || ($st == 'P.Tough') || ($st == 'M.Tough') || ($st == 'P.Resistance') || ($st == 'M.Resistance') || ($st == 'DMG Reduction upon P.Block') || ($st == 'DMG Reduction upon M.Block') || ($st == 'P.Block DEF') || ($st == 'M.Block DEF'))
-    //       $(this).parent().next().children().find('.q4').show();
-    //     else if (($st == 'MP Recovery/Attack') || ($st == 'P.Block') || ($st == 'M.Block') || ($st == 'P.Crit Resistance') || ($st == 'M.Crit Resistance'))
-    //       $(this).parent().next().children().find('.q5').show();
-    //     else if ($st == 'Penetration')
-    //       $(this).parent().next().children().find('.q6').show();
-    //     else if (($st == 'Dodge') || ($st == 'Tough') || ($st == 'Resistance') || ($st == 'DMG Reduction upon Block'))
-    //       $(this).parent().next().children().find('.q7').show();
-    //     else
-    //       $(this).parent().next().children().find('.q').show();
-    //   });
-    // };
+    function statOption(stat) {
+      $('.opt').find(stat).each(function() {
+        $(this).parent().next().children().find('option').not('.q').hide();
+        let x = $(this).parent().next().children();
+        switch ($(this).children('option:selected').text()) {
+          case 'ATK': case 'Max HP': case 'DEF':
+            x.find('.q1').show();
+            break;
+          case 'MP Recovery/Sec': case 'Mana Recovery upon taking DMG':
+            x.find('.q2').show();
+            break;
+          case 'Crit DMG': case 'P.DEF': case 'M.DEF': case 'Recovery':
+            x.find('.q3').show();
+            break;
+          case 'ATK Spd': case 'Crit': case 'Lifesteal': case 'ACC':
+          case 'Debuff ACC': case 'CC Resist': case 'Block':
+          case 'Crit Resistance': case 'P.Dodge': case 'M.Dodge':
+          case 'P.Tough': case 'M.Tough': case 'P.Resistance': case 'M.Resistance':
+          case 'DMG Reduction upon P.Block': case 'DMG Reduction upon M.Block':
+          case 'P.Block DEF': case 'M.Block DEF':
+            x.find('.q4').show();
+            break;
+          case 'MP Recovery/Attack': case 'P.Block': case 'M.Block':
+          case 'P.Crit Resistance': case 'M.Crit Resistance':
+            x.find('.q5').show();
+            break;
+          case 'Penetration':
+            x.find('.q6').show();
+            break;
+          case 'Dodge': case 'Tough': case 'Resistance': case 'DMG Reduction upon Block':
+            x.find('.q7').show();
+          default:
+            x.find('.q').show();
+        };
+      });
+    };
     // function statEnchant() {
     //   $emchTier = $enchName.parent().prev().children().children('option:selected').val();
     //   $('.opt-ench').find($enchName).each(function() {
@@ -3154,16 +3170,16 @@
       });
     };
     // statSplit();
-    // function messgeBox(msg) {
-    //   $('.msg').html(msg)
-    //     .fadeIn(function() {
-    //       $(this).show()
-    //     })
-    //     .fadeOut(2000, function() {
-    //       $(this).empty().hide()
-    //       $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>')
-    //     })
-    // };
+    function messgeBox(msg) {
+      $('.msg').html(msg)
+        .fadeIn(function() {
+          $(this).show()
+        })
+        .fadeOut(250, function() {
+          $(this).empty().hide()
+          $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>')
+        })
+    };
     // $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .ench-t, .ench-n, .ench-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
     //   option();
     //   gearStat();
