@@ -277,7 +277,8 @@ title Calculator
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'tm-op'
+                                        class: 'tm-op',
+                                        tag: 'propAr'
               .opt-tm-ench
                 .opt-ench#a0
                   p#scroll
@@ -466,7 +467,8 @@ title Calculator
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'tm-op'
+                                        class: 'tm-op',
+                                        tag: 'propScnd'
               .opt-tm-ench
                 .opt-ench#a0
                   p#scroll
@@ -817,7 +819,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_j_tm'
+                                          id: 'calc_ench_ac_tm'
                   = f.input :ench_j_tm_st_1,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -835,7 +837,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_j_tm'
+                                          id: 'calc_ench_ac_tm'
                   = f.input :ench_j_tm_st_2,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -853,7 +855,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_j_tm'
+                                          id: 'calc_ench_ac_tm'
                   = f.input :ench_j_tm_st_3,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -1002,7 +1004,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_orb_tm'
+                                          id: 'calc_ench_or_tm'
                   = f.input :ench_orb_tm_st_1,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -1020,7 +1022,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_orb_tm'
+                                          id: 'calc_ench_or_tm'
                   = f.input :ench_orb_tm_st_2,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -1038,7 +1040,7 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_orb_tm'
+                                          id: 'calc_ench_or_tm'
                   = f.input :ench_orb_tm_st_3,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
