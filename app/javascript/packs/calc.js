@@ -59,11 +59,11 @@
         swATK: 3500,
         swHP: 125000,
         gearType: 'Heavy',
-        armor: '1-1H',
-        secondary: '2-2H',
         gearTM: 'Protection',
+        armor: '1-1H',
         armorTM: 'tm1',
-        secondaryTM: 'tm1',
+        secondary: '2-2H',
+        secondaryTM: 'tm1'
       },
       Warrior: {
         B0: 1449520,
@@ -383,10 +383,11 @@
         gearTreasureType,
         allTreasure = [],
         gearSet,
-        greyStat;
+        greyStat,
+        jewelryType;
     /* Loading build from Link */
-    $('#btn-load').click(() => {
-      event.preventDefault();
+    $('#btn-load').click((e) => {
+      e.preventDefault();
       const CryptoJS = require("crypto-js");
       let shr = $('#share_link').val().toString();
       if (shr.length !== 0) {
@@ -816,19 +817,8 @@
           $('#heroMDEF').empty();
           greyStat = $('#greyMDEF')
           break;
-        case 'jewelry':
-          // TODO(D):
-          // if (Ring)
-          //   $('#heroHP').empty();
-          // if (Earrings)
-          //   $('#heroATK').empty();
-          // if (Bracelet)
-          //   $('#heroPDEF').empty();
-          // if (Necklace)
-          //   $('#heroMDEF').empty();
-          break;
         case 'orb':
-          $('#heroHP').empty();
+          $('#heroO').empty();
           greyStat = $('#greyO');
           break;
       };
@@ -855,25 +845,45 @@
           $(`#prop_${x}`).empty();
           break;
         case 'Reclaimed Perseverance': case 'Reclaimed Hope': case 'Reclaimed Authority': case 'Perseverance': case 'Hope': case 'Authority':
-          gearSet.indexOf("Reclaimed") != -1 ? greyStat.text(GearStat[`${HeroStat[heroClass][`${x}TM`]}R`])
-                                             : greyStat.text(GearStat[`${HeroStat[heroClass][`${x}`]}`]);
+          switch (x) {
+            case 'armor': case 'secondary':
+              gearSet.indexOf("Reclaimed") != -1 ? greyStat.text(GearStat[`${HeroStat[heroClass][`${x}TM`]}R`])
+                                                 : greyStat.text(GearStat[`${HeroStat[heroClass][`${x}`]}`]);
+             $(`#calc_gear_${x}`)
+               .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
+               .addClass('g-fr-t').removeClass('g-fr')
+               .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
+              break;
+            case 'orb':
+              gearSet.indexOf("Reclaimed") != -1 ? greyStat.text(GearStat.tm4R)
+                                                 : greyStat.text(GearStat.tm4);
+              $(`#calc_gear_${x}`)
+                .css('background-image', `url("/images/media/gears/8-O/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
+                .addClass('g-fr-t').removeClass('g-fr')
+                .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
+              break;
+          };
           $(`#${y}`).show();
-          $(`#calc_gear_${x}`)
-            .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
-            .addClass('g-fr-t').removeClass('g-fr')
-            .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
           $(`.calc_gear_${x}`)
             .parent().find('.gTM').show()
             .parent().find('.gOption').hide();
           // gearStat();
           break;
         default:
-          greyStat.text(GearStat[`${x}${HeroStat[heroClass].gearType}`]);
           $(`#${y}`).show();
-          $(`#calc_gear_${x}`)
-            .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet}.webp")`)
-            .removeClass('g-fr-t').addClass('g-fr')
-            .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
+          if (x == 'orb') {
+            greyStat.text(GearStat.Orb);
+            $(`#calc_gear_${x}`)
+              .css('background-image', `url("/images/media/gears/8-O/${gearSet}.webp")`)
+              .removeClass('g-fr-t').addClass('g-fr')
+              .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
+          } else {
+            greyStat.text(GearStat[`${x}${HeroStat[heroClass].gearType}`]);
+            $(`#calc_gear_${x}`)
+              .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet}.webp")`)
+              .removeClass('g-fr-t').addClass('g-fr')
+              .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
+          };
           $(`.calc_gear_${x}`)
             .parent().find('.gOption').show()
             .parent().find('.gTM').hide();
@@ -963,79 +973,21 @@
     //   }
     //   $('#acc').text($('#greyJ').text());
     // };
-    // function change_orb() {
-    //   $('#heroO').empty();
-    //   $('#setOrb').text($('#calc_gear_orb').children('option:selected').text());
-    //   $('.gTM .ench-n').children().removeAttr('disabled');
-    //   $('#_orb')
-    //     .find('.ax, .ay, .ax-tm, .ay-tm, .ench-n, .ench-v, .ax-r, .ay-r').prop('selectedIndex', 0).end()
-    //     .find('.ay, .ay-tm, .ench-v, .ay-r')
-    //       .children().hide().end()
-    //       .find('.q').show();
-    //   $orbSet = $('#calc_gear_orb').children('option:selected').val();
-    //   if ($orbSet == '- - - - - - - - - -') {
-    //     $('#greyO').text('');
-    //     $('#orb').text('').next('.rating').hide();
-    //     $('.calc_gear_orb').parent().find('.gOption, .gTM').hide();
-    //     $('#calc_gear_orb')
-    //       .css('background-image', 'url(/images/media/gears/bg-orb.webp)')
-    //       .removeClass('g-fr g-fr-t')
-    //       .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
-    //     $('#or label').filter('.active').removeClass('active');
-    //     $('#propOrb').empty();
-    //   } else if (($orbSet == 'Reclaimed Perseverance') || ($orbSet == 'Reclaimed Hope') || ($orbSet == 'Reclaimed Authority')) {
-    //     $('#greyO').text($tm4R);
-    //     $('#orb').next('.rating').show();
-    //     $('.calc_gear_orb').parent().find('.gTM').show().parent().find('.gOption').hide();
-    //     $('#calc_gear_orb')
-    //       .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.webp"); display: inline-block;')
-    //       .addClass('g-fr-t').removeClass('g-fr')
-    //       .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-    //     $('.calc_gear_orb')
-    //       .parent().find('.gTM').show()
-    //       .parent().find('.gOption').hide();
-    //     gearStat();
-    //   } else if (($orbSet == 'Perseverance') || ($orbSet == 'Hope') || ($orbSet == 'Authority')) {
-    //     $('#greyO').text($tm4);
-    //     $('#orb').next('.rating').show();
-    //     $('#calc_gear_orb')
-    //       .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + ' ' + $gTM + '.webp"); display: inline-block;')
-    //       .addClass('g-fr-t').removeClass('g-fr')
-    //       .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-    //     $('.calc_gear_orb')
-    //       .parent().find('.gTM').show()
-    //       .parent().find('.gOption').hide();
-    //     gearStat();
-    //   } else {
-    //     $('#greyO').text($or);
-    //     $('#orb').next('.rating').show();
-    //     $('#calc_gear_orb')
-    //       .attr('style', 'background-image: url("/images/media/gears/8-O/' + $orbSet + '.webp"); display: inline-block;')
-    //       .addClass('g-fr').removeClass('g-fr-t')
-    //       .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
-    //     $('.calc_gear_orb')
-    //       .parent().find('.gOption').show()
-    //       .parent().find('.gTM').hide();
-    //     gearStat();
-    //     $('#propOrb').empty();
-    //   }
-    //   $('#orb').text($('#greyO').text());
-    // };
-    // function change_art() {
-    //   $artSet = $('#calc_gear_artifact').children('option:selected');
-    //   $('.calc-art-description').find('p').text($($artSet).attr('desc'));
-    //   if ($($artSet).val() == '- - - - - - - - - -') {
-    //     $('#art').text('').next('.rating').hide();
-    //     $('#art label').filter('.active').removeClass('active');
-    //     $('#calc_gear_artifact')
-    //       .css('background-image', 'url(/images/media/gears/bg-art.webp)')
-    //       .removeClass('g-fr-u');
-    //     $('.gArt').hide();
-    //   } else {
-    //     $('#calc_gear_artifact').attr('style', 'background-image: url("/images/media/artifacts/' + $($artSet).val() + '.webp"); display: inline-block;').addClass('g-fr-u');
-    //     $('.gArt').show();
-    //   }
-    // };
+    function change_art() {
+      let art = $('#calc_gear_artifact').children('option:selected');
+      $('.calc-art-description p').text($(art).attr('desc'));
+      if ($(art).val() == '- - - - - - - - - -') {
+        $('#calc_gear_artifact')
+          .css('background-image', `url(${GearIcon.artifact})`)
+          .removeClass('g-fr-u');
+        $('.gArt').hide();
+      } else {
+        $('#calc_gear_artifact')
+          .css('background-image', `url("/images/media/artifacts/${$(art).val()}.webp")`)
+          .addClass('g-fr-u');
+        $('.gArt').show();
+      }
+    };
     // function change_rune() {
     //   $($rc)
     //     .children().hide().end()
@@ -1083,73 +1035,27 @@
     $('select#calc_gear_treasure').change(function() {
       change_treasure();
     }).change();
-    $('select#calc_st_treasure').change(function() {
-      $(this).parents().eq(1).find('.ay').prop('selectedIndex', 0);
-      $('.opt').find($(this)).each(function() {
-        $(this).parent().next().children().find('option').not('.q').hide();
-        let x = $(this).parent().next().children();
-        let treasureStat = $(this).children('option:selected').text();
-        switch (treasureStat) {
-          case 'ATK': case 'Max HP': case 'DEF':
-            x.find('.q1').show();
-            break;
-          case 'MP Recovery/Sec': case 'Mana Recovery upon taking DMG':
-            x.find('.q2').show();
-            break;
-          case 'Crit DMG': case 'P.DEF': case 'M.DEF': case 'Recovery':
-            x.find('.q3').show();
-            break;
-          case 'ATK Spd': case 'Crit': case 'Lifesteal': case 'ACC':
-          case 'Debuff ACC': case 'CC Resist': case 'Block':
-          case 'Crit Resistance': case 'P.Dodge': case 'M.Dodge':
-          case 'P.Tough': case 'M.Tough': case 'P.Resistance': case 'M.Resistance':
-          case 'DMG Reduction upon P.Block': case 'DMG Reduction upon M.Block':
-          case 'P.Block DEF': case 'M.Block DEF': case 'Penetration':
-            x.find('.q4').show();
-            break;
-          case 'MP Recovery/Attack': case 'P.Block': case 'M.Block':
-          case 'P.Crit Resistance': case 'M.Crit Resistance':
-            x.find('.q5').show();
-            break;
-          case 'Dodge': case 'Tough': case 'Resistance': case 'DMG Reduction upon Block':
-            x.find('.q6').show();
-            break;
-          default:
-            x.find('.q').show();
-        };
-      });
-      // gearStat();
-      $('#treasure #g-treasure').each(function(i, n) {
-        let treasureOptionFirst = $(`#a${i} .ax`).children('option:selected').val();
-        let treasureOptionSecond = $(`#b${i} .ax`).children('option:selected').val();
-        $(this).find('.ax').children().removeAttr('disabled');
-        if (treasureOptionFirst !== '')
-          $(this).find(`#b${i} .ax`).children(`[value="${treasureOptionFirst}"]`).attr('disabled', 'disabled');
-        if (treasureOptionSecond !== '')
-          $(this).find(`#a${i} .ax`).children(`[value="${treasureOptionSecond}"]`).attr('disabled', 'disabled');
-      });
-    });
-    $('select#calc_gear_armor, select#calc_gear_secondary').change(function() {
+    $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).attr('id').slice(10));
     }).change();
-    $('select#calc_st_armor, select#calc_st_secondary').change(function() {
+    $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
       statOption($(this));
       // gearStat();
     });
-    $('select#calc_st_armor_op, select#calc_st_secondary_op').change(function() {
+    $('select#calc_st_armor_op, select#calc_st_secondary_op, select#calc_st_orb_op').change(function() {
       $(`#${$(this).attr('tag')}`).text($(`#${$(this).attr('id')}`).children('option:selected').text());
       // gearSet();
     });
-    $('select#calc_ench_ar, select#calc_ench_sg').change(function() {
+    $('select#calc_ench_ar, select#calc_ench_sg, select#calc_ench_orb').change(function() {
       let x = $(this);
-      $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('optgroup').hide();
+      $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('option').hide();
       if (x.children('option:selected').val() !== '')
         statEnchant(x);
     });
-    $('select#calc_ench_ar_tm, select#calc_ench_sg_tm').change(function() {
+    $('select#calc_ench_ar_tm, select#calc_ench_sg_tm, select#calc_ench_orb_tm').change(function() {
       let x = $(this);
-      $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('optgroup').hide();
+      $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('option').hide();
       if ($(this).children('option:selected').val() !== '')
         statEnchant_TM(x);
       $(x.parents().eq(2)).each(function() {
@@ -1211,55 +1117,9 @@
     //       $(this).find('#a0 .ench-n, #b0 .ench-n').children('[value="' + $tmEnchT + '"]').attr('disabled', 'disabled');
     //   });
     // });
-    // $('select#calc_gear_orb').change(function() {
-    //   change_orb();
-    // }).change();
-    // $('select#calc_st_orb').change(function() {
-    //   $statName = $(this);
-    //   $opt = $(this).parents().eq(1).find('.ay, .ay-tm');
-    //   $opt.prop('selectedIndex', 0);
-    //   $gName = $(this).parents().eq(2).attr('class');
-    //   if ($gName == 'gTM') {
-    //     statTM();
-    //     gearStat();
-    //   } else if ($gName == 'gOption') {
-    //     statOption();
-    //     gearStat();
-    //   }
-    // });
-    // $('select#calc_st_orb_op').change(function() {
-    //   $('#propOrb').text($('#calc_st_orb_op').children('option:selected').text());
-    //   gearSet();
-    // });
-    // $('select#calc_ench_orb').change(function() {
-    //   $enchName = $(this);
-    //   $ench = $(this).parent().next().find('.ench-v');
-    //   $ench.prop('selectedIndex', 0).find('optgroup').hide();
-    //   if ($(this).children('option:selected').val() !== '')
-    //     statEnchant();
-    // });
-    // $('select#calc_ench_orb_tm').change(function() {
-    //   $enchTMName = $(this);
-    //   $ench = $(this).parent().next().find('.ench-v');
-    //   $ench.prop('selectedIndex', 0).find('optgroup').hide();
-    //   if ($(this).children('option:selected').val() !== '')
-    //     statEnchantTM();
-    //   $('#_orb .gTM .opt-tm-ench').each(function() {
-    //     $tmEnchF = $(this).find('#a0 .ench-n').children('option:selected').val();
-    //     $tmEnchS = $(this).find('#b0 .ench-n').children('option:selected').val();
-    //     $tmEnchT = $(this).find('#c0 .ench-n').children('option:selected').val();
-    //     $(this).find('.ench-n').children().removeAttr('disabled');
-    //     if ($tmEnchF !== '')
-    //       $(this).find('#b0 .ench-n, #c0 .ench-n').children('[value="' + $tmEnchF + '"]').attr('disabled', 'disabled');
-    //     if ($tmEnchS !== '')
-    //       $(this).find('#a0 .ench-n, #c0 .ench-n').children('[value="' + $tmEnchS + '"]').attr('disabled', 'disabled');
-    //     if ($tmEnchT !== '')
-    //       $(this).find('#a0 .ench-n, #b0 .ench-n').children('[value="' + $tmEnchT + '"]').attr('disabled', 'disabled');
-    //   });
-    // });
-    // $('select#calc_gear_artifact').change(function() {
-    //   change_art();
-    // }).change();
+    $('select#calc_gear_artifact').change(function() {
+      change_art();
+    }).change();
     // function weaponATK() {
     //   $uwStat = $('#greyATK').text();
     //   $starW = $('#uw').find('.active').next('input').val();
@@ -2837,14 +2697,25 @@
             case 'P.Crit Resistance': case 'M.Crit Resistance':
               y.find('.q5').show();
               break;
-            case 'Penetration':
-              y.find('.q6').show();
-              break;
             case 'Dodge': case 'Tough': case 'Resistance': case 'DMG Reduction upon Block':
-              y.find('.q7').show();
+              y.find('.q6').show();
+            case 'Penetration':
+              $(this).attr('id').slice(8) == 'treasure' ? y.find('.q4').show() : y.find('.q7').show();
+              break;
             default:
               y.find('.q').show();
           };
+        };
+        if ($(this).attr('id').slice(8) == 'treasure') {
+          $('#treasure #g-treasure').each(function(i, n) {
+            let treasureOptionFirst = $(`#a${i} .ax`).children('option:selected').val();
+            let treasureOptionSecond = $(`#b${i} .ax`).children('option:selected').val();
+            $(this).find('.ax').children().removeAttr('disabled');
+            if (treasureOptionFirst !== '')
+              $(this).find(`#b${i} .ax`).children(`[value="${treasureOptionFirst}"]`).attr('disabled', 'disabled');
+            if (treasureOptionSecond !== '')
+              $(this).find(`#a${i} .ax`).children(`[value="${treasureOptionSecond}"]`).attr('disabled', 'disabled');
+          });
         };
       });
     };
@@ -2867,8 +2738,8 @@
             case 'P.Resistance': case 'M.Resistance': case 'Penetration':
               y.find('.q3').show();
               break;
-              case 'DMG Reduction upon P.Block': case 'DMG Reduction upon M.Block':
-              case 'P.Block': case 'M.Block':
+            case 'DMG Reduction upon P.Block': case 'DMG Reduction upon M.Block':
+            case 'P.Block': case 'M.Block':
               y.find('.q4').show();
               break;
             default:
@@ -2886,35 +2757,35 @@
           let z = $(this).attr('id').slice(-5);
           switch (x) {
             case 'ATK': case 'Max HP':
-              if ((z == 'ac_tm' && $jewelType == 'Earrings' && x == 'ATK') ||
-                  (z == 'ac_tm' && $jewelType == 'Ring' && x == 'Max HP') ||
-                  (z == 'or_tm' && x == 'Max HP')) {
-                y.find('.q2').show();
+              if ((z == 'ac_tm' && jewelryType == 'Earrings' && x == 'ATK') ||
+                  (z == 'ac_tm' && jewelryType == 'Ring' && x == 'Max HP') ||
+                  (z == 'rb_tm' && x == 'Max HP')) {
+                y.find('.q2').show().prop('selected', true);
               } else
-                y.find('.q1').show();
+                y.find('.q1').show().prop('selected', true);
               break;
             case 'Crit DMG': case 'P.DEF': case 'M.DEF':
               if ((z == 'ar_tm' && x == 'P.DEF') ||
                   (z == 'sg_tm' && x == 'M.DEF') ||
                   (z == 'ac_tm' && $jewelType == 'Bracelet' && x == 'P.DEF') ||
                   (z == 'ac_tm' && $jewelType == 'Necklace' && x == 'M.DEF')) {
-                y.find('.q6').show();
+                y.find('.q6').show().prop('selected', true);
               } else
-                y.find('.q2').show();
+                y.find('.q2').show().prop('selected', true);
               break;
             case 'MP Recovery/Sec':
-              y.find('.q3').show();
+              y.find('.q3').show().prop('selected', true);
               break;
             case 'ATK Spd': case 'Crit': case 'Lifesteal': case 'ACC': case 'Debuff ACC':
             case 'CC Resist': case 'P.Dodge': case 'M.Dodge': case 'Penetration':
-              y.find('.q4').show();
+              y.find('.q4').show().prop('selected', true);
               break;
             case 'P.Block': case 'M.Block': case 'P.Crit Resistance':
             case 'M.Crit Resistance': case 'MP Recovery/Attack':
-              y.find('.q5').show();
+              y.find('.q5').show().prop('selected', true);
               break;
             default:
-              y.find('.q').show();
+              y.find('.q').show().prop('selected', true);
           };
         });
       });

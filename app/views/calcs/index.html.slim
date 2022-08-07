@@ -682,7 +682,7 @@ title Calculator
                         include_blank: false,
                         input_html: {class: 'null-name'}
             .gSt
-              p#acc
+              p tag='jewelry'
               .rating#je.c
                 = render 'stars'
             .gOption#g-right
@@ -872,7 +872,7 @@ title Calculator
                       include_blank: false,
                       input_html: {class: 'null-name'}
             .gSt
-              p#orb
+              p tag='orb'
               .rating#or.c
                 = render 'stars'
             .gOption#g-right
@@ -992,7 +992,8 @@ title Calculator
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'tm-op'
+                                        class: 'tm-op',
+                                        tag: 'prop_orb'
               .opt-tm-ench
                 .opt-ench#a0
                   p#scroll
@@ -1004,7 +1005,8 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_or_tm'
+                                          # id: 'calc_ench_orb_tm'
+                                          id: 'calc_gear_orb_ench_tm'
                   = f.input :ench_orb_tm_st_1,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -1022,7 +1024,8 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_or_tm'
+                                          # id: 'calc_ench_orb_tm'
+                                          id: 'calc_gear_orb_ench_tm'
                   = f.input :ench_orb_tm_st_2,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
@@ -1040,7 +1043,8 @@ title Calculator
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
                                           class: 'ench-n',
-                                          id: 'calc_ench_or_tm'
+                                          # id: 'calc_ench_orb_tm'
+                                          id: 'calc_gear_orb_ench_tm'
                   = f.input :ench_orb_tm_st_3,
                             as: :select,
                             collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
