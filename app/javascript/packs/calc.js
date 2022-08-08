@@ -848,11 +848,11 @@
           switch (x) {
             case 'armor': case 'secondary':
               gearSet.indexOf("Reclaimed") != -1 ? greyStat.text(GearStat[`${HeroStat[heroClass][`${x}TM`]}R`])
-                                                 : greyStat.text(GearStat[`${HeroStat[heroClass][`${x}`]}`]);
-             $(`#calc_gear_${x}`)
-               .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
-               .addClass('g-fr-t').removeClass('g-fr')
-               .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
+                                                 : greyStat.text(GearStat[`${HeroStat[heroClass][`${x}TM`]}`]);
+              $(`#calc_gear_${x}`)
+                .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][`${x}`]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
+                .addClass('g-fr-t').removeClass('g-fr')
+                .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
               break;
             case 'orb':
               gearSet.indexOf("Reclaimed") != -1 ? greyStat.text(GearStat.tm4R)
@@ -889,7 +889,6 @@
             .parent().find('.gTM').hide();
           $(`#prop_${x}`).empty();
           // gearStat();
-          break;
       };
       $(`[tag=${gear}]`).text(greyStat.text());
     };
@@ -1036,7 +1035,7 @@
       change_treasure();
     }).change();
     $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
-      change_gear($(this).attr('id').slice(10));
+      change_gear($(this).parents().eq(1).attr('id'));
     }).change();
     $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
@@ -1047,17 +1046,15 @@
       $(`#${$(this).attr('tag')}`).text($(`#${$(this).attr('id')}`).children('option:selected').text());
       // gearSet();
     });
-    $('select#calc_ench_ar, select#calc_ench_sg, select#calc_ench_orb').change(function() {
+    $('select#armor_ench, select#secondary_ench, select#orb_ench').change(function() {
       let x = $(this);
       $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('option').hide();
-      if (x.children('option:selected').val() !== '')
-        statEnchant(x);
+      statEnchant(x);
     });
-    $('select#calc_ench_ar_tm, select#calc_ench_sg_tm, select#calc_ench_orb_tm').change(function() {
+    $('select#armor_ench_tm, select#secondary_ench_tm, select#orb_ench_tm').change(function() {
       let x = $(this);
       $(this).parent().next().find('.ench-v').prop('selectedIndex', 0).find('option').hide();
-      if ($(this).children('option:selected').val() !== '')
-        statEnchant_TM(x);
+      statEnchant_TM(x);
       $(x.parents().eq(2)).each(function() {
         let tmEnchF = $(this).find('#a0 .ench-n').children('option:selected').val();
         let tmEnchS = $(this).find('#b0 .ench-n').children('option:selected').val();
@@ -2723,27 +2720,27 @@
       $('.opt-ench').find(ench).each(function() {
         $(this).parent().next().find('option').hide();
         $('.opt-ench').find(ench).each(function() {
-          let x = $(this).children('option:selected').val();
-          let y = $(this).parent().next().children();
-          switch (x) {
+          let stat = $(this).children('option:selected').val();
+          let x = $(this).parent().next().children();
+          switch (stat) {
             case 'ATK': case 'Max HP': case 'Mana Recovery upon taking DMG': case 'Recovery':
-              y.find('.q1').show();
+              x.find('.q1').show();
               break;
             case 'Crit DMG': case 'P.DEF': case 'M.DEF':
-              y.find('.q2').show();
+              x.find('.q2').show();
               break;
             case 'ATK Spd': case 'Crit': case 'Lifesteal': case 'ACC':
             case 'Debuff ACC': case 'CC Resist': case 'P.Crit Resistance':
             case 'M.Crit Resistance': case 'P.Dodge': case 'M.Dodge':
             case 'P.Resistance': case 'M.Resistance': case 'Penetration':
-              y.find('.q3').show();
+              x.find('.q3').show();
               break;
             case 'DMG Reduction upon P.Block': case 'DMG Reduction upon M.Block':
             case 'P.Block': case 'M.Block':
-              y.find('.q4').show();
+              x.find('.q4').show();
               break;
             default:
-              y.find('.q').show();
+              x.find('.q').show();
           };
         });
       });
@@ -2752,40 +2749,40 @@
       $('.opt-ench').find(ench).each(function() {
         $(this).parent().next().find('option').hide();
         $('.opt-ench').find(ench).each(function() {
-          let x = $(this).children('option:selected').val();
-          let y = $(this).parent().next().children();
-          let z = $(this).attr('id').slice(-5);
-          switch (x) {
+          let stat = $(this).children('option:selected').val();
+          let gear = $(this).attr('id').slice(0, -8);
+          let x = $(this).parent().next().children();
+          switch (stat) {
             case 'ATK': case 'Max HP':
-              if ((z == 'ac_tm' && jewelryType == 'Earrings' && x == 'ATK') ||
-                  (z == 'ac_tm' && jewelryType == 'Ring' && x == 'Max HP') ||
-                  (z == 'rb_tm' && x == 'Max HP')) {
-                y.find('.q2').show().prop('selected', true);
-              } else
-                y.find('.q1').show().prop('selected', true);
+              if ((gear == 'jewelry' && jewelryType == 'Earrings' && stat == 'ATK') ||
+                  (gear == 'jewelry' && jewelryType == 'Ring' && stat == 'Max HP') ||
+                  (gear == 'orb' && stat == 'Max HP'))
+                x.find('.q2').show().prop('selected', true);
+              else
+                x.find('.q1').show().prop('selected', true);
               break;
             case 'Crit DMG': case 'P.DEF': case 'M.DEF':
-              if ((z == 'ar_tm' && x == 'P.DEF') ||
-                  (z == 'sg_tm' && x == 'M.DEF') ||
-                  (z == 'ac_tm' && $jewelType == 'Bracelet' && x == 'P.DEF') ||
-                  (z == 'ac_tm' && $jewelType == 'Necklace' && x == 'M.DEF')) {
-                y.find('.q6').show().prop('selected', true);
-              } else
-                y.find('.q2').show().prop('selected', true);
+              if ((gear == 'armor' && stat == 'P.DEF') ||
+                  (gear == 'secondary' && stat == 'M.DEF') ||
+                  (gear == 'jewelry' && $jewelType == 'Bracelet' && stat == 'P.DEF') ||
+                  (gear == 'jewelry' && $jewelType == 'Necklace' && stat == 'M.DEF'))
+                x.find('.q6').show().prop('selected', true);
+              else
+                x.find('.q2').show().prop('selected', true);
               break;
             case 'MP Recovery/Sec':
-              y.find('.q3').show().prop('selected', true);
+              x.find('.q3').show().prop('selected', true);
               break;
             case 'ATK Spd': case 'Crit': case 'Lifesteal': case 'ACC': case 'Debuff ACC':
             case 'CC Resist': case 'P.Dodge': case 'M.Dodge': case 'Penetration':
-              y.find('.q4').show().prop('selected', true);
+              x.find('.q4').show().prop('selected', true);
               break;
             case 'P.Block': case 'M.Block': case 'P.Crit Resistance':
             case 'M.Crit Resistance': case 'MP Recovery/Attack':
-              y.find('.q5').show().prop('selected', true);
+              x.find('.q5').show().prop('selected', true);
               break;
             default:
-              y.find('.q').show().prop('selected', true);
+              x.find('.q').show().prop('selected', true);
           };
         });
       });
