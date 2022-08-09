@@ -129,7 +129,7 @@ title Calculator
                           label: false,
                           include_blank: false,
                           prompt: '- - -',
-                          input_html: {class: 'w-ad-ench'}
+                          input_html: {class: 'w-ad-enh'}
                 .range
                   .r-sl
                     span.range-ou1
@@ -220,24 +220,24 @@ title Calculator
                           label: false,
                           include_blank: false,
                           input_html: {class: 'ay null-stat', id: 'calc_st_armor_st'}
-              .opt-ench
+              .opt-enh
                 p#scroll
-                  img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                .input.select.optional.calc_ench_ar
-                  = f.collection_select :ench_ar,
+                  img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                .input.select.optional.calc_enh_ar
+                  = f.collection_select :enh_ar,
                                         @stats.where(stat_type: 'scroll'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'ench-n',
-                                        id: 'armor_ench'
-                = f.input :ench_ar_st,
+                                        class: 'enh-n',
+                                        id: 'armor_enh'
+                = f.input :enh_ar_st,
                           as: :select,
-                          collection: @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}]},
+                          collection: @stats.order(:id).where(stat_type: 'enh').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ench-v null-stat'}
+                          input_html: {class: 'enh-v null-stat'}
             .gTM#g-left
               .opt
                 .input.select.optional.calc_armor_tm_1
@@ -280,61 +280,61 @@ title Calculator
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'tm-op',
                                         tag: 'prop_armor'
-              .opt-tm-ench
-                .opt-ench#a0
+              .opt-tm-enh
+                .opt-enh#a0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_ar_tm_1
-                    = f.collection_select :ench_ar_tm_1,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_ar_tm_1
+                    = f.collection_select :enh_ar_tm_1,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'armor_ench_tm'
-                  = f.input :ench_ar_tm_st_1,
+                                          class: 'enh-n',
+                                          id: 'armor_enh_tm'
+                  = f.input :enh_ar_tm_st_1,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_ar_tm_st'}
-                .opt-ench#b0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_ar_tm_st'}
+                .opt-enh#b0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_ar_tm_2
-                    = f.collection_select :ench_ar_tm_2,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_ar_tm_2
+                    = f.collection_select :enh_ar_tm_2,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'armor_ench_tm'
-                  = f.input :ench_ar_tm_st_2,
+                                          class: 'enh-n',
+                                          id: 'armor_enh_tm'
+                  = f.input :enh_ar_tm_st_2,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_ar_tm_st'}
-                .opt-ench#c0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_ar_tm_st'}
+                .opt-enh#c0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_ar_tm_3
-                    = f.collection_select :ench_ar_tm_3,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_ar_tm_3
+                    = f.collection_select :enh_ar_tm_3,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'armor_ench_tm'
-                  = f.input :ench_ar_tm_st_3,
+                                          class: 'enh-n',
+                                          id: 'armor_enh_tm'
+                  = f.input :enh_ar_tm_st_3,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_ar_tm_st'}
+                            input_html: {class: 'enh-v null-stat', id: 'enh_ar_tm_st'}
           .form-input#secondary
             = f.input :gear_secondary,
                       as: :select,
@@ -412,23 +412,23 @@ title Calculator
                           label: false,
                           include_blank: false,
                           input_html: {class: 'ay null-stat', id: 'calc_st_secondary_st'}
-              .opt-ench
+              .opt-enh
                 p#scroll
-                  img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                .input.select.optional.calc_ench_sg
-                  = f.collection_select :ench_sg,
+                  img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                .input.select.optional.calc_enh_sg
+                  = f.collection_select :enh_sg,
                                         @stats.where(stat_type: 'scroll'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'ench-n',
-                                        id: 'secondary_ench'
-                = f.input :ench_sg_st, as: :select,
-                          collection: @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}]},
+                                        class: 'enh-n',
+                                        id: 'secondary_enh'
+                = f.input :enh_sg_st, as: :select,
+                          collection: @stats.order(:id).where(stat_type: 'enh').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ench-v null-stat'}
+                          input_html: {class: 'enh-v null-stat'}
             .gTM#g-left
               .opt
                 .input.select.optional.calc_secondary_tm_1
@@ -471,61 +471,61 @@ title Calculator
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'tm-op',
                                         tag: 'prop_secondary'
-              .opt-tm-ench
-                .opt-ench#a0
+              .opt-tm-enh
+                .opt-enh#a0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_sg_tm_1
-                    = f.collection_select :ench_sg_tm_1,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_sg_tm_1
+                    = f.collection_select :enh_sg_tm_1,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'secondary_ench_tm'
-                  = f.input :ench_sg_tm_st_1,
+                                          class: 'enh-n',
+                                          id: 'secondary_enh_tm'
+                  = f.input :enh_sg_tm_st_1,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_sg_tm_st'}
-                .opt-ench#b0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_sg_tm_st'}
+                .opt-enh#b0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_sg_tm_2
-                    = f.collection_select :ench_sg_tm_2,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_sg_tm_2
+                    = f.collection_select :enh_sg_tm_2,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'secondary_ench_tm'
-                  = f.input :ench_sg_tm_st_2,
+                                          class: 'enh-n',
+                                          id: 'secondary_enh_tm'
+                  = f.input :enh_sg_tm_st_2,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_sg_tm_st'}
-                .opt-ench#c0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_sg_tm_st'}
+                .opt-enh#c0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_sg_tm_3
-                    = f.collection_select :ench_sg_tm_3,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_sg_tm_3
+                    = f.collection_select :enh_sg_tm_3,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'secondary_ench_tm'
-                  = f.input :ench_sg_tm_st_3,
+                                          class: 'enh-n',
+                                          id: 'secondary_enh_tm'
+                  = f.input :enh_sg_tm_st_3,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_sg_tm_st'}
+                            input_html: {class: 'enh-v null-stat', id: 'enh_sg_tm_st'}
         div
           .form-input#treasure
             = f.input :gear_treasure,
@@ -752,23 +752,24 @@ title Calculator
                           label: false,
                           include_blank: false,
                           input_html: {class: 'ay null-stat', id: 'calc_st_jewerly_st'}
-              .opt-ench
+              .opt-enh
                 p#scroll
-                  img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                .input.select.optional.calc_ench_j
-                  = f.collection_select :ench_j,
+                  img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                .input.select.optional.calc_enh_j
+                  = f.collection_select :enh_j,
                                         @stats.where(stat_type: 'scroll'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'ench-n'
-                = f.input :ench_j_st,
+                                        class: 'enh-n',
+                                        id: 'jewelry_enh'
+                = f.input :enh_j_st,
                           as: :select,
-                          collection: @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}]},
+                          collection: @stats.order(:id).where(stat_type: 'enh').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ench-v null-stat'}
+                          input_html: {class: 'enh-v null-stat'}
             .gTM#g-right
               .opt
                 .input.select.optional.calc_jewerly_tm_1
@@ -810,61 +811,61 @@ title Calculator
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'tm-op'
-              .opt-tm-ench
-                .opt-ench#a0
+              .opt-tm-enh
+                .opt-enh#a0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_j_tm_1
-                    = f.collection_select :ench_j_tm_1,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_j_tm_1
+                    = f.collection_select :enh_j_tm_1,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'jewelry_ench_tm'
-                  = f.input :ench_j_tm_st_1,
+                                          class: 'enh-n',
+                                          id: 'jewelry_enh_tm'
+                  = f.input :enh_j_tm_st_1,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_j_tm_st'}
-                .opt-ench#b0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_j_tm_st'}
+                .opt-enh#b0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_j_tm_2
-                    = f.collection_select :ench_j_tm_2,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_j_tm_2
+                    = f.collection_select :enh_j_tm_2,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'jewelry_ench_tm'
-                  = f.input :ench_j_tm_st_2,
+                                          class: 'enh-n',
+                                          id: 'jewelry_enh_tm'
+                  = f.input :enh_j_tm_st_2,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_j_tm_st'}
-                .opt-ench#c0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_j_tm_st'}
+                .opt-enh#c0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_j_tm_3
-                    = f.collection_select :ench_j_tm_3,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_j_tm_3
+                    = f.collection_select :enh_j_tm_3,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'jewelry_ench_tm'
-                  = f.input :ench_j_tm_st_3,
+                                          class: 'enh-n',
+                                          id: 'jewelry_enh_tm'
+                  = f.input :enh_j_tm_st_3,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_j_tm_st'}
+                            input_html: {class: 'enh-v null-stat', id: 'enh_j_tm_st'}
           .form-input#orb
             = f.input :gear_orb,
                       as: :select,
@@ -942,24 +943,24 @@ title Calculator
                           label: false,
                           include_blank: false,
                           input_html: {class: 'ay null-stat', id: 'calc_st_orb_st'}
-              .opt-ench
+              .opt-enh
                 p#scroll
-                  img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                .input.select.optional.calc_ench_orb
-                  = f.collection_select :ench_orb,
+                  img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                .input.select.optional.calc_enh_orb
+                  = f.collection_select :enh_orb,
                                         @stats.where(stat_type: 'scroll'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
-                                        class: 'ench-n',
-                                        id: 'orb_ench'
-                = f.input :ench_orb_st,
+                                        class: 'enh-n',
+                                        id: 'orb_enh'
+                = f.input :enh_orb_st,
                           as: :select,
-                          collection: @stats.order(:id).where(stat_type: 'ench').collect {|s| [s.value, s.value, {class: s.name}]},
+                          collection: @stats.order(:id).where(stat_type: 'enh').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ench-v null-stat'}
+                          input_html: {class: 'enh-v null-stat'}
             .gTM#g-right
               .opt
                 .input.select.optional.calc_orb_tm_1
@@ -1002,61 +1003,61 @@ title Calculator
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'tm-op',
                                         tag: 'prop_orb'
-              .opt-tm-ench
-                .opt-ench#a0
+              .opt-tm-enh
+                .opt-enh#a0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_orb_tm_1
-                    = f.collection_select :ench_orb_tm_1,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_orb_tm_1
+                    = f.collection_select :enh_orb_tm_1,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'orb_ench_tm'
-                  = f.input :ench_orb_tm_st_1,
+                                          class: 'enh-n',
+                                          id: 'orb_enh_tm'
+                  = f.input :enh_orb_tm_st_1,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_orb_tm_st'}
-                .opt-ench#b0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_orb_tm_st'}
+                .opt-enh#b0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_orb_tm_2
-                    = f.collection_select :ench_orb_tm_2,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_orb_tm_2
+                    = f.collection_select :enh_orb_tm_2,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'orb_ench_tm'
-                  = f.input :ench_orb_tm_st_2,
+                                          class: 'enh-n',
+                                          id: 'orb_enh_tm'
+                  = f.input :enh_orb_tm_st_2,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_orb_tm_st'}
-                .opt-ench#c0
+                            input_html: {class: 'enh-v null-stat', id: 'enh_orb_tm_st'}
+                .opt-enh#c0
                   p#scroll
-                    img src="/images/media/icons/scroll.webp" title='Enchant' alt='Enchant'
-                  .input.select.optional.calc_ench_orb_tm_3
-                    = f.collection_select :ench_orb_tm_3,
-                                          @stats.where(stat_type: 'tm-ench'),
+                    img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
+                  .input.select.optional.calc_enh_orb_tm_3
+                    = f.collection_select :enh_orb_tm_3,
+                                          @stats.where(stat_type: 'tm-enh'),
                                           :name,
                                           :name,
                                           {prompt: '- - - - - - - - - -'},
-                                          class: 'ench-n',
-                                          id: 'orb_ench_tm'
-                  = f.input :ench_orb_tm_st_3,
+                                          class: 'enh-n',
+                                          id: 'orb_enh_tm'
+                  = f.input :enh_orb_tm_st_3,
                             as: :select,
-                            collection: @stats.order(:id).where(stat_type: 'tm-ench-stat').collect {|s| [s.value, s.value, {class: s.name}]},
+                            collection: @stats.order(:id).where(stat_type: 'tm-enh-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                             required: false,
                             label: false,
                             include_blank: false,
-                            input_html: {class: 'ench-v null-stat', id: 'ench_orb_tm_st'}
+                            input_html: {class: 'enh-v null-stat', id: 'enh_orb_tm_st'}
           .form-input
             = f.input :gear_artifact,
                       as: :select,
