@@ -376,6 +376,7 @@
     /* vars */
     let heroClass,
         heroName,
+        heroId,
         gearWeaponType,
         advancementPhase,
         rangeATK,
@@ -386,7 +387,10 @@
         greyStat,
         jewelSet,
         jewelStat,
-        jewelType;
+        jewelType,
+        perkTier,
+        perkId,
+        perkTp;
     /* Loading build from Link */
     $('#btn-load').click((e) => {
       e.preventDefault();
@@ -595,8 +599,9 @@
       // $('option:contains("----------")').attr('disabled', 'disabled');
       $('.r-stats').children().hide();
       $('.t-total .r-stats').empty();
-      heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       heroClass = $('#calc_role_id').children('option:selected').text();
+      heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
+      heroId = $('#calc_char_id').children('option:selected').val();
 
       const stats = $('.class-stats').find('.statData').clone();
       $(stats).prependTo('.t-total .r-stats');
@@ -894,7 +899,7 @@
       $(`#${gear}`).children('option:selected').val() == '- - - - - - - - - -' ? jewelSet = $(`#${gear}`).children('option:selected').val()
                                                                                : jewelSet = $(`#${gear}`).children().children('option:selected').val();
       jewelType = $(`#${gear}`).children().children('option:selected').parent().attr('label');
-      $('#set_jewelry').text($(`#${gear}`).children().children('option:selected').val());
+      $('#set_jewelry').text(jewelSet);
       $('.gTM .enh-n').children().removeAttr('disabled');
       $('#jewerly')
         .find('.ax, .ay, .ax-tm, .ay-tm, .enh-n, .enh-v, .ax-r, .ay-r').prop('selectedIndex', 0).end()
@@ -2510,59 +2515,41 @@
     //
     //   statSplit();
     // };
-    // function perkTP() {
-    //   $tp_1 = 0;$tp_2 = 0;$tp_3 = 0;$tp_5 = 0;
-    //   $hero = $('#calc_char_id').children('option:selected').val();
-    //   $('.hero-img .hero-' + $hero).find('.c-p').each(function() {
-    //     $perkTier = $(this).attr('id');
-    //     if ($perkTier == 'perk-t1') {
-    //       $(this).find('.pick').each(function() {
-    //         $tp_1 += 10;
-    //       });
-    //     } else if ($perkTier == 'perk-t2') {
-    //       $(this).find('.pick').each(function() {
-    //         $tp_2 += 15;
-    //       });
-    //     } else if ($perkTier == 'perk-t3') {
-    //       $(this).find('.pick').each(function() {
-    //         $tp_3 += 15;
-    //       });
-    //     } else if ($perkTier == 'perk-t5') {
-    //       $(this).find('.pick').each(function() {
-    //         $tp_5 += 15;
-    //       });
-    //     }
-    //   });
-    // };
-    // $('.heroPerk .c-sub .c-perk img').click(function() {
-    //   $perkId = $(this).attr('id');
-    //   $perkCl = $(this);
-    //   // if ($perkCl.length == null) {
-    //   if ($perkId.slice(2) == 'd')
-    //     $(this).toggleClass('pick').parent().prev('.c-perk-img').find('img').removeClass('pick');
-    //   else if ($perkId.slice(2) == 'l')
-    //     $(this).toggleClass('pick').parent().next('.c-perk-img').find('img').removeClass('pick');
-    //   else
-    //     $(this).toggleClass('pick');
-    //   // } else
-    //   //   $(this).toggleClass('pick');
-    //
-    //   perkTP();
-    //   $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-    //   if ($tp == 0)
-    //     $('.perk-tp p').css('color', 'black');
-    //   else if (($tp > 0) && ($tp < 100))
-    //     $('.perk-tp p').css('color', 'greenyellow');
-    //   else if ($tp > 95) {
-    //     $('.perk-tp p').css('color', 'darkred');
-    //     alert('Not Enogh TP');
-    //   }
-    //   $('.perk-tp p').text($tp);
-    // });
-    // $('.perk-tp #tp-r').click(function() {
-    //   $('.perk-tp p').css('color', 'black').text(0);
-    //   $('.c-perk-img').find('img').removeClass('pick');
-    // });
+    function perkTP() {
+      let perkPoints = 0;
+      $('.hero-img .hero-' + heroId).find('.c-p').each(function() {
+        perkTier = $(this).attr('id');
+        if (perkTier == 'perk-t1')
+          $(this).find('.pick').each(function() { perkPoints += 10 })
+        else
+          $(this).find('.pick').each(function() { perkPoints += 15 });
+      });
+      return perkPoints;
+    };
+    $('.heroPerk .c-sub .c-perk img').click(function() {
+      perkId = $(this).attr('id');
+      if (perkId.slice(2) == 'd')
+        $(this).toggleClass('pick').parent().prev('.c-perk-img').find('img').removeClass('pick');
+      else if (perkId.slice(2) == 'l')
+        $(this).toggleClass('pick').parent().next('.c-perk-img').find('img').removeClass('pick');
+      else
+        $(this).toggleClass('pick');
+
+      perkTp = perkTP();
+      if (perkTp == 0)
+        $('.perk-tp p').css('color', 'black');
+      else if (perkTp > 0 && perkTp <= 95)
+        $('.perk-tp p').css('color', 'greenyellow');
+      else if (perkTp > 95) {
+        $('.perk-tp p').css('color', 'darkred');
+        alert('Not Enogh TP');
+      };
+      $('.perk-tp p').text(perkTp);
+    });
+    $('.perk-tp #tp-r').click(function() {
+      $('.perk-tp p').css('color', 'black').text(0);
+      $('.c-perk-img').find('img').removeClass('pick');
+    });
     // function hideGearImage() {
     //   $trCss = {
     //     'background-image': 'url(/images/media/gears/bg-treasure.webp)',
@@ -2794,20 +2781,20 @@
     //     }
     //   });
     // };
-    // $('.rating label').click(function() {
-    //   option();
-    //   gearStat();
-    //   gearSet();
-    // });
+    $('.rating label').click(function() {
+      // option();
+      // gearStat();
+      // gearSet();
+    });
     (function rangeSlider() {
       $('.range').each(function() {
         $('[name="range"], [name="add-atk"], [name="add-hp"]').on('input', () => swStat());
       });
     }).call(this);
-    // $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
-    //   gearStat();
-    //   gearSet();
-    // });
+    $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
+      // gearStat();
+      // gearSet();
+    });
     function swStat() {
       let x = $('[name="range"]').val(),
           y = $('[name="add-atk"]').val(),
