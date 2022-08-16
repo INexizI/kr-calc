@@ -62,8 +62,10 @@
         gearTM: 'Protection',
         armor: '1-1H',
         armorTM: 'tm1',
+        armorType: 'type1',
         secondary: '2-2H',
-        secondaryTM: 'tm1'
+        secondaryTM: 'tm1',
+        secondaryType: 'type1'
       },
       Warrior: {
         B0: 1449520,
@@ -95,11 +97,13 @@
         swATK: 4000,
         swHP: 125000,
         gearType: 'Heavy',
-        gearArmor: '1-1H',
-        gearSecondary: '2-2H',
         gearTM: 'Courage',
-        tmArmor: 'tm1',
-        tmSecondary: 'tm1',
+        armor: '1-1H',
+        armorTM: 'tm1',
+        armorType: 'type1',
+        secondary: '2-2H',
+        secondaryTM: 'tm1',
+        secondaryType: 'type1'
       },
       Assassin: {
         B0: 1384992,
@@ -131,11 +135,13 @@
         swATK: 4000,
         swHP: 125000,
         gearType: 'Light',
-        gearArmor: '3-1L',
-        gearSecondary: '4-2L',
         gearTM: 'Coldness',
-        tmArmor: 'tm2',
-        tmSecondary: 'tm3',
+        armor: '3-1L',
+        armorTM: 'tm2',
+        armorType: 'type2',
+        secondary: '4-2L',
+        secondaryTM: 'tm3',
+        secondaryType: 'type3'
       },
       Archer: {
         B0: 1066728,
@@ -167,11 +173,13 @@
         swATK: 4500,
         swHP: 125000,
         gearType: 'Light',
-        gearArmor: '3-1L',
-        gearSecondary: '4-2L',
         gearTM: 'Wrath',
-        tmArmor: 'tm2',
-        tmSecondary: 'tm3',
+        armor: '3-1L',
+        armorTM: 'tm2',
+        armorType: 'type2',
+        secondary: '4-2L',
+        secondaryTM: 'tm3',
+        secondaryType: 'type3'
       },
       Mechanic: {
         B0: 1157176,
@@ -203,11 +211,13 @@
         swATK: 4500,
         swHP: 125000,
         gearType: 'Light',
-        gearArmor: '3-1L',
-        gearSecondary: '4-2L',
         gearTM: 'Passion',
-        tmArmor: 'tm2',
-        tmSecondary: 'tm3',
+        armor: '3-1L',
+        armorTM: 'tm2',
+        armorType: 'type2',
+        secondary: '4-2L',
+        secondaryTM: 'tm3',
+        secondaryType: 'type3'
       },
       Wizard: {
         B0: 985328,
@@ -239,11 +249,13 @@
         swATK: 4500,
         swHP: 125000,
         gearType: 'Robe',
-        gearArmor: '5-1I',
-        gearSecondary: '6-2I',
         gearTM: 'Wisdom',
-        tmArmor: 'tm3',
-        tmSecondary: 'tm2',
+        armor: '5-1I',
+        armorTM: 'tm3',
+        armorType: 'type3',
+        secondary: '6-2I',
+        secondaryTM: 'tm2',
+        secondaryType: 'type2'
       },
       Priest: {
         B0: 1104864,
@@ -275,11 +287,13 @@
         swATK: 4500,
         swHP: 125000,
         gearType: 'Robe',
-        gearArmor: '5-1I',
-        gearSecondary: '6-2I',
         gearTM: 'Blessing',
-        tmArmor: 'tm3',
-        tmSecondary: 'tm2',
+        armor: '5-1I',
+        armorTM: 'tm3',
+        armorType: 'type3',
+        secondary: '6-2I',
+        secondaryTM: 'tm2',
+        secondaryType: 'type2'
       }
     };
     const GearStat = {
@@ -372,6 +386,43 @@
       jewelry: '/images/media/gears/bg-accessory.webp',
       orb: '/images/media/gears/bg-orb.webp',
       artifact: '/images/media/gears/bg-art.webp'
+    };
+    const GearStar = {
+      type1: {
+        '1': 18758,
+        '2': 21316,
+        '3': 24726,
+        '4': 28989,
+        '5': 34105
+      },
+      type2: {
+        '1': 12506,
+        '2': 14212,
+        '3': 16485,
+        '4': 19328,
+        '5': 22739
+      },
+      type3: {
+        '1': 6255,
+        '2': 7108,
+        '3': 8245,
+        '4': 9666,
+        '5': 11372
+      },
+      orb: {
+        '1': 0.1,
+        '2': 0.2,
+        '3': 0.3,
+        '4': 0.4,
+        '5': 0.5
+      },
+      tm: {
+        '1': 0.05,
+        '2': 0.1,
+        '3': 0.15,
+        '4': 0.2,
+        '5': 0.25
+      }
     };
     /* vars */
     let heroClassId,
@@ -657,7 +708,6 @@
       $('.c-perk-img').find('img').removeClass('pick');
       $('.perk-tp').find('p').css('color', 'black').text(0);
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
-      $('#range-atk, #range-hp').text(0);
     };
     function change_weapon() {
       $('#heroATK').empty();
@@ -1189,138 +1239,22 @@
       armorGreyStat = $('#greyPDEF').text();
       starArmor = $('#ar').find('.active').next('input').val();
       armorSet = $('#set_armor').text();
-      let x = parseInt(armorGreyStat);
-      if ($('#calc_gear_armor').hasClass('g-fr-t')) {
-        switch (starArmor) {
-          case '0':
-            $('[tag="armor"]').text(armorGreyStat);
-            break;
-          case '1':
-            (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.05) + 1)
-                                                   : $('[tag="armor"]').text(x + Math.trunc(x*0.05));
-            break;
-          case '2':
-            if (armorSet.indexOf("Reclaimed") != -1)
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="armor"]').text(x + Math.trunc(x*0.1))
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.1) + 1);
-            else
-              (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.1) + 1)
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.1));
-            break;
-          case '3':
-            (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.15) + 1)
-                                                   : $('[tag="armor"]').text(x + Math.trunc(x*0.15));
-            break;
-          case '4':
-            if (armorSet.indexOf("Reclaimed") != -1)
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="armor"]').text(x + Math.trunc(x*0.2))
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.2) + 1);
-            else
-              (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.2) + 1)
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.2));
-            break;
-          case '5':
-            if (armorSet.indexOf("Reclaimed") != -1)
-              (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.25) + 1)
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.25));
-            else
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="armor"]').text(x + Math.trunc(x*0.25))
-                                                     : $('[tag="armor"]').text(x + Math.trunc(x*0.25) + 1);
-            break;
-        };
-      } else {
-        switch (starArmor) {
-          case '0':
-            $('[tag="armor"]').text(armorGreyStat);
-            break;
-          case '1':
-            $('[tag="armor"]').text(x + Math.trunc(x*0.1) + 1);
-            break;
-          case '2':
-            $('[tag="armor"]').text(x + Math.trunc(x*0.25) + 1);
-            break;
-          case '3':
-            (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="armor"]').text(x + Math.trunc(x*0.45))
-                                                                       : $('[tag="armor"]').text(x + Math.trunc(x*0.45) + 1);
-            break;
-          case '4':
-            (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(x + Math.trunc(x*0.7))
-                                                   : $('[tag="armor"]').text(x + Math.trunc(x*0.7) + 1);
-            break;
-          case '5':
-            (heroClassId == 6 || heroClassId == 7) ? $('[tag="armor"]').text(2*Math.trunc(x))
-                                                   : $('[tag="armor"]').text(2*Math.trunc(x) + 1);
-            break;
-        };
+      if (starArmor == '0' || starArmor == null)
+        $('[tag="armor"]').text(armorGreyStat);
+      else {
+        $('#calc_gear_armor').hasClass('g-fr-t') ? $('[tag="armor"]').text(parseInt(armorGreyStat) + Math.trunc(parseInt(armorGreyStat) * GearStar.tm[starArmor]))
+                                                 : $('[tag="armor"]').text(GearStar[HeroStat[heroClass].armorType][starArmor]);
       };
     };
     function starGearSecondary() {
       secondaryGreyStat = $('#greyMDEF').text();
       starSecondary = $('#se').find('.active').next('input').val();
       secondarySet = $('#set_secondary').text();
-      let x = parseInt(secondaryGreyStat);
-      if ($('#calc_gear_secondary').hasClass('g-fr-t')) {
-        switch (starSecondary) {
-          case '0':
-            $('[tag="secondary"]').text(secondaryGreyStat);
-            break;
-          case '1':
-            (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.05) + 1)
-                                                                       : $('[tag="secondary"]').text(x + Math.trunc(x*0.05));
-            break;
-          case '2':
-            if (secondarySet.indexOf("Reclaimed") != -1)
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.1))
-                                                     : $('[tag="secondary"]').text(x + Math.trunc(x*0.1) + 1);
-            else
-              (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.1) + 1)
-                                                                         : $('[tag="secondary"]').text(x + Math.trunc(x*0.1));
-            break;
-          case '3':
-            (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.15) + 1)
-                                                                       : $('[tag="secondary"]').text(x + Math.trunc(x*0.15));
-            break;
-          case '4':
-            if (secondarySet.indexOf("Reclaimed") != -1)
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.2))
-                                                     : $('[tag="secondary"]').text(x + Math.trunc(x*0.2) + 1);
-            else
-              (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.2) + 1)
-                                                                         : $('[tag="secondary"]').text(x + Math.trunc(x*0.2));
-            break;
-          case '5':
-            if (secondarySet.indexOf("Reclaimed") != -1)
-              (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.25) + 1)
-                                                                         : $('[tag="secondary"]').text(x + Math.trunc(x*0.25));
-            else
-              (heroClassId == 1 || heroClassId == 2) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.25))
-                                                     : $('[tag="secondary"]').text(x + Math.trunc(x*0.25) + 1);
-            break;
-        };
-      } else {
-        switch (starSecondary) {
-          case '0':
-            $('[tag="secondary"]').text(secondaryGreyStat);
-            break;
-          case '1':
-            $('[tag="secondary"]').text(x + Math.trunc(x*0.1) + 1);
-            break;
-          case '2':
-            $('[tag="secondary"]').text(x + Math.trunc(x*0.25) + 1);
-            break;
-          case '3':
-            (heroClassId == 6 || heroClassId == 7) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.45))
-                                                   : $('[tag="secondary"]').text(x + Math.trunc(x*0.45) + 1);
-            break;
-          case '4':
-            (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(x + Math.trunc(x*0.7))
-                                                                       : $('[tag="secondary"]').text(x + Math.trunc(x*0.7) + 1);
-            break;
-          case '5':
-            (heroClassId == 3 || heroClassId == 4 || heroClassId == 5) ? $('[tag="secondary"]').text(2*Math.trunc(x))
-                                                                       : $('[tag="secondary"]').text(2*Math.trunc(x) + 1);
-            break;
-        };
+      if (starSecondary == '0' || starSecondary == null)
+        $('[tag="secondary"]').text(secondaryGreyStat);
+      else {
+        $('#calc_gear_secondary').hasClass('g-fr-t') ? $('[tag="secondary"]').text(parseInt(secondaryGreyStat) + Math.trunc(parseInt(secondaryGreyStat) * GearStar.tm[starSecondary]))
+                                                     : $('[tag="secondary"]').text(GearStar[HeroStat[heroClass].secondaryType][starSecondary]);
       };
     };
     function starGearJewelry() {
@@ -1463,54 +1397,14 @@
       orbGreyStat = $('#greyO').text();
       starOrb = $('#or').find('.active').next('input').val();
       orbSet = $('#set_orb').text();
-      let x = parseInt(orbGreyStat);
-      if ($('#calc_gear_orb').hasClass('g-fr-t')) {
-        switch (starOrb) {
-        case '0':
-          $('[tag="orb"]').text(orbGreyStat);
-          break;
-        case '1':
-          orbSet.indexOf("Reclaimed") != -1 ? $('[tag="orb"]').text(x + Math.trunc(x*0.05))
-                                            : $('[tag="orb"]').text(x + Math.trunc(x*0.05) + 1);
-          break;
-        case '2':
-          orbSet.indexOf("Reclaimed") != -1 ? $('[tag="orb"]').text(x + Math.trunc(x*0.1))
-                                            : $('[tag="orb"]').text(x + Math.trunc(x*0.1) + 1);
-          break;
-        case '3':
-          orbSet.indexOf("Reclaimed") != -1 ? $('[tag="orb"]').text(x + Math.trunc(x*0.15))
-                                            : $('[tag="orb"]').text(x + Math.trunc(x*0.15) + 1);
-          break;
-        case '4':
-          orbSet.indexOf("Reclaimed") != -1 ? $('[tag="orb"]').text(x + Math.trunc(x*0.2))
-                                            : $('[tag="orb"]').text(x + Math.trunc(x*0.2) + 1);
-          break;
-        case '5':
-          orbSet.indexOf("Reclaimed") != -1 ? $('[tag="orb"]').text(x + Math.trunc(x*0.25))
-                                            : $('[tag="orb"]').text(x + Math.trunc(x*0.25) + 1);
-          break;
-      };
-      } else {
-        switch (starOrb) {
-          case '0':
-            $('[tag="orb"]').text(orbGreyStat);
-            break;
-          case '1':
-            $('[tag="orb"]').text(x + Math.trunc(x*0.1) + 1);
-            break;
-          case '2':
-            $('[tag="orb"]').text(x + Math.trunc(x*0.2) + 1);
-            break;
-          case '3':
-            $('[tag="orb"]').text(x + Math.trunc(x*0.3));
-            break;
-          case '4':
-            $('[tag="orb"]').text(x + Math.trunc(x*0.4));
-            break;
-          case '5':
-            $('[tag="orb"]').text(x + Math.trunc(x*0.5));
-            break;
-        };
+      if (starOrb == '0' || starOrb == null)
+        $('[tag="orb"]').text(orbGreyStat);
+      else {
+        if ($('#calc_gear_orb').hasClass('g-fr-t'))
+          orbSet.indexOf("Reclaimed") ? $('[tag="orb"]').text(Math.round(parseInt(orbGreyStat) * GearStar.tm[starOrb] + parseInt(orbGreyStat)))
+                                      : $('[tag="orb"]').text(Math.trunc(parseInt(orbGreyStat) * GearStar.tm[starOrb] + parseInt(orbGreyStat)));
+        else
+          $('[tag="orb"]').text(Math.round(parseInt(orbGreyStat) * 0.1 * starOrb + parseInt(orbGreyStat)));
       };
     };
 
@@ -2556,6 +2450,8 @@
       $('select#calc_gear_orb').css('background-image', `url(${GearIcon.orb})`);
       $('select#calc_gear_artifact').css('background-image', `url(${GearIcon.artifact})`);
 
+      $('.range').hide();
+      $('#range-atk, #range-hp').text(0);
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
       $('.heroGear select').removeClass('g-fr g-fr-u g-fr-t');
     };
