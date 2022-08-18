@@ -671,7 +671,7 @@ title Calculator
                           label: false,
                           include_blank: false,
                           input_html: {class: 'ay null-stat', id: 'calc_st_treasure_st'}
-          .form-input#jewerly
+          .form-input#jewelry
             .calc_gear_jewelry
               - acc_1 = @gears.where(gear_type: 'acc').collect {|g| [g.set, g.set]}
               - acc_2 = @gears.where(gear_type: 'acc').where.not(name: 'Technomagic').collect {|g| [g.set, g.set]}
@@ -689,69 +689,69 @@ title Calculator
                 = render 'stars'
             .gOption#g-right
               .opt
-                .input.select.optional.calc_jewerly_1
-                  = f.collection_select :jewerly_1,
+                .input.select.optional.calc_jewelry_1
+                  = f.collection_select :jewelry_1,
                                         @stats.where(stat_type: 'opt'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_1,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_1,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay null-stat', id: 'calc_st_jewelry_st'}
               .opt
-                .input.select.optional.calc_jewerly_2
-                  = f.collection_select :jewerly_2,
+                .input.select.optional.calc_jewelry_2
+                  = f.collection_select :jewelry_2,
                                         @stats.where(stat_type: 'opt'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_2,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_2,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay null-stat', id: 'calc_st_jewelry_st'}
               .opt
-                .input.select.optional.calc_jewerly_3
-                  = f.collection_select :jewerly_3,
+                .input.select.optional.calc_jewelry_3
+                  = f.collection_select :jewelry_3,
                                         @stats.where(stat_type: 'opt'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_3,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_3,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay null-stat', id: 'calc_st_jewelry_st'}
               .opt
-                .input.select.optional.calc_jewerly_4
-                  = f.collection_select :jewerly_4,
+                .input.select.optional.calc_jewelry_4
+                  = f.collection_select :jewelry_4,
                                         @stats.where(stat_type: 'opt'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_4,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_4,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay null-stat', id: 'calc_st_jewelry_st'}
               .opt-enh
                 p#scroll
                   img src="/images/media/icons/scroll.webp" title='Enhancement' alt='Enhancement'
@@ -772,40 +772,40 @@ title Calculator
                           input_html: {class: 'enh-v null-stat'}
             .gTM#g-right
               .opt
-                .input.select.optional.calc_jewerly_tm_1
-                  = f.collection_select :jewerly_tm_1,
+                .input.select.optional.calc_jewelry_tm_1
+                  = f.collection_select :jewelry_tm_1,
                                         @stats.where(stat_type: 'tm'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax-tm',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_tm_1,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_tm_1,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'tm-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay-tm null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay-tm null-stat', id: 'calc_st_jewelry_st'}
               .opt
-                .input.select.optional.calc_jewerly_tm_2
-                  = f.collection_select :jewerly_tm_2,
+                .input.select.optional.calc_jewelry_tm_2
+                  = f.collection_select :jewelry_tm_2,
                                         @stats.where(stat_type: 'tm'),
                                         :name,
                                         :name,
                                         {prompt: '- - - - - - - - - -'},
                                         class: 'ax-tm',
-                                        id: 'calc_st_jewerly'
-                = f.input :st_jewerly_tm_2,
+                                        id: 'calc_st_jewelry'
+                = f.input :st_jewelry_tm_2,
                           as: :select,
                           collection: @stats.order(:id).where(stat_type: 'tm-stat').collect {|s| [s.value, s.value, {class: s.name}]},
                           required: false,
                           label: false,
                           include_blank: false,
-                          input_html: {class: 'ay-tm null-stat', id: 'calc_st_jewerly_st'}
+                          input_html: {class: 'ay-tm null-stat', id: 'calc_st_jewelry_st'}
               .opt#tm
-                .input.select.optional.calc_st_jewerly_op
-                  = f.collection_select :st_jewerly_op,
+                .input.select.optional.calc_st_jewelry_op
+                  = f.collection_select :st_jewelry_op,
                                         @stats.where(stat_type: 'tm-opt'),
                                         :name,
                                         :name,
