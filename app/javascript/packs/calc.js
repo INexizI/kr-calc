@@ -409,19 +409,82 @@
         '4': 9666,
         '5': 11372
       },
-      orb: {
-        '1': 0.1,
-        '2': 0.2,
-        '3': 0.3,
-        '4': 0.4,
-        '5': 0.5
+      type4: {
+        '1': 798906,
+        '2': 871534,
+        '3': 944161,
+        '4': 1016789,
+        '5': 1089417
       },
-      tm: {
-        '1': 0.05,
-        '2': 0.1,
-        '3': 0.15,
-        '4': 0.2,
-        '5': 0.25
+      tm1: {
+        '1': 42974,
+        '2': 45020,
+        '3': 47067,
+        '4': 49113,
+        '5': 51160
+      },
+      tm1R: {
+        '1': 56403,
+        '2': 59089,
+        '3': 61775,
+        '4': 64461,
+        '5': 67147
+      },
+      tm2: {
+        '1': 28647,
+        '2': 30011,
+        '3': 31375,
+        '4': 32739,
+        '5': 34104
+      },
+      tm2R: {
+        '1': 37599,
+        '2': 39390,
+        '3': 41180,
+        '4': 42971,
+        '5': 44761
+      },
+      tm3: {
+        '1': 14327,
+        '2': 15009,
+        '3': 15691,
+        '4': 16373,
+        '5': 17056
+      },
+      tm3R: {
+        '1': 18804,
+        '2': 19699,
+        '3': 20595,
+        '4': 21490,
+        '5': 22386
+      },
+      tm4: {
+        '1': 1372664,
+        '2': 1438029,
+        '3': 1503394,
+        '4': 1568759,
+        '5': 1634124
+      },
+      tm4R: {
+        '1': 1801621,
+        '2': 1887413,
+        '3': 1973204,
+        '4': 2058996,
+        '5': 2144787
+      },
+      tm5: {
+        '1': 29862,
+        '2': 31284,
+        '3': 32706,
+        '4': 34128,
+        '5': 35550
+      },
+      tm5R: {
+        '1': 39193,
+        '2': 41060,
+        '3': 42926,
+        '4': 44793,
+        '5': 46659
       }
     };
     /* vars */
@@ -1239,10 +1302,12 @@
       armorGreyStat = $('#greyPDEF').text();
       starArmor = $('#ar').find('.active').next('input').val();
       armorSet = $('#set_armor').text();
+      let x;
+      armorSet.charAt(0) == 'R' ? x = 'R' : x = '';
       if (starArmor == '0' || starArmor == null)
         $('[tag="armor"]').text(armorGreyStat);
       else {
-        $('#calc_gear_armor').hasClass('g-fr-t') ? $('[tag="armor"]').text(parseInt(armorGreyStat) + Math.trunc(parseInt(armorGreyStat) * GearStar.tm[starArmor]))
+        $('#calc_gear_armor').hasClass('g-fr-t') ? $('[tag="armor"]').text(GearStar[HeroStat[heroClass].armorTM + x][starArmor])
                                                  : $('[tag="armor"]').text(GearStar[HeroStat[heroClass].armorType][starArmor]);
       };
     };
@@ -1250,10 +1315,12 @@
       secondaryGreyStat = $('#greyMDEF').text();
       starSecondary = $('#se').find('.active').next('input').val();
       secondarySet = $('#set_secondary').text();
+      let x;
+      secondarySet.charAt(0) == 'R' ? x = 'R' : x = '';
       if (starSecondary == '0' || starSecondary == null)
         $('[tag="secondary"]').text(secondaryGreyStat);
       else {
-        $('#calc_gear_secondary').hasClass('g-fr-t') ? $('[tag="secondary"]').text(parseInt(secondaryGreyStat) + Math.trunc(parseInt(secondaryGreyStat) * GearStar.tm[starSecondary]))
+        $('#calc_gear_secondary').hasClass('g-fr-t') ? $('[tag="secondary"]').text(GearStar[HeroStat[heroClass].secondaryTM + x][starSecondary])
                                                      : $('[tag="secondary"]').text(GearStar[HeroStat[heroClass].secondaryType][starSecondary]);
       };
     };
@@ -1397,14 +1464,13 @@
       orbGreyStat = $('#greyO').text();
       starOrb = $('#or').find('.active').next('input').val();
       orbSet = $('#set_orb').text();
+      let x;
+      orbSet.charAt(0) == 'R' ? x = 'R' : x = '';
       if (starOrb == '0' || starOrb == null)
         $('[tag="orb"]').text(orbGreyStat);
       else {
-        if ($('#calc_gear_orb').hasClass('g-fr-t'))
-          orbSet.indexOf("Reclaimed") ? $('[tag="orb"]').text(Math.round(parseInt(orbGreyStat) * GearStar.tm[starOrb] + parseInt(orbGreyStat)))
-                                      : $('[tag="orb"]').text(Math.trunc(parseInt(orbGreyStat) * GearStar.tm[starOrb] + parseInt(orbGreyStat)));
-        else
-          $('[tag="orb"]').text(Math.round(parseInt(orbGreyStat) * 0.1 * starOrb + parseInt(orbGreyStat)));
+        $('#calc_gear_orb').hasClass('g-fr-t') ? $('[tag="orb"]').text(GearStar[`tm4${x}`][starOrb])
+                                               : $('[tag="orb"]').text(GearStar.type4[starOrb]);
       };
     };
 
