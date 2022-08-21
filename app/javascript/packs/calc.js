@@ -1337,51 +1337,27 @@
         };
       };
     };
-    function starGearArmor() {
-      armorGreyStat = $('#greyPDEF').text();
-      starArmor = $('#ar').find('.active').next('input').val();
-      armorSet = $('#set_armor').text();
+    function starGears(gear) {
+      starGear = $(`#${gear.slice(0, 2)}`).find('.active').next('input').val();
       let x;
-      armorSet.charAt(0) == 'R' ? x = 'R' : x = '';
-      if (starArmor == '0' || starArmor == null)
-        $('[tag="armor"]').text(armorGreyStat);
-      else {
-        $('#calc_gear_armor').hasClass('g-fr-t') ? $('[tag="armor"]').text(GearStar[HeroStat[heroClass].armorTM + x][starArmor])
-                                                 : $('[tag="armor"]').text(GearStar[HeroStat[heroClass].armorType][starArmor]);
-      };
-    };
-    function starGearSecondary() {
-      secondaryGreyStat = $('#greyMDEF').text();
-      starSecondary = $('#se').find('.active').next('input').val();
-      secondarySet = $('#set_secondary').text();
-      let x;
-      secondarySet.charAt(0) == 'R' ? x = 'R' : x = '';
-      if (starSecondary == '0' || starSecondary == null)
-        $('[tag="secondary"]').text(secondaryGreyStat);
-      else {
-        $('#calc_gear_secondary').hasClass('g-fr-t') ? $('[tag="secondary"]').text(GearStar[HeroStat[heroClass].secondaryTM + x][starSecondary])
-                                                     : $('[tag="secondary"]').text(GearStar[HeroStat[heroClass].secondaryType][starSecondary]);
-      };
-    };
-    function starGearJewelry() {
-      jewelryGreyStat = $('#greyJ').text();
-      starJewelry = $('#je').find('.active').next('input').val();
-      let x;
-      jewelrySet.charAt(0) == 'R' ? x = 'R' : x = '';
-      (starJewelry == '0' || starJewelry == null) ? $('[tag="jewelry"]').text(jewelryGreyStat)
-                                                  : $('[tag="jewelry"]').text(GearStar[jewelryStat + x][starJewelry]);
-    };
-    function starGearOrb() {
-      orbGreyStat = $('#greyO').text();
-      starOrb = $('#or').find('.active').next('input').val();
-      orbSet = $('#set_orb').text();
-      let x;
-      orbSet.charAt(0) == 'R' ? x = 'R' : x = '';
-      if (starOrb == '0' || starOrb == null)
-        $('[tag="orb"]').text(orbGreyStat);
+      gearSet.charAt(0) == 'R' ? x = 'R' : x = '';
+      if (starGear == '0' || starGear == null)
+        $(`[tag="${gear}"]`).text(greyStat);
       else
-        $('#calc_gear_orb').hasClass('g-fr-t') ? $('[tag="orb"]').text(GearStar[`tm4${x}`][starOrb])
-                                               : $('[tag="orb"]').text(GearStar.type4[starOrb]);
+        switch (gear) {
+          case 'armor': case 'secondary':
+            $(`#calc_gear_${gear}`).hasClass('g-fr-t') ? $(`[tag="${gear}"]`).text(GearStar[HeroStat[heroClass][`${gear}TM`] + x][starGear])
+                                                       : $(`[tag="${gear}"]`).text(GearStar[HeroStat[heroClass][`${gear}Type`]][starGear]);
+            break;
+          case 'jewelry':
+            jewelrySet.charAt(0) == 'R' ? x = 'R' : x = '';
+            $('[tag="jewelry"]').text(GearStar[jewelryStat + x][starGear]);
+            break;
+          case 'orb':
+            $('#calc_gear_orb').hasClass('g-fr-t') ? $('[tag="orb"]').text(GearStar[`tm4${x}`][starGear])
+                                                   : $('[tag="orb"]').text(GearStar.type4[starGear]);
+            break;
+        };
     };
 
     // function gearStat() {
@@ -2648,11 +2624,10 @@
     //   });
     // };
     $('.rating label').click(function() {
-      starGearWeapon();
-      starGearArmor();
-      starGearSecondary();
-      starGearJewelry();
-      starGearOrb();
+      // starGearWeapon();
+      starGears($(this).parents().eq(2).attr('id'));
+      // starGearJewelry();
+
       // option();
       // gearStat();
       // gearSet();
