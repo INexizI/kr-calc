@@ -917,7 +917,9 @@
     function change_gear(gear) {
       $(`#calc_gear_${gear}`).parent().next().find('.rating label').removeClass('active');
       let r, y = gear.slice(0, 2);
-      gearSet = $(`#calc_gear_${gear}`).children('option:selected').val();
+      (gear != 'jewelry' || $(`#calc_gear_jewelry`).children('option:selected').val() == '- - - - - - - - - -') ? gearSet = $(`#calc_gear_${gear}`).children('option:selected').val()
+                                                                                                                : gearSet = $(`#calc_gear_${gear}`).children().children('option:selected').val();
+      jewelryType = $(`#calc_gear_${gear}`).children().children('option:selected').parent().attr('label');
       $(`#set_${gear}`).text(gearSet);
       switch (gear) {
         case 'armor':
@@ -928,10 +930,28 @@
           $('#heroMDEF').empty();
           greyStat = $('#greyMDEF');
           break;
+        case 'jewelry':
+          $('#heroJ').empty();
+          greyStat = $('#greyJ');
+          break;
         case 'orb':
           $('#heroO').empty();
           greyStat = $('#greyO');
           break;
+      };
+      if (gear == 'jewelry') {
+        $(`#calc_gear_jewelry`).parents().eq(1).next().find('.rating label').removeClass('active');
+        switch (jewelryType) {
+          case 'Ring':
+            jewelryStat = '4';
+            break;
+          case 'Earrings':
+            jewelryStat = '5';
+            break;
+          case 'Bracelet': case 'Necklace':
+            jewelryStat = '2';
+            break;
+        };
       };
       $('.gTM .enh-n').children().removeAttr('disabled');
       $(`#${gear}`)
@@ -944,7 +964,7 @@
           greyStat.text('');
           $(`#${y}`).hide();
           $(`#calc_gear_${gear}`)
-            .css('background-image', `url(${GearIcon[gear]})`)
+            .css('background-image', `url("${GearIcon[gear]}")`)
             .removeClass('g-fr g-fr-t')
             .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
           $(`.calc_gear_${gear}`).parent().find('.gOption, .gTM').hide();
@@ -959,30 +979,24 @@
         case 'Perseverance': case 'Hope': case 'Authority':
           gearSet.charAt(0) == 'R' ? r = 'R' : r = '';
           switch (gear) {
-            case 'armor':
-              armorStat = GearStat[HeroStat[heroClass].armorTM + r];
+            case 'armor': case 'secondary':
+              gearStat = GearStat[HeroStat[heroClass][`${gear}TM`] + r];
+              gearIcon = `/images/media/gears/${HeroStat[heroClass][gear]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp`;
               break;
-            case 'secondary':
-              secondaryStat = GearStat[HeroStat[heroClass].secondaryTM + r];
+            case 'jewelry':
+              gearStat = GearStat[`tm${jewelryStat}` + r];
+              gearIcon = `/images/media/gears/7-J/${jewelryType}/${gearSet} ${HeroStat[heroClass].gearTM}.webp`;
               break;
             case 'orb':
-              orbStat = GearStat[`tm4${r}`];
+              gearStat = GearStat[`tm4${r}`];
+              gearIcon = `/images/media/gears/8-O/${gearSet} ${HeroStat[heroClass].gearTM}.webp`;
               break;
           };
-          if (gear == 'orb') {
-            orbStat = GearStat[`tm4${r}`];
-            greyStat.text(orbStat);
-            $(`#calc_gear_${gear}`)
-              .css('background-image', `url("/images/media/gears/8-O/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
-              .addClass('g-fr-t').removeClass('g-fr')
-              .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-          } else {
-            gear == 'armor' ? greyStat.text(armorStat) : greyStat.text(secondaryStat);
-            $(`#calc_gear_${gear}`)
-              .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][gear]}/${gearSet} ${HeroStat[heroClass].gearTM}.webp")`)
-              .addClass('g-fr-t').removeClass('g-fr')
-              .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-          };
+          greyStat.text(gearStat);
+          $(`#calc_gear_${gear}`)
+            .css('background-image', `url("${gearIcon}")`)
+            .addClass('g-fr-t').removeClass('g-fr')
+            .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
           $(`#${y}`).show();
           $(`.calc_gear_${gear}`)
             .parent().find('.gTM').show()
@@ -990,32 +1004,25 @@
           // gearStat();
           break;
         default:
-          gearSet.charAt(0) == 'R' ? r = 'R' : r = '';
           switch (gear) {
-            case 'armor':
-              armorStat = HeroStat[heroClass].armorType;
+            case 'armor': case 'secondary':
+              gearStat = GearStat[`${gear}${HeroStat[heroClass].gearType}`];
+              gearIcon = `/images/media/gears/${HeroStat[heroClass][gear]}/${gearSet}.webp`;
               break;
-            case 'secondary':
-              secondaryStat = HeroStat[heroClass].secondaryType;
+            case 'jewelry':
+              gearStat = GearStat[jewelryType];
+              gearIcon = `/images/media/gears/7-J/${jewelryType}/${gearSet}.webp`;
               break;
             case 'orb':
-              orbStat = GearStat.Orb;
+              gearStat = GearStat.Orb;
+              gearIcon = `/images/media/gears/8-O/${gearSet}.webp`;
               break;
-            };
-          if (gear == 'orb') {
-            greyStat.text(GearStat.Orb);
-            $(`#calc_gear_${gear}`)
-              .css('background-image', `url("/images/media/gears/8-O/${gearSet}.webp")`)
-              .removeClass('g-fr-t').addClass('g-fr')
-              .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
-          } else {
-            gear == 'armor' ? greyStat.text(armorStat) : greyStat.text(secondaryStat);
-            greyStat.text(GearStat[`${gear}${HeroStat[heroClass].gearType}`]);
-            $(`#calc_gear_${gear}`)
-              .css('background-image', `url("/images/media/gears/${HeroStat[heroClass][gear]}/${gearSet}.webp")`)
-              .removeClass('g-fr-t').addClass('g-fr')
-              .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
           };
+          greyStat.text(gearStat);
+          $(`#calc_gear_${gear}`)
+            .css('background-image', `url("${gearIcon}")`)
+            .removeClass('g-fr-t').addClass('g-fr')
+            .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
           $(`#${y}`).show();
           $(`.calc_gear_${gear}`)
             .parent().find('.gOption').show()
@@ -1024,83 +1031,6 @@
           // gearStat();
       };
       $(`[tag=${gear}]`).text(greyStat.text());
-    };
-    function change_jewelry(gear) {
-      $(`#calc_gear_jewelry`).parents().eq(1).next().find('.rating label').removeClass('active');
-      $('#heroJ').empty();
-      $(`#${gear}`).children('option:selected').val() == '- - - - - - - - - -' ? jewelrySet = $(`#${gear}`).children('option:selected').val()
-                                                                               : jewelrySet = $(`#${gear}`).children().children('option:selected').val();
-      jewelryType = $(`#${gear}`).children().children('option:selected').parent().attr('label');
-      $('#set_jewelry').text(jewelrySet);
-      $('.gTM .enh-n').children().removeAttr('disabled');
-      $('#jewelry')
-        .find('.ax, .ay, .ax-tm, .ay-tm, .enh-n, .enh-v, .ax-r, .ay-r').prop('selectedIndex', 0).end()
-        .find('.ay, .ay-tm, .enh-v, .ay-r')
-          .children().hide().end()
-          .find('.q').show();
-      switch (jewelrySet) {
-        case '- - - - - - - - - -':
-          $('#greyJ').text('');
-          $('#je').hide();
-          $(`.${gear}`).parent().find('.gOption, .gTM').hide();
-          $(`#${gear}`)
-            .css('background-image', `url(${GearIcon.jewelry})`)
-            .removeClass('g-fr g-fr-t')
-            .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
-          $('#ac label').filter('.active').removeClass('active');
-          $('#prop_jewelry').empty();
-          break;
-        case 'Reclaimed Perseverance': case 'Reclaimed Hope': case 'Reclaimed Authority':
-        case 'Perseverance': case 'Hope': case 'Authority':
-          switch (jewelryType) {
-            case 'Ring':
-              jewelryStat = 'tm4';
-              break;
-            case 'Earrings':
-              jewelryStat = 'tm5';
-              break;
-            case 'Bracelet': case 'Necklace':
-              jewelryStat = 'tm2';
-              break;
-          };
-          jewelrySet.indexOf("Reclaimed") != -1 ? greyStat = GearStat[`${jewelryStat}R`]
-                                                : greyStat = GearStat[`${jewelryStat}`];
-          $('#greyJ').text(greyStat);
-          $('#je').show();
-          $(`#${gear}`)
-            .css('background-image', `url("/images/media/gears/7-J/${jewelryType}/${jewelrySet} ${HeroStat[heroClass].gearTM}.webp")`)
-            .addClass('g-fr-t').removeClass('g-fr')
-            .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-          $(`.${gear}`)
-            .parent().find('.gTM').show()
-            .parent().find('.gOption').hide();
-          // gearStat();
-          break;
-        default:
-          switch (jewelryType) {
-            case 'Ring':
-              jewelryStat = 'type4';
-              break;
-            case 'Earrings':
-              jewelryStat = 'type5';
-              break;
-            case 'Bracelet': case 'Necklace':
-              jewelryStat = 'type2';
-              break;
-          };
-          $('#greyJ').text(GearStat[jewelryType]);
-          $('#je').show();
-          $(`#${gear}`)
-            .css('background-image', `url("/images/media/gears/7-J/${jewelryType}/${jewelrySet}.webp")`)
-            .addClass('g-fr').removeClass('g-fr-t')
-            .parents().eq(1).find('.gTM select').prop('selectedIndex', 0);
-          $(`.${gear}`)
-            .parent().find('.gOption').show()
-            .parent().find('.gTM').hide();
-          // gearStat();
-          $('#prop_jewelry').empty();
-      };
-      $('[tag="jewelry"]').text($('#greyJ').text());
     };
     function change_art() {
       let art = $('#calc_gear_artifact').children('option:selected');
@@ -1168,6 +1098,9 @@
     $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
     }).change();
+    $('select#calc_gear_jewelry').change(function() {
+      change_gear($(this).parents().eq(2).attr('id'));
+    }).change();
     $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_jewelry, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
       statOption($(this));
@@ -1198,9 +1131,6 @@
           $(this).find('#a0 .enh-n, #b0 .enh-n').children(`[value="${tmEnhT}"]`).attr('disabled', 'disabled');
       });
     });
-    $('select#calc_gear_jewelry').change(function() {
-      change_jewelry($(this).attr('id'));
-    }).change();
     $('select#calc_gear_artifact').change(function() {
       change_art();
     }).change();
@@ -1342,7 +1272,7 @@
       let x;
       gearSet.charAt(0) == 'R' ? x = 'R' : x = '';
       if (starGear == '0' || starGear == null)
-        $(`[tag="${gear}"]`).text(greyStat);
+        $(`[tag="${gear}"]`).text(greyStat.text());
       else
         switch (gear) {
           case 'armor': case 'secondary':
@@ -1350,8 +1280,8 @@
                                                        : $(`[tag="${gear}"]`).text(GearStar[HeroStat[heroClass][`${gear}Type`]][starGear]);
             break;
           case 'jewelry':
-            jewelrySet.charAt(0) == 'R' ? x = 'R' : x = '';
-            $('[tag="jewelry"]').text(GearStar[jewelryStat + x][starGear]);
+            $('#calc_gear_jewelry').hasClass('g-fr-t') ? $('[tag="jewelry"]').text(GearStar['tm' + jewelryStat + x][starGear])
+                                                       : $('[tag="jewelry"]').text(GearStar[`type${jewelryStat}`][starGear]);
             break;
           case 'orb':
             $('#calc_gear_orb').hasClass('g-fr-t') ? $('[tag="orb"]').text(GearStar[`tm4${x}`][starGear])
