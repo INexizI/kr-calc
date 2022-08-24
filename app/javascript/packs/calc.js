@@ -303,8 +303,8 @@
       secondaryHeavy: 17052,
       secondaryLight: 5686,
       secondaryRobe: 11369,
-      ManaStone: 726278,
-      UniqueTreasure: 1596066,
+      'Mana Stone': 726278,
+      'Unique': 1596066,
       Ring: 726278,
       Earrings: 15801,
       Bracelet: 11369,
@@ -422,6 +422,20 @@
         '3': 20542,
         '4': 22122,
         '5': 23702
+      },
+      'Mana Stone': {
+        '1': 798906,
+        '2': 871534,
+        '3': 944161,
+        '4': 1016789,
+        '5': 1089417
+      },
+      'Unique': {
+        '1': 1755649,
+        '2': 2074871,
+        '3': 2553676,
+        '4': 3192064,
+        '5': 3990076
       },
       tm1: {
         '1': 42974,
@@ -861,7 +875,9 @@
       // gearStat();
     };
     function change_treasure() {
-      $('#heroHP').empty();
+      $('#heroTR').empty();
+      $(`#calc_gear_treasure`).parent().next().find('.rating label').removeClass('active');
+      greyStatTreasure = $('#greyTR');
       gearTreasureType = $('#calc_gear_treasure').children('option:selected').val();
       $('.gOption .ax').children().removeAttr('disabled');
       $('#treasure')
@@ -872,8 +888,8 @@
       $('#calc_gear_treasure, .frst').removeAttr('style');
       switch (gearTreasureType) {
         case '- - - - - - - - - -':
-          $('#greyTR').text('');
-          $('[tag="treasure"]').text('').next('.rating').hide();
+          greyStatTreasure.text('');
+          $('#ut').hide();
           $('#calc_gear_treasure')
             .css({'background-image': 'url(/images/media/gears/bg-treasure.webp)'})
             .removeClass('g-fr g-fr-u')
@@ -882,8 +898,8 @@
           $('#ut label').filter('.active').removeClass('active');
           break;
         case 'Mana Stone':
-          $('#greyTR').text(GearStat.ManaStone);
-          $('[tag="treasure"]').next('.rating').show();
+          greyStatTreasure.text(GearStat['Mana Stone']);
+          $(`#ut`).show();
           $('#calc_gear_treasure')
             .css('background-image', 'url(/images/media/gears/9-UT/Mana.webp)')
             .addClass('g-fr').removeClass('g-fr-u');
@@ -896,8 +912,8 @@
           allTreasure.length = 0;
           for (let i = 1; i < 5; i++)
             allTreasure.push(`url("/images/media/heroes/${heroName}/ut${i}.webp")`);
-          $('#greyTR').text(GearStat.UniqueTreasure);
-          $('[tag="treasure"]').next('.rating').show();
+          greyStatTreasure.text(GearStat['Unique']);
+          $(`#ut`).show();
           $('#calc_gear_treasure')
             .css({
               'background-image': `${allTreasure.join(',')}`,
@@ -912,7 +928,7 @@
           // gearStat();
           break;
       };
-      $('[tag="treasure"]').text($('#greyTR').text());
+      $('[tag="treasure"]').text(greyStatTreasure.text());
     };
     function change_gear(gear) {
       $(`#calc_gear_${gear}`).parent().next().find('.rating label').removeClass('active');
@@ -922,6 +938,10 @@
       jewelryType = $(`#calc_gear_${gear}`).children().children('option:selected').parent().attr('label');
       $(`#set_${gear}`).text(gearSet);
       switch (gear) {
+        case 'treasure':
+          $('#heroTR').empty();
+          greyStat = $('#greyTR');
+          break;
         case 'armor':
           $('#heroPDEF').empty();
           greyStat = $('#greyPDEF');
@@ -1005,6 +1025,13 @@
           break;
         default:
           switch (gear) {
+            case 'treasure':
+              allTreasure.length = 0;
+              for (let i = 1; i < 5; i++)
+                allTreasure.push(`url("/images/media/heroes/${heroName}/ut${i}.webp")`);
+              gearStat = GearStat[gearSet];
+              gearIcon = `/images/media/gears/${allTreasure.join(',')}.webp`;
+              break;
             case 'armor': case 'secondary':
               gearStat = GearStat[`${gear}${HeroStat[heroClass].gearType}`];
               gearIcon = `/images/media/gears/${HeroStat[heroClass][gear]}/${gearSet}.webp`;
@@ -1094,6 +1121,7 @@
     }).change();
     $('select#calc_gear_treasure').change(function() {
       change_treasure();
+      // change_gear($(this).parents().eq(1).attr('id'));
     }).change();
     $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
@@ -1222,50 +1250,8 @@
     function starGearTreasure() {
       treasureGreyStat = $('#greyTR').text();
       starTreasure = $('#ut').find('.active').next('input').val();
-      let x = parseInt(treasureGreyStat);
-      if (gearTreasureType == 'Unique') {
-        switch (starTreasure) {
-          case '0':
-            $('[tag="treasure"]').text(treasureGreyStat);
-            break;
-          case '1':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.1) - 23);
-            break;
-          case '2':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.3) - 14);
-            break;
-          case '3':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.6) - 29);
-            break;
-          case '4':
-            $('[tag="treasure"]').text(2*Math.trunc(x*0.999995) - 52);
-            break;
-          case '5':
-            $('[tag="treasure"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2) - 73);
-            break;
-        };
-      } else if (gearTreasureType == 'Mana Stone') {
-        switch (starTreasure) {
-          case '0':
-            $('[tag="treasure"]').text(treasureGreyStat);
-            break;
-          case '1':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.1) + 1);
-            break;
-          case '2':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.2) + 1);
-            break;
-          case '3':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.3));
-            break;
-          case '4':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.4));
-            break;
-          case '5':
-            $('[tag="treasure"]').text(x + Math.trunc(x*0.5));
-            break;
-        };
-      };
+      starTreasure == 0 ? $('[tag="treasure"]').text(treasureGreyStat)
+                        : $('[tag="treasure"]').text(GearStar[gearTreasureType][starTreasure]);
     };
     function starGears(gear) {
       starGear = $(`#${gear.slice(0, 2)}`).find('.active').next('input').val();
@@ -1275,6 +1261,9 @@
         $(`[tag="${gear}"]`).text(greyStat.text());
       else
         switch (gear) {
+          case 'treasure':
+            $('[tag="treasure"]').text(GearStar[gearTreasureType][starGear]);
+            break;
           case 'armor': case 'secondary':
             $(`#calc_gear_${gear}`).hasClass('g-fr-t') ? $(`[tag="${gear}"]`).text(GearStar[HeroStat[heroClass][`${gear}TM`] + x][starGear])
                                                        : $(`[tag="${gear}"]`).text(GearStar[HeroStat[heroClass][`${gear}Type`]][starGear]);
@@ -2556,6 +2545,7 @@
     $('.rating label').click(function() {
       // starGearWeapon();
       starGears($(this).parents().eq(2).attr('id'));
+      starGearTreasure();
       // starGearJewelry();
 
       // option();
