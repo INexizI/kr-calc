@@ -553,23 +553,8 @@
         $.get(shr)
           .done((data) => {
             let link_local = process.env.LINK_LOCAL;
-            let link_heroku = process.env.LINK_HEROKU;
             let link_main = process.env.LINK_MAIN;
-            let link_api = process.env.LINK_API;
-            switch (shr.slice(0, -12)) {
-              /* --- localhost API --- */
-              case link_local:
-              case link_heroku:
-              case link_main:
-                rawData = $(data).find('.raw').text();
-                break;
-              /* --- KRCalc API ---  */
-              case link_api:
-                rawData = data.text;
-                break;
-              default:
-                rawData = null;
-            };
+            shr.slice(0, -12) == link_local || shr.slice(0, -12) == link_main ? rawData = $(data).find('.raw').text() : rawData = null;
             var decData = (raw) => {
               var C = CryptoJS;
               var Key = process.env.CRYPTO_KEY;
@@ -733,11 +718,12 @@
         $('.null-name').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>');
       if ($('.null-stat').children(':first').attr('value') !== '0')
         $('.null-stat').prepend('<option class="q" value="0">- - - -</option>');
+      $('.ay-r').children().not('.q').hide();
       $('.gSt p, .t-st p').empty();
       $('.gSt .rating, .gOption, .gTM').hide();
       $('.rating label').removeClass('active');
       $('.c-perk-img img').removeClass('pick');
-      $('.perk-tp').find('p').text(0).css('color', 'black');
+      $('.perk-tp p').text(0).css('color', 'black');
       let role = $('#calc_role_id :selected').text();
       let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
       let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
@@ -761,8 +747,12 @@
       $(stats).prependTo('.t-total .r-stats');
       $('.t-total').find('.statData').show();
 
-      $('#calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb').parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
-      $('#calc_gear_artifact').parents().eq(1).find('.gArt').hide();
+      $('#calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb')
+        .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
+      $('#calc_gear_artifact')
+        .prop('selectedIndex', 0)
+        .parents().eq(1).find('.gArt').hide()
+        .find('.calc-art-description p').empty();
       $('#w-d').hide();
 
       $('.statData .statsBase, .statData .statsAdd').empty();
@@ -786,9 +776,9 @@
       // $('option:contains("----------")').attr('disabled', 'disabled');
       heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
 
+      $('.ay-r').children().not('.q').hide();
       $('.gOption, .gTM, .gArt, .range, .form-input .gSt .rating').hide();
-      $('.t-st p').empty();
-      $('.form-input .gSt p').text('');
+      $('.t-st, .form-input .gSt, .calc-art-description').find('p').empty();
       $('.rating').find('label').removeClass('active');
       $('.c-perk-img').find('img').removeClass('pick');
       $('.perk-tp').find('p').css('color', 'black').text(0);
@@ -807,10 +797,10 @@
             .css('background-image', `url(${GearIcon.weapon})`)
             .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
 
-          $('#greyATK, [tag="weapon"]').text('');
+          $('#greyATK').text('');
           $('.w-in').removeClass('g-fr-u');
           $('#range-atk, #range-hp').text(0);
-          $('#g-weapon, .range, #w-d, #uw').hide();
+          $('#g-weapon, .range, #w-d, #we').hide();
           $('#uw label').filter('.active').removeClass('active');
           $('#weapon .ay-r')
             .children().hide().end()
@@ -825,7 +815,7 @@
           $('.calc_gear_weapon').parent().find('.gOption').show();
           $('#range-atk, #range-hp').text(0);
           $('#g-weapon, .range, #w-d').hide();
-          $('#uw').show();
+          $('#we').show();
           $('.w-in').addClass('g-fr-u');
           // rangeC();
           // gearStat();
@@ -836,7 +826,7 @@
 
           $('.calc_gear_weapon').parent().find('.gOption').show();
           $('#calc_st_weapon_st').children(':first').show();
-          $('#g-weapon, #w-d, #uw').show();
+          $('#g-weapon, #w-d, #we').show();
           $('.w-in').addClass('g-fr-u');
           // gearStat();
           break;
@@ -1051,12 +1041,10 @@
         $('.gArt').show();
       }
     };
-    // function change_rune() {
-    //   $($rc)
-    //     .children().hide().end()
-    //     .prop('selectedIndex', 0)
-    //     .children('[name="' + $statVal + '"], option:first').show();
-    // };
+    function change_rune(rune, stat) {
+      $(rune).prop('selectedIndex', 0).children().not('.q').hide();
+      $(rune).find(`[name="${stat}"]`).show();
+    };
 
     $('select#calc_role_id').change(function() {
       change_role();
@@ -1068,24 +1056,11 @@
       statSplit();
       rangeC();
     }).change();
-    // $('select.calc_rune_w').change(function() {
-    //   $statName = $(this);
-    //   $statVal = $(this).val();
-    //   $rc = $(this).parents().eq(1).find('.ay-r');
-    //   change_rune();
-    // });
-    // $('select#calc_rune_a').change(function() {
-    //   $statName = $(this);
-    //   $statVal = $(this).val();
-    //   $rc = $(this).parents().eq(1).find('.ay-r');
-    //   change_rune();
-    // });
-    // $('select#calc_rune_s').change(function() {
-    //   $statName = $(this);
-    //   $statVal = $(this).val();
-    //   $rc = $(this).parents().eq(1).find('.ay-r');
-    //   change_rune();
-    // });
+    $('select.ax-r').change(function() {
+      let runeStat = $(this).val();
+      let runeVal = $(this).parents().eq(1).find('.ay-r');
+      change_rune(runeVal, runeStat);
+    });
     $('select#calc_gear_weapon').change(function() {
       change_weapon();
     }).change();
@@ -1096,11 +1071,7 @@
     $('select#calc_st_weapon_st').change(function() {
       change_sw_eth();
     }).change();
-    $('select#calc_gear_treasure').change(function() {
-      // change_treasure();
-      change_gear($(this).parents().eq(1).attr('id'));
-    }).change();
-    $('select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
+    $('select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
     }).change();
     $('select#calc_gear_jewelry').change(function() {
@@ -1142,85 +1113,83 @@
 
     function starGearWeapon() {
       weaponGreyStat = $('#greyATK').text();
-      starWeapon = $('#uw').find('.active').next('input').val();
+      starWeapon = $('#we').find('.active').next('input').val();
       let x = parseInt(weaponGreyStat);
-      if (gearWeaponType == 'Unique') {
-        switch (starWeapon) {
-          case '0':
-            $('[tag="weapon"]').text(weaponGreyStat);
-            break;
-          case '1':
-            (heroClassId == 1 || heroClassId == 3 || heroClassId == 5) ? $('[tag="weapon"]').text(x + Math.trunc(x*0.1))
-                                                                       : $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
-            break;
-          case '2':
-            heroClassId == 5 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.3) + 1)
-                             : $('[tag="weapon"]').text(x + Math.trunc(x*0.3));
-            break;
-          case '3':
-            if (heroClassId == 1 || heroClassId == 5)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.6));
-            else if (heroClassId == 6 || heroClassId == 7)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 2);
-            else
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 1);
-            break;
-          case '4':
-            if (heroClassId == 5)
-              $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + 1);
-            if (heroClassId == 6 || heroClassId == 7)
-              $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) - 1);
-            else
-              $('[tag="weapon"]').text(2*Math.trunc(x*0.999995));
-            break;
-          case '5':
-            (heroClassId == 4 || heroClassId == 6 || heroClassId == 7) ? $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2) - 1)
-                                                                       : $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2));
-            break;
-        };
-      } else if (gearWeaponType == 'Class') {
-        switch (starWeapon) {
-          case '0':
-            $('[tag="weapon"]').text(weaponGreyStat);
-            break;
-          case '1':
-            if (heroClassId == 1 || heroClassId == 4)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.1));
-            else if (heroClassId == 5)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.1) + 1);
-            else
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
-            break;
-          case '2':
-            if (heroClassId == 1)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.25) + 1);
-            else if (heroClassId == 6 || heroClassId == 7)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.25) - 1);
-            else
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.25));
-            break;
-          case '3':
-            heroClassId == 1 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.45) + 1)
-                             : $('[tag="weapon"]').text(x + Math.trunc(x*0.45));
-            break;
-          case '4':
-            if ((heroClassId == 1) || (heroClassId == 3) || (heroClassId == 4))
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 1);
-            else if (heroClassId == 5)
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.7));
-            else
-              $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 2);
-            break;
-          case '5':
-            if (heroClassId == 1)
-              $('[tag="weapon"]').text(2*x);
-            else if (heroClassId == 4)
-              $('[tag="weapon"]').text(2*x - 1);
-            else if (heroClassId == 5)
-              $('[tag="weapon"]').text(2*x + 1);
-            else
-              $('[tag="weapon"]').text(2*x - 2);
-            break;
+      if (starWeapon == '0' || starWeapon == null)
+        $('[tag="weapon"]').text(weaponGreyStat);
+      else {
+        if (gearWeaponType == 'Unique') {
+          switch (starWeapon) {
+            case '1':
+              (heroClassId == 1 || heroClassId == 3 || heroClassId == 5) ? $('[tag="weapon"]').text(x + Math.trunc(x*0.1))
+                                                                         : $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
+              break;
+            case '2':
+              heroClassId == 5 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.3) + 1)
+                               : $('[tag="weapon"]').text(x + Math.trunc(x*0.3));
+              break;
+            case '3':
+              if (heroClassId == 1 || heroClassId == 5)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.6));
+              else if (heroClassId == 6 || heroClassId == 7)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 2);
+              else
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 1);
+              break;
+            case '4':
+              if (heroClassId == 5)
+                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + 1);
+              if (heroClassId == 6 || heroClassId == 7)
+                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) - 1);
+              else
+                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995));
+              break;
+            case '5':
+              (heroClassId == 4 || heroClassId == 6 || heroClassId == 7) ? $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2) - 1)
+                                                                         : $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2));
+              break;
+          };
+        } else if (gearWeaponType == 'Class') {
+          switch (starWeapon) {
+            case '1':
+              if (heroClassId == 1 || heroClassId == 4)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.1));
+              else if (heroClassId == 5)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.1) + 1);
+              else
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
+              break;
+            case '2':
+              if (heroClassId == 1)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.25) + 1);
+              else if (heroClassId == 6 || heroClassId == 7)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.25) - 1);
+              else
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.25));
+              break;
+            case '3':
+              heroClassId == 1 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.45) + 1)
+                               : $('[tag="weapon"]').text(x + Math.trunc(x*0.45));
+              break;
+            case '4':
+              if ((heroClassId == 1) || (heroClassId == 3) || (heroClassId == 4))
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 1);
+              else if (heroClassId == 5)
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.7));
+              else
+                $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 2);
+              break;
+            case '5':
+              if (heroClassId == 1)
+                $('[tag="weapon"]').text(2*x);
+              else if (heroClassId == 4)
+                $('[tag="weapon"]').text(2*x - 1);
+              else if (heroClassId == 5)
+                $('[tag="weapon"]').text(2*x + 1);
+              else
+                $('[tag="weapon"]').text(2*x - 2);
+              break;
+          };
         };
       };
     };
@@ -2514,10 +2483,8 @@
     //   });
     // };
     $('.rating label').click(function() {
-      // starGearWeapon();
-      // starGearTreasure();
-      starGears($(this).parents().eq(2).attr('id'));
-      // starGearJewelry();
+      let g = $(this).parents().eq(2).attr('id');
+      g == 'weapon' ? starGearWeapon() : starGears(g);
 
       // option();
       // gearStat();
@@ -2563,7 +2530,8 @@
         if (statSplit == '0%' || statSplit == '0')
           $(this).html($(this).text().split(' ').shift());
         else if ($(this).is(':contains("(")') == true)
-          $(this).html('<span id="plsSt1">' + $(this).text().split(' ').shift() + '</span>' + ' (' + $(this).text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $(this).text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+          // $(this).html('<span id="plsSt1">' + $(this).text().split(' ').shift() + '</span>' + ' (' + $(this).text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $(this).text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
+          $(this).html(`<span id="plsSt1">${$(this).text().split(' ').shift()}</span> (${$(this).text().split('(').pop().slice(0, -1).split('+').shift()}<span id="plsSt2">+${$(this).text().split('(').pop().slice(0, -1).split('+').pop()}</span>)`);
       });
       $('.t-total .r-stats').find('#s-val').each(function() {
         let softLock,

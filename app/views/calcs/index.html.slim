@@ -110,7 +110,7 @@ title Calculator
               img src='/images/help.svg' id='w-d'
             .gSt
               p tag='weapon'
-              .rating#uw.c
+              .rating#we.c
                 = render 'stars'
             .gOption#g-weapon
               .opt#ow
@@ -1058,7 +1058,7 @@ title Calculator
                             label: false,
                             include_blank: false,
                             input_html: {class: 'enh-v null-stat', id: 'enh_orb_tm_st'}
-          .form-input
+          .form-input#artifact
             = f.input :gear_artifact,
                       as: :select,
                       collection: @arts.where(gear_type: 'art').collect {|g| [g.name, g.name, {desc: g.description}]},
