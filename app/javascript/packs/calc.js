@@ -423,6 +423,118 @@
         '4': 22122,
         '5': 23702
       },
+      Knight: {
+        Unique: {
+          '1': 49616,
+          '2': 58637,
+          '3': 72169,
+          '4': 90210,
+          '5': 112763
+        },
+        Class: {
+          '1': 36003,
+          '2': 40913,
+          '3': 47459,
+          '4': 55640,
+          '5': 65460
+        }
+      },
+      Warrior: {
+        Unique: {
+          '1': 49616,
+          '2': 58637,
+          '3': 72169,
+          '4': 90210,
+          '5': 112763
+        },
+        Class: {
+          '1': 40710,
+          '2': 46262,
+          '3': 53664,
+          '4': 62915,
+          '5': 74018
+        }
+      },
+      Assassin: {
+        Unique: {
+          '1': 61829,
+          '2': 73071,
+          '3': 89933,
+          '4': 112416,
+          '5': 140520
+        },
+        Class: {
+          '1': 44781,
+          '2': 50888,
+          '3': 59030,
+          '4': 69207,
+          '5': 81420
+        }
+      },
+      Archer: {
+        Unique: {
+          '1': 69589,
+          '2': 82243,
+          '3': 101221,
+          '4': 126526,
+          '5': 158157
+        },
+        Class: {
+          '1': 50506,
+          '2': 57393,
+          '3': 66576,
+          '4': 78054,
+          '5': 91829
+        }
+      },
+      Mechanic: {
+        Unique: {
+          '1': 63483,
+          '2': 75026,
+          '3': 92339,
+          '4': 115423,
+          '5': 144278
+        },
+        Class: {
+          '1': 46054,
+          '2': 52333,
+          '3': 60707,
+          '4': 71173,
+          '5': 83733
+        }
+      },
+      Wizard: {
+        Unique: {
+          '1': 64882,
+          '2': 76680,
+          '3': 94374,
+          '4': 117967,
+          '5': 147459
+        },
+        Class: {
+          '1': 47071,
+          '2': 53490,
+          '3': 62049,
+          '4': 72746,
+          '5': 85584
+        }
+      },
+      Priest: {
+        Unique: {
+          '1': 64882,
+          '2': 76680,
+          '3': 94374,
+          '4': 117967,
+          '5': 147459
+        },
+        Class: {
+          '1': 47071,
+          '2': 53490,
+          '3': 62049,
+          '4': 72746,
+          '5': 85584
+        }
+      },
       'Mana Stone': {
         '1': 798906,
         '2': 871534,
@@ -785,6 +897,7 @@
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
     };
     function change_weapon() {
+      $(`#calc_gear_weapon`).parents().eq(1).find('.rating label').removeClass('active');
       $('#heroATK').empty();
       gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
       $('.w-in').removeClass('g-fr-u a0 a1 a2');
@@ -1118,79 +1231,7 @@
       if (starWeapon == '0' || starWeapon == null)
         $('[tag="weapon"]').text(weaponGreyStat);
       else {
-        if (gearWeaponType == 'Unique') {
-          switch (starWeapon) {
-            case '1':
-              (heroClassId == 1 || heroClassId == 3 || heroClassId == 5) ? $('[tag="weapon"]').text(x + Math.trunc(x*0.1))
-                                                                         : $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
-              break;
-            case '2':
-              heroClassId == 5 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.3) + 1)
-                               : $('[tag="weapon"]').text(x + Math.trunc(x*0.3));
-              break;
-            case '3':
-              if (heroClassId == 1 || heroClassId == 5)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.6));
-              else if (heroClassId == 6 || heroClassId == 7)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 2);
-              else
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.6) - 1);
-              break;
-            case '4':
-              if (heroClassId == 5)
-                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + 1);
-              if (heroClassId == 6 || heroClassId == 7)
-                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) - 1);
-              else
-                $('[tag="weapon"]').text(2*Math.trunc(x*0.999995));
-              break;
-            case '5':
-              (heroClassId == 4 || heroClassId == 6 || heroClassId == 7) ? $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2) - 1)
-                                                                         : $('[tag="weapon"]').text(2*Math.trunc(x*0.999995) + Math.trunc(x/2));
-              break;
-          };
-        } else if (gearWeaponType == 'Class') {
-          switch (starWeapon) {
-            case '1':
-              if (heroClassId == 1 || heroClassId == 4)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.1));
-              else if (heroClassId == 5)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.1) + 1);
-              else
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.1) - 1);
-              break;
-            case '2':
-              if (heroClassId == 1)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.25) + 1);
-              else if (heroClassId == 6 || heroClassId == 7)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.25) - 1);
-              else
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.25));
-              break;
-            case '3':
-              heroClassId == 1 ? $('[tag="weapon"]').text(x + Math.trunc(x*0.45) + 1)
-                               : $('[tag="weapon"]').text(x + Math.trunc(x*0.45));
-              break;
-            case '4':
-              if ((heroClassId == 1) || (heroClassId == 3) || (heroClassId == 4))
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 1);
-              else if (heroClassId == 5)
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.7));
-              else
-                $('[tag="weapon"]').text(x + Math.trunc(x*0.7) - 2);
-              break;
-            case '5':
-              if (heroClassId == 1)
-                $('[tag="weapon"]').text(2*x);
-              else if (heroClassId == 4)
-                $('[tag="weapon"]').text(2*x - 1);
-              else if (heroClassId == 5)
-                $('[tag="weapon"]').text(2*x + 1);
-              else
-                $('[tag="weapon"]').text(2*x - 2);
-              break;
-          };
-        };
+        $('[tag="weapon"]').text(GearStar[heroClass][gearWeaponType][starWeapon]);
       };
     };
     function starGears(gear) {
