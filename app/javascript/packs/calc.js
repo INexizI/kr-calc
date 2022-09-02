@@ -1260,172 +1260,164 @@
         };
     };
 
-    // function gearStat() {
-    //   weaponATK();
-    //   armorTR();
-    //   armorPDEF();
-    //   armorMDEF();
-    //   armorJ();
-    //   armorO();
-    //
-    //   $('#heroATK').text($('#wea').text());
-    //   $('#heroTR').text($('#tre').text());
-    //   $('#heroPDEF').text($('#arm').text());
-    //   $('#heroMDEF').text($('#sec').text());
-    //   $('#heroJ').text($('#acc').text());
-    //   $('#heroO').text($('#orb').text());
-    //
-    //   $classATK = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ATK'
-    //   }).next('p').text();
-    //   $classHP = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MAX HP'
-    //   }).next('p').text();
-    //   $classPDEF = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.DEF'
-    //   }).next('p').text();
-    //   $classMDEF = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.DEF'
-    //   }).next('p').text();
-    //
-    //   $gearA = $('#heroATK').text();
-    //   if ($gearA == '')
-    //     $gearA = 0;
-    //   $gearTr = $('#heroTR').text();
-    //   if ($gearTr == '')
-    //     $gearTr = 0;
-    //   $gearP = $('#heroPDEF').text();
-    //   if ($gearP == '')
-    //     $gearP = 0;
-    //   $gearM = $('#heroMDEF').text();
-    //   if ($gearM == '')
-    //     $gearM = 0;
-    //   $gearJ = $('#heroJ').text();
-    //   if ($gearJ == '')
-    //     $gearJ = 0;
-    //   $gearO = $('#heroO').text();
-    //   if ($gearO == '')
-    //     $gearO = 0;
-    //   $('#heroHP').text($classHP);
-    //
-    //   $rAtk = $('#range-atk').text();
-    //   $rHP = $('#range-hp').text();
-    //
-    //   $totalA = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ATK'
-    //   }).next('p');
-    //   $totalH = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MAX HP'
-    //   }).next('p');
-    //   $totalP = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.DEF'
-    //   }).next('p');
-    //   $totalM = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.DEF'
-    //   }).next('p');
-    //   if ($jewelSet !== '- - - - - - - - - -') {
-    //     if ($jewelType == 'Earrings') {
-    //       $totalJ = $('.t-total .r-stats').find('p').filter(function() {
-    //         return $(this).text() === 'ATK'
-    //       }).next('p');
-    //     } else if (($jewelType == 'Ring') || ($jewelType == 'Unequip')) {
-    //       $totalJ = $('.t-total .r-stats').find('p').filter(function() {
-    //         return $(this).text() === 'MAX HP'
-    //       }).next('p');
-    //     } else if ($jewelType == 'Necklace') {
-    //       $totalJ = $('.t-total .r-stats').find('p').filter(function() {
-    //         return $(this).text() === 'M.DEF'
-    //       }).next('p');
-    //     } else if ($jewelType == 'Bracelet') {
-    //       $totalJ = $('.t-total .r-stats').find('p').filter(function() {
-    //         return $(this).text() === 'P.DEF'
-    //       }).next('p');
-    //     }
-    //   }
-    //   $totalO = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MAX HP'
-    //   }).next('p');
-    //
-    //   if ($jewelSet !== '- - - - - - - - - -')
-    //     $jewelType == 'Earrings' ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($('#range-atk').text()) : $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
-    //   else
-    //     $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
-    //   $opA = $('p[name="ATK"]').text();
-    //   $opA === '' ? $totalA.text($sumAtk + ' (' + $classATK + '+' + ($sumAtk - $classATK) + ')') : $totalA.text(Math.trunc($sumAtk * ($opA / 100 + 1)) + ' (' + $classATK + '+' + (Math.trunc($sumAtk * ($opA / 100 + 1)) - $classATK) + ')');
-    //
-    //   if ($jewelSet !== '- - - - - - - - - -')
-    //     $jewelType == 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
-    //   else
-    //     $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
-    //   $opH = $('p[name="Max HP"]').text();
-    //   $opH === '' ? $totalH.text($sumTre + ' (' + $classHP + '+' + ($sumTre - $classHP) + ')') : $totalH.text(Math.round($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
-    //   $('#heroHP').text($totalH.text());
-    //   $('#heroHPs').text($totalH.text().split(' ')[0]);
-    //
-    //   if ($armorSet !== '- - - - - - - - - -') {
-    //     $sumArm = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
-    //     if ($gearP !== 0) {
-    //       if ($jewelSet !== '- - - - - - - - - -') {
-    //         if ($jewelType == 'Bracelet')
-    //           $gearJ == 0 ? $totalP.text($sumArm + ' (' + $classPDEF + '+' + $gearP + ')') : $totalP.text($sumArm + ' (' + $classPDEF + '+' + ($gearP + $gearJ) + ')');
-    //         else
-    //           $totalP.text(($classPDEF + $gearP) + ' (' + $classPDEF + '+' + $gearP + ')');
-    //       }
-    //     }
-    //   } else
-    //     $totalP.text($classPDEF);
-    //
-    //   if ($secondarySet !== '- - - - - - - - - -') {
-    //     $sumSec = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
-    //     if ($gearM !== 0) {
-    //       if ($jewelSet !== '- - - - - - - - - -') {
-    //         if ($jewelType == 'Necklace')
-    //           $gearJ == 0 ? $totalM.text($sumSec + parseInt($gearM) + ' (' + $classMDEF + '+' + $gearM + ')') : $totalM.text($sumSec + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
-    //         else
-    //           $totalM.text(($classMDEF + $gearM) + ' (' + $classMDEF + '+' + $gearM + ')');
-    //       }
-    //     }
-    //   } else
-    //     $totalM.text($classMDEF);
-    //
-    //   if ($jewelSet !== '- - - - - - - - - -') {
-    //     if ($jewelType == 'Ring')
-    //       $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text());
-    //     else if ($jewelType == 'Earrings')
-    //       $sumAcc = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($rAtk);
-    //     else if ($jewelType == 'Necklace')
-    //       $sumAcc = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
-    //     else if ($jewelType == 'Bracelet')
-    //       $sumAcc = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
-    //
-    //     if ($gearJ !== 0) {
-    //       if ($jewelType == 'Ring') {
-    //         $opJ = $('p[name="Max HP"]').text();
-    //         $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classHP + '+' + ($sumAcc - $classHP) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
-    //         $('#heroHP').text($totalJ.text());
-    //         $('#heroHPs').text($totalJ.text().split(' ')[0]);
-    //       } else if ($jewelType == 'Earrings') {
-    //         $opJ = $('p[name="ATK"]').text();
-    //         $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classATK + '+' + ($sumAcc - $classATK) + ')') : $totalJ.text(Math.trunc($sumAcc * ($opJ / 100 + 1)) + ' (' + $classATK + '+' + (Math.trunc($sumAcc * ($opJ / 100 + 1)) - $classATK) + ')');
-    //       } else if ($jewelType == 'Necklace') {
-    //         $opJ = $('p[name="M.DEF"]').text();
-    //         $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classMDEF + '+' + ($sumAcc - $classMDEF) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classMDEF + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classMDEF) + ')');
-    //       } else if ($jewelType == 'Bracelet') {
-    //         $opJ = $('p[name="P.DEF"]').text();
-    //         $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classPDEF + '+' + ($sumAcc - $classPDEF) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classPDEF + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classPDEF) + ')');
-    //       }
-    //     }
-    //   }
-    //
-    //   if ($jewelSet !== '- - - - - - - - - -')
-    //     $jewelType == 'Ring' ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
-    //   else
-    //     $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
-    //   $opO = $('p[name="Max HP"]').text();
-    //   $opO === '' ? $totalO.text($sumOrb + ' (' + $classHP + '+' + ($sumOrb - $classHP) + ')') : $totalO.text(Math.round($sumOrb * ($opO / 100 + 1)) + ' (' + Math.round($classHP + '+' + ($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
-    //   $('#heroHP').text($totalO.text());
-    //   $('#heroHPs').text($totalO.text().split(' ')[0]);
-    // };
+    function gearStats(gear_type) {
+      gear_type == 'weapon' ? starGearWeapon() : starGears(gear_type);
+      let grey_ATK = $('#greyATK').text();
+      let weapon_ATK = $('[tag="weapon"]').text();
+      $('#heroATK').text(weapon_ATK);
+      // $('#heroTR').text($('#greyTR').text());
+      // $('#heroPDEF').text($('#greyPDEF').text());
+      // $('#heroMDEF').text($('#greyMDEF').text());
+      // $('#heroJ').text($('#greyJ').text());
+      // $('#heroO').text($('#greyO').text());
+
+      let class_ATK = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'ATK'
+      }).next('p').text();
+      // $classHP = $('.class-stats').find('p').filter(function() {
+      //   return $(this).text() === 'MAX HP'
+      // }).next('p').text();
+      // $classPDEF = $('.class-stats').find('p').filter(function() {
+      //   return $(this).text() === 'P.DEF'
+      // }).next('p').text();
+      // $classMDEF = $('.class-stats').find('p').filter(function() {
+      //   return $(this).text() === 'M.DEF'
+      // }).next('p').text();
+
+      let gear_ATK;
+      weapon_ATK == '' ? gear_ATK = 0 : gear_ATK = weapon_ATK;
+      // $gearTr = $('#heroTR').text();
+      // if ($gearTr == '') $gearTr = 0;
+      // $gearP = $('#heroPDEF').text();
+      // if ($gearP == '') $gearP = 0;
+      // $gearM = $('#heroMDEF').text();
+      // if ($gearM == '') $gearM = 0;
+      // $gearJ = $('#heroJ').text();
+      // if ($gearJ == '') $gearJ = 0;
+      // $gearO = $('#heroO').text();
+      // if ($gearO == '') $gearO = 0;
+      // $('#heroHP').text($classHP);
+
+      // $rAtk = $('#range-atk').text();
+      // $rHP = $('#range-hp').text();
+
+      let total_ATK = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'ATK'
+      }).next('p');
+      // $totalH = $('.t-total .r-stats').find('p').filter(function() {
+      //   return $(this).text() === 'MAX HP'
+      // }).next('p');
+      // $totalP = $('.t-total .r-stats').find('p').filter(function() {
+      //   return $(this).text() === 'P.DEF'
+      // }).next('p');
+      // $totalM = $('.t-total .r-stats').find('p').filter(function() {
+      //   return $(this).text() === 'M.DEF'
+      // }).next('p');
+      // if ($jewelSet !== '- - - - - - - - - -') {
+      //   if ($jewelType == 'Earrings') {
+      //     $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+      //       return $(this).text() === 'ATK'
+      //     }).next('p');
+      //   } else if (($jewelType == 'Ring') || ($jewelType == 'Unequip')) {
+      //     $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+      //       return $(this).text() === 'MAX HP'
+      //     }).next('p');
+      //   } else if ($jewelType == 'Necklace') {
+      //     $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+      //       return $(this).text() === 'M.DEF'
+      //     }).next('p');
+      //   } else if ($jewelType == 'Bracelet') {
+      //     $totalJ = $('.t-total .r-stats').find('p').filter(function() {
+      //       return $(this).text() === 'P.DEF'
+      //     }).next('p');
+      //   }
+      // }
+      // $totalO = $('.t-total .r-stats').find('p').filter(function() {
+      //   return $(this).text() === 'MAX HP'
+      // }).next('p');
+
+      // if ($jewelSet !== '- - - - - - - - - -')
+      //   $jewelType == 'Earrings' ? $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($('#range-atk').text()) : $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
+      // else
+      //   $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
+      let sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt(rangeATK.text());
+      let opA = $('p[name="ATK"]').text();
+      opA === '' ? total_ATK.text(`${sum_ATK} (${class_ATK}+${sum_ATK - class_ATK})`)
+                 : total_ATK.text(`${Math.trunc(sum_ATK * (opA / 100 + 1))} (${class_ATK}+${(Math.trunc(sum_ATK * (opA / 100 + 1)) - class_ATK)})`);
+
+      // if ($jewelSet !== '- - - - - - - - - -')
+      //   $jewelType == 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
+      // else
+      //   $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
+      // $opH = $('p[name="Max HP"]').text();
+      // $opH === '' ? $totalH.text($sumTre + ' (' + $classHP + '+' + ($sumTre - $classHP) + ')') : $totalH.text(Math.round($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
+      // $('#heroHP').text($totalH.text());
+      // $('#heroHPs').text($totalH.text().split(' ')[0]);
+
+      // if ($armorSet !== '- - - - - - - - - -') {
+      //   $sumArm = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
+      //   if ($gearP !== 0) {
+      //     if ($jewelSet !== '- - - - - - - - - -') {
+      //       if ($jewelType == 'Bracelet')
+      //         $gearJ == 0 ? $totalP.text($sumArm + ' (' + $classPDEF + '+' + $gearP + ')') : $totalP.text($sumArm + ' (' + $classPDEF + '+' + ($gearP + $gearJ) + ')');
+      //       else
+      //         $totalP.text(($classPDEF + $gearP) + ' (' + $classPDEF + '+' + $gearP + ')');
+      //     }
+      //   }
+      // } else
+      //   $totalP.text($classPDEF);
+
+      // if ($secondarySet !== '- - - - - - - - - -') {
+      //   $sumSec = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
+      //   if ($gearM !== 0) {
+      //     if ($jewelSet !== '- - - - - - - - - -') {
+      //       if ($jewelType == 'Necklace')
+      //         $gearJ == 0 ? $totalM.text($sumSec + parseInt($gearM) + ' (' + $classMDEF + '+' + $gearM + ')') : $totalM.text($sumSec + ' (' + $classMDEF + '+' + (parseInt($gearM) + parseInt($gearJ)) + ')');
+      //       else
+      //         $totalM.text(($classMDEF + $gearM) + ' (' + $classMDEF + '+' + $gearM + ')');
+      //     }
+      //   }
+      // } else
+      //   $totalM.text($classMDEF);
+
+      // if ($jewelSet !== '- - - - - - - - - -') {
+      //   if ($jewelType == 'Ring')
+      //     $sumAcc = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text());
+      //   else if ($jewelType == 'Earrings')
+      //     $sumAcc = parseInt($classATK) + parseInt($gearA) + parseInt($gearJ) + parseInt($rAtk);
+      //   else if ($jewelType == 'Necklace')
+      //     $sumAcc = parseInt($classMDEF) + parseInt($gearM) + parseInt($gearJ);
+      //   else if ($jewelType == 'Bracelet')
+      //     $sumAcc = parseInt($classPDEF) + parseInt($gearP) + parseInt($gearJ);
+      //
+      //   if ($gearJ !== 0) {
+      //     if ($jewelType == 'Ring') {
+      //       $opJ = $('p[name="Max HP"]').text();
+      //       $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classHP + '+' + ($sumAcc - $classHP) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classHP) + ')');
+      //       $('#heroHP').text($totalJ.text());
+      //       $('#heroHPs').text($totalJ.text().split(' ')[0]);
+      //     } else if ($jewelType == 'Earrings') {
+      //       $opJ = $('p[name="ATK"]').text();
+      //       $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classATK + '+' + ($sumAcc - $classATK) + ')') : $totalJ.text(Math.trunc($sumAcc * ($opJ / 100 + 1)) + ' (' + $classATK + '+' + (Math.trunc($sumAcc * ($opJ / 100 + 1)) - $classATK) + ')');
+      //     } else if ($jewelType == 'Necklace') {
+      //       $opJ = $('p[name="M.DEF"]').text();
+      //       $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classMDEF + '+' + ($sumAcc - $classMDEF) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classMDEF + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classMDEF) + ')');
+      //     } else if ($jewelType == 'Bracelet') {
+      //       $opJ = $('p[name="P.DEF"]').text();
+      //       $opJ === '' ? $totalJ.text($sumAcc + ' (' + $classPDEF + '+' + ($sumAcc - $classPDEF) + ')') : $totalJ.text(Math.round($sumAcc * ($opJ / 100 + 1)) + ' (' + $classPDEF + '+' + (Math.round($sumAcc * ($opJ / 100 + 1)) - $classPDEF) + ')');
+      //     }
+      //   }
+      // }
+
+      // if ($jewelSet !== '- - - - - - - - - -')
+      //   $jewelType == 'Ring' ? $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
+      // else
+      //   $sumOrb = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
+      // $opO = $('p[name="Max HP"]').text();
+      // $opO === '' ? $totalO.text($sumOrb + ' (' + $classHP + '+' + ($sumOrb - $classHP) + ')') : $totalO.text(Math.round($sumOrb * ($opO / 100 + 1)) + ' (' + Math.round($classHP + '+' + ($sumOrb * ($opO / 100 + 1)) - $classHP) + ')');
+      // $('#heroHP').text($totalO.text());
+      // $('#heroHPs').text($totalO.text().split(' ')[0]);
+    };
     // function gearSet() {
     //   $setBonus = $('.t-total .r-stats').find('p').filter(function() {
     //     return $(this).text() === 'Set Bonus'
@@ -2528,7 +2520,7 @@
       g == 'weapon' ? starGearWeapon() : starGears(g);
 
       // option();
-      // gearStat();
+      gearStats(g);
       // gearSet();
     });
     (function rangeSlider() {
