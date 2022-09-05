@@ -896,56 +896,56 @@
       $('.perk-tp').find('p').css('color', 'black').text(0);
       $('select').not('#calc_role_id, #calc_char_id').prop('selectedIndex', 0);
     };
-    function change_weapon() {
-      $(`#calc_gear_weapon`).parents().eq(1).find('.rating label').removeClass('active');
-      $('#heroATK').empty();
-      gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
-      $('.w-in').removeClass('g-fr-u a0 a1 a2');
-      $('#calc_st_weapon, #calc_st_weapon_st').prop('selectedIndex', 0);
-      $('#calc_st_weapon_st').children().hide();
-      switch (gearWeaponType) {
-        case '- - - - - - - - - -':
-          $('.calc_gear_weapon').parent().find('.gOption').hide();
-          $('#calc_gear_weapon')
-            .css('background-image', `url(${GearIcon.weapon})`)
-            .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
-
-          $('#greyATK').text('');
-          $('.w-in').removeClass('g-fr-u');
-          $('#range-atk, #range-hp').text(0);
-          $('#g-weapon, .range, #w-d, #we').hide();
-          $('#uw label').filter('.active').removeClass('active');
-          $('#weapon .ay-r')
-            .children().hide().end()
-            .prop('selectedIndex', 0)
-            .children('.q').show();
-          // rangeC();
-          break;
-        case 'Class':
-          $('#calc_gear_weapon').css('background-image', `url(/images/media/heroes/${heroClass.toLowerCase()}.webp)`);
-          $('#greyATK').text(HeroStat[heroClass].ClassWeapon);
-
-          $('.calc_gear_weapon').parent().find('.gOption').show();
-          $('#range-atk, #range-hp').text(0);
-          $('#g-weapon, .range, #w-d').hide();
-          $('#we').show();
-          $('.w-in').addClass('g-fr-u');
-          // rangeC();
-          // gearStat();
-          break;
-        case 'Unique':
-          $('#calc_gear_weapon').attr('style', `background-image: url("/images/media/heroes/${heroName}/uw.webp"); display: inline-block;`);
-          $('#greyATK').text(HeroStat[heroClass].UniqueWeapon);
-
-          $('.calc_gear_weapon').parent().find('.gOption').show();
-          $('#calc_st_weapon_st').children(':first').show();
-          $('#g-weapon, #w-d, #we').show();
-          $('.w-in').addClass('g-fr-u');
-          // gearStat();
-          break;
-        };
-      $('[tag="weapon"]').text($('#greyATK').text());
-    };
+    // function change_weapon() {
+    //   $(`#calc_gear_weapon`).parents().eq(1).find('.rating label').removeClass('active');
+    //   $('#heroATK').empty();
+    //   gearWeaponType = $('#calc_gear_weapon').children('option:selected').val();
+    //   $('.w-in').removeClass('g-fr-u a0 a1 a2');
+    //   $('#calc_st_weapon, #calc_st_weapon_st').prop('selectedIndex', 0);
+    //   $('#calc_st_weapon_st').children().hide();
+    //   switch (gearWeaponType) {
+    //     case '- - - - - - - - - -':
+    //       $('.calc_gear_weapon').parent().find('.gOption').hide();
+    //       $('#calc_gear_weapon')
+    //         .css('background-image', `url(${GearIcon.weapon})`)
+    //         .parents().eq(1).find('.gOption select').prop('selectedIndex', 0);
+    //
+    //       $('#greyATK').text('');
+    //       $('.w-in').removeClass('g-fr-u');
+    //       $('#range-atk, #range-hp').text(0);
+    //       $('#g-weapon, .range, #w-d, #we').hide();
+    //       $('#uw label').filter('.active').removeClass('active');
+    //       $('#weapon .ay-r')
+    //         .children().hide().end()
+    //         .prop('selectedIndex', 0)
+    //         .children('.q').show();
+    //       // rangeC();
+    //       break;
+    //     case 'Class':
+    //       $('#calc_gear_weapon').css('background-image', `url(/images/media/heroes/${heroClass.toLowerCase()}.webp)`);
+    //       $('#greyATK').text(HeroStat[heroClass].ClassWeapon);
+    //
+    //       $('.calc_gear_weapon').parent().find('.gOption').show();
+    //       $('#range-atk, #range-hp').text(0);
+    //       $('#g-weapon, .range, #w-d').hide();
+    //       $('#we').show();
+    //       $('.w-in').addClass('g-fr-u');
+    //       // rangeC();
+    //       // gearStat();
+    //       break;
+    //     case 'Unique':
+    //       $('#calc_gear_weapon').attr('style', `background-image: url("/images/media/heroes/${heroName}/uw.webp"); display: inline-block;`);
+    //       $('#greyATK').text(HeroStat[heroClass].UniqueWeapon);
+    //
+    //       $('.calc_gear_weapon').parent().find('.gOption').show();
+    //       $('#calc_st_weapon_st').children(':first').show();
+    //       $('#g-weapon, #w-d, #we').show();
+    //       $('.w-in').addClass('g-fr-u');
+    //       // gearStat();
+    //       break;
+    //     };
+    //   $('[tag="weapon"]').text($('#greyATK').text());
+    // };
     function change_sw_adv() {
       advancementPhase = $('#calc_st_weapon').children('option:selected').text().slice(-1);
       $('#calc_st_weapon_st').children().removeClass().show();
@@ -982,10 +982,23 @@
       let r, y = gear.slice(0, 2);
       (gear != 'jewelry' || $(`#calc_gear_jewelry`).children('option:selected').val() == '- - - - - - - - - -') ? gearSet = $(`#calc_gear_${gear}`).children('option:selected').val()
                                                                                                                 : gearSet = $(`#calc_gear_${gear}`).children().children('option:selected').val();
+      if (gear == 'weapon') {
+        $('#range-atk, #range-hp').text(0);
+        $('#g-weapon, .range, #w-d, #we').hide();
+        $('.w-in').removeClass('g-fr-u a0 a1 a2');
+        $('#calc_st_weapon_st').children().hide();
+        $('#calc_st_weapon, #calc_st_weapon_st').prop('selectedIndex', 0);
+      };
+      weaponType = $('#calc_gear_weapon').children('option:selected').val();
       treasureType = $('#calc_gear_treasure').children('option:selected').val();
       jewelryType = $(`#calc_gear_jewelry`).children().children('option:selected').parent().attr('label');
+
       $(`#set_${gear}`).text(gearSet);
       switch (gear) {
+        case 'weapon':
+          $('#heroATK').empty();
+          greyStat = $('#greyATK');
+          break;
         case 'treasure':
           $('#heroTR').empty();
           greyStat = $('#greyTR');
@@ -1032,7 +1045,8 @@
           greyStat.text('');
           $(`#${y}`).hide();
           if (gear == 'treasure')
-            $(`#calc_gear_${gear}, .frst`).removeAttr('style');
+            $(`#calc_gear_treasure, .frst`).removeAttr('style');
+
           $(`#calc_gear_${gear}`)
             .css('background-image', `url("${GearIcon[gear]}")`)
             .removeClass('g-fr g-fr-t g-fr-u')
@@ -1045,34 +1059,57 @@
             .children('.q').show();
           $(`#prop_${gear}`).empty();
           break;
+        case 'Class':
+          $('#calc_gear_weapon').css('background-image', `url(/images/media/heroes/${heroClass.toLowerCase()}.webp)`);
+          $('#greyATK').text(HeroStat[heroClass].ClassWeapon);
+
+          $('.calc_gear_weapon').parent().find('.gOption').show();
+          $('#range-atk, #range-hp').text(0);
+          $('#g-weapon, .range, #w-d').hide();
+          $('#we').show();
+          $('.w-in').addClass('g-fr-u');
+          // rangeC();
+          // gearStat();
+          break;
+        case 'Unique':
+          if (gear == 'weapon') {
+            $('#calc_gear_weapon').attr('style', `background-image: url("/images/media/heroes/${heroName}/uw.webp"); display: inline-block;`);
+            $('#greyATK').text(HeroStat[heroClass].UniqueWeapon);
+
+            $('.calc_gear_weapon').parent().find('.gOption').show();
+            $('#calc_st_weapon_st').children(':first').show();
+            $('#g-weapon, #w-d, #we').show();
+            $('.w-in').addClass('g-fr-u');
+            // gearStat();
+          } else if (gear == 'treasure') {
+            allTreasure.length = 0;
+            for (let i = 1; i < 5; i++)
+              allTreasure.push(`url("/images/media/heroes/${heroName}/ut${i}.webp")`);
+            greyStat.text(GearStat.Unique);
+            $(`#${y}`).show();
+            $(`#calc_gear_treasure, .frst`).removeAttr('style');
+            $('#calc_gear_treasure').css({
+              'background-image': `${allTreasure.join(',')}`,
+              'background-position': '0px, 50px, 100px, 150px',
+              'background-repeat': 'no-repeat',
+              'position': 'relative',
+              'right': '114px',
+              'width': '202px',
+            }).addClass('g-fr-u').removeClass('g-fr');
+            $('.calc_gear_treasure').parent().find('.frst, .scnd').show();
+            // gearStat();
+          };
+          break;
         case 'Mana Stone':
           greyStat.text(GearStat[gearSet]);
           $(`#${y}`).show();
-          $(`#calc_gear_${gear}, .frst`).removeAttr('style');
+          $(`#calc_gear_treasure, .frst`).removeAttr('style');
           $('#calc_gear_treasure')
             .css('background-image', 'url(/images/media/gears/9-UT/Mana.webp)')
             .addClass('g-fr').removeClass('g-fr-u');
           $('.calc_gear_treasure').parent().find('.frst').show().css({'bottom': '104px'});
           $('.scnd').hide();
           $('.scnd select').prop('selectedIndex', 0);
-          // gearStat();
-          break;
-        case 'Unique':
-          allTreasure.length = 0;
-          for (let i = 1; i < 5; i++)
-            allTreasure.push(`url("/images/media/heroes/${heroName}/ut${i}.webp")`);
-          greyStat.text(GearStat[gearSet]);
-          $(`#${y}`).show();
-          $(`#calc_gear_${gear}, .frst`).removeAttr('style');
-          $('#calc_gear_treasure').css({
-            'background-image': `${allTreasure.join(',')}`,
-            'background-position': '0px, 50px, 100px, 150px',
-            'background-repeat': 'no-repeat',
-            'position': 'relative',
-            'right': '114px',
-            'width': '202px',
-          }).addClass('g-fr-u').removeClass('g-fr');
-          $('.calc_gear_treasure').parent().find('.frst, .scnd').show();
           // gearStat();
           break;
         case 'Reclaimed Perseverance': case 'Reclaimed Hope': case 'Reclaimed Authority':
@@ -1174,8 +1211,8 @@
       let runeVal = $(this).parents().eq(1).find('.ay-r');
       change_rune(runeVal, runeStat);
     });
-    $('select#calc_gear_weapon').change(function() {
-      change_weapon();
+    $('select#calc_gear_weapon, select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
+      change_gear($(this).parents().eq(1).attr('id'));
     }).change();
     $('select#calc_st_weapon').change(function() {
       change_sw_adv();
@@ -1183,9 +1220,6 @@
     }).change();
     $('select#calc_st_weapon_st').change(function() {
       change_sw_eth();
-    }).change();
-    $('select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
-      change_gear($(this).parents().eq(1).attr('id'));
     }).change();
     $('select#calc_gear_jewelry').change(function() {
       change_gear($(this).parents().eq(2).attr('id'));
@@ -1224,24 +1258,37 @@
       change_art();
     }).change();
 
-    function starGearWeapon() {
-      weaponGreyStat = $('#greyATK').text();
-      starWeapon = $('#we').find('.active').next('input').val();
-      let x = parseInt(weaponGreyStat);
-      if (starWeapon == '0' || starWeapon == null)
-        $('[tag="weapon"]').text(weaponGreyStat);
-      else {
-        $('[tag="weapon"]').text(GearStar[heroClass][gearWeaponType][starWeapon]);
-      };
-    };
     function starGears(gear) {
       starGear = $(`#${gear.slice(0, 2)}`).find('.active').next('input').val();
       let x;
       gearSet.charAt(0) == 'R' ? x = 'R' : x = '';
-      if (starGear == '0' || starGear == null)
-        $(`[tag="${gear}"]`).text(greyStat.text());
-      else
+      if (starGear == '0' || starGear == null) {
         switch (gear) {
+          case 'weapon':
+            greyStat = $('#greyATK');
+            break;
+          case 'treasure':
+            greyStat = $('#greyTR');
+            break;
+          case 'armor':
+            greyStat = $('#greyPDEF');
+            break;
+          case 'secondary':
+            greyStat = $('#greyMDEF');
+            break;
+          case 'jewelry':
+            greyStat = $('#greyJ');
+            break;
+          case 'orb':
+            greyStat = $('#greyO');
+            break;
+        };
+        $(`[tag="${gear}"]`).text(greyStat.text());
+      } else
+        switch (gear) {
+          case 'weapon':
+            $('[tag="weapon"]').text(GearStar[heroClass][weaponType][starGear]);
+            break;
           case 'treasure':
             $('[tag="treasure"]').text(GearStar[treasureType][starGear]);
             break;
@@ -1259,24 +1306,28 @@
             break;
         };
     };
-
     function gearStats(gear_type) {
-      gear_type == 'weapon' ? starGearWeapon() : starGears(gear_type);
+      // gear_type == 'weapon' ? starGearWeapon() : starGears(gear_type);
+      starGears(gear_type);
       let grey_ATK = $('#greyATK').text();
       let weapon_ATK = $('[tag="weapon"]').text();
       $('#heroATK').text(weapon_ATK);
-      // $('#heroTR').text($('#greyTR').text());
+      let grey_TR = $('#greyTR').text();
+      let treasure_HP = $('[tag="treasure"]').text();
+      $('#heroTR').text(treasure_HP);
       // $('#heroPDEF').text($('#greyPDEF').text());
       // $('#heroMDEF').text($('#greyMDEF').text());
       // $('#heroJ').text($('#greyJ').text());
-      // $('#heroO').text($('#greyO').text());
+      let grey_O;
+      let orb_HP = $('[tag="orb"]').text();
+      $('#heroO').text(orb_HP);
 
       let class_ATK = $('.class-stats').find('p').filter(function() {
         return $(this).text() === 'ATK'
       }).next('p').text();
-      // $classHP = $('.class-stats').find('p').filter(function() {
-      //   return $(this).text() === 'MAX HP'
-      // }).next('p').text();
+      let class_HP = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p').text();
       // $classPDEF = $('.class-stats').find('p').filter(function() {
       //   return $(this).text() === 'P.DEF'
       // }).next('p').text();
@@ -1286,16 +1337,16 @@
 
       let gear_ATK;
       weapon_ATK == '' ? gear_ATK = 0 : gear_ATK = weapon_ATK;
-      // $gearTr = $('#heroTR').text();
-      // if ($gearTr == '') $gearTr = 0;
+      let gear_TR;
+      gear_TR == '' ? gear_TR = 0 : gear_TR = treasure_HP;
       // $gearP = $('#heroPDEF').text();
       // if ($gearP == '') $gearP = 0;
       // $gearM = $('#heroMDEF').text();
       // if ($gearM == '') $gearM = 0;
       // $gearJ = $('#heroJ').text();
       // if ($gearJ == '') $gearJ = 0;
-      // $gearO = $('#heroO').text();
-      // if ($gearO == '') $gearO = 0;
+      let gear_O;
+      gear_O == '' ? gear_O = 0 : gear_O = orb_HP;
       // $('#heroHP').text($classHP);
 
       // $rAtk = $('#range-atk').text();
@@ -1304,9 +1355,9 @@
       let total_ATK = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'ATK'
       }).next('p');
-      // $totalH = $('.t-total .r-stats').find('p').filter(function() {
-      //   return $(this).text() === 'MAX HP'
-      // }).next('p');
+      let total_HP = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p');
       // $totalP = $('.t-total .r-stats').find('p').filter(function() {
       //   return $(this).text() === 'P.DEF'
       // }).next('p');
@@ -1341,16 +1392,18 @@
       // else
       //   $sumAtk = parseInt($classATK) + parseInt($gearA) + parseInt($('#range-atk').text());
       let sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt(rangeATK.text());
-      let opA = $('p[name="ATK"]').text();
-      opA === '' ? total_ATK.text(`${sum_ATK} (${class_ATK}+${sum_ATK - class_ATK})`)
-                 : total_ATK.text(`${Math.trunc(sum_ATK * (opA / 100 + 1))} (${class_ATK}+${(Math.trunc(sum_ATK * (opA / 100 + 1)) - class_ATK)})`);
+      let option_ATK = $('p[name="ATK"]').text();
+      option_ATK === '' ? total_ATK.text(`${sum_ATK} (${class_ATK}+${sum_ATK - class_ATK})`)
+                        : total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
 
       // if ($jewelSet !== '- - - - - - - - - -')
       //   $jewelType == 'Ring' ? $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearJ) + parseInt($gearO) + parseInt($('#range-hp').text()) : $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
       // else
       //   $sumTre = parseInt($classHP) + parseInt($gearTr) + parseInt($gearO) + parseInt($('#range-hp').text());
-      // $opH = $('p[name="Max HP"]').text();
-      // $opH === '' ? $totalH.text($sumTre + ' (' + $classHP + '+' + ($sumTre - $classHP) + ')') : $totalH.text(Math.round($sumTre * ($opH / 100 + 1)) + ' (' + $classHP + '+' + (Math.round($sumTre * ($opH / 100 + 1)) - $classHP) + ')');
+      let sum_HP = parseInt(class_HP) + parseInt(gear_TR) + parseInt(gear_O) + parseInt(rangeHP.text());
+      let option_HP = $('p[name="Max HP"]').text();
+      option_HP === '' ? total_HP.text(`${sum_HP} (${class_HP}+${sum_HP - class_HP})`)
+                       : total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
       // $('#heroHP').text($totalH.text());
       // $('#heroHPs').text($totalH.text().split(' ')[0]);
 
@@ -2517,7 +2570,7 @@
     // };
     $('.rating label').click(function() {
       let g = $(this).parents().eq(2).attr('id');
-      g == 'weapon' ? starGearWeapon() : starGears(g);
+      // starGears(g);
 
       // option();
       gearStats(g);
