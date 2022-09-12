@@ -620,6 +620,106 @@
         '5': 46659
       }
     };
+    const GearSet = {
+      f1: '2 Set: Crit +100',
+      f2: '4 Set: Crit +130',
+      fr1: '2 Set: Max HP +10%',
+      fr2: '4 Set: Max HP +13%',
+      p1: '2 Set: Crit Resistance +100',
+      p2: '4 Set: Crit Resistance +130',
+      d1: '2 Set: MP Recovery/Attack +200',
+      d2: '4 Set: MP Recovery/Attack +260',
+      la1: '2 Set: Crit DMG +20%',
+      la2: '4 Set: Crit DMG +26%',
+      le1: '2 Set: Debuff ACC +100',
+      le2: '4 Set: Debuff ACC +130',
+      s1: '2 Set: Increases DMG to Heroes by 7%',
+      s2: '4 Set: Increases DMG to Heroes by 13%',
+      pr1: '2 Set: Reduces DMG recevied from Heroes by 6%',
+      pr2: '4 Set: Reduces DMG recevied from Heroes by 11%',
+      dl1: '2 Set: Increases Crit DMG of all allies by 5%',
+      dl2: '4 Set: Increases Crit DMG of all allies by 8%',
+      ch1: '2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses',
+      ch2: '4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses',
+      t1: '2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom',
+      t2: '4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom',
+      per1: '4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.',
+      per2: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
+      per3: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
+      per4: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
+      per5: '4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.',
+      per6: '4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.',
+      per7: '4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.',
+      hop1: '4 Set: Increases all allies All DEF by 10% and ATK by 5%.',
+      hop2: '4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.',
+      hop3: '4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.',
+      hop4: '4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.',
+      hop5: '4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.',
+      hop6: '4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.',
+      hop7: '4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.',
+      aut1: '4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.',
+      aut2: '4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.',
+      aut3: '4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.',
+      aut4: '4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.',
+      aut5: '4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.',
+      aut6: '4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.',
+      aut7: '4 Set: Increases ATK of all allies by 10%.'
+    };
+    const TMSet = {
+      tms1: 'Increases ATK by 35% when there is 1 enemy.',
+      tms2: 'Increases DEF by 45% when there is 1 enemy.',
+      tms3: 'Increases ATK by 35% when there are 3 enemies.',
+      tms4: 'Increases DEF by 45% when there are 3 enemies.',
+      tms5: 'Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.',
+      tms6: 'Increases own DMG dealt to enemies by 25% when HP is above 95%.',
+      tms7: 'Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.',
+      tms8: 'Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.',
+      tms9: 'Reduces Cooldown of 1st Skill by 10% every 10 sec.',
+      tms10: 'Reduces Cooldown of 2nd Skill by 10% every 10 sec.',
+      tms11: 'Reduces Cooldown of 3rd Skill by 10% every 10 sec.',
+      tms12: 'Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.',
+      tms13: 'Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.',
+      tms14: `Upon blocking the enemy's attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.`,
+      tms15: 'Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.',
+      tms16: 'Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.',
+      tms17: 'Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.',
+      tms18: 'Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.',
+      tms19: 'Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.',
+      tms20: 'Increases DMG of [DMG that ignores DEF] by 25%.',
+      tms21: 'Increases DMG of [Continuous DMG] by 20%.',
+      tms22: 'Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.',
+      tms23: 'At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.',
+      tms24: 'Increases DEF by 7% per 1 enemy.',
+      tms25: 'Increases ATK by 6% per 1 enemy.',
+      tms26: 'Increases ATK of all allies by 5%.',
+      tms27: 'Increases Crit DMG of all allies by 10%.',
+      tms28: 'Increases All DEF of all allies by 7%.',
+      tms29: 'At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.',
+      tms30: 'Increases DMG of normal attacks by 25%.',
+      tms31: 'Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.',
+      tms32: 'Increases own Shield by 25%.',
+      tms33: 'Heals HP equal to 1% of Max HP every sec.',
+      tms34: 'Recovers own Mana by 500 every 5 sec.',
+      tms35: 'Reduces All DEF by 25% and increases ATK by 50%.',
+      tms36: 'Reduces ATK by 20% and increases All DEF by 50%.',
+      tms37: `Reduces the duration of CC's inflicted upon self by 15%.`,
+      tms38: 'Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.',
+      tms39: 'Fixes ATK Spd to 1000 and increases ATK by 40%.',
+      tms40: 'Increases Crit DMG by 50%.',
+      tms41: 'Increases ATK Spd by 250.',
+      tms42: 'Increases DEF Penetration by 250.',
+      tms43: 'Increases Max HP by 25%.',
+      tms44: 'Increases All Block by 250.',
+      tms45: 'Increases All DEF by 25%.',
+      tms46: 'Increases Crit Chance by 250.',
+      tms47: 'Increases ATK by 25%.',
+      tms48: 'Soul Weapon Usage Limit +1',
+      tms49: 'Level of [1st Skill] +7',
+      tms50: 'Level of [2nd Skill] +7',
+      tms51: 'Level of [3rd Skill] +7',
+      tms52: 'Level of [4th Skill] +7',
+      tms53: 'Level of [All Skills] +5',
+    };
     /* vars */
     let heroClassId,
         heroClass,
@@ -1345,833 +1445,434 @@
       sum_M == class_MDEF ? total_M.text(class_MDEF)
                           : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
     };
-    // function gearSet() {
-    //   $setBonus = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Set Bonus'
-    //   }).next('p');
-    //   if (!$setBonus.length)
-    //     $setBonus = $('.t-total .r-stats').append('<div class="statSet"><div class="r-set"><p id="s-name">Set Bonus</p><p id="sb"><span id="f1">2 Set: Crit +100</span><span id="f2">4 Set: Crit +130</span><span id="fr1">2 Set: Max HP +10%</span><span id="fr2">4 Set: Max HP +13%</span><span id="p1">2 Set: Crit Resistance +100</span><span id="p2">4 Set: Crit Resistance +130</span><span id="d1">2 Set: MP Recovery/Attack +200</span><span id="d2">4 Set: MP Recovery/Attack +260</span><span id="la1">2 Set: Crit DMG +20%</span><span id="la2">4 Set: Crit DMG +26%</span><span id="le1">2 Set: Debuff ACC +100</span><span id="le2">4 Set: Debuff ACC +130</span><span id="s1">2 Set: Increases DMG to Heroes by 7%</span><span id="s2">4 Set: Increases DMG to Heroes by 13%</span><span id="pr1">2 Set: Reduces DMG recevied from Heroes by 6%</span><span id="pr2">4 Set: Reduces DMG recevied from Heroes by 11%</span><span id="dl1">2 Set: Increases Crit DMG of all allies by 5%</span><span id="dl2">4 Set: Increases Crit DMG of all allies by 8%</span><span id="ch1">2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses</span><span id="ch2">4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses</span><span id="t1">2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="t2">4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom</span><span id="per1">4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.</span><span id="per2">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per3">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per4">4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.</span><span id="per5">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per6">4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.</span><span id="per7">4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.</span><span id="hop1">4 Set: Increases all allies All DEF by 10% and ATK by 5%.</span><span id="hop2">4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.</span><span id="hop3">4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.</span><span id="hop4">4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.</span><span id="hop5">4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.</span><span id="hop6">4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.</span><span id="hop7">4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.</span><span id="aut1">4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.</span><span id="aut2">4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.</span><span id="aut3">4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.</span><span id="aut4">4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.</span><span id="aut5">4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.</span><span id="aut6">4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.</span><span id="aut7">4 Set: Increases ATK of all allies by 10%.</span></p></div></div>');
-    //   $setBonus.find('span').hide();
-    //
-    //   $tmSkill = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'TM Skill'
-    //   }).next('p');
-    //   if (!$tmSkill.length)
-    //     $tmSkill = $('.t-total .r-stats').append('<div class="statTMS"><div class="r-tms"><p id="s-name">TM Skill</p><p id="tms"><span id="tms1">Increases ATK by 35% when there is 1 enemy.</span><span id="tms2">Increases DEF by 45% when there is 1 enemy.</span><span id="tms3">Increases ATK by 35% when there is 3 enemy.</span><span id="tms4">Increases DEF by 45% when there is 3 enemy.</span><span id="tms5">Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.</span><span id="tms6">Increases own DMG dealt to enemies by 25% when HP is above 95%.</span><span id="tms7">Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.</span><span id="tms8">Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.</span><span id="tms9">Reduces Cooldown of 1st Skill by 10% every 10 sec.</span><span id="tms10">Reduces Cooldown of 2nd Skill by 10% every 10 sec.</span><span id="tms11">Reduces Cooldown of 3rd Skill by 10% every 10 sec.</span><span id="tms12">Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.</span><span id="tms13">Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.</span><span id="tms14">Upon blocking the enemys attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.</span><span id="tms15">Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.</span><span id="tms16">Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.</span><span id="tms17">Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.</span><span id="tms18">Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.</span><span id="tms19">Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.</span><span id="tms20">Increases DMG of [DMG that ignores DEF] by 25%.</span><span id="tms21">Increases DMG of [Continuous DMG] by 20%.</span><span id="tms22">Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.</span><span id="tms23">At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.</span><span id="tms24">Increases DEF by 7% per 1 enemy.</span><span id="tms25">Increases ATK by 6% per 1 enemy.</span><span id="tms26">Increases ATK of all allies by 5%.</span><span id="tms27">Increases Crit DMG of all allies by 10%.</span><span id="tms28">Increases All DEF of all allies by 7%.</span><span id="tms29">At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.</span><span id="tms30">Increases DMG of normal attacks by 25%.</span><span id="tms31">Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.</span><span id="tms32">Increases own Shield by 25%.</span><span id="tms33">Heals HP equal to 1% of Max HP every sec.</span><span id="tms34">Recovers own Mana by 500 every 5 sec.</span><span id="tms35">Reduces All DEF by 25% and increases ATK by 50%.</span><span id="tms36">Reduces ATK by 20% and increases All DEF by 50%.</span><span id="tms37">Reduces the duration of CCs inflicted upon self by 15%.</span><span id="tms38">Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.</span><span id="tms39">Fixes ATK Spd to 1000 and increases ATK by 40%.</span><span id="tms40">Increases Crit DMG by 50%.</span><span id="tms41">Increases ATK Spd by 250.</span><span id="tms42">Increases DEF Penetration by 250.</span><span id="tms43">Increases Max HP by 25%.</span><span id="tms44">Increases All Block by 250.</span><span id="tms45">Increases All DEF by 25%.</span><span id="tms46">Increases Crit Chance by 250.</span><span id="tms47">Increases ATK by 25%.</span><span id="tms48">Soul Weapon Usage Limit +1</span><span id="tms49">Level of [1st Skill] +7</span><span id="tms50">Level of [2nd Skill] +7</span><span id="tms51">Level of [3rd Skill] +7</span><span id="tms52">Level of [4th Skill] +7</span><span id="tms53">Level of [All Skill] +5</span></p></div></div>');
-    //   $tmSkill.find('span').hide();
-    //
-    //   $statCrit = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Crit'
-    //   }).next('p');
-    //   $statHP = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MAX HP'
-    //   }).next('p');
-    //   $statGrey = parseInt($('#heroHP').text());
-    //   $statCritResP = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Crit Resistance'
-    //   }).next('p');
-    //   $statCritResM = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Crit Resistance'
-    //   }).next('p');
-    //   $statMPa = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MP Recovery/Attack'
-    //   }).next('p');
-    //   $statCritD = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Crit DMG'
-    //   }).next('p');
-    //   $statDebuff = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Debuff ACC'
-    //   }).next('p');
-    //   $statASpd = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ATK Spd'
-    //   }).next('p');
-    //   $statMPs = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MP Recovery/Sec'
-    //   }).next('p');
-    //   $statPen = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Penetration'
-    //   }).next('p');
-    //   $statLife = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Lifesteal'
-    //   }).next('p');
-    //   $statACC = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ACC'
-    //   }).next('p');
-    //   $statCC = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'CC Resist'
-    //   }).next('p');
-    //   $statPB = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Block'
-    //   }).next('p');
-    //   $statMB = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Block'
-    //   }).next('p');
-    //   $statPBD = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Block DEF'
-    //   }).next('p');
-    //   $statMBD = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Block DEF'
-    //   }).next('p');
-    //   $statPDef = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.DEF'
-    //   }).next('p');
-    //   $statMDef = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.DEF'
-    //   }).next('p');
-    //   $statPD = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Dodge'
-    //   }).next('p');
-    //   $statMD = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Dodge'
-    //   }).next('p');
-    //   $statPT = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Tough'
-    //   }).next('p');
-    //   $statMT = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Tough'
-    //   }).next('p');
-    //   $statRec = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Recovery'
-    //   }).next('p');
-    //   $statManaRec = $('.class-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Mana Recovery upon taking DMG'
-    //   }).next('p');
-    //
-    //   $f = 0;$fr = 0;$p = 0;$d = 0;$la = 0;$le = 0;$ch = 0;$s = 0;$pr = 0;$dl = 0;$t = 0;$tmP = 0;$tmH = 0;$tmA = 0;
-    //   $sq = $('.set').find('p').each(function() {
-    //     if ($(this).is(':contains("Fire")'))
-    //       $f++;
-    //     else if ($(this).is(':contains("Frost")'))
-    //       $fr++;
-    //     else if ($(this).is(':contains("Poison")'))
-    //       $p++;
-    //     else if ($(this).is(':contains("Darkness")'))
-    //       $d++;
-    //     else if ($(this).is(':contains("Lava")'))
-    //       $la++;
-    //     else if ($(this).is(':contains("Legendary")'))
-    //       $le++;
-    //     else if ($(this).is(':contains("Suppression")'))
-    //       $s++;
-    //     else if ($(this).is(':contains("Protection")'))
-    //       $pr++;
-    //     else if ($(this).is(':contains("Legion")'))
-    //       $dl++;
-    //     else if ($(this).is(':contains("Chaos")'))
-    //       $ch++;
-    //     else if ($(this).is(':contains("Technomagic")'))
-    //       $t++;
-    //     else if ($(this).is(':contains("Perseverance")'))
-    //       $tmP++;
-    //     else if ($(this).is(':contains("Hope")'))
-    //       $tmH++;
-    //     else if ($(this).is(':contains("Authority")'))
-    //       $tmA++;
-    //   });
-    //
-    //   $tms1 = 0;$tms2 = 0;$tms3 = 0;$tms4 = 0;$tms5 = 0;$tms6 = 0;$tms7 = 0;$tms8 = 0;$tms9 = 0;$tms10 = 0;$tms11 = 0;$tms12 = 0;$tms13 = 0;$tms14 = 0;$tms15 = 0;$tms16 = 0;$tms17 = 0;$tms18 = 0;$tms19 = 0;$tms20 = 0;$tms21 = 0;$tms22 = 0;$tms23 = 0;$tms24 = 0;$tms25 = 0;$tms26 = 0;$tms27 = 0;$tms28 = 0;$tms29 = 0;$tms30 = 0;$tms31 = 0;$tms32 = 0;$tms33 = 0;$tms34 = 0;$tms35 = 0;$tms36 = 0;$tms37 = 0;$tms38 = 0;$tms39 = 0;$tms40 = 0;$tms41 = 0;$tms42 = 0;$tms43 = 0;$tms44 = 0;$tms45 = 0;$tms46 = 0;$tms47 = 0;$tms48 = 0;$tms49 = 0;$tms50 = 0;$tms51 = 0;$tms52 = 0;$tms53 = 0;
-    //   $tmsq = $('.tm-prop').find('p').each(function() {
-    //     if ($(this).is(':contains("ATK by 35% when there is 1")')) {
-    //       $tms1++;
-    //       $('#tms1')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 1")').length + ')</span>')
-    //       $('#tms1').show();
-    //     }
-    //     else if ($(this).is(':contains("DEF by 45% when there is 1")')) {
-    //       $tms2++;
-    //       $('#tms2')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 1")').length + ')</span>')
-    //       $('#tms2').show();
-    //     }
-    //     else if ($(this).is(':contains("ATK by 35% when there is 3")')) {
-    //       $tms3++;
-    //       $('#tms3')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 35% when there is 3")').length + ')</span>')
-    //       $('#tms3').show();
-    //     }
-    //     else if ($(this).is(':contains("DEF by 45% when there is 3")')) {
-    //       $tms4++;
-    //       $('#tms4')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("DEF by 45% when there is 3")').length + ')</span>')
-    //       $('#tms4').show();
-    //     }
-    //     else if ($(this).is(':contains("ATK by 50% for 10 sec when HP falls below 30%")')) {
-    //       $tms5++;
-    //       $('#tms5')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("ATK by 50% for 10 sec when HP falls below 30%")').length + ')</span>')
-    //       $('#tms5').show();
-    //     }
-    //     else if ($(this).is(':contains("25% when HP is above 95%")')) {
-    //       $tms6++;
-    //       $('#tms6')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("25% when HP is above 95%")').length + ')</span>')
-    //       $('#tms6').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")')) {
-    //       $tms7++;
-    //       $('#tms7')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%")').length + ')</span>')
-    //       $('#tms7').show();
-    //     }
-    //     else if ($(this).is(':contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")')) {
-    //       $tms8++;
-    //       $('#tms8')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Immediately reduces Cooldown of all allies by 3% when Mana is at 100%")').length + ')</span>')
-    //       $('#tms8').show();
-    //     }
-    //     else if ($(this).is(':contains("Reduces Cooldown of 1st")')) {
-    //       $tms9++;
-    //       $('#tms9')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 1st")').length + ')</span>')
-    //       $('#tms9').show();
-    //     }
-    //     else if ($(this).is(':contains("Reduces Cooldown of 2nd")')) {
-    //       $tms10++;
-    //       $('#tms10')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 2nd")').length + ')</span>')
-    //       $('#tms10').show();
-    //     }
-    //     else if ($(this).is(':contains("Reduces Cooldown of 3rd")')) {
-    //       $tms11++;
-    //       $('#tms11')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces Cooldown of 3rd")').length + ')</span>')
-    //       $('#tms11').show();
-    //     }
-    //     else if ($(this).is(':contains("Upon every Skill use, increases ATK by 2%")')) {
-    //       $tms12++;
-    //       $('#tms12')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, increases ATK by 2%")').length + ')</span>')
-    //       $('#tms12').show();
-    //     }
-    //     else if ($(this).is(':contains("Upon every Skill use, takes 3% reduces DMG")')) {
-    //       $tms13++;
-    //       $('#tms13')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Upon every Skill use, takes 3% reduces DMG")').length + ')</span>')
-    //       $('#tms13').show();
-    //     }
-    //     else if ($(this).is(':contains("increases All Block by 20")')) {
-    //       $tms14++;
-    //       $('#tms14')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("increases All Block by 20")').length + ')</span>')
-    //       $('#tms14').show();
-    //     }
-    //     else if ($(this).is(':contains("Takes 20% reduces P.DMG")')) {
-    //       $tms15++;
-    //       $('#tms15')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces P.DMG")').length + ')</span>')
-    //       $('#tms15').show();
-    //     }
-    //     else if ($(this).is(':contains("Takes 20% reduces M.DMG")')) {
-    //       $tms16++;
-    //       $('#tms16')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Takes 20% reduces M.DMG")').length + ')</span>')
-    //       $('#tms16').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DMG dealt to enemies by 3% every 15 sec")')) {
-    //       $tms17++;
-    //       $('#tms17')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG dealt to enemies by 3% every 15 sec")').length + ')</span>')
-    //       $('#tms17').show();
-    //     }
-    //     else if ($(this).is(':contains("Upon blocking an enemy attack, recovers 200 Mana")')) {
-    //       $tms18++;
-    //       $('#tms18')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Upon blocking an enemy attack, recovers 200 Mana")').length + ')</span>')
-    //       $('#tms18').show();
-    //     }
-    //     else if ($(this).is(':contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")')) {
-    //       $tms19++;
-    //       $('#tms19')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Upon Skill use, increases Heal Rate by 25% for 5 sec")').length + ')</span>')
-    //       $('#tms19').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DMG of [DMG that ignores DEF] by 25%")')) {
-    //       $tms20++;
-    //       $('#tms20')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [DMG that ignores DEF] by 25%")').length + ')</span>')
-    //       $('#tms20').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DMG of [Continuous DMG] by 20%")')) {
-    //       $tms21++;
-    //       $('#tms21')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of [Continuous DMG] by 20%")').length + ')</span>')
-    //       $('#tms21').show();
-    //     }
-    //     else if ($(this).is(':contains("Upon killing an enemy, increases ATK by 2%")')) {
-    //       $tms22++;
-    //       $('#tms22')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Upon killing an enemy, increases ATK by 2%")').length + ')</span>')
-    //       $('#tms22').show();
-    //     }
-    //     else if ($(this).is(':contains("At the beginning of each battle, increases ATK by 5%")')) {
-    //       $tms23++;
-    //       $('#tms23')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases ATK by 5%")').length + ')</span>')
-    //       $('#tms23').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DEF by 7% per 1 enemy")')) {
-    //       $tms24++;
-    //       $('#tms24')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF by 7% per 1 enemy")').length + ')</span>')
-    //       $('#tms24').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases ATK by 6% per 1 enemy")')) {
-    //       $tms25++;
-    //       $('#tms25')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 6% per 1 enemy")').length + ')</span>')
-    //       $('#tms25').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases ATK of all allies by 5%")')) {
-    //       $tms26++;
-    //       $('#tms26')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK of all allies by 5%")').length + ')</span>')
-    //       $('#tms26').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases Crit DMG of all allies by 10%")')) {
-    //       $tms27++;
-    //       $('#tms27')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG of all allies by 10%")').length + ')</span>')
-    //       $('#tms27').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases All DEF of all allies by 7%")')) {
-    //       $tms28++;
-    //       $('#tms28')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF of all allies by 7%")').length + ')</span>')
-    //       $('#tms28').show();
-    //     }
-    //     else if ($(this).is(':contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")')) {
-    //       $tms29++;
-    //       $('#tms29')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec")').length + ')</span>')
-    //       $('#tms29').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DMG of normal attacks by 25%")')) {
-    //       $tms30++;
-    //       $('#tms30')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DMG of normal attacks by 25%")').length + ')</span>')
-    //       $('#tms30').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases All Block by 150")')) {
-    //       $tms31++;
-    //       $('#tms31')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 150")').length + ')</span>')
-    //       $('#tms31').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases own Shield by 25%")')) {
-    //       $tms32++;
-    //       $('#tms32')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases own Shield by 25%")').length + ')</span>')
-    //       $('#tms32').show();
-    //     }
-    //     else if ($(this).is(':contains("Heals HP equal to 1% of Max HP every sec")')) {
-    //       $tms33++;
-    //       $('#tms33')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Heals HP equal to 1% of Max HP every sec")').length + ')</span>')
-    //       $('#tms33').show();
-    //     }
-    //     else if ($(this).is(':contains("Recovers own Mana by 500 every 5 sec")')) {
-    //       $tms34++;
-    //       $('#tms34')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Recovers own Mana by 500 every 5 sec")').length + ')</span>')
-    //       $('#tms34').show();
-    //     }
-    //     else if ($(this).is(':contains("Reduces All DEF by 25% and increases ATK by 50%")')) {
-    //       $tms35++;
-    //       $('#tms35')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces All DEF by 25% and increases ATK by 50%")').length + ')</span>')
-    //       $('#tms35').show();
-    //     }
-    //     else if ($(this).is(':contains("Reduces ATK by 20% and increases All DEF by 50%")')) {
-    //       $tms36++;
-    //       $('#tms36')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Reduces ATK by 20% and increases All DEF by 50%")').length + ')</span>')
-    //       $('#tms36').show();
-    //     }
-    //     else if ($(this).is(':contains("inflicted upon self by 15%")')) {
-    //       $tms37++;
-    //       $('#tms37')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("inflicted upon self by 15%")').length + ')</span>')
-    //       $('#tms37').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")')) {
-    //       $tms38++;
-    //       $('#tms38')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP")').length + ')</span>')
-    //       $('#tms38').show();
-    //     }
-    //     else if ($(this).is(':contains("Fixes ATK Spd to 1000 and increases ATK by 40%")')) {
-    //       $tms39++;
-    //       $('#tms39')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Fixes ATK Spd to 1000 and increases ATK by 40%")').length + ')</span>')
-    //       $('#tms39').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases Crit DMG by 50%")')) {
-    //       $tms40++;
-    //       $('#tms40')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit DMG by 50%")').length + ')</span>')
-    //       $('#tms40').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases ATK Spd by 250")')) {
-    //       $tms41++;
-    //       $('#tms41')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK Spd by 250")').length + ')</span>')
-    //       $('#tms41').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases DEF Penetration by 250")')) {
-    //       $tms42++;
-    //       $('#tms42')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases DEF Penetration by 250")').length + ')</span>')
-    //       $('#tms42').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases Max HP by 25%")')) {
-    //       $tms43++;
-    //       $('#tms43')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Max HP by 25%")').length + ')</span>')
-    //       $('#tms43').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases All Block by 250")')) {
-    //       $tms44++;
-    //       $('#tms44')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All Block by 250")').length + ')</span>')
-    //       $('#tms44').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases All DEF by 25%")')) {
-    //       $tms45++;
-    //       $('#tms45')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases All DEF by 25%")').length + ')</span>')
-    //       $('#tms45').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases Crit Chance by 250")')) {
-    //       $tms46++;
-    //       $('#tms46')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases Crit Chance by 250")').length + ')</span>')
-    //       $('#tms46').show();
-    //     }
-    //     else if ($(this).is(':contains("Increases ATK by 25%")')) {
-    //       $tms47++;
-    //       $('#tms47')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Increases ATK by 25%")').length + ')</span>')
-    //       $('#tms47').show();
-    //     }
-    //     else if ($(this).is(':contains("Soul Weapon Usage Limit +1")')) {
-    //       $tms48++;
-    //       $('#tms48')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Soul Weapon Usage Limit +1")').length + ')</span>')
-    //       $('#tms48').show();
-    //     }
-    //     else if ($(this).is(':contains("Level of [1st Skill] +7")')) {
-    //       $tms49++;
-    //       $('#tms49')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [1st Skill] +7")').length + ')</span>')
-    //       $('#tms49').show();
-    //     }
-    //     else if ($(this).is(':contains("Level of [2nd Skill] +7")')) {
-    //       $tms50++;
-    //       $('#tms50')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [2nd Skill] +7")').length + ')</span>')
-    //       $('#tms50').show();
-    //     }
-    //     else if ($(this).is(':contains("Level of [3rd Skill] +7")')) {
-    //       $tms51++;
-    //       $('#tms51')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [3rd Skill] +7")').length + ')</span>')
-    //       $('#tms51').show();
-    //     }
-    //     else if ($(this).is(':contains("Level of [4th Skill] +7")')) {
-    //       $tms52++;
-    //       $('#tms52')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [4th Skill] +7")').length + ')</span>')
-    //       $('#tms52').show();
-    //     }
-    //     else if ($(this).is(':contains("Level of [All Skill] +5")')) {
-    //       $tms53++;
-    //       $('#tms53')
-    //         .find('span').remove().end()
-    //         .append('<span> (x' + $('.tm-prop').find('p:contains("Level of [All Skill] +5")').length + ')</span>')
-    //       $('#tms53').show();
-    //     }
-    //   });
-    //
-    //   $tPDef = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.DEF'
-    //   }).next('p');
-    //   $tMDef = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.DEF'
-    //   }).next('p');
-    //   $tCrit = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Crit'
-    //   }).next('p');
-    //   $tHP = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MAX HP'
-    //   }).next('p');
-    //   $tPCritRes = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Crit Resistance'
-    //   }).next('p');
-    //   $tMCritRes = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Crit Resistance'
-    //   }).next('p');
-    //   $tMPa = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MP Recovery/Attack'
-    //   }).next('p');
-    //   $tCritDMG = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Crit DMG'
-    //   }).next('p');
-    //   $tDebuffACC = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Debuff ACC'
-    //   }).next('p');
-    //   $tPen = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Penetration'
-    //   }).next('p');
-    //   $tACC = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ACC'
-    //   }).next('p');
-    //   $tPDodge = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Dodge'
-    //   }).next('p');
-    //   $tMDodge = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Dodge'
-    //   }).next('p');
-    //   $tPB = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Block'
-    //   }).next('p');
-    //   $tMB = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Block'
-    //   }).next('p');
-    //   $tPBD = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Block DEF'
-    //   }).next('p');
-    //   $tMBD = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Block DEF'
-    //   }).next('p');
-    //   $tPT = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'P.Tough'
-    //   }).next('p');
-    //   $tMT = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'M.Tough'
-    //   }).next('p');
-    //   $tRec = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Recovery'
-    //   }).next('p');
-    //   $tCC = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'CC Resist'
-    //   }).next('p');
-    //   $tLife = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Lifesteal'
-    //   }).next('p');
-    //   $tASpd = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'ATK Spd'
-    //   }).next('p');
-    //   $tMPs = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'MP Recovery/Sec'
-    //   }).next('p');
-    //   $tManaRec = $('.t-total .r-stats').find('p').filter(function() {
-    //     return $(this).text() === 'Mana Recovery upon taking DMG'
-    //   }).next('p');
-    //
-    //   $stCrit = $('p[name="Crit"]').text();
-    //   if ($stCrit === '')
-    //     $stCrit = 0;
-    //   $sumCrit = parseInt($statCrit.text()) + parseInt($stCrit);
-    //   if (($f > 1) && ($f < 4)) {
-    //     $tCrit.text($sumCrit + 100 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 100) + ')');
-    //     $setBonus.find('#f1').show();
-    //   } else if ($f == 4) {
-    //     $tCrit.text($sumCrit + 230 + ' (' + $statCrit.text() + '+' + (parseInt($stCrit) + 230) + ')');
-    //     $setBonus.find('#f1, #f2').show();
-    //   } else
-    //     $tCrit.text($sumCrit + ' (' + $statCrit.text() + '+' + ($sumCrit - $statCrit.text()) + ')');
-    //
-    //   $stHP = $('p[name="Max HP"]').text();
-    //   if ($stHP === '')
-    //     $stHP = 0;
-    //   $('#calc_gear_treasure').children('option:selected').val() !== '- - - - - - - - - -' ? $trhp = parseInt($('#heroTR').text()) : $trhp = 0;
-    //   $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Ring' ? $jhp = parseInt($('#heroJ').text()) : $jhp = 0;
-    //   $ohp = $('#heroO').text();
-    //   if ($('#heroO').text() == '')
-    //     $ohp = 0;
-    //   $sumHP = parseInt($statHP.text()) + parseInt($trhp) + parseInt($jhp) + parseInt($ohp) + parseInt($('#range-hp').text());
-    //   if (($fr > 1) && ($fr < 4)) {
-    //     $qe = parseInt(Math.round($sumHP * (1.1 + $stHP/100)));
-    //     $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-    //     $setBonus.find('#fr1').show();
-    //   } else if ($fr == 4) {
-    //     $qe = parseInt(Math.round($sumHP * (1.23 + $stHP/100)));
-    //     $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-    //     $setBonus.find('#fr1, #fr2').show();
-    //   } else {
-    //     $qe = parseInt(Math.round($sumHP * (1 + $stHP/100)));
-    //     $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-    //   }
-    //
-    //   $stCR = $('p[name="Crit Resistance"]').text();
-    //   if ($stCR === '')
-    //     $stCR = 0;
-    //   $stPCR = $('p[name="P.Crit Resistance"]').text();
-    //   if ($stPCR === '')
-    //     $stPCR = 0;
-    //   $sumPCR = parseInt($statCritResP.text()) + parseInt($stPCR) + parseInt($stCR);
-    //   $stMCR = $('p[name="M.Crit Resistance"]').text();
-    //   if ($stMCR === '')
-    //     $stMCR = 0;
-    //   $sumMCR = parseInt($statCritResM.text()) + parseInt($stMCR) + parseInt($stCR);
-    //   if (($p > 1) && ($p < 4)) {
-    //     $tPCritRes.text($sumPCR + 100 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 100) + ')');
-    //     $tMCritRes.text($sumMCR + 100 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 100) + ')');
-    //     $setBonus.find('#p1').show();
-    //   } else if ($p == 4) {
-    //     $tPCritRes.text($sumPCR + 230 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 230) + ')');
-    //     $tMCritRes.text($sumMCR + 230 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 230) + ')');
-    //     $setBonus.find('#p1, #p2').show();
-    //   } else {
-    //     $tPCritRes.text($sumPCR + ' (' + $statCritResP.text() + '+' + ($sumPCR - $statCritResP.text()) + ')');
-    //     $tMCritRes.text($sumMCR + ' (' + $statCritResM.text() + '+' + ($sumMCR - $statCritResM.text()) + ')');
-    //   }
-    //
-    //   $stDef = $('p[name="DEF"]').text();
-    //   if ($stDef === '')
-    //     $stDef = 0;
-    //   $stPDef = $('p[name="P.DEF"]').text();
-    //   if ($stPDef === '')
-    //     $stPDef = 0;
-    //   $apd = parseInt($('#heroPDEF').text());
-    //   if ($('#heroPDEF').text() === '')
-    //     $apd = 0;
-    //   $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Bracelet' ? $jpd = parseInt($('#heroJ').text()) : $jpd = 0;
-    //   $qPD = parseInt(Math.round((parseInt($statPDef.text()) + $apd + $jpd) * (1 + (parseInt($stPDef) + parseInt($stDef))/100)));
-    //   $stMDef = $('p[name="M.DEF"]').text();
-    //   if ($stMDef === '')
-    //     $stMDef = 0;
-    //   $amd = parseInt($('#heroMDEF').text());
-    //   if ($('#heroMDEF').text() === '')
-    //     $amd = 0;
-    //   $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Necklace' ? $jmd = parseInt($('#heroJ').text()) : $jmd = 0;
-    //   $qMD = parseInt(Math.round((parseInt($statMDef.text()) + $amd + $jmd) * (1 + (parseInt($stMDef) + parseInt($stDef))/100)));
-    //   $tPDef.text($qPD + ' (' + $statPDef.text() + '+' + ($qPD - parseInt($statPDef.text())) + ')');
-    //   $tMDef.text($qMD + ' (' + $statMDef.text() + '+' + ($qMD - parseInt($statMDef.text())) + ')');
-    //
-    //   $stMPa = $('p[name="MP Recovery/Attack"]').text();
-    //   if ($stMPa === '')
-    //     $stMPa = 0;
-    //   $sumMPa = parseInt($statMPa.text()) + parseInt($stMPa);
-    //   if (($d > 1) && ($d < 4)) {
-    //     $tMPa.text($sumMPa + 200 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 200) + ')');
-    //     $setBonus.find('#d1').show();
-    //   } else if ($d == 4) {
-    //     $tMPa.text($sumMPa + 460 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 460) + ')');
-    //     $setBonus.find('#d1, #d2').show();
-    //   } else
-    //     $tMPa.text($sumMPa + ' (' + $statMPa.text() + '+' + ($sumMPa - $statMPa.text()) + ')');
-    //
-    //   $stCritD = $('p[name="Crit DMG"]').text();
-    //   if ($stCritD === '')
-    //     $stCritD = 0;
-    //   $sumCritD = parseInt($statCritD.text()) + parseInt($stCritD);
-    //   if (($la > 1) && ($la < 4)) {
-    //     $tCritDMG.text($sumCritD + 20 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 20) + '%)');
-    //     $setBonus.find('#la1').show();
-    //   } else if ($la == 4) {
-    //     $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 46) + '%)');
-    //     $setBonus.find('#la1, #la2').show();
-    //   } else
-    //     $tCritDMG.text($sumCritD + '%' + ' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
-    //
-    //   $stDebuff = $('p[name="Debuff ACC"]').text();
-    //   if ($stDebuff === '')
-    //     $stDebuff = 0;
-    //   $sumDebuff = parseInt($statDebuff.text()) + parseInt($stDebuff);
-    //   if (($le > 1) && ($le < 4)) {
-    //     $tDebuffACC.text($sumDebuff + 100 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 100) + ')');
-    //     $setBonus.find('#le1').show();
-    //   } else if ($le == 4) {
-    //     $tDebuffACC.text($sumDebuff + 230 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 230) + ')');
-    //     $setBonus.find('#le1, #le2').show();
-    //   } else
-    //     $tDebuffACC.text($sumDebuff + ' (' + $statDebuff.text() + '+' + ($sumDebuff - $statDebuff.text()) + ')');
-    //
-    //   $stPen = $('p[name="Penetration"]').text();
-    //   if ($stPen === '')
-    //     $stPen = 0;
-    //   $sumPen = parseInt($statPen.text()) + parseInt($stPen);
-    //   $tPen.text($sumPen + ' (' + $statPen.text() + '+' + ($sumPen - $statPen.text()) + ')');
-    //
-    //   $stLife = $('p[name="Lifesteal"]').text();
-    //   if ($stLife === '')
-    //     $stLife = 0;
-    //   $sumLife = parseInt($statLife.text()) + parseInt($stLife);
-    //   $tLife.text($sumLife + ' (' + $statLife.text() + '+' + ($sumLife - $statLife.text()) + ')');
-    //
-    //   $stASpd = $('p[name="ATK Spd"]').text();
-    //   if ($stASpd === '')
-    //     $stASpd = 0;
-    //   $sumASpd = parseInt($statASpd.text()) + parseInt($stASpd);
-    //   $tASpd.text($sumASpd + ' (' + $statASpd.text() + '+' + ($sumASpd - $statASpd.text()) + ')');
-    //
-    //   $stACC = $('p[name="ACC"]').text();
-    //   if ($stACC === '')
-    //     $stACC = 0;
-    //   $sumACC = parseInt($statACC.text()) + parseInt($stACC);
-    //   $tACC.text($sumACC + ' (' + $statACC.text() + '+' + ($sumACC - $statACC.text()) + ')');
-    //
-    //   $stCC = $('p[name="CC Resist"]').text();
-    //   if ($stCC === '')
-    //     $stCC = 0;
-    //   $sumCC = parseInt($statCC.text()) + parseInt($stCC);
-    //   $tCC.text($sumCC + ' (' + $statCC.text() + '+' + ($sumCC - $statCC.text()) + ')');
-    //
-    //   $stRec = $('p[name="Recovery"]').text();
-    //   if ($stRec === '')
-    //     $stRec = 0;
-    //   $sumRec = parseInt($statRec.text()) + parseInt($stRec);
-    //   $tRec.text($sumRec + '%' + ' (' + $statRec.text() + '%+' + ($sumRec - $statRec.text()) + '%)');
-    //
-    //   $stMPs = $('p[name="MP Recovery/Sec"]').text();
-    //   if ($stMPs === '')
-    //     $stMPs = 0;
-    //   $sumMPs = parseInt($statMPs.text()) + parseInt($stMPs);
-    //   $tMPs.text($sumMPs + ' (' + $statMPs.text() + '+' + ($sumMPs - $statMPs.text()) + ')');
-    //
-    //   $stDodge = $('p[name="Dodge"]').text();
-    //   if ($stDodge === '')
-    //     $stDodge = 0;
-    //   $stPDodge = $('p[name="P.Dodge"]').text();
-    //   if ($stPDodge === '')
-    //     $stPDodge = 0;
-    //   $sumPDodge = parseInt($statPD.text()) + parseInt($stPDodge) + parseInt($stDodge);
-    //   $stMDodge = $('p[name="M.Dodge"]').text();
-    //   if ($stMDodge === '')
-    //     $stMDodge = 0;
-    //   $sumMDodge = parseInt($statMD.text()) + parseInt($stMDodge) + parseInt($stDodge);
-    //   $tPDodge.text($sumPDodge + ' (' + $statPD.text() + '+' + ($sumPDodge - $statPD.text()) + ')');
-    //   $tMDodge.text($sumMDodge + ' (' + $statMD.text() + '+' + ($sumMDodge - $statMD.text()) + ')');
-    //
-    //   $stB = $('p[name="Block"]').text();
-    //   if ($stB === '')
-    //     $stB = 0;
-    //   $stPB = $('p[name="P.Block"]').text();
-    //   if ($stPB === '')
-    //     $stPB = 0;
-    //   $sumPB = parseInt($statPB.text()) + parseInt($stPB) + parseInt($stB);
-    //   $stMB = $('p[name="M.Block"]').text();
-    //   if ($stMB === '')
-    //     $stMB = 0;
-    //   $sumMB = parseInt($statMB.text()) + parseInt($stMB) + parseInt($stB);
-    //   $tPB.text($sumPB + ' (' + $statPB.text() + '+' + ($sumPB - $statPB.text()) + ')');
-    //   $tMB.text($sumMB + ' (' + $statMB.text() + '+' + ($sumMB - $statMB.text()) + ')');
-    //
-    //   $stBD = $('p[name="Block DEF"]').text();
-    //   if ($stBD === '')
-    //     $stBD = 0;
-    //   $stPBD = $('p[name="P.Block DEF"]').text();
-    //   if ($stPBD === '')
-    //     $stPBD = 0;
-    //   $sumPBD = parseInt($statPBD.text()) + parseInt($stPBD) + parseInt($stBD);
-    //   $stMBD = $('p[name="M.Block DEF"]').text();
-    //   if ($stMBD === '')
-    //     $stMBD = 0;
-    //   $sumMBD = parseInt($statMBD.text()) + parseInt($stMBD) + parseInt($stBD);
-    //   $tPBD.text($sumPBD + ' (' + $statPBD.text() + '+' + ($sumPBD - $statPBD.text()) + ')');
-    //   $tMBD.text($sumMBD + ' (' + $statMBD.text() + '+' + ($sumMBD - $statMBD.text()) + ')');
-    //
-    //   $stT = $('p[name="Tough"]').text();
-    //   if ($stT === '')
-    //     $stT = 0;
-    //   $stPT = $('p[name="P.Tough"]').text();
-    //   if ($stPT === '')
-    //     $stPT = 0;
-    //   $sumPT = parseInt($statPT.text()) + parseInt($stPT) + parseInt($stT);
-    //   $stMT = $('p[name="M.Tough"]').text();
-    //   if ($stMT === '')
-    //     $stMT = 0;
-    //   $sumMT = parseInt($statMT.text()) + parseInt($stMT) + parseInt($stT);
-    //   $tPT.text($sumPT + ' (' + $statPT.text() + '+' + ($sumPT - $statPT.text()) + ')');
-    //   $tMT.text($sumMT + ' (' + $statMT.text() + '+' + ($sumMT - $statMT.text()) + ')');
-    //
-    //   if (($s > 1) && ($s < 4))
-    //     $setBonus.find('#s1').show();
-    //   else if ($s == 4)
-    //     $setBonus.find('#s1, #s2').show();
-    //
-    //   if (($pr > 1) && ($pr < 4))
-    //     $setBonus.find('#pr1').show();
-    //   else if ($pr == 4)
-    //     $setBonus.find('#pr1, #pr2').show();
-    //
-    //   if (($dl > 1) && ($dl < 4))
-    //     $setBonus.find('#dl1').show();
-    //   else if ($dl == 4)
-    //     $setBonus.find('#dl1, #dl2').show();
-    //
-    //   if (($ch > 1) && ($ch < 4))
-    //     $setBonus.find('#ch1').show();
-    //   else if ($ch == 4)
-    //     $setBonus.find('#ch1, #ch2').show();
-    //
-    //   if (($t > 1) && ($t < 4))
-    //     $setBonus.find('#t1').show();
-    //   else if ($t == 4)
-    //     $setBonus.find('#t1, #t2').show();
-    //
-    //   if ($tmP == 4)
-    //     $setBonus.find('#per' + $heroClass).show();
-    //   if ($tmH == 4)
-    //     $setBonus.find('#hop' + $heroClass).show();
-    //   if ($tmA == 4)
-    //     $setBonus.find('#aut' + $heroClass).show();
-    //
-    //   statSplit();
-    // };
+    function gearSet() {
+      let setBonus = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Set Bonus'
+      }).next('p');
+      let tmSkill = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'TM Skill'
+      }).next('p');
+
+      $statCrit = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Crit'
+      }).next('p');
+      $statHP = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p');
+      $statGrey = parseInt($('#heroHP').text());
+      $statCritResP = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Crit Resistance'
+      }).next('p');
+      $statCritResM = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Crit Resistance'
+      }).next('p');
+      $statMPa = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Attack'
+      }).next('p');
+      $statCritD = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Crit DMG'
+      }).next('p');
+      $statDebuff = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Debuff ACC'
+      }).next('p');
+      $statASpd = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'ATK Spd'
+      }).next('p');
+      $statMPs = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Sec'
+      }).next('p');
+      $statPen = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Penetration'
+      }).next('p');
+      $statLife = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Lifesteal'
+      }).next('p');
+      $statACC = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'ACC'
+      }).next('p');
+      $statCC = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'CC Resist'
+      }).next('p');
+      $statPB = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Block'
+      }).next('p');
+      $statMB = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Block'
+      }).next('p');
+      $statPBD = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Block DEF'
+      }).next('p');
+      $statMBD = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Block DEF'
+      }).next('p');
+      $statPDef = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.DEF'
+      }).next('p');
+      $statMDef = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.DEF'
+      }).next('p');
+      $statPD = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Dodge'
+      }).next('p');
+      $statMD = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Dodge'
+      }).next('p');
+      $statPT = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Tough'
+      }).next('p');
+      $statMT = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Tough'
+      }).next('p');
+      $statRec = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Recovery'
+      }).next('p');
+      $statManaRec = $('.class-stats').find('p').filter(function() {
+        return $(this).text() === 'Mana Recovery upon taking DMG'
+      }).next('p');
+
+      let setParts = $('.set').find('p').each(function() {
+        // Gear Set check function write here 👇
+        /*
+        if (set == TM)
+          if 4 $(`#set_${gear}`) equal => paste in TM Skill
+        else
+          if 4 > $(`#set_${gear}`) > 1 => paste in Set Bonus 2Set
+          else 4 $(`#set_${gear}`) equal => paste in Set Bonus 4Set
+        */
+      });
+      let tmsq = $('.tm-prop').find('p').each(function() {
+        // Gear TM option function write here 👇
+        // $(`#prop_armor`).text() + ' ' + $(`#prop_secondary`).text() + ' ' + $(`#prop_jewelry`).text() + ' ' + $(`#prop_orb`).text();
+      });
+
+      $tPDef = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.DEF'
+      }).next('p');
+      $tMDef = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.DEF'
+      }).next('p');
+      $tCrit = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Crit'
+      }).next('p');
+      $tHP = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'MAX HP'
+      }).next('p');
+      $tPCritRes = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Crit Resistance'
+      }).next('p');
+      $tMCritRes = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Crit Resistance'
+      }).next('p');
+      $tMPa = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Attack'
+      }).next('p');
+      $tCritDMG = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Crit DMG'
+      }).next('p');
+      $tDebuffACC = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Debuff ACC'
+      }).next('p');
+      $tPen = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Penetration'
+      }).next('p');
+      $tACC = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'ACC'
+      }).next('p');
+      $tPDodge = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Dodge'
+      }).next('p');
+      $tMDodge = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Dodge'
+      }).next('p');
+      $tPB = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Block'
+      }).next('p');
+      $tMB = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Block'
+      }).next('p');
+      $tPBD = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Block DEF'
+      }).next('p');
+      $tMBD = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Block DEF'
+      }).next('p');
+      $tPT = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'P.Tough'
+      }).next('p');
+      $tMT = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'M.Tough'
+      }).next('p');
+      $tRec = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Recovery'
+      }).next('p');
+      $tCC = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'CC Resist'
+      }).next('p');
+      $tLife = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Lifesteal'
+      }).next('p');
+      $tASpd = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'ATK Spd'
+      }).next('p');
+      $tMPs = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'MP Recovery/Sec'
+      }).next('p');
+      $tManaRec = $('.t-total .r-stats').find('p').filter(function() {
+        return $(this).text() === 'Mana Recovery upon taking DMG'
+      }).next('p');
+
+      let stCrit = $('p[name="Crit"]').text();
+      if (stCrit === '')
+        stCrit = 0;
+      let sumCrit = parseInt(statCrit.text()) + parseInt(stCrit);
+      if ((f > 1) && (f < 4)) {
+        $tCrit.text(sumCrit + 100 + ' (' + $statCrit.text() + '+' + (parseInt(stCrit) + 100) + ')');
+        // $setBonus.find('#f1').show();
+      } else if (f == 4) {
+        $tCrit.text($sumCrit + 230 + ' (' + $statCrit.text() + '+' + (parseInt(stCrit) + 230) + ')');
+        // $setBonus.find('#f1, #f2').show();
+      } else
+        $tCrit.text(sumCrit + ' (' + $statCrit.text() + '+' + (sumCrit - $statCrit.text()) + ')');
+
+      let stHP = $('p[name="Max HP"]').text();
+      if (stHP === '')
+        stHP = 0;
+      $('#calc_gear_treasure').children('option:selected').val() !== '- - - - - - - - - -' ? $trhp = parseInt($('#heroTR').text()) : $trhp = 0;
+      $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Ring' ? $jhp = parseInt($('#heroJ').text()) : $jhp = 0;
+      let ohp = $('#heroO').text();
+      if ($('#heroO').text() == '')
+        ohp = 0;
+      $sumHP = parseInt($statHP.text()) + parseInt($trhp) + parseInt($jhp) + parseInt($ohp) + parseInt($('#range-hp').text());
+      if (($fr > 1) && ($fr < 4)) {
+        $qe = parseInt(Math.round($sumHP * (1.1 + $stHP/100)));
+        $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
+        $setBonus.find('#fr1').show();
+      } else if ($fr == 4) {
+        $qe = parseInt(Math.round($sumHP * (1.23 + $stHP/100)));
+        $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
+        $setBonus.find('#fr1, #fr2').show();
+      } else {
+        $qe = parseInt(Math.round($sumHP * (1 + $stHP/100)));
+        $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
+      }
+
+      $stCR = $('p[name="Crit Resistance"]').text();
+      if ($stCR === '')
+        $stCR = 0;
+      $stPCR = $('p[name="P.Crit Resistance"]').text();
+      if ($stPCR === '')
+        $stPCR = 0;
+      $sumPCR = parseInt($statCritResP.text()) + parseInt($stPCR) + parseInt($stCR);
+      $stMCR = $('p[name="M.Crit Resistance"]').text();
+      if ($stMCR === '')
+        $stMCR = 0;
+      $sumMCR = parseInt($statCritResM.text()) + parseInt($stMCR) + parseInt($stCR);
+      if (($p > 1) && ($p < 4)) {
+        $tPCritRes.text($sumPCR + 100 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 100) + ')');
+        $tMCritRes.text($sumMCR + 100 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 100) + ')');
+        $setBonus.find('#p1').show();
+      } else if ($p == 4) {
+        $tPCritRes.text($sumPCR + 230 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 230) + ')');
+        $tMCritRes.text($sumMCR + 230 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 230) + ')');
+        $setBonus.find('#p1, #p2').show();
+      } else {
+        $tPCritRes.text($sumPCR + ' (' + $statCritResP.text() + '+' + ($sumPCR - $statCritResP.text()) + ')');
+        $tMCritRes.text($sumMCR + ' (' + $statCritResM.text() + '+' + ($sumMCR - $statCritResM.text()) + ')');
+      }
+
+      $stDef = $('p[name="DEF"]').text();
+      if ($stDef === '')
+        $stDef = 0;
+      $stPDef = $('p[name="P.DEF"]').text();
+      if ($stPDef === '')
+        $stPDef = 0;
+      $apd = parseInt($('#heroPDEF').text());
+      if ($('#heroPDEF').text() === '')
+        $apd = 0;
+      $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Bracelet' ? $jpd = parseInt($('#heroJ').text()) : $jpd = 0;
+      $qPD = parseInt(Math.round((parseInt($statPDef.text()) + $apd + $jpd) * (1 + (parseInt($stPDef) + parseInt($stDef))/100)));
+      $stMDef = $('p[name="M.DEF"]').text();
+      if ($stMDef === '')
+        $stMDef = 0;
+      $amd = parseInt($('#heroMDEF').text());
+      if ($('#heroMDEF').text() === '')
+        $amd = 0;
+      $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Necklace' ? $jmd = parseInt($('#heroJ').text()) : $jmd = 0;
+      $qMD = parseInt(Math.round((parseInt($statMDef.text()) + $amd + $jmd) * (1 + (parseInt($stMDef) + parseInt($stDef))/100)));
+      $tPDef.text($qPD + ' (' + $statPDef.text() + '+' + ($qPD - parseInt($statPDef.text())) + ')');
+      $tMDef.text($qMD + ' (' + $statMDef.text() + '+' + ($qMD - parseInt($statMDef.text())) + ')');
+
+      $stMPa = $('p[name="MP Recovery/Attack"]').text();
+      if ($stMPa === '')
+        $stMPa = 0;
+      $sumMPa = parseInt($statMPa.text()) + parseInt($stMPa);
+      if (($d > 1) && ($d < 4)) {
+        $tMPa.text($sumMPa + 200 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 200) + ')');
+        $setBonus.find('#d1').show();
+      } else if ($d == 4) {
+        $tMPa.text($sumMPa + 460 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 460) + ')');
+        $setBonus.find('#d1, #d2').show();
+      } else
+        $tMPa.text($sumMPa + ' (' + $statMPa.text() + '+' + ($sumMPa - $statMPa.text()) + ')');
+
+      $stCritD = $('p[name="Crit DMG"]').text();
+      if ($stCritD === '')
+        $stCritD = 0;
+      $sumCritD = parseInt($statCritD.text()) + parseInt($stCritD);
+      if (($la > 1) && ($la < 4)) {
+        $tCritDMG.text($sumCritD + 20 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 20) + '%)');
+        $setBonus.find('#la1').show();
+      } else if ($la == 4) {
+        $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 46) + '%)');
+        $setBonus.find('#la1, #la2').show();
+      } else
+        $tCritDMG.text($sumCritD + '%' + ' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
+
+      $stDebuff = $('p[name="Debuff ACC"]').text();
+      if ($stDebuff === '')
+        $stDebuff = 0;
+      $sumDebuff = parseInt($statDebuff.text()) + parseInt($stDebuff);
+      if (($le > 1) && ($le < 4)) {
+        $tDebuffACC.text($sumDebuff + 100 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 100) + ')');
+        $setBonus.find('#le1').show();
+      } else if ($le == 4) {
+        $tDebuffACC.text($sumDebuff + 230 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 230) + ')');
+        $setBonus.find('#le1, #le2').show();
+      } else
+        $tDebuffACC.text($sumDebuff + ' (' + $statDebuff.text() + '+' + ($sumDebuff - $statDebuff.text()) + ')');
+
+      $stPen = $('p[name="Penetration"]').text();
+      if ($stPen === '')
+        $stPen = 0;
+      $sumPen = parseInt($statPen.text()) + parseInt($stPen);
+      $tPen.text($sumPen + ' (' + $statPen.text() + '+' + ($sumPen - $statPen.text()) + ')');
+
+      $stLife = $('p[name="Lifesteal"]').text();
+      if ($stLife === '')
+        $stLife = 0;
+      $sumLife = parseInt($statLife.text()) + parseInt($stLife);
+      $tLife.text($sumLife + ' (' + $statLife.text() + '+' + ($sumLife - $statLife.text()) + ')');
+
+      $stASpd = $('p[name="ATK Spd"]').text();
+      if ($stASpd === '')
+        $stASpd = 0;
+      $sumASpd = parseInt($statASpd.text()) + parseInt($stASpd);
+      $tASpd.text($sumASpd + ' (' + $statASpd.text() + '+' + ($sumASpd - $statASpd.text()) + ')');
+
+      $stACC = $('p[name="ACC"]').text();
+      if ($stACC === '')
+        $stACC = 0;
+      $sumACC = parseInt($statACC.text()) + parseInt($stACC);
+      $tACC.text($sumACC + ' (' + $statACC.text() + '+' + ($sumACC - $statACC.text()) + ')');
+
+      $stCC = $('p[name="CC Resist"]').text();
+      if ($stCC === '')
+        $stCC = 0;
+      $sumCC = parseInt($statCC.text()) + parseInt($stCC);
+      $tCC.text($sumCC + ' (' + $statCC.text() + '+' + ($sumCC - $statCC.text()) + ')');
+
+      $stRec = $('p[name="Recovery"]').text();
+      if ($stRec === '')
+        $stRec = 0;
+      $sumRec = parseInt($statRec.text()) + parseInt($stRec);
+      $tRec.text($sumRec + '%' + ' (' + $statRec.text() + '%+' + ($sumRec - $statRec.text()) + '%)');
+
+      $stMPs = $('p[name="MP Recovery/Sec"]').text();
+      if ($stMPs === '')
+        $stMPs = 0;
+      $sumMPs = parseInt($statMPs.text()) + parseInt($stMPs);
+      $tMPs.text($sumMPs + ' (' + $statMPs.text() + '+' + ($sumMPs - $statMPs.text()) + ')');
+
+      $stDodge = $('p[name="Dodge"]').text();
+      if ($stDodge === '')
+        $stDodge = 0;
+      $stPDodge = $('p[name="P.Dodge"]').text();
+      if ($stPDodge === '')
+        $stPDodge = 0;
+      $sumPDodge = parseInt($statPD.text()) + parseInt($stPDodge) + parseInt($stDodge);
+      $stMDodge = $('p[name="M.Dodge"]').text();
+      if ($stMDodge === '')
+        $stMDodge = 0;
+      $sumMDodge = parseInt($statMD.text()) + parseInt($stMDodge) + parseInt($stDodge);
+      $tPDodge.text($sumPDodge + ' (' + $statPD.text() + '+' + ($sumPDodge - $statPD.text()) + ')');
+      $tMDodge.text($sumMDodge + ' (' + $statMD.text() + '+' + ($sumMDodge - $statMD.text()) + ')');
+
+      $stB = $('p[name="Block"]').text();
+      if ($stB === '')
+        $stB = 0;
+      $stPB = $('p[name="P.Block"]').text();
+      if ($stPB === '')
+        $stPB = 0;
+      $sumPB = parseInt($statPB.text()) + parseInt($stPB) + parseInt($stB);
+      $stMB = $('p[name="M.Block"]').text();
+      if ($stMB === '')
+        $stMB = 0;
+      $sumMB = parseInt($statMB.text()) + parseInt($stMB) + parseInt($stB);
+      $tPB.text($sumPB + ' (' + $statPB.text() + '+' + ($sumPB - $statPB.text()) + ')');
+      $tMB.text($sumMB + ' (' + $statMB.text() + '+' + ($sumMB - $statMB.text()) + ')');
+
+      $stBD = $('p[name="Block DEF"]').text();
+      if ($stBD === '')
+        $stBD = 0;
+      $stPBD = $('p[name="P.Block DEF"]').text();
+      if ($stPBD === '')
+        $stPBD = 0;
+      $sumPBD = parseInt($statPBD.text()) + parseInt($stPBD) + parseInt($stBD);
+      $stMBD = $('p[name="M.Block DEF"]').text();
+      if ($stMBD === '')
+        $stMBD = 0;
+      $sumMBD = parseInt($statMBD.text()) + parseInt($stMBD) + parseInt($stBD);
+      $tPBD.text($sumPBD + ' (' + $statPBD.text() + '+' + ($sumPBD - $statPBD.text()) + ')');
+      $tMBD.text($sumMBD + ' (' + $statMBD.text() + '+' + ($sumMBD - $statMBD.text()) + ')');
+
+      $stT = $('p[name="Tough"]').text();
+      if ($stT === '')
+        $stT = 0;
+      $stPT = $('p[name="P.Tough"]').text();
+      if ($stPT === '')
+        $stPT = 0;
+      $sumPT = parseInt($statPT.text()) + parseInt($stPT) + parseInt($stT);
+      $stMT = $('p[name="M.Tough"]').text();
+      if ($stMT === '')
+        $stMT = 0;
+      $sumMT = parseInt($statMT.text()) + parseInt($stMT) + parseInt($stT);
+      $tPT.text($sumPT + ' (' + $statPT.text() + '+' + ($sumPT - $statPT.text()) + ')');
+      $tMT.text($sumMT + ' (' + $statMT.text() + '+' + ($sumMT - $statMT.text()) + ')');
+
+      if (($s > 1) && ($s < 4))
+        $setBonus.find('#s1').show();
+      else if ($s == 4)
+        $setBonus.find('#s1, #s2').show();
+
+      if (($pr > 1) && ($pr < 4))
+        $setBonus.find('#pr1').show();
+      else if ($pr == 4)
+        $setBonus.find('#pr1, #pr2').show();
+
+      if (($dl > 1) && ($dl < 4))
+        $setBonus.find('#dl1').show();
+      else if ($dl == 4)
+        $setBonus.find('#dl1, #dl2').show();
+
+      if (($ch > 1) && ($ch < 4))
+        $setBonus.find('#ch1').show();
+      else if ($ch == 4)
+        $setBonus.find('#ch1, #ch2').show();
+
+      if (($t > 1) && ($t < 4))
+        $setBonus.find('#t1').show();
+      else if ($t == 4)
+        $setBonus.find('#t1, #t2').show();
+
+      if ($tmP == 4)
+        $setBonus.find('#per' + $heroClass).show();
+      if ($tmH == 4)
+        $setBonus.find('#hop' + $heroClass).show();
+      if ($tmA == 4)
+        $setBonus.find('#aut' + $heroClass).show();
+
+      statSplit();
+    };
 
     function perkTP() {
       let perkPoints = 0;
