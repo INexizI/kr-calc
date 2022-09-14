@@ -948,16 +948,17 @@
     function change_role() {
       $('.hch').hide().end().find(`.hero-${$('#calc_char_id').children('option:selected').val()}`).css('display', 'block');
       // $('option:contains("----------")').attr('disabled', 'disabled');
-      $('.r-stats').children().hide();
-      $('.t-total .r-stats').empty();
+      // $('.r-stats').children().hide();
+      $('.class-stats').children().hide();
+      // $('.t-total .r-stats').empty();
       heroClassId = $('#calc_role_id').children('option:selected').val();
       heroClass = $('#calc_role_id').children('option:selected').text();
       heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       heroId = $('#calc_char_id').children('option:selected').val();
 
-      const stats = $('.class-stats').find('.statData').clone();
-      $(stats).prependTo('.t-total .r-stats');
-      $('.t-total').find('.statData').show();
+      // const stats = $('.class-stats').find('.statData').clone();
+      // $(stats).prependTo('.t-total .r-stats');
+      // $('.t-total').find('.statData').show();
 
       $('#calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb')
         .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
@@ -1445,7 +1446,7 @@
       sum_M == class_MDEF ? total_M.text(class_MDEF)
                           : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
     };
-    function gearSet() {
+    function gearSets() {
       let setBonus = $('.t-total .r-stats').find('p').filter(function() {
         return $(this).text() === 'Set Bonus'
       }).next('p');
@@ -1530,7 +1531,7 @@
         return $(this).text() === 'Mana Recovery upon taking DMG'
       }).next('p');
 
-      let setParts = $('.set').find('p').each(function() {
+      let setParts = $('.set p').each(function() {
         // Gear Set check function write here 👇
         /*
         if (set == TM)
@@ -1540,7 +1541,7 @@
           else 4 $(`#set_${gear}`) equal => paste in Set Bonus 4Set
         */
       });
-      let tmsq = $('.tm-prop').find('p').each(function() {
+      let tmsq = $('.tm-prop p').each(function() {
         // Gear TM option function write here 👇
         // $(`#prop_armor`).text() + ' ' + $(`#prop_secondary`).text() + ' ' + $(`#prop_jewelry`).text() + ' ' + $(`#prop_orb`).text();
       });
