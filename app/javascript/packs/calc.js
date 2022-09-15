@@ -947,18 +947,10 @@
     });
     function change_role() {
       $('.hch').hide().end().find(`.hero-${$('#calc_char_id').children('option:selected').val()}`).css('display', 'block');
-      // $('option:contains("----------")').attr('disabled', 'disabled');
-      // $('.r-stats').children().hide();
-      $('.class-stats').children().hide();
-      // $('.t-total .r-stats').empty();
       heroClassId = $('#calc_role_id').children('option:selected').val();
       heroClass = $('#calc_role_id').children('option:selected').text();
       heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       heroId = $('#calc_char_id').children('option:selected').val();
-
-      // const stats = $('.class-stats').find('.statData').clone();
-      // $(stats).prependTo('.t-total .r-stats');
-      // $('.t-total').find('.statData').show();
 
       $('#calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb')
         .parents().eq(1).find('.gOption select, .gTM select').prop('selectedIndex', 0);
@@ -968,21 +960,13 @@
         .find('.calc-art-description p').empty();
       $('#w-d').hide();
 
-      $('.statData .statsBase, .statData .statsAdd').empty();
-      for (let i = 0; i <= 3; i++) {
-        let x = HeroStat[heroClass][`B${i}`];
-        $('.statData .statsBase').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p></div>');
-        $('.statData .statsBase').find('.r-stat:eq(' + i + ') #s-val').text(x);
-      }
-      for (let j = 0; j <= 19; j++) {
-        let y = HeroStat[heroClass][`A${j}`];
-        $('.statData .statsAdd').append('<div class="r-stat"><p id="s-name"></p><p id="s-val"></p><p id="s-per"></div>');
-        $('.statData .statsAdd').find('.r-stat:eq(' + j + ') #s-val').text(y);
-      }
-      for (let k = 0; k <= 23; k++) {
-        let z = StatName['S' + k];
-        $('.statData').find('.r-stat:eq(' + k + ') #s-name').text(z);
-      }
+      $('.statsBase, .statsAdd').empty();
+      for (let i = 0; i <= 3; i++)
+        $('.statsBase').append(`<div class="r-stat"><p id="s-name"></p><p id="s-val">${HeroStat[heroClass][`B${i}`]}</p></div>`);
+      for (let j = 0; j <= 19; j++)
+        $('.statsAdd').append(`<div class="r-stat"><p id="s-name"></p><p id="s-val">${HeroStat[heroClass][`A${j}`]}</p><p id="s-per"></div>`);
+      for (let k = 0; k <= 23; k++)
+        $('.statData').find(`.r-stat:eq(${k}) #s-name`).text(StatName[`S${k}`]);
     };
     function change_char() {
       $('.hch').hide().end().find(`.hero-${$('#calc_char_id').children('option:selected').val()}`).css('display', 'block');
@@ -1375,18 +1359,10 @@
       let orb_HP = $('[tag="orb"]').text();
       $('#heroO').text(orb_HP);
 
-      let class_ATK = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'ATK'
-      }).next('p').text();
-      let class_HP = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'MAX HP'
-      }).next('p').text();
-      class_PDEF = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'P.DEF'
-      }).next('p').text();
-      class_MDEF = $('.class-stats').find('p').filter(function() {
-        return $(this).text() === 'M.DEF'
-      }).next('p').text();
+      let class_HP = HeroStat[heroClass].B0;
+      let class_ATK = HeroStat[heroClass].B1;
+      let class_PDEF = HeroStat[heroClass].B2;
+      let class_MDEF = HeroStat[heroClass].B3;
 
       let gear_ATK;
       weapon_ATK == '' ? gear_ATK = 0 : gear_ATK = weapon_ATK;
@@ -2187,18 +2163,17 @@
       $('[name="add-atk"], [name="add-hp"]').val(0);
     };
     function statSplit() {
-      $('.t-total').find('#s-val').each(function() {
-        let statSplit = $(this).text().split('(').pop().slice(0, -1).split('+').pop();
-        if (statSplit == '0%' || statSplit == '0')
-          $(this).html($(this).text().split(' ').shift());
-        else if ($(this).is(':contains("(")') == true)
-          // $(this).html('<span id="plsSt1">' + $(this).text().split(' ').shift() + '</span>' + ' (' + $(this).text().split('(').pop().slice(0, -1).split('+').shift() + '<span id="plsSt2">' + '+' + $(this).text().split('(').pop().slice(0, -1).split('+').pop() + '</span>' + ')');
-          $(this).html(`<span id="plsSt1">${$(this).text().split(' ').shift()}</span> (${$(this).text().split('(').pop().slice(0, -1).split('+').shift()}<span id="plsSt2">+${$(this).text().split('(').pop().slice(0, -1).split('+').pop()}</span>)`);
-      });
-      $('.t-total .r-stats').find('#s-val').each(function() {
-        let softLock,
-            softCap = $(this).prev().text(),
-            zeroStat = $(this);
+      // $('.statsAdd .r-stat').find('#s-val').each(function() {
+      //   let statSpl = $(this).text().split('(').pop().slice(0, -1).split('+').pop();
+      //   if (statSpl == '0%' || statSpl == '0')
+      //     $(this).html($(this).text().split(' ').shift());
+      //   else if ($(this).is(':contains("(")') == true)
+      //     $(this).html(`<span id="plsSt1">${$(this).text().split(' ').shift()}</span> (${$(this).text().split('(').pop().slice(0, -1).split('+').shift()}<span id="plsSt2">+${$(this).text().split('(').pop().slice(0, -1).split('+').pop()}</span>)`);
+      // });
+      $('.statsAdd .r-stat').find('#s-val').each(function() {
+        let softLock;
+        let softCap = $(this).prev().text();
+        let zeroStat = $(this);
         zeroStat.text() === '0' || zeroStat.text() === '0%' ? $(this).parent().hide().children().hide() : $(this).parent().show().children().show();
         $(this).find('#plsSt1').text() === '' ? softLock = zeroStat.text() : softLock = $(this).find('#plsSt1').text();
         switch (softCap) {
