@@ -620,7 +620,23 @@
         '5': 46659
       }
     };
-    const GearSet = {
+    const GearSet = [
+      {name: 'Opportune Fire', value: 'f'},
+      {name: 'Gritty Frost', value: 'fr'},
+      {name: 'Unrelenting Poison', value: 'p'},
+      {name: 'Swift Darkness', value: 'd'},
+      {name: 'Lava', value: 'la'},
+      {name: 'Legendary', value: 'le'},
+      {name: 'Beast of Chaos', value: 'ch'},
+      {name: 'Hero Protection', value: 'pr'},
+      {name: 'Hero Suppression', value: 's'},
+      {name: 'Dark Legion', value: 'dl'},
+      {name: 'Technomagic', value: 't'},
+      {name: 'Perseverance', value: 'per'},
+      {name: 'Hope', value: 'hop'},
+      {name: 'Authority', value: 'aut'}
+    ];
+    const GearSetBonus = {
       f1: '2 Set: Crit +100',
       f2: '4 Set: Crit +130',
       fr1: '2 Set: Max HP +10%',
@@ -1439,17 +1455,13 @@
         let x = $(`.set p:eq(${i})`).text();
         SET.push(x);
       }
-      console.log(SET);
-      // let setParts = $('.set p').each(function() {
-      //   // Gear Set check function write here 👇
-      //   /*
-      //   if (set == TM)
-      //     if 4 $(`#set_${gear}`) equal => paste in TM Skill
-      //   else
-      //     if 4 > $(`#set_${gear}`) > 1 => paste in Set Bonus 2Set
-      //     else 4 $(`#set_${gear}`) equal => paste in Set Bonus 4Set
-      //   */
-      // });
+      for (let j = 0; j < GearSet.length; j++) {
+        let n = SET.filter(x => x == GearSet[j].name).length;
+        if (n == 2 || n == 3)
+          console.log('2 parts');
+        else if (n == 4)
+          console.log('4 parts');
+      }
       // let tmsq = $('.tm-prop p').each(function() {
       //   // Gear TM option function write here 👇
       //   // $(`#prop_armor`).text() + ' ' + $(`#prop_secondary`).text() + ' ' + $(`#prop_jewelry`).text() + ' ' + $(`#prop_orb`).text();
