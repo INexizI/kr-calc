@@ -1250,6 +1250,7 @@
       change_char();
     }).change();
     $('select#calc_role_id, select#calc_char_id').change(function() {
+      $('p#sb').empty();
       statSplit();
       rangeC();
     }).change();
@@ -1455,12 +1456,14 @@
         let x = $(`.set p:eq(${i})`).text();
         SET.push(x);
       }
+      $('p#sb').empty();
       for (let j = 0; j < GearSet.length; j++) {
-        let n = SET.filter(x => x == GearSet[j].name).length;
+        let y = GearSet[j];
+        let n = SET.filter(x => x == y.name).length;
         if (n == 2 || n == 3)
-          console.log('2 parts');
+          $('#sb').append(`<span>${GearSetBonus[y.value + 1]}</span>`);
         else if (n == 4)
-          console.log('4 parts');
+          $('#sb').append(`<span>${GearSetBonus[y.value + 1]}</span>\n<span>${GearSetBonus[y.value + 2]}</span>`);
       }
       // let tmsq = $('.tm-prop p').each(function() {
       //   // Gear TM option function write here 👇
