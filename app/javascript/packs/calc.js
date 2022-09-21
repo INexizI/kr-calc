@@ -1250,7 +1250,7 @@
       change_char();
     }).change();
     $('select#calc_role_id, select#calc_char_id').change(function() {
-      $('p#sb').empty();
+      $('p#sb, p#tms').empty();
       statSplit();
       rangeC();
     }).change();
@@ -1451,24 +1451,41 @@
         return $(this).text() === 'TM Skill'
       }).next('p');
 
+      $('p#sb, p#tms').empty();
       let SET = [];
       for (let i = 0; i <= 3; i++) {
         let x = $(`.set p:eq(${i})`).text();
+        if (x.includes('Reclaimed'))
+          x = x.split(' ').pop();
         SET.push(x);
-      }
-      $('p#sb').empty();
-      for (let j = 0; j < GearSet.length; j++) {
+      };
+      for (let j = 0; j < 11; j++) {
         let y = GearSet[j];
         let n = SET.filter(x => x == y.name).length;
+
         if (n == 2 || n == 3)
           $('#sb').append(`<span>${GearSetBonus[y.value + 1]}</span>`);
         else if (n == 4)
           $('#sb').append(`<span>${GearSetBonus[y.value + 1]}</span>\n<span>${GearSetBonus[y.value + 2]}</span>`);
-      }
-      // let tmsq = $('.tm-prop p').each(function() {
-      //   // Gear TM option function write here 👇
-      //   // $(`#prop_armor`).text() + ' ' + $(`#prop_secondary`).text() + ' ' + $(`#prop_jewelry`).text() + ' ' + $(`#prop_orb`).text();
-      // });
+      };
+      for (var k = 11; k < 14; k++) {
+        let y = GearSet[k];
+        let n = SET.filter(x => x == y.name).length;
+
+        if (y.name.includes('Perseverance') || y.name.includes('Hope') || y.name.includes('Authority'))
+          if (n == 4)
+            $('#sb').append(`<span>${GearSetBonus[y.value + heroClassId]}</span>`);
+      };
+
+      // let PROP = [];
+      // for (var l = 0; l < 3; l++) {
+      //   let x = $(`.tm-prop p:eq(${l})`).text();
+      //   PROP.push(x);
+      // };
+      // for (var m = 0; m < TMSet.length; m++) {
+      //   let y = TMSet[m];
+      //   let n = PROP.filter(x => x == y.name).length;
+      // };
 
       // $tPDef = $('.t-total .r-stats').find('p').filter(function() {
       //   return $(this).text() === 'P.DEF'
