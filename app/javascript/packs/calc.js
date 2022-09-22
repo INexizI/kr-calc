@@ -681,61 +681,61 @@
       aut6: '4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.',
       aut7: '4 Set: Increases ATK of all allies by 10%.'
     };
-    const TMSet = {
-      tms1: 'Increases ATK by 35% when there is 1 enemy.',
-      tms2: 'Increases DEF by 45% when there is 1 enemy.',
-      tms3: 'Increases ATK by 35% when there are 3 enemies.',
-      tms4: 'Increases DEF by 45% when there are 3 enemies.',
-      tms5: 'Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.',
-      tms6: 'Increases own DMG dealt to enemies by 25% when HP is above 95%.',
-      tms7: 'Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.',
-      tms8: 'Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.',
-      tms9: 'Reduces Cooldown of 1st Skill by 10% every 10 sec.',
-      tms10: 'Reduces Cooldown of 2nd Skill by 10% every 10 sec.',
-      tms11: 'Reduces Cooldown of 3rd Skill by 10% every 10 sec.',
-      tms12: 'Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.',
-      tms13: 'Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.',
-      tms14: `Upon blocking the enemy's attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.`,
-      tms15: 'Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.',
-      tms16: 'Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.',
-      tms17: 'Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.',
-      tms18: 'Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.',
-      tms19: 'Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.',
-      tms20: 'Increases DMG of [DMG that ignores DEF] by 25%.',
-      tms21: 'Increases DMG of [Continuous DMG] by 20%.',
-      tms22: 'Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.',
-      tms23: 'At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.',
-      tms24: 'Increases DEF by 7% per 1 enemy.',
-      tms25: 'Increases ATK by 6% per 1 enemy.',
-      tms26: 'Increases ATK of all allies by 5%.',
-      tms27: 'Increases Crit DMG of all allies by 10%.',
-      tms28: 'Increases All DEF of all allies by 7%.',
-      tms29: 'At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.',
-      tms30: 'Increases DMG of normal attacks by 25%.',
-      tms31: 'Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.',
-      tms32: 'Increases own Shield by 25%.',
-      tms33: 'Heals HP equal to 1% of Max HP every sec.',
-      tms34: 'Recovers own Mana by 500 every 5 sec.',
-      tms35: 'Reduces All DEF by 25% and increases ATK by 50%.',
-      tms36: 'Reduces ATK by 20% and increases All DEF by 50%.',
-      tms37: `Reduces the duration of CC's inflicted upon self by 15%.`,
-      tms38: 'Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.',
-      tms39: 'Fixes ATK Spd to 1000 and increases ATK by 40%.',
-      tms40: 'Increases Crit DMG by 50%.',
-      tms41: 'Increases ATK Spd by 250.',
-      tms42: 'Increases DEF Penetration by 250.',
-      tms43: 'Increases Max HP by 25%.',
-      tms44: 'Increases All Block by 250.',
-      tms45: 'Increases All DEF by 25%.',
-      tms46: 'Increases Crit Chance by 250.',
-      tms47: 'Increases ATK by 25%.',
-      tms48: 'Soul Weapon Usage Limit +1',
-      tms49: 'Level of [1st Skill] +7',
-      tms50: 'Level of [2nd Skill] +7',
-      tms51: 'Level of [3rd Skill] +7',
-      tms52: 'Level of [4th Skill] +7',
-      tms53: 'Level of [All Skills] +5',
-    };
+    const TMSet = [
+      {tms1: 'Increases ATK by 35% when there is 1 enemy.'},
+      {tms2: 'Increases DEF by 45% when there is 1 enemy.'},
+      {tms3: 'Increases ATK by 35% when there are 3 enemies.'},
+      {tms4: 'Increases DEF by 45% when there are 3 enemies.'},
+      {tms5: 'Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.'},
+      {tms6: 'Increases own DMG dealt to enemies by 25% when HP is above 95%.'},
+      {tms7: 'Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.'},
+      {tms8: 'Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.'},
+      {tms9: 'Reduces Cooldown of 1st Skill by 10% every 10 sec.'},
+      {tms10: 'Reduces Cooldown of 2nd Skill by 10% every 10 sec.'},
+      {tms11: 'Reduces Cooldown of 3rd Skill by 10% every 10 sec.'},
+      {tms12: 'Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.'},
+      {tms13: 'Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.'},
+      {tms14: `Upon blocking the enemy's attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.`},
+      {tms15: 'Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.'},
+      {tms16: 'Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.'},
+      {tms17: 'Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.'},
+      {tms18: 'Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.'},
+      {tms19: 'Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.'},
+      {tms20: 'Increases DMG of [DMG that ignores DEF] by 25%.'},
+      {tms21: 'Increases DMG of [Continuous DMG] by 20%.'},
+      {tms22: 'Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.'},
+      {tms23: 'At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.'},
+      {tms24: 'Increases DEF by 7% per 1 enemy.'},
+      {tms25: 'Increases ATK by 6% per 1 enemy.'},
+      {tms26: 'Increases ATK of all allies by 5%.'},
+      {tms27: 'Increases Crit DMG of all allies by 10%.'},
+      {tms28: 'Increases All DEF of all allies by 7%.'},
+      {tms29: 'At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.'},
+      {tms30: 'Increases DMG of normal attacks by 25%.'},
+      {tms31: 'Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.'},
+      {tms32: 'Increases own Shield by 25%.'},
+      {tms33: 'Heals HP equal to 1% of Max HP every sec.'},
+      {tms34: 'Recovers own Mana by 500 every 5 sec.'},
+      {tms35: 'Reduces All DEF by 25% and increases ATK by 50%.'},
+      {tms36: 'Reduces ATK by 20% and increases All DEF by 50%.'},
+      {tms37: `Reduces the duration of CC's inflicted upon self by 15%.`},
+      {tms38: 'Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.'},
+      {tms39: 'Fixes ATK Spd to 1000 and increases ATK by 40%.'},
+      {tms40: 'Increases Crit DMG by 50%.'},
+      {tms41: 'Increases ATK Spd by 250.'},
+      {tms42: 'Increases DEF Penetration by 250.'},
+      {tms43: 'Increases Max HP by 25%.'},
+      {tms44: 'Increases All Block by 250.'},
+      {tms45: 'Increases All DEF by 25%.'},
+      {tms46: 'Increases Crit Chance by 250.'},
+      {tms47: 'Increases ATK by 25%.'},
+      {tms48: 'Soul Weapon Usage Limit +1'},
+      {tms49: 'Level of [1st Skill] +7'},
+      {tms50: 'Level of [2nd Skill] +7'},
+      {tms51: 'Level of [3rd Skill] +7'},
+      {tms52: 'Level of [4th Skill] +7'},
+      {tms53: 'Level of [All Skills] +5'}
+    ];
     /* vars */
     let heroClassId,
         heroClass,
@@ -1285,7 +1285,7 @@
     });
     $('select#calc_st_armor_op, select#calc_st_secondary_op, select#calc_st_jewelry_op, select#calc_st_orb_op').change(function() {
       $(`#${$(this).attr('tag')}`).text($(`#${$(this).attr('id')}`).children('option:selected').text());
-      // gearSet();
+      gearSets();
     });
     $('select#armor_enh, select#secondary_enh, select#jewelry_enh, select#orb_enh').change(function() {
       $(this).parent().next().find('.enh-v').prop('selectedIndex', 0).find('option').hide();
@@ -1477,15 +1477,17 @@
             $('#sb').append(`<span>${GearSetBonus[y.value + heroClassId]}</span>`);
       };
 
-      // let PROP = [];
-      // for (var l = 0; l < 3; l++) {
-      //   let x = $(`.tm-prop p:eq(${l})`).text();
-      //   PROP.push(x);
-      // };
-      // for (var m = 0; m < TMSet.length; m++) {
-      //   let y = TMSet[m];
-      //   let n = PROP.filter(x => x == y.name).length;
-      // };
+      let PROP = [];
+      for (var l = 0; l <= 3; l++) {
+        let x = $(`.tm-prop p:eq(${l})`).text();
+        PROP.push(x);
+      };
+      for (var m = 0; m < TMSet.length; m++) {
+        let y = TMSet[m][`tms${m + 1}`];
+        let n = PROP.filter(x => x == y).length;
+        if (n != 0)
+          $('#tms').append(`<span>${y}</span>`);
+      };
 
       // $tPDef = $('.t-total .r-stats').find('p').filter(function() {
       //   return $(this).text() === 'P.DEF'
