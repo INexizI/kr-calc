@@ -1465,14 +1465,14 @@
         var st;
         switch (y.name) {
           case 'Opportune Fire':
-            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
 
             if (n == 2 || n == 3)
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + parseInt(st) + 100} (${parseInt(HeroStat[heroClass].A0)}+${parseInt(st) + 100})`);
+              $(`.statsAdd #s-name:eq(${0})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + st + 100} (${HeroStat[heroClass].A0}+${st + 100})`);
             else if (n == 4)
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + parseInt(st) + 230} (${parseInt(HeroStat[heroClass].A0)}+${parseInt(st) + 230})`);
+              $(`.statsAdd #s-name:eq(${0})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + st + 230} (${HeroStat[heroClass].A0}+${st + 230})`);
             else
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A0) + parseInt(st));
+              $(`.statsAdd #s-name:eq(${0})`).next('p').text(parseInt(HeroStat[heroClass].A0) + st);
             break;
           case 'Gritty Frost':
             // $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
@@ -1489,44 +1489,21 @@
             //   $(`.statsBase #s-name:eq(${j})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1)) - parseInt(HeroStat[heroClass].B0)})`);
             break;
           case 'Unrelenting Poison':
-            // $stCR = $('p[name="Crit Resistance"]').text();
-            // if ($stCR === '')
-            //   $stCR = 0;
-            // $stPCR = $('p[name="P.Crit Resistance"]').text();
-            // if ($stPCR === '')
-            //   $stPCR = 0;
-            // $sumPCR = parseInt($statCritResP.text()) + parseInt($stPCR) + parseInt($stCR);
-            // $stMCR = $('p[name="M.Crit Resistance"]').text();
-            // if ($stMCR === '')
-            //   $stMCR = 0;
-            // $sumMCR = parseInt($statCritResM.text()) + parseInt($stMCR) + parseInt($stCR);
-            // if (($p > 1) && ($p < 4)) {
-            //   $tPCritRes.text($sumPCR + 100 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 100) + ')');
-            //   $tMCritRes.text($sumMCR + 100 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 100) + ')');
-            //   $setBonus.find('#p1').show();
-            // } else if ($p == 4) {
-            //   $tPCritRes.text($sumPCR + 230 + ' (' + $statCritResP.text() + '+' + parseInt($sumPCR + 230) + ')');
-            //   $tMCritRes.text($sumMCR + 230 + ' (' + $statCritResM.text() + '+' + parseInt($sumMCR + 230) + ')');
-            //   $setBonus.find('#p1, #p2').show();
-            // } else {
-            //   $tPCritRes.text($sumPCR + ' (' + $statCritResP.text() + '+' + ($sumPCR - $statCritResP.text()) + ')');
-            //   $tMCritRes.text($sumMCR + ' (' + $statCritResM.text() + '+' + ($sumMCR - $statCritResM.text()) + ')');
-            // };
-
-            let st, stP, stM;
-            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
-            $(`p[name="P.${y.stat}"]`).text() === '' ? stP = 0 : stP = $(`p[name="P.${y.stat}"]`).text();
-            $(`p[name="M.${y.stat}"]`).text() === '' ? stM = 0 : stM = $(`p[name="M.${y.stat}"]`).text();
+            let stP, stM;
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
+            $(`p[name="P.${y.stat}"]`).text() === '' ? stP = 0 : stP = parseInt($(`p[name="P.${y.stat}"]`).text()) + st;
+            $(`p[name="M.${y.stat}"]`).text() === '' ? stM = 0 : stM = parseInt($(`p[name="M.${y.stat}"]`).text()) + st;
 
             if (n == 2 || n == 3) {
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A18) + parseInt(st) + 100);
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A19) + parseInt(st) + 100);
+              $(`.statsAdd #s-name:eq(${18})`).next('p').text(`${parseInt(HeroStat[heroClass].A18) + stP + 100} (${HeroStat[heroClass].A18}+${stP + 100})`);
+              $(`.statsAdd #s-name:eq(${19})`).next('p').text(`${parseInt(HeroStat[heroClass].A19) + stM + 100} (${HeroStat[heroClass].A19}+${stM + 100})`);
             } else if (n == 4) {
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A18) + parseInt(st) + 230);
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A19) + parseInt(st) + 230);
-            } else
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A18) + parseInt(st));
-              $(`.statsAdd #s-name:eq(${j})`).next('p').text(parseInt(HeroStat[heroClass].A19) + parseInt(st));
+              $(`.statsAdd #s-name:eq(${18})`).next('p').text(`${parseInt(HeroStat[heroClass].A18) + stP + 230} (${HeroStat[heroClass].A18}+${stP + 230})`);
+              $(`.statsAdd #s-name:eq(${19})`).next('p').text(`${parseInt(HeroStat[heroClass].A19) + stM + 230} (${HeroStat[heroClass].A19}+${stM + 230})`);
+            } else {
+              $(`.statsAdd #s-name:eq(${18})`).next('p').text(parseInt(HeroStat[heroClass].A18) + stP);
+              $(`.statsAdd #s-name:eq(${19})`).next('p').text(parseInt(HeroStat[heroClass].A19) + stM);
+            };
             break;
           case 'Swift Darkness':
             break;
