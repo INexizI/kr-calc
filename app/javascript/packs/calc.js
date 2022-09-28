@@ -1250,7 +1250,9 @@
       for (let k = 0; k <= 23; k++)
         $('.statData').find(`.r-stat:eq(${k}) #s-name`).text(StatName[`S${k}`]);
       $('p#sb, p#tms').empty();
-      statSplit();
+
+      gearSets();
+      // statSplit();
       rangeC();
     }).change();
     $('select.ax-r').change(function() {
@@ -1506,10 +1508,34 @@
             };
             break;
           case 'Swift Darkness':
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
+
+            if (n == 2 || n == 3)
+              $(`.statsAdd #s-name:eq(${17})`).next('p').text(`${parseInt(HeroStat[heroClass].A17) + st + 200} (${HeroStat[heroClass].A17}+${st + 200})`);
+            else if (n == 4)
+              $(`.statsAdd #s-name:eq(${17})`).next('p').text(`${parseInt(HeroStat[heroClass].A17) + st + 460} (${HeroStat[heroClass].A17}+${st + 460})`);
+            else
+              $(`.statsAdd #s-name:eq(${17})`).next('p').text(parseInt(HeroStat[heroClass].A17) + st);
             break;
           case 'Lava':
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
+
+            if (n == 2 || n == 3)
+              $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st + 20}% (${HeroStat[heroClass].A1}%+${st + 20}%)`);
+            else if (n == 4)
+              $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st + 46}% (${HeroStat[heroClass].A1}%+${st + 46}%)`);
+            else
+              $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st}%`);
             break;
           case 'Legendary':
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
+
+            if (n == 2 || n == 3)
+              $(`.statsAdd #s-name:eq(${14})`).next('p').text(`${parseInt(HeroStat[heroClass].A14) + st + 100} (${HeroStat[heroClass].A14}+${st + 100})`);
+            else if (n == 4)
+              $(`.statsAdd #s-name:eq(${14})`).next('p').text(`${parseInt(HeroStat[heroClass].A14) + st + 230} (${HeroStat[heroClass].A14}+${st + 230})`);
+            else
+              $(`.statsAdd #s-name:eq(${14})`).next('p').text(parseInt(HeroStat[heroClass].A14) + st);
             break;
           default:
             /*
@@ -1606,45 +1632,6 @@
       // $qMD = parseInt(Math.round((parseInt($statMDef.text()) + $amd + $jmd) * (1 + (parseInt($stMDef) + parseInt($stDef))/100)));
       // $tPDef.text($qPD + ' (' + $statPDef.text() + '+' + ($qPD - parseInt($statPDef.text())) + ')');
       // $tMDef.text($qMD + ' (' + $statMDef.text() + '+' + ($qMD - parseInt($statMDef.text())) + ')');
-
-      // $stMPa = $('p[name="MP Recovery/Attack"]').text();
-      // if ($stMPa === '')
-      //   $stMPa = 0;
-      // $sumMPa = parseInt($statMPa.text()) + parseInt($stMPa);
-      // if (($d > 1) && ($d < 4)) {
-      //   $tMPa.text($sumMPa + 200 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 200) + ')');
-      //   $setBonus.find('#d1').show();
-      // } else if ($d == 4) {
-      //   $tMPa.text($sumMPa + 460 + ' (' + $statMPa.text() + '+' + (parseInt($stMPa) + 460) + ')');
-      //   $setBonus.find('#d1, #d2').show();
-      // } else
-      //   $tMPa.text($sumMPa + ' (' + $statMPa.text() + '+' + ($sumMPa - $statMPa.text()) + ')');
-
-      // $stCritD = $('p[name="Crit DMG"]').text();
-      // if ($stCritD === '')
-      //   $stCritD = 0;
-      // $sumCritD = parseInt($statCritD.text()) + parseInt($stCritD);
-      // if (($la > 1) && ($la < 4)) {
-      //   $tCritDMG.text($sumCritD + 20 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 20) + '%)');
-      //   $setBonus.find('#la1').show();
-      // } else if ($la == 4) {
-      //   $tCritDMG.text($sumCritD + 46 + '% (' + $statCritD.text() + '%+' + (parseInt($stCritD) + 46) + '%)');
-      //   $setBonus.find('#la1, #la2').show();
-      // } else
-      //   $tCritDMG.text($sumCritD + '%' + ' (' + $statCritD.text() + '%+' + ($sumCritD - $statCritD.text()) + '%)');
-
-      // $stDebuff = $('p[name="Debuff ACC"]').text();
-      // if ($stDebuff === '')
-      //   $stDebuff = 0;
-      // $sumDebuff = parseInt($statDebuff.text()) + parseInt($stDebuff);
-      // if (($le > 1) && ($le < 4)) {
-      //   $tDebuffACC.text($sumDebuff + 100 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 100) + ')');
-      //   $setBonus.find('#le1').show();
-      // } else if ($le == 4) {
-      //   $tDebuffACC.text($sumDebuff + 230 + ' (' + $statDebuff.text() + '+' + parseInt($sumDebuff + 230) + ')');
-      //   $setBonus.find('#le1, #le2').show();
-      // } else
-      //   $tDebuffACC.text($sumDebuff + ' (' + $statDebuff.text() + '+' + ($sumDebuff - $statDebuff.text()) + ')');
 
       // $stPen = $('p[name="Penetration"]').text();
       // if ($stPen === '')
@@ -2083,6 +2070,7 @@
             softLock > 225 ? $(this).next('#s-per').text((225 + (softLock - 225)*0.2)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
           case 'MP Recovery/Attack':
+            $(this).prev().css('font-size', '12px').text('Mana Recovery/Attack');
             softLock > 1600 ? $(this).next('#s-per').text((1600 + (softLock - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
           case 'Crit DMG' || 'Recovery':
