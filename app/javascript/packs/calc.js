@@ -1477,18 +1477,23 @@
               $(`.statsAdd #s-name:eq(${0})`).next('p').text(parseInt(HeroStat[heroClass].A0) + st);
             break;
           case 'Gritty Frost':
-            // $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
+            $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
 
-            // let sum_HP;
-            // jewelryType == 'Ring' ? sum_HP = parseInt(HeroStat[heroClass].B0) + parseInt($('#heroTR').text()) + parseInt($('#heroO').text()) + parseInt($('#range-hp').text()) + parseInt($('#heroJ').text())
-            //                       : sum_HP = parseInt(HeroStat[heroClass].B0) + parseInt($('#heroTR').text()) + parseInt($('#heroO').text()) + parseInt($('#range-hp').text());
+            let sum_HP;
+            let setTR;
+            $('#heroTR').text() === '' ? setTR = 0 : setTR = parseInt($('#heroTR').text());
+            $('#heroO').text() === '' ? setO = 0 : setO = parseInt($('#heroO').text());
+            $('#heroJ').text() === '' ? setJ = 0 : setJ = parseInt($('#heroJ').text());
+            jewelryType == 'Ring' ? sum_HP = parseInt(HeroStat[heroClass].B0) + setTR + setO + parseInt($('#range-hp').text()) + setJ
+                                  : sum_HP = parseInt(HeroStat[heroClass].B0) + setTR + setO + parseInt($('#range-hp').text());
 
-            // if (n == 2 || n == 3)
-            //   $(`.statsBase #s-name:eq(${j})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.1)) - parseInt(HeroStat[heroClass].B0)})`);
-            // else if (n == 4)
-            //   $(`.statsBase #s-name:eq(${j})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.23))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.23)) - parseInt(HeroStat[heroClass].B0)})`);
-            // else
-            //   $(`.statsBase #s-name:eq(${j})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1)) - parseInt(HeroStat[heroClass].B0)})`);
+            if (n == 2 || n == 3)
+              $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.1)) - parseInt(HeroStat[heroClass].B0)})`);
+            else if (n == 4)
+              $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.23))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.23)) - parseInt(HeroStat[heroClass].B0)})`);
+            else
+              sum_HP == HeroStat[heroClass].B0 ? $(`.statsBase #s-name:eq(${0})`).next('p').text(HeroStat[heroClass].B0)
+                                               : $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1)) - parseInt(HeroStat[heroClass].B0)})`);
             break;
           case 'Unrelenting Poison':
             let stP, stM;
@@ -1538,28 +1543,6 @@
               $(`.statsAdd #s-name:eq(${14})`).next('p').text(parseInt(HeroStat[heroClass].A14) + st);
             break;
           default:
-            /*
-              a0 Crit
-              a1 Crit DMG
-              a2 Penetration
-              a3 ACC
-              a4 P.Dodge
-              a5 M.Dodge
-              a6 P.Block
-              a7 M.Block
-              a8 P.Block DEF
-              a9 M.Block DEF
-              a10 P.Tough
-              a11 M.Tough
-              a12 Recovery
-              a13 CC Resist
-              a14 Debuff ACC
-              a15 Lifesteal
-              a16 ATK Spd
-              a17 MP Recovery/Attack
-              a18 P.Crit Resistance
-              a19 M.Crit Resistance
-            */
             st = 0;
         };
 
@@ -1588,148 +1571,6 @@
         if (n > 0)
           $('#tms').append(`<span>${y} (x${n})</span>`);
       };
-
-      // let stHP = $('p[name="Max HP"]').text();
-      // if (stHP === '')
-      //   stHP = 0;
-      // $('#calc_gear_treasure').children('option:selected').val() !== '- - - - - - - - - -' ? $trhp = parseInt($('#heroTR').text()) : $trhp = 0;
-      // $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Ring' ? $jhp = parseInt($('#heroJ').text()) : $jhp = 0;
-      // let ohp = $('#heroO').text();
-      // if ($('#heroO').text() == '')
-      //   ohp = 0;
-      // $sumHP = parseInt($statHP.text()) + parseInt($trhp) + parseInt($jhp) + parseInt($ohp) + parseInt($('#range-hp').text());
-      // if (($fr > 1) && ($fr < 4)) {
-      //   $qe = parseInt(Math.round($sumHP * (1.1 + $stHP/100)));
-      //   $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-      //   $setBonus.find('#fr1').show();
-      // } else if ($fr == 4) {
-      //   $qe = parseInt(Math.round($sumHP * (1.23 + $stHP/100)));
-      //   $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-      //   $setBonus.find('#fr1, #fr2').show();
-      // } else {
-      //   $qe = parseInt(Math.round($sumHP * (1 + $stHP/100)));
-      //   $tHP.text($qe + ' (' + $statHP.text() + '+' + ($qe - $statHP.text()) + ')');
-      // };
-
-      // $stDef = $('p[name="DEF"]').text();
-      // if ($stDef === '')
-      //   $stDef = 0;
-      // $stPDef = $('p[name="P.DEF"]').text();
-      // if ($stPDef === '')
-      //   $stPDef = 0;
-      // $apd = parseInt($('#heroPDEF').text());
-      // if ($('#heroPDEF').text() === '')
-      //   $apd = 0;
-      // $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Bracelet' ? $jpd = parseInt($('#heroJ').text()) : $jpd = 0;
-      // $qPD = parseInt(Math.round((parseInt($statPDef.text()) + $apd + $jpd) * (1 + (parseInt($stPDef) + parseInt($stDef))/100)));
-      // $stMDef = $('p[name="M.DEF"]').text();
-      // if ($stMDef === '')
-      //   $stMDef = 0;
-      // $amd = parseInt($('#heroMDEF').text());
-      // if ($('#heroMDEF').text() === '')
-      //   $amd = 0;
-      // $('#calc_gear_jewelry').children().children('option:selected').parent().attr('label') == 'Necklace' ? $jmd = parseInt($('#heroJ').text()) : $jmd = 0;
-      // $qMD = parseInt(Math.round((parseInt($statMDef.text()) + $amd + $jmd) * (1 + (parseInt($stMDef) + parseInt($stDef))/100)));
-      // $tPDef.text($qPD + ' (' + $statPDef.text() + '+' + ($qPD - parseInt($statPDef.text())) + ')');
-      // $tMDef.text($qMD + ' (' + $statMDef.text() + '+' + ($qMD - parseInt($statMDef.text())) + ')');
-
-      // $stPen = $('p[name="Penetration"]').text();
-      // if ($stPen === '')
-      //   $stPen = 0;
-      // $sumPen = parseInt($statPen.text()) + parseInt($stPen);
-      // $tPen.text($sumPen + ' (' + $statPen.text() + '+' + ($sumPen - $statPen.text()) + ')');
-
-      // $stLife = $('p[name="Lifesteal"]').text();
-      // if ($stLife === '')
-      //   $stLife = 0;
-      // $sumLife = parseInt($statLife.text()) + parseInt($stLife);
-      // $tLife.text($sumLife + ' (' + $statLife.text() + '+' + ($sumLife - $statLife.text()) + ')');
-
-      // $stASpd = $('p[name="ATK Spd"]').text();
-      // if ($stASpd === '')
-      //   $stASpd = 0;
-      // $sumASpd = parseInt($statASpd.text()) + parseInt($stASpd);
-      // $tASpd.text($sumASpd + ' (' + $statASpd.text() + '+' + ($sumASpd - $statASpd.text()) + ')');
-
-      // $stACC = $('p[name="ACC"]').text();
-      // if ($stACC === '')
-      //   $stACC = 0;
-      // $sumACC = parseInt($statACC.text()) + parseInt($stACC);
-      // $tACC.text($sumACC + ' (' + $statACC.text() + '+' + ($sumACC - $statACC.text()) + ')');
-
-      // $stCC = $('p[name="CC Resist"]').text();
-      // if ($stCC === '')
-      //   $stCC = 0;
-      // $sumCC = parseInt($statCC.text()) + parseInt($stCC);
-      // $tCC.text($sumCC + ' (' + $statCC.text() + '+' + ($sumCC - $statCC.text()) + ')');
-
-      // $stRec = $('p[name="Recovery"]').text();
-      // if ($stRec === '')
-      //   $stRec = 0;
-      // $sumRec = parseInt($statRec.text()) + parseInt($stRec);
-      // $tRec.text($sumRec + '%' + ' (' + $statRec.text() + '%+' + ($sumRec - $statRec.text()) + '%)');
-
-      // $stMPs = $('p[name="MP Recovery/Sec"]').text();
-      // if ($stMPs === '')
-      //   $stMPs = 0;
-      // $sumMPs = parseInt($statMPs.text()) + parseInt($stMPs);
-      // $tMPs.text($sumMPs + ' (' + $statMPs.text() + '+' + ($sumMPs - $statMPs.text()) + ')');
-
-      // $stDodge = $('p[name="Dodge"]').text();
-      // if ($stDodge === '')
-      //   $stDodge = 0;
-      // $stPDodge = $('p[name="P.Dodge"]').text();
-      // if ($stPDodge === '')
-      //   $stPDodge = 0;
-      // $sumPDodge = parseInt($statPD.text()) + parseInt($stPDodge) + parseInt($stDodge);
-      // $stMDodge = $('p[name="M.Dodge"]').text();
-      // if ($stMDodge === '')
-      //   $stMDodge = 0;
-      // $sumMDodge = parseInt($statMD.text()) + parseInt($stMDodge) + parseInt($stDodge);
-      // $tPDodge.text($sumPDodge + ' (' + $statPD.text() + '+' + ($sumPDodge - $statPD.text()) + ')');
-      // $tMDodge.text($sumMDodge + ' (' + $statMD.text() + '+' + ($sumMDodge - $statMD.text()) + ')');
-
-      // $stB = $('p[name="Block"]').text();
-      // if ($stB === '')
-      //   $stB = 0;
-      // $stPB = $('p[name="P.Block"]').text();
-      // if ($stPB === '')
-      //   $stPB = 0;
-      // $sumPB = parseInt($statPB.text()) + parseInt($stPB) + parseInt($stB);
-      // $stMB = $('p[name="M.Block"]').text();
-      // if ($stMB === '')
-      //   $stMB = 0;
-      // $sumMB = parseInt($statMB.text()) + parseInt($stMB) + parseInt($stB);
-      // $tPB.text($sumPB + ' (' + $statPB.text() + '+' + ($sumPB - $statPB.text()) + ')');
-      // $tMB.text($sumMB + ' (' + $statMB.text() + '+' + ($sumMB - $statMB.text()) + ')');
-
-      // $stBD = $('p[name="Block DEF"]').text();
-      // if ($stBD === '')
-      //   $stBD = 0;
-      // $stPBD = $('p[name="P.Block DEF"]').text();
-      // if ($stPBD === '')
-      //   $stPBD = 0;
-      // $sumPBD = parseInt($statPBD.text()) + parseInt($stPBD) + parseInt($stBD);
-      // $stMBD = $('p[name="M.Block DEF"]').text();
-      // if ($stMBD === '')
-      //   $stMBD = 0;
-      // $sumMBD = parseInt($statMBD.text()) + parseInt($stMBD) + parseInt($stBD);
-      // $tPBD.text($sumPBD + ' (' + $statPBD.text() + '+' + ($sumPBD - $statPBD.text()) + ')');
-      // $tMBD.text($sumMBD + ' (' + $statMBD.text() + '+' + ($sumMBD - $statMBD.text()) + ')');
-
-      // $stT = $('p[name="Tough"]').text();
-      // if ($stT === '')
-      //   $stT = 0;
-      // $stPT = $('p[name="P.Tough"]').text();
-      // if ($stPT === '')
-      //   $stPT = 0;
-      // $sumPT = parseInt($statPT.text()) + parseInt($stPT) + parseInt($stT);
-      // $stMT = $('p[name="M.Tough"]').text();
-      // if ($stMT === '')
-      //   $stMT = 0;
-      // $sumMT = parseInt($statMT.text()) + parseInt($stMT) + parseInt($stT);
-      // $tPT.text($sumPT + ' (' + $statPT.text() + '+' + ($sumPT - $statPT.text()) + ')');
-      // $tMT.text($sumMT + ' (' + $statMT.text() + '+' + ($sumMT - $statMT.text()) + ')');
 
       statSplit();
     };
