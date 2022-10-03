@@ -1263,8 +1263,8 @@
     $('select#calc_gear_weapon, select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
       gearStats();
-
       gearSets();
+      gearOptions();
     }).change();
     $('select#calc_st_weapon').change(function() {
       change_sw_adv();
@@ -1276,8 +1276,8 @@
     $('select#calc_gear_jewelry').change(function() {
       change_gear($(this).parents().eq(2).attr('id'));
       gearStats();
-
       gearSets();
+      gearOptions();
     }).change();
     $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_jewelry, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
@@ -1418,15 +1418,17 @@
       let option_ATK = $('p[name="ATK"]').text();
       jewelryType == 'Earrings' ? sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt($('#range-atk').text()) + parseInt(gear_J)
                                 : sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt($('#range-atk').text());
-      sum_ATK == class_ATK ? total_ATK.text(class_ATK)
-                           : total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
+      // sum_ATK == class_ATK ? total_ATK.text(class_ATK)
+      //                      : total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
+      total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
 
       let sum_HP;
       let option_HP = $('p[name="Max HP"]').text();
       jewelryType == 'Ring' ? sum_HP = parseInt(class_HP) + parseInt(gear_TR) + parseInt(gear_O) + parseInt($('#range-hp').text()) + parseInt(gear_J)
                             : sum_HP = parseInt(class_HP) + parseInt(gear_TR) + parseInt(gear_O) + parseInt($('#range-hp').text());
-      sum_HP == class_HP ? total_HP.text(class_HP)
-                         : total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
+      // sum_HP == class_HP ? total_HP.text(class_HP)
+      //                    : total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
+      total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
       $('#heroHP').text(total_HP.text());
       $('#heroHPs').text(total_HP.text().split(' ')[0]);
 
@@ -1434,15 +1436,16 @@
       let option_P = $('p[name="P.DEF"]').text();
       jewelryType == 'Bracelet' ? sum_P = parseInt(class_PDEF) + parseInt(gear_P) + parseInt(gear_J)
                                 : sum_P = parseInt(class_PDEF) + parseInt(gear_P);
-      sum_P == class_PDEF ? total_P.text(class_PDEF)
-                          : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
-
+      // sum_P == class_PDEF ? total_P.text(class_PDEF)
+      //                     : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
+      total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
       let sum_M;
       let option_M = $('p[name="M.DEF"]').text();
       jewelryType == 'Necklace' ? sum_M = parseInt(class_MDEF) + parseInt(gear_M) + parseInt(gear_J)
                                 : sum_M = parseInt(class_MDEF) + parseInt(gear_M);
-      sum_M == class_MDEF ? total_M.text(class_MDEF)
-                          : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
+      // sum_M == class_MDEF ? total_M.text(class_MDEF)
+      //                     : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
+      total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
     };
     function gearSets() {
       let setBonus = $('.t-total .r-stats').find('p').filter(function() {
@@ -1774,79 +1777,77 @@
         });
       });
     };
-    // function option() {
-    //   $sAtk=0;$sAspd=0;$sCr=0;$sCrD=0;$sMPa=0;$sMPs=0;$sPen=0;$sLif=0;$sAcc=0;$sDAcc=0;$sHP=0;$sCC=0;$sBl=0;$sPBl=0;$sMBl=0;$sCR=0;$sPCR=0;$sMCR=0;$sDef=0;$sPDef=0;$sMDef=0;$sDod=0;$sPDod=0;$sMDod=0;$sTgh=0;$sPTgh=0;$sMTgh=0;$sRec=0;$sMRec=0;$sDRB=0;$sDRPB=0;$sDRMB=0;
-    //   var x = 0;
-    //   var y = 0;
-    //   $('.t-op p').empty();
-    //   $opN = $('.opt .ax').serializeArray();
-    //   $.each($opN, function(iN, n) {
-    //     $opV = $('.opt .ay').serializeArray()[iN];
-    //     $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($opV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($opV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-    //     if (n.value == 'Resistance') {
-    //       $sTgh += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="Tough"]').text($sTgh);
-    //     } else if (n.value == 'P.Resistance') {
-    //       $sPTgh += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-    //     } else if (n.value == 'M.Resistance') {
-    //       $sMTgh += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-    //     } else if (n.value == 'DMG Reduction upon Block') {
-    //       $sDRB += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="Block DEF"]').text($sDRB);
-    //     } else if (n.value == 'DMG Reduction upon P.Block') {
-    //       $sDRPB += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
-    //     } else if (n.value == 'DMG Reduction upon M.Block') {
-    //       $sDRMB += Number(parseFloat($opV.value));
-    //       $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
-    //     }
-    //   });
-    //   $enhN = $('.enh-n').serializeArray();
-    //   $.each($enhN, function(iN, n) {
-    //     $enhV = $('.enh-v').serializeArray()[iN];
-    //     $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-    //     if (n.value == 'P.Resistance') {
-    //       $sPTgh += Number(parseFloat($enhV.value));
-    //       $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-    //     } else if (n.value == 'M.Resistance') {
-    //       $sMTgh += Number(parseFloat($enhV.value));
-    //       $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-    //     } else if (n.value == 'DMG Reduction upon P.Block') {
-    //       $sDRPB += Number(parseFloat($enhV.value));
-    //       $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
-    //     } else if (n.value == 'DMG Reduction upon M.Block') {
-    //       $sDRMB += Number(parseFloat($enhV.value));
-    //       $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
-    //     }
-    //   });
-    //   $tmN = $('.opt .ax-tm').serializeArray();
-    //   $.each($tmN, function(iN, n) {
-    //     $tmV = $('.opt .ay-tm').serializeArray()[iN];
-    //     $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-    //   });
-    //   $runN = $('.opt .ax-r').serializeArray();
-    //   $.each($runN, function(iN, n) {
-    //     $runV = $('.opt .ay-r').serializeArray()[iN];
-    //     x = parseFloat($runV.value.split(' / ').shift());
-    //     y = parseFloat($runV.value.split(' / ').pop());
-    //     if ($('[name="' + n.name + '"]').children('option:selected').attr('class') == 'all') {
-    //       $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x) : $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
-    //       $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y) : $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
-    //     } else
-    //       $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-    //     if (n.value == 'MP Recovery/DMG') {
-    //       $sMRec += Number(parseFloat($runV.value));
-    //       $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
-    //     }
-    //   });
-    // };
+    function gearOptions() {
+      $('.t-op p').empty();
+      let gear_option = $('.opt .ax').serializeArray();
+      $.each(gear_option, function(i, n) {
+        let gear_option_val = $('.opt .ay').serializeArray()[i];
+        $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value))
+                                                          : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+        if (n.value == 'Resistance') {
+          $sTgh += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="Tough"]').text($sTgh);
+        } else if (n.value == 'P.Resistance') {
+          $sPTgh += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+        } else if (n.value == 'M.Resistance') {
+          $sMTgh += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+        } else if (n.value == 'DMG Reduction upon Block') {
+          $sDRB += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="Block DEF"]').text($sDRB);
+        } else if (n.value == 'DMG Reduction upon P.Block') {
+          $sDRPB += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
+        } else if (n.value == 'DMG Reduction upon M.Block') {
+          $sDRMB += Number(parseFloat($opV.value));
+          $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
+        }
+      });
+      // $enhN = $('.enh-n').serializeArray();
+      // $.each($enhN, function(iN, n) {
+      //   $enhV = $('.enh-v').serializeArray()[iN];
+      //   $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
+      //   if (n.value == 'P.Resistance') {
+      //     $sPTgh += Number(parseFloat($enhV.value));
+      //     $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
+      //   } else if (n.value == 'M.Resistance') {
+      //     $sMTgh += Number(parseFloat($enhV.value));
+      //     $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
+      //   } else if (n.value == 'DMG Reduction upon P.Block') {
+      //     $sDRPB += Number(parseFloat($enhV.value));
+      //     $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
+      //   } else if (n.value == 'DMG Reduction upon M.Block') {
+      //     $sDRMB += Number(parseFloat($enhV.value));
+      //     $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
+      //   }
+      // });
+      // $tmN = $('.opt .ax-tm').serializeArray();
+      // $.each($tmN, function(iN, n) {
+      //   $tmV = $('.opt .ay-tm').serializeArray()[iN];
+      //   $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
+      // });
+      // $runN = $('.opt .ax-r').serializeArray();
+      // $.each($runN, function(iN, n) {
+      //   $runV = $('.opt .ay-r').serializeArray()[iN];
+      //   x = parseFloat($runV.value.split(' / ').shift());
+      //   y = parseFloat($runV.value.split(' / ').pop());
+      //   if ($('[name="' + n.name + '"]').children('option:selected').attr('class') == 'all') {
+      //     $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x) : $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
+      //     $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y) : $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
+      //   } else
+      //     $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
+      //   if (n.value == 'MP Recovery/DMG') {
+      //     $sMRec += Number(parseFloat($runV.value));
+      //     $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
+      //   }
+      // });
+    };
     $('.rating label').click(function() {
       let g = $(this).parents().eq(2).attr('id');
       starGears(g);
 
-      // option();
+      gearOptions();
       gearStats();
       // gearSet();
     });
