@@ -1264,7 +1264,6 @@
       change_gear($(this).parents().eq(1).attr('id'));
       gearStats();
       gearSets();
-      gearOptions();
     }).change();
     $('select#calc_st_weapon').change(function() {
       change_sw_adv();
@@ -1277,7 +1276,6 @@
       change_gear($(this).parents().eq(2).attr('id'));
       gearStats();
       gearSets();
-      gearOptions();
     }).change();
     $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_jewelry, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
@@ -1312,6 +1310,9 @@
     $('select#calc_gear_artifact').change(function() {
       change_art();
     }).change();
+    $('.ay, .ay-r, .ay-tm, .enh-v').change(function() {
+      gearStats();
+    });
 
     function starGears(gear) {
       starGear = $(`#${gear.slice(0, 2)}`).find('.active').next('input').val();
@@ -1362,6 +1363,8 @@
         };
     };
     function gearStats() {
+      gearOptions();
+
       let grey_ATK = $('#greyATK').text();
       let weapon_ATK = $('[tag="weapon"]').text();
       $('#heroATK').text(weapon_ATK);
@@ -1782,27 +1785,35 @@
       let gear_option = $('.opt .ax').serializeArray();
       $.each(gear_option, function(i, n) {
         let gear_option_val = $('.opt .ay').serializeArray()[i];
-        $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value))
-                                                          : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
-        if (n.value == 'Resistance') {
-          $sTgh += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="Tough"]').text($sTgh);
-        } else if (n.value == 'P.Resistance') {
-          $sPTgh += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-        } else if (n.value == 'M.Resistance') {
-          $sMTgh += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-        } else if (n.value == 'DMG Reduction upon Block') {
-          $sDRB += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="Block DEF"]').text($sDRB);
-        } else if (n.value == 'DMG Reduction upon P.Block') {
-          $sDRPB += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
-        } else if (n.value == 'DMG Reduction upon M.Block') {
-          $sDRMB += Number(parseFloat($opV.value));
-          $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
-        }
+        switch (n.value) {
+          case 'P.Crit Resistance':
+            $('.totalStat p[name="P.Crit Resistance"]').text(parseFloat(gear_option_val.value) + parseFloat($('.totalStat p[name="Crit Resistance"]').text()));
+            break;
+          case 'M.Crit Resistance':
+            $('.totalStat p[name="M.Crit Resistance"]').text(parseFloat(gear_option_val.value) + parseFloat($('.totalStat p[name="Crit Resistance"]').text()));
+            break;
+          case 'Resistance':
+            $('.totalStat p[name="Tough"]').text(parseFloat(gear_option_val.value));
+            break;
+          case 'P.Resistance':
+            $('.totalStat p[name="P.Tough"]').text(parseFloat(gear_option_val.value));
+            break;
+          case 'M.Resistance':
+            $('.totalStat p[name="M.Tough"]').text(parseFloat(gear_option_val.value));
+            break;
+          case 'DMG Reduction upon Block':
+            $('.totalStat p[name="Block DEF"]').text(parseFloat(gear_option_val.value));
+            break;
+          case 'DMG Reduction upon P.Block':
+            $('.totalStat p[name="P.Block DEF"]').text(parseFloat(gear_option_val.value));
+            break;
+          case 'DMG Reduction upon M.Block':
+            $('.totalStat p[name="M.Block DEF"]').text(parseFloat(gear_option_val.value));
+            break;
+          default:
+            $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value))
+                                                              : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+        };
       });
       // $enhN = $('.enh-n').serializeArray();
       // $.each($enhN, function(iN, n) {
@@ -1847,7 +1858,7 @@
       let g = $(this).parents().eq(2).attr('id');
       starGears(g);
 
-      gearOptions();
+      // gearOptions();
       gearStats();
       // gearSet();
     });
