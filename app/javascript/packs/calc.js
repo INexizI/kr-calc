@@ -1782,77 +1782,53 @@
     };
     function gearOptions() {
       $('.t-op p').empty();
-      let gear_option = $('.opt .ax').serializeArray();
-      $.each(gear_option, function(i, n) {
-        let gear_option_val = $('.opt .ay').serializeArray()[i];
+      options($('.opt .ax').serializeArray(), $('.opt .ay').serializeArray());
+      options($('.enh-n').serializeArray(), $('.enh-v').serializeArray());
+      options($('.opt .ax-tm').serializeArray(), $('.opt .ay-tm').serializeArray());
+      options_rune($('.opt .ax-r').serializeArray(), $('.opt .ay-r').serializeArray());
+    };
+    function options(x, y) {
+      $.each(x, function(i, n) {
         switch (n.value) {
-          case 'P.Crit Resistance':
-            $('.totalStat p[name="P.Crit Resistance"]').text(parseFloat(gear_option_val.value) + parseFloat($('.totalStat p[name="Crit Resistance"]').text()));
-            break;
-          case 'M.Crit Resistance':
-            $('.totalStat p[name="M.Crit Resistance"]').text(parseFloat(gear_option_val.value) + parseFloat($('.totalStat p[name="Crit Resistance"]').text()));
-            break;
           case 'Resistance':
-            $('.totalStat p[name="Tough"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="Tough"]').text(parseFloat(y[i].value));
             break;
           case 'P.Resistance':
-            $('.totalStat p[name="P.Tough"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="P.Tough"]').text(parseFloat(y[i].value));
             break;
           case 'M.Resistance':
-            $('.totalStat p[name="M.Tough"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="M.Tough"]').text(parseFloat(y[i].value));
             break;
           case 'DMG Reduction upon Block':
-            $('.totalStat p[name="Block DEF"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="Block DEF"]').text(parseFloat(y[i].value));
             break;
           case 'DMG Reduction upon P.Block':
-            $('.totalStat p[name="P.Block DEF"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="P.Block DEF"]').text(parseFloat(y[i].value));
             break;
           case 'DMG Reduction upon M.Block':
-            $('.totalStat p[name="M.Block DEF"]').text(parseFloat(gear_option_val.value));
+            $('.totalStat p[name="M.Block DEF"]').text(parseFloat(y[i].value));
             break;
           default:
-            $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value))
-                                                              : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(gear_option_val.value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+            $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
+                                                              : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
         };
       });
-      // $enhN = $('.enh-n').serializeArray();
-      // $.each($enhN, function(iN, n) {
-      //   $enhV = $('.enh-v').serializeArray()[iN];
-      //   $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($enhV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-      //   if (n.value == 'P.Resistance') {
-      //     $sPTgh += Number(parseFloat($enhV.value));
-      //     $('.totalStat').find('p[name="P.Tough"]').text($sPTgh);
-      //   } else if (n.value == 'M.Resistance') {
-      //     $sMTgh += Number(parseFloat($enhV.value));
-      //     $('.totalStat').find('p[name="M.Tough"]').text($sMTgh);
-      //   } else if (n.value == 'DMG Reduction upon P.Block') {
-      //     $sDRPB += Number(parseFloat($enhV.value));
-      //     $('.totalStat').find('p[name="P.Block DEF"]').text($sDRPB);
-      //   } else if (n.value == 'DMG Reduction upon M.Block') {
-      //     $sDRMB += Number(parseFloat($enhV.value));
-      //     $('.totalStat').find('p[name="M.Block DEF"]').text($sDRMB);
-      //   }
-      // });
-      // $tmN = $('.opt .ax-tm').serializeArray();
-      // $.each($tmN, function(iN, n) {
-      //   $tmV = $('.opt .ay-tm').serializeArray()[iN];
-      //   $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($tmV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-      // });
-      // $runN = $('.opt .ax-r').serializeArray();
-      // $.each($runN, function(iN, n) {
-      //   $runV = $('.opt .ay-r').serializeArray()[iN];
-      //   x = parseFloat($runV.value.split(' / ').shift());
-      //   y = parseFloat($runV.value.split(' / ').pop());
-      //   if ($('[name="' + n.name + '"]').children('option:selected').attr('class') == 'all') {
-      //     $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x) : $('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text(x + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').shift() + '"]').text()));
-      //     $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y) : $('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text(y + parseFloat($('.totalStat').find('p[name="' + n.value.split(' / ').pop() + '"]').text()));
-      //   } else
-      //     $('.totalStat').find('p[name="' + n.value + '"]').text() == '' ? $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value)) : $('.totalStat').find('p[name="' + n.value + '"]').text(parseFloat($runV.value) + parseFloat($('.totalStat').find('p[name="' + n.value + '"]').text()));
-      //   if (n.value == 'MP Recovery/DMG') {
-      //     $sMRec += Number(parseFloat($runV.value));
-      //     $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text($sMRec);
-      //   }
-      // });
+    };
+    function options_rune(x, y) {
+      $.each(x, function(i, n) {
+        let r1 = parseFloat(y[i].value.split(' / ').shift());
+        let r2 = parseFloat(y[i].value.split(' / ').pop());
+        if ($(`[name="${n.name}"]`).children('option:selected').attr('class') == 'all') {
+          $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1)
+                                                                                 : $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text()));
+          $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2)
+                                                                               : $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text()));
+        } else
+          $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
+                                                            : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+        if (n.value == 'MP Recovery/DMG')
+          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text(parseFloat(y[i].value));
+      });
     };
     $('.rating label').click(function() {
       let g = $(this).parents().eq(2).attr('id');
