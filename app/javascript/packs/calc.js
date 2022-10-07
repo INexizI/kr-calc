@@ -1262,6 +1262,7 @@
     });
     $('select#calc_gear_weapon, select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
+      gearOptions();
       gearStats();
       gearSets();
     }).change();
@@ -1274,6 +1275,7 @@
     }).change();
     $('select#calc_gear_jewelry').change(function() {
       change_gear($(this).parents().eq(2).attr('id'));
+      gearOptions();
       gearStats();
       gearSets();
     }).change();
@@ -1311,7 +1313,9 @@
       change_art();
     }).change();
     $('.ay, .ay-r, .ay-tm, .enh-v').change(function() {
+      gearOptions();
       gearStats();
+      gearSets();
     });
 
     function starGears(gear) {
@@ -1363,8 +1367,6 @@
         };
     };
     function gearStats() {
-      gearOptions();
-
       let grey_ATK = $('#greyATK').text();
       let weapon_ATK = $('[tag="weapon"]').text();
       $('#heroATK').text(weapon_ATK);
@@ -1421,34 +1423,28 @@
       let option_ATK = $('p[name="ATK"]').text();
       jewelryType == 'Earrings' ? sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt($('#range-atk').text()) + parseInt(gear_J)
                                 : sum_ATK = parseInt(class_ATK) + parseInt(gear_ATK) + parseInt($('#range-atk').text());
-      // sum_ATK == class_ATK ? total_ATK.text(class_ATK)
-      //                      : total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
-      total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
-
+      (sum_ATK - class_ATK) == 0 ? total_ATK.text(class_ATK)
+                                 : total_ATK.text(`${Math.trunc(sum_ATK * (option_ATK / 100 + 1))} (${class_ATK}+${Math.trunc(sum_ATK * (option_ATK / 100 + 1)) - class_ATK})`);
       let sum_HP;
       let option_HP = $('p[name="Max HP"]').text();
       jewelryType == 'Ring' ? sum_HP = parseInt(class_HP) + parseInt(gear_TR) + parseInt(gear_O) + parseInt($('#range-hp').text()) + parseInt(gear_J)
                             : sum_HP = parseInt(class_HP) + parseInt(gear_TR) + parseInt(gear_O) + parseInt($('#range-hp').text());
-      // sum_HP == class_HP ? total_HP.text(class_HP)
-      //                    : total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
-      total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
+      (sum_HP - class_HP) == 0 ? total_HP.text(class_HP)
+                               : total_HP.text(`${Math.round(sum_HP * (option_HP / 100 + 1))} (${class_HP}+${Math.round(sum_HP * (option_HP / 100 + 1)) - class_HP})`);
       $('#heroHP').text(total_HP.text());
       $('#heroHPs').text(total_HP.text().split(' ')[0]);
-
       let sum_P;
       let option_P = $('p[name="P.DEF"]').text();
       jewelryType == 'Bracelet' ? sum_P = parseInt(class_PDEF) + parseInt(gear_P) + parseInt(gear_J)
                                 : sum_P = parseInt(class_PDEF) + parseInt(gear_P);
-      // sum_P == class_PDEF ? total_P.text(class_PDEF)
-      //                     : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
-      total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
+      (sum_P - class_PDEF) == 0 ? total_P.text(class_PDEF)
+                                : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
       let sum_M;
       let option_M = $('p[name="M.DEF"]').text();
       jewelryType == 'Necklace' ? sum_M = parseInt(class_MDEF) + parseInt(gear_M) + parseInt(gear_J)
                                 : sum_M = parseInt(class_MDEF) + parseInt(gear_M);
-      // sum_M == class_MDEF ? total_M.text(class_MDEF)
-      //                     : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
-      total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
+      (sum_M - class_MDEF) == 0 ? total_M.text(class_MDEF)
+                                : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
     };
     function gearSets() {
       let setBonus = $('.t-total .r-stats').find('p').filter(function() {
@@ -1479,8 +1475,8 @@
               $(`.statsAdd #s-name:eq(${0})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + st + 100} (${HeroStat[heroClass].A0}+${st + 100})`);
             else if (n == 4)
               $(`.statsAdd #s-name:eq(${0})`).next('p').text(`${parseInt(HeroStat[heroClass].A0) + st + 230} (${HeroStat[heroClass].A0}+${st + 230})`);
-            else
-              $(`.statsAdd #s-name:eq(${0})`).next('p').text(parseInt(HeroStat[heroClass].A0) + st);
+            // else
+            //   $(`.statsAdd #s-name:eq(${0})`).next('p').text(parseInt(HeroStat[heroClass].A0) + st);
             break;
           case 'Gritty Frost':
             $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = $(`p[name="${y.stat}"]`).text();
@@ -1497,9 +1493,9 @@
               $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.1)) - parseInt(HeroStat[heroClass].B0)})`);
             else if (n == 4)
               $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1.23))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1.23)) - parseInt(HeroStat[heroClass].B0)})`);
-            else
-              sum_HP == HeroStat[heroClass].B0 ? $(`.statsBase #s-name:eq(${0})`).next('p').text(HeroStat[heroClass].B0)
-                                               : $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1)) - parseInt(HeroStat[heroClass].B0)})`);
+            // else
+            //   sum_HP == HeroStat[heroClass].B0 ? $(`.statsBase #s-name:eq(${0})`).next('p').text(HeroStat[heroClass].B0)
+            //                                    : $(`.statsBase #s-name:eq(${0})`).next('p').text(`${Math.round(sum_HP * (parseInt(st) / 100 + 1))} (${parseInt(HeroStat[heroClass].B0)}+${Math.round(sum_HP * (parseInt(st) / 100 + 1)) - parseInt(HeroStat[heroClass].B0)})`);
             break;
           case 'Unrelenting Poison':
             let stP, stM;
@@ -1513,9 +1509,9 @@
             } else if (n == 4) {
               $(`.statsAdd #s-name:eq(${18})`).next('p').text(`${parseInt(HeroStat[heroClass].A18) + stP + 230} (${HeroStat[heroClass].A18}+${stP + 230})`);
               $(`.statsAdd #s-name:eq(${19})`).next('p').text(`${parseInt(HeroStat[heroClass].A19) + stM + 230} (${HeroStat[heroClass].A19}+${stM + 230})`);
-            } else {
-              $(`.statsAdd #s-name:eq(${18})`).next('p').text(parseInt(HeroStat[heroClass].A18) + stP);
-              $(`.statsAdd #s-name:eq(${19})`).next('p').text(parseInt(HeroStat[heroClass].A19) + stM);
+            // } else {
+            //   $(`.statsAdd #s-name:eq(${18})`).next('p').text(parseInt(HeroStat[heroClass].A18) + stP);
+            //   $(`.statsAdd #s-name:eq(${19})`).next('p').text(parseInt(HeroStat[heroClass].A19) + stM);
             };
             break;
           case 'Swift Darkness':
@@ -1525,8 +1521,8 @@
               $(`.statsAdd #s-name:eq(${17})`).next('p').text(`${parseInt(HeroStat[heroClass].A17) + st + 200} (${HeroStat[heroClass].A17}+${st + 200})`);
             else if (n == 4)
               $(`.statsAdd #s-name:eq(${17})`).next('p').text(`${parseInt(HeroStat[heroClass].A17) + st + 460} (${HeroStat[heroClass].A17}+${st + 460})`);
-            else
-              $(`.statsAdd #s-name:eq(${17})`).next('p').text(parseInt(HeroStat[heroClass].A17) + st);
+            // else
+            //   $(`.statsAdd #s-name:eq(${17})`).next('p').text(parseInt(HeroStat[heroClass].A17) + st);
             break;
           case 'Lava':
             $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
@@ -1535,8 +1531,8 @@
               $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st + 20}% (${HeroStat[heroClass].A1}%+${st + 20}%)`);
             else if (n == 4)
               $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st + 46}% (${HeroStat[heroClass].A1}%+${st + 46}%)`);
-            else
-              $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st}%`);
+            // else
+            //   $(`.statsAdd #s-name:eq(${1})`).next('p').text(`${parseInt(HeroStat[heroClass].A1) + st}%`);
             break;
           case 'Legendary':
             $(`p[name="${y.stat}"]`).text() === '' ? st = 0 : st = parseInt($(`p[name="${y.stat}"]`).text());
@@ -1545,8 +1541,8 @@
               $(`.statsAdd #s-name:eq(${14})`).next('p').text(`${parseInt(HeroStat[heroClass].A14) + st + 100} (${HeroStat[heroClass].A14}+${st + 100})`);
             else if (n == 4)
               $(`.statsAdd #s-name:eq(${14})`).next('p').text(`${parseInt(HeroStat[heroClass].A14) + st + 230} (${HeroStat[heroClass].A14}+${st + 230})`);
-            else
-              $(`.statsAdd #s-name:eq(${14})`).next('p').text(parseInt(HeroStat[heroClass].A14) + st);
+            // else
+            //   $(`.statsAdd #s-name:eq(${14})`).next('p').text(parseInt(HeroStat[heroClass].A14) + st);
             break;
           default:
             st = 0;
@@ -1579,6 +1575,62 @@
       };
 
       statSplit();
+    };
+    function gearOptions() {
+      $('.t-op p').empty();
+      options($('.opt .ax').serializeArray(), $('.opt .ay').serializeArray());
+      options($('.enh-n').serializeArray(), $('.enh-v').serializeArray());
+      options($('.opt .ax-tm').serializeArray(), $('.opt .ay-tm').serializeArray());
+      options_rune($('.opt .ax-r').serializeArray(), $('.opt .ay-r').serializeArray());
+
+      for (let i = 0; i <= 19; i++) {
+        let x = $(`.t-op p[name="${$(`.statsAdd #s-name:eq(${i})`).text()}"]`).text();
+        x == '' ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(HeroStat[heroClass][`A${i}`])
+                : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(x)} (${HeroStat[heroClass][`A${i}`]}+${x})`);
+      };
+    };
+    function options(x, y) {
+      $.each(x, function(i, n) {
+        switch (n.value) {
+          case 'Resistance':
+            $('.totalStat p[name="Tough"]').text(parseFloat(y[i].value));
+            break;
+          case 'P.Resistance':
+            $('.totalStat p[name="P.Tough"]').text(parseFloat(y[i].value));
+            break;
+          case 'M.Resistance':
+            $('.totalStat p[name="M.Tough"]').text(parseFloat(y[i].value));
+            break;
+          case 'DMG Reduction upon Block':
+            $('.totalStat p[name="Block DEF"]').text(parseFloat(y[i].value));
+            break;
+          case 'DMG Reduction upon P.Block':
+            $('.totalStat p[name="P.Block DEF"]').text(parseFloat(y[i].value));
+            break;
+          case 'DMG Reduction upon M.Block':
+            $('.totalStat p[name="M.Block DEF"]').text(parseFloat(y[i].value));
+            break;
+          default:
+            $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
+                                                              : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+        };
+      });
+    };
+    function options_rune(x, y) {
+      $.each(x, function(i, n) {
+        let r1 = parseFloat(y[i].value.split(' / ').shift());
+        let r2 = parseFloat(y[i].value.split(' / ').pop());
+        if ($(`[name="${n.name}"]`).children('option:selected').attr('class') == 'all') {
+          $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1)
+                                                                                 : $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text()));
+          $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2)
+                                                                               : $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text()));
+        } else
+          $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
+                                                            : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
+        if (n.value == 'MP Recovery/DMG')
+          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text(parseFloat(y[i].value));
+      });
     };
 
     function perkTP() {
@@ -1780,63 +1832,13 @@
         });
       });
     };
-    function gearOptions() {
-      $('.t-op p').empty();
-      options($('.opt .ax').serializeArray(), $('.opt .ay').serializeArray());
-      options($('.enh-n').serializeArray(), $('.enh-v').serializeArray());
-      options($('.opt .ax-tm').serializeArray(), $('.opt .ay-tm').serializeArray());
-      options_rune($('.opt .ax-r').serializeArray(), $('.opt .ay-r').serializeArray());
-    };
-    function options(x, y) {
-      $.each(x, function(i, n) {
-        switch (n.value) {
-          case 'Resistance':
-            $('.totalStat p[name="Tough"]').text(parseFloat(y[i].value));
-            break;
-          case 'P.Resistance':
-            $('.totalStat p[name="P.Tough"]').text(parseFloat(y[i].value));
-            break;
-          case 'M.Resistance':
-            $('.totalStat p[name="M.Tough"]').text(parseFloat(y[i].value));
-            break;
-          case 'DMG Reduction upon Block':
-            $('.totalStat p[name="Block DEF"]').text(parseFloat(y[i].value));
-            break;
-          case 'DMG Reduction upon P.Block':
-            $('.totalStat p[name="P.Block DEF"]').text(parseFloat(y[i].value));
-            break;
-          case 'DMG Reduction upon M.Block':
-            $('.totalStat p[name="M.Block DEF"]').text(parseFloat(y[i].value));
-            break;
-          default:
-            $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
-                                                              : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
-        };
-      });
-    };
-    function options_rune(x, y) {
-      $.each(x, function(i, n) {
-        let r1 = parseFloat(y[i].value.split(' / ').shift());
-        let r2 = parseFloat(y[i].value.split(' / ').pop());
-        if ($(`[name="${n.name}"]`).children('option:selected').attr('class') == 'all') {
-          $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1)
-                                                                                 : $(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text(r1 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').shift()}"]`).text()));
-          $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text() == '' ? $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2)
-                                                                               : $(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text(r2 + parseFloat($(`.totalStat p[name="${n.value.split(' / ').pop()}"]`).text()));
-        } else
-          $(`.totalStat p[name="${n.value}"]`).text() == '' ? $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value))
-                                                            : $(`.totalStat p[name="${n.value}"]`).text(parseFloat(y[i].value) + parseFloat($(`.totalStat p[name="${n.value}"]`).text()));
-        if (n.value == 'MP Recovery/DMG')
-          $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text(parseFloat(y[i].value));
-      });
-    };
     $('.rating label').click(function() {
       let g = $(this).parents().eq(2).attr('id');
       starGears(g);
 
-      // gearOptions();
+      gearOptions();
       gearStats();
-      // gearSet();
+      gearSets();
     });
     (function rangeSlider() {
       $('.range').each(function() {
