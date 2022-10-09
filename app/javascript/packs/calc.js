@@ -1585,8 +1585,28 @@
 
       for (let i = 0; i <= 19; i++) {
         let x = $(`.t-op p[name="${$(`.statsAdd #s-name:eq(${i})`).text()}"]`).text();
-        x == '' ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(HeroStat[heroClass][`A${i}`])
-                : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(x)} (${HeroStat[heroClass][`A${i}`]}+${x})`);
+        let y;
+        switch (i) {
+          case 4: case 5:
+            y = Number(x) + Number($(`.t-op p[name="Dodge"]`).text());
+            break;
+          case 6: case 7:
+            y = Number(x) + Number($(`.t-op p[name="Block"]`).text());
+            break;
+          case 8: case 9:
+            y = Number(x) + Number($(`.t-op p[name="Block DEF"]`).text());
+            break;
+          case 10: case 11:
+            y = Number(x) + Number($(`.t-op p[name="Tough"]`).text());
+            break;
+          case 18: case 19:
+            y = Number(x) + Number($(`.t-op p[name="Crit Resistance"]`).text());
+            break;
+          default:
+            y = x;
+        };
+        y == 0 ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(HeroStat[heroClass][`A${i}`])
+               : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(y)} (${HeroStat[heroClass][`A${i}`]}+${y})`);
       };
     };
     function options(x, y) {
@@ -1882,29 +1902,29 @@
         zeroStat.text() === '0' || zeroStat.text() === '0%' ? $(this).parent().hide().children().hide() : $(this).parent().show().children().show();
         $(this).find('#plsSt1').text() === '' ? softLock = parseInt(zeroStat.text()) : softLock = parseInt($(this).find('#plsSt1').text());
         switch (softCap) {
-          case 'Crit' || 'ACC':
+          case 'Crit': case 'ACC':
             softLock > 1500 ? $(this).next('#s-per').text((1500 + (softLock - 1500)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
-          case 'P.Block' || 'M.Block' || 'P.Dodge' || 'M.Dodge' || 'Lifesteal' || 'P.Crit Resistance' || 'M.Crit Resistance':
+          case 'P.Block': case 'M.Block': case 'P.Dodge': case 'M.Dodge': case 'Lifesteal': case 'P.Crit Resistance': case 'M.Crit Resistance':
             softLock > 500 ? $(this).next('#s-per').text((500 + (softLock - 500)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
           case 'CC Resist':
             softLock > 1000 ? $(this).next('#s-per').text((1000 + (softLock - 1000)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
-          case 'Penetration' || 'P.Tough' || 'M.Tough':
+          case 'Penetration': case 'P.Tough': case 'M.Tough':
             softLock > 450 ? $(this).next('#s-per').text(((450 + (softLock - 450)*0.409)/10).toFixed(1) + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
           case 'ATK Spd':
             softLock > 1600 ? $(this).next('#s-per').text((1600 + (softLock - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
-          case 'P.Block DEF' || 'M.Block DEF':
+          case 'P.Block DEF': case 'M.Block DEF':
             softLock > 225 ? $(this).next('#s-per').text((225 + (softLock - 225)*0.2)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
           case 'MP Recovery/Attack':
             $(this).prev().css('font-size', '12px').text('Mana Recovery/Attack');
             softLock > 1600 ? $(this).next('#s-per').text((1600 + (softLock - 1600)*0.5)/10 + '%') : $(this).next('#s-per').text(softLock/10 + '%');
             break;
-          case 'Crit DMG' || 'Recovery':
+          case 'Crit DMG': case 'Recovery':
             $(this).next('#s-per').text('').css('order', 0);
             break;
           default:
