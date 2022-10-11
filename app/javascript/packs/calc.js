@@ -1895,6 +1895,13 @@
       $('[name="add-atk"], [name="add-hp"]').val(0);
     };
     function statSplit() {
+      $('.statData #s-val').each(function() {
+        let statSplit = $(this).text().split('(').pop().slice(0, -1).split('+').pop();
+        if (statSplit == '0%' || statSplit == '0')
+          $(this).html($(this).text().split(' ').shift());
+        else if ($(this).is(':contains("(")') == true)
+          $(this).html(`<span id="plsSt1">${$(this).text().split(' ').shift()}</span> (${$(this).text().split('(').pop().slice(0, -1).split('+').shift()}<span id="plsSt2">+${$(this).text().split('(').pop().slice(0, -1).split('+').pop()}</span>)`);
+      });
       $('.statsAdd .r-stat').find('#s-val').each(function() {
         let softLock;
         let softCap = $(this).prev().text();
