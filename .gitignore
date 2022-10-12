@@ -53,3 +53,4 @@ dump*
 
 localhost.*
 *.old
+config.js

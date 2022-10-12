@@ -96,7 +96,7 @@ title Calculator
                       required: false,
                       label: false,
                       include_blank: false,
-                      input_html: {class: 'w-in null-name'}
+                      input_html: {class: 'w-in null-name form-check'}
             .g-desc
               / *Load from JSON file*
               / - @gearsJ.each do |gear|
@@ -150,7 +150,7 @@ title Calculator
                       required: false,
                       label: false,
                       include_blank: false,
-                      input_html: {class: 'null-name'}
+                      input_html: {class: 'null-name form-check'}
             .gSt
               p tag='armor'
               .rating#ar.c
@@ -342,7 +342,7 @@ title Calculator
                       required: false,
                       label: false,
                       include_blank: false,
-                      input_html: {class: 'null-name'}
+                      input_html: {class: 'null-name form-check'}
             .gSt
               p tag="secondary"
               .rating#se.c
@@ -534,7 +534,7 @@ title Calculator
                       required: false,
                       label: false,
                       include_blank: false,
-                      input_html: {class: 'tr-in null-name'}
+                      input_html: {class: 'tr-in null-name form-check'}
             .gSt
               p tag='treasure'
               .rating#tr.c
@@ -682,7 +682,7 @@ title Calculator
                         required: false,
                         label: false,
                         include_blank: false,
-                        input_html: {class: 'null-name'}
+                        input_html: {class: 'null-name form-check'}
             .gSt
               p tag='jewelry'
               .rating#je.c
@@ -874,7 +874,7 @@ title Calculator
                       required: false,
                       label: false,
                       include_blank: false,
-                      input_html: {class: 'null-name'}
+                      input_html: {class: 'null-name form-check'}
             .gSt
               p tag='orb'
               .rating#or.c
@@ -1073,26 +1073,6 @@ title Calculator
         div
 
     = render 'share'
-
-  / .r-stats.class-stats
-  /   .statData
-  /     .statsBase
-  /       .r-stat
-  /         p#s-name
-  /         p#s-val
-  /     .statsAdd
-  /       .r-stat
-  /         p#s-name
-  /         p#s-val
-  /         p#s-per
-  /     .statSet
-  /       .r-set
-  /         p#s-name Set Bonus
-  /         p#sb
-  /     .statTMS
-  /       .r-tms
-  /         p#s-name TM Skill
-  /         p#tms
 
   .totalStat#calc
     .hero-img

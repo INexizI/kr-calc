@@ -5,7 +5,7 @@ export default class extends Controller {
   async generate() {
     event.preventDefault()
 
-    const form = $('form.calc .img').serializeArray()
+    const form = $('form.calc .form-check').serializeArray()
     var check = 0
     $.each(form, function(i, n) {
       if (n.value != "- - - - - - - - - -")
@@ -78,7 +78,7 @@ export default class extends Controller {
     event.preventDefault()
 
     const form = $('.img').serializeArray()
-    let check = 0
+    var check = 0
     $.each(form, function(i, n) {
       if (n.value != "- - - - - - - - - -")
         check++

@@ -1,777 +1,9 @@
 (function() {
   $(document).on("turbolinks:load", function() {
     /* const stats */
-    const Chars = $('#calc_char_id').html();
-    const StatName = {
-      S0: 'MAX HP',
-      S1: 'ATK',
-      S2: 'P.DEF',
-      S3: 'M.DEF',
-      S4: 'Crit',
-      S5: 'Crit DMG',
-      S6: 'Penetration',
-      S7: 'ACC',
-      S8: 'P.Dodge',
-      S9: 'M.Dodge',
-      S10: 'P.Block',
-      S11: 'M.Block',
-      S12: 'P.Block DEF',
-      S13: 'M.Block DEF',
-      S14: 'P.Tough',
-      S15: 'M.Tough',
-      S16: 'Recovery',
-      S17: 'CC Resist',
-      S18: 'Debuff ACC',
-      S19: 'Lifesteal',
-      S20: 'ATK Spd',
-      S21: 'MP Recovery/Attack',
-      S22: 'P.Crit Resistance',
-      S23: 'M.Crit Resistance'
-    };
-    const HeroStat = {
-      Knight: {
-        B0: 1706672,
-        B1: 19792,
-        B2: 8792,
-        B3: 6840,
-        A0: 50,
-        A1: 0,
-        A2: 0,
-        A3: 0,
-        A4: 0,
-        A5: 0,
-        A6: 100,
-        A7: 100,
-        A8: 0,
-        A9: 0,
-        A10: 250,
-        A11: 250,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 32730,
-        UniqueWeapon: 45106,
-        swATK: 3500,
-        swHP: 125000,
-        gearType: 'Heavy',
-        gearTM: 'Protection',
-        armor: '1-1H',
-        armorTM: 'tm1',
-        armorType: 'type1',
-        secondary: '2-2H',
-        secondaryTM: 'tm1',
-        secondaryType: 'type1'
-      },
-      Warrior: {
-        B0: 1449520,
-        B1: 22488,
-        B2: 7328,
-        B3: 8792,
-        A0: 150,
-        A1: 0,
-        A2: 150,
-        A3: 100,
-        A4: 100,
-        A5: 100,
-        A6: 0,
-        A7: 0,
-        A8: 0,
-        A9: 0,
-        A10: 0,
-        A11: 0,
-        A12: 0,
-        A13: 150,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 37010,
-        UniqueWeapon: 51120,
-        swATK: 4000,
-        swHP: 125000,
-        gearType: 'Heavy',
-        gearTM: 'Courage',
-        armor: '1-1H',
-        armorTM: 'tm1',
-        armorType: 'type1',
-        secondary: '2-2H',
-        secondaryTM: 'tm1',
-        secondaryType: 'type1'
-      },
-      Assassin: {
-        B0: 1384992,
-        B1: 24688,
-        B2: 7816,
-        B3: 6840,
-        A0: 200,
-        A1: 30,
-        A2: 0,
-        A3: 100,
-        A4: 200,
-        A5: 200,
-        A6: 0,
-        A7: 0,
-        A8: 0,
-        A9: 0,
-        A10: 0,
-        A11: 0,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 40711,
-        UniqueWeapon: 56209,
-        swATK: 4000,
-        swHP: 125000,
-        gearType: 'Light',
-        gearTM: 'Coldness',
-        armor: '3-1L',
-        armorTM: 'tm2',
-        armorType: 'type2',
-        secondary: '4-2L',
-        secondaryTM: 'tm3',
-        secondaryType: 'type3'
-      },
-      Archer: {
-        B0: 1066728,
-        B1: 27864,
-        B2: 5376,
-        B3: 4392,
-        A0: 150,
-        A1: 0,
-        A2: 250,
-        A3: 100,
-        A4: 0,
-        A5: 0,
-        A6: 0,
-        A7: 0,
-        A8: 0,
-        A9: 0,
-        A10: 0,
-        A11: 0,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 45915,
-        UniqueWeapon: 63264,
-        swATK: 4500,
-        swHP: 125000,
-        gearType: 'Light',
-        gearTM: 'Wrath',
-        armor: '3-1L',
-        armorTM: 'tm2',
-        armorType: 'type2',
-        secondary: '4-2L',
-        secondaryTM: 'tm3',
-        secondaryType: 'type3'
-      },
-      Mechanic: {
-        B0: 1157176,
-        B1: 25416,
-        B2: 5376,
-        B3: 4392,
-        A0: 150,
-        A1: 50,
-        A2: 100,
-        A3: 200,
-        A4: 0,
-        A5: 0,
-        A6: 0,
-        A7: 0,
-        A8: 0,
-        A9: 0,
-        A10: 0,
-        A11: 0,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 41867,
-        UniqueWeapon: 57712,
-        swATK: 4500,
-        swHP: 125000,
-        gearType: 'Light',
-        gearTM: 'Passion',
-        armor: '3-1L',
-        armorTM: 'tm2',
-        armorType: 'type2',
-        secondary: '4-2L',
-        secondaryTM: 'tm3',
-        secondaryType: 'type3'
-      },
-      Wizard: {
-        B0: 985328,
-        B1: 29328,
-        B2: 3904,
-        B3: 5864,
-        A0: 100,
-        A1: 0,
-        A2: 150,
-        A3: 100,
-        A4: 0,
-        A5: 200,
-        A6: 0,
-        A7: 250,
-        A8: 0,
-        A9: 0,
-        A10: 0,
-        A11: 0,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 42793,
-        UniqueWeapon: 58985,
-        swATK: 4500,
-        swHP: 125000,
-        gearType: 'Robe',
-        gearTM: 'Wisdom',
-        armor: '5-1I',
-        armorTM: 'tm3',
-        armorType: 'type3',
-        secondary: '6-2I',
-        secondaryTM: 'tm2',
-        secondaryType: 'type2'
-      },
-      Priest: {
-        B0: 1104864,
-        B1: 23216,
-        B2: 4888,
-        B3: 6104,
-        A0: 100,
-        A1: 0,
-        A2: 0,
-        A3: 100,
-        A4: 0,
-        A5: 0,
-        A6: 0,
-        A7: 500,
-        A8: 0,
-        A9: 250,
-        A10: 0,
-        A11: 150,
-        A12: 0,
-        A13: 0,
-        A14: 0,
-        A15: 0,
-        A16: 1000,
-        A17: 0,
-        A18: 0,
-        A19: 0,
-        ClassWeapon: 42793,
-        UniqueWeapon: 58985,
-        swATK: 4500,
-        swHP: 125000,
-        gearType: 'Robe',
-        gearTM: 'Blessing',
-        armor: '5-1I',
-        armorTM: 'tm3',
-        armorType: 'type3',
-        secondary: '6-2I',
-        secondaryTM: 'tm2',
-        secondaryType: 'type2'
-      }
-    };
-    const GearStat = {
-      armorHeavy: 17052,
-      armorLight: 11369,
-      armorRobe: 5686,
-      secondaryHeavy: 17052,
-      secondaryLight: 5686,
-      secondaryRobe: 11369,
-      'Mana Stone': 726278,
-      'Unique': 1596066,
-      Ring: 726278,
-      Earrings: 15801,
-      Bracelet: 11369,
-      Necklace: 11369,
-      Orb: 726278,
-      tm1R: 53718,
-      tm1: 40928,
-      tm2R: 35809,
-      tm2: 27283,
-      tm3R: 17908,
-      tm3: 13644,
-      tm4R: 1715830,
-      tm4: 1307299,
-      tm5R: 37327,
-      tm5: 28440,
-      swMultiplier: {
-        0: 1,
-        1: 1.03,
-        2: 1.06,
-        3: 1.09,
-        4: 1.12,
-        5: 1.16,
-        6: 1.24,
-        7: 1.32,
-        8: 1.42,
-        9: 1.52,
-        10: 1.62,
-        11: 1.82,
-        12: 2.04,
-        13: 2.28,
-        14: 2.55,
-        15: 2.86,
-        16: 3.43,
-        17: 4.12,
-        18: 4.95,
-        19: 5.94,
-        20: 7.13
-      }
-    };
-    const GearOption = {
-      1: 'ATK',
-      2: 'ATK Spd',
-      3: 'Crit',
-      4: 'Crit DMG',
-      5: 'MP Recovery/Attack',
-      6: 'MP Recovery/Sec',
-      7: 'Penetration',
-      8: 'Lifesteal',
-      9: 'ACC',
-      10: 'Debuff ACC',
-      11: 'Max HP',
-      12: 'CC Resist',
-      13: 'Block',
-      14: 'P. Block',
-      15: 'M. Block',
-      16: 'Crit Resistance',
-      17: 'P. Crit Resistance',
-      18: 'M. Crit Resistance',
-      19: 'DEF',
-      20: 'P. DEF',
-      21: 'M. DEF',
-      22: 'Dodge',
-      23: 'P. Dodge',
-      24: 'M. Dodge',
-      25: 'Tough',
-      26: 'P. Tough',
-      27: 'M. Tough',
-      28: 'Recovery',
-      29: 'Mana Recovery upon taking DMG',
-      30: 'DMG Reduction upon P.Block',
-      31: 'DMG Reduction upon M.Block',
-      32: 'DMG Reduction upon Block',
-    };
-    const GearIcon = {
-      weapon: '/images/media/gears/bg-weapon.webp',
-      treasure: '/images/media/gears/bg-treasure.webp',
-      armor: '/images/media/gears/bg-armor.webp',
-      secondary: '/images/media/gears/bg-secondary.webp',
-      jewelry: '/images/media/gears/bg-accessory.webp',
-      orb: '/images/media/gears/bg-orb.webp',
-      artifact: '/images/media/gears/bg-art.webp'
-    };
-    const GearStar = {
-      type1: {
-        '1': 18758,
-        '2': 21316,
-        '3': 24726,
-        '4': 28989,
-        '5': 34105
-      },
-      type2: {
-        '1': 12506,
-        '2': 14212,
-        '3': 16485,
-        '4': 19328,
-        '5': 22739
-      },
-      type3: {
-        '1': 6255,
-        '2': 7108,
-        '3': 8245,
-        '4': 9666,
-        '5': 11372
-      },
-      type4: {
-        '1': 798906,
-        '2': 871534,
-        '3': 944161,
-        '4': 1016789,
-        '5': 1089417
-      },
-      type5: {
-        '1': 17381,
-        '2': 18961,
-        '3': 20542,
-        '4': 22122,
-        '5': 23702
-      },
-      Knight: {
-        Unique: {
-          '1': 49616,
-          '2': 58637,
-          '3': 72169,
-          '4': 90210,
-          '5': 112763
-        },
-        Class: {
-          '1': 36003,
-          '2': 40913,
-          '3': 47459,
-          '4': 55640,
-          '5': 65460
-        }
-      },
-      Warrior: {
-        Unique: {
-          '1': 49616,
-          '2': 58637,
-          '3': 72169,
-          '4': 90210,
-          '5': 112763
-        },
-        Class: {
-          '1': 40710,
-          '2': 46262,
-          '3': 53664,
-          '4': 62915,
-          '5': 74018
-        }
-      },
-      Assassin: {
-        Unique: {
-          '1': 61829,
-          '2': 73071,
-          '3': 89933,
-          '4': 112416,
-          '5': 140520
-        },
-        Class: {
-          '1': 44781,
-          '2': 50888,
-          '3': 59030,
-          '4': 69207,
-          '5': 81420
-        }
-      },
-      Archer: {
-        Unique: {
-          '1': 69589,
-          '2': 82243,
-          '3': 101221,
-          '4': 126526,
-          '5': 158157
-        },
-        Class: {
-          '1': 50506,
-          '2': 57393,
-          '3': 66576,
-          '4': 78054,
-          '5': 91829
-        }
-      },
-      Mechanic: {
-        Unique: {
-          '1': 63483,
-          '2': 75026,
-          '3': 92339,
-          '4': 115423,
-          '5': 144278
-        },
-        Class: {
-          '1': 46054,
-          '2': 52333,
-          '3': 60707,
-          '4': 71173,
-          '5': 83733
-        }
-      },
-      Wizard: {
-        Unique: {
-          '1': 64882,
-          '2': 76680,
-          '3': 94374,
-          '4': 117967,
-          '5': 147459
-        },
-        Class: {
-          '1': 47071,
-          '2': 53490,
-          '3': 62049,
-          '4': 72746,
-          '5': 85584
-        }
-      },
-      Priest: {
-        Unique: {
-          '1': 64882,
-          '2': 76680,
-          '3': 94374,
-          '4': 117967,
-          '5': 147459
-        },
-        Class: {
-          '1': 47071,
-          '2': 53490,
-          '3': 62049,
-          '4': 72746,
-          '5': 85584
-        }
-      },
-      'Mana Stone': {
-        '1': 798906,
-        '2': 871534,
-        '3': 944161,
-        '4': 1016789,
-        '5': 1089417
-      },
-      'Unique': {
-        '1': 1755649,
-        '2': 2074871,
-        '3': 2553676,
-        '4': 3192064,
-        '5': 3990076
-      },
-      tm1: {
-        '1': 42974,
-        '2': 45020,
-        '3': 47067,
-        '4': 49113,
-        '5': 51160
-      },
-      tm1R: {
-        '1': 56403,
-        '2': 59089,
-        '3': 61775,
-        '4': 64461,
-        '5': 67147
-      },
-      tm2: {
-        '1': 28647,
-        '2': 30011,
-        '3': 31375,
-        '4': 32739,
-        '5': 34104
-      },
-      tm2R: {
-        '1': 37599,
-        '2': 39390,
-        '3': 41180,
-        '4': 42971,
-        '5': 44761
-      },
-      tm3: {
-        '1': 14327,
-        '2': 15009,
-        '3': 15691,
-        '4': 16373,
-        '5': 17056
-      },
-      tm3R: {
-        '1': 18804,
-        '2': 19699,
-        '3': 20595,
-        '4': 21490,
-        '5': 22386
-      },
-      tm4: {
-        '1': 1372664,
-        '2': 1438029,
-        '3': 1503394,
-        '4': 1568759,
-        '5': 1634124
-      },
-      tm4R: {
-        '1': 1801621,
-        '2': 1887413,
-        '3': 1973204,
-        '4': 2058996,
-        '5': 2144787
-      },
-      tm5: {
-        '1': 29862,
-        '2': 31284,
-        '3': 32706,
-        '4': 34128,
-        '5': 35550
-      },
-      tm5R: {
-        '1': 39193,
-        '2': 41060,
-        '3': 42926,
-        '4': 44793,
-        '5': 46659
-      }
-    };
-    const GearSet = [
-      {name: 'Opportune Fire', value: 'f', stat: 'Crit'},
-      {name: 'Gritty Frost', value: 'fr', stat: 'Max HP'},
-      {name: 'Unrelenting Poison', value: 'p', stat: 'Crit Resistance'},
-      {name: 'Swift Darkness', value: 'd', stat: 'MP Recovery/Attack'},
-      {name: 'Lava', value: 'la', stat: 'Crit DMG'},
-      {name: 'Legendary', value: 'le', stat: 'Debuff ACC'},
-      {name: 'Beast of Chaos', value: 'ch'},
-      {name: 'Hero Protection', value: 'pr'},
-      {name: 'Hero Suppression', value: 's'},
-      {name: 'Dark Legion', value: 'dl'},
-      {name: 'Technomagic', value: 't'},
-      {name: 'Perseverance', value: 'per'},
-      {name: 'Hope', value: 'hop'},
-      {name: 'Authority', value: 'aut'}
-    ];
-    const GearSetBonus = {
-      f1: '2 Set: Crit +100',
-      f2: '4 Set: Crit +130',
-      fr1: '2 Set: Max HP +10%',
-      fr2: '4 Set: Max HP +13%',
-      p1: '2 Set: Crit Resistance +100',
-      p2: '4 Set: Crit Resistance +130',
-      d1: '2 Set: MP Recovery/Attack +200',
-      d2: '4 Set: MP Recovery/Attack +260',
-      la1: '2 Set: Crit DMG +20%',
-      la2: '4 Set: Crit DMG +26%',
-      le1: '2 Set: Debuff ACC +100',
-      le2: '4 Set: Debuff ACC +130',
-      s1: '2 Set: Increases DMG to Heroes by 7%',
-      s2: '4 Set: Increases DMG to Heroes by 13%',
-      pr1: '2 Set: Reduces DMG recevied from Heroes by 6%',
-      pr2: '4 Set: Reduces DMG recevied from Heroes by 11%',
-      dl1: '2 Set: Increases Crit DMG of all allies by 5%',
-      dl2: '4 Set: Increases Crit DMG of all allies by 8%',
-      ch1: '2 Set: Hero deals 12% more DMG and takes 12% less DMG from bosses',
-      ch2: '4 Set: Hero deals 15% more DMG and takes 15% less DMG from bosses',
-      t1: '2 Set: Increases DMG dealt to enemies by 2%\n This effect increases by 4 times in the Technomagic Kingdom',
-      t2: '4 Set: Increases DMG dealt to enemies by 3%\n This effect increases by 4 times in the Technomagic Kingdom',
-      per1: '4 Set: Increases DMG dealt to enemies by 10% and takes 10% reduces All DMG. This effect increases up to max 20% over 50 sec.',
-      per2: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
-      per3: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
-      per4: '4 Set: Increases DMG dealt to enemies by 10% and ATK by 10%. This effect increases up to max 25% over 100 sec.',
-      per5: '4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.',
-      per6: '4 Set: Increases DMG dealt to enemies by 10% and Crit DMG by 20%. This effect increases DMG dealt to enemies up to max 25%, and Crit DMG up to max 50% over 100 sec.',
-      per7: '4 Set: Increases the amount of own Heal Rate effects by 25% and Shield by 25%.',
-      hop1: '4 Set: Increases all allies All DEF by 10% and ATK by 5%.',
-      hop2: '4 Set: Increases ATK Spd of all allies by 100. The effect multiplies by 2 for melee type Heroes.',
-      hop3: '4 Set: Increases Crit DMG by 40%. Upon Skill use, recovers 300 Mana, and additionally increases Crit DMG by 40% for 3 sec.',
-      hop4: '4 Set: Increases Crit DMG of all allies by 20%. This effect multiplies by 2 for ranged type Heroes.',
-      hop5: '4 Set: Recovers all allies Mana by 500 and reduces Cooldown of all Skills by 0.5 sec every 10 sec.',
-      hop6: '4 Set: Increases all allies DMG dealt to enemies by 2%. After 30 sec, increases the effect of 1 ally who dealt the highest DMG to enemies by 4 times.',
-      hop7: '4 Set: Increases Heal Rate of all allies by 6%. After 5 sec, increases Mana Recovery of all allies by 6%.',
-      aut1: '4 Set: Increases own All Block Chance by 300. Upon successful Block, reduces Cooldown of all Skills by 1 sec. This effect activates only once every 2.5 sec.',
-      aut2: '4 Set: Increases own Max HP by 30%. For 1 time only during the battle, recovers 30% of Max HP and permanently increases ATK Spd by 300 if own HP percentage falls below 50%.',
-      aut3: '4 Set: Increases own DEF Penetration by 250 and DMG that ignores DEF by 12%. By killing an enemy, additionally increases DEF Penetration by 250 and DMG that ignores DEF by 12%.',
-      aut4: '4 Set: Increases own ATK by 25%. At the beginning of each battle, this effect multiplies by 2 for 20 sec.',
-      aut5: '4 Set: Increases own Crit Chance by 300. If own Crit Chance is over 1400, all hits becomes a Crit Hit.',
-      aut6: '4 Set: After fully recovering Mana for the first time, increases Mana Recovery by 20% and ATK by 40%.',
-      aut7: '4 Set: Increases ATK of all allies by 10%.'
-    };
-    const TMSet = [
-      {tms1: 'Increases ATK by 35% when there is 1 enemy.'},
-      {tms2: 'Increases DEF by 45% when there is 1 enemy.'},
-      {tms3: 'Increases ATK by 35% when there are 3 enemies.'},
-      {tms4: 'Increases DEF by 45% when there are 3 enemies.'},
-      {tms5: 'Increases ATK by 50% for 10 sec when HP falls below 30%. This effect activates only once every 10 sec.'},
-      {tms6: 'Increases own DMG dealt to enemies by 25% when HP is above 95%.'},
-      {tms7: 'Increases DMG dealt to enemies by 15% for 10 sec when Mana at 100%. This effect activates only once every 15 sec.'},
-      {tms8: 'Immediately reduces Cooldown of all allies by 3% when Mana is at 100%. This effect activates only once every 10 sec.'},
-      {tms9: 'Reduces Cooldown of 1st Skill by 10% every 10 sec.'},
-      {tms10: 'Reduces Cooldown of 2nd Skill by 10% every 10 sec.'},
-      {tms11: 'Reduces Cooldown of 3rd Skill by 10% every 10 sec.'},
-      {tms12: 'Upon every Skill use, increases ATK by 2%. This effect can be stacked up to max 20 times.'},
-      {tms13: 'Upon every Skill use, takes 3% reduces DMG. This effect can be stacked up to max 8 times.'},
-      {tms14: `Upon blocking the enemy's attack, increases All Block by 20. This effect can be stacked up to max 20 times and activates only once every 2 sec.`},
-      {tms15: 'Takes 20% reduces P.DMG. This effect can increase up to 30% over 10 sec.'},
-      {tms16: 'Takes 20% reduces M.DMG. This effect can increase up to 30% over 10 sec.'},
-      {tms17: 'Increases DMG dealt to enemies by 3% every 15 sec. This effect can be stacked up to max 12 times.'},
-      {tms18: 'Upon blocking an enemy attack, recovers 200 Mana. This effect activates only once every 1 sec.'},
-      {tms19: 'Upon Skill use, increases Heal Rate by 25% for 5 sec. This effect activates only once every 10 sec.'},
-      {tms20: 'Increases DMG of [DMG that ignores DEF] by 25%.'},
-      {tms21: 'Increases DMG of [Continuous DMG] by 20%.'},
-      {tms22: 'Upon killing an enemy, increases ATK by 2%. This effect can be stacked up to max 25 times.'},
-      {tms23: 'At the beginning of each battle, increases ATK by 5%. This effect can be stacked up to max 15 times.'},
-      {tms24: 'Increases DEF by 7% per 1 enemy.'},
-      {tms25: 'Increases ATK by 6% per 1 enemy.'},
-      {tms26: 'Increases ATK of all allies by 5%.'},
-      {tms27: 'Increases Crit DMG of all allies by 10%.'},
-      {tms28: 'Increases All DEF of all allies by 7%.'},
-      {tms29: 'At the beginning of each battle, increases DMG dealt to enemies of the ally with the highest ATK by 2.5% for 200 sec.'},
-      {tms30: 'Increases DMG of normal attacks by 25%.'},
-      {tms31: 'Increases All Block by 150. At the beginning of each battle, additionally increases All Block by 200 for 10 sec.'},
-      {tms32: 'Increases own Shield by 25%.'},
-      {tms33: 'Heals HP equal to 1% of Max HP every sec.'},
-      {tms34: 'Recovers own Mana by 500 every 5 sec.'},
-      {tms35: 'Reduces All DEF by 25% and increases ATK by 50%.'},
-      {tms36: 'Reduces ATK by 20% and increases All DEF by 50%.'},
-      {tms37: `Reduces the duration of CC's inflicted upon self by 15%.`},
-      {tms38: 'Increases Dodge Chance by 200. Upon dodging an enemy attack, heals HP equal 3% of Max HP. This effect can be activates only once every 3 sec.'},
-      {tms39: 'Fixes ATK Spd to 1000 and increases ATK by 40%.'},
-      {tms40: 'Increases Crit DMG by 50%.'},
-      {tms41: 'Increases ATK Spd by 250.'},
-      {tms42: 'Increases DEF Penetration by 250.'},
-      {tms43: 'Increases Max HP by 25%.'},
-      {tms44: 'Increases All Block by 250.'},
-      {tms45: 'Increases All DEF by 25%.'},
-      {tms46: 'Increases Crit Chance by 250.'},
-      {tms47: 'Increases ATK by 25%.'},
-      {tms48: 'Soul Weapon Usage Limit +1'},
-      {tms49: 'Level of [1st Skill] +7'},
-      {tms50: 'Level of [2nd Skill] +7'},
-      {tms51: 'Level of [3rd Skill] +7'},
-      {tms52: 'Level of [4th Skill] +7'},
-      {tms53: 'Level of [All Skills] +5'}
-    ];
-    /* vars */
-    let heroClassId,
-        heroClass,
-        heroName,
-        heroId,
-        gearWeaponType,
-        advancementPhase,
-        rangeATK,
-        rangeHP,
-        gearTreasureType,
-        allTreasure = [],
-        gearSet,
-        armorStat,
-        secondaryStat,
-        jewelryStat,
-        orbStat,
-        jewelryType,
-        perkTier,
-        perkId,
-        perkTp,
-        weaponGreyStat,
-        treasureGreyStat,
-        armorGreyStat,
-        secondaryGreyStat,
-        jewelryGreyStat,
-        orbGreyStat,
-        armorSet,
-        secondarySet,
-        jewelrySet,
-        orbSet,
-        starWeapon,
-        starTreasure,
-        starArmor,
-        starSecondary,
-        statJewelry,
-        starOrb;
+    const { Chars, StatName, HeroStat, GearStat, GearOption, GearIcon, GearStar, GearSet, GearSetBonus, TMSet } = require('./config');
+    let heroClassId, heroClass, heroName, heroId, gearWeaponType, advancementPhase, rangeATK, rangeHP, gearTreasureType, allTreasure = [], gearSet, armorStat, secondaryStat, jewelryStat, orbStat, jewelryType, perkTier, perkId, perkTp, weaponGreyStat, treasureGreyStat, armorGreyStat, secondaryGreyStat, jewelryGreyStat, orbGreyStat, armorSet, secondarySet, jewelrySet, orbSet, starWeapon, starTreasure, starArmor, starSecondary, statJewelry, starOrb;
+
     /* Loading build from Link */
     $('#btn-load').click((e) => {
       e.preventDefault();
@@ -799,138 +31,125 @@
                 let x = this.name;
                 let y = this.value;
                 $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
-                switch (x) {
-                  case 'calc[role_id]':
-                    let role = $('#calc_role_id :selected').text();
-                    let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
-                    let options = $(chars).filter("optgroup[label='" + escaped_role + "']").html();
-                    if (options) {
-                      $('#calc_char_id').html(options);
-                      $('select').not('#calc_role_id').prop('selectedIndex', 0);
-                      change_role();
-                    }
-                    break;
-                  case 'calc[char_id]':
-                    change_char();
-                    break;
-                  case 'calc[gear_weapon]':
-                    change_weapon();
-                    break;
-                  case 'calc[st_weapon]':
-                    change_sw_adv();
-                    break;
-                  case 'calc[st_weapon_st]':
-                    change_sw_eth();
-                    break;
-                  case 'calc[gear_armor]':
-                    change_armor();
-                    break;
-                  case 'calc[gear_secondary]':
-                    change_secondary();
-                    break;
-                  case 'calc[gear_treasure]':
-                    change_treasure();
-                    break;
-                  case 'calc[gear_jewelry]':
-                    if (y !== '- - - - - - - - - -')
-                      $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
-                    $jewelSet = y;
-                    change_jewelry();
-                    break;
-                  case 'calc[gear_orb]':
-                    change_orb();
-                    break;
-                  case 'calc[gear_artifact]':
-                    change_art();
-                    break;
-                  case 'range':
-                  case 'add-atk':
-                  case 'add-hp':
-                    $('[name="' + x + '"]').prop('value', y);
-                    swStat();
-                    gearStat();
-                    gearSet();
-                    break;
-                  case 'calc[st_armor_op]':
-                    $('#propAr').text(y);
-                    break;
-                  case 'calc[st_secondary_op]':
-                    $('#propScnd').text(y);
-                    break;
-                  case 'calc[st_jewelry_op]':
-                    $('#propAcs').text(y);
-                    break;
-                  case 'calc[st_orb_op]':
-                    $('#propOrb').text(y);
-                    break;
-                  case 'calc[enh_type_ar]':
-                  case 'calc[enh_type_sg]':
-                  case 'calc[enh_type_j]':
-                  case 'calc[enh_type_orb]':
-                    $enhName = $('[name="' + x + '"]');
-                    $('[name="' + x + '"]')
-                      .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
-                      .parent().next().find('.enh-v').html('<option value="">- - - </option>');
-                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                      statEnhancement();
-                    break;
-                  case 'calc[enh_ar]':
-                  case 'calc[enh_sg]':
-                  case 'calc[enh_j]':
-                  case 'calc[enh_orb]':
-                    $enhName = $('[name="' + x + '"]');
-                    $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
-                    $enh.prop('selectedIndex', 0).find('optgroup').hide();
-                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                      statEnhancement();
-                    break;
-                  case 'calc[enh_ar_st]':
-                  case 'calc[enh_sg_st]':
-                  case 'calc[enh_j_st]':
-                  case 'calc[enh_orb_st]':
-                    $('[name="' + x + '"]')
-                      .children('[value="' + y + '"]').prop('selected', true).end()
-                      .children('.q, option:selected').show();
-                    break;
-                  case 'calc[jewelry_type]':
-                    $jewelType = y;
-                    break;
-                  case 'perk-t1':
-                  case 'perk-t2':
-                  case 'perk-t3':
-                  case 'perk-t5':
-                    $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
-                    perkTP();
-                    $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-                    if ($tp == 0)
-                      $('.perk-tp p').css('color', 'black');
-                    else if (($tp > 0) && ($tp < 100))
-                      $('.perk-tp p').css('color', 'greenyellow');
-                    else if ($tp > 95) {
-                      $('.perk-tp p').css('color', 'darkred');
-                      alert('Not Enogh TP');
-                    }
-                    $('.perk-tp p').text($tp);
-                    break;
-                  case 'uw':
-                  case 'ar':
-                  case 'sg':
-                  case 'ut':
-                  case 'ac':
-                  case 'or':
-                    $('#' + x).find('label').removeClass('active');
-                    $('#' + x).find('.bt' + y).addClass('active');
-                    option();
-                    gearStat();
-                    gearSet();
-                    break;
-                };
+                // switch (x) {
+                //   case 'calc[role_id]':
+                //     let role = $('#calc_role_id :selected').text();
+                //     let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                //     let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
+                //     if (options) {
+                //       $('#calc_char_id').html(options);
+                //       $('select').not('#calc_role_id').prop('selectedIndex', 0);
+                //       change_role();
+                //     }
+                //     break;
+                //   case 'calc[char_id]':
+                //     change_char();
+                //     break;
+                //   case 'calc[gear_weapon]':
+                //     change_weapon();
+                //     break;
+                //   case 'calc[st_weapon]':
+                //     change_sw_adv();
+                //     break;
+                //   case 'calc[st_weapon_st]':
+                //     change_sw_eth();
+                //     break;
+                //   case 'calc[gear_armor]':
+                //     change_armor();
+                //     break;
+                //   case 'calc[gear_secondary]':
+                //     change_secondary();
+                //     break;
+                //   case 'calc[gear_treasure]':
+                //     change_treasure();
+                //     break;
+                //   case 'calc[gear_jewelry]':
+                //     if (y !== '- - - - - - - - - -')
+                //       $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
+                //     $jewelSet = y;
+                //     change_jewelry();
+                //     break;
+                //   case 'calc[gear_orb]':
+                //     change_orb();
+                //     break;
+                //   case 'calc[gear_artifact]':
+                //     change_art();
+                //     break;
+                //   case 'range':
+                //   case 'add-atk':
+                //   case 'add-hp':
+                //     $('[name="' + x + '"]').prop('value', y);
+                //     swStat();
+                //     gearStat();
+                //     gearSet();
+                //     break;
+                //   case 'calc[st_armor_op]':
+                //     $('#propAr').text(y);
+                //     break;
+                //   case 'calc[st_secondary_op]':
+                //     $('#propScnd').text(y);
+                //     break;
+                //   case 'calc[st_jewelry_op]':
+                //     $('#propAcs').text(y);
+                //     break;
+                //   case 'calc[st_orb_op]':
+                //     $('#propOrb').text(y);
+                //     break;
+                //   case 'calc[enh_type_ar]':
+                //   case 'calc[enh_type_sg]':
+                //   case 'calc[enh_type_j]':
+                //   case 'calc[enh_type_orb]':
+                //     $enhName = $('[name="' + x + '"]');
+                //     $('[name="' + x + '"]')
+                //       .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
+                //       .parent().next().find('.enh-v').html('<option value="">- - - </option>');
+                //     if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                //       statEnhancement();
+                //     break;
+                //   case 'calc[enh_ar]':
+                //   case 'calc[enh_sg]':
+                //   case 'calc[enh_j]':
+                //   case 'calc[enh_orb]':
+                //     $enhName = $('[name="' + x + '"]');
+                //     $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
+                //     $enh.prop('selectedIndex', 0).find('optgroup').hide();
+                //     if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                //       statEnhancement();
+                //     break;
+                //   case 'calc[enh_ar_st]':
+                //   case 'calc[enh_sg_st]':
+                //   case 'calc[enh_j_st]':
+                //   case 'calc[enh_orb_st]':
+                //     $('[name="' + x + '"]')
+                //       .children('[value="' + y + '"]').prop('selected', true).end()
+                //       .children('.q, option:selected').show();
+                //     break;
+                //   case 'calc[jewelry_type]':
+                //     $jewelType = y;
+                //     break;
+                //   case 'perk-t1': case 'perk-t2': case 'perk-t3': case 'perk-t5':
+                //     $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
+                //     perkTP();
+                //     $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
+                //     if ($tp == 0)
+                //       $('.perk-tp p').css('color', 'black');
+                //     else if (($tp > 0) && ($tp < 100))
+                //       $('.perk-tp p').css('color', 'greenyellow');
+                //     else if ($tp > 95) {
+                //       $('.perk-tp p').css('color', 'darkred');
+                //       alert('Not Enogh TP');
+                //     }
+                //     $('.perk-tp p').text($tp);
+                //     break;
+                //   case 'uw': case 'ar': case 'sg': case 'ut': case 'ac': case 'or':
+                //     $('#' + x).find('label').removeClass('active');
+                //     $('#' + x).find('.bt' + y).addClass('active');
+                //     stats();
+                //     break;
+                // };
               });
 
-              option();
-              gearStat();
-              gearSet();
-
+              stats();
               $('.share-add').remove();
             } else
               messgeBox('Enter valid link!');
@@ -939,8 +158,10 @@
             messgeBox(`Enter valid link/code! - ${errorThrown}`);
           });
       } else
-        messgeBox('Enter link!')
+        messgeBox('Enter link!');
     });
+
+    /* Main functions */
     $('#calc_role_id').change(function() {
       if ($('.null-name').children(':first').attr('value') !== '- - - - - - - - - -')
         $('.null-name').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>');
@@ -978,7 +199,6 @@
     };
     function change_char() {
       $('.hch').hide().end().find(`.hero-${$('#calc_char_id').children('option:selected').val()}`).css('display', 'block');
-      // $('option:contains("----------")').attr('disabled', 'disabled');
       heroName = $('#calc_char_id').children('option:selected').text().toLowerCase();
       heroId = $('#calc_char_id').children('option:selected').val();
 
@@ -1017,7 +237,7 @@
     function change_sw_eth() {
       etherEnhancement = $('#calc_st_weapon_st').children('option:selected').text();
       swStat();
-      gearStats();
+      stats();
     };
     function change_gear(gear) {
       $(`#calc_gear_${gear}`).parent().next().find('.rating label').removeClass('active');
@@ -1212,7 +432,6 @@
             .parent().find('.gOption').show()
             .parent().find('.gTM').hide();
           $(`#prop_${gear}`).empty();
-          // gearStat();
       };
       $(`[tag=${gear}]`).text(greyStat.text());
     };
@@ -1236,6 +455,7 @@
       $(rune).find(`[name="${stat}"]`).show();
     };
 
+    /* Change Inputs */
     $('select#calc_role_id').change(function() {
       change_role();
     }).change();
@@ -1243,6 +463,26 @@
       change_char();
     }).change();
     $('select#calc_role_id, select#calc_char_id').change(function() {
+      /* -------------------------------------------------------------------- */
+      $('select#calc_gear_weapon').css('background-image', `url(${GearIcon.weapon})`);
+      $('select#calc_gear_treasure').css({
+        'background-image': `url(${GearIcon.treasure})`,
+        'width': '52px',
+        'position': 'relative',
+        'right': '0'
+      });
+      $('select#calc_gear_armor').css('background-image', `url(${GearIcon.armor})`);
+      $('select#calc_gear_secondary').css('background-image', `url(${GearIcon.secondary})`);
+      $('select#calc_gear_jewelry').css('background-image', `url(${GearIcon.jewelry})`);
+      $('select#calc_gear_orb').css('background-image', `url(${GearIcon.orb})`);
+      $('select#calc_gear_artifact').css('background-image', `url(${GearIcon.artifact})`);
+
+      $('.range').hide();
+      $('#range-atk, #range-hp').text(0);
+      $('.w-in').removeClass('g-fr-u a0 a1 a2');
+      $('.heroGear select').removeClass('g-fr g-fr-u g-fr-t');
+      /* -------------------------------------------------------------------- */
+
       $('.statsBase, .statsAdd').empty();
       for (let i = 0; i <= 3; i++)
         $('.statsBase').append(`<div class="r-stat"><p id="s-name"></p><p id="s-val">${HeroStat[heroClass][`B${i}`]}</p></div>`);
@@ -1253,7 +493,6 @@
       $('p#sb, p#tms').empty();
 
       gearSets();
-      // statSplit();
       rangeC();
     }).change();
     $('select.ax-r').change(function() {
@@ -1263,9 +502,7 @@
     });
     $('select#calc_gear_weapon, select#calc_gear_treasure, select#calc_gear_armor, select#calc_gear_secondary, select#calc_gear_orb').change(function() {
       change_gear($(this).parents().eq(1).attr('id'));
-      gearOptions();
-      gearStats();
-      gearSets();
+      stats();
     }).change();
     $('select#calc_st_weapon').change(function() {
       change_sw_adv();
@@ -1276,14 +513,11 @@
     }).change();
     $('select#calc_gear_jewelry').change(function() {
       change_gear($(this).parents().eq(2).attr('id'));
-      gearOptions();
-      gearStats();
-      gearSets();
+      stats();
     }).change();
     $('select#calc_st_treasure, select#calc_st_armor, select#calc_st_secondary, select#calc_st_jewelry, select#calc_st_orb').change(function() {
       $(this).parents().eq(1).find('.ay, .ay-tm').prop('selectedIndex', 0);
       statOption($(this));
-      // gearStat();
     });
     $('select#calc_st_armor_op, select#calc_st_secondary_op, select#calc_st_jewelry_op, select#calc_st_orb_op').change(function() {
       $(`#${$(this).attr('tag')}`).text($(`#${$(this).attr('id')}`).children('option:selected').text());
@@ -1314,11 +548,10 @@
       change_art();
     }).change();
     $('.ax, .ay, .ax-r, .ay-r, .ax-tm, .ay-tm, .enh-n, .enh-v').change(function() {
-      gearOptions();
-      gearStats();
-      gearSets();
+      stats();
     });
 
+    /* Stats / Options / Enhancement */
     function starGears(gear) {
       starGear = $(`#${gear.slice(0, 2)}`).find('.active').next('input').val();
       let x;
@@ -1366,6 +599,43 @@
                                                    : $('[tag="orb"]').text(GearStar.type4[starGear]);
             break;
         };
+    };
+    function gearOptions() {
+      $('.t-op p').empty();
+      options($('.opt .ax').serializeArray(), $('.opt .ay').serializeArray());
+      options($('.enh-n').serializeArray(), $('.enh-v').serializeArray());
+      options($('.opt .ax-tm').serializeArray(), $('.opt .ay-tm').serializeArray());
+      options_rune($('.opt .ax-r').serializeArray(), $('.opt .ay-r').serializeArray());
+
+      for (let i = 0; i <= 19; i++) {
+        let x = $(`.t-op p[name="${$(`.statsAdd #s-name:eq(${i})`).text()}"]`).text();
+        let y;
+        switch (i) {
+          case 4: case 5:
+            y = Number(x) + Number($(`.t-op p[name="Dodge"]`).text());
+            break;
+          case 6: case 7:
+            y = Number(x) + Number($(`.t-op p[name="Block"]`).text());
+            break;
+          case 8: case 9:
+            y = Number(x) + Number($(`.t-op p[name="Block DEF"]`).text());
+            break;
+          case 10: case 11:
+            y = Number(x) + Number($(`.t-op p[name="Tough"]`).text());
+            break;
+          case 18: case 19:
+            y = Number(x) + Number($(`.t-op p[name="Crit Resistance"]`).text());
+            break;
+          default:
+            y = x;
+        };
+        if (i == 1 || i == 12)
+          y == 0 ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${HeroStat[heroClass][`A${i}`]}%`)
+                 : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(y)}% (${HeroStat[heroClass][`A${i}`]}%+${y}%)`);
+        else
+          y == 0 ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(HeroStat[heroClass][`A${i}`])
+                 : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(y)} (${HeroStat[heroClass][`A${i}`]}+${y})`);
+      };
     };
     function gearStats() {
       let grey_ATK = $('#greyATK').text();
@@ -1577,43 +847,6 @@
 
       statSplit();
     };
-    function gearOptions() {
-      $('.t-op p').empty();
-      options($('.opt .ax').serializeArray(), $('.opt .ay').serializeArray());
-      options($('.enh-n').serializeArray(), $('.enh-v').serializeArray());
-      options($('.opt .ax-tm').serializeArray(), $('.opt .ay-tm').serializeArray());
-      options_rune($('.opt .ax-r').serializeArray(), $('.opt .ay-r').serializeArray());
-
-      for (let i = 0; i <= 19; i++) {
-        let x = $(`.t-op p[name="${$(`.statsAdd #s-name:eq(${i})`).text()}"]`).text();
-        let y;
-        switch (i) {
-          case 4: case 5:
-            y = Number(x) + Number($(`.t-op p[name="Dodge"]`).text());
-            break;
-          case 6: case 7:
-            y = Number(x) + Number($(`.t-op p[name="Block"]`).text());
-            break;
-          case 8: case 9:
-            y = Number(x) + Number($(`.t-op p[name="Block DEF"]`).text());
-            break;
-          case 10: case 11:
-            y = Number(x) + Number($(`.t-op p[name="Tough"]`).text());
-            break;
-          case 18: case 19:
-            y = Number(x) + Number($(`.t-op p[name="Crit Resistance"]`).text());
-            break;
-          default:
-            y = x;
-        };
-        if (i == 1 || i == 12)
-          y == 0 ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${HeroStat[heroClass][`A${i}`]}%`)
-                 : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(y)}% (${HeroStat[heroClass][`A${i}`]}%+${y}%)`);
-        else
-          y == 0 ? $(`.statsAdd #s-name:eq(${i})`).next('p').text(HeroStat[heroClass][`A${i}`])
-                 : $(`.statsAdd #s-name:eq(${i})`).next('p').text(`${parseInt(HeroStat[heroClass][`A${i}`]) + parseFloat(y)} (${HeroStat[heroClass][`A${i}`]}+${y})`);
-      };
-    };
     function options(x, y) {
       $.each(x, function(i, n) {
         switch (n.value) {
@@ -1657,61 +890,6 @@
           $('.totalStat').find('p[name="Mana Recovery upon taking DMG"]').text(parseFloat(y[i].value));
       });
     };
-
-    function perkTP() {
-      let perkPoints = 0;
-      $('.hero-img .hero-' + heroId).find('.c-p').each(function() {
-        perkTier = $(this).attr('id');
-        perkTier == 'perk-t1' ? $(this).find('.pick').each(() => { perkPoints += 10 })
-                              : $(this).find('.pick').each(() => { perkPoints += 15 });
-      });
-      return perkPoints;
-    };
-    $(`.heroPerk .c-sub .c-perk img`).click(function() {
-      perkId = $(this).attr('id');
-      if (perkId.slice(2) == 'd')
-        $(this).parent().prev('.c-perk-img').find('img').removeClass('pick');
-      else if (perkId.slice(2) == 'l')
-        $(this).parent().next('.c-perk-img').find('img').removeClass('pick');
-      $(this).toggleClass('pick');
-
-      perkTp = perkTP();
-      if (perkTp == 0)
-        $('.perk-tp p').css('color', 'black');
-      else if (perkTp > 0 && perkTp <= 95)
-        $('.perk-tp p').css('color', 'greenyellow');
-      else if (perkTp > 95) {
-        $('.perk-tp p').css('color', 'darkred');
-        alert('Not Enogh TP');
-      };
-      $('.perk-tp p').text(perkTp);
-    });
-    $('.perk-tp #tp-r').click(function() {
-      $('.perk-tp p').css('color', 'black').text(0);
-      $('.c-perk-img').find('img').removeClass('pick');
-    });
-    function hideGearImage() {
-      $('select#calc_gear_weapon').css('background-image', `url(${GearIcon.weapon})`);
-      $('select#calc_gear_treasure').css({
-        'background-image': `url(${GearIcon.treasure})`,
-        'width': '52px',
-        'position': 'relative',
-        'right': '0'
-      });
-      $('select#calc_gear_armor').css('background-image', `url(${GearIcon.armor})`);
-      $('select#calc_gear_secondary').css('background-image', `url(${GearIcon.secondary})`);
-      $('select#calc_gear_jewelry').css('background-image', `url(${GearIcon.jewelry})`);
-      $('select#calc_gear_orb').css('background-image', `url(${GearIcon.orb})`);
-      $('select#calc_gear_artifact').css('background-image', `url(${GearIcon.artifact})`);
-
-      $('.range').hide();
-      $('#range-atk, #range-hp').text(0);
-      $('.w-in').removeClass('g-fr-u a0 a1 a2');
-      $('.heroGear select').removeClass('g-fr g-fr-u g-fr-t');
-    };
-    $('#calc_role_id, #calc_char_id').change(function() {
-      hideGearImage();
-    });
     function statOption(stat) {
       $('.opt').find(stat).each(function() {
         $(this).parent().next().children().find('option').not('.q').hide();
@@ -1857,23 +1035,54 @@
         });
       });
     };
+
+    /* Hero Perks */
+    function perkTP() {
+      let perkPoints = 0;
+      $('.hero-img .hero-' + heroId).find('.c-p').each(function() {
+        perkTier = $(this).attr('id');
+        perkTier == 'perk-t1' ? $(this).find('.pick').each(() => { perkPoints += 10 })
+                              : $(this).find('.pick').each(() => { perkPoints += 15 });
+      });
+      return perkPoints;
+    };
+    $(`.heroPerk .c-sub .c-perk img`).click(function() {
+      perkId = $(this).attr('id');
+      if (perkId.slice(2) == 'd')
+        $(this).parent().prev('.c-perk-img').find('img').removeClass('pick');
+      else if (perkId.slice(2) == 'l')
+        $(this).parent().next('.c-perk-img').find('img').removeClass('pick');
+      $(this).toggleClass('pick');
+
+      perkTp = perkTP();
+      if (perkTp == 0)
+        $('.perk-tp p').css('color', 'black');
+      else if (perkTp > 0 && perkTp <= 95)
+        $('.perk-tp p').css('color', 'greenyellow');
+      else if (perkTp > 95) {
+        $('.perk-tp p').css('color', 'darkred');
+        alert('Not Enogh TP');
+      };
+      $('.perk-tp p').text(perkTp);
+    });
+    $('.perk-tp #tp-r').click(function() {
+      $('.perk-tp p').css('color', 'black').text(0);
+      $('.c-perk-img').find('img').removeClass('pick');
+    });
+
+    /* Gear ☆'s' */
     $('.rating label').click(function() {
       let g = $(this).parents().eq(2).attr('id');
       starGears(g);
+      stats();
+    });
 
-      gearOptions();
-      gearStats();
-      gearSets();
-    });
-    (function rangeSlider() {
-      $('.range').each(function() {
-        $('[name="range"], [name="add-atk"], [name="add-hp"]').on('input', () => swStat());
-      });
-    }).call(this);
-    $('[name="range"], [name="add-atk"], [name="add-hp"]').change(function() {
-      gearStats();
-      // gearSet();
-    });
+    /* Soul Weapon stats */
+    (() => $('.range').each(function() {
+      $('[name="range"], [name="add-atk"], [name="add-hp"]')
+        .on('input', () => swStat())
+        .on('change', () => stats());
+    })).call(this);
     function swStat() {
       let range = $('[name="range"]').val(),
           add_atk = $('[name="add-atk"]').val(),
@@ -1899,6 +1108,8 @@
       $('.range-ad1, .range-ad2').text('0%');
       $('[name="add-atk"], [name="add-hp"]').val(0);
     };
+
+    /* Hide all zero stats */
     function statSplit() {
       $('.statData #s-val').each(function() {
         let statSplit = $(this).text().split('(').pop().slice(0, -1).split('+').pop();
@@ -1944,6 +1155,8 @@
         };
       });
     };
+
+    /* Show message */
     function messgeBox(msg) {
       $('.msg').html(msg)
         .fadeIn(function() {
@@ -1954,10 +1167,12 @@
           $('#clip').html('<img src="/images/clipboard.svg"><span>Copy</span>')
         })
     };
-    // $('#calc_role_id, #calc_char_id, #calc_gear_weapon, #calc_gear_treasure, #calc_gear_armor, #calc_gear_secondary, #calc_gear_jewelry, #calc_gear_orb, #calc_st_weapon, #calc_st_weapon_st, .ax, .ay, .enh-t, .enh-n, .enh-v, .ax-tm, .ay-tm, .ax-r, .ay-r').change(function() {
-    //   option();
-    //   gearStat();
-    //   gearSet();
-    // });
+
+    /* Calculation all stats */
+    function stats() {
+      gearOptions();
+      gearStats();
+      gearSets();
+    };
   });
 }).call(this);
