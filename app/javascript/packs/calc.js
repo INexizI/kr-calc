@@ -5,8 +5,8 @@
     let heroClassId, heroClass, heroName, heroId, gearWeaponType, advancementPhase, rangeATK, rangeHP, gearTreasureType, allTreasure = [], gearSet, armorStat, secondaryStat, jewelryStat, orbStat, jewelryType, perkTier, perkId, perkTp, weaponGreyStat, treasureGreyStat, armorGreyStat, secondaryGreyStat, jewelryGreyStat, orbGreyStat, armorSet, secondarySet, jewelrySet, orbSet, starWeapon, starTreasure, starArmor, starSecondary, statJewelry, starOrb;
 
     /* Loading build from Link */
-    $('#btn-load').click((e) => {
-      e.preventDefault();
+    $('#btn-load').click(() => {
+      event.preventDefault();
       const CryptoJS = require("crypto-js");
       let shr = $('#share_link').val().toString();
       if (shr.length !== 0) {
@@ -30,123 +30,116 @@
               $(decData(rawData)).each(function(i, n) {
                 let x = this.name;
                 let y = this.value;
-                $('[name="' + x + '"]').children('[value="' + y + '"]').prop('selected', true);
-                // switch (x) {
-                //   case 'calc[role_id]':
-                //     let role = $('#calc_role_id :selected').text();
-                //     let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
-                //     let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
-                //     if (options) {
-                //       $('#calc_char_id').html(options);
-                //       $('select').not('#calc_role_id').prop('selectedIndex', 0);
-                //       change_role();
-                //     }
-                //     break;
-                //   case 'calc[char_id]':
-                //     change_char();
-                //     break;
-                //   case 'calc[gear_weapon]':
-                //     change_weapon();
-                //     break;
-                //   case 'calc[st_weapon]':
-                //     change_sw_adv();
-                //     break;
-                //   case 'calc[st_weapon_st]':
-                //     change_sw_eth();
-                //     break;
-                //   case 'calc[gear_armor]':
-                //     change_armor();
-                //     break;
-                //   case 'calc[gear_secondary]':
-                //     change_secondary();
-                //     break;
-                //   case 'calc[gear_treasure]':
-                //     change_treasure();
-                //     break;
-                //   case 'calc[gear_jewelry]':
-                //     if (y !== '- - - - - - - - - -')
-                //       $('[name="' + x + '"]').children('optgroup[label=' + $jewelType + ']').children('[value="' + y + '"]').prop('selected', true);
-                //     $jewelSet = y;
-                //     change_jewelry();
-                //     break;
-                //   case 'calc[gear_orb]':
-                //     change_orb();
-                //     break;
-                //   case 'calc[gear_artifact]':
-                //     change_art();
-                //     break;
-                //   case 'range':
-                //   case 'add-atk':
-                //   case 'add-hp':
-                //     $('[name="' + x + '"]').prop('value', y);
-                //     swStat();
-                //     gearStat();
-                //     gearSet();
-                //     break;
-                //   case 'calc[st_armor_op]':
-                //     $('#propAr').text(y);
-                //     break;
-                //   case 'calc[st_secondary_op]':
-                //     $('#propScnd').text(y);
-                //     break;
-                //   case 'calc[st_jewelry_op]':
-                //     $('#propAcs').text(y);
-                //     break;
-                //   case 'calc[st_orb_op]':
-                //     $('#propOrb').text(y);
-                //     break;
-                //   case 'calc[enh_type_ar]':
-                //   case 'calc[enh_type_sg]':
-                //   case 'calc[enh_type_j]':
-                //   case 'calc[enh_type_orb]':
-                //     $enhName = $('[name="' + x + '"]');
-                //     $('[name="' + x + '"]')
-                //       .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
-                //       .parent().next().find('.enh-v').html('<option value="">- - - </option>');
-                //     if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                //       statEnhancement();
-                //     break;
-                //   case 'calc[enh_ar]':
-                //   case 'calc[enh_sg]':
-                //   case 'calc[enh_j]':
-                //   case 'calc[enh_orb]':
-                //     $enhName = $('[name="' + x + '"]');
-                //     $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
-                //     $enh.prop('selectedIndex', 0).find('optgroup').hide();
-                //     if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                //       statEnhancement();
-                //     break;
-                //   case 'calc[enh_ar_st]':
-                //   case 'calc[enh_sg_st]':
-                //   case 'calc[enh_j_st]':
-                //   case 'calc[enh_orb_st]':
-                //     $('[name="' + x + '"]')
-                //       .children('[value="' + y + '"]').prop('selected', true).end()
-                //       .children('.q, option:selected').show();
-                //     break;
-                //   case 'calc[jewelry_type]':
-                //     $jewelType = y;
-                //     break;
-                //   case 'perk-t1': case 'perk-t2': case 'perk-t3': case 'perk-t5':
-                //     $('.hero-' + $hero + ' #' + x).find('img#' + y).addClass('pick');
-                //     perkTP();
-                //     $tp = parseInt($tp_1) + parseInt($tp_2) + parseInt($tp_3) + parseInt($tp_5);
-                //     if ($tp == 0)
-                //       $('.perk-tp p').css('color', 'black');
-                //     else if (($tp > 0) && ($tp < 100))
-                //       $('.perk-tp p').css('color', 'greenyellow');
-                //     else if ($tp > 95) {
-                //       $('.perk-tp p').css('color', 'darkred');
-                //       alert('Not Enogh TP');
-                //     }
-                //     $('.perk-tp p').text($tp);
-                //     break;
-                //   case 'uw': case 'ar': case 'sg': case 'ut': case 'ac': case 'or':
-                //     $('#' + x).find('label').removeClass('active');
-                //     $('#' + x).find('.bt' + y).addClass('active');
-                //     stats();
-                //     break;
-                // };
+                $(`[name="${x}"]`).children(`[value="${y}"]`).prop('selected', true);
+                switch (x) {
+                  case 'calc[role_id]':
+                    // let role = $('#calc_role_id :selected').text();
+                    // let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                    // let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
+                    // if (options) {
+                    //   $('#calc_char_id').html(options);
+                    //   $('select').not('#calc_role_id').prop('selectedIndex', 0);
+                    //   change_role();
+                    // };
+
+                    if ($('.null-name').children(':first').attr('value') !== '- - - - - - - - - -')
+                      $('.null-name').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>');
+                    if ($('.null-stat').children(':first').attr('value') !== '0')
+                      $('.null-stat').prepend('<option class="q" value="0">- - - -</option>');
+                    $('.ay-r').children().not('.q').hide();
+                    $('.gSt p, .t-st p').empty();
+                    $('.gSt .rating, .gOption, .gTM').hide();
+                    $('.rating label').removeClass('active');
+                    $('.c-perk-img img').removeClass('pick');
+                    $('.perk-tp p').text(0).css('color', 'black');
+                    let role = $('#calc_role_id :selected').text();
+                    let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+                    let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
+                    if (options) {
+                      $('#calc_char_id').html(options);
+                      $('select').not(this).prop('selectedIndex', 0);
+                      change_role();
+                    };
+                    break;
+                  case 'calc[char_id]':
+                    change_char();
+                    break;
+                  case 'calc[gear_weapon]': case 'calc[gear_armor]': case 'calc[gear_secondary]': case 'calc[gear_treasure]': case 'calc[gear_jewelry]': case 'calc[gear_orb]':
+                    // if (x.slice(10, -1) == 'jewelry') {
+                    //   if (y !== '- - - - - - - - - -')
+                    //     $(`[name="${x}"]`).children(`optgroup[label="${jewelryType}"]`).children(`[value="${y}"]`).prop('selected', true);
+                    //   jewelrySet = y;
+                    // };
+                    change_gear(x.slice(10, -1));
+                    break;
+                  case 'calc[st_weapon]':
+                    change_sw_adv();
+                    break;
+                  case 'calc[st_weapon_st]':
+                    change_sw_eth();
+                    break;
+                  case 'calc[gear_artifact]':
+                    change_art();
+                    break;
+                  case 'range': case 'add-atk': case 'add-hp':
+                    $(`[name="${x}"]`).prop('value', y);
+                    swStat();
+                    stats();
+                    break;
+                  case 'calc[st_armor_op]':
+                    $('#propAr').text(y);
+                    break;
+                  case 'calc[st_secondary_op]':
+                    $('#propScnd').text(y);
+                    break;
+                  case 'calc[st_jewelry_op]':
+                    $('#propAcs').text(y);
+                    break;
+                  case 'calc[st_orb_op]':
+                    $('#propOrb').text(y);
+                    break;
+                  case 'calc[enh_type_ar]': case 'calc[enh_type_sg]': case 'calc[enh_type_j]': case 'calc[enh_type_orb]':
+                    $enhName = $('[name="' + x + '"]');
+                    $('[name="' + x + '"]')
+                      .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
+                      .parent().next().find('.enh-v').html('<option value="">- - - </option>');
+                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                      statEnhancement();
+                    break;
+                  case 'calc[enh_ar]': case 'calc[enh_sg]': case 'calc[enh_j]': case 'calc[enh_orb]':
+                    $enhName = $('[name="' + x + '"]');
+                    $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
+                    $enh.prop('selectedIndex', 0).find('optgroup').hide();
+                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                      statEnhancement();
+                    break;
+                  case 'calc[enh_ar_st]': case 'calc[enh_sg_st]': case 'calc[enh_j_st]': case 'calc[enh_orb_st]':
+                    $('[name="' + x + '"]')
+                      .children('[value="' + y + '"]').prop('selected', true).end()
+                      .children('.q, option:selected').show();
+                    break;
+                  case 'calc[jewelry_type]':
+                    jewelryType = y;
+                    break;
+                  case 'perk-t1': case 'perk-t2': case 'perk-t3': case 'perk-t5':
+                    $(`.hero-${heroClassId} #${x}`).find(`img#${y}`).addClass('pick');
+                    perkTp = perkTP();
+                    if (perkTp == 0)
+                      $('.perk-tp p').css('color', 'black');
+                    else if (perkTp > 0 && perkTp <= 95)
+                      $('.perk-tp p').css('color', 'greenyellow');
+                    else if (perkTp > 95) {
+                      $('.perk-tp p').css('color', 'darkred');
+                      alert('Not Enogh TP');
+                    };
+                    $('.perk-tp p').text(perkTp);
+                    break;
+                  case 'we': case 'ar': case 'se': case 'tr': case 'je': case 'or':
+                    $(`#${x}`).find('label').removeClass('active');
+                    $(`#${x}`).find(`.bt${y}`).addClass('active');
+                    stats();
+                    break;
+                };
               });
 
               stats();
@@ -705,17 +698,17 @@
       $('#heroHP').text(total_HP.text());
       $('#heroHPs').text(total_HP.text().split(' ')[0]);
       let sum_P;
-      let option_P = $('p[name="P.DEF"]').text();
+      let option_P = parseInt(Number($('p[name="P.DEF"]').text())) + parseInt(Number($('p[name="DEF"]').text()));
       jewelryType == 'Bracelet' ? sum_P = parseInt(class_PDEF) + parseInt(gear_P) + parseInt(gear_J)
                                 : sum_P = parseInt(class_PDEF) + parseInt(gear_P);
-      sum_P - class_PDEF == 0 && option_P == '' ? total_P.text(class_PDEF)
-                                                : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
+      sum_P - class_PDEF == 0 && Number(option_P) == 0 ? total_P.text(class_PDEF)
+                                                       : total_P.text(`${Math.trunc(sum_P * (option_P / 100 + 1))} (${class_PDEF}+${Math.trunc(sum_P * (option_P / 100 + 1)) - class_PDEF})`);
       let sum_M;
-      let option_M = $('p[name="M.DEF"]').text();
+      let option_M = $('p[name="M.DEF"]').text() + $('p[name="DEF"]').text();
       jewelryType == 'Necklace' ? sum_M = parseInt(class_MDEF) + parseInt(gear_M) + parseInt(gear_J)
                                 : sum_M = parseInt(class_MDEF) + parseInt(gear_M);
-      sum_M - class_MDEF == 0 && option_M == '' ? total_M.text(class_MDEF)
-                                                : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
+      sum_M - class_MDEF == 0 && Number(option_M) == 0 ? total_M.text(class_MDEF)
+                                                       : total_M.text(`${Math.trunc(sum_M * (option_M / 100 + 1))} (${class_MDEF}+${Math.trunc(sum_M * (option_M / 100 + 1)) - class_MDEF})`);
     };
     function gearSets() {
       let setBonus = $('.t-total .r-stats').find('p').filter(function() {
