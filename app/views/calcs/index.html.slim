@@ -1092,14 +1092,14 @@ title Calculator
                 .c-p#perk-t1
                   - @perks.where(tier: 'Generic').each do |perk|
                     .c-perk-img
-                      img src="/images/media/genericPerks/#{perk.name}.webp" id=perk.sequence alt=perk.name
+                      img src="/images/media/genericPerks/#{perk.name}.webp" id='g#{perk.sequence}' alt=perk.name
                       .calc-s-description
                         .p1 #{perk.name}
                         .p4 #{perk.description}
                 .c-p#perk-t2
                   - @perks.where(tier: c.role.name).each do |perk|
                     .c-perk-img
-                      img src="/images/media/genericPerks/#{perk.name}.webp" id=perk.sequence alt=perk.name
+                      img src="/images/media/genericPerks/#{perk.name}.webp" id='c#{perk.sequence}' alt=perk.name
                       .calc-s-description
                         .p1 #{perk.name}
                         .p4 #{perk.description}

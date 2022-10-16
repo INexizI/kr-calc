@@ -30,18 +30,10 @@
               $(decData(rawData)).each(function(i, n) {
                 let x = this.name;
                 let y = this.value;
+                console.log(`${x}: ${y}`);
                 $(`[name="${x}"]`).children(`[value="${y}"]`).prop('selected', true);
                 switch (x) {
                   case 'calc[role_id]':
-                    // let role = $('#calc_role_id :selected').text();
-                    // let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
-                    // let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
-                    // if (options) {
-                    //   $('#calc_char_id').html(options);
-                    //   $('select').not('#calc_role_id').prop('selectedIndex', 0);
-                    //   change_role();
-                    // };
-
                     if ($('.null-name').children(':first').attr('value') !== '- - - - - - - - - -')
                       $('.null-name').prepend('<option value="- - - - - - - - - -">- - - - - - - - - -</option>');
                     if ($('.null-stat').children(':first').attr('value') !== '0')
@@ -52,6 +44,7 @@
                     $('.rating label').removeClass('active');
                     $('.c-perk-img img').removeClass('pick');
                     $('.perk-tp p').text(0).css('color', 'black');
+
                     let role = $('#calc_role_id :selected').text();
                     let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
                     let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
@@ -65,11 +58,8 @@
                     change_char();
                     break;
                   case 'calc[gear_weapon]': case 'calc[gear_armor]': case 'calc[gear_secondary]': case 'calc[gear_treasure]': case 'calc[gear_jewelry]': case 'calc[gear_orb]':
-                    // if (x.slice(10, -1) == 'jewelry') {
-                    //   if (y !== '- - - - - - - - - -')
-                    //     $(`[name="${x}"]`).children(`optgroup[label="${jewelryType}"]`).children(`[value="${y}"]`).prop('selected', true);
-                    //   jewelrySet = y;
-                    // };
+                    if (x == 'calc[gear_jewelry]' && y !== '- - - - - - - - - -')
+                      $(`[name="${x}"]`).children(`optgroup[label="${jewelryType}"]`).children(`[value="${y}"]`).prop('selected', true);
                     change_gear(x.slice(10, -1));
                     break;
                   case 'calc[st_weapon]':
@@ -86,43 +76,43 @@
                     swStat();
                     stats();
                     break;
-                  case 'calc[st_armor_op]':
-                    $('#propAr').text(y);
-                    break;
-                  case 'calc[st_secondary_op]':
-                    $('#propScnd').text(y);
-                    break;
-                  case 'calc[st_jewelry_op]':
-                    $('#propAcs').text(y);
-                    break;
-                  case 'calc[st_orb_op]':
-                    $('#propOrb').text(y);
-                    break;
-                  case 'calc[enh_type_ar]': case 'calc[enh_type_sg]': case 'calc[enh_type_j]': case 'calc[enh_type_orb]':
-                    $enhName = $('[name="' + x + '"]');
-                    $('[name="' + x + '"]')
-                      .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
-                      .parent().next().find('.enh-v').html('<option value="">- - - </option>');
-                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                      statEnhancement();
-                    break;
-                  case 'calc[enh_ar]': case 'calc[enh_sg]': case 'calc[enh_j]': case 'calc[enh_orb]':
-                    $enhName = $('[name="' + x + '"]');
-                    $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
-                    $enh.prop('selectedIndex', 0).find('optgroup').hide();
-                    if ($('[name="' + x + '"]').children('option:selected').val() !== '')
-                      statEnhancement();
-                    break;
-                  case 'calc[enh_ar_st]': case 'calc[enh_sg_st]': case 'calc[enh_j_st]': case 'calc[enh_orb_st]':
-                    $('[name="' + x + '"]')
-                      .children('[value="' + y + '"]').prop('selected', true).end()
-                      .children('.q, option:selected').show();
-                    break;
+                  // case 'calc[st_armor_op]':
+                  //   $('#propAr').text(y);
+                  //   break;
+                  // case 'calc[st_secondary_op]':
+                  //   $('#propScnd').text(y);
+                  //   break;
+                  // case 'calc[st_jewelry_op]':
+                  //   $('#propAcs').text(y);
+                  //   break;
+                  // case 'calc[st_orb_op]':
+                  //   $('#propOrb').text(y);
+                  //   break;
+                  // case 'calc[enh_type_ar]': case 'calc[enh_type_sg]': case 'calc[enh_type_j]': case 'calc[enh_type_orb]':
+                  //   $enhName = $('[name="' + x + '"]');
+                  //   $('[name="' + x + '"]')
+                  //     .parent().next().find('.enh-n').html('<option value="">- - - - - - - - - -</option>')
+                  //     .parent().next().find('.enh-v').html('<option value="">- - - </option>');
+                  //   if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                  //     statEnhancement();
+                  //   break;
+                  // case 'calc[enh_ar]': case 'calc[enh_sg]': case 'calc[enh_j]': case 'calc[enh_orb]':
+                  //   $enhName = $('[name="' + x + '"]');
+                  //   $enh = $('[name="' + x + '"]').parent().next().find('.enh-v');
+                  //   $enh.prop('selectedIndex', 0).find('optgroup').hide();
+                  //   if ($('[name="' + x + '"]').children('option:selected').val() !== '')
+                  //     statEnhancement();
+                  //   break;
+                  // case 'calc[enh_ar_st]': case 'calc[enh_sg_st]': case 'calc[enh_j_st]': case 'calc[enh_orb_st]':
+                  //   $('[name="' + x + '"]')
+                  //     .children('[value="' + y + '"]').prop('selected', true).end()
+                  //     .children('.q, option:selected').show();
+                  //   break;
                   case 'calc[jewelry_type]':
                     jewelryType = y;
                     break;
                   case 'perk-t1': case 'perk-t2': case 'perk-t3': case 'perk-t5':
-                    $(`.hero-${heroClassId} #${x}`).find(`img#${y}`).addClass('pick');
+                    $(`.hero-${heroId} #${x} img#${y}`).addClass('pick');
                     perkTp = perkTP();
                     if (perkTp == 0)
                       $('.perk-tp p').css('color', 'black');
@@ -134,9 +124,13 @@
                     };
                     $('.perk-tp p').text(perkTp);
                     break;
-                  case 'we': case 'ar': case 'se': case 'tr': case 'je': case 'or':
-                    $(`#${x}`).find('label').removeClass('active');
-                    $(`#${x}`).find(`.bt${y}`).addClass('active');
+                  case 'weapon': case 'armor': case 'secondary': case 'treasure': case 'jewelry': case 'orb':
+                    let g = x.slice(0, 2);
+
+                    $(`#${g}`).find('label').removeClass('active');
+                    $(`#${g}`).find(`.bt${y}`).addClass('active');
+
+                    starGears(g);
                     stats();
                     break;
                 };
@@ -246,7 +240,7 @@
       };
       weaponType = $('#calc_gear_weapon').children('option:selected').val();
       treasureType = $('#calc_gear_treasure').children('option:selected').val();
-      jewelryType = $(`#calc_gear_jewelry`).children().children('option:selected').parent().attr('label');
+      // jewelryType = $(`#calc_gear_jewelry`).children().children('option:selected').parent().attr('label');
 
       $(`#set_${gear}`).text(gearSet);
       switch (gear) {
@@ -505,6 +499,7 @@
       change_sw_eth();
     }).change();
     $('select#calc_gear_jewelry').change(function() {
+      jewelryType = $(this).children().children('option:selected').parent().attr('label');
       change_gear($(this).parents().eq(2).attr('id'));
       stats();
     }).change();

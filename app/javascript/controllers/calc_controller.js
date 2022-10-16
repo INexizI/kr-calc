@@ -15,41 +15,48 @@ export default class extends Controller {
     if (check !== 0) {
       $('.share-main, .btn-gen').remove()
 
-      var jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label');
-      var lk = $('form.calc select');
-      var lk_sl = [];
-      lk_sl.push({name :'calc[jewelry_type]', value: jName});
-      $(lk.serializeArray().slice(1, -1)).each(function(i, n) {
+      var jName = $('[name="calc[gear_jewelry]"').children().children('option:selected').parent().attr('label')
+      var lk = $('form.calc select')
+      var lk_sl = []
+      lk_sl.push({ name :'calc[jewelry_type]', value: jName })
+      $(lk.serializeArray()).each(function(i, n) {
         if ((this.value !== '0') && (this.value !== '') && (this.value !== '- - - - - - - - - -'))
-          lk_sl.push(n);
-        if (this.name == 'calc[gear_treasure]')
-          lk_sl.push(
-            { name: 'we', value: $('#we').find('.active').next('input').val() },
-            { name: 'ar', value: $('#ar').find('.active').next('input').val() },
-            { name: 'se', value: $('#se').find('.active').next('input').val() },
-            { name: 'ut', value: $('#tr').find('.active').next('input').val() },
-            { name: 'je', value: $('#je').find('.active').next('input').val() },
-            { name: 'or', value: $('#or').find('.active').next('input').val() }
-          );
+          lk_sl.push(n)
         if (this.name == 'calc[char_id]') {
-          $('.hero-' + this.value + ' #perk-t1').find('img').each(function() {
+          $(`.hero-${this.value} #perk-t1`).find('img').each(function() {
             if ($(this).attr('class') == 'pick')
-              lk_sl.push({name: 'perk-t1', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t2').find('img').each(function() {
+              lk_sl.push({ name: 'perk-t1', value: $(this).attr('id') })
+          })
+          $(`.hero-${this.value} #perk-t2`).find('img').each(function() {
             if ($(this).attr('class') == 'pick')
-              lk_sl.push({name: 'perk-t2', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t3').find('img').each(function() {
+              lk_sl.push({ name: 'perk-t2', value: $(this).attr('id') })
+          })
+          $(`.hero-${this.value} #perk-t3`).find('img').each(function() {
             if ($(this).attr('class') == 'pick')
-              lk_sl.push({name: 'perk-t3', value: $(this).attr('id')})
-          });
-          $('.hero-' + this.value + ' #perk-t5').find('img').each(function() {
+              lk_sl.push({ name: 'perk-t3', value: $(this).attr('id') })
+          })
+          $(`.hero-${this.value} #perk-t5`).find('img').each(function() {
             if ($(this).attr('class') == 'pick')
-              lk_sl.push({name: 'perk-t5', value: $(this).attr('id')})
-          });
+              lk_sl.push({ name: 'perk-t5', value: $(this).attr('id') })
+          })
         }
-      });
+        if (this.name == 'calc[st_weapon_st]') {
+          lk_sl.push(
+            { name: 'range', value: $(`[name="range"]`).val() },
+            { name: 'add-atk', value: $(`[name="add-atk"]`).val() },
+            { name: 'add-hp', value: $(`[name="add-hp"]`).val() }
+          )
+        }
+        if (this.name == 'calc[gear_artifact]')
+          lk_sl.push(
+            { name: 'weapon', value: $('#we').find('.active').next('input').val() },
+            { name: 'armor', value: $('#ar').find('.active').next('input').val() },
+            { name: 'secondary', value: $('#se').find('.active').next('input').val() },
+            { name: 'treasure', value: $('#tr').find('.active').next('input').val() },
+            { name: 'jewelry', value: $('#je').find('.active').next('input').val() },
+            { name: 'orb', value: $('#or').find('.active').next('input').val() }
+          )
+      })
       function encData(raw) {
         const CryptoJS = require("crypto-js");
         var Key = process.env.CRYPTO_KEY;
@@ -60,8 +67,8 @@ export default class extends Controller {
           padding: CryptoJS.pad.Pkcs7
         });
         return enT.toString(CryptoJS.format.Base64);
-      };
-      var encryptData = encData(lk_sl);
+      }
+      var encryptData = encData(lk_sl)
 
       const request = new FetchRequest('POST', window.location.origin + '/links', { body: JSON.stringify({ text: encryptData }) })
       const response = await request.perform()
