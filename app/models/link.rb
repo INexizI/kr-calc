@@ -10,7 +10,8 @@ class Link < ApplicationRecord
     sl = (0..5).map { r[rand(r.length)] }.join
     self.title ||= sl
 
-    self.date_expired ||= 1.month.from_now
+    # self.date_expired ||= 1.month.from_now
+    self.date_expired ||= 1.day.from_now
   end
 
   after_save_commit do
