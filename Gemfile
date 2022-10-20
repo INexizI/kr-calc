@@ -18,7 +18,6 @@ gem 'redis-rails', '>= 5.0.2'
 gem 'sidekiq', '>= 6.4.2'
 gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags', '>= 2.16.0'
-gem 'react-rails'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'

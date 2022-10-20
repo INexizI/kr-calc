@@ -9,11 +9,6 @@ import jquery from "jquery"
 window.jQuery = jquery
 window.$ = jquery
 
-// Support component names relative to this directory:
-var componentRequireContext = require.context("components", true);
-var ReactRailsUJS = require("react_ujs");
-ReactRailsUJS.useContext(componentRequireContext);
-
 window.addEventListener('load', () => {
   navigator.serviceWorker.register('/service-worker.js').then(registration => {
     console.log('ServiceWorker registered: ', registration);
