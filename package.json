@@ -16,7 +16,7 @@
     "glob-parent": "^6.0.2",
     "jquery": "^3.6.1",
     "jquery-ui": "^1.13.2",
-    "normalize-url": "^7.1.0",
+    "normalize-url": "^7.2.0",
     "nth-check": "^2.1.0",
     "postcss": "^8.4.16",
     "prop-types": "^15.8.1",
