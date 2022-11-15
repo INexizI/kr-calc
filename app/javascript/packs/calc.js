@@ -206,7 +206,7 @@
       $('.perk-tp p').text(0).css('color', 'black');
       let role = $('#calc_role_id :selected').text();
       let escaped_role = role.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
-      let options = $(Chars).filter("optgroup[label='" + escaped_role + "']").html();
+      let options = $(Chars).filter(`optgroup[label=${escaped_role}]`).html();
       if (options) {
         $('#calc_char_id').html(options);
         $('select').not(this).prop('selectedIndex', 0);
