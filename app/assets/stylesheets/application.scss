@@ -847,11 +847,9 @@ select {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  font-size: 3em;
-  height: calc(100vh - 10px);
+  font-size: 2em;
+  height: 100vh;
   background: gainsboro;
-  border: 5px solid rgb(175, 10, 10);
-  box-shadow: inset 0px 0px 15px 15px rgb(175, 10, 10);
 }
 
 .msg-box {

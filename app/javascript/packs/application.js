@@ -31,8 +31,6 @@ window.addEventListener('load', () => {
 
 require("packs/gear")
 require("packs/calc")
-require("packs/stat")
-require("packs/link")
 
 window.Turbo = Turbo
 Rails.start()

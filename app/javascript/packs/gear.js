@@ -1,21 +1,14 @@
 (function() {
   $(document).on("turbolinks:load", function() {
-    $('.g-title').click(function() {
-      $cssVal = {
-        'display':'flex',
-        'flex-wrap':'wrap'
-      }
-      $(this).next('.g-main').slideToggle('fast').css($cssVal);
-    });
     $('label').click(function() {
       $(this).parent().find('label').removeClass('active');
       $(this).addClass('active');
     });
     $('#w-d').on('mousedown', function() {
-      $char_id = $('#calc_char_id').children('option:selected').val();
+      const char_id = $('#calc_char_id').children('option:selected').val();
       $('.calc_gear_weapon')
         .next('.g-desc').show()
-        .find('#ch-' + $char_id).show();
+        .find('#ch-' + char_id).show();
     }).on('mouseup mouseleave', function() {
       $('.g-desc, .g-desc p').hide();
     });
