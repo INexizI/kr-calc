@@ -22,7 +22,7 @@
     "prop-types": "^15.8.1",
     "rails-ujs": "^5.2.8",
     "set-value": "^4.1.0",
-    "stimulus": "^3.1.0",
+    "stimulus": "^3.2.0",
     "turbolinks": "^5.2.0",
     "webpacker-pwa": "^0.1.2",
     "ws": "^8.10.0"
