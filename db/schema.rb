@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2021_12_08_131450) do
+ActiveRecord::Schema[7.0].define(version: 2021_06_29_135018) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,17 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_08_131450) do
     t.index ["stat_id"], name: "index_enchants_on_stat_id"
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
-    t.string "slug", null: false
-    t.integer "sluggable_id", null: false
-    t.string "sluggable_type", limit: 50
-    t.string "scope"
-    t.datetime "created_at"
-    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
-    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
-    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
   create_table "gears", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -65,8 +54,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_08_131450) do
     t.bigint "stat_id"
     t.bigint "role_id"
     t.string "gear_skill"
-    t.string "explanation"
-    t.string "notice"
     t.index ["char_id"], name: "index_gears_on_char_id"
     t.index ["role_id"], name: "index_gears_on_role_id"
     t.index ["stat_id"], name: "index_gears_on_stat_id"
@@ -90,8 +77,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_08_131450) do
     t.datetime "updated_at", null: false
     t.string "sequence"
     t.string "perk_type"
-    t.bigint "char_id"
-    t.index ["char_id"], name: "index_perks_on_char_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -167,7 +152,6 @@ ActiveRecord::Schema[7.0].define(version: 2021_12_08_131450) do
   add_foreign_key "gears", "chars"
   add_foreign_key "gears", "roles"
   add_foreign_key "gears", "stats"
-  add_foreign_key "perks", "chars"
   add_foreign_key "skills", "chars"
   add_foreign_key "stats", "roles"
   add_foreign_key "taggings", "tags"
