@@ -3,26 +3,26 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-gem 'rails', '~> 7.0.4', '>= 7.0.4.1'
+gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 gem 'pg'
 gem 'puma', '>= 5.6.4'
 gem 'bootsnap', require: false
 gem 'sass-rails', '>= 6.0.0'
 
-gem 'webpacker', '>= 5.4.3'
+gem 'webpacker', '>= 5.4.4'
 gem 'jbuilder'
 gem 'json'
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
-gem 'sidekiq', '>= 7.0.0'
+gem 'sidekiq', '>= 7.0.6'
 gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags', '>= 2.18.0'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'slim-rails', '>= 3.5.1'
-gem 'simple_form', '>= 5.1.0'
+gem 'slim-rails', '>= 3.6.1'
+gem 'simple_form', '>= 5.2.0'
 gem 'friendly_id'
 # gem 'mini_magick'
 # gem 'carrierwave'
