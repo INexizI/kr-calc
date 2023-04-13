@@ -21,7 +21,7 @@ gem 'meta-tags', '>= 2.18.0'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'slim-rails', '>= 3.6.1'
+gem 'slim-rails', '>= 3.6.2'
 gem 'simple_form', '>= 5.2.0'
 gem 'friendly_id'
 # gem 'mini_magick'
