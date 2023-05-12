@@ -15,4 +15,5 @@
 ## Contributing
 Feel free to open tickets or send pull requests with improvements. Thanks in advance for your help!
 
-## Current status of the project: frozen
+## Current status of the project
+Frozen
