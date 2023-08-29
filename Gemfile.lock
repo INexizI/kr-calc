@@ -277,7 +277,7 @@ GEM
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
-    turbo-rails (0.9.1)
+    turbo-rails (1.0.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.6)
@@ -339,7 +339,7 @@ DEPENDENCIES
   sidekiq (>= 7.0.8)
   simple_form (>= 5.2.0)
   slim-rails (>= 3.6.2)
-  turbo-rails (~> 0.9.0)
+  turbo-rails (~> 1.0.0)
   tzinfo-data
   uglifier
   web-console (>= 4.2.0)

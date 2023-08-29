@@ -33,7 +33,7 @@ gem 'rubyzip'
 gem 'uglifier'
 gem 'dotenv-rails'
 
-gem 'turbo-rails', '~> 0.9.0'
+gem 'turbo-rails', '~> 1.0.0'
 
 gem 'nokogiri', '~> 1.14'
 
