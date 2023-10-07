@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-gem 'rails', '~> 7.0.7', '>= 7.0.7.1'
+gem 'rails', '~> 7.1.0'
 gem 'pg'
 gem 'puma', '>= 6.3.1'
 gem 'bootsnap', require: false
@@ -17,7 +17,7 @@ gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
 gem 'sidekiq', '>= 7.0.8'
 gem 'hotwire-rails', '>= 0.1.3'
-gem 'meta-tags', '>= 2.18.0'
+gem 'meta-tags', '>= 2.19.0'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'
@@ -33,18 +33,18 @@ gem 'rubyzip'
 gem 'uglifier'
 gem 'dotenv-rails'
 
-gem 'turbo-rails', '~> 1.0.0'
+gem 'turbo-rails', '~> 1.1.0'
 
 gem 'nokogiri', '~> 1.14'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman'
-  gem 'rspec-rails', '~> 6.0.1.0'
+  gem 'rspec-rails', '~> 6.0.2.0'
 end
 
 group :development do
-  gem 'web-console', '>= 4.2.0'
+  gem 'web-console', '>= 4.2.1'
   gem 'listen'
   # gem 'spring'
   # gem 'spring-watcher-listen'
