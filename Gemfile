@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-gem 'rails', '~> 7.0.7', '>= 7.0.7.1'
+gem 'rails', '~> 7.0.8'
 gem 'pg'
 gem 'puma', '>= 6.3.1'
 gem 'bootsnap', require: false
@@ -15,7 +15,7 @@ gem 'json'
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
-gem 'sidekiq', '>= 7.0.8'
+gem 'sidekiq', '>= 7.1.3'
 gem 'hotwire-rails', '>= 0.1.3'
 gem 'meta-tags', '>= 2.18.0'
 
@@ -44,7 +44,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 4.2.0'
+  gem 'web-console', '>= 4.2.1'
   gem 'listen'
   # gem 'spring'
   # gem 'spring-watcher-listen'
