@@ -2,7 +2,7 @@
   "name": "kr_calc",
   "private": true,
   "dependencies": {
-    "@babel/preset-react": "^7.22.15",
+    "@babel/preset-react": "^7.23.3",
     "@hotwired/turbo-rails": "^7.3.0",
     "@rails/actioncable": "^6.1.7",
     "@rails/activestorage": "^6.1.7",
