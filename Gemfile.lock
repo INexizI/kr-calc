@@ -163,7 +163,7 @@ GEM
     psych (5.1.2)
       stringio
     public_suffix (5.0.1)
-    puma (6.3.1)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (2.2.8)
@@ -357,7 +357,7 @@ DEPENDENCIES
   meta-tags (>= 2.20.0)
   nokogiri (~> 1.14)
   pg
-  puma (>= 6.3.1)
+  puma (>= 6.4.2)
   rack-cors
   rails (~> 7.1.1)
   ransack
