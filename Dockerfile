@@ -1,4 +1,4 @@
-FROM ruby:3.1.1-alpine
+FROM ruby:3.2.3-alpine
 
 ENV APP_PATH /var/app \
   BUNDLE_VERSION 2.3.9 \
