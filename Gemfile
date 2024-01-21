@@ -5,7 +5,7 @@ ruby '3.1.3'
 
 gem 'rails', '~> 7.1.1'
 gem 'pg'
-gem 'puma', '>= 6.3.1'
+gem 'puma', '>= 6.4.2'
 gem 'bootsnap', require: false
 gem 'sass-rails', '>= 6.0.0'
 

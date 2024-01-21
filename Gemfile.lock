@@ -357,7 +357,7 @@ DEPENDENCIES
   meta-tags (>= 2.20.0)
   nokogiri (~> 1.14)
   pg
-  puma (>= 6.3.1)
+  puma (>= 6.4.2)
   rack-cors
   rails (~> 7.1.1)
   ransack
