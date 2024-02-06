@@ -35,7 +35,7 @@ gem 'dotenv-rails'
 
 gem 'turbo-rails', '~> 1.3.0'
 
-gem 'nokogiri', '~> 1.14'
+gem 'nokogiri', '~> 1.16'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
