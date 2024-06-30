@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.3'
 
-gem 'rails', '~> 7.1.3', '>= 7.1.3.1'
+gem 'rails', '~> 7.1.3', '>= 7.1.3.4'
 gem 'pg'
 gem 'puma', '>= 6.4.2'
 gem 'bootsnap', require: false
@@ -33,14 +33,14 @@ gem 'rubyzip'
 gem 'uglifier'
 gem 'dotenv-rails', '>= 3.1.2'
 
-gem 'turbo-rails', '~> 1.4.0'
+gem 'turbo-rails', '~> 1.5.0'
 
 gem 'nokogiri', '~> 1.16'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'brakeman'
-  gem 'rspec-rails', '~> 6.0.4.0'
+  gem 'rspec-rails', '~> 6.1.0.0'
 end
 
 group :development do
