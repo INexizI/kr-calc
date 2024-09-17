@@ -15,9 +15,9 @@ gem 'json'
 gem 'redis'
 gem 'redis-namespace'
 gem 'redis-rails', '>= 5.0.2'
-gem 'sidekiq', '>= 7.3.0'
+gem 'sidekiq', '>= 7.3.1'
 gem 'hotwire-rails', '>= 0.1.3'
-gem 'meta-tags', '>= 2.21.0'
+gem 'meta-tags', '>= 2.22.0'
 
 gem 'ransack'
 # gem 'ransack', github: 'activerecord-hackery/ransack'
@@ -52,8 +52,8 @@ end
 
 group :test do
   gem 'capybara', '>= 3.39.2'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  gem 'selenium-webdriver', '>= 4.11.0'
+  gem 'webdrivers', '>= 5.3.0'
   gem 'shoulda-matchers'
 end
 
