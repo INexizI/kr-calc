@@ -9,7 +9,7 @@
     "@rails/request.js": "^0.0.11",
     "@rails/ujs": "^6.1.7",
     "@rails/webpacker": "^5.4.4",
-    "ansi-regex": "^6.0.1",
+    "ansi-regex": "^6.1.0",
     "async": "3.2.6",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "crypto-js": "^4.2.0",
