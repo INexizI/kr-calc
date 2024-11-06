@@ -4,7 +4,7 @@
   "dependencies": {
     "@babel/preset-react": "^7.25.7",
     "@hotwired/turbo-rails": "^7.3.0",
-    "@rails/actioncable": "^6.1.7",
+    "@rails/actioncable": "^6.1.709",
     "@rails/activestorage": "^6.1.7",
     "@rails/request.js": "^0.0.11",
     "@rails/ujs": "^6.1.7",
