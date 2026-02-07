@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "@babel/preset-react": "^7.27.1",
-    "@hotwired/turbo-rails": "^7.3.0",
+    "@hotwired/turbo-rails": "^8.0.0",
     "@rails/actioncable": "^6.1.709",
     "@rails/activestorage": "^6.1.709",
     "@rails/request.js": "^0.0.12",
