@@ -2,8 +2,8 @@
   "name": "kr_calc",
   "private": true,
   "dependencies": {
-    "@babel/preset-react": "^7.27.1",
-    "@hotwired/turbo-rails": "^8.0.0",
+    "@babel/preset-react": "^7.28.5",
+    "@hotwired/turbo-rails": "8.0.0",
     "@rails/actioncable": "^6.1.709",
     "@rails/activestorage": "^6.1.709",
     "@rails/request.js": "^0.0.12",
@@ -25,7 +25,7 @@
     "stimulus": "^3.2.2",
     "turbolinks": "^5.2.0",
     "webpacker-pwa": "^0.1.2",
-    "ws": "^8.18.3"
+    "ws": "^8.19.0"
   },
   "version": "0.1.0",
   "devDependencies": {
